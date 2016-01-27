@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Viewing table data</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_views" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; User Guide &gt; Data sets</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/userdata_viewing.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data sets</span></div>
+<h1>
+Viewing table data</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">&#39;View&#39; menu</a></li><li class="toc1"><a href="#sort">Sorting data</a></li><li class="toc1"><a href="#searchfilters">Searching and filtering data</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Search</a></li><li class="toc2"><a href="#textSearch">Text search</a></li><li class="toc2"><a href="#severitySearch">Validation messages filter</a></li><li class="toc2"><a href="#specificSearch">Custom table searches</a></li></ul>
+</li><li class="toc1"><a href="#custom">Views</a><ul class="toc2">
+<li class="toc2"><a href="#description">View description</a></li><li class="toc2"><a href="#simple">Simple tabular views</a></li><li class="toc2"><a href="#hierarchies">Hierarchical views</a></li><li class="toc2"><a href="#publication">View publication</a></li></ul>
+</li><li class="toc1"><a href="#views_management">Views management</a><ul class="toc2">
+<li class="toc2"><a href="#preferred_views">Manage recommended views</a></li><li class="toc2"><a href="#manage_views">Manage views</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>&#39;View&#39; menu</h2>
+<p>The &#39;View&#39; drop-down menu allows accessing all major viewing features at a glance.</p><p>Views are managed in a dedicated sub-menu: <a href="#manage_views">&#39;Manage views&#39;</a>.</p><p>Views can also be grouped. An administrator has to define groups beforehand in &#39;Views configuration&#39; under the &#39;Groups of views&#39; table. The end user can then set a view as belonging to a group through the field &#39;View group&#39; upon creation or modification of the view. See <a href="#description">&#39;View description&#39;</a> for more information.</p><h2>
+<a name="sort"></a>Sorting data</h2>
+<p>To simply sort a single column in a table, click on the column title. The first click will sort by ascending order and a second click will reverse the sorting.</p><p> Note that the default order is by ascending primary key.</p><p>For more advanced sorting, custom sort criteria allow specifying the display order of records.</p><p>To define custom sort criteria, select <em>View &gt; Sort criteria</em> in the workspace.</p><p>Each sort criterion is defined by a column name and a sort direction, that is, ascending or descending. Use the &#39;Move left&#39; or &#39;Move right&#39; arrows to add or remove a criterion from the &#39;Sorted&#39; table. When a criterion is highlighted, you can set its sort direction by clicking on the &#39;ASC&#39; or &#39;DESC&#39; button to the right.</p><p>To change the priority of a sort criterion, highlight it in the list, then use the up and down arrow buttons to move it.</p><p>To remove a custom sort order that is currently applied, select <em>View &gt; Reset</em>.</p><h2>
+<a name="searchfilters"></a>Searching and filtering data</h2>
+<p>The feature for searching and filtering records is accessible via the icon <img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> in the workspace.</p><p>When criteria are defined for a search or filter, a checkbox appears in the title bar of the pane to apply the filter. When unchecked, the search or filter is not applied.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Applying a view resets and removes all currently applied searches and filters.</p></div>
+<h3>
+<a name="id3s1"></a>Search</h3>
+<p>In simple mode, the &#39;Search&#39; tool allows adding type-contextual search criteria to one or more fields. Operators relevant to the type of a given field are proposed when adding a criterion.</p><p>By enabling the advanced mode, it is possible to build sub-blocks containing criteria for more complex logical operations to be involved in the search results computation.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">In advanced mode, the criteria with operators &quot;matches&quot; or &quot;matches (case sensitive)&quot; follow the standard regular expression syntax from Java.</p></div>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html">Regex pattern</a></p></div>
+<h3>
+<a name="textSearch"></a>Text search</h3>
+<p>The text search is intended for plain-text searches on one or more fields. The text search does not take into account the types of the fields being searched for.</p><ul>
+<li><p>If the entered text contains one or more words without wildcard characters (<code>*</code> or <code>?</code>), matching fields must contain all specified words. Words between quotes, for example &quot;aa bb&quot;, are considered to be a single word.</p></li><li><p>Standard wildcard characters are available: <code>*</code> (any text) or <code>?</code> (any character). For performance reasons, only one of these characters can be entered in each search. </p></li><li><p>Wildcard characters themselves can be searched for by escaping them with the character &#39;\&#39;. For example &#39;\*&#39; will search for the asterisk character.</p></li></ul>
+<p>Examples:</p><ul>
+<li><p><code>aa bb</code>: field contains &#39;aa&#39; and &#39;bb&#39;. </p></li><li><p><code>aa &quot;bb cc&quot;</code>: field contains &#39;aa&#39; and &#39;bb cc&#39;. </p></li><li><p><code>aa*</code>: field label starts with &#39;aa&#39;. </p></li><li><p><code>*bb</code>: field label ends with &#39;bb&#39;. </p></li><li><p><code>aa*bb</code>: field label starts with &#39;aa&#39; and ends with &#39;bb&#39;. </p></li><li><p><code>aa?</code>: field label starts with &#39;aa&#39; and is 3 chars long.</p></li><li><p><code>?bb</code>: field label ends with &#39;bb&#39; and is 3 chars long. </p></li><li><p><code>aa?bb</code>: field label starts with &#39;aa&#39; and ends with &#39;bb&#39; and is 5 chars long. </p></li><li><p><code>aa\*bb</code>: field contains &#39;aa*bb&#39; as is. </p></li></ul>
+<p> For large tables, it is recommended to select only one field, and for cases where the field type is not a string, to try to match the format type. For example:</p><ul>
+<li><p>boolean: Yes, No </p></li><li><p>date: 01/01/2000 </p></li><li><p>numeric: 100000 or 100,000 </p></li><li><p>enumerated value: Red, Blue... </p></li></ul>
+<p> The text search can be made case sensitive, that is distinguishing between upper and lower case, by checking the &#39;Case sensitive&#39; checkbox.</p><h3>
+<a name="severitySearch"></a>Validation messages filter</h3>
+<p>The validation messages filter allows viewing records according to their status as of the last validation performed. Available levels are: &#39;Errors&#39;, &#39;Warnings&#39;, or &#39;Information&#39;.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">This filter only applies to records of the table that have been validated at least once by selecting <em>Actions &gt; Validate</em> at the table level from the workspace, or at the data set level from the navigation pane.</p></div>
+<h3>
+<a name="specificSearch"></a>Custom table searches</h3>
+<p>Additional custom filters can be specified for each table in the data model.</p><h2>
+<a name="custom"></a>Views</h2>
+<p>A view can be created by selecting <em>View &gt; Create a new view</em> in the workspace. To apply a view, select it in <em>View &gt; <em>name of the view</em></em>.</p><p>Two types of views can be created:</p><ul>
+<li><p>&#39;Simple tabular view&#39;: A table view to sort and filter the displayed records.</p></li><li><p>&#39;Hierarchical view&#39;: A tree view that links data in different tables based on their relationships.</p></li></ul>
+<h3>
+<a name="description"></a>View description</h3>
+<p>When creating or updating a view, the first page allows specifying general information related to the view.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation</p></td><td class="ebx_definitionListDefinition"><p>Localized label and description associated with the view.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Owner</p></td><td class="ebx_definitionListDefinition"><p>Name of the owner of the view. This user can manage and modify it.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Other authorized profiles</p></td><td class="ebx_definitionListDefinition"><p>Profiles authorized to use the view.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>View mode</p></td><td class="ebx_definitionListDefinition"><p>Simple tabular view or hierarchical view.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>View group</p></td><td class="ebx_definitionListDefinition"><p>Group to which this view belongs (if any).</p></td></tr>
+</table>
+<h3>
+<a name="simple"></a>Simple tabular views</h3>
+<p>Simple tabular views offer the possibility to define criteria to filter records and also to select the columns that will be displayed in the table.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Displayed columns</p></td><td class="ebx_definitionListDefinition"><p>Specifies the columns that will be displayed in the table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Sorted columns</p></td><td class="ebx_definitionListDefinition"><p>Specifies the sort order of records in the table. See <a href="#sort">Sorting data</a>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Filter</p></td><td class="ebx_definitionListDefinition"><p>Defines filters for the records to be displayed in the table.</p></td></tr>
+</table>
+<h3>
+<a name="hierarchies"></a>Hierarchical views</h3>
+<p>A hierarchy is a tree-based representation of data that allows emphasizing relationships between tables. It can be structured on several relationship levels called dimension levels. Furthermore, filter criteria can be applied in order to define which records will be displayed in the view.</p><h4>
+<a name="dimension"></a>Hierarchy dimension</h4>
+<p>A dimension defines dependencies in a hierarchy. For example, a dimension can be specified to display products by category. You can include multiple dimension levels in a single view.</p><h4>
+<a name="configuration"></a>Hierarchical view configuration options</h4>
+<p>This form allows configuring the hierarchical view options.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Display records in a new window</p></td><td class="ebx_definitionListDefinition"><p>If &#39;Yes&#39;, a new window will be opened with the record. Otherwise, it will be displayed in a new page of the same window.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Prune hierarchy</p></td><td class="ebx_definitionListDefinition"><p>If &#39;Yes&#39;, hierarchy nodes that have no children and do not belong to the target table will not be displayed.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Display orphans</p></td><td class="ebx_definitionListDefinition"><p>If &#39;Yes&#39;, hierarchy nodes without a parent will be displayed.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Display root node</p></td><td class="ebx_definitionListDefinition"><p>If &#39;No&#39;, the root node of the hierarchy will not be displayed in the view.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Root node label</p></td><td class="ebx_definitionListDefinition"><p>Localized label of the hierarchy root node.</p></td></tr>
+</table>
+<p><strong>Labels</strong></p><p>For each dimension level that references another table, it is possible to define localized labels for the corresponding nodes in the hierarchy. The fields from which to derive labels can be selected using the built-in wizard.</p><p><strong>Filter</strong></p><p>The criteria editor allows creating a record filter for the view.</p><p><strong>Ordering field</strong></p><p>In order to enable specifying the position of nodes in a hierarchical view, you must designate an eligible ordering field defined in the table on which the hierarchical view is applied. An ordering field must have the &#39;Integer&#39; data type and have a &#39;Hidden&#39; default view mode in its advanced properties in the data model definition.</p><p>Except when the ordering field is in &#39;read-only&#39; mode or when the hierarchy is filtered, any field can be repositioned.</p><p>By default, if no ordering field is specified, child nodes are sorted alphabetically by label.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+Do not designate a field that is meant to contain data as an ordering node, as the data will be overwritten by the hierarchical view.</fieldset>
+<h4>
+Actions on hierarchy nodes</h4>
+<p>Each node in a hierarchical view has a menu <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> containing contextual actions.</p><p>Leaf nodes can be dissociated from their parent record using &#39;Detach from parent&#39;. The record then becomes an orphan node in the tree, organized under a container &quot;unset&quot; node.</p><p>Leaf nodes can also change parent nodes, using &#39;Attach to another parent&#39;. If, according to the data model, a node can have relationships to multiple parents, the node will be both under the current parent and added under the other parent node. Otherwise, the leaf node will be moved under the other parent node.</p><h3>
+<a name="publication"></a>View publication</h3>
+<p>A view can also be made available to other users of web components, workflow user tasks, or data services, by publishing it as a view publication. To publish a view, go to <em>View &gt; Manage views &gt; <em>name of the view</em> &gt; Publish</em>. Once published, other eligible users can apply this view in their interfaces by selecting it in <em>View &gt; <em>name of the view</em></em> in their workspaces.</p><p>This view publication will be available to users belonging to the authorized profiles specified in the view.</p><h2>
+<a name="views_management"></a>Views management</h2>
+<h3>
+<a name="preferred_views"></a>Manage recommended views</h3>
+<p>When a user logs in with no view specified, their recommended view (if any) is applied. Otherwise, the default view is applied. The &#39;Manage recommended views&#39; action allows defining assignment rules of recommended views depending on users and roles. </p><p>Available actions on recommended views are: change order of assignment rules, add a rule, edit existing rule, delete existing rule.</p><p>Thus, for a given user, the applied rule will be the first that matches the user&#39;s profile. </p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The &#39;Manage recommended view&#39; feature is only available to data set owners.</p></div>
+<h3>
+<a name="manage_views"></a>Manage views</h3>
+<p>The &#39;Manage views&#39; sub-menu offers the following actions:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Define this view as my favorite</p></td><td class="ebx_definitionListDefinition"><p>Only available when the currently displayed view is NOT the recommended view. The favorite view will be automatically applied when accessing the table. </p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Define recommended view as my favorite</p></td><td class="ebx_definitionListDefinition"><p>Only available when a favorite view has already been defined. This will remove the user&#39;s current favorite view. A recommended view, similarly to a favorite view, will be automatically applied when accessing the table.<strong>This menu item is not displayed if no favorite view has been defined.</strong></p></td></tr>
+</table>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a href="../table_contents_user.html">table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data sets</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

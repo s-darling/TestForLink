@@ -1,0 +1,80 @@
+
+:focus {
+    outline-offset: 0;
+}
+
+select,
+input[type=text],
+input[type=password],
+input[type=file] {
+	margin: 0;
+}
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 1px 11px 0 11px; /* don't know why... */
+}
+
+#ebx_switchButtonMenu>.ebx_MenuButtonArrow {
+	margin: 0 3px 0 3px;
+}
+
+.ebx_IconButton {
+	vertical-align: -1px;
+}
+
+button.ebx_IconButton .ebx_Icon {
+	vertical-align: -3px; /* 2 (button.padding-bottom) + 1 (button.border-bottom) */
+}
+
+.ebx_ISS_Container button.ebx_IconButton .ebx_Icon {
+	margin-top: 0;
+}
+
+a.ebx_TextAndIconLeftButton .ebx_Icon,
+a.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-top: -1px;
+}
+
+.ebx_SelectButtonItemLabel .ebx_Icon {
+	margin-bottom: -1px;
+}
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	margin-bottom: -2px;
+}
+
+#ebx_DisplayMessageBoxCounter {
+	vertical-align: -2px;
+}
+.ebx_DisplayMessageBoxErrorFlag,
+.ebx_DisplayMessageBoxWarningFlag,
+.ebx_DisplayMessageBoxInfoFlag {
+	vertical-align: 4px;
+}
+.ebx_DisplayMessageBoxWarningFlag_left,
+.ebx_DisplayMessageBoxWarningFlag_right {
+	vertical-align: -4px;
+}
+
+.ebx_OverwrittenValue input[type=text] {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+div.ebx_WorkspaceFormTabContent div.ebx_Field div.ebx_Input div.ebx_ComplexFields table.ebx_FieldListNoMargin td.ebx_Input {
+	width: auto;
+}
+
+.ygtvcontent .ebx_NodeActions {
+	margin-top: -2px;
+}
+
+#ebx_FacetEnumerationSelectorValuesDivWrap {
+	height: 180px;
+}
+
+/* Mantis #7751 */
+#ebx_ISS_pane.yui-overlay-hidden #ebx_ISS_list {
+	overflow: hidden;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - D3 broadcasts and delivery data spaces</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="d3_broadcast" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/d3_broadcast.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</span></div>
+<h1>
+D3 broadcasts and delivery data spaces</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#broadcast">Broadcast</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Scope and contents of a broadcast</a></li><li class="toc2"><a href="#id1s2">Performing a broadcast</a></li><li class="toc2"><a href="#broadcast_conditions">Conditions</a></li><li class="toc2"><a href="#id1s4">Persistence</a></li></ul>
+</li><li class="toc1"><a href="#registration">Slave registration</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Scope and contents</a></li><li class="toc2"><a href="#id2s2">Performing an initialization</a></li><li class="toc2"><a href="#initialization_conditions">Conditions</a></li></ul>
+</li><li class="toc1"><a href="#id3">Accessing delivery data spaces</a><ul class="toc2">
+<li class="toc2"><a href="#dataServices">Data services</a></li><li class="toc2"><a href="#id3s2">Access restrictions</a></li><li class="toc2"><a href="#id3s3">D3 broadcast Java API</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="broadcast"></a>Broadcast</h2>
+<h3>
+<a name="id1s1"></a>Scope and contents of a broadcast</h3>
+<p>A D3 broadcast occurs at the data space or snapshot level. For data space broadcasts, D3 first creates a snapshot to capture the current state, then broadcasts this newly created snapshot.</p><p>A broadcast performs one of the following procedures depending on the situation:</p><ul>
+<li><p>An update of the differences computed between the new broadcast snapshot and the current &#39;commit&#39; one on the slave.</p></li><li><p>A full synchronization containing all data sets, tables, records, and permissions. This is done on the first broadcast to a given slave node, if the previous slave commit is not known to the master node, or on demand using the UI service in &#39;[D3] Master Configuration&#39;. </p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../engine/d3_admin.html#D3ServicesOnMaster">Services on master nodes</a></p></div>
+</li></ul>
+<h3>
+<a name="id1s2"></a>Performing a broadcast</h3>
+<p>The broadcast can be performed:</p><ul>
+<li><p>By the end user, using the action <strong>Broadcast</strong> available in the data space or snapshot (this action is available only if the data space is registered as a delivery data space)</p></li><li><p>Using custom Java code that uses <a target="_blank" href="../Java_API/com/orchestranetworks/d3/D3NodeAsMaster.html"><code>D3NodeAsMaster</code></a>.</p></li></ul>
+<h3>
+<a name="broadcast_conditions"></a>Conditions</h3>
+<p>To be able to broadcast, the following conditions must be fulfilled:</p><ul>
+<li><p>The authenticated user profile has permission to broadcast.</p></li><li><p>The data space or snapshot to be broadcasted has no validation errors.</p><p><strong>Note:</strong> Although it is not recommended, it is possible to force a broadcast of a delivery data space that contains validation errors. In order to do this, set the maximum severity threshold allowed in a delivery data space validation report under &#39;[D3] Configuration of master&#39; in the Administration area.</p></li><li><p>The D3 master configuration has no validation errors on the following scope: the technical record of the concerned delivery data space and all its dependencies (dependent delivery mappings, delivery profiles and registered slaves).</p></li><li><p>The data space or snapshot does not contain any tables in relational mode.</p></li><li><p>There is an associated delivery profile.</p></li><li><p>If broadcasting a data space, the data space is not locked.</p></li><li><p>If broadcasting a snapshot, the snapshot belongs to a data space declared as delivery data space and is not already the current broadcast snapshot (though a rollback to a previously broadcast snapshot is possible).</p></li><li><p>The data space or snapshot contains differences compared to the last broadcast snapshot.</p></li></ul>
+<h3>
+<a name="id1s4"></a>Persistence</h3>
+<p>When a master node shuts down, all waiting or in progress broadcast requests abort, then they will be persisted on a temporary file. On startup, all aborted broadcasts are restarted.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../engine/d3_admin.html#temporary_files">Temporary files</a></p></div>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><p>Broadcasts are performed asynchronously. Therefore, no information is displayed in the user interface about the success or failure of a broadcast. Nevertheless, it is possible to monitor the broadcast operations inside &#39;[D3] Master configuration&#39;. See <a href="../engine/d3_admin.html#d3supervision">Supervision</a>.</p></p></div>
+<h2>
+<a name="registration"></a>Slave registration</h2>
+<h3>
+<a name="id2s1"></a>Scope and contents</h3>
+<p>An initialization occurs at the slave level according to the delivery profiles registered in the EBX5 main configuration file of the slave. When the master receives that initialization request, it creates or updates the slave entry, then sends the last broadcast snapshot of all registered delivery data spaces.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><p>If the registered slave repository ID or communication layer already exists, the slave entry in &#39;Registered slaves&#39; technical table is updated, otherwise a new entry is created.</p></p></div>
+<h3>
+<a name="id2s2"></a>Performing an initialization</h3>
+<p>The initialization can be done:</p><ul>
+<li><p>Automatically on slave node server startup.</p></li><li><p>Manually when calling the slave service &#39;Register slave&#39;.</p></li></ul>
+<h3>
+<a name="initialization_conditions"></a>Conditions</h3>
+<p>To be able to register, the following conditions must be fulfilled:</p><ul>
+<li><p>The D3 mode must be &#39;hub&#39; or &#39;slave&#39;.</p></li><li><p>The master and slave authentication parameters must correspond to the master administrator and slave administrator defined in their respective directories.</p></li><li><p>The delivery profiles defined on the slave node must exist in the master configuration.</p></li><li><p>All data models contained in the registered data spaces must exist in the slave node. If embedded, the data model names must be the same. If packaged, they must be located at the same module name and the schema path in module must be the same in both the master and slave nodes.</p></li><li><p>The D3 master configuration has no validation error on the following scope: the technical record of the registered slave and all its dependencies (dependent delivery profiles, delivery mappings and delivery data spaces).</p></li></ul>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><p>To set the parameters, see the slave or hub EBX5 properties in <a href="../engine/d3_admin.html#technicalD3Config">Configuring master, hub and slave nodes</a>.</p></p></div>
+<h2>
+<a name="id3"></a>Accessing delivery data spaces</h2>
+<h3>
+<a name="dataServices"></a>Data services</h3>
+<p>By default, when a data service accesses a delivery data space, it is redirected to the current snapshot, which is the last one broadcast. However, this default behavior can be modified either at the request level or in the global configuration.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/dataservices_execution.html#disableRedirectionToLastBroadcast">Common parameter &#39;disableRedirectionToLastBroadcast&#39;</a></p></div>
+<h3>
+<a name="id3s2"></a>Access restrictions</h3>
+<p>On the master node, a delivery data space can neither be merged nor closed. Other operations are available depending on permissions, for example, modifying a delivery data space directly, creating a snapshot independent from a broadcast, or creating and merging a child data space.</p><p>On the slave node, aside from the broadcast process, no modifications of any kind can be made to a delivery data space, whether by the end user, data services, or a Java program. Furthermore, any data space-related operations, such as merge, close, etc., are forbidden on the slave node.</p><h3>
+<a name="id3s3"></a>D3 broadcast Java API</h3>
+<p>The last broadcast snapshot may change between two calls if a broadcast has taken place in the meantime. If a fully stable view is required for several successive calls, these calls need to specifically refer to the same snapshot.</p><p>To get the last broadcast snapshot, see <a target="_blank" href="../Java_API/com/orchestranetworks/d3/D3Node.html#getBroadcastVersion(com.orchestranetworks.instance.BranchKey)"><code>D3Node.getBroadcastVersion</code></a>. </p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

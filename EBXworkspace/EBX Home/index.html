@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+<title>EBX5 License Agreement</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta name="copyright"
+	content="Copyright Orchestra Networks 2000-2010. All rights reserved." />
+
+<link rel="icon" href="ebx.documentation/en/advanced/resources/icons/brand.ico" type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="ebx.documentation/en/advanced/resources/stylesheets/ebx_common.css" />
+<link rel="stylesheet" type="text/css" href="ebx.documentation/en/advanced/resources/stylesheets/ebx_main.css" />
+
+<script language="JavaScript">
+function validateAgreement(form)
+{
+	if (form.acceptation.checked  == false) { alert("You must accept the license agreement to use EBX5"); return false;} 
+	
+	return true;
+}
+</script>
+<style type="text/CSS">
+.ebx_Button {
+	
+ height:26px;
+ margin:0 5px;
+ padding:1px 9px 2px 9px; /* don't know why... */
+ 
+ cursor:pointer;
+
+ box-sizing:border-box;
+ -moz-box-sizing:border-box;
+ 
+ border-radius:2px;
+ -moz-border-radius:2px;
+ 
+ border:1px solid #C0C0C0; /*{button-borderColor}*/
+ background-color:#F8F8F8;
+}
+
+.ebx_Button:active {
+
+ box-shadow:inset 0 0 5px -1px #000000, inset 0 0 5px -1px #FFFFFF;
+ -moz-box-shadow:inset 0 0 5px -1px #000000, inset 0 0 5px -1px #FFFFFF;
+}
+
+
+.ebx_Button{
+background-color:#F8F8F8;
+color:#606060;
+}
+.ebx_Button:focus{
+border-color:#A8C0EF;
+outline: 1px solid #A8C0EF;
+}
+.ebx_Button:active,
+.ebx_Button:active:focus{
+background-color:#d0dcf4;
+}
+.ebx_Button:hover,
+.ebx_Button:focus{
+background-color:#e6ebf6;
+}
+</style>
+</head>
+
+<body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center"><img src="ebx.documentation/en/advanced/resources/images/Welcome.png" alt="EBX5" border="0" /></p>
+<p align="center">Version: 5.6.1 Fix M [0985:0021]<br/>Release date: Dec 17, 2015</p>
+<p>&nbsp;</p>
+
+<h1 align="center">EBX5 License Agreement</h1>
+
+<p align="center"><iframe src="./ebx.documentation/en/advanced/license/license.html" align="center" width="650px"height="270px" frameborder="0" style="border: 1px solid silver;"></iframe></p>
+<p>&nbsp;</p>
+<h3 align="center">Do you agree to comply with the End User License Agreement?</h3>
+<p>
+<form action="main.html" method="get" onSubmit="return validateAgreement(this)">
+<p align="center"><input type="checkbox" name="acceptation" value="1"> <strong>Yes, I agree with the End User License Agreement </strong></p>
+<p align="center"><button name="imageField" type="submit" class="ebx_Button">Submit</button></p>
+</form>
+</p>
+
+<p align="center">This product includes software developed by the <a href="http://www.apache.org/" target="_blank">Apache Software Foundation</a>. <br/>
+This product includes software developed by the <a href="http://www.jdom.org/" target="_blank">JDOM Project</a>. <br/>
+This product includes software developed by the <a href="http://www.json.org/" target="_blank">JSON Project</a>. <br/>
+This product includes the <a href="http://code.google.com/p/gagawa/" target="_blank">Gagawa HTML Generator</a>. <br/>
+This product includes the <a href="http://jericho.htmlparser.net/docs/index.html" target="_blank">Jericho HTML Parser</a>. <br/>
+This product includes the <a href="http://www.h2database.com/" target="_blank">H2 Database Engine</a>. <br/>
+This product includes <a href="http://fontawesome.io/" target="_blank">Font Awesome by Dave Gandy</a>.
+</p>
+
+</body>
+</html>

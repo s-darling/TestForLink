@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Implementing the data model structure</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_structure" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data models &gt; Implementing data models</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_datamodel/userdatamodel_implementdatastructure.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data models &gt; Implementing data models</span></div>
+<h1>
+Implementing the data model structure</h1>
+<p>To work with the structural definition of your data model, select the data model you are working with using the <a target="_self" href="../user_datamodel/userdatamodel_ui.html"><strong>&#39;Select data model&#39;</strong></a><img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>menu in the navigation pane.</p><p>You can then access the structure of your data model in the navigation pane under &#39;Data structure&#39; to define the structure of fields, groups, and tables.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Common actions and properties</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Adding elements to the data model</a></li><li class="toc2"><a href="#delete">Deleting elements of the data model</a></li><li class="toc2"><a href="#duplicate">Duplicating existing elements</a></li><li class="toc2"><a href="#move">Moving elements</a></li></ul>
+</li><li class="toc1"><a href="#reusableTypes">Reusable types</a><ul class="toc2">
+<li class="toc2"><a href="#reusableDefine">Defining a reusable type</a></li><li class="toc2"><a href="#reusableUse">Using a reusable type</a></li><li class="toc2"><a href="#includeDataModel">Including data types defined in other data models</a></li></ul>
+</li><li class="toc1"><a href="#id3">Data model element creation details</a><ul class="toc2">
+<li class="toc2"><a href="#addfield">Creating fields</a></li><li class="toc2"><a href="#addtable">Creating tables</a></li><li class="toc2"><a href="#addgroup">Creating groups</a></li><li class="toc2"><a href="#addpkey">Creating primary key fields</a></li><li class="toc2"><a href="#addfkey">Creating or defining foreign key fields</a></li><li class="toc2"><a href="#addUDACatalog">Creating catalogs of User Defined Attributes</a></li><li class="toc2"><a href="#addUDA">Creating User Defined Attributes</a></li></ul>
+</li><li class="toc1"><a href="#id4">Modifying existing elements</a><ul class="toc2">
+<li class="toc2"><a href="#removepkey">Removing a field from the primary key</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Common actions and properties</h2>
+<h3>
+<a name="id1s1"></a>Adding elements to the data model</h3>
+<p>The following elements are available to describe the structure of your data model:</p><ul>
+<li><p>fields</p></li><li><p>groups</p></li><li><p>tables</p></li><li><p>primary keys</p></li><li><p>foreign keys</p></li></ul>
+<p>Add a new element beneath any existing element in the data structure by clicking the down arrow <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> to the right of the existing entry and selecting an element creation option from the menu. You can then follow the element creation wizard to create the new element.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+The <code>root</code> element is always added upon data model creation.</fieldset>
+<h4>
+Names, labels, descriptions, and information</h4>
+<p>Whenever you create a new element in your data model, you must provide a name for the field &#39;Name&#39; that is unique in its level of the data structure. This name is fixed once the element is created and cannot be changed subsequently.</p><p>You have the option to provide localized user-friendly labels to be displayed in the user interface instead of the unique name of the element, as well as brief localized descriptions of the element. Unlike the unique name, the labels and descriptions are modifiable after creation. According to the language preference of each user, EBX5 will display the corresponding localized label and description of the element.</p><h3>
+<a name="delete"></a>Deleting elements of the data model</h3>
+<p>Any element except the <code>root</code> node can be deleted from the data structure using the down arrow <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> corresponding to its entry.</p><p>When a group or table that is not using a reusable type is deleted, the delete is performed recursively, removing all its nested elements.</p><h3>
+<a name="duplicate"></a>Duplicating existing elements</h3>
+<p>To duplicate an element, click the down arrow <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> corresponding to its entry. You must provide a name for the duplicated element that is unique at its level of the data structure. All other properties are copied from the source element.</p><p>The duplicated element is added to the data model at the same level as the element from which it was copied, appended after the existing elements. If you are duplicating a table or group containing other elements, all nested elements are copied with their original names.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If you duplicate a primary key field, the properties of the field are maintained, but the new field is not automatically added to the primary key.</fieldset>
+<h3>
+<a name="move"></a>Moving elements</h3>
+<p>To reorder an element within its current level of the data structure, use the up and down arrow buttons corresponding to its entry.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+It is not possible to move an element to a position outside of its level in the data structure.</fieldset>
+<h2>
+<a name="reusableTypes"></a>Reusable types</h2>
+<p>Reusable types are shared element definitions that are created once and can be reused in different places in the data model.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If you modify the definition of a reusable type in the &#39;Simple data types&#39; or &#39;Complex data types&#39; section, you will modify the structure of all elements based on that reusable type. The structure of a groups or table using a reusable type is shown as read-only. To edit the structure of the associated reusable type, you have to access the type from the &#39;Simple data types&#39; or &#39;Complex data types&#39; section.</fieldset>
+<h3>
+<a name="reusableDefine"></a>Defining a reusable type</h3>
+<p>From the down arrow<img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>menu of &#39;Simple data types&#39; and &#39;Complex data types&#39; in the navigation pane, you can define simple and complex reusable types. You also have the option to have a reusable type defined upon the creation of a complex element (table or group). After your element has been created, the reusable type becomes available for creating more elements that will share the same structural definition and properties. Alternatively, you can convert tables and groups into reusable types after they have been created using their corresponding down arrow <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>menus.</p><p>It is possible to see the elements that are using a reusable type by selecting &#39;References to this type&#39; on the specific page of each data type, under &#39;Simple data types&#39; and &#39;Complex data types&#39; in the navigation pane. A table then displays all elements that are based on this type. If a data type is not used by any elements, you can select the &#39;Delete type&#39; from its down arrow <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>menu to delete the reusable type.</p><h3>
+<a name="reusableUse"></a>Using a reusable type</h3>
+<p>The structure of new elements can be defined using reusable types. To do so, select an existing reusable type in the element creation form. The created element will then share the type definition of the reusable type.</p><h3>
+<a name="includeDataModel"></a>Including data types defined in other data models</h3>
+<p>You can also share reusable types between multiple data models. By configuring the inclusion of an external data model, you can use the data types defined in that data model to create new elements in the data structure the same way as using locally defined reusable types.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+As the names of data types must be unique across all locally defined as well as all included types, you cannot create new reusable types with the same name as a data type in an included data model. Similarly, you cannot include an external data model that defines a data type with the same name as a locally defined reusable type or a data type in another included data model.</fieldset>
+<p>Included data types appear in the sections &#39;Included simple data types&#39; and &#39;Included complex data types&#39; in the navigation panel. You can consult the details of these included reusable types, however, they can only be edited locally in their original data models.</p><p>See <a target="_self" href="../user_datamodel/userdatamodel_configuring.html#includemodel">Included data models</a> for more information.</p><h2>
+<a name="id3"></a>Data model element creation details</h2>
+<h3>
+<a name="addfield"></a>Creating fields</h3>
+<p>When creating a new field, you must select its data type, which will define the data type of the values based upon this field. The data type of the field cannot be changed once the field has been created.</p><h3>
+<a name="addtable"></a>Creating tables</h3>
+<p>During the creation of a table, you have the option to also create a reusable type based on the new table, or create the new table based on an existing reusable type. See <a target="_self" href="#reusableTypes">Reusable types</a> for more information. </p><p>At the end of the table element creation wizard, you may continue directly with the creation of a primary key field for the table. Every table requires the designation of at least one primary key field. If you choose not to create a new primary key field immediately, you can create one later from the &#39;Data structure&#39; tree.</p><h3>
+<a name="addgroup"></a>Creating groups</h3>
+<p>During the creation of a group, you have the option to also create a reusable type based on the new group, or create the new group based on an existing reusable type. See <a target="_self" href="#reusableTypes">Reusable types</a> for more information. </p><h3>
+<a name="addpkey"></a>Creating primary key fields</h3>
+<p>At least one primary key is required for every table. After creating a table, you have the opportunity to immediately create one or more primary key fields for the new table.</p><p>At any point, you can create a primary key field for a table by adding a new primary key element under the table&#39;s entry in the &#39;Data structure&#39; tree.</p><p><a name="definepkey"></a>Besides creating a new field directly as a primary key, you can mark an existing field as a primary key using the down arrow <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> corresponding to its entry.</p><h3>
+<a name="addfkey"></a>Creating or defining foreign key fields</h3>
+<p>Foreign key fields have the data type &#39;String&#39;. You can create a foreign key field to a table in the current data model directly from the data structure, or convert an existing field of type &#39;String&#39; into a foreign key.</p><p>Whether creating a foreign key directly or from an existing field, you must define the table that contains the records to be referenced.</p><p>To convert an existing field of type &#39;String&#39; into a foreign key, enable &#39;Foreign key constraint&#39; in the field&#39;s &#39;Advanced controls&#39; and define the associated parameters.</p><h3>
+<a name="addUDACatalog"></a>Creating catalogs of User Defined Attributes</h3>
+<p>A catalog of User Defined Attributes is required in order to create User Defined Attributes. When creating a new catalog of User Defined Attributes, you must specify its name. Once created, this catalog will be available for the creatiion of User Defined Attributes.</p><h3>
+<a name="addUDA"></a>Creating User Defined Attributes</h3>
+<p>When creating a User Defined Attribute, you must specify a catalog of User Defined Attributes defined in the data model. This catalog contains attributes that will be associated with the new User Defined Attribute. The refered catalog can be changed once the User Defined Attribute has been created by modifying the property &#39;UDA catalog path&#39; in the field&#39;s &#39;Advanced properties&#39;.</p><h2>
+<a name="id4"></a>Modifying existing elements</h2>
+<h3>
+<a name="removepkey"></a>Removing a field from the primary key</h3>
+<p>Any field that belongs to the primary key can be removed from the primary key using the down arrow <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> corresponding to its entry. Aside from no longer being part of the primary key, the field and its definition remain the same.</p><p>See <a target="_self" href="../glossary/simple_glossary.html#pkey">primary key</a> in the glossary.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data models &gt; Implementing data models</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

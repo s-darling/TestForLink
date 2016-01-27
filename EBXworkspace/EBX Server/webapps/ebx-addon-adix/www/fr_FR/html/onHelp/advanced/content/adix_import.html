@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Import des donn&eacute;es depuis un fichier CSV ou Excel</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="adix_import" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Data Exchange Documentation &gt; Data Exchange Documentation &gt; Introduction</div>
+</div>
+<h1>
+Import des donn&eacute;es depuis un fichier CSV ou Excel</h1>
+<p>Le processus pour importer les donn&eacute;es vers les tables dans EBX5 depuis un fichier CSV ou Excel consiste en les &eacute;tapes suivantes:</p><ul>
+<li><p>T&eacute;l&eacute;chargement du fichier</p></li><li><p>Configuration de l&#39;import</p></li><li><p>Liaison entre la feuille de calcul et les champs dans le mod&egrave;le de donn&eacute;es</p></li><li><p>Simulation et ex&eacute;cution de l&#39;import</p></li></ul>
+<p>Initiez l&#39;import du fichier en naviguant vers la table o&ugrave; les donn&eacute;es seront import&eacute;s en passant par son jeu de donn&eacute;es dans la section <strong>Data</strong>. Puis, s&eacute;lectionnez l&#39;option import pour le type de votre fichier depuis le menu <strong>Services</strong> de l&#39;espace de travail.</p><div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#adix_importConfigure">Configuration de l&#39;import</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Options sp&eacute;cifiques aux fichiers CSV</a></li></ul>
+</li><li class="toc1"><a href="#adix_importMapping">Formulaire pour correspondance des structures des donn&eacute;es</a></li><li class="toc1"><a href="#adix_importSimulate">Simulation et ex&eacute;cution de l&#39;import</a></li><li class="toc1"><a href="#id4">Donn&eacute;es support&eacute;es pour import</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Imports CSV</a></li><li class="toc2"><a href="#id4s2">Imports Excel</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="adix_importConfigure"></a>Configuration de l&#39;import</h2>
+<p>Quelques param&egrave;tres qui d&eacute;crivent le format du fichier doivent &ecirc;tre configur&eacute;s avant d’ex&eacute;cuter l&#39;import.</p><h3>
+<a name="id1s1"></a>Options sp&eacute;cifiques aux fichiers CSV</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Encodage du fichier</p></td><td class="ebx_definitionListDefinition"><p>L&#39;encodage des caract&egrave;res du fichier import&eacute;</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>S&eacute;parateur</p></td><td class="ebx_definitionListDefinition"><p>Le caract&egrave;re utilis&eacute; pour s&eacute;parer les cellules dans la feuille de calcul. Par d&eacute;faut, les fichiers CSV utilisent les <strong>;</strong> points-virgules.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>D&eacute;limiteur</p></td><td class="ebx_definitionListDefinition"><p>Le caract&egrave;re utilis&eacute; pour marquer le d&eacute;but et la fin de contenu d&#39;une cellule dans la feuille de calcul. Par d&eacute;faut, les fichiers CSV utilisent les <strong>&quot;</strong> guillemets.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Symbole d&eacute;cimal</p></td><td class="ebx_definitionListDefinition"><p>Le caract&egrave;re utilis&eacute; pour marquer un d&eacute;cimal</p></td></tr>
+</table>
+<h2>
+<a name="adix_importMapping"></a>Formulaire pour correspondance des structures des donn&eacute;es</h2>
+<p>Il faut d&eacute;finir la correspondance entre la structure de la feuille de calcul source envers la structure de la table dans laquelle vous importez les donn&eacute;es.</p><p>Pour chaque champ dans la table, vous devez s&eacute;lectionner une colonne du fichier t&eacute;l&eacute;charg&eacute;. Si la feuille de calcul import&eacute;e contient une ligne de l&#39;en-t&ecirc;te, l&#39;import de l&#39;add-on pour Microsoft&reg; Excel fait une correspondance par d&eacute;faut automatiquement si les noms des champs correspondent aux en-t&ecirc;tes des colonnes dans la feuille de calcul.</p><p>Dans cette page, vous pouvez &eacute;galement sauvegarder les options de configuration et de correspondance de l&#39;import actuel. Pour utiliser la m&ecirc;me configuration et la m&ecirc;me correspondance dans un autre import, vous pouvez r&eacute;utiliser cette pr&eacute;f&eacute;rence sauvegard&eacute;e sur la page de t&eacute;l&eacute;chargement du fichier en utilisant l&#39;option &#39;Chargement des pr&eacute;f&eacute;rences&#39;.</p><h2>
+<a name="adix_importSimulate"></a>Simulation et ex&eacute;cution de l&#39;import</h2>
+<p>Avant d&#39;ex&eacute;cuter r&eacute;ellement l&#39;import, vous pouvez d&#39;abord simuler le processus afin de d&eacute;tecter en avance si des probl&egrave;mes se produiront pendant l&#39;import. Cette v&eacute;rification d&eacute;tecte les incoh&eacute;rences entre les cellules dans la feuille de calcul et les types de donn&eacute;es d&eacute;finis dans le mod&egrave;le des donn&eacute;es de la table cible.</p><p>Vous pouvez d&eacute;cider de proc&eacute;der &agrave; l&#39;import, m&ecirc;me s&#39;il y a des erreurs de validation, en s&eacute;lectionnant l&#39;option &#39;Importer uniquement les enregistrements valides&#39;. S&#39;il existe des erreurs de validation et que vous continuez sans cocher l&#39;option &#39;Importer uniquement les enregistrements valides&#39;, l&#39;import &eacute;chouera et aucun enregistrement ne sera import&eacute;. </p><h2>
+<a name="id4"></a>Donn&eacute;es support&eacute;es pour import</h2>
+<h3>
+<a name="id4s1"></a>Imports CSV</h3>
+<table class="">
+<thead>
+<tr>
+<th>Donn&eacute;es support&eacute;es</th><th>Donn&eacute;es non-support&eacute;es</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><ul>
+<li><p>Groupe des champs</p></li><li><p>Cl&eacute; &eacute;tranger simple</p></li><li><p>Cl&eacute; &eacute;tranger complexe</p></li></ul>
+</td><td><ul>
+<li><p>Liste des groupes</p></li><li><p>Liste des cl&eacute;s &eacute;trangers simples</p></li><li><p>Liste des cl&eacute;s &eacute;trangers complexes</p></li></ul>
+</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id4s2"></a>Imports Excel</h3>
+<table class="">
+<thead>
+<tr>
+<th>Donn&eacute;es support&eacute;es</th><th>Donn&eacute;es non-support&eacute;es</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><ul>
+<li><p>Groupe des champs</p></li><li><p>Cl&eacute; &eacute;tranger simple</p></li><li><p>Liste des cl&eacute;s &eacute;trangers simples</p></li><li><p>Cl&eacute; &eacute;tranger complexe</p></li></ul>
+</td><td><ul>
+<li><p>Liste de groupes</p></li><li><p>Liste des cl&eacute;s &eacute;trangers complexes</p></li></ul>
+</td></tr>
+</tbody>
+</table>
+<div id="seealso">
+<h5>
+Voir aussi</h5>
+<ul>
+<li><a href="./adix_export.html">Export des donn&eacute;es vers un fichier CSV ou Excel</a></li><li><a href="./index.html">EBX5 Add-on pour Microsoft&reg; Excel page principale</a></li></ul>
+</div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

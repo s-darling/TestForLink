@@ -1,0 +1,69 @@
+2016-01-27 10:55:47,012 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 10:55:55,048 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Starting repository ownership heart beat thread on entry: id=45, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 10:55:58,627 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 96 ms.
+2016-01-27 10:56:04,102 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Heart beat #10: avgInterval=905: maxInterval=1010 ms.
+2016-01-27 10:56:14,149 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Heart beat #20: avgInterval=955: maxInterval=1010 ms.
+2016-01-27 10:59:14,842 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Heart beat #200: avgInterval=998: maxInterval=1013 ms.
+2016-01-27 11:02:35,498 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Heart beat #400: avgInterval=1001: maxInterval=1013 ms.
+2016-01-27 11:13:08,647 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Heart beat #600: avgInterval=1722: maxInterval=432936 ms.
+2016-01-27 11:16:29,347 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Heart beat #800: avgInterval=1542: maxInterval=432936 ms.
+2016-01-27 11:19:50,070 EST INFO   log.persistence 0985:0003 [ebx-rro-45-unique] Heart beat #1000: avgInterval=1435: maxInterval=432936 ms.
+2016-01-27 11:22:44,780 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:38:42,698 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:38:51,771 EST INFO   log.persistence 0985:0003 [ebx-rro-46-unique] Starting repository ownership heart beat thread on entry: id=46, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 13:38:55,191 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 93 ms.
+2016-01-27 13:39:00,824 EST INFO   log.persistence 0985:0003 [ebx-rro-46-unique] Heart beat #10: avgInterval=905: maxInterval=1007 ms.
+2016-01-27 13:39:10,855 EST INFO   log.persistence 0985:0003 [ebx-rro-46-unique] Heart beat #20: avgInterval=954: maxInterval=1007 ms.
+2016-01-27 13:42:11,506 EST INFO   log.persistence 0985:0003 [ebx-rro-46-unique] Heart beat #200: avgInterval=998: maxInterval=1010 ms.
+2016-01-27 13:45:32,178 EST INFO   log.persistence 0985:0003 [ebx-rro-46-unique] Heart beat #400: avgInterval=1001: maxInterval=1010 ms.
+2016-01-27 13:46:38,421 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:46:55,072 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:47:05,480 EST INFO   log.persistence 0985:0003 [ebx-rro-47-unique] Starting repository ownership heart beat thread on entry: id=47, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 13:47:14,535 EST INFO   log.persistence 0985:0003 [ebx-rro-47-unique] Heart beat #10: avgInterval=905: maxInterval=1009 ms.
+2016-01-27 13:47:24,585 EST INFO   log.persistence 0985:0003 [ebx-rro-47-unique] Heart beat #20: avgInterval=955: maxInterval=1009 ms.
+2016-01-27 13:49:01,891 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 104 ms.
+2016-01-27 13:49:03,105 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:49:56,218 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:50:05,069 EST INFO   log.persistence 0985:0003 [ebx-rro-48-unique] Starting repository ownership heart beat thread on entry: id=48, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 13:50:12,139 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 203 ms.
+2016-01-27 13:50:14,177 EST INFO   log.persistence 0985:0003 [ebx-rro-48-unique] Heart beat #10: avgInterval=910: maxInterval=1052 ms.
+2016-01-27 13:50:24,235 EST INFO   log.persistence 0985:0003 [ebx-rro-48-unique] Heart beat #20: avgInterval=958: maxInterval=1052 ms.
+2016-01-27 13:52:16,696 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:52:25,848 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:52:37,267 EST INFO   log.persistence 0985:0003 [ebx-rro-49-unique] Starting repository ownership heart beat thread on entry: id=49, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 13:52:46,322 EST INFO   log.persistence 0985:0003 [ebx-rro-49-unique] Heart beat #10: avgInterval=905: maxInterval=1013 ms.
+2016-01-27 13:52:56,377 EST INFO   log.persistence 0985:0003 [ebx-rro-49-unique] Heart beat #20: avgInterval=955: maxInterval=1013 ms.
+2016-01-27 13:53:43,579 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:02:25,520 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:02:35,701 EST INFO   log.persistence 0985:0003 [ebx-rro-50-unique] Starting repository ownership heart beat thread on entry: id=50, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 14:02:42,998 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 138 ms.
+2016-01-27 14:02:44,774 EST INFO   log.persistence 0985:0003 [ebx-rro-50-unique] Heart beat #10: avgInterval=907: maxInterval=1015 ms.
+2016-01-27 14:02:54,815 EST INFO   log.persistence 0985:0003 [ebx-rro-50-unique] Heart beat #20: avgInterval=956: maxInterval=1015 ms.
+2016-01-27 14:04:05,086 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:04:14,559 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:04:22,690 EST INFO   log.persistence 0985:0003 [ebx-rro-51-unique] Starting repository ownership heart beat thread on entry: id=51, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 14:04:31,752 EST INFO   log.persistence 0985:0003 [ebx-rro-51-unique] Heart beat #10: avgInterval=907: maxInterval=1009 ms.
+2016-01-27 14:04:35,777 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:12:13,253 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:12:23,567 EST INFO   log.persistence 0985:0003 [ebx-rro-52-unique] Starting repository ownership heart beat thread on entry: id=52, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 14:12:28,620 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 138 ms.
+2016-01-27 14:12:32,636 EST INFO   log.persistence 0985:0003 [ebx-rro-52-unique] Heart beat #10: avgInterval=907: maxInterval=1024 ms.
+2016-01-27 14:12:42,686 EST INFO   log.persistence 0985:0003 [ebx-rro-52-unique] Heart beat #20: avgInterval=956: maxInterval=1024 ms.
+2016-01-27 14:15:43,365 EST INFO   log.persistence 0985:0003 [ebx-rro-52-unique] Heart beat #200: avgInterval=999: maxInterval=1024 ms.
+2016-01-27 14:19:03,987 EST INFO   log.persistence 0985:0003 [ebx-rro-52-unique] Heart beat #400: avgInterval=1001: maxInterval=1024 ms.
+2016-01-27 14:21:20,467 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:26:20,116 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:26:28,113 EST INFO   log.persistence 0985:0003 [ebx-rro-53-unique] Starting repository ownership heart beat thread on entry: id=53, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 14:26:31,478 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 115 ms.
+2016-01-27 14:26:37,165 EST INFO   log.persistence 0985:0003 [ebx-rro-53-unique] Heart beat #10: avgInterval=905: maxInterval=1008 ms.
+2016-01-27 14:26:47,218 EST INFO   log.persistence 0985:0003 [ebx-rro-53-unique] Heart beat #20: avgInterval=955: maxInterval=1008 ms.
+2016-01-27 14:29:47,991 EST INFO   log.persistence 0985:0003 [ebx-rro-53-unique] Heart beat #200: avgInterval=999: maxInterval=1051 ms.
+2016-01-27 14:29:53,026 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:30:01,921 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:30:09,973 EST INFO   log.persistence 0985:0003 [ebx-rro-54-unique] Starting repository ownership heart beat thread on entry: id=54, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-27 14:30:14,170 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 103 ms.
+2016-01-27 14:30:19,018 EST INFO   log.persistence 0985:0003 [ebx-rro-54-unique] Heart beat #10: avgInterval=904: maxInterval=1007 ms.
+2016-01-27 14:30:29,072 EST INFO   log.persistence 0985:0003 [ebx-rro-54-unique] Heart beat #20: avgInterval=955: maxInterval=1008 ms.
+2016-01-27 14:31:13,007 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-27 14:33:29,738 EST INFO   log.persistence 0985:0003 [ebx-rro-54-unique] Heart beat #200: avgInterval=998: maxInterval=1008 ms.
+2016-01-27 14:34:54,055 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

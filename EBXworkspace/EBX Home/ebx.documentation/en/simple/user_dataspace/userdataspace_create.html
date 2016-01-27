@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Creating a data space</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="userdataspace_create" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; User Guide &gt; Data spaces</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/userdataspace_create.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data spaces</span></div>
+<h1>
+Creating a data space</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#creation">Overview</a></li><li class="toc1"><a href="#id2">Properties</a></li><li class="toc1"><a href="#relational">Relational mode</a></li></ul>
+</div>
+<h2>
+<a name="creation"></a>Overview</h2>
+<p>By default, data spaces in EBX5 are in <em>semantic mode</em>. This mode offers full-featured data life cycle management.</p><p>To create a new data space in the default semantic mode, select an existing data space on which to base it, then click the <strong>Create a data space</strong> button in the workspace.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">This area is available only to authorized users in the &#39;Advanced perspective&#39;.</p></div>
+<p>The new data space will be a child data space of the one from which it was created. It will be initialized with all the content of the parent at the time of creation, and an initial snapshot will be taken of this state.</p><p>Aside from the reference data space, which is the root of all semantic data spaces in the repository, semantic data spaces are always a child of another data space.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="#relational">Relational mode</a></p></div>
+<h2>
+<a name="id2"></a>Properties</h2>
+<p>The following information is required at the creation of a new data space:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Identifier</p></td><td class="ebx_definitionListDefinition"><p>Unique identifier for the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Owner</p></td><td class="ebx_definitionListDefinition"><p>Owner of the data space, who is, by default, allowed to modify its information and permissions. The owner does not necessarily have to be the creator of the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Label</p></td><td class="ebx_definitionListDefinition"><p>Localized label and description associated with the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Relational mode</p></td><td class="ebx_definitionListDefinition"><p>Whether or not this data space is in relational mode. This option only exists when creating a new data space from the reference data space.</p></td></tr>
+</table>
+<h2>
+<a name="relational"></a>Relational mode</h2>
+<p>Data spaces in relational mode can only be created from the reference data space. They offer limited functionality compared to data spaces in semantic mode. For instance, data spaces in relational mode do not handle snapshots or support child data spaces.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data spaces</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

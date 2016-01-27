@@ -1,0 +1,6 @@
+2016-01-20 13:55:13,026 EST INFO   log.dataServices 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 14:11:21,886 EST INFO   log.dataServices 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-20 14:46:59,860 EST INFO   log.dataServices 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 14:53:42,165 EST INFO   log.dataServices 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-20 15:16:20,766 EST INFO   log.dataServices 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 15:20:44,625 EST INFO   log.dataServices 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

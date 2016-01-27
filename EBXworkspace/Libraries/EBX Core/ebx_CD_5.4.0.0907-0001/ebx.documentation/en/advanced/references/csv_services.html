@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - CSV import and export</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="csv_services" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Integration &gt; File import and export services</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/csv_services.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration &gt; File import and export services</span></div>
+<h1>
+CSV import and export</h1>
+<p>CSV imports and exports can be performed on tables through the user interface using the <strong>Actions</strong> menu in the workspace.</p><p>Imports and exports can also be done programmatically.</p><p>Both imports and exports are performed in the context of a data set.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#import">Imports</a></li><li class="toc1"><a href="#export">Exports</a></li><li class="toc1"><a href="#id3">Handling of field values</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Aggregated lists</a></li><li class="toc2"><a href="#id3s2">Hidden fields</a></li><li class="toc2"><a href="#id3s3">'Null' value for strings</a></li><li class="toc2"><a href="#id3s4">Date, time & dateTime format</a></li></ul>
+</li><li class="toc1"><a href="#id4">Known limitations</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Aggregated lists of groups</a></li><li class="toc2"><a href="#id4s2">Terminal groups</a></li><li class="toc2"><a href="#id4s3">Column label headers</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="import"></a>Imports</h2>
+<p>When importing a CSV file, you must specify one of the following import modes, which will dictate how the import procedure handles the source records.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Insert mode</p></td><td class="ebx_definitionListDefinition"><p>Only record creations are allowed. If a record exists in the target table with the same primary key as the source record, an error is returned and the whole import operation is cancelled. </p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Update mode</p></td><td class="ebx_definitionListDefinition"><p>Only modifications of existing records are allowed. If no record exists in the target table with the same primary key as the source record, an error is returned and the whole import operation is cancelled.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Update or insert mode</p></td><td class="ebx_definitionListDefinition"><p>If a record with the same primary key as the source record already exists in the target table, that record is updated. Otherwise, a new record is created.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Replace (synchronization) mode</p></td><td class="ebx_definitionListDefinition"><p>If a record with the same primary key as the source record already exists in the target table, that record is updated. Otherwise, a new record is created. If a record exists in the target table but is not present in the source XML file, that record deleted from the table.</p></td></tr>
+</table>
+<p>Programmatic CSV imports are performed using the classes <code><a target="_blank" href="../Java_API/com/orchestranetworks/service/ImportSpec.html">ImportSpec</a></code> and <code><a target="_blank" href="../Java_API/com/orchestranetworks/service/ExportImportCSVSpec.html">ExportImportCSVSpec</a></code> in the Java API.</p><h2>
+<a name="export"></a>Exports</h2>
+<p>When exporting to CSV, if the table has filters applied, only the records that correspond to the filter are included in the exported file.</p><p>The CSV export options are as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Download file name</p></td><td class="ebx_definitionListDefinition"><p>Specifies the name of the CSV file to be exported. This field is pre-populated with the name of the table from which the records are being exported.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>File encoding</p></td><td class="ebx_definitionListDefinition"><p>Specifies the character encoding to use for the exported file. The default is UTF-8.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User-friendly mode</p></td><td class="ebx_definitionListDefinition"><p>Specifies whether exported values will be represented in a user-friendly way, or in a raw format. For example, in user-friendly mode, dates and numbers are formatted according to the user&#39;s locale, and foreign keys and enumerated values display their associated labels.</p><p><strong>Note:</strong> If this option is selected, the exported file will not be able to be re-imported.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Include technical data</p></td><td class="ebx_definitionListDefinition"><p>Specifies whether internal technical data will be included in the export.</p><p><strong>Note:</strong> If this option is selected, the exported file will not be able to be re-imported.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Include computed values</p></td><td class="ebx_definitionListDefinition"><p>Specifies whether computed values will be exported.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Column header</p></td><td class="ebx_definitionListDefinition"><p>Specifies the whether or not to include column headers in the CSV file.</p><ul>
+<li><p><strong>No header</strong></p></li><li><p><strong>Label:</strong> For each column in the spreadsheet, the CSV displays its label. Each label is localized according to the locale preference of the current session. If no user-friendly label is defined for a node, the technical name of the node is used.</p></li><li><p><strong>XPath:</strong> For each column in the spreadsheet, the CSV displays the path to the node in the table.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Separator</p></td><td class="ebx_definitionListDefinition"><p>Specifies the field separator to use in the exported file. The default is to use commas.</p></td></tr>
+</table>
+<p>Programmatic CSV exports are performed using the classes <code><a target="_blank" href="../Java_API/com/orchestranetworks/service/ExportSpec.html">ExportSpec</a></code> and <code><a target="_blank" href="../Java_API/com/orchestranetworks/service/ExportImportCSVSpec.html">ExportImportCSVSpec</a></code> in the Java API.</p><h2>
+<a name="id3"></a>Handling of field values</h2>
+<h3>
+<a name="id3s1"></a>Aggregated lists</h3>
+<p>The CSV import and export services support multi-valued fields, namely aggregated lists. This is only supported for simple typed lists, such as lists of <code>string</code>, <code>date</code>, or <code>int</code>, and for table references. If a table reference is linked to a composite primary key, each item in the list is a formatted string, for example, &quot;true|99&quot;. Aggregated lists of groups are not exported.</p><p>At export, the items in the list are separated using line separators. In cases where the exported field already contains a line separator, for example in an <code>osd:html</code> or an <code>osd:text</code>, the code <code>_crnl_</code> is inserted in place of the field value&#39;s line separators. The same formatting is expected at import, with the whole field value surrounded by quotes.</p><h3>
+<a name="id3s2"></a>Hidden fields</h3>
+<p>Hidden fields are be exported as <code>ebx-csv:hidden</code> strings. An imported hidden string will not modify a node&#39;s content.</p><h3>
+<a name="id3s3"></a>&#39;Null&#39; value for strings</h3>
+<p>Using CSV import and export services, a string with a value set to <code>null</code> is exported as an empty string. Therefore, a round trip export-import procedure will end up replacing <code>null</code> string values with empty strings.</p><p>Using programmatic services, the specific value <code>ebx-csv:nil</code> can be assigned to strings with values set to <code>null</code>. If this is done, the <code>null</code> string values will not be replaced by empty strings during round trip export-import procedures. See <a target="_blank" href="../Java_API/com/orchestranetworks/service/ExportImportCSVSpec.html#setNullStringEncoded(boolean)">ExportImportCSVSpec.setNullStringEncoded()</a> in the Java API for more information.</p><h3>
+<a name="id3s4"></a>Date, time &amp; dateTime format</h3>
+<p>The following date and time formats are supported:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Type</strong></p></th><th valign="top"><p><strong>Format</strong></p></th><th align="right" valign="top"><p><strong>Example</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>xs:date</p></td><td><p>yyyy-MM-dd</p></td><td align="right"><p>2007-12-31</p></td></tr>
+<tr>
+<td><p>xs:time</p></td><td><p>HH:mm:ss or HH:mm:ss.SSS</p></td><td align="right"><p>11:55:00</p></td></tr>
+<tr>
+<td><p>xs:dateTime</p></td><td><p>yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS</p></td><td align="right"><p>2007-12-31T11:55:00</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="id4"></a>Known limitations</h2>
+<h3>
+<a name="id4s1"></a>Aggregated lists of groups</h3>
+<p>The CSV import and export services do not support importing multi-valued groups, that is, aggregated lists of complex type elements. Exporting such nodes will not cause any errors, however, no such values are exported.</p><h3>
+<a name="id4s2"></a>Terminal groups</h3>
+<p>In a CSV file, it is impossible to differentiate a created terminal group that contains only empty fields from a non-created one.</p><p>As a consequence, some differences may appear during comparison after performing an export followed by an import. To ensure the symmetry of import and export, use XML import and export instead. See <a target="_self" href="../references/xml_services.html">XML import and export</a>.</p><h3>
+<a name="id4s3"></a>Column label headers</h3>
+<p>If two columns share the same label header, an export of the table can be performed successfully, but exported data cannot later be re-imported.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration &gt; File import and export services</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

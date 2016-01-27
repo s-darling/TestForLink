@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	
+	Copyright © Orchestra Networks 2000-2009. All rights reserved. 
+	
+	******************************************************************************
+	EBX5 schema, it is not meant for modifications.
+	******************************************************************************
+	
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:fmt="urn:ebx-schemas:formattingPolicy_1.0"
+	targetNamespace="urn:ebx-schemas:formattingPolicy_1.0"
+	elementFormDefault="qualified">
+	<xs:element name="formattingPolicy" type="fmt:FormattingPolicy" />
+
+	<xs:complexType name="IntFormat">
+		<xs:attribute name="pattern" type="xs:string" use="required" />
+	</xs:complexType>
+	<xs:complexType name="DecimalFormat">
+		<xs:attribute name="pattern" type="xs:string" use="required" />
+	</xs:complexType>
+	<xs:complexType name="GenericDateFormat">
+		<xs:attribute name="pattern" type="xs:string" use="required" />
+	</xs:complexType>
+	<xs:complexType name="DateFormat">
+		<xs:complexContent>
+			<xs:extension base="fmt:GenericDateFormat" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateTimeFormat">
+		<xs:complexContent>
+			<xs:extension base="fmt:GenericDateFormat" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TimeFormat">
+		<xs:complexContent>
+			<xs:extension base="fmt:GenericDateFormat" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FormattingPolicy">
+		<xs:all>
+			<xs:element name="int" type="fmt:IntFormat" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="en-US">
+						Default format for 'xs:int' instances
+					</xs:documentation>
+					<xs:documentation xml:lang="fr-FR">
+						Format par défaut pour les types 'xs:int'
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="decimal" type="fmt:DecimalFormat"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="en-US">
+						Default format for 'xs:decimal' instances
+					</xs:documentation>
+					<xs:documentation xml:lang="fr-FR">
+						Format par défaut pour les types 'xs:decimal'
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date" type="fmt:DateFormat"
+				minOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en-US">
+						Default format for 'xs:date' instances
+					</xs:documentation>
+					<xs:documentation xml:lang="fr-FR">
+						Format par défaut pour les types 'xs:date'
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dateTime" type="fmt:DateTimeFormat"
+				minOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en-US">
+						Default format for 'xs:dateTime' instances
+					</xs:documentation>
+					<xs:documentation xml:lang="fr-FR">
+						Format par défaut pour les types 'xs:dateTime'
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="time" type="fmt:TimeFormat"
+				minOccurs="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="en-US">
+						Default format for 'xs:time' instances
+					</xs:documentation>
+					<xs:documentation xml:lang="fr-FR">
+						Format par défaut pour les types 'xs:time'
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,2 @@
+UPDATE EBX_HOM SET parent_home_id=home_id WHERE parent_home_id=-1;
+ALTER TABLE EBX_HOM ADD CONSTRAINT EBX_HOM_PARENT_FK FOREIGN KEY (parent_home_id) REFERENCES EBX_HOM(home_id)

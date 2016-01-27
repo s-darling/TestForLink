@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Permissions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_permissions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Jeux de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/userdata_permissions.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Jeux de données</span></div>
+<h1>
+Permissions</h1>
+<p>Les permissions de jeux de donn&eacute;es peuvent &ecirc;tre acc&eacute;d&eacute;es &agrave; l&#39;aide du bouton <em>Actions</em> dans le panneau de navigation.</p><p>Les permissions sont toujours donn&eacute;es via un profil.</p><div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Profil</a></li><li class="toc1"><a href="#id2">Restriction d'accès</a></li><li class="toc1"><a href="#id3">Actions sur les jeux de données</a></li><li class="toc1"><a href="#id4">Droits sur tables</a></li><li class="toc1"><a href="#id5">Droits sur valeurs</a></li><li class="toc1"><a href="#id6">Droits sur les services</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Profil</h2>
+<p>Indique le profil affect&eacute; par une permission.</p><h2>
+<a name="id2"></a>Restriction d&#39;acc&egrave;s</h2>
+<p>Indique si les permissions d&eacute;finies ici restreignent celles d&eacute;finies pour d&#39;autres profils. Pour plus de d&eacute;tails, voir <a target="_self" href="../references/permissions.html#restrictionpolicy">Restriction d&#39;acc&egrave;s</a>.</p><h2>
+<a name="id3"></a>Actions sur les jeux de donn&eacute;es</h2>
+<p>Cette section sp&eacute;cifie les permissions des actions sur les jeux de donn&eacute;es.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Cr&eacute;er un jeu de donn&eacute;es fils</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut cr&eacute;er un jeu de donn&eacute;es fils. L&#39;h&eacute;ritage doit aussi &ecirc;tre activ&eacute; dans le mod&egrave;le de donn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Dupliquer un jeu de donn&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut dupliquer un jeu de donn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Supprimer un jeu de donn&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Indique si le profil peut supprimer le jeu de donn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Activer/Inactiver un jeu de donn&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut modifier la propri&eacute;t&eacute; <em>Activ&eacute;</em> dans les <a target="_self" href="./actions_dataset.html#information">informations</a> du jeu de donn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Cr&eacute;er une vue</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut cr&eacute;er des vues personnalis&eacute;es et des hi&eacute;rarchies.</p></td></tr>
+</table>
+<h2>
+<a name="id4"></a>Droits sur tables</h2>
+<p>Cette section sp&eacute;cifie les permissions par d&eacute;faut pour toutes les tables. Des permissions sp&eacute;cifiques peuvent aussi &ecirc;tre d&eacute;finies pour une table en cliquant sur le bouton <em>Ajouter une occurrence</em> puis en s&eacute;lectionnant une des options suivantes :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Cr&eacute;er un nouvel enregistrement</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut cr&eacute;er des enregistrements dans une table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Remplace un enregistrement h&eacute;rit&eacute;</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut remplacer des enregistrements h&eacute;rit&eacute;s dans une table. Cette permission est utile quand on utilise l&#39;h&eacute;ritage de jeu de donn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Occulte un enregistrement h&eacute;rit&eacute;</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut occulter des enregistrements h&eacute;rit&eacute;s dans une table. Cette permission est utile quand on utilise l&#39;h&eacute;ritage de jeu de donn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Supprimer un enregistrement</p></td><td class="ebx_definitionListDefinition"><p>Indique si un profil peut supprimer des enregistrements dans une table.</p></td></tr>
+</table>
+<h2>
+<a name="id5"></a>Droits sur valeurs</h2>
+<p>Cette section sp&eacute;cifie les permissions d&#39;acc&egrave;s par d&eacute;faut pour tous les &eacute;l&eacute;ments (tables, groupes et champs) d&#39;un jeu de donn&eacute;es et permet de d&eacute;finir des permissions pour des &eacute;l&eacute;ments sp&eacute;cifiques. Les permissions d&#39;acc&egrave;s par d&eacute;faut sont utilis&eacute;es, &agrave; condition qu&#39;il n&#39;y ait pas de permission sp&eacute;cifique allou&eacute;e &agrave; un &eacute;l&eacute;ment.</p><p>Le selecteur de droits sp&eacute;cifique permet d&#39;attribuer des permissions d&#39;acc&egrave;s sp&eacute;cifiques pour un &eacute;l&eacute;ment. Les boutons <em>Non visible</em>, <em>Lecture seule</em> et <em>Ecriture</em> r&egrave;gle les permissions d&#39;acc&egrave;s correspondant &agrave; l&#39;&eacute;l&eacute;ment s&eacute;lectionn&eacute;.</p><p> Il est possible de retirer une permission sp&eacute;cifique d&#39;acc&egrave;s en utilisant le bouton <em>(d&eacute;faut)</em>.</p><h2>
+<a name="id6"></a>Droits sur les services</h2>
+<p>Cette section sp&eacute;cifie les permissions d&#39;acc&egrave;s sur les services. Un service n&#39;est pas accessible &agrave; un profil s&#39;il est barr&eacute;.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Jeux de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

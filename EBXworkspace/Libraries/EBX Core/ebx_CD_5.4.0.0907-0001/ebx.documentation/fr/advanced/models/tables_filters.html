@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Tables, filters and selection nodes</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_model_tables" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Developer Guide &gt; Model design</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=models/tables_filters.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Model design</span></div>
+<h1>
+Tables, filters and selection nodes</h1>
+<p>EBX5 supports the features of relational databases tables with a high volume of records and primary key identification.</p><p> Tables bring many benefits over <a target="_self" href="./types.html#aggregatedList">aggregated lists</a> . Beyond pure relational aspects, here are some features that tables provide: </p><ul>
+<li><p>filters and searches;</p></li><li><p>sorting, custom views and custom hierarchies;</p></li><li><p> identity constraints: primary keys, <a target="_self" href="constraints.html#foreignKey">foreign keys</a> and <a target="_self" href="constraints.html#xsdUnique">uniqueness constraints</a> ;&nbsp;</p></li><li><p>detailed permissions for creation, modification, delete;</p></li><li><p>dynamic and contextual permissions at individual record level;</p></li><li><p>detailed comparison and merge;</p></li><li><p> inheritance capacity at record level (see <a target="_self" href="../references/inheritance.html#dataSetInheritanceRecords">data set inheritance</a> ); </p></li><li><p>performance and memory optimizations.</p></li></ul>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#tables">Table definition</a></li><li class="toc1"><a href="#filters">Specifying filters on a table</a></li><li class="toc1"><a href="#select">Selection nodes</a></li></ul>
+</div>
+<h2>
+<a name="tables"></a>Table definition</h2>
+<p>An element declaration with <em>maxOccurs &gt; 1</em> is declared as a table by adding the following annotation: </p><pre class="ebx_example brush: xml">
+&lt;xs:annotation>
+	&lt;xs:appinfo>
+		&lt;osd:table>
+			&lt;primaryKeys>/pathToField1 /pathToField...n&lt;/primaryKeys>
+		&lt;/osd:table>
+	&lt;/xs:appinfo>
+&lt;/xs:annotation>
+</pre>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>primaryKeys</code></p></td><td valign="top"><p>Specifies the primary key fields of the table. Each element in the primary key is denoted by its absolute XPath notation that starts just under the table root element. If there are several elements in the primary key, the list is white-space delimited.</p><p> Note: A <a target="_self" href="./constraints.html#ebxwhitespaces">specific whitespaces management</a> has been defined for primary keys of type <code>xs:string</code> . </p></td><td valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><a name="defaultLabel"></a><code>defaultLabel</code></p></td><td valign="top"><p>Defines the end-user display of records. Multiple localized versions can be specified:</p><ul>
+<li><p> Default expression and localized expressions are specified using the <code>defaultLabel</code> element, for example: </p><p><code>&lt;defaultLabel&gt;Product: ${./ProductID}&lt;/defaultLabel&gt;</code></p><p><code>&lt;defaultLabel xml:lang=&quot;fr-FR&quot;&gt;Produit : ${./ProductID}&lt;/defaultLabel&gt;</code></p><p><code>&lt;defaultLabel xml:lang=&quot;en-US&quot;&gt;Product : ${./ProductID}&lt;/defaultLabel&gt;</code></p></li><li><p> JavaBean that implements the interface <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRenderer.html">UILabelRenderer</a> and/or the interface <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRendererForHierarchy.html">UILabelRendererForHierarchy</a>. The JavaBean is specified by means of the attribute <code>osd:class</code>, for example: </p><p><code>&lt;defaultLabel osd:class=&quot;com.wombat.MyLabel&quot;&gt;&lt;/defaultLabel&gt;</code></p></li></ul>
+<p><em>Note:</em> The priority of the tags at display is the following: </p><ol>
+<li><p><code>defaultLabel</code> tags with a JavaBean (but it is not allowed to define several renderers of the same type);</p></li><li><p><code>defaultLabel</code> tags with a localized expression;</p></li><li><p><code>defaultLabel</code> tag with a default expression.</p></li></ol>
+</td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>index</code></p></td><td valign="top"><p> Property used to index some fields; indexing speeds up table access for requests matching these fields. (see <a target="_self" href="../references/performance.html">performances</a> ).</p><p>Notes: </p><ul>
+<li><p>It is possible to define several indexes on a table.</p></li><li><p>It is not allowed to define two indexes with the same name.</p></li><li><p>It is not allowed to declare two indexes containing the same exact fields.</p></li><li><p>An indexed field must be terminal.</p></li><li><p>An indexed field cannot be a list or under a list.</p></li><li><p>A field declared as an <em>inherited field</em> cannot be indexed.</p></li><li><p>A field declared as a function cannot be indexed.</p></li></ul>
+<p>For performance purposes, the following nodes are automatically indexed: </p><ul>
+<li><p> Primary keys nodes (see <a target="_self" href="../models/tables_filters.html#tables">primary keys</a> ). </p></li><li><p> Nodes defining a foreign key constraint (see <a target="_self" href="../models/constraints.html#foreignKey">foreign key constraint</a> ). </p></li><li><p> Nodes declared as being unique (see <a target="_self" href="../models/constraints.html#xsdUnique">uniqueness constraint</a> ). </p></li><li><p> Auto-incremented nodes (see <a target="_self" href="../models/constraints.html#autoIncrementedValues">auto-incremented values</a> ). </p></li></ul>
+</td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayCreateRoot</code></p></td><td valign="top"><p> expression that specifies when a <em>root</em> record may be created (see <a target="_self" href="../references/inheritance.html#dataSetInheritanceRecords">Definition modes</a> ). The expression must follow the syntax below (see property <code>mayDelete</code>). </p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayCreateOverwriting</code></p></td><td valign="top"><p> expression that specifies when an <em>overwriting</em> record may be created (see <a target="_self" href="../references/inheritance.html#dataSetInheritanceRecords">Definition modes</a> ). The expression must follow the syntax below (see property <code>mayDelete</code>). </p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayCreateOcculting</code></p></td><td valign="top"><p> expression that specifies when an <em>occulting</em> record may be created (see <a target="_self" href="../references/inheritance.html#dataSetInheritanceRecords">Definition modes</a> ). The expression must follow the syntax below (see property <code>mayDelete</code>). </p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayDuplicate</code></p></td><td valign="top"><p> expression that specifies when a record may be <em>duplicated</em> .&nbsp;The expression must follow the syntax below (see property <code>mayDelete</code>).</p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayDelete</code></p></td><td valign="top"><p> expression that specifies when a record may be <em>deleted</em>. The expression must follow the syntax: </p><p> The <code>may...</code> expression specifies when the action is possible, however the user access rights may restrict this possibility independently. The expressions have the following syntax: </p><blockquote><p>expression ::= always | never | &lt;condition&gt;*</p><p>condition ::= [root:yes | root:no]</p><p>&quot;always&quot;: the operation is &quot;always&quot; possible (but user rights may restrict this).</p><p>&quot;never&quot;: the operation is never possible.</p><p>&quot;root:yes&quot;: the operation is possible if the record is in a root instance.</p><p>&quot;root:no&quot;: the operation is not possible if the record is in a root instance.</p></blockquote><p>If the record does not verify any condition, then default is taken.</p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+</tbody>
+</table>
+<p>Below is an example of a product catalog as a table:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="product" minOccurs="0" maxOccurs="unbounded">
+	 &lt;xs:annotation>
+		 &lt;xs:documentation>
+			 &lt;osd:label>Product Table &lt;/osd:label>
+			 &lt;osd:description>List of products in Catalog &lt;/osd:description>
+		 &lt;/xs:documentation>
+	 &lt;/xs:annotation>
+	 &lt;xs:complexType>
+	 &lt;xs:annotation>
+		 &lt;xs:appinfo>
+			 &lt;osd:table>
+				 &lt;primaryKeys>/productRange /productCode&lt;/primaryKeys>
+				 &lt;index name="indexProductCode">/productCode&lt;/index>
+			 &lt;/osd:table>
+		 &lt;/xs:appinfo>
+	 &lt;/xs:annotation>
+		 &lt;xs:sequence>
+			 &lt;xs:element name="productRange" type="xs:string"/>&lt;!-- key -->
+			 &lt;xs:element name="productCode" type="xs:string"/>&lt;!-- key -->
+			 &lt;xs:element name="productLabel" type="xs:string"/>
+			 &lt;xs:element name="productDescription" type="xs:string"/>
+			 &lt;xs:element name="productWeight" type="xs:int"/>
+		 &lt;/xs:sequence>
+	 &lt;/xs:complexType>
+&lt;/xs:element>
+</pre>
+<div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="constraints.html#foreignKey">Foreign keys</a></li><li><a target="_self" href="../user_data/actions_dataset.html">Main actions</a></li><li><a target="_self" href="../user_data/view.html#simple">Simple tabular view</a></li><li><a target="_self" href="../user_data/view.html#hierarchies">Hierarchies</a></li><li><a target="_self" href="../references/history.html">History</a></li></ul>
+</div>
+<h2>
+<a name="filters"></a>Specifying filters on a table</h2>
+<p>By default, tables present all records in EBX5. However, the user has the ability to add filters and display only the records corresponding to given criteria.</p><p>In order to do that, you must follow the steps below:</p><ul>
+<li><p>Define the filter in the data model (see example below),</p></li><li><p> Implement the class in charge of the filtering, that extends <code><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UITableFilter.html">UITableFilter</a></code></p></li></ul>
+<p>As a result, a filter option will appear in the user screen, giving the opportunity to refine your search.</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="product" minOccurs="0" maxOccurs="unbounded">
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;osd:table>
+			   ...
+			&lt;/osd:table>
+			&lt;osd:uiFilter class="com.mycompany.product.filters.productCodeFilter">
+				&lt;label>Product code filter&lt;/label>
+				&lt;label xml:lang="en-US">Product code filter&lt;/label>
+				&lt;label xml:lang="fr-FR">Filtre code produit&lt;/label>
+			&lt;/osd:uiFilter>
+			&lt;osd:uiFilter class="com.mycompany.product.filters.productLabelFilter">
+				&lt;label>Product label filter&lt;/label>
+				&lt;label xml:lang="en-US">Product label filter&lt;/label>
+				&lt;label xml:lang="fr-FR">Filtre nom produit&lt;/label>
+			&lt;/osd:uiFilter>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+	...
+&lt;/xs:element></pre>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>label</code></p></td><td valign="top"><p>Specifies a label for the filter. This label can be localized using the <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>class</code></p></td><td valign="top"><p>Attribute declaring the Java class which extends <code>UITableFilter</code>. Full qualified Java name must be used.</p></td><td valign="top"><p>Yes.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="select"></a>Selection nodes</h2>
+<p>An element declaration may define a dynamic and contextual XPath selection. In this case, the user interface provides a link so that the user can navigate to the pre-filtered table that corresponds to the selection.</p><p> A selection node is useful for creating an <em>association between two entities</em> in the user interface and also for validation purposes. For example, the tutorial library data model specifies that a book is written by an author (defined explicitly by a foreign key in the &#39;Book&#39; complex type definition). The relation in the opposite direction, that an author has written certain books, cannot be easily expressed in XML Schema, unless the &#39;Author&#39; complex type definition includes the following selection node: </p><pre class="ebx_example brush: xml">
+&lt;xs:element name="linkToAuthorTitles" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		 &lt;osd:select> 
+			&lt;xpath>/root/Titles[au_id =${../au_id}]&lt;/xpath> 
+			&lt;minOccurs>1&lt;/minOccurs>
+			&lt;minOccursValidationMessage>
+				&lt;severity>error&lt;/severity>
+				&lt;message>A default validation message.&lt;/message>
+				&lt;message xml:lang="en-US">A validation message in English.&lt;/message>
+				&lt;message xml:lang="fr-FR">Un message de validation en français.&lt;/message>
+			&lt;/minOccursValidationMessage>
+			&lt;maxOccurs>10&lt;/maxOccurs>
+			&lt;maxOccursValidationMessage>
+				&lt;severity>error&lt;/severity>
+				&lt;message>A default validation message.&lt;/message>
+				&lt;message xml:lang="en-US">A validation message in English.&lt;/message>
+				&lt;message xml:lang="fr-FR">Un message de validation en français.&lt;/message>
+			&lt;/maxOccursValidationMessage>
+		 &lt;/osd:select> 
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p> The element <code>minOccurs</code> specifies that, for being valid, an author must have written at least one book. </p><p> The element <code>maxOccurs</code> specifies that, for being valid, an author must have written at most ten books. </p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+The &quot;official&quot; cardinality constraints (<code>minOccurs=&quot;0&quot; maxOccurs=&quot;0&quot;</code>) are required because from an external XML point of view (that is, an instance of XML Schema), the corresponding node is absent. In other words, a selection node is a &quot;virtual&quot; element regarding XML and XML Schema.</fieldset>
+<p>It is also possible to specify an additional constraint on the relation. In the following example, each relation between an author and a book is valid, if the date of the publication of the book is anterior to the death of the current author:</p><pre class="ebx_example brush: xml">
+&lt;osd:select> 
+	&lt;xpath>/root/Titles[au_id =${../au_id}]&lt;/xpath> 
+	&lt;constraintPredicate>date-less-than(datePub, ${../death})&lt;/constraintPredicate> 
+	&lt;constraintPredicateValidationMessage>
+		&lt;severity>error&lt;/severity>
+		&lt;message>A default validation message.&lt;/message>
+		&lt;message xml:lang="en-US">A validation message in English.&lt;/message>
+		&lt;message xml:lang="fr-FR">Un message de validation en français.&lt;/message>
+	&lt;/constraintPredicateValidationMessage> 
+&lt;/osd:select> 
+</pre>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>xpath</code></p></td><td valign="top"><p>Specifies the selection to be performed, relative to the current node.</p><p> Examples: <code>/root/Titles[au_id =${../au_id}]</code> or <code>//Titles[au_id =${../au_id}]</code> or <code>../Titles[au_id =${../au_id}]</code> . </p><p> The path up to the predicate (for example <code>../Titles</code> ) specifies the target table to be filtered. This part of the path is resolved relative to the current table root. </p><p> If the selection depends on the local state, the XPath expression predicate must include references to the node on which it depends, with this notation: <code>${ &lt;relative-path&gt; }</code> where <code>relative-path</code> is a path that locates the element relative to the node that holds the selection link. </p><p> For XPath syntax, see <a target="_self" href="../references/xpath_ref.html">EBX5 XPath supported syntax</a> .&nbsp;</p></td><td valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><code>container</code></p></td><td valign="top"><p>Reference of the instance that contains the target table.</p></td><td valign="top"><p>No, default is current instance.</p></td></tr>
+<tr>
+<td valign="top"><p><code>minOccurs</code></p></td><td valign="top"><p>Specifies an additional validation constraint: the selection must be at least of the specified size.</p></td><td valign="top"><p>No, default is 0.</p></td></tr>
+<tr>
+<td valign="top"><p><code>minOccursValidationMessage</code></p></td><td valign="top"><p>Specifies additional localized messages that will be displayed if the selection does not comply with the <code>minOccurs</code> constraint.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default, non-localized message, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>maxOccurs</code></p></td><td valign="top"><p>Specifies an additional validation constraint: the selection must be at most of the specified size.</p></td><td valign="top"><p>No, by default the maximum is not restricted.</p></td></tr>
+<tr>
+<td valign="top"><p><code>maxOccursValidationMessage</code></p></td><td valign="top"><p>Specifies an additional localized message that will be displayed if the selection does not comply with the <code>maxOccurs</code> constraint.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default, non-localized message, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>constraintPredicate</code></p></td><td valign="top"><p> Specifies an additional validation constraint: each relation of the selection must satisfy the specified XPath predicate. The notation <code>${&lt;relative-path&gt;}</code> has the same meaning as for the <code>xpath</code> element (see above). </p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>constraintPredicateValidationMessage</code></p></td><td valign="top"><p>Specifies a localized message to display when the constraint predicate is not satisfied.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default, non-localized message, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> When creating a data set, you can create a data set that defines a selection node to a container that does not exist in the repository. However, the content of this data set will not be available after its creation. After the creation of the container, a data model refresh is required to make the data set available. When creating a data set that refers to a container that does not yet exist, the following limitations apply: </p><ul>
+<li><p>Triggers defined at the data set level are not executed,</p></li><li><p>Default values on fields outside tables are not initialized,</p></li><li><p>During an archive import, it is not possible to create a data set that refers to a container that does not exist.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Model design</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* Here are all CSS rules especially designed for Internet Explorer 6 */
+/* The target is to have a usable interface, but the precision of graphics is not guaranteed */
+
+html{
+ overflow:auto;
+}
+
+body.ebx_simplePage #ebx_centerer{
+ display:inline;
+}
+
+#toc{
+ display:block;
+}
+
+#tocTitle {
+	display: inline;
+}
+
+#ebx_NavigationToc h4 {
+	display: block;
+	margin-bottom: -1em;
+}
+
+ul{
+ margin-left:0;
+}

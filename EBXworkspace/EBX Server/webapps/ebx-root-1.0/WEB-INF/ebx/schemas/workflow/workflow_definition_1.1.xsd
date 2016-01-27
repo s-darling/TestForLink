@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+		Copyright © Orchestra Networks 2000-2009. All rights reserved.
+
+		******************************************************************************
+		EBX5 schema for Simple Workflow. This schema is not meant for
+		modifications.
+		******************************************************************************
+	-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebxbnd="urn:ebx-schemas:binding_1.0" xmlns:fmt="urn:ebx-schemas:format_1.0" xmlns:osd="urn:ebx-schemas:common_1.0">
+	<xs:import namespace="urn:ebx-schemas:common_1.0" schemaLocation="../common_1.0.xsd" />
+	<xs:include schemaLocation="./workflow_types_1.1.xsd" />
+	<xs:annotation>
+		<xs:appinfo>
+			<!-- schema - java binding  -->
+			<ebxbnd:binding targetDirectory="../_ebx-core-workflow/src/">
+				<javaPathConstants typeName="com.orchestranetworks.workflow.impl.definition.WfsPaths">
+					<nodes prefix="" root="/root/definition" />
+				</javaPathConstants>
+			</ebxbnd:binding>
+			<!-- schema extension -->
+			<osd:extensions class="com.orchestranetworks.workflow.impl.definition.WfsDefinitionModelExtension" />
+			<osd:inheritance>
+				<dataSetInheritance>all</dataSetInheritance>
+			</osd:inheritance>
+			<osd:resourceBundle source="com.orchestranetworks.i18n.xsdSchema.workflow_definition" />
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="root" osd:access="--">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="definition" osd:access="--">
+					<xs:annotation>
+						<xs:documentation osd:id="element.root.definition" />
+						<xs:appinfo>
+							<osd:trigger class="com.orchestranetworks.workflow.impl.definition.WfsProcessDefinitionTrigger" />
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="process" type="ProcessDefinition">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.definition.process" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="pnode" type="PNode" />
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="plink" type="PLink" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!--
+		******************************************************************************
+		UI Services for Pnode table
+		******************************************************************************
+	-->
+	<xs:complexType name="CreateUserTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionCreateTask" orderInMenu="02" resourcePath="/wfserviceDispatcher?command=createUserTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CreateUserTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="CreateScriptTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionCreateTask" orderInMenu="01" resourcePath="/wfserviceDispatcher?command=createScriptTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CreateScriptTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="CreateWaitTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionCreateTask" orderInMenu="01" resourcePath="/wfserviceDispatcher?command=createWaitTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CreateWaitTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="CreateSubWorkflowsInvocation">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionCreateTask" orderInMenu="04" resourcePath="/wfserviceDispatcher?command=createSubWorkflowsInvocation" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CreateSubWorkflowsInvocation" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="CreateTaskUnderCondition">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionCreateTaskUnderCondition" resourcePath="/wfserviceDispatcher?command=createTaskUnderCondition" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CreateTaskUnderCondition" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="CreateConditionTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionCreateTask" orderInMenu="03" resourcePath="/wfserviceDispatcher?command=createConditionTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CreateConditionTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="DeleteLink">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionDeletePLink" orderInMenu="10" resourcePath="/wfserviceDispatcher?command=deleteLink" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.DeleteLink" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="DeleteTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionDeletePNode" orderInMenu="06" resourcePath="/wfserviceDispatcher?command=deleteTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.DeleteTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InsertUserTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInsertTask" orderInMenu="02" resourcePath="/wfserviceDispatcher?command=insertUserTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InsertUserTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InsertScriptTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInsertTask" orderInMenu="01" resourcePath="/wfserviceDispatcher?command=insertScriptTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InsertScriptTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InsertWaitTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInsertTask" orderInMenu="01" resourcePath="/wfserviceDispatcher?command=insertWaitTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InsertWaitTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InsertSubWorkflowsInvocation">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInsertTask" orderInMenu="05" resourcePath="/wfserviceDispatcher?command=insertSubWorkflowsInvocation" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InsertSubWorkflowsInvocation" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InsertTrueConditionTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInsertTask" orderInMenu="03" resourcePath="/wfserviceDispatcher?command=insertTrueConditionTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InsertTrueConditionTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InsertExistingTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInsertTask" orderInMenu="06" resourcePath="/wfserviceDispatcher?command=insertExistingTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InsertExistingTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InsertFalseConditionTask">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInsertTask" orderInMenu="04" resourcePath="/wfserviceDispatcher?command=insertFalseConditionTask" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InsertFalseConditionTask" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="LinkNode">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionLinkNode" orderInMenu="06" resourcePath="/wfserviceDispatcher?command=linkNode" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.LinkNode" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="OvewriteNode">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionOverwriteNode" orderInMenu="01" resourcePath="/wfserviceDispatcher?command=overwriteNode" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.OvewriteNode" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="InheritNode">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/definition/pnode{1}" class="com.orchestranetworks.workflow.impl.definition.permissions.WfPermissionInheritNode" orderInMenu="02" resourcePath="/wfserviceDispatcher?command=inheritNode" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.InheritNode" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="PublishInstance">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service resourcePath="/wfserviceDispatcher?command=publish" />
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.PublishInstance" />
+		</xs:annotation>
+	</xs:complexType>
+	<!--
+		******************************************************************************
+		UI Ajax components
+		******************************************************************************
+	-->
+	<xs:complexType name="AjaxComponentDisplayBeanParameters">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:ajaxComponent class="com.orchestranetworks.workflow.impl.definition.ui.WfAjaxComponentDisplayBeanParameters" />
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="AjaxComponentDisplayServiceParameters">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:ajaxComponent class="com.orchestranetworks.workflow.impl.definition.ui.WfAjaxComponentDisplayServiceParameters" />
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="AjaxComponentWorkflowWizards">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:ajaxComponent class="com.orchestranetworks.workflow.impl.definition.ui.WfAjaxComponentWorkflowWizards" />
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+</xs:schema>
+

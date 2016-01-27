@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Main actions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="wm_actions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Workflow models</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_workflowmodel/actions_workflowmodel.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+<h1>
+Main actions</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#creation">Workflow modeling</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Conception</a></li><li class="toc2"><a href="#validation">Validation</a></li><li class="toc2"><a href="#id1s3">Publication</a></li><li class="toc2"><a href="#limitation">Limitations</a></li></ul>
+</li><li class="toc1"><a href="#notification">Generic message templates</a></li><li class="toc1"><a href="#id3">Workflow model evolution</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Editing</a></li><li class="toc2"><a href="#id3s2">History</a></li><li class="toc2"><a href="#id3s3">Deletion</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="creation"></a>Workflow modeling</h2>
+<h3>
+<a name="id1s1"></a>Conception</h3>
+<p>First, you need to think what kind of evolution your data will regularly go through, and how many people are involved in those changes.</p><p>Second, you will have to put all this in a drawing, that will be translated as a workflow model in EBX5.</p><p>To find out how to proceed in the interface, please read the <a target="_self" href="#creation">creation</a> section. </p><h3>
+<a name="validation"></a>Validation</h3>
+<p>Once drafted in the interface, your workflow model will have to be validated, in order to check there is no errors in its code. If there is any, they will have to be solved before you can publish and use your model.</p><h3>
+<a name="id1s3"></a>Publication</h3>
+<p>Once validated, a workflow model is ready for publication. By publishing it, you generate a frozen picture of it, which becomes available for use in the workflow section.</p><h3>
+<a name="limitation"></a>Limitations</h3>
+<p>The following functionalities are not supported:</p><ul>
+<li><p><strong>Parallel tasks</strong>, two routes at least running simultaneously.</p></li><li><p><strong>Scheduled tasks</strong>, task executed as soon as its turn comes, and whose execution cannot be delayed.</p></li><li><p><strong>Event tasks</strong>, allowing the workflow to move forward upon receiving an event, such as a web service call.</p></li><li><p><strong>Time limitation </strong>on a task duration.</p></li></ul>
+<h2>
+<a name="notification"></a>Generic message templates</h2>
+<p>Notification emails can be sent to inform specific users of a given event during the execution of a workflow.</p><p>Templates can be defined and re-used in every workflow model by selecting the entry &#39;Message templates&#39; in the global Workflow Models &#39;Actions&#39; menu.</p><p>These templates are shared by all workflow models and are fixed and included in each workflow publication. Thus, in order to take the template changes into account, you must update your existing publication by re-publishing the affected models.</p><p>When creating a new template, two fields are required:</p><ul>
+<li><p><strong>Label &amp; Description</strong>: specify the label and description associated with the template according to languages.</p></li><li><p><strong>Message</strong>: specify the object of the email and its body according to languages.</p></li></ul>
+<p></p><p> The message can be enhanced with data context variables such as: <em>${variable.name}</em> .&nbsp;System variables are also available: </p><p></p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>Variables Syntax</p></th><th class="ebx_definitionListHeader"><p>Associated Meaning</p></th><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>system.time</p></td><td class="ebx_definitionListDefinition"><p>System time.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>system.date</p></td><td class="ebx_definitionListDefinition"><p>System date.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.lastComment </p></td><td class="ebx_definitionListDefinition"><p>Last comment on previous user task.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.lastDecision </p></td><td class="ebx_definitionListDefinition"><p>Last decisions on previous user task.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>user.fullName </p></td><td class="ebx_definitionListDefinition"><p>Full name of the notified user.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>user.login </p></td><td class="ebx_definitionListDefinition"><p>Login of the notified user.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.process.label </p></td><td class="ebx_definitionListDefinition"><p>Label of the current workflow.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.process.description </p></td><td class="ebx_definitionListDefinition"><p>Description of the current workflow.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.workItem.label </p></td><td class="ebx_definitionListDefinition"><p>Label of the current work item.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.workItem.description </p></td><td class="ebx_definitionListDefinition"><p>Description of the current work item.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.workItem.offeredTo </p></td><td class="ebx_definitionListDefinition"><p>Role to which the current work item has been offered.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.workItem.allocatedTo </p></td><td class="ebx_definitionListDefinition"><p>User to whom the current work item has been allocated.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.workItem.link </p></td><td class="ebx_definitionListDefinition"><p>Link to access the current work item in the work list, by means of the web component API.</p><p>This link can be computed only if a current work item is defined and if the URL is configured in Workflow-executions, in the email configuration.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.currentStep.label </p></td><td class="ebx_definitionListDefinition"><p>Label of the current step (script, condition or user task).</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>workflow.currentStep.description </p></td><td class="ebx_definitionListDefinition"><p>Description of the current step (script, condition or user task).</p></td></tr>
+</table>
+<p>This is a sample message: &quot;<em>Today at ${system.time}, a new work item has been offered to you</em>&quot;.</p><p>This could give you the following email: &quot;<em>Today at 15:19, a new work item has been offered to you</em>&quot;.</p><h2>
+<a name="id3"></a>Workflow model evolution</h2>
+<h3>
+<a name="id3s1"></a>Editing</h3>
+<p>Improvements can be made to an existing model. However it is advisable, when publishing it, to name it differently from previous ones.</p><h3>
+<a name="id3s2"></a>History</h3>
+<p>The snapshots history of a workflow model can be managed through the history feature available using the <em>Actions</em> button. </p><p>The history displays all snapshots which contain the selected workflow model and indicates if a workflow model is published. For each snapshot, the <em>Actions</em> buttons allows you to export or view the corresponding workflow model.</p><h3>
+<a name="id3s3"></a>Deletion</h3>
+<p>A workflow model can be deleted. However any version published previously will remain accessible in the workflow section. Furthermore, if you create a new workflow model with an identical name, a warning message will ask you if you wish to replace the previous publication.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

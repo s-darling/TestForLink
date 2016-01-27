@@ -1,0 +1,333 @@
+/******************* Hierarchy dimension level configuration *******************/
+ 
+#onConfigurationPaneContainer {
+}
+
+div.ebx_PredicateEditorDiv,
+#onConfigurationPaneContainer div#ebx_WorkspacePredicateEditor {
+	overflow: auto;
+	height: 18em;
+	width: 50em;
+	border: none;
+	width: auto;
+}
+
+#onConfigurationPaneContainer ul {
+	margin: 0;
+	padding: 0.2em;
+	list-style: none;
+}
+
+#onConfigurationPaneContainer ul li {
+}
+
+#onConfigurationPaneContainer ul li select,
+#onConfigurationPaneContainer ul li input {
+	width: 30em;
+}
+
+#onConfigurationPaneContainer div.ebx_predicateExpression {
+	margin: 0.3em;
+}
+
+/***START Tabular View ColumnConfiguration ***/
+.ebx_dualListTitle {
+	margin-bottom: 0;
+}
+.ebx_dualListContainer, #ebx_SsfContainer {
+	float: left;
+	padding: 0 15px 10px 15px;
+	width: 690px;
+}
+.ebx_dualListContainer .ebx_hidden_selectedColumnsList, 
+.ebx_dualListContainer .ebx_hidden_availableColumnsList,
+.ebx_dualListContainer .ebx_hidden_fixedColumns,
+.ebx_dualListContainer .ebx_availableColumnsList li.ebx_HiddenListElement {
+	display: none;
+}
+.ebx_dualListContainer .ebx_dualListTitleHint {
+	display: inline-block;
+	width: 317px; /* columns list width + border */
+	margin: 0 25px 0 25px;
+	color: #606060;
+	text-align: center;
+	width: 317px;
+	font-size: 0.8em;
+}
+.ebx_dualListContainer .ebx_selectedColumnsList,
+.ebx_dualListContainer .ebx_availableColumnsList {
+	list-style: none;
+	float: left;
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	width: 315px;
+	height: 160px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0;
+	padding: 0;
+}
+.ebx_dualListContainer .ebx_availableColumnsList {
+	background-color: #FAFAFA;
+}
+.ebx_dualListContainer .ebx_selectedColumnsList li, .ebx_dualListContainer .ebx_availableColumnsList li {
+	text-decoration: none;
+	display: block;
+	cursor: default;
+	height: 16px;
+	padding: 0 3px;
+	white-space: nowrap;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	user-select: none; /* Not yet implemented */
+	position: relative;
+}
+.ebx_dualListContainer .ebx_InactiveSelectedColumnsList {
+	color: #505050; /* same as ValueND */
+	background-color: #EDEDED;
+}
+.ebx_dualListContainer .ebx_dualList_Item {
+}
+.ebx_dualListContainer .ebx_usingDataModelOrdering {
+	margin: 10px 0 0 22px;
+}
+.ebx_dualListContainer .ebx_SortingColumnButtonContainer {
+	display: inline-block;
+	float: right;
+	margin: 2px 0 2px 2px;
+	cursor: pointer;
+	height: 12px;
+	position: absolute;
+	right: 2px;
+	top: 0;
+	background-color: #FFF;
+	color: #000;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.ebx_dualListContainer .ebx_SortingColumnLabel {
+	display: inline-block;
+	overflow: hidden;
+	font-size: 8px;
+	text-transform: uppercase;
+	vertical-align: 1px;
+	padding: 0;
+	width: 0;
+}
+.ebx_dualListContainer .ebx_selectedColumnsList li:hover .ebx_SortingColumnLabel {
+	padding: 0 3px;
+	width: auto;
+}
+.ebx_dualListContainer .ebx_AscendingColumn, .ebx_dualListContainer .ebx_DescendingColumn {
+	width: 12px;
+	height:12px;
+	background-repeat: no-repeat;
+	padding: 1px;
+	margin: 0;
+}
+.ebx_dualListContainer .ebx_DescendingColumn .ebx_SmallIcon {
+	background-position: -1px -121px;
+}
+.ebx_dualListContainer .ebx_AscendingColumn .ebx_SmallIcon {
+	background-position: -1px -111px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls, .ebx_dualListContainer .ebx_middleCtrls {
+	float:left;
+	height: 158px;
+	width:25px;
+}
+.ebx_dualListContainer .ebx_middleCtrls .ebx_FlatButton {
+	margin: 0 3px;
+}
+.ebx_MoveAllLeft .ebx_Icon {
+	background-position: 0 -864px;
+}
+.ebx_MoveLeft .ebx_Icon {
+	background-position: 0 -832px;
+}
+.ebx_MoveRight .ebx_Icon {
+	background-position: -1px -848px;
+}
+.ebx_MoveAllRight .ebx_Icon {
+	background-position: -1px -880px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_FlatButton {
+	margin: 0 3px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveUp .ebx_Icon {
+	background-position: 0 -800px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveDown .ebx_Icon {
+	background-position: 0 -816px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveTop .ebx_Icon {
+	background-position: 0 -928px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveBottom .ebx_Icon {
+	background-position: 0 -944px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveBottom {
+	margin-bottom: 0;
+}
+.ebx_dualListContainer .ebx_fixColumnsCountSelector {
+	width: 317px; /* columns list width + border */
+	margin: 5px 0 0 25px;
+}
+.ebx_dualListContainer .ebx_shortenedPathContainer {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: help;
+}
+.ebx_dualListContainer .ebx_shortenedPathIcon {
+	display: inline-block;
+	height: 10px;
+	width: 16px;
+	background-position: 0 -965px;
+	background-repeat: no-repeat;
+	vertical-align: -1px;
+}
+.ebx_dualListContainer .ebx_shortenedPathIcon:last-child {
+	margin-right: 3px;
+}
+.ebx_dualListContainer .ebx_shortenedPathContainer:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.ebx_cvSsfButtons {
+	padding: 10px 5px;
+}
+/***END Tabular View ColumnConfiguration ***/
+/***START Manage recommended views ***/
+#ebx_mdv_Container {
+	position: relative;
+}
+#ebx_mdv_Container .ebx_Selected .ebx_ValueND {
+	color: inherit;
+}
+#ebx_mdv_Container > div.ebx_VerticalButtonContainer,
+#ebx_mdv_Container table.ebx_mdv_OrderList {
+	margin-bottom: 10px;
+}
+.ebx_mdv_tableContainer {
+	position: absolute;
+	left: 25px;
+	right: 25px;
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	min-height: 75px;
+	max-height: 230px;
+	overflow-y: auto;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.ebx_mdv_OrderList {
+	width: 100%;
+	border-collapse: collapse;
+}
+.ebx_mdv_OrderList tr {
+	padding: 0 3px;
+	cursor: default;
+	vertical-align: top;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	user-select: none; /* Not yet implemented */
+}
+.ebx_mdv_OrderListButtons {
+	position: absolute;
+	left: 0;
+	width: 25px;
+}
+#ebx_mdv_Container .ebx_VerticalButtonContainer {
+}
+.ebx_mdv_OrderListButtons .ebx_FlatButton {
+margin: 1px 3px 0 0 !important;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveUp .ebx_Icon {
+	background-position: 0 -800px;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveDown .ebx_Icon {
+	background-position: 0 -816px;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveTop .ebx_Icon {
+	background-position: 0 -928px;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveBottom .ebx_Icon {
+	background-position: 0 -944px;
+}
+.ebx_mdv_OrderTextLine {
+	display: inline-block;
+}
+.ebx_mdv_assignArrow {
+	margin: 0 10px;
+	background-position: 0 -848px;
+	vertical-align: 0;
+	height: 14px;
+}
+/***END Manage default views ***/
+#ebx_SsfInHriContainer {
+	width: 504px;
+	margin-left: -5px;
+}
+
+label.ebx_tabularView_hiddenNode
+{
+	color: #777777;
+	text-decoration: line-through;
+}
+
+div#ebx_WorkspacePredicateEditor,
+div#ebx_WorkspaceTableColumnConfigurator,
+div#ebx_WorkspaceTableSortConfigurator,
+div#ebx_WorkspaceHierarchyDimensionTree
+{
+	padding: 0.3em;
+	height: 200px;
+	width: 572px;
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+#ebx_WorkspaceHierarchyDimensionTree {
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+div.ebx_predicateExpression {
+	margin: 1em 3em;
+}
+
+div.ebx_predicateExpression textArea {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 6em;
+	padding: 0;
+	width: 100%;
+}
+
+#ebx_helperTreePanel {
+	border: none;
+}
+
+#ebx_helperTreePanel .bd {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	border-width: 0 1px 1px 1px ;
+	border-style: solid;
+	border-color: #E0E0E0;/*{input-borderColor}*/
+	overflow: auto;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 0;
+	
+    border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+}
+/***END Tabular View ColumnConfiguration ***/
+
+.ebx_levelConfHiddenButton
+{
+	display: none;
+}

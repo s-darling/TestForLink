@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Front end administration</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="admin_frontend" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Administration Guide &gt; Technical administration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/admin_frontend.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+<h1>
+Front end administration</h1>
+<p>Several administrative tasks can be performed from the Administration area of the EBX5 user interface.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#adminTools">Administration tools</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">System information</a></li><li class="toc2"><a href="#id1s2">Modules and data models</a></li><li class="toc2"><a href="#sessions">User sessions</a></li></ul>
+</li><li class="toc1"><a href="#dataSpace">Data spaces</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Data spaces/snapshots</a></li><li class="toc2"><a href="#id2s2">Data space permissions</a></li><li class="toc2"><a href="#id2s3">Repository history</a></li></ul>
+</li><li class="toc1"><a href="#directory">User directory</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Policy</a></li><li class="toc2"><a href="#id3s2">Users table</a></li><li class="toc2"><a href="#id3s3">Roles table</a></li></ul>
+</li><li class="toc1"><a href="#globalPermissions">Global permissions</a></li><li class="toc1"><a href="#administrativeDelegation">Administrative delegation</a></li><li class="toc1"><a href="#perspective">Perspectives configuration</a><ul class="toc2">
+<li class="toc2"><a href="#menuItemTypes">Menu item types:</a></li><li class="toc2"><a href="#id6s2">Perspectives available by default</a></li><li class="toc2"><a href="#id6s3">Perspective creation</a></li><li class="toc2"><a href="#id6s4">Perspective properties</a></li><li class="toc2"><a href="#id6s5">Menu view</a></li><li class="toc2"><a href="#id6s6">Menu item properties</a></li></ul>
+</li><li class="toc1"><a href="#ui">User interface configuration</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Session configuration</a></li><li class="toc2"><a href="#id7s2">Interface configuration</a></li><li class="toc2"><a href="#graphical">Graphical interface configuration</a></li></ul>
+</li><li class="toc1"><a href="#lineage">Lineage</a></li><li class="toc1"><a href="#eventBroker">Event broker</a><ul class="toc2">
+<li class="toc2"><a href="#id9s1">Overview</a></li><li class="toc2"><a href="#id9s2">Administration</a></li></ul>
+</li><li class="toc1"><a href="#technicalTable">Other technical tables</a></li></ul>
+</div>
+<h2>
+<a name="adminTools"></a>Administration tools</h2>
+<p>By clicking on &#39;Actions&#39; under the &#39;Administration&#39; area, basic administration tools are available.</p><h3>
+<a name="id1s1"></a>System information</h3>
+<p>This page lists information related to the repository, the operating system and EBX5 configuration.</p><h3>
+<a name="id1s2"></a>Modules and data models</h3>
+<p>This tool lists all registered modules as well as existing data models.</p><h3>
+<a name="sessions"></a>User sessions</h3>
+<p>This tool lists all user sessions and allows terminating active sessions.</p><h2>
+<a name="dataSpace"></a>Data spaces</h2>
+<p>Some data space administrative tasks can be performed from the Administration area of EBX5 by selecting &#39;Data spaces&#39;.</p><h3>
+<a name="id2s1"></a>Data spaces/snapshots</h3>
+<p>This table lists all the existing data spaces and snapshots in the repository, whether open or closed. You can view and modify the information of data spaces included in this table.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../user_dataspace/userdataspace_actions.html#information">Data space information</a></p></div>
+<p>From this section, it is also possible to close open data spaces, reopen previously closed data spaces, as well as delete and purge open or closed data spaces, associated history, and snapshots.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../engine/repository_administration.html#cleanDataSpacesHistory">Cleaning up data spaces, snapshots, and history</a></p></div>
+<h3>
+<a name="id2s2"></a>Data space permissions</h3>
+<p>This table lists all the existing permission rules defined on all the data spaces in the repository. You can view the permission rules and modify their information.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../user_dataspace/userdataspace_actions.html#permissions">Data space permissions</a></p></div>
+<h3>
+<a name="id2s3"></a>Repository history</h3>
+<p>The table &#39;Deleted data spacess/napshots&#39; lists all the data spaces that have already been purged from the repository.</p><h2>
+<a name="directory"></a>User directory</h2>
+<p>If the default directory provided and integrated into EBX5 is used, the &#39;Directory&#39; administration section allows defining which users can connect and what their roles are.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="./directory.html">Users and roles directory</a></p></div>
+<h3>
+<a name="id3s1"></a>Policy</h3>
+<p>These properties configure the policies of the user and roles directory, for example, whether or not users can edit their own profiles.</p><h3>
+<a name="id3s2"></a>Users table</h3>
+<p>This table lists all the users defined in the internal directory. New users can be added from there.</p><h3>
+<a name="id3s3"></a>Roles table</h3>
+<p>This table lists all the user defined in the internal directory. New roles can be created in this table.</p><h2>
+<a name="globalPermissions"></a>Global permissions</h2>
+<p>Global permission rules can be created in EBX5.</p><p>The &#39;Display area&#39; property allows restricting access to areas of the software. To define the access rules, select &#39;Global permissions&#39; in the &#39;Administration&#39; area.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Profile</p></td><td class="ebx_definitionListDefinition"><p>Indicates on which profile the rule will be applied.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Restriction policy</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the permissions defined here restrict the ones defined for other profiles. See the <a href="../references/permissions.html#restrictionpolicy">Restriction policy concept</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data Spaces</p></td><td class="ebx_definitionListDefinition"><p>Defines permissions for the Data Spaces area.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data Models</p></td><td class="ebx_definitionListDefinition"><p>Defines permissions for the Data Models area.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Workflow Models</p></td><td class="ebx_definitionListDefinition"><p>Defines permissions for the Workflow Models area.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data Workflows</p></td><td class="ebx_definitionListDefinition"><p>Defines permissions for Data Workflow.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data Services</p></td><td class="ebx_definitionListDefinition"><p>Defines permissions for the Data Services area. And <a href="../references/dataservices_wsdl.html#buildFromWSDLConnector">Defines permissions for the WSDL connector http(s) servlet.</a>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Administration</p></td><td class="ebx_definitionListDefinition"><p>Defines permissions for the Administration area.</p></td></tr>
+</table>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Permissions can be defined by administrators and by the data space or data set owner.</p></div>
+<h2>
+<a name="administrativeDelegation"></a>Administrative delegation</h2>
+<p>An administrator can delegate administrative rights to a non-administrator user, either for specific actions or for all activities.</p><p>The administrative delegation is defined under &#39;Administration&#39; in the global permissions profile.</p><p>If all necessary administrative rights have been delegated to non-administrator users, it becomes possible to disable the built-in &#39;ADMINISTRATOR&#39; role.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/properties.html#userDirectory">Configuring the user and roles directory</a></p></div>
+<h2>
+<a name="perspective"></a>Perspectives configuration</h2>
+<p>An unlimited number of perspectives can be configured. To each perspective corresponds a data set. Data set inheritance is available and allows sharing easily items between perspectives.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../glossary/simple_glossary.html#inheritance">Inheritance</a></p></div>
+<p>A perspective menu is displayed on the left side vertical navigation bar and consists of menu items of different types.</p><h3>
+<a name="menuItemTypes"></a>Menu item types:</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Section Menu Item</p></td><td class="ebx_definitionListDefinition"><p>This is a top level menu item. It contains other menu items.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Group Menu Item</p></td><td class="ebx_definitionListDefinition"><p>This is a container for other menu items.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Action Menu Item</p></td><td class="ebx_definitionListDefinition"><p>This menu item displays a UI service in the workspace area.</p></td></tr>
+</table>
+<h3>
+<a name="id6s2"></a>Perspectives available by default</h3>
+<h4>
+Root perspective</h4>
+<p>The root perspective can define menu items that are inherited by all other perspectives. It can be made available to end users but this is not recommended.</p><h4>
+Advanced perspective</h4>
+<p>This perspective menus cannot be customized. The advanced perspective is available by default to all end-users but access can be restricted.</p><p><strong>Note</strong>: Administrators can always access this perspective even when it is deactivated.</p><h3>
+<a name="id6s3"></a>Perspective creation</h3>
+<p>To create a perspective, select the parent (or root) perspective and click on the + sign to create its corresponding child data set.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../user_data/userdata_create.html#inheritingChildDataSet">Creating an inheriting child data set</a></p></div>
+<h3>
+<a name="id6s4"></a>Perspective properties</h3>
+<p>The available perspective properties are:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Activated</p></td><td class="ebx_definitionListDefinition"><p>Indicates that the perspective is visible to authorized users.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Allowed profiles</p></td><td class="ebx_definitionListDefinition"><p>The list of authorized user profiles for the perspective.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Default selection</p></td><td class="ebx_definitionListDefinition"><p>The menu item that is selected by default.</p><p>This property is not available for the advanced perspective.</p></td></tr>
+</table>
+<h3>
+<a name="id6s5"></a>Menu view</h3>
+<p>This view displays the perspective menu. It is a hierarchical table view.</p><p>From this view, a user can create, delete or reorder menu item records.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../glossary/simple_glossary.html#hierarchy">Hierarchical table view</a></p></div>
+<h3>
+<a name="id6s6"></a>Menu item properties</h3>
+<p>The available perspective properties are:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Type</p></td><td class="ebx_definitionListDefinition"><p>The menu item type.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="#menuItemTypes">Menu item types</a></p></div>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Parent</p></td><td class="ebx_definitionListDefinition"><p>The parent of the menu item.</p><p>This property is not available for section menu items.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Label</p></td><td class="ebx_definitionListDefinition"><p>The menu item label.</p><p>The label is optional for action menu items. If not specified, the label will be dynamically generated by EBX when the menu item is displayed.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Icon</p></td><td class="ebx_definitionListDefinition"><p>The icon for the menu item.</p><p>Icon can be either &quot;standard&quot; (provided by EBX5) or an image, specified by an URL, that can be hosted on any web server.</p><p>This property is not available for section menu items.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Top separator</p></td><td class="ebx_definitionListDefinition"><p>Indicates that the menu item section has a top separator.</p><p>This property is only available for section menu items.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Action</p></td><td class="ebx_definitionListDefinition"><p>The UI service to execute when the user clicks on the menu item.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/ui_services.html">User interface services</a></p></div>
+<p>If an end user is authorized to view the perspective but not to execute the UI service, an access denied message will be displayed when the user clicks on the menu item.</p><p>This property is only available for action menu items.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Selection on close</p></td><td class="ebx_definitionListDefinition"><p>The menu item that will be selected when the service terminates.</p><p>Built-in services use this property when the user clicks on the &#39;Close&#39; button.</p><p>This property is only available for action menu items.</p></td></tr>
+</table>
+<h2>
+<a name="ui"></a>User interface configuration</h2>
+<p>Some options are available in the Administration area for configuring the web interface, in the &#39;User interface&#39; section.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+ Be careful when configuring the &#39;URL Policy&#39;. If the web interface configuration is invalid, it can lead to the EBX5 application being unusable. If this occurs, use the &quot;rescue mode&quot; by setting <code>frontEnd.rescueMode.enable=true</code> in <a href="../installation/properties.html">EBX5 main configuration file</a>, and accessing the following URL in your browser as a built-in administrator user: <code>http://.../ebx/?onwbpID=iebx-manager-rescue</code>.</fieldset>
+<h3>
+<a name="id7s1"></a>Session configuration</h3>
+<p>These parameters configure the user session options:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User session default locale</p></td><td class="ebx_definitionListDefinition"><p>Default session locale.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Session time-out (in seconds)</p></td><td class="ebx_definitionListDefinition"><p>Maximum duration of user inactivity before the session is considered to be inactive and is terminated. A negative value indicates that the session should never timeout.</p></td></tr>
+</table>
+<h3>
+<a name="id7s2"></a>Interface configuration</h3>
+<h4>
+Entry policy</h4>
+<p>Describes the URL to access the application.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Login URL</p></td><td class="ebx_definitionListDefinition"><p>If the user is not authenticated, the session is forwarded to this URL.</p></td></tr>
+</table>
+<p>The entry policy defines an EBX5 login page, replacing the default one.</p><p>If defined,</p><ul>
+<li><p>it replaces an authentication URL that may have been defined using a specific user <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html"><code>Directory</code></a>,</p></li><li><p>it is used to build the permalinks in the user interface,</p></li><li><p>if the URL is full, that is, starting with <code>http://</code> or <code>https://</code>, it replaces the URL of the workflow email configuration.</p></li></ul>
+<h4>
+URL policy</h4>
+<p>Describes the URL and proxy policy. Both dynamic (servlet) and static (resources) URLs can be configured.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>HTTP servlet policy</p></td><td class="ebx_definitionListDefinition"><p>Header content of the servlet HTTP request:</p><ul>
+<li><p>if a field is not set, the default value in the environment configuration is used,</p></li><li><p>if a default value is not set, the value in the initial request is used.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>HTTPS servlet policy</p></td><td class="ebx_definitionListDefinition"><p>Header content of the servlet HTTPS request:</p><ul>
+<li><p>if a field is not set, the default value is chosen (in environment configuration),</p></li><li><p>if a default value is not set, the value in the initial request is used.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>HTTP external resource policy</p></td><td class="ebx_definitionListDefinition"><p>Header content of the external resource URL in HTTP:</p><ul>
+<li><p>if a field is not set, the default value in the environment configuration is used,</p></li><li><p>if a default value is not set, the value in the initial request is used.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>HTTPS external resource policy</p></td><td class="ebx_definitionListDefinition"><p>Header content of the external resource URL in HTTPS:</p><ul>
+<li><p>if a field is not set, the default value in the environment configuration is used,</p></li><li><p>if a default value is not set, the value in the initial request is used.</p></li></ul>
+</td></tr>
+</table>
+<h4>
+Exit policy</h4>
+<p>Describes how the application is exited.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Normal redirection</p></td><td class="ebx_definitionListDefinition"><p>Specifies the redirection URL used when exiting the session normally.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Error redirection</p></td><td class="ebx_definitionListDefinition"><p>Specifies the redirection URL used when exiting the session due to an error.</p></td></tr>
+</table>
+<h3>
+<a name="graphical"></a>Graphical interface configuration</h3>
+<h4>
+<a name="applicationLocking"></a>Application locking</h4>
+<p>EBX5 availability status:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Availability status</p></td><td class="ebx_definitionListDefinition"><p>This application can be closed to users during maintenance (but still remain open to administrators). Takes effect immediately.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Unavailability message</p></td><td class="ebx_definitionListDefinition"><p>Message displayed to users when access is restricted to administrator profiles.</p></td></tr>
+</table>
+<h4>
+<a name="security"></a>Security policy</h4>
+<p>EBX5 access security policy. These parameters only apply on new HTTP sessions.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>IP access restriction</p></td><td class="ebx_definitionListDefinition"><p>Restricts access to designated IP addresses (see IP pattern below).</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>IP restriction pattern</p></td><td class="ebx_definitionListDefinition"><p>Regular expression representation of IP addresses authorized to access EBX5. For example, <code>((127\.0\.0\.1) | (192\.168\.*\.*))</code> grants access to the local machine and the network IP range <code>192.168.*.*</code>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Unique session control</p></td><td class="ebx_definitionListDefinition"><p>Specifies whether EBX5 should control the uniqueness of user sessions. When set to &#39;Yes&#39;, if a user does not log out before closing the browser, it will not be possible for that user to log in again until the previous session has timed out.</p></td></tr>
+</table>
+<h4>
+<a name="ergoBehavior"></a>Ergonomics and layout</h4>
+<p>EBX5 ergonomics parameters:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Max table columns to display</p></td><td class="ebx_definitionListDefinition"><p>According to network and browser performance, adjusts the maximum number of columns to display in a table. This property is not used when a view is applied on a table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Maximum auto-width for table columns</p></td><td class="ebx_definitionListDefinition"><p>Defines the maximum width to which a table column can auto-size during table initialization. This is to prevent columns from being too wide, which could occur for very long values, such as URLs. Users will still be able to manually resize columns beyond this value.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Max expanded elements for a hierarchy</p></td><td class="ebx_definitionListDefinition"><p>Defines the maximum number of elements that can be expanded in a hierarchy when using the action &quot;Expand all&quot;. A value less than or equal to &#39;0&#39; disables this parameter.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Default table filter</p></td><td class="ebx_definitionListDefinition"><p>Defines the default table filter to display in the filters list in tabular views. If modified, users must log out and log in for the new value to take effect.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Display the message box automatically</p></td><td class="ebx_definitionListDefinition"><p>Defines the message severity threshold for displaying the messages pop-up.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="ieCompatibilityMode"></a>IE compatibility mode</p></td><td class="ebx_definitionListDefinition"><p>Defines whether or not to compensate for Internet Explorer 8+ displaying EBX5 in compatibility mode.</p><p>In order to prevent Internet Explorer browsers from using compatibility mode when displaying the repository user interface, the meta-tag <em>http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=EmulateIE8&quot;</em> is added to the header of pages. However, in some local environments, this setting may conflict with existing policies, in which case this header must be omitted by setting the parameter to &#39;No&#39;. The default value is &#39;Yes&#39;. </p><p>See <a target="_blank" href="http://msdn.microsoft.com/en-us/library/cc288325%28VS.85%29.aspx">Specifying Document Compatibility Modes</a><img alt="/ebx_open.png" src="../resources/images/icons/ebx_open.png"></img> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Forms: width of labels</p></td><td class="ebx_definitionListDefinition"><p>The width of labels in forms.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Forms: width of inputs</p></td><td class="ebx_definitionListDefinition"><p>The width of form input fields in forms.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Forms: height of text areas</p></td><td class="ebx_definitionListDefinition"><p>The height of text entry fields in forms.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Forms: aggregated lists</p></td><td class="ebx_definitionListDefinition"><p>The number of hidden candidate lines to be generated, available to create new instances in the list.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Forms: width of HTML editor</p></td><td class="ebx_definitionListDefinition"><p>The width of HTML editors in forms.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Forms: height of HTML Editor</p></td><td class="ebx_definitionListDefinition"><p>The height of HTML editors in forms.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="searchableListPageSize"></a>Searchable list selection page size</p></td><td class="ebx_definitionListDefinition"><p>Number of lines to show per page in searchable list selection dialogs (used for selecting foreign keys, enumerations, etc.).</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="rendering"></a>Record form: rendering mode for nodes</p></td><td class="ebx_definitionListDefinition"><p>Specifies how to display non-terminal nodes in record forms. This should be chosen according to network and browser performance. For impact on page loading, link mode is light, expanded and collapsed modes are heavier. If this property is modified, users are required to log out and log in for the new value to take effect.</p></td></tr>
+</table>
+<h4>
+<a name="optionsDefault"></a>Default option values</h4>
+<p>Defines default values for options in the user interface.</p><p><strong>Import/Export</strong></p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>CSV file encoding</p></td><td class="ebx_definitionListDefinition"><p>Specifies the default character encoding to use for CSV file import and export.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>CSV : field separator</p></td><td class="ebx_definitionListDefinition"><p>Specifies the default separator character to use for CSV file import and export.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>CSV : list separator</p></td><td class="ebx_definitionListDefinition"><p>Specifies the default list separator character to use for CSV file import and export.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Import mode</p></td><td class="ebx_definitionListDefinition"><p>Specifies the default import mode.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Missing XML values as &#39;null&#39;</p></td><td class="ebx_definitionListDefinition"><p>If &#39;Yes&#39;, when updating existing records, if a node is missing or empty in the imported file, the value is considered as &#39;null&#39;. If &#39;No&#39;, the value is not modified.</p></td></tr>
+</table>
+<h4>
+<a name="cssStyles"></a>Colors and themes</h4>
+<p>Customizes EBX5 colors and themes.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Web site icon URL (favicon)</p></td><td class="ebx_definitionListDefinition"><p>Sets a custom favicon. The recommended format is ICO, which is compatible with Internet Explorer.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Logo URL (SVG)</p></td><td class="ebx_definitionListDefinition"><p>Specifies the SVG image used for compatible browsers. Leave this field blank to use the PNG image, if specified. The user interface will attempt to use the specified PNG image if the browser is not SVG-compatible. If no PNG image is specified, the GIF/JPG image will be used. The logo must have a maximum height of 40px. If the height exceeds 40px, it will be cropped, not scaled, to a height of 40px. The width of the logo will determine the position of the buttons in the header.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Logo URL (PNG)</p></td><td class="ebx_definitionListDefinition"><p>Specifies the PNG image used for compatible browsers. Leave both this field and the SVG image URL field blank to use the GIF/JPG image. The user interface will use the GIF/JPG image if the browser is not PNG-compatible. The logo must have a maximum height of 40px. If the height exceeds 40px, it will be cropped, not scaled, to a height of 40px. The width of the logo will determine the position of the buttons in the header.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Logo URL (GIF/JPG)</p></td><td class="ebx_definitionListDefinition"><p>Specifies the GIF/JPG image to use when neither the PNG nor SVG are defined. The recommended formats are GIF and JPG. The logo must have a maximum height of 40px. If the height exceeds 40px, it will be cropped, not scaled, to a height of 40px. The width of the logo will determine the position of the buttons in the header.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Main</p></td><td class="ebx_definitionListDefinition"><p>Main user interface theme color, used for selections and highlights.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Secondary</p></td><td class="ebx_definitionListDefinition"><p>Secondary user interface theme color, used for some text.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Header</p></td><td class="ebx_definitionListDefinition"><p>Background color of the user interface header. By default, set to the same value as the Main color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Header highlighting</p></td><td class="ebx_definitionListDefinition"><p>Color of accents in the header. By default, set to the same value as the Secondary color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Workflow badge</p></td><td class="ebx_definitionListDefinition"><p>Background and text/outline colors of new workflow task counters.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Login page (background)</p></td><td class="ebx_definitionListDefinition"><p>Background color of the login page. By default, set to a lighter version of the Main color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Buttons</p></td><td class="ebx_definitionListDefinition"><p>Colors of buttons and the brightness of button label text and icon.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Button highlighting</p></td><td class="ebx_definitionListDefinition"><p>Color of buttons highlighting and selected by default. By default, set to the same value as the Main color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Tabs</p></td><td class="ebx_definitionListDefinition"><p>Color of tabs in forms.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Tab highlighting</p></td><td class="ebx_definitionListDefinition"><p>Color of selected tabs. By default, set to the same value as the Main color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Navigation pane</p></td><td class="ebx_definitionListDefinition"><p>Background color of the navigation pane.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Form bottom bar</p></td><td class="ebx_definitionListDefinition"><p>Background color of form bottom bar.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Table history view: technical data</p></td><td class="ebx_definitionListDefinition"><p>Background color of technical data cells in the table history view.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Table history view: creation</p></td><td class="ebx_definitionListDefinition"><p>Background color of cells with the state &#39;creation&#39; in the table history view.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Table history view: deletion</p></td><td class="ebx_definitionListDefinition"><p>Background color of cells with the state &#39;deletion&#39; in the table history view.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Table history view: update</p></td><td class="ebx_definitionListDefinition"><p>Background color of cells with the state &#39;update&#39; in the table history view.</p></td></tr>
+</table>
+<h2>
+<a name="lineage"></a>Lineage</h2>
+<p>To administrate lineage, three tables are accessible:</p><ul>
+<li><p><strong>Authorized profiles</strong>: Profiles must be added to this table to be used for data lineage WSDL generation.</p></li><li><p><strong>History</strong>: Lists the general data lineage WSDLs and their configurations.</p></li><li><p><strong>JMS location</strong>: Lists the JMS URL locations.</p></li></ul>
+<h2>
+<a name="eventBroker"></a>Event broker</h2>
+<h3>
+<a name="id9s1"></a>Overview</h3>
+<p>EBX5 offers the ability to receive notifications and information related to specific events using the event broker feature. This feature consists in sending notifications related to EBX5 core events to the subscriber according to their chosen topic.</p><h4>
+Terminology</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Event broker</p></td><td class="ebx_definitionListDefinition"><p>Notification component for loosely-coupled event handling. Consists of dispatching fired events from EBX5 core to concerned subscribers. The event broker is mainly used for monitoring and statistical purposes.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Topic</p></td><td class="ebx_definitionListDefinition"><p>Corresponds to the EBX5 event type that contains messages. The number of subscribers registered to a topic is unlimited.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Subscriber</p></td><td class="ebx_definitionListDefinition"><p>Client implementation in the modules that receive the events related to the subscribed topic(s).</p></td></tr>
+</table>
+<h4>
+Topics</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Repository</p></td><td class="ebx_definitionListDefinition"><p>Corresponds to operations in the repository, such as: start-up and purge.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data space and snapshot</p></td><td class="ebx_definitionListDefinition"><p>Corresponds to operations in the data space and in the snapshot, such as: create, close, reopen, delete, archive export and archive import (only for data space merge).</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User session</p></td><td class="ebx_definitionListDefinition"><p>Corresponds to the operations related to user authentication, such as: login and logout.</p></td></tr>
+</table>
+<h3>
+<a name="id9s2"></a>Administration</h3>
+<p>The management console is located under &#39;Event broker&#39; in the &#39;Administration&#39; area. It contains three tables: &#39;Topics&#39;, &#39;Subscribers&#39; and &#39;Subscriptions&#39;.</p><p>All content is read-only, except for the following operations:</p><ul>
+<li><p>Topic and subscriber can be manually activated or deactivated using dedicated services.</p></li><li><p>Subscribers that are no longer registered to the broker can be deleted.</p></li></ul>
+<h2>
+<a name="technicalTable"></a>Other technical tables</h2>
+<p>Several technical tables can be accessed in the &#39;Administration&#39; area of the EBX5 user interface. These tables are for internal use only and their content should not be edited manually, unless removing obsolete or erroneous data.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Auto-increments</p></td><td class="ebx_definitionListDefinition"><p>Lists all auto-increment fields in the repository.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Interactions</p></td><td class="ebx_definitionListDefinition"><p>Lists all interactions in the repository.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Workflows</p></td><td class="ebx_definitionListDefinition"><p>Lists all data workflows and their tokens in the repository, and the information associated with each, including history.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User preferences</p></td><td class="ebx_definitionListDefinition"><p>Lists the user preferences of users of the repository.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Views configuration</p></td><td class="ebx_definitionListDefinition"><p>Allows accessing the Views, Groups of views, User filters and Default views lists defined by users of the repository.</p></td></tr>
+</table>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

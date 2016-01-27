@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.5.4</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.5.4.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.5.4</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.5.4 fix 012</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.5.4 fix 011</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id3">4.5.4 fix 010</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id4">4.5.4 fix 009</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id5">4.5.4 fix 008</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id6">4.5.4 fix 007</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Bug Fixes / Minor enhancement</a></li><li class="toc2"><a href="#id6s2">Performance warning</a></li></ul>
+</li><li class="toc1"><a href="#id7">4.5.4 fix 006</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Bug Fixes / Minor enhancement</a></li><li class="toc2"><a href="#id7s2">Important notice</a></li></ul>
+</li><li class="toc1"><a href="#id8">4.5.4 fix 005</a><ul class="toc2">
+<li class="toc2"><a href="#id8s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id9">4.5.4 fix 004</a><ul class="toc2">
+<li class="toc2"><a href="#id9s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id10">4.5.4 fix 003</a><ul class="toc2">
+<li class="toc2"><a href="#id10s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id11">4.5.4 fix 002</a><ul class="toc2">
+<li class="toc2"><a href="#id11s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id12">4.5.4 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id12s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id13">4.5.4</a><ul class="toc2">
+<li class="toc2"><a href="#id13s1">Bug Fixes / Minor enhancement</a></li><li class="toc2"><a href="#id13s2">New features</a></li><li class="toc2"><a href="#id13s3">Performance enhancements</a></li><li class="toc2"><a href="#id13s4">Backward compatibility</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.5.4 fix 012</h2>
+<p><strong>Release Date: August 3, 2009</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01927]</strong><code>com.orchestranetworks.service.Session</code> attributes are kept if a user logs out and logs in with a different user id. </p></li><li><p><strong>[01928]</strong> Schema compilation reports warning on all facets (excepts <code>ConstrainOnNull</code> ) if <code>osd:checkNullInput=&quot;true&quot;</code> is defined. </p></li><li><p><strong>[01930]</strong> Any user may create branch permissions in the &quot;branch permissions&quot; table of adaptation &quot;ebx-repository&quot;. </p></li><li><p><strong>[01931]</strong> EBX informs that parameters have been updated even if there is no data change. </p></li><li><p><strong>[01936]</strong> On selection node ( <code>osd:select</code> ), the link on the blue node bullet is erroneous ;&nbsp;as a consequence, an unexpected error occurs after a click on the bullet. </p></li></ul>
+<h2>
+<a name="id2"></a>4.5.4 fix 011</h2>
+<p><strong>Release Date: July 21, 2009</strong></p><h3>
+<a name="id2s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01885]</strong> A large string value might prevent to display table grid (javascript error on display). </p></li><li><p><strong>[01903]</strong> Dimension link by join table reference the instance from which it has been initialized. It cause severe error when working with instance duplication. </p></li><li><p><strong>[01908]</strong> Table grid header may not be sized as expected. </p></li><li><p><strong>[01914]</strong> DataServices &#39;getChanges&#39; operation should specifiy maxOccurs=unbounded on element &#39;updates/changes/change&#39;. </p></li><li><p><strong>[01915]</strong> DataServices &#39;getChanges&#39; operation should specifiy maxOccurs=unbounded on element &#39;updates/changes/change/path&#39;. </p></li><li><p><strong>[01916]</strong> DataServices &#39;getChanges&#39; operation should specifiy maxOccurs=unbounded on element &#39;deleted/predicate&#39;. </p></li><li><p><strong>[01921]</strong> Editor of multi-occurrences node does not show ongoing updates (occurrence deletion) if the form is redisplayed due to a form validation error. </p></li></ul>
+<h2>
+<a name="id3"></a>4.5.4 fix 010</h2>
+<p><strong>Release Date: June 25, 2009</strong></p><h3>
+<a name="id3s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01880]</strong> Complex terminal nodes are not updated as expected during an archive import process. </p></li><li><p><strong>[01886]</strong> NullPointerException while comparing in Merge branches if no difference in table. </p></li><li><p><strong>[01887]</strong> EBX does not show the columns of the primary key at table&#39;s record creation if these nodes are embedded in a complex node. </p></li><li><p><strong>[01888]</strong> User message &quot; <em>Please submit these updates (max. new occurrences quantity reached)</em> &quot; is not accurate when a node with maxOccurs &gt;1 has reached its maxOccurs value. </p></li><li><p><strong>[01891]</strong> Specific role in default directory are not displayed as expected if no localized label defined. </p></li><li><p><strong>[01897]</strong> A migration code (from version 4.1.4) throws SQL exceptions on DB server (table IHD unknown). </p></li></ul>
+<h2>
+<a name="id4"></a>4.5.4 fix 009</h2>
+<p><strong>Release Date: May 11, 2009</strong></p><h3>
+<a name="id4s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01867]</strong> Service documentation does not support <code>xml:lang</code> attribute in module.xml. </p></li><li><p><strong>[01872]</strong><code>SessionPermissions.getNodeAccessPermission(SchemaNode, Adaptation)</code> may return <code>AccessPermission.getReadWrite()</code> even if the node is set as read-only in the schema (osd:access=&#39;R-&#39;). </p></li><li><p><strong>[01873]</strong> A read-only node (osd:access=&#39;R-&#39;, ValueFunction, ...) is editable in tabular view. </p></li></ul>
+<h2>
+<a name="id5"></a>4.5.4 fix 008</h2>
+<p><strong>Release Date: April 17, 2009</strong></p><p><strong><code>(!) Upgrade of EBX.Platform from version 4.5.4 fix 007 to fix 008 must be considered.</code></strong></p><h3>
+<a name="id5s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01737]</strong> Hierarchy tree is not refreshed after a service execution. </p></li><li><p><strong>[01762]</strong> When a branch is created, the documentation specifies that the permissions of the new branch will be the ones specified by the template under node &#39;Permissions of child branch when created&#39;. However it is not clear how the template is selected when several permission rules match the current session. </p></li><li><p><strong>[01838]</strong> In EBX, unable to set null value at table record creation using <code>TableTrigger.handleNewContext()</code> .&nbsp;</p></li><li><p><strong>[01844]</strong><code>ServiceContext.getURLForSelection()</code> does not return the right URL if the Adaptation is not in the current <code>AdaptationHome</code> .&nbsp;</p></li><li><p><strong>[01852]</strong> If a <code>TableTrigger</code> (handleAfterCreate, handleAfterModify) modifies a value within the current record, the new value is not seen in the record form (the form must be closed and reopened in order to see it). </p></li><li><p><strong>[01854]</strong> When deleting an instance, only the tables currently referenced by its schema are deleted. If a schema is modified before instance deletion and restored afterwards, and if the instance is re-created with the same name, this will cause some table records to &quot;reappear&quot;. </p></li><li><p><strong>[01855]</strong> Because of bug #01854, if a schema is modified before instance deletion and restored afterwards, this will cause an import archive to fail. </p></li><li><p><strong>[01856]</strong> If a user change the owner of a home (by means of &#39;&#39;Modify information&#39;&#39; action), and if he is no more allowed to view this home, a NullPointer is thrown </p></li></ul>
+<h2>
+<a name="id6"></a>4.5.4 fix 007</h2>
+<p><strong>Release Date: February 13, 2009</strong></p><p><strong><code>(!) Upgrade of EBX.Platform from version 4.5.4 fix 006 to fix 007 must be considered.</code></strong></p><h3>
+<a name="id6s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01829]</strong> Values set to null when creating a new table record are not preserved when EBX.Mananger redisplays same page because of a validation error. </p></li><li><p><strong>[01832]</strong> After a schema modification which impacts the definition of a table primary key, accessing the table will fail (NullPointerException) because the persistent index does not reflect the modification. Note: this failure can be circumvented by manually deleting the existing index in filesystem. </p></li><li><p><strong>[01833]</strong> In a filtered table accessed through &quot;selection node&quot;, filter target nodes must be set to the filtered value and read-only, at table record creation (except creation by copy). </p></li><li><p><strong>[01834]</strong> Searching a table record with a wrong structure of primary key(ex: through a wrong &quot;piped&quot; foreign key value) causes a fatal error. </p></li><li><p><strong>[01835]</strong> If an instance is purged, then recreated with an identical reference, it will fail to be reloaded after server restart. </p></li><li><p><strong>[01836]</strong> Data Services &quot;GetChanges&quot; operation should declare &quot;minOccurs=0&quot; in WDSL. </p></li><li><p><strong>[01837]</strong><code>Adaptation.getTimeOfCreation()</code> returns the date of creation of the instance, instead of the creation date of the table record. </p></li></ul>
+<h3>
+<a name="id6s2"></a>Performance warning</h3>
+<ul>
+<li><p>This release adopts a new persistence format for table indexes (which are used to speed up access to table occurrences) to fix bug #01832. The index will be rebuilt on the first access to a table, which might result in load times longer than usual. Please note that this performance hit will only occur on the first access to a table. If you are concerned about this one-time performance hit, you can ensure a full index rebuild by validating the branch or the version.</p></li></ul>
+<h2>
+<a name="id7"></a>4.5.4 fix 006</h2>
+<p><strong>Release Date: January 15, 2009</strong></p><p><strong><code>(!) Upgrade of EBX.Platform from version 4.5.4 fix 005 to fix 006 must be considered.</code></strong></p><h3>
+<a name="id7s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01820]</strong> Table records with empty string as key can be created (since release 4.5.4 fix005). </p></li><li><p><strong>[01821]</strong> Table grid does not scroll even if key columns display is larger than the screen. </p></li><li><p><strong>[01822]</strong> Incremental validation does not handle nodes under an &#39;adaptation terminal&#39; list node. </p></li><li><p><strong>[01823]</strong> Unable to set a node of type <code>xs:string</code> to null through DataServices. </p></li><li><p><strong>[01824]</strong> Unable to set a node of type <code>xs:string</code> to null through XML import. </p></li><li><p><strong>[01825]</strong> When creating table records through DataServices or XML import, values are always set to &quot;inherit&quot; if node is not present in the flow. However, if table record&#39;s <code>DefinitionMode</code> is root ( <code>DefinitionMode.DEFINE_ROOT</code> ), it should be set to the default value (or null, if no default value defined). </p></li><li><p><strong>[01826]</strong> Data Services documentation is erroneous (insert and update operations behavior when an element of a record is not present). </p></li><li><p><strong>[01827]</strong><code>ImportSpecMode</code> documentation is incomplete (missing: insert and update operations behavior when an element of a record is not present). </p></li></ul>
+<h3>
+<a name="id7s2"></a>Important notice</h3>
+<p><strong>About bug #01820:</strong> this bug allows the creation of permissions with blank profile; This causes EBX to crash when resolving permissions on branch &amp; version, and content access rights. </p><p>In this case, after applying this fix, please connect as an &quot;administrator&quot; profile, and remove all erroneous permissions.</p><p><strong>About Data Services &amp; XML import:</strong> insert and update operations behavior documentation has been fixed. </p><p> Please <a href="../references/dataservices_execution.html#update">review</a> . </p><h2>
+<a name="id8"></a>4.5.4 fix 005</h2>
+<p><strong>Release Date: December 22, 2008</strong></p><h3>
+<a name="id8s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01810]</strong> Whitespace collapse: adjacent space characters are not collapsed to a single space character if the string does not begin with a space character. </p></li><li><p><strong>[01811]</strong> EBX does not display constraints in documentation if node value is calculated. </p></li><li><p><strong>[01812]</strong> A wrong path in table <code>defaultLabel</code> may cause a <code>NullPointerException</code> while displaying a hierarchy, and a blank page in EBX. </p></li><li><p><strong>[01813]</strong> Node&#39;s validation plan should apply in this order: 1 - XML Schema facets, 2 - Extended Facets, 3 - Programmatic Facets. </p></li><li><p><strong>[01814]</strong> In EBX, the display of the validation report should not imply an up-to-date of the adaptation&#39;s validation. </p></li><li><p><strong>[01816]</strong> EBX has poor performance on displaying a flat schema with many tables. </p></li></ul>
+<h2>
+<a name="id9"></a>4.5.4 fix 004</h2>
+<p><strong>Release Date: December 8, 2008</strong></p><h3>
+<a name="id9s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01806]</strong> A composite primary key does not properly support pipes (&quot;|&quot;) inside a field that is not itself a foreign key. </p></li><li><p><strong>[01808]</strong> Switching between user sessions in UIServices may cause the return to a previous invalid user session. </p></li><li><p><strong>[01809]</strong> EBX does not display 2 table records if keys differ only by case. </p></li></ul>
+<h2>
+<a name="id10"></a>4.5.4 fix 003</h2>
+<p><strong>Release Date: November 25, 2008</strong></p><h3>
+<a name="id10s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01796]</strong> In EBX, closing an &quot;advanced input component&quot; selection box raises a javascript error if adaptation node has been set to null value. </p></li><li><p><strong>[01807]</strong> If the user creates, for example through several calls to UIHttpManagerComponent, more user sessions than the maximum (5) allocated per HTTP session, then a user session must be killed. The criterium for selecting the user session to kill is not correct. This can lead to cases where an active user session is being killed. </p></li></ul>
+<h2>
+<a name="id11"></a>4.5.4 fix 002</h2>
+<p><strong>Release Date: October 29, 2008</strong></p><h3>
+<a name="id11s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01790]</strong> EBX displays a disabled &quot;derive&quot; button on table records;&nbsp;however, this option is never enabled. </p></li><li><p><strong>[01791]</strong> EBX tabular edition uses <code>UIBeanEditor.addForDisplay()</code> method on read-only nodes, instead of the expected <code>UIBeanEditor.addForDisplayInTable()</code> method. </p></li><li><p><strong>[01792]</strong> Access rules on nodes are tested upon adaptation &quot;instance&quot; in table record form; It is expected to be tested upon adaptation &quot;occurrence&quot; of the table record. </p></li><li><p><strong>[01793]</strong> Validation report on table record does not mention table label but schema root node label. </p></li><li><p><strong>[01794]</strong> Complex foreign keys are not properly handled. </p></li><li><p><strong>[01795]</strong> In EBX, the values of <code>SchemaNode</code> with enumeration defined are not displayed using the expected <code>Locale</code> .&nbsp;</p></li></ul>
+<h2>
+<a name="id12"></a>4.5.4 fix 001</h2>
+<p><strong>Release Date: October 13, 2008</strong></p><h3>
+<a name="id12s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01770]</strong> In EBX, the &quot;language&quot; link causes an &quot;invalid request&quot; error when other tabs than &quot;data&quot; is selected. </p></li><li><p><strong>[01771]</strong> A <code>NullPointerException</code> occurs on deleting a perspective if no table is selected. </p></li><li><p><strong>[01772]</strong> The label configuration for hierarchy level does not work for locales defined in schema. </p></li><li><p><strong>[01773]</strong> The hierarchy dimension tree is not sorted by label. </p></li><li><p><strong>[01774]</strong> The method <code>AfterCreateInstanceContext.getAdaptationInstance()</code> raises a <code>NullPointerException</code> when an instance is duplicated or a child instance is created. </p></li><li><p><strong>[01775]</strong> The method <code>BeforeCreateOccurrenceContext.getAdaptationOccurrence()</code> raises a <code>NullPointerException</code> .&nbsp;</p></li><li><p><strong>[01776]</strong> Access rights are not copied when an instance is duplicated. </p></li><li><p><strong>[01777]</strong> Instance triggers cause failures on the duplicate procedure when these ones modify tables. </p></li><li><p><strong>[01779]</strong> Default search on more than one table columns causes a <code>NullPointerException</code> . </p></li><li><p><strong>[01781]</strong> Perspective documentation shuffles the localized documentation. </p></li><li><p><strong>[01782]</strong> EBX does not support a table with a composite primary key which is declared in a different order than nodes in the schema. </p></li><li><p><strong>[01783]</strong> On WebSphere Application Server, an exception is logged when closing connection after read-only statements. </p></li><li><p><strong>[01784]</strong> The edition of string using &#39;textarea&#39; replaces line separator (\n) by &lt;br&gt;. </p></li><li><p><strong>[01786]</strong> The row height of a table is not resized as expected on &quot;tabular edition&quot; in EBX. </p></li><li><p><strong>[01787]</strong> XML export width table node selection returns empty content if table node path size &gt; 3. </p></li><li><p><strong>[01788]</strong> Data Services select operation on a table returns empty content if table node path size &gt; 3. </p></li><li><p><strong>[01789]</strong> In EBX, branch services and adaptation services lists are not sorted as expected. </p></li></ul>
+<h2>
+<a name="id13"></a>4.5.4</h2>
+<p><strong>Release Date: September 30, 2008</strong></p><h3>
+<a name="id13s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01623]</strong> When an adaptation XML schema is amended (ex: add a new field, add an enumeration value for a node, ...), if we refresh the schema in EBX, all the updates appear in the root adaptation but not in its descendants (all the adaptations that inherit from the root adaptation). </p></li><li><p><strong>[01729]</strong> Large adaptation tree (&gt; 150 adaptations) display has poor performance. </p></li><li><p><strong>[01743]</strong> Perspective link does not work if previous data selection was not a table content. </p></li><li><p><strong>[01745]</strong> Child node with <code>osd:category=&quot;Hidden&quot;</code> of a complex terminal node is not hidden in EBX. </p></li><li><p><strong>[01748]</strong> EBX advanced graphical component displays &quot;&gt;&gt;&quot; before each item of a list selection. </p></li><li><p><strong>[01749]</strong> XML Schema setup reports a wrong error message if elements declare <code>xs:anyType</code> :&nbsp;No schema linked to namespace prefix &quot;xs&quot;. </p></li><li><p><strong>[01752]</strong> Table record overwriting and inheriting actions do nothing or raise errors. </p></li><li><p><strong>[01753]</strong> In search in data model result page, paging buttons are inactive. </p></li><li><p><strong>[01754]</strong> HTTP Manager component method <code>selectNode</code> ignores given predicate if given adaptation is not an occurrence. </p></li><li><p><strong>[01755]</strong> Cannot create table record if key is auto incremented and hidden ( <code>osd:category=&quot;Hidden&quot;</code> ). </p></li><li><p><strong>[01756]</strong> Enable a maxOccurs usage in a osd:select to constraint a relation (ex:1 to Many). </p></li><li><p><strong>[01757]</strong> UIService is activated on a table record even if service specification <code>activatedForPaths=&quot;/root/myTable{n}&quot;</code> &amp; n &gt; 1. </p></li><li><p><strong>[01758]</strong> For an element of type xs:string, it is possible to persist a value that contains invalid XML characters (for example, in a list or in a JavaBean). </p></li><li><p><strong>[01759]</strong><code>AdaptationTable.computePrimaryKey(ValueContextForValidation)</code> throws a <code>PathAccessException</code> .&nbsp;</p></li><li><p><strong>[01760]</strong> If XML export specifies a node selection, this selection includes all nodes that match the path prefix (as a string, not limited to the Xpath expression). </p></li><li><p><strong>[01761]</strong> Data Services select operation on a table may also returns all records from tables with path that match the target table path as prefix (as a string, not limited to the Xpath expression). </p></li><li><p><strong>[01763]</strong> When a user starts to create a hierarchy node and does not explicitly cancel, the context of the perspective is not reset as expected. It causes an exception when selecting a hierarchy node which does not belong to the right dimension level. </p></li><li><p><strong>[01764]</strong> The views and hierarchies list are not sorted properly. </p></li><li><p><strong>[01765]</strong> Sort on a recursive field inaccurately generates a schema exception. </p></li><li><p><strong>[01766]</strong> In EBX, adaptation nodes are reset to default on screen after clicking cancel button. </p></li><li><p><strong>[01767]</strong> In table perspective, the criterion of a view in filter box can no longer be modified and applied. </p></li><li><p><strong>[01768]</strong> Empty label in an enumeration causes Javascript error with Advanced Component </p></li><li><p><strong>[01769]</strong> The vertically scrolling of a table should not scroll the table headers. </p></li></ul>
+<h3>
+<a name="id13s2"></a>New features</h3>
+<h4>
+Hierarchies - Version 2</h4>
+<p><strong>Enhancements:</strong></p><ul>
+<li><p>Hierarchy nodes can be selected like records in table view.</p></li><li><p>A service can be executed directly from each hierarchy node by using the new contextual menu. This menu only provides services that are allowed according to permission rules.</p></li><li><p>Mass update is now available for hierarchy nodes.</p></li><li><p>Mass move is now available for hierarchy nodes.</p></li><li><p>The following &quot;relationships&quot; are now exploited for configuring a hierarchy:</p><ul>
+<li><p><code>osd:select</code> elements, </p></li><li><p> inter-instance foreign keys ( <code>osd:tableRef</code> with <code>container</code> element defined). </p></li></ul>
+</li></ul>
+<p><strong>Known limitations:</strong></p><ul>
+<li><p>Other filters than views are not applied on hierarchies.</p></li><li><p>The perspective cannot be a combination of views and hierarchies.</p></li><li><p>Mass move under a recursive level is forbidden.</p></li><li><p>To avoid too much computing time load, dimension is limited to 10 levels depth and to 5 levels depth for very complex schemas containing more than 50 tables.</p></li><li><p>It is forbidden to move on a parent node which does not correspond to a terminal value.</p></li></ul>
+<h4>
+Internationalization</h4>
+<ul>
+<li><p> The strategy has changed when no language is specified in <code>module.xml</code> :&nbsp;the default language is now en_US instead of fr_FR. </p></li><li><p>Schemas now support any languages, in addition to EBX.Platform languages.</p></li><li><p>The strategy has changed for FacetOResource. To be fully localizable, the resources must be at least declared in common directory and optionally overridden in each language matching directory.</p></li></ul>
+<h4>
+Internationalization of enumerations</h4>
+<p> Labels associated to each <code>xs:enumeration</code> can henceforth be fully internationalized. </p><p> For more information, see section <a href="../models/labels_error_messages.html">Enumeration labels</a> .&nbsp;</p><h4>
+Cardinality constraint on selection nodes</h4>
+<p> The element <code>maxOccurs</code> has been added to the selection node specification ( <code>osd:select</code> ). </p><p> With <code>maxOccurs</code> ,&nbsp;the validation checks that the contextual and dynamic selection is at most of the specified size. </p><pre class="ebx_example brush: xml">
+&lt;xs:element name="linkToAuthorTitles" minOccurs="0" maxOccurs="0" > 
+	&lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		&lt;osd:select> 
+		  &lt;maxOccurs>10&lt;/maxOccurs> 
+		  &lt;xpath>//Titles[au_id =${../au_id}]&lt;/xpath> 
+		&lt;/osd:select> 
+	  &lt;/xs:appinfo> 
+	&lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p> For more information, see section <a href="../models/tables.html">Tables, Filters and Selection Nodes</a> .&nbsp;</p><h4>
+More powerful branch and version creation processes</h4>
+<p> The new class, <code>HomeCreationSpec</code> allows to create a branch or a version with specific features. </p><p> It is possible, for instance, to specify a source branch so as to copy its permissions to the new branch. Going further, a merge service can simulate a <em>&quot;logical branch&quot;</em> :&nbsp;the service first merges the branch to its parent, then it recreates a branch with the same properties, from the user point of view (only the internal identifier is changed). </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/instance/HomeCreationSpec.html">HomeCreationSpec javadoc</a> .&nbsp;</p><h4>
+Other new functionalities:</h4>
+<ul>
+<li><p>Selected table&#39;s records can now be deleted (in table or hierarchy perspective).</p><p><strong>Note:</strong> This functionality is disabled by default. The proper permissions must be configured. </p></li></ul>
+<h3>
+<a name="id13s3"></a>Performance enhancements</h3>
+<p>The display of adaptation tree is lighter so as to allow large trees (several hundreds of adaptation instances).</p><p>The records&#39; selection in table and in hierarchies has been optimized.</p><h3>
+<a name="id13s4"></a>Backward compatibility</h3>
+<ul>
+<li><p> Method <code>Adaptation.getSchemaNode()</code> :&nbsp;if the schema had errors, this method returned <code>null</code> .&nbsp;Henceforth, it throws <code>UnavailableContentError</code> ,&nbsp;so that the client gets a clearer exception and for being consistent with the existing behaviour of other getter methods. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

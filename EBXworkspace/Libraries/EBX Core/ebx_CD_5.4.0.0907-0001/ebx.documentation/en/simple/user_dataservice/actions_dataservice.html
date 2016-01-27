@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Main actions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="ds_actions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data services</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataservice/actions_dataservice.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data services</span></div>
+<h1>
+Main actions</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#data">Generate WSDL to access data</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Available operations on a selected data set table</a></li></ul>
+</li><li class="toc1"><a href="#dataspace">Generate WSDL to access a data space</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Available Operations</a></li></ul>
+</li><li class="toc1"><a href="#workflow">Generate WSDL to control workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Available Operations</a></li></ul>
+</li><li class="toc1"><a href="#lineage">Generate WSDL for lineage</a></li></ul>
+</div>
+<h2>
+<a name="data"></a>Generate WSDL to access data</h2>
+<p>WSDL generation for data access can be done by selecting <em>Data</em> in the <em>Data Services</em> section.</p><p>Steps for generating a WSDL are the following:</p><ol>
+<li><p>Select a data space.</p></li><li><p>Input a data set identifier (or unique name) and click on next.</p></li><li><p>Select authorized operations for each tables.</p></li><li><p>Download the generated WSDL.</p></li></ol>
+<h3>
+<a name="id1s1"></a>Available operations on a selected data set table</h3>
+<ul>
+<li><p><em>Select record(s).</em></p></li><li><p><em>Insert record(s).</em></p></li><li><p><em>Update record(s).</em></p></li><li><p><em>Delete record(s).</em></p></li><li><p><em>Count record(s).</em></p></li><li><p><em>Get changes between data space or snapshot</em>: gives you a summary of the differences between this table and its equivalent, if it exists, in either a snapshot or another data space.</p></li><li><p><em>Run multiple operations across tables in the data set.</em></p></li></ul>
+<h2>
+<a name="dataspace"></a>Generate WSDL to access a data space</h2>
+<p>WSDL generation for data space manipulation is accessible by selecting <em>Data space</em> from the <em>Data Services</em> section. The generated WSDL is not specific to a data space and no information is required. It can be downloaded using the <em>Download WSDL</em> button located in the workspace area.</p><h3>
+<a name="id2s1"></a>Available Operations</h3>
+<ul>
+<li><p><em>Create a data space</em>.</p></li><li><p><em>Close a data space</em>.</p></li><li><p><em>Create a snapshot</em>.</p></li><li><p><em>Close a snapshot</em>.</p></li><li><p><em>Merge a data space</em>.</p></li><li><p><em>Validate a data space or a snapshot</em>.</p></li><li><p><em>Validate a data set</em>.</p></li></ul>
+<h2>
+<a name="workflow"></a>Generate WSDL to control workflow</h2>
+<p>WSDL generation for workflow control is accessible by selecting <em>Data workflow</em> from the <em>Data Services</em> section. The generated WSDL is not specific to any workflow publication and no information is required. It can be downloaded using the <em>Download WSDL</em> button located in the workspace area.</p><h3>
+<a name="id3s1"></a>Available Operations</h3>
+<ul>
+<li><p><em>Start a data workflow</em>.</p></li><li><p><em>End a data workflow</em>.</p></li></ul>
+<h2>
+<a name="lineage"></a>Generate WSDL for lineage</h2>
+<p>WSDL generation for lineage is accessible by selecting <em>Lineage</em> from the <em>Data Services</em> section, if some security profiles have been granted by an administrator profile in the <em>Lineage</em> administration.</p><p>WSDL generated to access tables and available operations are the same as for <a target="_self" href="#data">WSDL generation for data access</a>.</p><p>Steps for generating a WSDL are the following:</p><ol>
+<li><p>Select a role or user whose permission will be applied. Please note that a role or user must be authorized to be used for lineage by the administrator.</p></li><li><p>Select a data space.</p></li><li><p>Input a data set identifier (or unique name) and click on next.</p></li><li><p>Select tables and authorized operations.</p></li><li><p>Download the generated WSDL.</p></li></ol>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data services</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

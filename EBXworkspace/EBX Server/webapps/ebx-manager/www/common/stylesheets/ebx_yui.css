@@ -1,0 +1,221 @@
+/**
+* For overwrite YUI Classes.
+*/
+.yui-skin-sam .yui-panel .ft {
+	font-size: 0.9em;
+}
+
+/***START menu ***/
+.yui-skin-sam .yuimenu {
+	font-size: 1em;
+}
+.yui-skin-sam .yuimenu .hd,
+.yui-skin-sam .yuimenu .bd,
+.yui-skin-sam .yuimenu .ft {
+	border-color: #C0C0C0;/*{button-borderColor}*/
+}
+.yui-skin-sam .yuimenu h6 {
+	color: #404040;
+	font-size: 0.9em;
+	font-weight: normal;
+	padding-left: 3px;
+	padding-top: 0;
+}
+.yui-skin-sam .yuimenu .hastitle {
+	padding-top: 0;
+}
+.yui-skin-sam .yuimenu .bd,
+.yui-skin-sam .yuimenu .topscrollbar,
+.yui-skin-sam .yuimenu .bottomscrollbar {
+	margin-left: -1px;
+	margin-top: -1px;
+	
+	box-shadow: 0 1px 2px #C0C0C0;
+	-moz-box-shadow: 0 1px 2px #C0C0C0;
+}
+.yui-skin-sam .yuimenu .bd {
+	border-radius: 0 2px 2px 2px;
+	-moz-border-radius: 0 2px 2px 2px;
+}
+
+.yui-skin-sam .yuimenu .topscrollbar {
+	border-radius: 0 2px 0 0;
+	-moz-border-radius: 0 2px 0 0;
+}
+.yui-skin-sam .yuimenu .bottomscrollbar {
+	margin-top: 0;
+	border-radius: 0 0 2px 2px;
+	-moz-border-radius: 0 0 2px 2px;
+}
+.yui-skin-sam .yuimenu .bd.yui-menu-body-scrolled {
+	margin-top: 0;
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.yui-skin-sam .yuimenuitem-checked {
+	background-image: none;
+}
+.yui-skin-sam .yuimenuitem-hassubmenu.yuimenuitem-checked {
+	background-image: url(../yui/assets/skins/sam/menuitem_submenuindicator.png);
+	background-position: right center;
+}
+.yui-skin-sam .yuimenuitemlabel-checked {
+	background-image: url(../yui/assets/skins/sam/menuitem_checkbox.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.yui-skin-sam .yuimenuitemlabel {
+	cursor: pointer;
+}
+.yui-skin-sam .yuimenuitemlabel.yuimenuitemlabel-hassubmenu {
+	cursor: default;
+}
+/***END menu ***/
+
+/***START paging ***/
+#ebx_WorkspaceTablePaging.yui-pg-container {
+	margin: 0 10px 0 0;
+	display: inline;
+	white-space: normal;
+}
+#ebx_WorkspaceTablePaging.yui-pg-container .yui-pg-current {
+	padding: 0;
+	margin: 0;
+}
+/***END paging ***/
+
+/***START tab view ***/
+.yui-navset-top {
+	position: static;
+}
+
+.yui-skin-sam .yui-navset .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav {
+	border: none;
+}
+.yui-skin-sam .yui-navset .yui-nav li,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav li,
+.yui-skin-sam .yui-navset .yui-nav .selected,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav .selected {
+	margin: 0 5px 0 0;
+}
+.yui-skin-sam .yui-navset .yui-nav li:last-child,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav li:last-child,
+.yui-skin-sam .yui-navset .yui-nav .selected:last-child,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav .selected:last-child {
+	margin: 0;
+}
+.yui-navset .yui-nav li,
+.yui-navset .yui-navset-top .yui-nav li,
+.yui-navset .yui-nav li a,
+.yui-navset-top .yui-nav li a {
+	vertical-align: baseline;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a {
+	position: static;
+	
+	border-width: 1px 1px 0 1px;
+	border-color: #C0C0C0;/*{button-borderColor}*/
+    
+    border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em {
+	position: static;
+	
+	border: none;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-nav .selected a em {
+	padding: 1px 13px 1px 8px;/* 13px to let a place for tooltip button to display */
+}
+
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a,
+.yui-skin-sam .yui-navset .yui-nav a:focus,
+.yui-skin-sam .yui-navset .yui-nav a:hover,
+.yui-skin-sam .yui-navset .yui-nav a:active,
+.yui-skin-sam .yui-navset .yui-nav .selected a,
+.yui-skin-sam .yui-navset .yui-nav .selected a:focus,
+.yui-skin-sam .yui-navset .yui-nav .selected a:hover {
+	background-image: none;
+}
+
+
+.yui-skin-sam .yui-navset .yui-content,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-content {
+	border-color: #E0E0E0;/*{input-borderColor}*/
+	border-top-width: 3px;
+
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	
+	padding: 2px;
+	
+	border-radius: 0 0 2px 2px;
+	-moz-border-radius: 0 0 2px 2px;
+	
+	/* Mantis #11716 */
+	min-width: -moz-max-content;
+	min-width: -webkit-max-content;
+}
+
+.yui-navset .yui-nav li.ebx_HiddenTab,
+.yui-navset .yui-navset-top .yui-nav li.ebx_HiddenTab {
+	display: none;
+}
+
+
+/***END tab view ***/
+
+
+/***START calendar ***/
+.yui-skin-sam .yui-calcontainer .title {
+	z-index: auto;
+	background-image: none;
+}
+.yui-skin-sam .yui-calendar .calcell.selected a {
+	font-weight: bold;
+}
+.yui-skin-sam .yui-calendar .calcell.today {
+	background-color: transparent;
+}
+.yui-skin-sam .yui-calendar .calcell.today a {
+	border: 1px solid #000000;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav {
+	font-size: 1em;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav-b {
+	height: 25px;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn.yui-default button {
+	color: #000000;
+	font-weight: bold;
+}
+
+/***END calendar ***/
+
+/***START progress bar ***/
+.yui-skin-sam .yui-pb-ltr .yui-pb-bar {
+	background-image: url(../yui/assets/skins/sam/ebx_bar-h.png);
+}
+/***END progress bar ***/
+
+
+#ebx_ISS_pane .yui-resize-handle-br,
+#ebx_InternalPopup .yui-resize-handle-br {
+    background-color: transparent;
+	background-position: 0 -68px;
+    bottom: 1px;
+    height: 12px;
+    right: 1px;
+    width: 12px;
+}

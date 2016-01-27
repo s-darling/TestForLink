@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Mod&eacute;lisation de la structure des donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_structure" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_datamodel/userdatamodel_implementdatastructure.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</span></div>
+<h1>
+Mod&eacute;lisation de la structure des donn&eacute;es</h1>
+<p>Pour d&eacute;finir la structure du mod&egrave;le de donn&eacute;es, s&eacute;lectionnez le mod&egrave;le de donn&eacute;es avec lequel vous voulez travailler en utilisant le menu <a target="_self" href="../user_datamodel/userdatamodel_ui.html"><strong>&quot;S&eacute;lectionner le mod&egrave;le de donn&eacute;es&quot;</strong></a><img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>dans le panneau de navigation.</p><p>La structure du mod&egrave;le de donn&eacute;es est accessible dans le panneau de navigation dans la section &quot;Structure de donn&eacute;es&quot;. Cette section permet de visualiser et de d&eacute;finir la structure des champs, groupes, et tables du mod&egrave;le de donn&eacute;es.</p><div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Actions et propriétés communes</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Créer des éléments</a></li><li class="toc2"><a href="#delete">Supprimer des éléments</a></li><li class="toc2"><a href="#duplicate">Dupliquer des éléments existants</a></li><li class="toc2"><a href="#move">Déplacer des éléments</a></li></ul>
+</li><li class="toc1"><a href="#reusableTypes">Types réutilisables</a><ul class="toc2">
+<li class="toc2"><a href="#reusableDefine">Définition d'un type réutilisable</a></li><li class="toc2"><a href="#reusableUse">Utilisation d'un type réutilisable</a></li><li class="toc2"><a href="#includeDataModel">Inclusion des types de données définis dans autres modèles de données</a></li></ul>
+</li><li class="toc1"><a href="#id3">Détails de la création des éléments du modèle de données</a><ul class="toc2">
+<li class="toc2"><a href="#addfield">Création de champs</a></li><li class="toc2"><a href="#addtable">Création de tables</a></li><li class="toc2"><a href="#addgroup">Création de groupes</a></li><li class="toc2"><a href="#addpkey">Création de clés primaires</a></li><li class="toc2"><a href="#addfkey">Création ou définition de clés étrangères</a></li><li class="toc2"><a href="#addUDACatalog">Création d'un catalogue d'attributs utilisateurs</a></li><li class="toc2"><a href="#addUDA">Création d'un attribut utilisateur</a></li></ul>
+</li><li class="toc1"><a href="#id4">Modification des éléments existants</a><ul class="toc2">
+<li class="toc2"><a href="#removepkey">Suppression d'un champ de la clé primaire</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Actions et propri&eacute;t&eacute;s communes</h2>
+<h3>
+<a name="id1s1"></a>Cr&eacute;er des &eacute;l&eacute;ments</h3>
+<p>Les &eacute;l&eacute;ments suivants peuvent &ecirc;tre ajout&eacute;s &agrave; un mod&egrave;le de donn&eacute;es :</p><ul>
+<li><p>champs</p></li><li><p>groupes</p></li><li><p>tables</p></li><li><p>cl&eacute;s primaires</p></li><li><p>cl&eacute;s &eacute;trang&egrave;res</p></li></ul>
+<p>Ajoutez un de ces &eacute;l&eacute;ments sous un &eacute;l&eacute;ment existant en cliquant sur la fl&egrave;che <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> situ&eacute;e &agrave; la droite de l&#39;&eacute;l&eacute;ment existant et en s&eacute;lectionnant une option de cr&eacute;ation parmis les options pr&eacute;sent&eacute;es dans le menu. Suivez l&#39;assistant de cr&eacute;ation afin de cr&eacute;er un &eacute;l&eacute;ment.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+L&#39;&eacute;l&eacute;ment <code>root</code> est ajout&eacute; par d&eacute;faut lors de la cr&eacute;ation d&#39;un mod&egrave;le de donn&eacute;es. Cet &eacute;l&eacute;ment repr&eacute;sente la racine de la structure du mod&egrave;le de donn&eacute;es.</fieldset>
+<h4>
+Noms, libell&eacute;s, descriptions, et informations</h4>
+<p>Le nom de l&#39;&eacute;l&eacute;ment &agrave; cr&eacute;er est obligatoire. Ce nom doit &ecirc;tre unique au sein d&#39;un m&ecirc;me niveau dans la structure de donn&eacute;es. En effet, sous un m&ecirc;me groupe deux &eacute;l&eacute;ments ne peuvent avoir le m&ecirc;me nom. Une fois l&#39;&eacute;l&eacute;ment cr&eacute;&eacute; son nom ne pourra plus &ecirc;tre modifi&eacute;.</p><p>Vous avez la possibilit&eacute; de d&eacute;finir des libell&eacute;s localis&eacute;s qui seront affich&eacute;s dans l&#39;interface utilisateur au lieu du nom unique de l&#39;&eacute;l&eacute;ment. Il est aussi possible de d&eacute;finir une description localis&eacute;e de l&#39;&eacute;l&eacute;ment. Contrairement au nom de l&#39;&eacute;l&eacute;ment, les libell&eacute;s et descriptions sont modifiables apr&egrave;s la cr&eacute;ation de l&#39;&eacute;l&eacute;ment. Selon la pr&eacute;f&eacute;rence de langue de chaque utilisateur, EBX5 affichera le libell&eacute; et la description localis&eacute; de l&#39;&eacute;l&eacute;ment.</p><h3>
+<a name="delete"></a>Supprimer des &eacute;l&eacute;ments</h3>
+<p>Tous les &eacute;l&eacute;ments sauf le noeud <code>root</code> peuvent &ecirc;tre supprim&eacute;s de la structure de donn&eacute;es en utilisant la fl&egrave;che <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> situ&eacute;e &agrave; la droite de l&#39;&eacute;l&eacute;ment &agrave; supprimer.</p><p>Si un groupe ou une table n&#39;utilisant pas un type r&eacute;utilisable est supprim&eacute;, la suppression est effectu&eacute;e r&eacute;cursivement sur tous les &eacute;l&eacute;ments situ&eacute;s sous le groupe ou la table.</p><h3>
+<a name="duplicate"></a>Dupliquer des &eacute;l&eacute;ments existants</h3>
+<p>Pour dupliquer un &eacute;l&eacute;ment, cliquez sur la fl&egrave;che <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> situ&eacute;e &agrave; la droite de l&#39;&eacute;l&eacute;ment &agrave; dupliquer. Il est n&eacute;cessaire de sp&eacute;cifier le nom de l&#39;&eacute;l&eacute;ment dupliqu&eacute;. Ce nom doit &ecirc;tre unique au sein d&#39;un m&ecirc;me niveau dans la structure de donn&eacute;es. Toutes les propri&eacute;t&eacute;s de l&#39;&eacute;l&eacute;ment source sont dupliqu&eacute;es.</p><p>L&#39;&eacute;l&eacute;ment dupliqu&eacute; est rajout&eacute; dans le mod&egrave;le de donn&eacute;es au m&ecirc;me niveau que l&#39;&eacute;l&eacute;ment d&#39;origine, et en derni&egrave;re position. Si vous dupliquez un &eacute;l&eacute;ment qui contient autres &eacute;l&eacute;ments, tous les sous &eacute;l&eacute;ments sont dupliqu&eacute;s avec leurs noms originaux.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Si vous dupliquez un champ appartenant &agrave; une cl&eacute; primaire, les propri&eacute;t&eacute;s du champ sont dupliqu&eacute;es, mais le nouveau champ n&#39;est pas ajout&eacute; &agrave; la cl&eacute; primaire de la table parente.</fieldset>
+<h3>
+<a name="move"></a>D&eacute;placer des &eacute;l&eacute;ments</h3>
+<p>Il est possible de d&eacute;placer un &eacute;l&eacute;ment en utilisant les fl&egrave;ches orient&eacute;es vers le haut et le bas situ&eacute;es &agrave; c&ocirc;t&eacute; de l&#39;&eacute;l&eacute;ment &agrave; d&eacute;placer. </p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Le d&eacute;placement d&#39;un &eacute;l&eacute;ment est uniquement possible au sein d&#39;un m&ecirc;me niveau dans la structure de donn&eacute;es du mod&egrave;le.</fieldset>
+<h2>
+<a name="reusableTypes"></a>Types r&eacute;utilisables</h2>
+<p>Les types r&eacute;utilisables sont des &eacute;l&eacute;ments partag&eacute;s qui sont cr&eacute;&eacute;s une fois, puis r&eacute;utilis&eacute;s par diff&eacute;rents &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+En modifiant la d&eacute;finition d&#39;un type r&eacute;utilisable, vous modifiez la structure de tous les &eacute;l&eacute;ments bas&eacute;s sur ce type r&eacute;utilisable. L&#39;arborescence &quot;Structure de donn&eacute;es&quot; affiche la structure en lecture seule d&#39;un groupe ou d&#39;une table qui utilise un type r&eacute;utilisable. Pour &eacute;diter la structure du type r&eacute;utilisable associ&eacute;, vous devez acc&eacute;der au type dans la section &quot;Types de donn&eacute;es simples&quot; ou &quot;Types de donn&eacute;es complexes&quot;.</fieldset>
+<h3>
+<a name="reusableDefine"></a>D&eacute;finition d&#39;un type r&eacute;utilisable</h3>
+<p>En utilisant le menu avec la fl&egrave;che <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>associ&eacute; aux sections &quot;Types de donn&eacute;es simples&quot; ou &quot;Types de donn&eacute;es complexes&quot; dans le panneau de navigation, vous pouvez cr&eacute;er des types simples et des types complexes r&eacute;utilisables. Vous avez aussi la possibilit&eacute; de cr&eacute;er un type r&eacute;utilisable lors de la cr&eacute;ation d&#39;un &eacute;l&eacute;ment complexe (table ou groupe). Dans ce cas, apr&egrave;s la cr&eacute;ation de l&#39;&eacute;l&eacute;ment, le type r&eacute;utilisable sera disponible pour la cr&eacute;ation d&#39;autres &eacute;l&eacute;ments avec la m&ecirc;me structure et les m&ecirc;mes propri&eacute;t&eacute;s. Vous pouvez &eacute;galement convertir les tables et groupes existants en types r&eacute;utilisables en utilisant le menu avec la fl&egrave;che<img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>situ&eacute; &agrave; c&ocirc;t&eacute; de l&#39;&eacute;l&eacute;ment &agrave; convertir.</p><p>Il est possible de visualiser les &eacute;l&eacute;ments du mod&egrave;le utilisant un type r&eacute;utilisable en &eacute;ditant ce type et en cliquant sur le lien &quot;R&eacute;f&eacute;rences vers ce type&quot;. Ce lien affiche une table listant tous les &eacute;l&eacute;ments utilisant ce type. Si le type est utilis&eacute; par aucun &eacute;l&eacute;ment, vous pouvez le supprimer en s&eacute;lectionnant &quot;Supprimer type&quot; en utilisant le menu avec la fl&egrave;che <img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img>situ&eacute; &agrave; droite du type &agrave; supprimer.</p><h3>
+<a name="reusableUse"></a>Utilisation d&#39;un type r&eacute;utilisable</h3>
+<p>Les structures et les propri&eacute;t&eacute;s de nouveaux &eacute;l&eacute;ments peuvent &ecirc;tre d&eacute;finies par des types r&eacute;utilisables en s&eacute;lectionnant un type r&eacute;utilisable lors de la cr&eacute;ation d&#39;un &eacute;l&eacute;ment. L&#39;&eacute;l&eacute;ment cr&eacute;&eacute; utilisera la struture et les propri&eacute;t&eacute;s du type r&eacute;utilisable.</p><h3>
+<a name="includeDataModel"></a>Inclusion des types de donn&eacute;es d&eacute;finis dans autres mod&egrave;les de donn&eacute;es</h3>
+<p>Les types r&eacute;utilisables peuvent aussi &ecirc;tre partag&eacute; entre plusieurs mod&egrave;les de donn&eacute;es. En configurant l&#39;inclusion d&#39;un mod&egrave;le de donn&eacute;es externe, vous pouvez utiliser les types de donn&eacute;es inclus pour cr&eacute;er des nouveaux &eacute;l&eacute;ments dans la structure de donn&eacute;es de la m&ecirc;me fa&ccedil;on que les types r&eacute;utilisables d&eacute;finis en local.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Car les noms de types de donn&eacute;es doivent &ecirc;tre unique pour tous les types d&eacute;finis en local et inclus, vous ne pouvez pas cr&eacute;er un nouveau type r&eacute;utilisable qui a le m&ecirc;me nom qu&#39;un type de donn&eacute;es dans un mod&egrave;le de donn&eacute;es inclus. Egalement, ce n&#39;est pas possible d&#39;inclure un mod&egrave;le de donn&eacute;es externe qui d&eacute;finit un type de donn&eacute;es avec le m&ecirc;me nom qu&#39;un type r&eacute;utilisable d&eacute;fini en local ou dans un autre mod&egrave;le de donn&eacute;es inclus.</fieldset>
+<p>Les types de donn&eacute;es inclus apparaît dans les sections &quot;Types de donn&eacute;es simples inclus&quot; et &quot;Types de donn&eacute;es complexes inclus&quot; dans le panneau de navigation. Vous pouvez consulter les d&eacute;tails de ces types r&eacute;utilisables, mais il ne peuvent &ecirc;tre &eacute;dit&eacute;s que dans leurs mod&egrave;les de donn&eacute;es d&#39;origine.</p><p>Voir <a target="_self" href="../user_datamodel/userdatamodel_configuring.html#includemodel">Mod&egrave;les de donn&eacute;es inclus</a> pour plus d&#39;informations.</p><h2>
+<a name="id3"></a>D&eacute;tails de la cr&eacute;ation des &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es</h2>
+<h3>
+<a name="addfield"></a>Cr&eacute;ation de champs</h3>
+<p>Quand vous cr&eacute;ez un champ, vous &ecirc;tes oblig&eacute; de s&eacute;lectionner un type de donn&eacute;es. Ce type d&eacute;finira le type de donn&eacute;es associ&eacute; aux valeurs saisies dans un jeu de donn&eacute;es bas&eacute; sur ce mod&egrave;le. Le type de donn&eacute;es du champ ne peut pas &ecirc;tre modifi&eacute; apr&egrave;s la cr&eacute;ation du champ.</p><h3>
+<a name="addtable"></a>Cr&eacute;ation de tables</h3>
+<p>Lors la cr&eacute;ation d&#39;une nouvelle table, vous avez la possibilit&eacute; de cr&eacute;er un type r&eacute;utilisable, bas&eacute; sur la d&eacute;finition de cette table. Cela permet de r&eacute;utiliser la m&ecirc;me structure de table &agrave; diff&eacute;rents endroits du mod&egrave;le de donn&eacute;es. Vous pouvez &eacute;galement utiliser un type r&eacute;utilisable existant pour la d&eacute;finition de la nouvelle table. Voir <a target="_self" href="#reusableTypes">Types r&eacute;utilisables</a> pour plus d&#39;informations.</p><p>A la fin de l&#39;assistant de cr&eacute;ation de table, vous pouvez cr&eacute;er directement une cl&eacute; primaire qui sera associ&eacute;e &agrave; la nouvelle table. Chaque table n&eacute;cessite la d&eacute;signation d&#39;au moins un champ cl&eacute; primaire. Si vous d&eacute;cidez de ne pas cr&eacute;er un champ cl&eacute; primaire lors de la cr&eacute;ation de la table, il sera possible de cr&eacute;er une cl&eacute; primaire ult&eacute;rieurement &agrave; partir du menu d&#39;actions disponible sur la table dans la section &quot;Structure de donn&eacute;es &quot; du panneau de navigation.</p><h3>
+<a name="addgroup"></a>Cr&eacute;ation de groupes</h3>
+<p>Lors de la cr&eacute;ation d&#39;un groupe, vous avez la possibilit&eacute; de cr&eacute;er un type r&eacute;utilisable, ou d&#39;utiliser un type r&eacute;utilisable existant. Voir <a target="_self" href="#reusableTypes">Types r&eacute;utilisables</a> pour plus d&#39;informations. </p><h3>
+<a name="addpkey"></a>Cr&eacute;ation de cl&eacute;s primaires</h3>
+<p>Une cl&eacute; primaire est n&eacute;cessaire pour chaque table. Apr&egrave;s la cr&eacute;ation d&#39;une table, vous avez la possibilit&eacute; de cr&eacute;er directement des champs appartenant &agrave; la cl&eacute; primaire de la table &agrave; partir de l&#39;assistant de cr&eacute;ation de tables.</p><p>Il est toutefois possible de cr&eacute;er une cl&eacute; primaire &agrave; n&#39;importe quel moment, &agrave; partir du menu d&#39;actions disponible sur la table dans la section &quot;Structure de donn&eacute;es &quot; du panneau de navigation.</p><p><a name="definepkey"></a>Il est aussi possible d&#39;ajouter un champ existant &agrave; la d&eacute;finition de la cl&eacute; primaire en utilisant le menu avec la fl&egrave;che<img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> situ&eacute; &agrave; droite de ce champ.</p><h3>
+<a name="addfkey"></a>Cr&eacute;ation ou d&eacute;finition de cl&eacute;s &eacute;trang&egrave;res</h3>
+<p>Les champs associ&eacute;s &agrave; une cl&eacute; &eacute;trang&egrave;re ont le type de donn&eacute;es &quot;Chaîne de caract&egrave;res&quot;. Vous pouvez cr&eacute;er une cl&eacute; &eacute;trang&egrave;re vers une table situ&eacute;e dans le m&ecirc;me mod&egrave;le directement depuis la structure de donn&eacute;es, ou vous pouvez d&eacute;finir directement les propri&eacute;t&eacute;s d&#39;une cl&eacute; &eacute;trang&egrave;re en &eacute;ditant un champ de type &quot;Chaîne de caract&egrave;res&quot;.</p><p>Pour convertir un champ existant de type &quot;Chaîne de caract&egrave;res&quot; en cl&eacute; &eacute;trang&egrave;re, activez la propri&eacute;t&eacute; &quot;Contrainte de cl&eacute; &eacute;trang&egrave;re&quot; dans les &quot;Contr&ocirc;les avanc&eacute;s&quot; du champ et d&eacute;finissez les propri&eacute;t&eacute;s associ&eacute;es.</p><h3>
+<a name="addUDACatalog"></a>Cr&eacute;ation d&#39;un catalogue d&#39;attributs utilisateurs</h3>
+<p>Un catalogue d&#39;attributs utilisateurs est n&eacute;cessaire pour cr&eacute;er des champs de type &quot;attribut utilisateur&quot;. Lorsque vous cr&eacute;ez un nouveau catalogue d&#39;attributs utilisateurs, vous devez d&eacute;finir son nom. Une fois cr&eacute;&eacute;, ce catalogue pourra &ecirc;tre utilis&eacute; lors de la cr&eacute;ation de champs de type &quot;attribut utilisateur&quot;. </p><h3>
+<a name="addUDA"></a>Cr&eacute;ation d&#39;un attribut utilisateur</h3>
+<p>Lorsque vous cr&eacute;ez un attribut utilisateur, vous devez sp&eacute;cifier un catalogue existant de d&#39;attributs utilisateurs. Ce catalogue contient les attributs qui seront associ&eacute;s avec le nouvel attribut utilisateur. Apr&egrave;s la cr&eacute;ation de ce nouvel attribut, le catalogue r&eacute;f&eacute;renc&eacute; pourra &ecirc;tre modifi&eacute; en modifiant la propri&eacute;t&eacute; &quot;Chemin du catalogue UDA&quot; dans la section &quot;Propri&eacute;t&eacute;s avanc&eacute;es&quot;. </p><h2>
+<a name="id4"></a>Modification des &eacute;l&eacute;ments existants</h2>
+<h3>
+<a name="removepkey"></a>Suppression d&#39;un champ de la cl&eacute; primaire</h3>
+<p>Tous champs appartenant &agrave; la cl&eacute; primaire peut &ecirc;tre supprim&eacute; de la cl&eacute; primaire d&#39;une table en utilisant le menu avec la fl&egrave;che<img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> situ&eacute; &agrave; droite du champ. Le champ est supprim&eacute; de la d&eacute;finition de la cl&eacute; primaire mais n&#39;est pas supprim&eacute; de la structure de donn&eacute;es.</p><p>Voir <a target="_self" href="../glossary/simple_glossary.html#pkey">cl&eacute; primaire</a> dans le glossaire.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

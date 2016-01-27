@@ -1,0 +1,145 @@
+
+a:focus,
+button:focus,
+:focus {
+	outline-width: 1px;
+	-moz-outline-radius: 4px;
+}
+
+button::-moz-focus-inner {
+	border-color: transparent;
+}
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 0 8px 1px 8px; /* don't know why... */
+}
+
+.tvFixedScroller .ebx_Button.ebx_IconButton,
+.tvMainScroller .ebx_Button.ebx_IconButton,
+.tvFixedScroller .ebx_IconButtonSmall,
+.tvMainScroller .ebx_IconButtonSmall,
+.tvFixedScroller .ebx_FlatButtonNoBorder.ebx_IconButton,
+.tvMainScroller .ebx_FlatButtonNoBorder.ebx_IconButton,
+.tvFixedScroller .ebx_FlatButtonNoBorder.ebx_IconButtonSmall,
+.tvMainScroller .ebx_FlatButtonNoBorder.ebx_IconButtonSmall,
+.tvFixedScroller .ebx_FlatButton.ebx_IconButton,
+.tvMainScroller .ebx_FlatButton.ebx_IconButton,
+.tvFixedScroller .ebx_IconFlatButtonSmall,
+.tvMainScroller .ebx_IconFlatButtonSmall {
+    padding-top: 2px;
+}
+.ebx_Input .ebx_Button,
+.ebx_Input .ebx_FlatButton,
+.ebx_SmallFormButtons .ebx_Button,
+.ebx_SmallFormButtons .ebx_FlatButton,
+.tvFixedScroller .ebx_Button,
+.tvMainScroller .ebx_Button,
+.tvFixedScroller .ebx_FlatButton,
+.tvMainScroller .ebx_FlatButton {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.ebx_Input a.ebx_Button,
+.ebx_Input a.ebx_FlatButton,
+.ebx_SmallFormButtons a.ebx_Button,
+.ebx_SmallFormButtons a.ebx_FlatButton,
+.tvFixedScroller a.ebx_Button,
+.tvMainScroller a.ebx_Button,
+.tvFixedScroller a.ebx_FlatButton,
+.tvMainScroller a.ebx_FlatButton {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.ebx_Input a.ebx_IconButton,
+.ebx_SmallFormButtons a.ebx_IconButton,
+.tvFixedScroller a.ebx_IconButton,
+.tvMainScroller a.ebx_IconButton {
+	padding: 1px;
+}
+
+.ebx_Input a.ebx_Button,
+.ebx_Input a.ebx_FlatButton,
+.ebx_SmallFormButtons a.ebx_Button,
+.ebx_SmallFormButtons a.ebx_FlatButton {
+	line-height: 13px;
+}
+
+.ebx_Button.ebx_MenuButton.ebx_fullWidthButtonCell {
+	margin-right: 20px; /* don't know why... */
+}
+
+button.ebx_IconButton .ebx_Icon,
+button.ebx_IconButtonSmall .ebx_SmallIcon,
+button.ebx_IconFlatButtonSmall .ebx_SmallIcon {
+	margin-top: -2px; /* don't know why... */
+}
+button.ebx_IconButtonSmall .ebx_SmallIcon,
+button.ebx_IconFlatButtonSmall .ebx_SmallIcon {
+	margin-left: -1px; /* don't know why... */
+}
+
+button.ebx_IconButton .ebx_Icon {
+	vertical-align: -3px; /* 2 (button.padding-bottom) + 1 (button.border-bottom) */
+}
+
+.tvFixedScroller .ebx_IconButton .ebx_Icon,
+.tvMainScroller .ebx_IconButton .ebx_Icon,
+.wpihWorkItem .ebx_IconButton .ebx_Icon {
+	margin-top: -3px; /* don't know why... */
+	margin-left: -3px; /* don't know why... */
+}
+
+.ebx_NodeActions button.ebx_IconButton .ebx_Icon {
+	margin-left: -2px; /* don't know why... */
+	margin-top: -1px; /* don't know why... */
+}
+
+.ebx_Input button.ebx_IconButton .ebx_Icon,
+.ebx_SmallFormButtons button.ebx_IconButton .ebx_Icon {
+	margin-top: -2px; /* don't know why... */
+	margin-left: -3px; /* don't know why... */
+}
+
+.ebx_ISS_Container button.ebx_IconButton .ebx_Icon {
+	margin-left: -2px; /* don't know why... */
+}
+
+.ebx_TextAndIconLeftButton .ebx_Icon,
+.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-top: -2px;
+}
+
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	margin-bottom: -1px;
+}
+
+fieldset .ebx_SimpleSearchFilterCriterionRemoveButtonIcon {
+	top: -17px;
+}
+
+.ygtvcell a.ygtvspacer {
+	font-size: 8px;
+	line-height: 8px;
+}
+
+.ebx_WorkflowBadge {
+	line-height: 10px;
+}
+.ebx_workflow_deadline {
+	vertical-align: -1px;
+}
+
+.cke_bottom {
+	padding-bottom: 3px;
+}
+.cke_combo_text {
+	margin-bottom: -1px;
+	margin-top: 1px;
+}
+
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveActionLabelFirstLevel {
+	left: 40px;
+}

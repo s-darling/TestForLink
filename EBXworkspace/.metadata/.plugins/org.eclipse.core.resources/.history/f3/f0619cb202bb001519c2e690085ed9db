@@ -1,0 +1,8 @@
+libraries             = ../Libraries
+libraries.servlet.jar = ${libraries}/Apache Tomcat/apache-tomcat-7.0.42/lib/servlet-api.jar
+libraries.ebx.jar     = ${libraries}/EBX Core/ebx_CD_5.4.0.0907-0001/ebx.software/lib/ebx.jar
+
+module.src            = ./src
+module.webapp         = ./webapp
+module.webapp.classes = ./webapp/WEB-INF/classes
+module.war            = ./geomatch module.war

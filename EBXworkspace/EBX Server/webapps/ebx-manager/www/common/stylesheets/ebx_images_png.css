@@ -1,0 +1,268 @@
+/** alone icons **/
+
+.ebx_IconError {
+	background-image: url(../images/onIcons/ebx_error.png);
+}
+.ebx_IconWarning {
+	background-image: url(../images/onIcons/ebx_warning.png);
+}
+.ebx_IconInfo {
+	background-image: url(../images/onIcons/ebx_info.png);
+}
+.ebx_IconAttribute {
+	background-image: url(../images/onIcons/ebx_attributeGrey.png);
+}
+.ebx_IconPrimaryKey {
+	background-image: url(../images/onIcons/ebx_pkeyGrey.png);
+}
+.ebx_IconForeignKey {
+	background-image: url(../images/onIcons/ebx_fkeyGrey.png);
+}
+.ebx_IconPrimaryForeignKey {
+	background-image: url(../images/onIcons/ebx_pfkeyGrey.png);
+}
+.ebx_IconGroup {
+	background-image: url(../images/onIcons/ebx_groupGrey.png);
+}
+
+/** sprites **/
+
+/* tree expand/collapse icons */
+.ygtvtm a.ygtvspacer,
+.ygtvtmh a.ygtvspacer,
+.ygtvtp a.ygtvspacer,
+.ygtvtph a.ygtvspacer,
+.ygtvlm a.ygtvspacer,
+.ygtvlmh a.ygtvspacer,
+.ygtvlp a.ygtvspacer,
+.ygtvlph a.ygtvspacer {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_dark.png);
+}
+.ebx_ShowMatches .ebx_TreeNodeSearchMatch .ygtvblankdepthcell:first-child>.ygtvspacer {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_medium.png);
+}
+
+/*START header */
+.ebx_HeaderIconsLight .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsLight .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsLight .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsLight .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsLight .ebx_MenuLabel:active:focus,
+.ebx_HeaderHighlightIconsLight .ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-image: url(../images/onHeader/ebx_Menu_sprite_light.png);
+}
+.ebx_HeaderIconsMedium .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsMedium .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsMedium .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsMedium .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsMedium .ebx_MenuLabel:active:focus,
+.ebx_HeaderHighlightIconsMedium .ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-image: url(../images/onHeader/ebx_Menu_sprite_medium.png);
+}
+.ebx_HeaderIconsDark .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsDark .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsDark .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsDark .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsDark .ebx_MenuLabel:active:focus,
+.ebx_HeaderHighlightIconsDark .ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-image: url(../images/onHeader/ebx_Menu_sprite_dark.png);
+}
+/* default icon for ModuleHeaderMenuItem */
+#ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel {
+	background-image: url(../images/onHeader/ebx_DefaultModuleIconSprite.png);
+}
+
+.ebx_HeaderIconsLight .ebx_FlatButtonNoBorder .ebx_Icon,
+.ebx_HeaderIconsLight .ebx_FlatButtonNoBorder .ebx_MenuButtonArrow,
+.ebx_HeaderHighlightIconsLight .ebx_FlatButtonNoBorder:hover .ebx_Icon,
+.ebx_HeaderHighlightIconsLight .ebx_FlatButtonNoBorder:focus .ebx_Icon,
+.ebx_HeaderHighlightIconsLight .ebx_FlatButtonNoBorder:hover .ebx_MenuButtonArrow,
+.ebx_HeaderHighlightIconsLight .ebx_FlatButtonNoBorder:focus .ebx_MenuButtonArrow {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_light.png);
+}
+.ebx_HeaderIconsMedium .ebx_FlatButtonNoBorder .ebx_Icon,
+.ebx_HeaderIconsMedium .ebx_FlatButtonNoBorder .ebx_MenuButtonArrow,
+.ebx_HeaderHighlightIconsMedium .ebx_FlatButtonNoBorder:hover .ebx_Icon,
+.ebx_HeaderHighlightIconsMedium .ebx_FlatButtonNoBorder:focus .ebx_Icon,
+.ebx_HeaderHighlightIconsMedium .ebx_FlatButtonNoBorder:hover .ebx_MenuButtonArrow,
+.ebx_HeaderHighlightIconsMedium .ebx_FlatButtonNoBorder:focus .ebx_MenuButtonArrow {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_medium.png);
+}
+.ebx_HeaderIconsDark .ebx_FlatButtonNoBorder .ebx_Icon,
+.ebx_HeaderIconsDark .ebx_FlatButtonNoBorder .ebx_MenuButtonArrow,
+.ebx_HeaderHighlightIconsDark .ebx_FlatButtonNoBorder:hover .ebx_Icon,
+.ebx_HeaderHighlightIconsDark .ebx_FlatButtonNoBorder:focus .ebx_Icon,
+.ebx_HeaderHighlightIconsDark .ebx_FlatButtonNoBorder:hover .ebx_MenuButtonArrow
+.ebx_HeaderHighlightIconsDark .ebx_FlatButtonNoBorder:focus .ebx_MenuButtonArrow {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_dark.png);
+}
+
+.ebx_HeaderIconsLight #ebx_HideHeader .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsLight #ebx_HideHeader:hover .ebx_SmallIcon,
+#ebx_HeaderExpandKnob.ebx_HeaderIconsLight .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_light.png);
+}
+.ebx_HeaderIconsMedium #ebx_HideHeader .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium #ebx_HideHeader:hover .ebx_SmallIcon,
+#ebx_HeaderExpandKnob.ebx_HeaderIconsMedium .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_medium.png);
+}
+.ebx_HeaderIconsDark #ebx_HideHeader .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsDark #ebx_HideHeader:hover .ebx_SmallIcon,
+#ebx_HeaderExpandKnob.ebx_HeaderIconsDark .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_dark.png);
+}
+/*END header */
+
+/*START Perspective Navigation Pane */
+
+.ebx_PNPIconsLight #ebx_Navigation .ebx_Icon,
+.ebx_PNPHighlightIconsLight #ebx_Navigation a:hover .ebx_Icon,
+.ebx_PNPHighlightIconsLight #ebx_Navigation a:focus .ebx_Icon,
+.ebx_PNPHighlightIconsLight #ebx_Navigation a:active .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_light.png);
+}
+.ebx_PNPIconsMedium #ebx_Navigation .ebx_Icon,
+.ebx_PNPHighlightIconsMedium #ebx_Navigation a:hover .ebx_Icon,
+.ebx_PNPHighlightIconsMedium #ebx_Navigation a:focus .ebx_Icon,
+.ebx_PNPHighlightIconsMedium #ebx_Navigation a:active .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_medium.png);
+}
+.ebx_PNPIconsDark #ebx_Navigation .ebx_Icon,
+.ebx_PNPHighlightIconsDark #ebx_Navigation a:hover .ebx_Icon,
+.ebx_PNPHighlightIconsDark #ebx_Navigation a:focus .ebx_Icon,
+.ebx_PNPHighlightIconsDark #ebx_Navigation a:active .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_dark.png);
+}
+
+.ebx_PNPIconsLight .ebx_NavigationPaneScrollControl .ebx_SmallIcon,
+.ebx_PNPIconsLight .ebx_perspectiveSections .ebx_SmallIcon,
+.ebx_PNPExpandedGroupIconsLight .ebx_perspectiveSections .ebx_PerspectiveGroupExpanded .ebx_SmallIcon,
+.ebx_PNPHighlightIconsLight .ebx_perspectiveSections a:hover .ebx_SmallIcon,
+.ebx_PNPHighlightIconsLight .ebx_perspectiveSections a:focus .ebx_SmallIcon,
+.ebx_PNPHighlightIconsLight .ebx_perspectiveSections a:active .ebx_SmallIcon,
+.ebx_PNPHighlightIconsLight #ebx_NavigationPaneToggleReduced:hover .ebx_SmallIcon,
+.ebx_PNPHighlightIconsLight .ebx_NavigationPaneScrollControl:hover .ebx_SmallIcon,
+.ebx_PNPHighlightIconsLight .ebx_NavigationProxyCollapsed .ebx_SmallIcon,
+.ebx_PNPHighlightIconsLight #ebx_NavigationExpandKnob .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_light.png);
+}
+.ebx_PNPIconsMedium .ebx_NavigationPaneScrollControl .ebx_SmallIcon,
+.ebx_PNPIconsMedium .ebx_perspectiveSections .ebx_SmallIcon,
+.ebx_PNPExpandedGroupIconsMedium .ebx_perspectiveSections .ebx_PerspectiveGroupExpanded .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium .ebx_perspectiveSections a:hover .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium .ebx_perspectiveSections a:focus .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium .ebx_perspectiveSections a:active .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium #ebx_NavigationPaneToggleReduced:hover .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium .ebx_NavigationPaneScrollControl:hover .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium .ebx_NavigationProxyCollapsed .ebx_SmallIcon,
+.ebx_HeaderHighlightIconsMedium #ebx_NavigationExpandKnob .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_medium.png);
+}
+.ebx_PNPIconsDark .ebx_NavigationPaneScrollControl .ebx_SmallIcon,
+.ebx_PNPIconsDark .ebx_perspectiveSections .ebx_SmallIcon,
+.ebx_PNPExpandedGroupIconsDark .ebx_perspectiveSections .ebx_PerspectiveGroupExpanded .ebx_SmallIcon,
+.ebx_PNPHighlightIconsDark .ebx_perspectiveSections a:hover .ebx_SmallIcon,
+.ebx_PNPHighlightIconsDark .ebx_perspectiveSections a:focus .ebx_SmallIcon,
+.ebx_PNPHighlightIconsDark .ebx_perspectiveSections a:active .ebx_SmallIcon,
+.ebx_PNPHighlightIconsDark #ebx_NavigationPaneToggleReduced:hover .ebx_SmallIcon,
+.ebx_PNPHighlightIconsDark .ebx_NavigationPaneScrollControl:hover .ebx_SmallIcon,
+.ebx_PNPHighlightIconsDark .ebx_NavigationProxyCollapsed .ebx_SmallIcon,
+.ebx_PNPHighlightIconsDark #ebx_NavigationExpandKnob .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_dark.png);
+}
+/*END Perspective Navigation Pane */
+
+
+/*START buttons */
+.ebx_ButtonsIconsLight .ebx_Button .ebx_Icon,
+.ebx_ButtonsIconsLight .ebx_Button .ebx_MenuButtonArrow,
+.ebx_ButtonsHighlightIconsLight .ebx_Button.ebx_DefaultButton .ebx_Icon,
+.ebx_ButtonsHighlightIconsLight .ebx_Button.ebx_DefaultButton .ebx_MenuButtonArrow {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_light.png);
+}
+.ebx_Icon,
+.ebx_MenuButtonArrow,
+.ebx_PreviewLink,
+.ebx_ButtonsIconsMedium .ebx_Button .ebx_Icon,
+.ebx_ButtonsIconsMedium .ebx_Button .ebx_MenuButtonArrow,
+.ebx_ButtonsHighlightIconsMedium .ebx_Button.ebx_DefaultButton .ebx_Icon,
+.ebx_ButtonsHighlightIconsMedium .ebx_Button.ebx_DefaultButton .ebx_MenuButtonArrow {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_medium.png);
+}
+.ebx_ButtonsIconsDark .ebx_Button .ebx_Icon,
+.ebx_ButtonsIconsDark .ebx_Button .ebx_MenuButtonArrow,
+.ebx_ButtonsHighlightIconsDark .ebx_Button.ebx_DefaultButton .ebx_Icon,
+.ebx_ButtonsHighlightIconsDark .ebx_Button.ebx_DefaultButton .ebx_MenuButtonArrow,
+#ebx_MenuForMenuButtons .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_dark.png);
+}
+
+.ebx_ButtonsIconsLight .ebx_Button .ebx_SmallIcon,
+.ebx_ButtonsHighlightIconsLight .ebx_Button.ebx_DefaultButton .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_light.png);
+}
+.ebx_SmallIcon,
+.ebx_ButtonsIconsMedium .ebx_Button .ebx_SmallIcon,
+.ebx_ButtonsHighlightIconsMedium .ebx_Button.ebx_DefaultButton .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_medium.png);
+}
+.ebx_ButtonsIconsDark .ebx_Button .ebx_SmallIcon,
+.ebx_ButtonsHighlightIconsDark .ebx_Button.ebx_DefaultButton .ebx_SmallIcon {
+	background-image: url(../images/onIcons/ebx_SmallIcon_sprite_dark.png);
+}
+/*END buttons */
+
+/*START tabs */
+.ebx_TabsIconsLight #ebx_RootTab .ebx_Icon,
+.ebx_TabsHighlightIconsLight #ebx_RootTab.selected .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_light.png);
+}
+.ebx_TabsIconsMedium #ebx_RootTab .ebx_Icon,
+.ebx_TabsHighlightIconsMedium #ebx_RootTab.selected .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_medium.png);
+}
+.ebx_TabsIconsDark #ebx_RootTab .ebx_Icon,
+.ebx_TabsHighlightIconsDark #ebx_RootTab.selected .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_dark.png);
+}
+/*END tabs */
+
+.ebx_Knob,
+.yui-skin-sam #layout-doc .yui-layout-unit .yui-resize-handle-r .yui-layout-resize-knob,
+.yui-skin-sam #layout-doc .yui-layout-unit .yui-resize-handle-l .yui-layout-resize-knob,
+#ebx_ISS_pane .yui-resize-handle-br,
+#ebx_InternalPopup .yui-resize-handle-br,
+.yui-skin-sam .yui-resize.tvContainer .yui-resize-handle-br,
+.yui-skin-sam .yui-resize.tvContainer .yui-resize-handle-b .yui-resize-handle-inner-b,
+.wpihSelectIndicatorPointer,
+.ebx_TitleBreadcrumbItem {
+	background-image: url(../images/onCommon/ebx_knob_sprite.png);
+}
+
+.ebx_workflow_priority {
+    background-image: url(../images/onWorkflow/ebx_prioritySprite.png);
+}
+
+#ebx_ISS_HasNext {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_dark.png);
+}
+
+.ebx_BigIcon {
+	background-image: url(../images/onIcons/ebx_BigIcon_sprite_dark.png);
+}
+.wpihFutureTask .ebx_BigIcon,
+.ebx_BigIcon.wpihFutureTask {
+	background-image: url(../images/onIcons/ebx_BigIcon_sprite_medium.png);
+}
+
+.ebx_FieldIndent {
+	background-image: url(../images/onCommon/ebx_field_indent.png);
+}
+
+.ebx_SelectedElementIconsDark .ebx_Selected .ebx_mdv_assignArrow {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_dark.png);
+}
+.ebx_SelectedElementIconsLight .ebx_Selected .ebx_mdv_assignArrow {
+	background-image: url(../images/onIcons/ebx_Icon_sprite_light.png);
+}

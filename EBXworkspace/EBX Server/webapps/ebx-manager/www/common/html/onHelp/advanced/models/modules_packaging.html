@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Packaging EBX5 modules</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="admin_modules" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Developer Guide &gt; Model design</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=models/modules_packaging.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Developer Guide &gt; Model design</span></div>
+<h1>
+Packaging EBX5 modules</h1>
+<p>An EBX5 module allows packaging a data model along with its resources, such as included XML Schema Documents and Java classes.</p><p>On a Java EE application server, a module in the EBX5 repository is equivalent to a standard Java EE web application. This provides features such as class-loading isolation, WAR or EAR packaging, web resources exposure, hot-redeployment. In addition, if your user application is a web application, it is possible to merge the EBX5 module with your application, in order to simplify deployment.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#structure">Structure</a></li><li class="toc1"><a href="#declaration">Declaration</a></li><li class="toc1"><a href="#registration">Registration</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Deployment descriptor example</a></li><li class="toc2"><a href="#id3s2">Registration example</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="structure"></a>Structure</h2>
+<p>An EBX5 module contains the following files:</p><ol>
+<li><p><code>/WEB-INF/web.xml</code>: </p><p> This is the standard Java EE deployment descriptor. It must ensure that the EBX5 module is registered when the application server is launched. See <a href="#registration">Registration</a>.</p></li><li><p><code>/WEB-INF/ebx/module.xml</code>: </p><p>This mandatory document defines the main properties and services of the module.</p></li><li><p><code>/www/</code>: </p><p>This optional directory contains all external resources, which are accessible by public URL. This directory is localized and structured by resource type (HTML, images, JavaScript files, stylesheets). External resources in this directory can be referenced by data models using the type <code>osd:resource</code>.</p></li></ol>
+<h2>
+<a name="declaration"></a>Declaration</h2>
+<p> A module is declared using the document <code>/WEB-INF/ebx/module.xml</code>. For example:</p><pre class="ebx_example brush: html">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;module xmlns="urn:ebx-schemas:module_2.3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:ebx-schemas:module_2.3 http://schema.orchestranetworks.com/module_2.3.xsd">
+	&lt;name>moduleTest&lt;/name>
+	&lt;locales>
+		&lt;locale isDefault="true">it&lt;/locale>
+		&lt;locale>en-US&lt;/locale>
+	&lt;/locales>
+&lt;/module>
+</pre>
+<p>See the <a target="_blank" href="../resources/schema/module_2.2.xsd">associated schema</a> for documentation about each property. The main properties are as follows:</p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th align="center" valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>name</code></p></td><td valign="top"><p>Defines the unique identifier of the module in the server instance. The module name usually corresponds to the name of the web application (the name of its directory).</p></td><td align="center" valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><code>publicPath</code></p></td><td valign="top"><p>Defines a path other than the module&#39;s name identifying the web application in public URLs. This path is added to the URL of external resources of the module, when computing absolute URLs. If this field is not defined, the public path is the module&#39;s <code>name</code>, defined above.</p></td><td align="center" valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>locales</code></p></td><td valign="top"><p>Defines the locales supported by the data models in the module. This list must contain all the locales that are included in the data models within the module, and that are exposed to the end user (EBX5 will not be able to display labels and messages in a language that is not declared in this list). If the element is not present, the module supports the locales of EBX5.</p></td><td align="center" valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>services</code></p></td><td valign="top"><p>Declares UI services. See <a href="../references/ui_services.html#configuration">Declaration and configuration</a> of UI services.</p></td><td align="center" valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>beans</code></p></td><td valign="top"><p>Declares reusable Java bean components. See the <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/package-summary.html">workflow package</a> in the Java API.</p></td><td align="center" valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>ajaxComponents</code></p></td><td valign="top"><p>Declares Ajax components. See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxComponent.html#declareInModule">Declaring an Ajax component in a module</a> in the Java API. </p></td><td align="center" valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="registration"></a>Registration</h2>
+<p>In order to be identifiable to EBX5, a module must be registered at runtime when the application server is launched. For a web application, every EBX5 module must:</p><ol>
+<li><p>Contain a Servlet whose standard method <code>init</code> invokes <code>ModulesRegister.registerwebApp(…)</code>. See the code example below.</p></li><li><p>Make a standard declaration of this servlet in the deployment descriptor <code>/WEB-INF/web.xml</code>.</p></li><li><p>Ensure that this servlet will be launched at server startup by adding the following standard element to the deployment descriptor: <code>&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</code> .&nbsp;</p></li></ol>
+<h3>
+<a name="id3s1"></a>Deployment descriptor example</h3>
+<p> The follow is an example of a Java EE deployment descriptor (<code>/WEB-INF/web.xml</code>): </p><pre class="ebx_example brush: html">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?>
+&lt;!DOCTYPE web-app PUBLIC 
+   "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+   "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+&lt;web-app>
+	&lt;servlet>
+	   &lt;servlet-name>InitEbxServlet&lt;/servlet-name>
+	   &lt;servlet-class>com.foo.RegisterServlet&lt;/servlet-class>
+	   &lt;load-on-startup>1&lt;/load-on-startup>
+	&lt;/servlet>
+&lt;/web-app>
+</pre>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><ul>
+<li><p>If Java classes are located in the web application (in <code>/WEB-INF/classes</code> or <code>/WEB-INF/lib</code>) and these classes are used as data model resources in the module, the specific servlet class must also be located in the web application. This is because the servlet class is internally used as a hook to the application&#39;s class-loader.</p></li><li><p>It is recommended for the servlet to also implement the method <code>destroy()</code>, otherwise stopping the web application will not work. </p><p> Once the method <code>ModulesRegister.unregisterWebApp()</code> has been executed, the data models and associated data sets become unavailable.</p><p>EBX5 supports the hot-deployment and hot-redeployment operations implemented by Java EE application servers: deployment-start, stop-restart, stop-redeployment-restart, stop of a web application. However, these operations remain sensitive, particularly concerning class-loading and potential complex dependencies, consequently these operations must be carefully monitored.</p></li><li><p>All module registrations and unregistrations are logged to the <code>log.kernel</code> category.</p></li><li><p>If an exception occurs while loading a module, the cause is written to the application server log.</p></li></ul>
+</p></div>
+<h3>
+<a name="id3s2"></a>Registration example</h3>
+<p>Java code example of a servlet that registers/unregisters the module in EBX5:</p><pre class="ebx_example brush: html">
+package com.foo;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import com.onwbp.base.repository.*;
+/**
+  */
+public class RegisterServlet extends HttpServlet
+{
+	public void init(ServletConfig config) throws ServletException
+	{
+		super.init(config);
+		ModulesRegister.registerWebApp(this, config);
+	}
+	public void destroy()
+	{
+		ModulesRegister.unregisterWebApp(this, this.getServletConfig());
+	}
+}
+</pre>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/properties.html#moduleRegistration">Module registration</a></p></div>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Developer Guide &gt; Model design</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

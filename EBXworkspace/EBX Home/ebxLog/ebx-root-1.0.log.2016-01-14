@@ -1,0 +1,15 @@
+2016-01-14 09:21:00,960 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-14 12:53:40,813 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-14 13:31:08,879 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-14 14:28:35,141 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [http-bio-8090-exec-1] **** Server Started (logVersion=1.4) ****
+2016-01-14 14:45:31,938 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-14 14:45:53,100 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-14 14:53:50,834 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-14 15:29:53,559 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [http-bio-8090-exec-1] **** Server Started (logVersion=1.4) ****
+2016-01-14 15:32:49,280 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-14 15:33:04,545 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-14 15:35:25,031 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-14 16:11:18,915 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-14 16:16:50,038 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-14 16:17:10,317 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [http-bio-8090-exec-1] **** Server Started (logVersion=1.4) ****
+2016-01-14 16:20:21,870 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

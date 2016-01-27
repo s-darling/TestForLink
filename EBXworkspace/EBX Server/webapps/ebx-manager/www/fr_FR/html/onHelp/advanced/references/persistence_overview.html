@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Overview of persistence</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="ref_persistenceOverview" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Reference Manual &gt; Persistence</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/persistence_overview.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Persistence</span></div>
+<h1>
+Overview of persistence</h1>
+<p>This chapter describes how master data, history, and replicated tables are persisted. A given table can employ any combination of master data persistence mode, historization, and replication.</p><p>While all persisted information in EBX5 is ultimately stored as relational tables in the underlying database, whether it is in a form that is accessible outside of EBX5 depends on if it is in mapped mode.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The term <a href="#mapped"><em>mapped mode</em></a> refers to any tables that are stored as-is, and thus whose contents can be accessed directly in the database.</p></div>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Persistence of managed master data</a></li><li class="toc1"><a href="#id2">Historization</a></li><li class="toc1"><a href="#id3">Replication</a></li><li class="toc1"><a href="#mapped">Mapped mode</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Overview of mapped mode</a></li><li class="toc2"><a href="#mappedRestrictions">Data model restrictions due to mapped mode</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Persistence of managed master data</h2>
+<p>Data that is modeled in and governed by the EBX5 repository can be persisted in one of two modes, semantic (default) or relational, as specified in its underlying data model. Distinct tables defined in either mode can co-exist and collaborate within the same EBX5 repository.</p><p>For a comparison between relational mode and semantic mode, see the chapter <a href="../references/relationalMode.html#compare">Overview of modes</a></p><h2>
+<a name="id2"></a>Historization</h2>
+<p>Master data tables can activate historization in order to track modifications to their data, regardless of whether they are persisted in semantic or relational mode, and whether they are replicated.</p><p>The history itself is in mapped mode, meaning that it can potentially be consulted directly in the underlying database.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/history.html">History</a></p></div>
+<h2>
+<a name="id3"></a>Replication</h2>
+<p>Replication enables direct SQL access to tables of master data, by making a copy of data in the repository to relational table replicas in the database. Replication can be enabled any table regardless of whether it is persisted in semantic or relational mode, and whether it has history activated.</p><p>The replica tables are persisted in mapped mode, as their primary purpose is to make master data accessible to direct queries outside of EBX5.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/replication.html">Replication</a></p></div>
+<h2>
+<a name="mapped"></a>Mapped mode</h2>
+<h3>
+<a name="id4s1"></a>Overview of mapped mode</h3>
+<p>Mapped mode refers to cases where tables are persisted in the underlying relational database in a format that allows their data to be accessed directly, outside of EBX5. Master data modeled in relational mode, history, and replica tables are all examples of tables in mapped mode.</p><p>All cases of mapped mode involve automatic alterations of the database schema (the database tables, indexes, etc.) when necessary, by automatically executing required DDL statements in the background. Such procedures are always triggered at data model compilation time and the data model compilation report notifies of any resulting errors.</p><p>Another general consideration regarding mapped modes is that, in most cases, when a data model entity is removed, its corresponding database object is not deleted immediately. Instead, it is marked as disabled, which leaves the possibility of later re-enabling the object. In order to definitively drop the object and its associated data and resources from the database, it must be marked for purge. The removal then takes place during the next global purge.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../engine/repository_administration.html#purgeMappedTables">Purging database resources of mapped tables</a></li><li><a href="../references/datamodel_evolutions.html">Data model evolutions</a></li></ul>
+</div>
+<h3>
+<a name="mappedRestrictions"></a>Data model restrictions due to mapped mode</h3>
+<p>Due to the nature of persisting directly in the underlying database, some restrictions apply to all tables stored in mapped mode:</p><ul>
+<li><p><a href="../installation/supported_env.html#databases">Limitations of supported databases</a></p></li><li><p>Unlimited-length strings: All string fields, except foreign keys, of type <code>xs:string</code>, its derived types, and <code>xs:anyURI</code> must define a &#39;maxLength&#39; or &#39;length&#39; facet. Since a foreign key field is composed of the final primary key field(s) of its target table(s), this facet requirement applies to each of those final primary key fields instead of the foreign key field itself. Additionally, limitations of the underlying database concerning the maximum length of its character types apply, such as <em>VARCHAR</em> and <em>NVARCHAR2</em>.</p></li><li><p>Large lists of columns might not be indexable. Example for Oracle: the database enforces a limit on the maximum cumulated size of the columns included in an index. For strings, this size also depends on the character set. If the database server fails to create the index, you should consider redesigning your indexes, typically by using a shorter length for the concerned columns, or by including fewer columns in the index. The reasoning is that an index leading to this situation would have headers so large that it could not be efficient anyway.</p></li><li><p>The attribute <code>type=&quot;osd:password&quot;</code> is ignored.</p></li><li><p>Terminal complex types are supported, however at record-level, they cannot be globally set to <code>null</code>. </p></li></ul>
+<p>More generally, tables in mapped mode are subject to any limitations of the underlying RDBMS. For example, the maximum number of columns in a table applies (1000 for Oracle 11g R2, 1600 for PostgreSQL). Note that a history table contains twice as many fields as declared in the schema (one functional field, plus one generated field for the operation code).</p><p>Data model evolutions may also be constrained by the underlying RDBMS, depending on the existing data model.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/datamodel_evolutions.html">Data model evolutions</a></p></div>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Persistence</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

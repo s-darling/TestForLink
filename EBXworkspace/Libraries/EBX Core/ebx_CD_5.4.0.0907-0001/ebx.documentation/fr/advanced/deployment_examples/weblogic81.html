@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Install Note for WebLogic 8.1</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="installation_j2ee_summary" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=deployment_examples/weblogic81.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+<h1>
+Install Note for WebLogic 8.1</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Warnings</a></li><li class="toc1"><a href="#id2">Installation Example Overview</a></li><li class="toc1"><a href="#id3">Installation Example Detail</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Warnings</h2>
+<ul>
+<li><p> This chapter describes a <em>quick installation example</em> of EBX5 on BEA WebLogic Application Server. </p></li><li><p>It does not replace the documentation of this application server.</p></li><li><p> It is <em>not</em> a general installation recommendation, since current installation process is fixed by architecture choices (technical environment, applications mutualization, delivery process, company choices, etc.). </p></li><li><p> The complete description of the components needed by EBX5 is given in chapter <a target="_self" href="../installation/deploy_on_j2ee.html">Java EE deployment</a>. </p></li><li><p>In this document, we do not deploy an additional EBX5 module. For this, a good practice would be to rebuild an EAR with the EBX5 module as a Web application at the same level as other EBX5 web applications. In this case, the web application must declare its class-path dependency in the standard manner specified by Java™ 2 Platform Enterprise Edition Specification, v1.4:</p><blockquote><p><strong style="font-size:16px">J2EE.8.2 Optional Package Support</strong></p><p>(...)</p><p>A JAR format file (such as a .jar file, .war file, or .rar file) can reference a .jar file by naming the referenced .jar file in a Class-Path header in the referencing JAR file&#39;s Manifest file. The referenced .jar file is named using a URL relative to the URL of the referencing JAR file. The Manifest file is named META-INF/MANIFEST.MF in the JAR file. The Class-Path entry in the Manifest file is of the form</p><p><code>Class-Path: list-of-jar-files-separated-by-spaces</code></p></blockquote><p>In an &quot;industrialized&quot; process, we strongly recommend to develop a script that automatically builds the EAR, with the specific EBX5 module(s), the EBX5 web applications and also all the shared libraries needed.</p></li><li><p> In order to avoid unpredictable behavior, the minimal rule to follow is to avoid any duplication of <code>ebx.jar</code> or other libraries on the class-loading system. </p></li></ul>
+<h2>
+<a name="id2"></a>Installation Example Overview</h2>
+<ul>
+<li><p><em>Create the EBX_HOME directory</em>: copy <code>ebx.properties</code></p></li><li><p><em>Install EBX5 library</em>: add libraries in the CLASSPATH environment variable </p></li><li><p><em>Configure JVM arguments (Java system properties)</em>: Create the JAVA_OPTIONS environment variable </p></li><li><p><em>Create an application domain</em> by using the &quot;Configuration Wizard&quot; </p></li><li><p><em>Deploy EBX5 application</em> by using WebLogic Server Console </p></li></ul>
+<h2>
+<a name="id3"></a>Installation Example Detail</h2>
+<ol>
+<li><p> Create a <em>EBX_HOME</em> directory, for example C:\EBX\home </p></li><li><p>Create a EBX_LIB directory, for example, C:\EBX\lib</p></li><li><p> Create a <em>EBX_EAR</em> directory, for example C:\EBX\ear </p></li><li><p> Copy <code>ebx.software\files\ebx.properties</code> file to <em>EBX_HOME</em> .&nbsp;In our example, we will then have the following file: </p><p>C:\EBX\home\ebx.properties, a text file</p></li><li><p>Copy third-party library files to EBX_LIB directory. In our example, we will have:</p><p>C:\EBX.software\lib\activation.jar</p><p>C:\EBX.software\lib\mail.jar</p><p>C:\EBX.software\lib\h2.jar</p><p> The exact description of these components is given in chapter <a target="_self" href="../installation/deploy_on_j2ee.html">Components</a> . Obviously, if those components are already deployed on the class-loading system, they don&#39;t have to be duplicated. </p></li><li><p> Copy the file ebx.software/webapps/ear-packaging/EBX5ForWebLogic.ear to the <em>EBX_EAR</em> directory. In our example, we will have: </p><p>C:\EBX\ear\EBX5ForWebLogic.ear</p></li><li><p>Create environment variables</p><p> Variable name <em>CLASSPATH</em>: add C:\EBX\lib\mail.jar;C:\EBX\lib\h2.jar;C:\EBX\lib\activation.jar </p><p> Variable name <em>EBX_HOME_WEBLOGIC</em>: variable value to set is C:\EBX\home </p><p> Variable name <em>JAVA_OPTIONS</em>: variable value to set is </p><p>-Debx.home=%EBX_HOME_WEBLOGIC% -Debx.properties=%EBX_HOME_WEBLOGIC%\ebx.properties</p></li><li><p>Launch the console &quot;BEA WebLogic Platform 8.1 – Configuration Wizard&quot;</p></li><li><p>Select &quot;Create a new Weblogic configuration&quot;</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>Select &quot;Basic WebLogic Server Domain&quot;</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>Select &quot;Express&quot;</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>Configure the name and password for the administrator. In our example, the name is weblogic and the password is weblogic.</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>Select &quot;Production Mode&quot;, &quot;Sun SDK 1.4.2_08@ …&quot;</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>Select &quot;Template –Server - myserver&quot;, and replace &quot;mydomain&quot; by &quot;ebxDomain&quot; in the field &quot;Configuration Name&quot;</p></li><li><p>Click on the button &quot;Create&quot;</p></li><li><p>Select &quot;Start Admin Server&quot;</p></li><li><p>Click on the button &quot;Done&quot;</p></li><li><p>In the console &quot;C:\WINDOWS\system32\cmd.exe – startWebLogic.cmd&quot;, type &quot;weblogic&quot; for user name and &quot;weblogic&quot; for password</p></li><li><p> Launch &quot;Internet Explorer&quot; (or Firefox), enter the url: <a target="_blank" href="http://localhost:7001/console">http://localhost:7001/console</a></p></li><li><p>Enter &quot;weblogic&quot; for user name and &quot;weblogic&quot; for password</p></li><li><p>In the menu on the left, click &quot;ebxDomain/Deployments/Applications&quot;. In the page on the right, click &quot;Deploy a new Application…&quot;</p></li><li><p>In &quot;Location&quot;, select the EBX5ForWebLogic.ear directory. In our example, it is: C:/EBX/ear</p></li><li><p>Select EBX5ForWebLogic.ear, then click on the button &quot;Continue&quot;</p></li><li><p>Click on the button &quot;Deploy&quot;. The EBX5 application is deployed and launched (see information in the command console)</p></li><li><p>Quit the server: in the command console, press simultaneously on Ctrl-C, then close the console</p></li><li><p>Restart the server: Windows – Start – All programs – BEA WebLogic Platform 8.1 – User Projects – ebxDomain – Start Server</p></li><li><p>Enter http://localhost:7001/console in Internet Explorer (or Firefox)</p></li><li><p>In the menu on the left, click on &quot;ebxDomain/Deployments/Applications/EBX5ForWebLogic&quot;</p></li><li><p>In the page on the right, select &quot;Deploy&quot;, then click on the button &quot;Start Application&quot;</p></li><li><p>Run EBX5.</p></li></ol>
+<blockquote><p> Run EBX5 web application: <a target="_blank" href="http://localhost:7001/ebx/">http://localhost:7001/ebx/</a> .&nbsp;</p><p> At first launch, <a target="_self" href="../installation/configuration_wizard.html">EBX5 Wizard</a> helps you to configure the default properties of your initial repository. </p></blockquote><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.0.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.0.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.0.0</h1>
+<p><strong>Release Date: April 12, 2011</strong></p><p><span class="red">Caution: starting EBX5 on an existing repository will trigger a migration procedure for the contained data. The migrated repository will not be usable with previous versions of EBX, and migrating backward is not possible. It is advisable to backup your repository beforehand.</span></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#userxp">New user experience</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">User interface</a></li><li class="toc2"><a href="#id1s2">Documentation</a></li><li class="toc2"><a href="#id1s3">New vocabulary</a></li></ul>
+</li><li class="toc1"><a href="#datamodel">Modeling - Data model</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Constraint and function editor</a></li><li class="toc2"><a href="#id2s2">Data set Inheritance</a></li></ul>
+</li><li class="toc1"><a href="#workflowmodel">Modeling - Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Wizard</a></li><li class="toc2"><a href="#id3s2">History</a></li></ul>
+</li><li class="toc1"><a href="#workflows">Workflow</a></li><li class="toc1"><a href="#dataservices">Data Services</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Interface</a></li><li class="toc2"><a href="#id5s2">Lineage</a></li></ul>
+</li><li class="toc1"><a href="#permissions">Permissions</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Global permissions</a></li><li class="toc2"><a href="#id6s2">Data set creation</a></li></ul>
+</li><li class="toc1"><a href="#hx">Externalized Mode</a></li><li class="toc1"><a href="#history">History</a></li><li class="toc1"><a href="#misc">Miscellaneous</a><ul class="toc2">
+<li class="toc2"><a href="#id9s1">Max table columns to display</a></li><li class="toc2"><a href="#id9s2">XPath predicate</a></li><li class="toc2"><a href="#id9s3">Import</a></li></ul>
+</li><li class="toc1"><a href="#backward">Backward compatibility</a><ul class="toc2">
+<li class="toc2"><a href="#id10s1">Removal of the &#39;Provider&#39; built-in role</a></li><li class="toc2"><a href="#id10s2">UIBeanEditor</a></li><li class="toc2"><a href="#id10s3">XPath Predicate</a></li><li class="toc2"><a href="#id10s4">Data Services</a></li><li class="toc2"><a href="#id10s5">Data set Inheritance</a></li><li class="toc2"><a href="#nullManagement">Null value management</a></li><li class="toc2"><a href="#id10s7">Management of large volumes in the user interface</a></li><li class="toc2"><a href="#id10s8">Agreements management</a></li><li class="toc2"><a href="#id10s9">API</a></li><li class="toc2"><a href="#id10s10">XML Import/Export</a></li></ul>
+</li><li class="toc1"><a href="#knownlimitations">Known limitations</a><ul class="toc2">
+<li class="toc2"><a href="#id11s1">Limitations regarding prior versions</a></li><li class="toc2"><a href="#id11s2">Externalized mode and history</a></li><li class="toc2"><a href="#id11s3">Browsers</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-DataModeling">Data Modeling</a></li><li class="toc2"><a href="#bug-Hierarchies">Hierarchies</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="userxp"></a>New user experience</h2>
+<p>EBX5 offers a new user-centered experience through different evolutions.</p><h3>
+<a name="id1s1"></a>User interface</h3>
+<p>EBX5 user interface has been fully rewritten. It offers a more user-friendly and intuitive interface which makes it easier for users to apprehend and master EBX5.</p><p>The new user interface also enhances compliance with accessibility standards.</p><h3>
+<a name="id1s2"></a>Documentation</h3>
+<p>EBX5 end-users documentation has been rewritten and a reduced version of the documentation is displayed to basic users while an advanced documentation will be displayed to administrators and developers.</p><p>Furthermore, a new contextual help button is available from the user interface to redirect users toward a specific section of the documentation, depending on their activity.</p><h3>
+<a name="id1s3"></a>New vocabulary</h3>
+<p>EBX5 brings a new vocabulary. See the <a href="../glossary/simple_glossary.html">Glossary</a> for their definitions.</p><p>Note: this new vocabulary does not affect API.</p><table cellpadding="1" width="75%" class="">
+<thead>
+<tr>
+<th align="center"><p>Vocabulary in EBX5</p></th><th align="center"><p>Vocabulary before version 5</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><p><strong>Data set</strong></p></td><td align="center"><p>Adaptation instance</p></td></tr>
+<tr>
+<td align="center"><p><strong>Child data set</strong></p></td><td align="center"><p>Child adaptation instance</p></td></tr>
+<tr>
+<td align="center"><p><strong>Data model</strong></p></td><td align="center"><p>Data model</p></td></tr>
+<tr>
+<td align="center"><p><strong>Data space</strong></p></td><td align="center"><p>Branch</p></td></tr>
+<tr>
+<td align="center"><p><strong>Snapshot</strong></p></td><td align="center"><p>Version</p></td></tr>
+<tr>
+<td align="center"><p><strong>Workflow</strong></p></td><td align="center"><p>Workflow Instance</p></td></tr>
+<tr>
+<td align="center"><p><strong>Workflow model</strong></p></td><td align="center"><p>Workflow Definition</p></td></tr>
+<tr>
+<td align="center"><p><strong>Workflow Publication</strong></p></td><td align="center"><p>Workflow</p></td></tr>
+<tr>
+<td align="center"><p><strong>Data Services</strong></p></td><td align="center"><p>Data Services</p></td></tr>
+<tr>
+<td align="center"><p><strong>Field</strong></p></td><td align="center"><p>Attribute</p></td></tr>
+<tr>
+<td align="center"><p><strong>Inherited Field</strong></p></td><td align="center"><p>Inherited Attribute</p></td></tr>
+<tr>
+<td align="center"><p><strong>Record</strong></p></td><td align="center"><p>Record / Occurrence</p></td></tr>
+<tr>
+<td align="center"><p><strong>Validation Rule</strong></p></td><td align="center"><p>Constraint</p></td></tr>
+<tr>
+<td align="center"><p><strong>Simple / Advanced Control</strong></p></td><td align="center"><p>Simple / Advanced Constraint</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="datamodel"></a>Modeling - Data model</h2>
+<h3>
+<a name="id2s1"></a>Constraint and function editor</h3>
+<p>A new user-friendly interface is available to define constraints and/or functions on table and record nodes, without any Java implementation.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/criteria_editor.html">Criteria editor</a></p></div>
+<h3>
+<a name="id2s2"></a>Data set Inheritance</h3>
+<p>Data set inheritance (previously know as &quot;standard inheritance&quot;) has to be explicitly specified in the data model using new properties, since it is no longer enabled by default. See the <a href="../references/inheritance.html#dataSetInheritance">Data set inheritance</a> documentation.</p><h2>
+<a name="workflowmodel"></a>Modeling - Workflow</h2>
+<h3>
+<a name="id3s1"></a>Wizard</h3>
+<p>Wizards are available to assist users when specifying tasks&#39; input and output properties.</p><h3>
+<a name="id3s2"></a>History</h3>
+<p>Snapshots of a workflow model can now be managed through a new history feature, available from the workflow model section.</p><p>This feature is available in the actions list of the selected workflow model. This view displays all Snapshot containing the selected workflow model and indicates if the workflow model is published in this snapshot. For each Snapshot, an action list is available, in order to export it or view the workflow model content in this snapshot.</p><h2>
+<a name="workflows"></a>Workflow</h2>
+<p>Data workflow administration is now available from the Data Workflow interface. See <a href="../user_dataworkflow/userdataworkflow_admin.html">Data workflow administration</a> for more information.</p><p>The <code>ProcessLauncher</code> Java class has been enhanced and now allows the retrieval of default Data Context values using <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessLauncher.html#getInputParameterDefaultString(java.lang.String)">ProcessLauncher.getInputParameterDefaultString(String)</a>.</p><h2>
+<a name="dataservices"></a>Data Services</h2>
+<h3>
+<a name="id5s1"></a>Interface</h3>
+<p>A new user interface is available for generating WSDL files. See documentation for more information.</p><h3>
+<a name="id5s2"></a>Lineage</h3>
+<p>Lineage is a new feature allowing EBX5 to interact with third-party systems, by generating a WSDL according to a profile&#39;s permissions.</p><h2>
+<a name="permissions"></a>Permissions</h2>
+<h3>
+<a name="id6s1"></a>Global permissions</h3>
+<p>New global permissions can be defined to restrict the access to specific sections of the software by hiding them from the interface. See <a href="../engine/admin_frontend.html">Front end administration</a> for more information.</p><h3>
+<a name="id6s2"></a>Data set creation</h3>
+<p>A new property has been added to data space permissions to authorize root data set creation.</p><h2>
+<a name="hx"></a>Externalized Mode</h2>
+<p>The externalized mode allows to rely more directly on the capabilities of the underlying RDBMS (performance, scalability, etc.), so as to manage tables containing millions to tens of millions of records.</p><p>However, the externalization is transparent to the final user or client applications interfacing with EBX5 through Java or Data Services, and it preserves the version control functionalities (data space and snapshots).</p><h2>
+<a name="history"></a>History</h2>
+<p>History is a feature allowing to track all data modifications on a table (record creation/modification/deletion). </p><p>This feature is intended for developers and database administrators, since the access to history requires to directly request database tables. See <a href="../references/history.html">history documentation</a> for more information.</p><h2>
+<a name="misc"></a>Miscellaneous</h2>
+<h3>
+<a name="id9s1"></a>Max table columns to display</h3>
+<p>A new property has been added to configure the maximum number of columns displayed in a table. This property is not used when a custom view is applied on a table. Default value is 10. See <a href="../engine/admin_frontend.html#ergoBehavior">documentation</a> for more information.</p><h3>
+<a name="id9s2"></a>XPath predicate</h3>
+<p>It is now possible to use a XPath formula on the criterion value of an atomic predicate expression. For example, <code>[./a=(floor(./d)+ 2.0)] is now authorized, see <a href="../references/xpath_ref.html#formula">XPath 1.0 formula</a></code> for more information.</p><h3>
+<a name="id9s3"></a>Import</h3>
+<p>It is now possible to get detailed statistics on the result of an import. See <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#doImport(com.orchestranetworks.service.ImportSpec)">ProcedureContext.html.doImport(...)</a> for more information.</p><h2>
+<a name="backward"></a>Backward compatibility</h2>
+<h3>
+<a name="id10s1"></a>Removal of the &#39;Provider&#39; built-in role</h3>
+<p>Since the built-in role &#39;Provider&#39; no longer exists in this version, the repository may be inconsistent after a migration from a previous version in the following ways:</p><ul>
+<li><p>By default, in a previous version, the owner of the data modeling tool data space is the role &#39;Provider&#39;. If this default value has not been modified, it is necessary to reassign the ownership to a different role or user after start up. To do this, select the &#39;Data Spaces&#39; entry in the Administration section, then select the table &#39;Data spaces/Snapshots&#39;. From this table, edit the data space &quot;ebx-dma&quot;, choose a new owner, then save the changes.</p></li><li><p>Some permissions may reference the &#39;Provider&#39; built-in role and need to be changed. There are several levels of permissions: data space, data set, data model, workflow model, and global (found in the &#39;Administration&#39; area).</p></li><li><p>Some user tasks in workflow models may have the &#39;Provider&#39; role as a participant, and thus must be modified. Similarly, data workflows in progress may be awaiting actions by members of the &#39;Provider&#39; role. If this is the case, use the workflow administration actions to reallocate work items to other users or deallocate them, or to terminate and clean the workflow. </p></li></ul>
+<h3>
+<a name="id10s2"></a>UIBeanEditor</h3>
+<p>The <code>UIBeanEditor</code> implementations written in EBX.Platform release 4.x could invoke the methods <code>UIResponseContext.js*</code> to inline JavaScript expressions in the HTTP response. Yet, this practice is not recommended, therefore those <code>UIResponseContext.js*</code> methods are now deprecated and disabled by default in EBX5. If an existing implementation uses these methods, the developer has two options:</p><ul>
+<li><p>temporarily extend <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditorV4.html">UIBeanEditorV4</a> so as to re-enable the methods <code>UIResponseContext.js*</code>,</p></li><li><p>rewrite the implementation by invoking the new method <code>addJS</code>; this methods feeds a buffer shared by all the components in the page. This buffer is written at the end of the HTTP response, and is executed once HTML components have been displayed.</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditorV4.html">UIBeanEditorV4</a></p></div>
+<h3>
+<a name="id10s3"></a>XPath Predicate</h3>
+<p>It is no longer tolerated to avoid the simple quotes signs <strong><code>&#39;</code></strong> around <code>String</code> type criterion value.</p><p>For example, <code>/books/[publisher=folio]</code> is no longer supported. The correct syntax is <code>/books/[publisher=&#39;folio&#39;]</code></p><p>Records with unset (null) values are no longer retrieved by any predicate concerning this column, other than the <code>osd:is-null</code> predicate.</p><p>Predicate syntax validation is stricter.</p><h3>
+<a name="id10s4"></a>Data Services</h3>
+<p>Repository WSDL has evolved in order to remove the <code>choice</code> element from the validation operation. This is for preserving consistency with other operations.</p><h3>
+<a name="id10s5"></a>Data set Inheritance</h3>
+<p>Data set inheritance (previously know as &quot;standard inheritance&quot;) management has evolved: it is now disabled by default for data sets. For an existing data model, if data set inheritance is required, it must be explicitly enabled.</p><p> For more information, see the <a href="../references/inheritance.html#dataSetInheritance">Data set inheritance</a> .</p><h3>
+<a name="nullManagement"></a>Null value management</h3>
+<p>Null value management has changed regarding the <code>xs:string</code> elements: in previous product versions, the empty string was preserved and distinguished from <code>null</code> value. In EBX5, the empty string is converted to <code>null</code>, except for some cases.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../models/constraints.html#distinguishNullFromEmptyString">Empty string management</a></p></div>
+<h3>
+<a name="id10s7"></a>Management of large volumes in the user interface</h3>
+<ul>
+<li><p>The method <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html#getSelectedOccurrences()"> ServiceContext.getSelectedOccurrences()</a> ,&nbsp;which builds a <code>java.util.List</code> containing the current selection will henceforth throw an exception if the selection is considered too large (the default limit being one million records...). The Javadoc recommends which method to use instead, in such cases.</p></li></ul>
+<h3>
+<a name="id10s8"></a>Agreements management</h3>
+<p>Functions for managing agreements have been removed from the product; this also includes Distributor and Provider built-in roles.</p><h3>
+<a name="id10s9"></a>API</h3>
+<p>Most of the deprecated classes and methods have been removed, mainly:</p><ul>
+<li><p>Distributor, Provider role and methods relative to them have been removed.</p></li><li><p>ActivationStatus has been removed.</p></li><li><p>Method <code>Archive.forDirectory(File)</code> has been removed.</p></li><li><p>Deprecated methods have been removed.</p></li><li><p>Type &quot;osd:currency&quot; is no longer supported; instead a type xs:string with a constraint has to be used.</p></li></ul>
+<h3>
+<a name="id10s10"></a>XML Import/Export</h3>
+<p>The contract for the XML import has evolved in order to be fully compliant with the XML Recommendation, and to ensure bijection with XML export (see #2451). It implies that the absence of an element means a <code>null</code> value.</p><p>To ensure the backward compatibility, it is possible to use the <code>ImportSpec.setUpdateByDelta(boolean)</code>.</p><p>See the <a href="../references/xml_services.html#import">Imports</a> documentation for more information.</p><h2>
+<a name="knownlimitations"></a>Known limitations</h2>
+<h3>
+<a name="id11s1"></a>Limitations regarding prior versions</h3>
+<ul>
+<li><p>Automatic hierarchy is not available.</p></li><li><p>Tabular edition is not available. </p></li><li><p>Search in a data set model structure is not available.</p></li><li><p>Search in a data set tree is not available.</p></li><li><p>The hierarchy selector assistant to obtain inherited field expression (osd:inheritance) is not available.</p></li><li><p>If a hierarchy dimension level target table is referenced in another data space, the loading strategy of the other data space must be set to &#39;Force loading&#39;. Good practice should consist in selecting this strategy if the table reference &#39;branch&#39; tag is detected in a data model.</p></li><li><p>Services descriptions are not displayed.</p></li><li><p>In Data Model tool, the properties about table externalization and historization are only checked when creating a data set in the publication process.</p></li></ul>
+<h3>
+<a name="id11s2"></a>Externalized mode and history</h3>
+<p>EBX5 introduces two major features: externalized mode (externalized tables for high volumes) and history (SQL audit trail). Those new features are fully functional but have some known limitations, listed in product documentation. If you plan to use them in your project, we recommend to carefully read externalized mode limitations and history limitations and to contact technical support for any question. Version 5.1 will remove most of these limitations.</p><h3>
+<a name="id11s3"></a>Browsers</h3>
+<p>While EBX5 supports most of web browsers (see <a href="../installation/supported_env.html#browsers">list</a>), we recommend to use Chrome or Firefox. Those browsers provide the best experience and performance for EBX5 UI. If you need to use IE6, please note that this browser is supported but you could experience some performance issues. Version 5.1 will provide additional optimizations.</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-DataModeling"></a>Data Modeling</h3>
+<ul>
+<li><p><strong>[3445]</strong> Data modeling tool allows to use a UDA or UDACatalog for the primary key. </p><p>Data model compilation forbids it.</p></li></ul>
+<h3>
+<a name="bug-Hierarchies"></a>Hierarchies</h3>
+<ul>
+<li><p><strong>[3369]</strong> Hierarchy dimension build might fail in a complex multi-instance environment. </p><p>Considering a dimension P by A where the dependency is done through a junction table JPA. P, A and JPA are not in the same model and there are multiple instances based on the model A: a1 and a2. Only one foreign key relation in JPA was considered instead of two: <code>fka1 -&gt; a1</code> and <code>fka2 -&gt; a2</code></p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><strong>[2451]</strong> The handling of a missing element is not correct for XML import. </p><p>The specifications of the XML import says that the behavior for a missing element depends on several factors and are not easy to understand. They do not conform to the XML export specifications. Furthermore, the <code>minOccurs=&quot;0&quot;</code> handling is not conform to EBX5: for them, the absence of an element means a <code>null</code> value.</p></li><li><p><strong>[3444]</strong> CSV exports are erroneous when working with complex types in a table view. </p><p>When working with views, the CSV export of tables with complex types contains both the selected columns of the complex and the complex itself.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

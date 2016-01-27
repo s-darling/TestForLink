@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - EBX5 main configuration file</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="installation_properties" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Administration Guide &gt; Installation &amp; configuration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=installation/properties.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Installation &amp; configuration</span></div>
+<h1>
+EBX5 main configuration file</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#overview">Overview</a><ul class="toc2">
+<li class="toc2"><a href="#location">Location of the file</a></li><li class="toc2"><a href="#variables">Custom properties and variable substitution</a></li></ul>
+</li><li class="toc1"><a href="#id2">Setting an EBX5 license key</a></li><li class="toc1"><a href="#rootDirectory">Setting the EBX5 root directory</a></li><li class="toc1"><a href="#ebxPersistence">Configuring the EBX5 repository</a></li><li class="toc1"><a href="#userDirectory">Configuring the user and roles directory</a></li><li class="toc1"><a href="#ebx.temp.directory">Setting temporary files directories</a></li><li class="toc1"><a href="#xmlaudittrail">Activating the XML audit trail</a></li><li class="toc1"><a href="#ebxLog">Configuring the EBX5 logs</a><ul class="toc2">
+<li class="toc2"><a href="#ebxFileAppender">Custom &#39;ebxFile&#39; appender</a></li><li class="toc2"><a href="#smtpAppender">Custom SMTP appender</a></li></ul>
+</li><li class="toc1"><a href="#smtp">Activating and configuring SMTP and e-mails</a></li><li class="toc1"><a href="#dataServices">Configuring data services</a></li><li class="toc1"><a href="#jms">Activating and configuring JMS</a></li><li class="toc1"><a href="#d3">Configuring distributed data delivery (D3)</a></li><li class="toc1"><a href="#web">Configuring web access from end-user browsers</a><ul class="toc2">
+<li class="toc2"><a href="#urls">URLs computing</a></li><li class="toc2"><a href="#id13s2">Proxy mode</a></li><li class="toc2"><a href="#id13s3">Reverse proxy mode</a></li><li class="toc2"><a href="#strongEncoding">URL parameter encoding</a></li></ul>
+</li><li class="toc1"><a href="#failover">Configuring failover</a></li><li class="toc1"><a href="#tuning">Tuning the EBX5 repository</a></li><li class="toc1"><a href="#misc">Miscellaneous</a><ul class="toc2">
+<li class="toc2"><a href="#ebx.workflow.activation">Activating data workflows</a></li><li class="toc2"><a href="#ebx.logs.logProcedureStart">Log procedure starts</a></li><li class="toc2"><a href="#ebx.logs.logValidationStart">Log validation starts</a></li><li class="toc2"><a href="#id16s4">Deployment site identification</a></li><li class="toc2"><a href="#hotreloading">Dynamically reloading the main configuration</a></li><li class="toc2"><a href="#id16s6">Applications that use the EBX5 navigation engine</a></li><li class="toc2"><a href="#moduleRegistration">Module registration</a></li><li class="toc2"><a href="#runningMode">EBX5 run mode</a></li><li class="toc2"><a href="#id16s9">Resource filtering</a></li><li class="toc2"><a href="#id16s10">Downgrading to IE8 display</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="overview"></a>Overview</h2>
+<p>The EBX5 main configuration file, by default named <code>ebx.properties</code>, contains most of the basic parameters for running EBX5. This is a Java properties file that uses the <a href="https://docs.oracle.com/javase/6/docs/api/java/util/Properties.html#load(java.io.Reader)">standard simple line-oriented format</a>.</p><p>The main configuration file complements the <a href="./deploy_on_j2ee.html#ebx_webapp">Java EE deployment descriptor</a>. Administrators can also perform further configuration through the user interface, which is then stored in the EBX5 repository.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../installation/deploy_on_j2ee.html#ebx_webapp">Deployment details</a></li><li><a href="../engine/admin_frontend.html">Front end administration</a></li></ul>
+</div>
+<h3>
+<a name="location"></a>Location of the file</h3>
+<p>The access path to the main configuration file can be specified in several ways. In order of descending priority:</p><ol>
+<li><p>By defining the Java system property &#39;ebx.properties&#39;. For example, this property can be set by adding the option <code>-Debx.properties=&lt;filePath&gt;</code> to the <code>java</code> command-line command. See <a href="https://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/java.html#standard">Java documentation</a>.</p></li><li><p>By defining the servlet initialization parameter &#39;ebx.properties&#39;.</p><p>This standard Java EE setting must be specified in the <code>web.xml</code> file of the web application &#39;<code>ebx</code>&#39;. EBX5 accesses this parameter by calling the method <code>ServletConfig.getInitParameter(&quot;ebx.properties&quot;)</code> in the servlet <code>FrontServlet</code>.</p><p>See <a href="https://docs.oracle.com/docs/cd/E17802_01/products/products/servlet/2.3/javadoc/javax/servlet/ServletConfig.html#getInitParameter(java.lang.String)">getInitParameter</a> in the Oracle <code>ServletConfig</code> documentation.</p></li><li><p>By default, if nothing is specified, the main configuration file is located at <code>WEB-INF/ebx.properties</code> of the web application &#39;<code>ebx</code>&#39;.</p></li></ol>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">In addition to specifying properties in the main configuration file, you can also set the values of properties directly in the system properties. For example, using the <code>-D</code> argument of the <code>java</code> command-line command.</p></div>
+<h3>
+<a name="variables"></a>Custom properties and variable substitution</h3>
+<p>The value of any property can include one or more variables that use the syntax <code>${<em>propertyKey</em>}</code>, where <code><em>propertyKey</em></code> is either a system property, or a property defined in the main configuration file.</p><p>For example, the default configuration file provided with EBX5 uses the custom property <code>ebx.home</code> to set a default common directory, which is then included in other properties.</p><h2>
+<a name="id2"></a>Setting an EBX5 license key</h2>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/configuration_wizard.html">Installing a repository using the configuration assistant</a></p></div>
+<pre class="ebx_example brush: html">
+#################################################
+## EBX5 License number
+## (as specified by your license agreement)
+#################################################
+ebx.license=paste_here_your_license_key
+</pre>
+<h2>
+<a name="rootDirectory"></a>Setting the EBX5 root directory</h2>
+<p>The EBX5 root directory contains archives, the XML audit trail and, when the repository is persisted on H2 standalone mode, the H2 database files.</p><pre class="ebx_example brush: html">
+#################################################
+## Path for EBX5 XML repository
+#################################################
+ebx.repository.directory=${ebx.home}/ebxRepository
+</pre>
+<h2>
+<a name="ebxPersistence"></a>Configuring the EBX5 repository</h2>
+<p>Before configuring the persistence properties of the EBX5 repository, carefully read the section <a href="../engine/repository_administration.html#architecture">Technical architecture</a> in the chapter &#39;Repository administration&#39;.</p><p>The required library (driver) for each supported database is described in the chapter <a href="../installation/deploy_on_j2ee.html#databaseDrivers">Database drivers</a>.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../engine/repository_administration.html">Repository administration</a></li><li><a href="../engine/repository_administration.html#privileges">Rules for the access to the database and user privileges</a></li><li><a href="../installation/supported_env.html#databases">Supported databases</a></li><li><a href="../installation/deploy_on_j2ee.html#dataSource">Data source of the EBX5 repository</a></li><li><a href="../installation/deploy_on_j2ee.html#databaseDrivers">Database drivers</a></li></ul>
+</div>
+<pre class="ebx_example brush: html">
+################################################################
+## The maximum time to set up the database connection, 
+## in milliseconds. 
+################################################################
+ebx.persistence.timeout=10000
+################################################################
+## The prefix to add to all table names of persistence system.
+## This may be useful for supporting multiple repositories in the relational database.
+## Default value is 'EBX_'.
+################################################################
+ebx.persistence.table.prefix=
+
+################################################################
+## Case EBX5 persistence system is H2 'standalone'.
+################################################################
+ebx.persistence.factory=h2.standalone
+ebx.persistence.user=sa
+ebx.persistence.password=
+
+################################################################
+## Case EBX5 persistence system is H2 'server mode',
+################################################################
+#ebx.persistence.factory=h2.server
+
+## Specific properties to be set only only if you want to ignore the standard 
+## deployment process of 'ebx' web application in the target operational environment	
+## (see the deployment descriptor 'web.xml' of 'ebx' web application).
+#ebx.persistence.url=jdbc:h2:tcp://127.0.0.1/ebxdb
+#ebx.persistence.user=xxxxxxxxx
+#ebx.persistence.password=yyyyyyyy
+
+
+################################################################
+## Case EBX5 persistence system is Oracle database.
+################################################################
+#ebx.persistence.factory=oracle
+
+## Specific properties to be set only only if you want to ignore the standard 
+## deployment process of 'ebx' web application in the target operational environment	
+## (see the deployment descriptor 'web.xml' of 'ebx' web application).
+#ebx.persistence.url=jdbc:oracle:thin:@127.0.0.1:1521:ebxDatabase
+#ebx.persistence.driver=oracle.jdbc.OracleDriver
+#ebx.persistence.user=xxxxxxxxx
+#ebx.persistence.password=yyyyyyyy
+
+
+## Activate to use VARCHAR2 instead of NVARCHAR2 on Oracle (this should be required only in rare cases).
+#ebx.persistence.oracle.useVARCHAR2=false
+ 
+
+################################################################
+## Case EBX5 persistence system is IBM DB2.
+################################################################
+#ebx.persistence.factory=db2
+
+## Specific properties to be set only only if you want to ignore the standard 
+## deployment process of 'ebx' web application in the target operational environment	
+## (see the deployment descriptor 'web.xml' of 'ebx' web application).
+#ebx.persistence.url=jdbc:db2://127.0.0.1:50000/ebxDatabase
+#ebx.persistence.driver=com.ibm.db2.jcc.DB2Driver
+#ebx.persistence.user=xxxxxxxxx
+#ebx.persistence.password=yyyyyyyy
+
+################################################################
+## Case EBX5 persistence system is Microsoft SQL Server.
+################################################################
+#ebx.persistence.factory=sqlserver
+
+## Specific properties to be set only only if you want to ignore the standard 
+## deployment process of 'ebx' web application in the target operational environment	
+## (see the deployment descriptor 'web.xml' of 'ebx' web application).
+#ebx.persistence.url= \
+#jdbc:sqlserver://127.0.0.1:1036;databasename=ebxDatabase
+#ebx.persistence.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#ebx.persistence.user=xxxxxxxxx
+#ebx.persistence.password=yyyyyyyy
+
+################################################################
+## Case EBX5 persistence system is PostgreSQL.
+################################################################
+#ebx.persistence.factory=postgresql
+
+## Specific properties to be set only only if you want to ignore the standard 
+## deployment process of 'ebx' web application in the target operational environment	
+## (see the deployment descriptor 'web.xml' of 'ebx' web application).
+#ebx.persistence.url=jdbc:postgresql://127.0.0.1:5432/ebxDatabase
+#ebx.persistence.driver=org.postgresql.Driver
+#ebx.persistence.user=xxxxxxxxx
+#ebx.persistence.password=yyyyyyyy
+</pre>
+<h2>
+<a name="userDirectory"></a>Configuring the user and roles directory</h2>
+<p> This parameter specifies the Java directory factory class name. It must only be defined if not using the default EBX5 directory.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../engine/directory.html">Users and roles directory</a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/DirectoryFactory.html"><code>DirectoryFactory</code></a></li></ul>
+</div>
+<pre class="ebx_example brush: html">
+#################################################
+## Specifies the Java directory factory class name. 
+## Value must be the fully qualified name of the Java class. 
+## The class must extend com.orchestranetworks.service.directory.DirectoryFactory.
+#################################################
+#ebx.directory.factory=xxx.yyy.DirectoryFactoryImpl
+</pre>
+<p>It is also possible to disable the built-in role &quot;ADMINISTRATOR&quot;.</p><pre class="ebx_example brush: html">
+#################################################
+## Specifies whether the built-in role ADMINISTRATOR is disabled.
+## Default value is false.
+#################################################
+#ebx.directory.disableBuiltInAdministrator=true
+</pre>
+<h2>
+<a name="ebx.temp.directory"></a>Setting temporary files directories</h2>
+<p>Temporary files are stored as follows:</p><pre class="ebx_example brush: html">
+#################################################
+## Directories for temporary resources.
+#################################################
+# The property ebx.temp.directory allows to specify a directory for temporary files.
+# Default value is java.io.tmpdir
+# 
+ebx.temp.directory = ${java.io.tmpdir}
+#ebx.temp.directory = /tmp/java
+
+# The property ebx.temp.cache.directory allows to specify the directory containing temporary files for cache.
+# Default value is ${ebx.temp.directory}/ebx.platform.
+#ebx.temp.cache.directory = ${ebx.temp.directory}/ebx.platform
+
+# The property ebx.temp.import.directory allows to specify the directory containing temporary files for import.
+# Default value is ${ebx.temp.directory}/ebx.platform.
+#ebx.temp.import.directory = ${ebx.temp.directory}/ebx.platform
+</pre>
+<h2>
+<a name="xmlaudittrail"></a>Activating the XML audit trail</h2>
+<p>By default, the XML audit trail is activated. It can be deactivated using the following variable:</p><pre class="ebx_example brush: html">
+##################################################################
+# The XML history has been replaced by an SQL history.
+# This old XML history can be deactivated using the following variable. 
+# Default is true.
+##################################################################
+ebx.history.xmlaudittrail.activated = true
+</pre>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../engine/audit_trail.html">Audit trail</a></p></div>
+<h2>
+<a name="ebxLog"></a>Configuring the EBX5 logs</h2>
+<p>The most important logging categories are:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.kernel </p></td><td class="ebx_definitionListDefinition"><p>Logs for EBX5 main features, processes, exceptions and compilation results of modules and data models.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.workflow </p></td><td class="ebx_definitionListDefinition"><p>Logs for main features, warnings and exceptions about workflow.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.persistence </p></td><td class="ebx_definitionListDefinition"><p>Logs related to communication with the underlying database.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.setup </p></td><td class="ebx_definitionListDefinition"><p>Logs for compilation results of all EBX5 objects, except for modules and data models.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.validation </p></td><td class="ebx_definitionListDefinition"><p>Logs for data sets validation results.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.mail </p></td><td class="ebx_definitionListDefinition"><p>Logs for the activity related to the emails sent by the server (see <a href="#smtp">Activating and configuring SMTP and e-mails</a>).</p><p><strong>Note:</strong> This category must not use the <a href="#smtpAppender">Custom SMTP appender</a> in order to prevent infinite loops.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.d3 </p></td><td class="ebx_definitionListDefinition"><p>Logs for D3 events on EBX5.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.dataservices </p></td><td class="ebx_definitionListDefinition"><p>Logs for data service events in EBX5.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.monitoring </p></td><td class="ebx_definitionListDefinition"><p>Raw logs for <a href="../references/performance.html#monitoring">monitoring</a>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p> ebx.log4j.category.log.request </p></td><td class="ebx_definitionListDefinition"><p>The optimization strategy for every <a target="_blank" href="../Java_API/com/onwbp/adaptation/Request.html"><code>Request</code></a> issued on a semantic table in the EBX5 repository.</p></td></tr>
+</table>
+<p>Some of these categories can also be written to through custom code using the <a target="_blank" href="../Java_API/com/orchestranetworks/service/LoggingCategory.html"><code>LoggingCategory</code></a> interface.</p><pre class="ebx_example brush: html">
+ #################################################
+## Log4J properties:
+##
+## We have some specific syntax extensions:
+## - Appender ebxFile:&lt;aFileName&gt;
+## Defines a file appender with default settings (threshold=DEBUG)
+##
+## - property log.defaultConversionPattern is set by Java
+#################################################
+#ebx.log4j.debug=true
+#ebx.log4j.disableOverride=
+#ebx.log4j.disable=
+ebx.log4j.rootCategory= INFO
+ebx.log4j.category.log.kernel= INFO, Console, ebxFile:kernel, kernelMail
+ebx.log4j.category.log.workflow= INFO, ebxFile:workflow
+ebx.log4j.category.log.persistence= INFO, ebxFile:persistence
+ebx.log4j.category.log.setup= INFO, Console, ebxFile:kernel
+ebx.log4j.category.log.mail= INFO, Console, ebxFile:mail
+ebx.log4j.category.log.frontEnd= INFO, Console, ebxFile:kernel 
+ebx.log4j.category.log.frontEnd.incomingRequest= INFO
+ebx.log4j.category.log.frontEnd.requestHistory= INFO
+ebx.log4j.category.log.frontEnd.UIComponentInput= INFO
+ebx.log4j.category.log.fsm= INFO, Console, ebxFile:fsm
+ebx.log4j.category.log.fsm.dispatch= INFO
+ebx.log4j.category.log.fsm.pageHistory= INFO
+ebx.log4j.category.log.wbp= FATAL, Console
+#--------------------------------------------------
+ebx.log4j.appender.Console.Threshold = INFO
+ebx.log4j.appender.Console=com.onwbp.org.apache.log4j.ConsoleAppender
+ebx.log4j.appender.Console.layout=com.onwbp.org.apache.log4j.PatternLayout
+ebx.log4j.appender.Console.layout.ConversionPattern=${log.defaultConversionPattern}
+#--------------------------------------------------
+ebx.log4j.appender.kernelMail.Threshold = ERROR
+ebx.log4j.appender.kernelMail = com.onwbp.org.apache.log4j.net.SMTPAppender
+ebx.log4j.appender.kernelMail.To = admin@domain.com
+ebx.log4j.appender.kernelMail.From = admin${ebx.site.name}
+ebx.log4j.appender.kernelMail.Subject = EBX5 Error on Site ${ebx.site.name} (VM ${ebx.vm.id})
+ebx.log4j.appender.kernelMail.layout.ConversionPattern=**Site ${ebx.site.name} (VM${ebx.vm.id})**%n${log.defaultConversionPattern}
+ebx.log4j.appender.kernelMail.layout = com.onwbp.org.apache.log4j.PatternLayout
+
+#--------------------------------------------------
+ebx.log4j.category.log.monitoring= INFO, ebxFile:monitoring
+ebx.log4j.category.log.dataServices = INFO, ebxFile:dataServices
+ebx.log4j.category.log.d3= INFO, ebxFile:d3
+ebx.log4j.category.log.request= INFO, ebxFile:request
+</pre>
+<h3>
+<a name="ebxFileAppender"></a>Custom &#39;ebxFile&#39; appender</h3>
+<p>The token <code>ebxFile:</code> can be used as a shortcut to define a daily rolling file appender with default settings. It must be followed by a file name. It then activates an appender that writes to a file located in the directory <code>ebx.logs.directory</code>, with a threshold set to <code>DEBUG</code>.</p><p>The property <code>ebx.log4j.appender.ebxFile.backup.Threshold</code> allows defining of the maximum number of backup files for daily rollover.</p><pre class="ebx_example brush: html">
+#################################################
+## Directory of log files 'ebxFile:'
+## This property is used by special appender prefixed
+## by 'ebxFile:' (see log section below)
+#################################################
+ebx.logs.directory=${ebx.home}/ebxLog
+
+################################################################
+# Daily rollover threshold of log files 'ebxFile:'
+# Specifies the maximum number of backup files for daily rollover of 'ebxFile:' appenders.
+# When set to a negative value, backup log files are never purged.
+# Default value is -1.
+################################################################
+ebx.log4j.appender.ebxFile.backup.Threshold=-1
+</pre>
+<h3>
+<a name="smtpAppender"></a>Custom SMTP appender</h3>
+<p>The appender <code>com.onwbp.org.apache.log4j.net.SMTPAppender</code> provides an asynchronous email sender.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="#smtp">Activating and configuring SMTP and e-mails</a></p></div>
+<h2>
+<a name="smtp"></a>Activating and configuring SMTP and e-mails</h2>
+<p>The internal mail manager sends emails asynchronously. It is used by the workflow engine and by the custom SMTP appender <code>com.onwbp.org.apache.log4j.net.SMTPAppender</code>.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/deploy_on_j2ee.html#smtp">Mail sessions</a></p></div>
+<pre class="ebx_example brush: html">
+#################################################
+## SMTP and e-mails
+#################################################
+
+## Activate e-mails (true or false, default is false).
+## If activated, the deployer must ensure that the entry 'mail/EBX_MAIL_SESSION' is bound
+## in the operational environment of the application server (except if a specific email
+## configuration is used by setting the property ebx.mail.smtp.host below).
+#ebx.mail.activate=false
+
+## Polling interval is in seconds (default is 10).
+#ebx.mail.polling.interval=10
+
+## Specific properties to be set only only if you want to ignore the standard 
+## deployment process of 'ebx' web application in the target operational environment	
+## (see the deployment descriptor 'web.xml' of 'ebx' web application).
+#ebx.mail.smtp.host = smtp.domain.com
+## SMTP port default is 25.
+#ebx.mail.smtp.port= 25
+#ebx.mail.smtp.login=
+#ebx.mail.smtp.password= 
+## Activate SSL (true or false, default is false).
+## If SSL is activated, a SSL factory and a SSL provider are required.
+#ebx.mail.smtp.ssl.activate=true
+#ebx.mail.smtp.ssl.provider=com.sun.net.ssl.internal.ssl.Provider
+#ebx.mail.smtp.ssl.factory=javax.net.ssl.SSLSocketFactory
+</pre>
+<h2>
+<a name="dataServices"></a>Configuring data services</h2>
+<pre class="ebx_example brush: html">
+##################################################################
+## Data services
+##################################################################
+ 
+# Specifies the default value of the data services parameter 'disableRedirectionToLastBroadcast'. 
+# Default is false.
+#ebx.dataservices.disableRedirectionToLastBroadcast.default=false
+
+# Specifies the default value for deletion at the end of close and merge operations.
+# If the parameter is set in the request operation, it overrides this default setting. 
+# If unspecified, default is false.
+#ebx.dataservices.dataDeletionOnCloseOrMerge.default=false
+#ebx.dataservices.historyDeletionOnCloseOrMerge.default=false
+
+# Upon WSDL generation, specifies if the target namespace value corresponds to the content before 5.5.0 'ebx-services'
+# or 'urn:ebx:ebx-services' in conformity with the URI syntax.
+# If the parameter is set to true, there is no check of the target namespace as URI at the WSDL generation. 
+# If unspecified, default is false.
+#ebx.dataservices.wsdlTargetNamespace.disabledCheck=false</pre>
+<h2>
+<a name="jms"></a>Activating and configuring JMS</h2>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/deploy_on_j2ee.html#jms_dataServices">JMS for data services</a></p></div>
+<pre class="ebx_example brush: html">
+##################################################################
+## JMS configuration for Data Services
+##################################################################
+
+## Activates JMS (true or false, default is false).
+## If activated, the deployer must ensure that the entry 'jms/EBX_JMSConnectionFactory'
+## are bound in the operational environment of the application server.
+## The entry 'jms/EBX_QueueIn' should also be bound to enable handling Data Services request 
+## using JMS.
+#ebx.jms.activate=false
+
+## Activates JMS queue for failures (true or false, default is false).
+## If activated, the deployer must ensure that the entry 'jms/EBX_QueueFailure' is bound
+## in the operational environment of the application server.
+#ebx.jms.activate.queueFailure=false
+
+## Number of concurrent listener(s)
+## Default is 3.
+## Property is used if ebx.jms.activate is set to true.
+#ebx.jms.listeners.count=3
+</pre>
+<h2>
+<a name="d3"></a>Configuring distributed data delivery (D3)</h2>
+<p>See <a href="../engine/d3_admin.html#configuration">Configuring D3 nodes</a> for the main configuration file properties pertaining to D3.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../installation/deploy_on_j2ee.html#jms_d3">JMS for distributed data delivery (D3)</a></li><li><a href="../engine/d3.html">Introduction to D3</a></li></ul>
+</div>
+<h2>
+<a name="web"></a>Configuring web access from end-user browsers</h2>
+<h3>
+<a name="urls"></a>URLs computing</h3>
+<p>By default, EBX5 runs in &quot;standalone&quot; mode, where external resources (images, JavaScript, etc.) are provided by the application server.</p><p>Also by default, URL-related parameters in the main configuration file do not have to be set.</p><p>In this case, the server name and the port are obtained from the initial request sent to EBX5.</p><pre class="ebx_example brush: html">
+##################################################################
+## EBX5 FrontServlet: default properties for computing servlet address
+##
+## {useLocalUrl}:
+## If set to true, servlet address is a &quot;local absolute&quot; URL.
+## (that is, a relative URL consisting of an absolute path: &quot;/path&quot;)
+## See RFC 2396, http://www.ietf.org/rfc/rfc2396.txt).
+## This property is defined once for HTTP and HTTPS.
+## Default value is false.
+##
+## {host}:
+## If neither defined nor adapted, retrieves initial request host
+## {port}:
+## If neither defined nor adapted, retrieves initial request host
+## {path}:
+## Mandatory, may be empty
+##
+## Resulting address will be:
+## protocol://{host}:{port}/{path}
+##
+## Each property for HTTP (except {port}) may be inherited from HTTPS property,
+## and reciprocally.
+##################################################################
+
+#ebx.servlet.useLocalUrl=true
+#ebx.servlet.http.host=
+#ebx.servlet.http.port=
+ebx.servlet.http.path=ebx/
+#ebx.servlet.https.host=
+#ebx.servlet.https.port=
+#ebx.servlet.https.path=
+
+##################################################################
+## External resources: default properties for computing external resources address
+##
+## The same rules apply as EBX5 FrontServlet properties (see comments).
+##
+## Each property may be inherited from EBX5 FrontServlet.
+##################################################################
+
+#ebx.externalResources.useLocalUrl=true
+#ebx.externalResources.http.host=
+#ebx.externalResources.http.port=
+#ebx.externalResources.http.path=
+#ebx.externalResources.https.host=
+#ebx.externalResources.https.port=
+#ebx.externalResources.https.path=
+</pre>
+<h3>
+<a name="id13s2"></a>Proxy mode</h3>
+<p>Proxy mode allows using a front-end HTTP server to provide static resources (images, CSS, JavaScript, etc.). This architecture reduces the load on the application server for static HTTP requests. This configuration also allows using SSL security on the front-end server.</p><p>The web server sends requests to the application server according to a path in the URL. This <code>servletAlias</code> path is specified in the main configuration file.</p><p>The web server provides all external resources. These resources are stored in a dedicated directory, accessible using the path <code>resourcesAlias</code>.</p><p>EBX5 must also be able to access external resources from the file system. To do so, the property <code>ebx.webapps.directory.externalResources</code> must be specified.</p><p>The main configuration file is configured as follows:</p><pre class="ebx_example brush: html">
+#################################################
+## Path for external resources if they are not
+## delivered within web applications
+## This field is mandatory if in proxy mode.
+#################################################
+ebx.webapps.directory.externalResources=
+D:/http/resourcesFolder
+ 
+#################################################
+
+#ebx.servlet.useLocalUrl=true
+#ebx.servlet.http.host=
+#ebx.servlet.http.port=
+ebx.servlet.http.path= servletAlias
+#ebx.servlet.https.host=
+#ebx.servlet.https.port=
+ebx.servlet.https.path= servletAlias
+
+#################################################
+
+#ebx.externalResources.useLocalUrl=true
+#ebx.externalResources.http.host=
+#ebx.externalResources.http.port=
+ebx.externalResources.http.path= resourcesAlias
+#ebx.externalResources.https.host=
+#ebx.externalResources.https.port=
+ebx.externalResources.https.path= resourcesAlias
+</pre>
+<h3>
+<a name="id13s3"></a>Reverse proxy mode</h3>
+<p>URLs generated by EBX5 for requests and external resources must contain a server name, a port number and a specific path prefix.</p><p>The properties are configured as follows:</p><pre class="ebx_example brush: html">
+#################################################
+ebx.servlet.http.host= reverseDomain
+#ebx.servlet.http.port=
+ebx.servlet.http.path=ebx/
+ebx.servlet.https.host= reverseDomain
+#ebx.servlet.https.port=
+ebx.servlet.https.path=ebx/ 
+#################################################
+## Web parameters (for external resources)
+## if nothing is set, values are taken from servlet.
+#################################################
+ebx.externalResources.http.host= reverseDomain
+#ebx.externalResources.http.port=
+#ebx.externalResources.http.path=ebx/
+ebx.externalResources.https.host= reverseDomain
+#ebx.externalResources.https.port=
+ebx.externalResources.https.path=ebx/
+</pre>
+<h3>
+<a name="strongEncoding"></a>URL parameter encoding</h3>
+<p>URLs generated by EBX5 may contain sensitive characters according to some security policies. This can be avoided by enforcing strong URL encoding.</p><p>The properties are configured as follows:</p><pre class="ebx_example brush: html">
+##################################################################
+## URL parameter strong encoding
+##
+## If true, sensitive parameters are strongly encoded, 
+## by removing special characters (./'=, etc.) from URLs.
+##
+## Default value is false.
+##################################################################
+ebx.urlParameters.strongEncoding=true
+</pre>
+<h2>
+<a name="failover"></a>Configuring failover</h2>
+<p> These parameters are used to configure failover mode and activation key, as well as heartbeat logging in <code>DEBUG</code> mode.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../engine/repository_administration.html#failover">Failover with hot-standby</a></p></div>
+<pre class="ebx_example brush: html">
+#################################################
+## Mode used to qualify the way in which a server accesses the repository. 
+## Possible values are: unique, failovermain, failoverstandby.
+## Default value is: unique.
+#################################################
+#ebx.repository.ownership.mode=unique
+
+## Activation key used in case of failover. The backup server must include this
+## key in the HTTP request used to transfer exclusive ownership of the repository.
+## The activation key must be an alphanumeric ASCII string longer than 8 characters.
+#ebx.repository.ownership.activationkey=
+
+## Specifies whether to hide heartbeat logging in DEBUG mode.
+## Default value is true.
+#ebx.repository.ownership.hideHeartBeatLogForDebug=true</pre>
+<h2>
+<a name="tuning"></a>Tuning the EBX5 repository</h2>
+<p>Some options can be set so as to optimize memory usage.</p><p>The properties are configured as follows:</p><pre class="ebx_example brush: html">
+################################################################
+## Technical parameters for memory and performance tuning
+################################################################
+# Import commit threshold allows to specify the commit threshold 
+# exclusively for the archive import launched directly from Manager.
+# 
+# For more details about the commit threshold, 
+# see the JavaDoc ProcedureContext.setCommitThreshold().
+# Default value is 0.
+# 
+ebx.manager.import.commit.threshold=100
+# Validation messages threshold allows to specify the maximum number of 
+# messages to consider when performing a validation. 
+# This threshold is considered for each severity in each validation report.
+# When the threshold is reached: 
+# - for severities 'error' or 'fatal', the validation is stopped.
+# - for severities 'info' or 'warning', the validation continues without
+# registering messages beyond the threshold. However the number of messages
+# is still counted and messages of other severities can still be added.
+# 
+# When set to 0 or a negative value the threshold is not considered.
+# Default value is 0.
+# 
+ebx.validation.messages.threshold=100</pre>
+<pre class="ebx_example brush: html">
+# Specifies whether the validation report should be kept in memory,
+# regardless of the loading strategy of the data space.
+# Default value is true. However, it is recommended to deactivate it
+# when the repository contains a large number of open data spaces and
+# data sets.
+#ebx.validation.report.keepInMemory=false
+</pre>
+<h2>
+<a name="misc"></a>Miscellaneous</h2>
+<h3>
+<a name="ebx.workflow.activation"></a>Activating data workflows</h3>
+<p>This parameter specifies whether data workflows are activated. This parameter is not taken into account on the fly. The server must be restarted whenever the value changes.</p><pre class="ebx_example brush: html">
+#################################################
+## Workflow activation.
+## Default is false.
+#################################################
+ebx.workflow.activation = true
+</pre>
+<h3>
+<a name="ebx.logs.logProcedureStart"></a>Log procedure starts</h3>
+<p>This parameter specifies whether starts of procedure execution are logged. </p><pre class="ebx_example brush: html">
+#################################################
+## Specifies whether transaction starts are logged. Default is false.
+#################################################
+ebx.logs.logTransactionStart = true
+</pre>
+<h3>
+<a name="ebx.logs.logValidationStart"></a>Log validation starts</h3>
+<p>This parameter specifies whether starts of data sets validation are logged. </p><pre class="ebx_example brush: html">
+#################################################
+## Specifies whether validation starts are logged. Default is false.
+#################################################
+ebx.logs.logValidationStart = true
+</pre>
+<h3>
+<a name="id16s4"></a>Deployment site identification</h3>
+<p>This parameter allows specifying the email address to which technical log emails are sent.</p><pre class="ebx_example brush: html">
+#################################################
+## Unique Site Name
+## --> used by monitoring emails and by the repository
+#################################################
+ebx.site.name= name@domain.com
+</pre>
+<h3>
+<a name="hotreloading"></a>Dynamically reloading the main configuration</h3>
+<p>Some parameters can be dynamically reloaded, without restarting EBX5. The parameter <code>thisfile.checks.intervalInSeconds</code> indicates how frequently the main configuration file is checked.</p><pre class="ebx_example brush: html">
+#################################################
+### Checks if this file has been updated
+### If value &lt;= 0, no more checks will be done
+#################################################
+thisfile.checks.intervalInSeconds=1 
+</pre>
+<p>In development mode, this parameter can be set as low as one second. On production systems, where changes are expected to be less frequent, the value can be greater, or set to &#39;0&#39; to disable hot reloading entirely.</p><p>This property is not always supported when the module is deployed as a WAR, as it would then depend on the application server.</p><h3>
+<a name="id16s6"></a>Applications that use the EBX5 navigation engine</h3>
+<p>Application template reloading:</p><pre class="ebx_example brush: html">
+#################################################
+## Reload templates when it is updated
+## (default value for all EBX5 modules).
+## (value can be overrided by each EBX5 module.
+#################################################
+templates.checksIfUpdated=true 
+</pre>
+<p>Debug mode in the EBX5 module web pages (only used when developing):</p><pre class="ebx_example brush: html">
+#################################################
+## End-User Debug Mode
+## (default for all EBX5 modules ).
+## Debug information appears on end-user web page.
+#################################################
+frontEnd.debugMode=false
+</pre>
+<h3>
+<a name="moduleRegistration"></a>Module registration</h3>
+<p>When the application server is started, all web applications declared as EBX5 modules have to be registered. Concurrently, depending on the loading strategy of data spaces, the deployment of the web application &#39;<code>ebx</code>&#39; may require the compilation of data models and their modules. Since these modules may not yet be registered, as it depends on the order of web application deployment at server startup, a wait loop is implemented. This gives the module time to be registered.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../models/modules_packaging.html">Packaging EBX5 modules</a></p></div>
+<pre class="ebx_example brush: html">
+#################################################
+## When the application server is started, all web applications declared as 
+## EBX5 modules have to register. This property
+## specifies the estimated time in seconds taken by the application server
+## to deploy all its web applications at startup. Beyond this time,
+## if a required module has not yet registered, it is considered to be absent
+## and an error is reported to 'kernel' log.
+## Default is 30 seconds.
+#################################################
+#ebx.module.timeInSecondsForModuleRegistration=30
+</pre>
+<h3>
+<a name="runningMode"></a>EBX5 run mode</h3>
+<p>This property defines how EBX5 runs. Three modes are available: <em>development</em>,<em>integration</em> and <em>production</em>.</p><p>When running in <em>development</em> mode, the <a href="../references/tools_java_developer.html">development tools</a> are activated in EBX5 and more technical information is displayed.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The administrator always has access to this information regardless of the mode used.</p></div>
+<p>The technical information is as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation pane</p></td><td class="ebx_definitionListDefinition"><p>In the case of a computed value, the Java class name is displayed. The button to get the path to a node is also displayed.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data model assistant</p></td><td class="ebx_definitionListDefinition"><p>Data model configuration and additional options, such as Services, Business Objects and Rules, Java Bindings, and some advanced properties.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Validation report</p></td><td class="ebx_definitionListDefinition"><p>The <strong>Validation</strong> tab is displayed.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Log</p></td><td class="ebx_definitionListDefinition"><p>The logs include additional technical information intended for the developer. For example, a warning is written to logs if a drop-down list is defined on a node which is not an enumeration in a UI Bean.</p></td></tr>
+</table>
+<pre class="ebx_example brush: html">
+#################################################
+## Server Mode
+## Value must be one of: development, integration, production
+## Default is production.
+#################################################
+backend.mode=integration
+</pre>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">There is no difference between the modes <em>integration</em> and <em>production</em>.</p></div>
+<h3>
+<a name="id16s9"></a>Resource filtering</h3>
+<p>This property allows the filtering of certain files and directories in the resource directory contents (resource type node, with an associated facet that indicates the directory that contains usable resources).</p><pre class="ebx_example brush: html">
+#################################################
+## list (separated by comma) of regexps excluding resource
+## the regexp must be of type &quot;m:[pattern]:[options]&quot;.
+## the list can be void
+#################################################
+ebx.resource.exclude=m:CVS/*:
+</pre>
+<h3>
+<a name="id16s10"></a>Downgrading to IE8 display</h3>
+<p>With Internet Explorer, if EBX5 is included in a portal which is forced to &quot;Compatibility Mode&quot;, the <a href="../engine/admin_frontend.html#ergoBehavior">IE compatibility mode</a> of EBX5 is not applied by Internet Explorer. It is thus impossible to ensure a good display of graphics (such as images or beautiful title fonts). The display must be downgraded to IE8 mode for all Internet Explorer versions starting from 9.</p><pre class="ebx_example brush: html">
+#################################################
+## Specifies whether the Internet Explorer display must be downgraded to version 8.
+## Default value is false.
+#################################################
+#ebx.browser.ie.forceIE8=true
+</pre>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Installation &amp; configuration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

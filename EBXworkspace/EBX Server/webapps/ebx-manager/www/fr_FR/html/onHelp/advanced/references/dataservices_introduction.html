@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Introduction</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dataservices_introduction" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Reference Manual &gt; Integration &gt; Data services</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/dataservices_introduction.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Integration &gt; Data services</span></div>
+<h1>
+Introduction</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of data services</a></li><li class="toc1"><a href="#configuration">Enabling and configuring data services</a></li><li class="toc1"><a href="#id3">SOAP interactions</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Input and output message encoding</a></li><li class="toc2"><a href="#tracking">Tracking information</a></li><li class="toc2"><a href="#exceptions">Exceptions handling</a></li><li class="toc2"><a href="#jms">Using JMS</a></li></ul>
+</li><li class="toc1"><a href="#security">Data services security</a><ul class="toc2">
+<li class="toc2"><a href="#authentication">Authentication</a></li><li class="toc2"><a href="#overridingSecurity">Overriding the SOAP security header</a></li><li class="toc2"><a href="#id4s3">Lookup mechanism</a></li></ul>
+</li><li class="toc1"><a href="#monitoring">Monitoring</a></li><li class="toc1"><a href="#id6">Known limitations</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Naming convention</a></li><li class="toc2"><a href="#id6s2">Date, time &amp; dateTime format</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of data services</h2>
+<p>Data services allow external systems to interact with the data governed in the EBX5 repository using the SOAP and Web Services Description Language (WSDL) standards.</p><p>A number of WSDLs can be dynamically generated from data models, then used to perform operations such as:</p><ul>
+<li><p>Selecting, inserting, updating, deleting, or counting records</p></li><li><p>Getting the differences on a table between data spaces or snapshots, or between two data sets based on the same data model</p></li><li><p>Getting the credentials of records</p></li></ul>
+<p>Other generic operations for:</p><ul>
+<li><p>Creating, merging, or closing a data space</p></li><li><p>Creating or closing a snapshot</p></li><li><p>Validating a data set, data space, or a snapshot</p></li><li><p>Starting, resuming or ending a data workflow</p></li></ul>
+<h2>
+<a name="configuration"></a>Enabling and configuring data services</h2>
+<p>Data services are enabled by deploying the module <code>ebx-dataservices</code> along with the other EBX5 modules. See <a href="../installation/deploy_on_j2ee.html">Java EE deployment overview</a> for more information.</p><p>For specific deployment, for example using reverse-proxy mode, the URL to <code>ebx-dataservices</code> must be configured through lineage administration.</p><p>The default method for accessing data services is over HTTP, although it is also possible to use JMS. See <a href="../installation/properties.html#jms">JMS configuration</a> and <a href="#jms">Using JMS</a> for more information.</p><h2>
+<a name="id3"></a>SOAP interactions</h2>
+<h3>
+<a name="id3s1"></a>Input and output message encoding</h3>
+<p>All input messages must be <em>exclusively</em> in UTF-8. All output messages are in UTF-8. </p><h3>
+<a name="tracking"></a>Tracking information</h3>
+<p>Depending on the data services operation being called, it may be possible to specify session tracking information in an optional SOAP header. For example:</p><pre class="ebx_example brush: xml">
+&lt;SOAP-ENV:Header> 
+	&lt;!-- optional security header here --> 
+	&lt;m:session xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+		&lt;trackingInformation>String&lt;/trackingInformation> 
+	&lt;/m:session> 
+&lt;/SOAP-ENV:Header></pre>
+<p>For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/Session.html#getTrackingInfo()"><code>Session.getTrackingInfo</code></a> in the Java API.</p><h3>
+<a name="exceptions"></a>Exceptions handling</h3>
+<p>Exceptions are re-thrown to the consumer through the <code>soap:fault</code> element within a standard exception. For example:</p><pre class="ebx_example brush: xml">
+&lt;soapenv:Fault>
+	&lt;faultcode>soapenv:java.lang.IllegalArgumentException&lt;/faultcode>
+	&lt;faultstring />
+	&lt;faultactor>admin&lt;/faultactor>
+	&lt;detail>
+		&lt;m:StandardException xmlns:m="urn:ebx-schemas:dataservices_1.0">
+			&lt;code>java.lang.IllegalArgumentException&lt;/code>
+			&lt;label/>
+			&lt;description>java.lang.IllegalArgumentException:
+				Parent home not found at
+				com.orchestranetworks.XX.YY.ZZ.AA.BB(AA.java:44) at
+				com.orchestranetworks.XX.YY.ZZ.CC.DD(CC.java:40) ...
+			&lt;/description>
+		&lt;/m:StandardException>
+	&lt;/detail>
+&lt;/soapenv:Fault>
+</pre>
+<h3>
+<a name="jms"></a>Using JMS</h3>
+<p>It is possible to access data services using JMS, instead of HTTP. The JMS architecture relies on one mandatory queue and one optional queue, see configuration <a href="../installation/properties.html#jms">JMS</a>. The mandatory queue is the input queue. Request messages must be put in the input queue, and response messages are put by EBX5 in the <code>replyTo</code> queue of the JMS request. The optional queue is the failure queue which allows you to replay an input message if necessary. If the queue is set in the configuration file and an exception occurs while handling a request message, this input message will be copied in the failure queue. </p><p> The relationship between a request and a response is made by copying the <code>messageId</code> message identifier field of the JMS request into the <code>correlId</code> correlation identifier field of the response.</p><p>JMS endpoints must be defined in the Lineage administration to provide them in the WSDL. If no specific endpoint is given, the default value will be <code>jms:queue:jms/EBX_QueueIn</code>.</p><h2>
+<a name="security"></a>Data services security</h2>
+<h3>
+<a name="authentication"></a>Authentication</h3>
+<p>Authentication is mandatory. Several authentication methods are available and described below. The descriptions are ordered by priority (EBX5 applies the highest priority authentication method first).</p><ul>
+<li><p>Specific authentication based on HTTP <code>Request</code> see <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#authenticateUserFromHttpRequest(javax.servlet.http.HttpServletRequest)"><code>Directory.authenticateUserFromHttpRequest</code></a> for more information. An implementation of this method can, for example, extract a password-digest or a ticket from the HTTP request.</p></li><li><p>&#39;Basic Authentication Scheme&#39; method based on the HTTP-Header <code>Authorization</code> in base 64, as described in <a target="_blank" href="http://www.ietf.org/rfc/rfc2617.txt">RFC 2324</a>.</p><pre class="ebx_example brush: plain">
+If the user agent wishes to send the userid "Alibaba" and password "open sesame",
+it will use the following header field: Authorization: Basic
+QWxpYmFiYTpvcGVuIHNlc2FtZQ==
+</pre>
+</li><li><p>A simple authentication based on the specification <a target="_blank" href="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf">Web Services Security UsernameToken Profile 1.0</a>. </p><p>Only the mode <code>PasswordText</code> is supported. This is done with the following SOAP header defined in the WSDL:</p><pre class="ebx_example brush: xml">
+&lt;SOAP-ENV:Header>
+	&lt;wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/04/secext">
+		&lt;wsse:UsernameToken>
+			&lt;wsse:Username>String&lt;/wsse:Username>
+			&lt;wsse:Password Type="wsse:PasswordText">String&lt;/wsse:Password>
+		&lt;/wsse:UsernameToken>
+	&lt;/wsse:Security>
+&lt;/SOAP-ENV:Header>
+</pre>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Only available for <a href="../references/dataservices_execution.html">Operations</a> from HTTP request.</p></div>
+<li><p>Standard authentication based on HTTP <code>Request</code>. User and password are extracted from request parameters. For more information, see <a href="../references/dataservices_wsdl.html#WSDLConnector_Parameters">Request parameters</a>. </p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#authenticateUserFromLoginPassword(java.lang.String, java.lang.String)"><code>Directory.authenticateUserFromLoginPassword</code></a> for more information.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Only available for <a href="../references/dataservices_wsdl.html">WSDL generation</a>.</p></div>
+</li></li></ul>
+<h3>
+<a name="overridingSecurity"></a>Overriding the SOAP security header</h3>
+<p>It is possible to override the default WSS header in order to define another security authentication mechanism. Such an override is taken into account for both HTTP and JMS. To define and override, use the &#39;SOAP Header Security declaration&#39; configuration settings under Administration &gt; Lineage, which includes the following fields:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Schema location</p></td><td class="ebx_definitionListDefinition"><p>The URI of the Security XML Schema to import into the WSDL.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Target namespace</p></td><td class="ebx_definitionListDefinition"><p>The target namespace of elements in the schema.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Namespace prefix</p></td><td class="ebx_definitionListDefinition"><p>The prefix for the target namespace.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Message name</p></td><td class="ebx_definitionListDefinition"><p>The message name to use in the WSDL.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Root element name</p></td><td class="ebx_definitionListDefinition"><p>The root element name of the security header. The name must be the same as the one declared in the schema.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>wsdl:part element name</p></td><td class="ebx_definitionListDefinition"><p>The name of the <code>wsdl:part</code> of the message.</p></td></tr>
+</table>
+<p>The purpose of overriding the default security header is to change the declaration of the WSDL message matching the security header so that it contains the following:</p><pre class="ebx_example brush: plain">
+&lt;wsdl:definitions ... xmlns:MyPrefix="MyTargetNameSpace" ...
+  ...
+  &lt;xs:schema ...>
+    &lt;xs:import namespace="MyTargetNameSpace" schemaLocation="MySchemaURI"/>
+    ...
+  &lt;/xs:schema>
+  ...
+  &lt;wsdl:message name="MySecurityMessage">
+    &lt;wsdl:part name="MyPartElementName" element="MyPrefix:MySecurityRootElement"/>
+  &lt;/wsdl:message>
+  ...
+  &lt;wsdl:operation name="...">
+    &lt;soap:operation soapAction="..." style="document"/>
+    &lt;wsdl:input>
+      &lt;soap:body use="literal"/>
+      &lt;soap:header message="impl:MySecurityMessage" part="MyPartElementName" use="literal"/>
+  ...
+  &lt;/wsdl:operation>
+&lt;/wsdl:definitions></pre>
+<p>The corresponding XML Schema header declaration would be as follows:</p><pre class="ebx_example brush: plain">
+&lt;schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="MyNameSpace"
+		xmlns:MyPrefix="MyNameSpace">
+  &lt;element name="MySecurityRootElement" type="MyPrefix:SpecificSecurity"/>
+  &lt;complexType name="SpecificSecurity">
+    &lt;sequence>
+      &lt;element name="AuthToken" type="string"/>
+    &lt;/sequence>
+  &lt;/complexType>
+&lt;/schema></pre>
+<p>A SOAP message using the XML schema and configuration above would have the following header:</p><pre class="ebx_example brush: plain">
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  &lt;SOAP-ENV:Header>
+    &lt;m:MySecurityRootElement xmlns:m="MyNameSpace">
+      &lt;AuthToken>String&lt;/AuthToken>
+    &lt;/m:MySecurityRootElement>
+    ...
+  &lt;/SOAP-ENV:Header>
+  &lt;SOAP-ENV:Body>
+    ...
+  &lt;/SOAP-ENV:Body>
+&lt;/SOAP-ENV:Envelope></pre>
+<p>To handle this non-default header, you must implement the method: <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#authenticateUserFromSOAPHeader(org.w3c.dom.Element)"><code>Directory.authenticateUserFromSOAPHeader</code></a>.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Only available for <a href="../references/dataservices_execution.html">Operations</a>.</p></div>
+<h3>
+<a name="id4s3"></a>Lookup mechanism</h3>
+<p>Using HTTP, the web service connector attempts authentication in the following order:</p><ol>
+<li><p>Using an HTTP Request</p></li><li><p>Using the HTTP Header <code>Authorization</code></p></li><li><p>Looking for a security header (WSS or custom)</p></li></ol>
+<p>When using JMS, the authentication process only looks for a security header (WSS or custom).</p><h2>
+<a name="monitoring"></a>Monitoring</h2>
+<p>Data service events can be monitored through the log category <code>ebx.dataServices</code>, as declared in the EBX5 main configuration file. For example, <code>ebx.log4j.category.log.dataServices= INFO, ebxFile:dataservices</code>.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../installation/properties.html#ebxLog">Configuring the EBX5 logs</a></li><li><a href="../installation/properties.html">EBX5 main configuration file</a></li></ul>
+</div>
+<h2>
+<a name="id6"></a>Known limitations</h2>
+<h3>
+<a name="id6s1"></a>Naming convention</h3>
+<p>Due to the naming convention of the data service operations, each table defined within a data model must have a unique name for WSDL generation.</p><h3>
+<a name="id6s2"></a>Date, time &amp; dateTime format</h3>
+<p>Data services only support the following date and time formats:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Type</strong></p></th><th valign="top"><p><strong>Format</strong></p></th><th valign="top"><p><strong>Example</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>xs:date</p></td><td><p>yyyy-MM-dd</p></td><td><p>2007-12-31</p></td></tr>
+<tr>
+<td><p>xs:time</p></td><td><p>HH:mm:ss or HH:mm:ss.SSS</p></td><td><p>11:55:00</p></td></tr>
+<tr>
+<td><p>xs:dateTime</p></td><td><p>yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS</p></td><td><p>2007-12-31T11:55:00</p></td></tr>
+</tbody>
+</table>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Integration &gt; Data services</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

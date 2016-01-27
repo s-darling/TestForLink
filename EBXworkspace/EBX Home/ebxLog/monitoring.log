@@ -1,0 +1,308 @@
+2016-01-27 10:55:47,014 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 10:55:47,055 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 10:55:47,057 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,182,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:55:57,064 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,718,137,47,0,0,0,2,0,0,2,44,0,0,0,0,47,0,0,0
+2016-01-27 10:56:07,071 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,218,167,0,0,0,22,0,0,52,61,0,37,27,0,0,0,0,0
+2016-01-27 10:56:17,072 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,190,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:56:27,076 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,189,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:56:37,081 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,162,171,0,0,0,1,0,0,3,4,0,0,0,0,0,0,0,0
+2016-01-27 10:56:47,084 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,161,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:56:57,088 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,160,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:57:07,094 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,159,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:57:27,107 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,158,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:57:37,109 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,157,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:57:47,113 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,156,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:58:07,119 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,155,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:58:17,121 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,154,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:58:27,125 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,150,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:58:37,127 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,149,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:58:47,133 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,148,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:58:57,136 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,746,147,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:59:07,138 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,619,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:59:17,139 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,617,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:59:27,140 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,616,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:59:37,144 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,615,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 10:59:47,149 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,614,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:00:07,159 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,613,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:00:17,164 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,612,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:00:37,172 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,611,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:00:47,176 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,610,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:00:57,177 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,609,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:01:07,180 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,608,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:01:27,191 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,607,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:01:37,197 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,606,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:01:47,200 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,605,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:02:07,206 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,604,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:02:17,207 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,603,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:02:27,208 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,602,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:02:37,213 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,601,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:02:57,218 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,600,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:03:07,219 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,599,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:03:17,225 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,598,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:03:37,235 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,597,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:03:47,237 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,596,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:03:57,239 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,595,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:04:07,241 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,594,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:04:17,244 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,593,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:04:27,250 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,592,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:04:37,256 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,591,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:04:47,262 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,590,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:12:09,318 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,589,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:12:19,319 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,588,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:12:39,326 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,587,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:12:49,330 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,586,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:12:59,335 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,585,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:13:19,342 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,584,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:13:29,347 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,583,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:13:39,350 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,582,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:13:49,351 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,581,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:13:59,352 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,580,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:14:19,355 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,579,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:14:29,357 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,578,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:14:49,364 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,577,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:14:59,365 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,576,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:15:09,367 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,575,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:15:19,368 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,574,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:15:39,373 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,573,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:15:49,376 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,572,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:15:59,385 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,571,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:16:19,397 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,570,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:16:29,400 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,569,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:16:39,406 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,568,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:16:49,407 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,566,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:16:59,408 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,565,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:17:19,414 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,564,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:17:29,418 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,563,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:17:39,422 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,562,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:17:49,428 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,561,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:18:09,439 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,560,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:18:19,442 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,559,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:18:29,442 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,558,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:18:49,445 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,557,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:18:59,451 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,556,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:19:09,455 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,555,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:19:19,456 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,534,233,0,0,0,2,0,0,5,29,0,1,0,0,0,0,0,0
+2016-01-27 11:19:29,462 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,498,233,0,0,0,1,0,0,2,1,0,1,0,0,0,0,0,0
+2016-01-27 11:19:39,468 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,497,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:19:49,469 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,495,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:19:59,475 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,494,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:20:09,477 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,466,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:20:19,482 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,464,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:20:29,487 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,423,233,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+2016-01-27 11:20:39,490 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,422,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:20:49,496 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,421,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:20:59,497 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,420,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:21:09,501 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,419,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:21:29,504 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,418,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:21:39,508 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,416,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:21:59,515 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,413,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:22:09,520 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,347,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:22:19,525 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,346,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:22:29,531 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,747,345,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 11:22:44,774 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:38:42,700 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:38:42,740 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 13:38:42,740 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,182,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:38:52,743 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,718,183,45,0,0,0,2,0,0,2,41,0,0,0,0,47,0,0,0
+2016-01-27 13:39:02,746 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,596,170,0,0,0,22,0,0,52,51,0,37,24,0,0,0,0,0
+2016-01-27 13:39:12,750 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,530,233,0,0,0,4,0,0,9,19,0,2,1,0,0,0,0,0
+2016-01-27 13:39:22,753 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,519,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:39:32,757 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,518,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:39:52,765 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,517,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:40:02,766 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,516,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:40:12,769 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,479,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:40:22,773 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,437,233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:40:32,775 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,417,234,0,0,0,2,0,0,3,2,0,1,1,0,0,0,0,0
+2016-01-27 13:40:42,779 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,402,235,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:40:52,783 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,401,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:41:02,785 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,397,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:41:12,785 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,396,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:41:22,788 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,395,238,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:41:32,792 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,376,242,0,0,0,1,0,0,2,1,0,0,0,0,0,0,0,0
+2016-01-27 13:41:42,795 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,371,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:41:52,798 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,356,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:42:02,800 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,355,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:42:12,801 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,354,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:42:22,802 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,353,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:42:42,814 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,352,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:42:52,820 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,333,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:43:02,826 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,332,242,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:43:12,828 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,314,244,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+2016-01-27 13:43:22,830 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,313,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:43:32,831 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,312,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:43:42,833 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,311,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:43:52,834 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,310,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:44:12,840 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,309,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:44:22,842 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,308,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:44:32,844 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,307,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:44:52,851 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,306,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:45:02,856 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,305,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:45:12,858 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,304,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:45:22,860 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,302,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:45:32,864 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,301,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:45:52,870 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,300,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:46:02,875 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,299,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:46:12,877 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,298,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:46:32,885 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,297,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:46:38,416 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:46:55,073 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:46:55,110 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 13:46:55,111 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,181,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:47:05,117 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,717,271,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:47:15,135 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,745,646,51,0,0,0,4,1,0,4,100,0,0,0,0,47,0,0,0
+2016-01-27 13:47:25,140 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,274,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:47:35,141 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,271,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:47:45,147 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,265,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:47:55,149 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,264,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:48:05,151 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,263,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:48:15,155 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,262,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:48:35,162 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,258,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:48:45,164 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,257,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:48:55,168 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,256,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:49:03,100 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:49:56,219 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:49:56,256 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 13:49:56,256 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,182,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:50:06,258 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,723,211,13,0,0,0,0,0,0,0,0,0,0,0,0,47,0,0,0
+2016-01-27 13:50:16,259 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,688,541,170,0,0,0,24,0,0,54,164,0,37,55,0,0,0,0,0
+2016-01-27 13:50:26,263 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,488,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:50:36,266 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,462,171,0,0,0,1,0,0,3,3,0,0,0,0,0,0,0,0
+2016-01-27 13:50:46,269 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,390,234,0,0,0,5,0,0,9,25,0,3,2,0,0,0,0,0
+2016-01-27 13:50:56,276 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,350,234,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:51:06,279 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,337,235,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:51:26,289 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,335,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:51:36,292 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,327,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:51:46,295 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,326,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:52:06,301 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,325,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:52:16,305 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,755,324,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:52:16,690 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 13:52:25,862 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 13:52:25,936 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 13:52:25,936 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,370,114,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:52:35,940 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,737,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:52:45,944 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,735,202,51,0,0,0,4,0,0,4,69,0,0,0,0,47,0,0,0
+2016-01-27 13:52:55,947 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,728,277,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:53:05,953 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,728,274,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:53:15,958 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,728,273,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:53:25,963 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,728,266,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:53:35,965 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,728,265,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 13:53:43,576 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:02:25,522 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:02:25,562 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 14:02:25,563 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:02:35,567 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,715,252,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:02:45,572 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,741,308,194,0,0,0,24,5,0,54,232,0,37,80,0,47,0,0,0
+2016-01-27 14:02:55,577 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,203,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:03:05,578 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,201,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:03:15,582 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,199,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:03:25,587 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,197,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:03:35,590 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,196,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:03:45,596 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,195,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:03:55,602 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,744,173,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:04:05,080 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:04:14,560 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:04:14,601 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 14:04:14,603 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,181,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:04:24,607 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,716,126,47,0,0,0,2,1,0,2,51,0,0,0,0,47,0,0,0
+2016-01-27 14:04:34,612 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,742,187,51,0,0,0,2,0,0,2,9,0,0,0,0,0,0,0,0
+2016-01-27 14:04:35,772 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:12:13,255 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:12:13,295 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 14:12:13,295 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,183,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:12:23,299 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,713,234,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:12:33,303 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,742,625,170,0,0,0,24,0,0,54,148,0,37,71,0,47,0,0,0
+2016-01-27 14:12:43,305 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,520,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:12:53,310 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,478,234,0,0,0,4,0,0,8,23,0,1,1,0,0,0,0,0
+2016-01-27 14:13:03,312 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,477,234,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:13:13,318 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,472,235,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:13:23,324 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,471,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:13:43,328 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,470,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:13:53,331 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,469,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:14:03,332 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,468,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:14:13,337 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,467,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:14:33,341 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,466,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:14:43,343 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,465,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:14:53,345 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,461,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:15:03,346 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,460,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:15:23,349 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,454,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:15:33,354 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,453,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:15:43,355 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,452,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:16:03,365 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,451,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:16:13,366 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,450,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:16:23,367 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,449,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:16:33,372 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,448,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:16:53,376 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,446,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:17:03,380 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,445,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:17:13,384 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,444,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:17:23,387 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,443,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:17:43,396 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,442,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:17:53,397 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,441,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:18:03,398 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,440,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:18:13,399 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,439,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:18:33,409 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,438,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:18:43,415 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,437,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:18:53,416 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,436,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:19:03,418 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,435,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:19:13,422 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,434,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:19:23,427 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,433,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:19:33,428 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,432,236,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:19:43,430 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,431,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:19:53,431 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,430,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:20:13,439 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,429,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:20:23,442 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,428,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:20:33,443 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,427,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:20:43,445 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,426,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:21:03,454 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,424,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:21:13,460 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,748,423,237,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:21:20,460 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:26:20,117 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:26:20,152 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 14:26:20,153 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,177,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:26:30,156 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,719,117,47,0,0,0,2,0,0,2,40,0,0,0,0,47,0,0,0
+2016-01-27 14:26:40,162 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,588,167,0,0,0,22,0,0,52,54,0,37,36,0,0,0,0,0
+2016-01-27 14:26:50,168 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,585,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:27:00,173 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,584,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:27:10,177 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,527,171,0,0,0,1,0,0,3,7,0,0,0,0,0,0,0,0
+2016-01-27 14:27:20,180 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,526,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:27:30,186 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,525,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:27:50,196 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,524,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:28:00,203 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,523,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:28:10,207 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,522,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:28:20,212 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,521,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:28:40,222 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,517,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:28:50,228 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,516,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:29:00,229 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,515,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:29:10,233 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,514,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:29:30,239 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,510,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:29:40,245 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,509,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:29:50,248 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,508,171,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:29:53,020 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-27 14:30:01,923 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-27 14:30:01,959 EST INFO   log.monitoring 0985:0003 [localhost-startStop-1] ,max mem (MB),total mem (MB),free mem (MB),strings pool,integers pool,other objects pool,blocs cleared, blocs built , blocs time spent,pkIndexes cleared, pkIndexes built , pkIndexes time spent,tableIndexes cleared, tableIndexes built , tableIndexes time spent,homeCaches cleared, homeCaches built,addonIndexes cleared, addonIndexes built , addonIndexes time spent
+2016-01-27 14:30:01,960 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,363,181,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:30:11,962 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,721,135,47,0,0,0,2,1,0,2,44,0,0,0,0,47,0,0,0
+2016-01-27 14:30:21,966 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,184,167,0,0,0,22,0,0,52,64,0,37,36,0,0,0,0,0
+2016-01-27 14:30:31,972 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,181,167,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:30:41,975 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,751,158,170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:30:51,980 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,608,171,0,0,0,1,0,0,3,4,0,0,0,0,0,0,0,0
+2016-01-27 14:31:01,981 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,584,239,0,0,0,4,0,0,10,17,0,4,1,0,0,0,0,0
+2016-01-27 14:31:11,983 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,576,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:31:21,986 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,568,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:31:31,989 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,567,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:31:41,995 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,565,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:32:02,005 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,564,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:32:12,009 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,563,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:32:22,013 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,552,239,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0
+2016-01-27 14:32:32,019 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,550,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:32:42,023 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,540,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:32:52,024 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,528,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:33:12,030 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,527,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:33:22,036 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,526,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:33:32,039 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,525,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:33:42,044 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,524,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:34:02,046 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,523,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:34:12,051 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,522,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:34:22,055 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,521,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:34:42,064 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,520,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:34:52,067 EST INFO   log.monitoring 0985:0003 [ebx-memorySupervisor] ,1820,753,519,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2016-01-27 14:34:54,050 EST INFO   log.monitoring 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

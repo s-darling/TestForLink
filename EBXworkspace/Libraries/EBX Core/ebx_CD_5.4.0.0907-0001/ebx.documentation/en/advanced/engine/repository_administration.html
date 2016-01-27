@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Repository administration</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="admin_repository" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Administration Guide &gt; Technical administration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/repository_administration.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Technical administration</span></div>
+<h1>
+Repository administration</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#architecture">Technical architecture</a><ul class="toc2">
+<li class="toc2"><a href="#architecture_overview">Overview</a></li><li class="toc2"><a href="#privileges">Rules for the access to the database and user privileges</a></li><li class="toc2"><a href="#single_jvm">Single JVM per repository</a></li><li class="toc2"><a href="#failover">Failover with hot-standby</a></li><li class="toc2"><a href="#status_info">Repository status information and logs</a></li></ul>
+</li><li class="toc1"><a href="#installation">Repository installation and upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#automaticInstallation">Automatic installation and upgrades</a></li><li class="toc2"><a href="#manualInstallation">Manual installation or upgrades</a></li></ul>
+</li><li class="toc1"><a href="#backup">Repository backup</a></li><li class="toc1"><a href="#archive">Archives directory</a></li><li class="toc1"><a href="#attributes">Repository attributes</a></li><li class="toc1"><a href="#monitoring_RDBMS">Monitoring and cleanup of relational database</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">General considerations when using data spaces</a></li><li class="toc2"><a href="#monitoring_reorganization">Monitoring and reorganization</a></li><li class="toc2"><a href="#cleanDataSpacesHistory">Cleaning up data spaces, snapshots, and history</a></li><li class="toc2"><a href="#cleanOther">Cleaning up other repository entities</a></li></ul>
+</li><li class="toc1"><a href="#monitoring_file_system">Monitoring and cleanup of file system</a></li></ul>
+</div>
+<h2>
+<a name="architecture"></a>Technical architecture</h2>
+<h3>
+<a name="architecture_overview"></a>Overview</h3>
+<p>The main principles of the EBX5 technical architecture are as follows:</p><ul>
+<li><p>A Java process (JVM) that runs EBX5 is limited to a single EBX5 repository. This repository is physically persisted in a <a target="_self" href="../installation/supported_env.html#databases">supported relational database instance</a> accessed through a <a target="_self" href="../installation/properties.html#ebxPersistence">configured data source</a>. </p></li><li><p>A repository cannot be shared by multiple JVMs at any given time. However, a failover architecture may be used. These aspects are detailed in the subsequent sections <a target="_self" href="#single_jvm">Single JVM per repository</a> and <a target="_self" href="#failover">Failover with hot-standby</a>. Furthermore, to achieve horizontal scalability, an alternative is to deploy a <a target="_self" href="../engine/d3.html">distributed data delivery (D3)</a> environment.</p></li><li><p>A single relational database instance can support multiple EBX5 repositories (used by distinct JVMs). This is done by specifying distinct table prefixes using the property <code>ebx.persistence.table.prefix</code>. </p></li></ul>
+<div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../installation/properties.html#ebxPersistence">Configuring the EBX5 repository</a></li><li><a target="_self" href="../installation/supported_env.html#databases">Supported databases</a></li><li><a target="_self" href="../installation/deploy_on_j2ee.html#dataSource">Data source of the EBX5 repository</a></li></ul>
+</div>
+<h3>
+<a name="privileges"></a>Rules for the access to the database and user privileges</h3>
+<fieldset class="ebx_attention">
+<a name="sqlAccess"></a><legend>
+<b>Attention</b></legend>
+ In order to guarantee the integrity of persisted master data, <strong>it is strictly forbidden to perform direct SQL writes to the database</strong>, except in the specific use cases described in the section <a target="_self" href="../references/relationalMode.html#sqlAccess">SQL access to data in relational mode</a>.</fieldset>
+<p>It is recommended for the database user specified by the <a target="_self" href="../installation/properties.html#ebxPersistence">configured data source</a> to have &#39;create/alter&#39; privileges on tables, indexes and sequences. This allows <a target="_self" href="#automaticInstallation">automatic repository installation and upgrades</a>. If this is not the case, it is still possible to perform <a target="_self" href="#manualInstallation">manual repository installation and upgrades</a>, however, <a target="_self" href="../references/relationalMode.html">Relational mode</a> and <a target="_self" href="../references/history.html">History</a> will be inconvenient to maintain since modification of concerned models will require manual intervention.</p><div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../references/history.html#sqlAccess">SQL access to history</a></li><li><a target="_self" href="../references/replication.html#sqlAccess">Accessing a replica table using SQL</a></li><li><a target="_self" href="../references/relationalMode.html#sqlAccess">SQL access to data in relational mode</a></li><li><a target="_self" href="../installation/deploy_on_j2ee.html#dataSource">Data source of the EBX5 repository</a></li></ul>
+</div>
+<h3>
+<a name="single_jvm"></a>Single JVM per repository</h3>
+<p>A repository cannot be shared by multiple JVMs. If such a situation were to occur, it would lead to unpredictable behavior and perhaps even to corruption of data in the repository.</p><p>EBX5 performs checks to enforce this restriction. Before the repository becomes available, the repository must first acquire initial exclusive ownership on the relational database. After starting the repository, the JVM periodically checks that it still holds ownership of the repository.</p><p>These checks are executed by repeatedly tagging a technical table in the relational database. A shutdown command for the application server ensures that the tag on this technical table is removed. If the server shuts down abruptly, the tag may be left in the table. If this occurs, the server has to wait a few seconds upon restart, to ensure that the table is not being updated by another live process. </p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+To avoid a wait period at the next start up, it is recommended to always cleanly shut down the application server.</fieldset>
+<h3>
+<a name="failover"></a>Failover with hot-standby</h3>
+<p>The exclusion mechanism described above is compatible with failover architectures, where only one server is active at any given time (active/passive cluster). To ensure this is the case, the main server must declare the property <code>ebx.repository.ownership.type=failovermain</code>. The main server thus claims the repository database, as in the case of a single server.</p><p>A backup server can start, but it will not have access to the repository. It must declare the property <code>ebx.repository.ownership.type=failoverstandby</code> to act as the backup server. Once started, the backup server is registered in the connection log. Its status can be retrieved using the Java API or by an HTTP request, as described in the section <a target="_self" href="#status_info">Repository status information and logs</a> below.</p><p>In order to activate the backup server and transfer exclusive ownership of the repository to it, a specific request must be issued by an HTTP request or using the Java API:</p><ul>
+<li><p>Using HTTP, the request must include the parameter <code>activationKeyFromStandbyMode</code>, and the value of this parameter must be equal to the value declared for the entry <code>ebx.repository.ownership.activationkey</code> in the <a target="_self" href="../installation/properties.html">EBX5 main configuration</a>.</p></li><li><p>Using the Java API, call the method <a target="_blank" href="../Java_API/com/orchestranetworks/instance/RepositoryStatus.html#wakeFromStandby(java.lang.String)">wakeFromStandby</a>.</p></li></ul>
+<p>The backup server then requests a clean shutdown for the main server, allowing any running transactions to finish. Only after the main server has yielded ownership may the backup use the repository.</p><h3>
+<a name="status_info"></a>Repository status information and logs</h3>
+<p>A log of all attempted Java process connections to the repository is available in the Administration area under &#39;History and logs&#39; &gt; &#39;Repository connection log&#39;.</p><p>The status of the repository may be retrieved using the methods in the <a target="_blank" href="../Java_API/com/orchestranetworks/instance/RepositoryStatus.html">RepositoryStatus</a> API.</p><p>It is also possible to get repository status information using a HTTP request that includes the parameter <code>repositoryInformationRequest</code> with one of following values:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>state</code></p></td><td class="ebx_definitionListDefinition"><p>The state of the repository regarding the registration of ownership.</p><ul>
+<li><p><code>D</code>: Java process has been stopped.</p></li><li><p><code>O</code>: Java process has taken exclusive ownership of the database.</p></li><li><p><code>S</code>: Java process has been started in failover standby mode, but is not yet allowed to interact with the repository.</p></li><li><p><code>N</code>: Java process has failed to take ownership of the database because another process was holding it.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>heart_beat_count</code></p></td><td class="ebx_definitionListDefinition"><p>The number of times that the repository has made contact since associating with the database.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>info</code></p></td><td class="ebx_definitionListDefinition"><p>Detailed information for the end-user about the repository&#39;s registration status. The format of this information may be subject to modifications in future without explicit warning.</p></td></tr>
+</table>
+<h2>
+<a name="installation"></a>Repository installation and upgrade</h2>
+<h3>
+<a name="automaticInstallation"></a>Automatic installation and upgrades</h3>
+<p>If the specified user for EBX5 data source has the rights to create and alter tables, indexes and sequences in the relational database, then the repository installation or upgrade is done automatically. Otherwise, you must see the procedure in the next section <a target="_self" href="#manualInstallation">Manual installation or upgrades</a>.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Concerning relational mode and history, declaring a table in relational mode or history mode implies the creation of a dedicated table in the database. Similarly, in these modes, modifying the structure of an existing table implies altering its declaration in the database (note that this action may need to take place at any time, independent of repository creation). The EBX5 applicative user must have &#39;create/alter&#39; privileges on tables and indexes, since these actions must be carried out from EBX5.</fieldset>
+<h3>
+<a name="manualInstallation"></a>Manual installation or upgrades</h3>
+<p>If the specified user for EBX5 data source does <em>not</em> have the rights to create or alter tables, indexes or sequences in the relational database, then the administrator must execute the SQL scripts located in the <code>ebx.software/files/ddl/XXX</code> folder, where <code>XXX</code> is the name of the target RDBMS.</p><p>If manually upgrading an existing repository, the administrator must execute the required subset of these SQL scripts; the file name of each script indicates the EBX5 version to which the patch applies.</p><p><strong>Note:</strong></p><ul>
+<li><p>If a specific table prefix is specified by the property <code>ebx.persistence.table.prefix</code>, the default <code>EBX_</code> prefix must be renamed accordingly in the provided scripts.</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/properties.html#ebxPersistence">Configuring the EBX5 repository</a></p></div>
+<h2>
+<a name="backup"></a>Repository backup</h2>
+<p>Global backup of EBX5 repository must be delegated to the underlying RDBMS. The database administrator must use the standard backup procedures of the underlying database.</p><h2>
+<a name="archive"></a>Archives directory</h2>
+<p>Archives are stored in a sub-directory named <code>archives</code> into <code>ebx.repository.directory</code> (see <a target="_self" href="../installation/properties.html">configuration</a>). This directory is automatically created during the first export. </p><p>When manually creating this directory, be careful of the access rights: the EBX5 process must have read-and-write access to it. Furthermore, cleaning the directory is not done by EBX5 and is the responsibility of the administrator.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+The file transferred between two EBX5 environments must be done externally from the product. Tools such as FTP or simple file copies by network sharing can be used.</fieldset>
+<h2>
+<a name="attributes"></a>Repository attributes</h2>
+<p>A repository has the following attributes:</p><ul>
+<li><p><em>repositoryId.</em> It uniquely identifies a repository (at least in the scope of the enterprise): it is 48 bits (6 bytes), and it is usually represented as 12 hexadecimal digits. This information is used for generating UUID (Universally Unique Identifier) of entities created in the repository and also of transactions logged in the history tables or the XML audit trail (it plays the role of the &#39;UUID node&#39; part, as specified by <em>RFC 4122</em>).</p></li><li><p><em>repository label.</em> It provides a label for the user so that he knows the purpose and context of the repository (for example, «production environment»).</p></li><li><p><em>store format.</em> It identifies the underlying persistence system, including the current version of its structure. </p></li></ul>
+<h2>
+<a name="monitoring_RDBMS"></a>Monitoring and cleanup of relational database</h2>
+<p> Some entities are accumulated during the execution of EBX5. It is the <em>administrator&#39;s responsibility</em> to monitor and to cleanup these entities. </p><h3>
+<a name="id6s1"></a>General considerations when using data spaces</h3>
+<p><a target="_self" href="../user_dataspace/introdataspace.html">Data spaces</a> are an invaluable tool for managing complex data life cycles. While this feature brings great flexibility, it also implies a certain overhead cost, which should be taken into consideration for optimizing usage patterns.</p><p>As an extreme example, consider the case where every transaction triggers the following actions: a data space is created, and the transaction modifies some data; the data space is merged, closed, then deleted. In this case, no future references to the data space are needed, so using it to make isolated data modifications is unnecessary. In this case, using <a target="_blank" href="../Java_API/com/orchestranetworks/service/Procedure.html">Procedure</a> already provides sufficient isolation to avoid conflicts from concurrent operations.</p><p>For a developer-friendly analogy, this is like using a source-code management tool (CVS, SVN, etc.): when you need to perform a simple modification impacting only a few files, you probably do it directly on the main branch. In fact, it would be neither practical nor sustainable, with regard to file tagging, if every file modification involved branching the whole project, modifying the files, then merging the dedicated branch.</p><p>On larger repositories, creating data spaces can have a significant impact on the size of the repository persisted and the amount of maintenance required. As such, avoid creating data spaces unnecessarily.</p><h3>
+<a name="monitoring_reorganization"></a>Monitoring and reorganization</h3>
+<p>The persistence data source of the repository must be monitored through RDBMS monitoring.</p><p>The EBX5 tables specified in the <a target="_self" href="../references/persistence_overview.html#semantic">default semantic mode</a> have their content persisted in a set of generic database tables. They are the following: </p><ul>
+<li><p>The table <code>{ebx.persistence.table.prefix}HOM</code> in which each record represents a data space or a snaphot (its name is <code>EBX_HOM</code>, if the property <code>ebx.persistence.table.prefix</code> is unset).</p></li><li><p>The table <code>{ebx.persistence.table.prefix}BRV</code> where the data of EBX5 tables in semantic mode are segmented into blocks of at most 100 EBX5 records (its name is <code>EBX_BRV</code>, if the property <code>ebx.persistence.table.prefix</code> is unset).</p></li><li><p>The table <code>{ebx.persistence.table.prefix}HTB</code>, which defines which blocks belong to a given EBX5 table in a given data space or snapshot (its name is <code>EBX_HTB</code>, if the property <code>ebx.persistence.table.prefix</code> is unset).</p></li></ul>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+For repositories having large volumes of data in semantic mode and on which frequent or heavy updates occur, it may be necessary to schedule a regular reorganization of the above database tables <code>...HTB</code> and <code>...BRV</code> ,&nbsp;and their indexes. This is especially true for large repositories where many data spaces are created and deleted.</fieldset>
+<h3>
+<a name="cleanDataSpacesHistory"></a>Cleaning up data spaces, snapshots, and history</h3>
+<p>A full clean-up of data spaces, snapshots, and history from the repository involves several stages:</p><ol>
+<li><p>Closing unused data spaces and snapshots to keep the cache to a minimal size.</p></li><li><p>Deleting data spaces, snapshots, and history.</p></li><li><p>Purging the remaining entities associated with the deleted data spaces, snapshots, and history from the repository.</p></li></ol>
+<h4>
+Closing unused data spaces and snapshots</h4>
+<p>In order to keep the cache and the repository to a reasonable size, it is recommended to close any data spaces and snapshots that are no longer required. This can be done in the following ways:</p><ul>
+<li><p>Through the user interface, in the Data Spaces area.</p></li><li><p>From the &#39;Data spaces / Snapshots&#39; table under &#39;Data spaces&#39; in the Administration area, using the <strong>Actions</strong> menu in the workspace. The action can be used on a filtered view of the table.</p></li><li><p>Through the Java API, using the method <a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#closeHome(com.onwbp.adaptation.AdaptationHome, com.orchestranetworks.service.Session)"><code>closeHome</code></a>.</p></li><li><p>Using the data service close data space and close snapshot operations. See <a target="_self" href="../references/dataservices.html#closeDataSpaceSnapshot">Closing a data space or snapshot</a> for more information.</p></li></ul>
+<p>Once the data spaces and snapshots have been closed, the data and associated history can be cleaned from the repository.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Closed data spaces and snapshots can be reopened in the Administration area, under &#39;Data spaces&#39;.</fieldset>
+<h4>
+<a name="purge"></a>Deleting data spaces, snapshots, and history</h4>
+<p>Data spaces, their associated history, and snapshots can be permanently deleted from the repository. After you have deleted a data space or snapshot, some entities will remain until a repository-wide purge of all obsolete data is performed. Thus, both stages, the deletion and the repository-wide purge, must be performed in order to completely remove the data and history. This process has been separated into two steps for performance considerations. As the total clean-up of the repository can be time-intensive, this allows the purge execution to be initiated during off-peak periods on the server.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+The process of deleting the history of a data space takes into account all history transactions recorded up until the point that the deletion is submitted. Any subsequent historized operations will not be included when you run the purge operation. If you want to delete these new transactions, you must delete the history of that data space again.</fieldset>
+<p>The deletion of data spaces, snapshots, and history can be performed in a number of different ways:</p><ul>
+<li><p>Using the dedicated &#39;Create deletion requests&#39; interface, accessible from the Administration <strong>Actions</strong> menu in the Administration area. This interface presents all items available for deletion using hierarchical views, categorized into the following entries in the navigation panel:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Closed data spaces</p></td><td class="ebx_definitionListDefinition"><p>Displays all data spaces and snapshots that are currently closed, and thus can be deleted. You can choose to delete the history associated with data spaces at the same time.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Open data spaces</p></td><td class="ebx_definitionListDefinition"><p>Displays all data spaces that are currently open, for which you can delete the associated history.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Deleted data spaces</p></td><td class="ebx_definitionListDefinition"><p>Displays all data spaces that have already been deleted, but have associated history remaining in the repository. You may delete this remaining history.</p></td></tr>
+</table>
+</li><li><p>From the &#39;Data spaces / Snapshots&#39; table under &#39;Data spaces&#39; in the Administration area, using the <strong>Actions</strong> menu in the workspace. The action can be used on a filtered view of the table.</p></li><li><p>Using the Java API, specifically, the methods <a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#deleteHome(com.onwbp.adaptation.AdaptationHome, com.orchestranetworks.service.Session)">deleteHome</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/instance/RepositoryPurge.html#markHomeForHistoryPurge(com.onwbp.adaptation.AdaptationHome, com.orchestranetworks.service.Session)">markHomeForHistoryPurge</a>.</p></li><li><p>At the end of data service close data space operation, using the parameters <code>deleteDataOnClose</code> and <code>deleteHistoryOnClose</code>, or at the end of the merge data space operation, using the parameters <code>deleteDataOnMerge</code> and <code>deleteHistoryOnMerge</code>.</p></li></ul>
+<h4>
+Purging remaining entities after data space, snapshot, and history deletion</h4>
+<p>Once items have been deleted, a purge can be executed to clean up the remaining data from <em>all</em> deletions performed up until that point. A purge can be initiated in the following ways:</p><ul>
+<li><p>Through the user interface, by selecting Administration <strong>Actions &gt; Execute purge</strong> in the navigation pane.</p></li><li><p>Using the Java API, specifically the method <a target="_blank" href="../Java_API/com/orchestranetworks/instance/RepositoryPurge.html#purgeAll(com.orchestranetworks.service.Session)">purgeAll</a>.</p></li><li><p>Using the task scheduler. See <a target="_self" href="../engine/scheduler.html">Task scheduler</a> for more information.</p></li></ul>
+<p>The purge process is logged into the directory <code>${<a target="_self" href="../installation/properties.html#rootDirectory">ebx.repository.directory</a>}/db.purge/</code>.</p><h3>
+<a name="cleanOther"></a>Cleaning up other repository entities</h3>
+<p>It is the <em>administrator&#39;s responsibility</em> to monitor and to regularly cleanup the following entities. </p><h4>
+<a name="purgeMappedTables"></a>Cleaning up database resources of mapped tables</h4>
+<p>EBX5 gives the ability to purge mapped tables wherever it detects a mapped table in the database that is no longer used. This means that mapped mode must be deactivated before the mapped table database resources can be purged.</p><p>To deactivate mapped mode for a table, follow the procedure below.</p><p>For history mode:</p><ul>
+<li><p>Deactivate historization of the table in the data model, or</p></li><li><p>Remove the table from the data model</p></li></ul>
+<p>For relational mode:</p><ul>
+<li><p>Remove the table from the data model, or</p></li><li><p>Deactivate the relational mode on the data model. As data models in semantic mode cannot be used for relational data spaces, it is thus necessary to create a data set on a semantic data space using this modified data model. EBX5 will then detect that relational mode was previously used, and therefore propose the relational table database resources for purge.</p></li></ul>
+<p>Once mapped mode has been deactivated, you can perform a clean-up procedure similar to the process described in <a target="_self" href="#purge">Deleting data spaces, snapshots, and history</a>. To select the tables to clean up, open the &#39;Create deletion requests&#39; interface, accessible from the Administration <strong>Actions</strong> menu in the Administration area. Select &#39;Database tables&#39; in the navigation pane.</p><p>A purge can then be executed to clean up the remaining data from <em>all</em> deletions, that is, deleted data spaces, snapshots, history, and database resources, performed up until that point. A purge can be initiated by selecting Administration <strong>Actions &gt; Execute purge</strong> in the navigation pane.</p><h4>
+Task scheduler execution reports</h4>
+<p>Task scheduler execution reports are persisted in the &#39;executions report&#39; table, in the <em>Task scheduler</em> section of the Administration area. This table is constantly added to as scheduled tasks are executed. Even when an execution terminates normally, the records are not automatically deleted. It is thus recommended to delete old records regularly.</p><h4>
+User interactions</h4>
+<p>User interactions are used by the EBX5 component as a reliable means for an application to initiate and get the result of a service execution. They are persisted in the <em>ebx-interactions</em> administration feature. It is recommended to regularly monitor the user interactions table, as well as to clean it, if needed.</p><h4>
+Workflow history</h4>
+<p>The workflow events are persisted in the workflow history table, in the <em>Workflow</em> section of the Administration area. This table is constantly added to as data workflows are executed. Even when an execution terminates normally, the records are not automatically deleted. It is thus recommended to delete old records regularly.</p><h2>
+<a name="monitoring_file_system"></a>Monitoring and cleanup of file system</h2>
+<p>In order to guarantee the correct operation of the software, the disk usage and disk availability of the following directories must be supervised:</p><ul>
+<li><p>XML audit trail: <code>${<a target="_self" href="../installation/properties.html#rootDirectory">ebx.repository.directory</a>}/History/</code></p></li><li><p>archives: <code>${<a target="_self" href="../installation/properties.html#rootDirectory">ebx.repository.directory</a>}/archives/</code></p></li><li><p>logs: <a target="_self" href="../installation/properties.html#ebxLog">ebx.logs.directory</a></p></li><li><p> temporary directory: <a target="_self" href="../installation/properties.html#ebx.temp.directory">ebx.temp.directory</a></p></li></ul>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<ul>
+<li><p> The cleaning of the above directories is not ensured by EBX5: <em>this is the administrator&#39;s responsibility</em> .&nbsp;</p></li><li><p> For XML audit trail, if large transactions are executed with full updates detail activated (the default setting), <em>the disk space needed can be quite large</em> .&nbsp;For more information, see <a target="_self" href="../engine/audit_trail.html#updatesDetail">XML audit Trail</a> section.</p></li></ul>
+<p> See also <a target="_self" href="../installation/properties.html#tuning">configuration / tuning</a> section.</p></fieldset>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Technical administration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.4.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.4.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.4.0</h1>
+<p><strong>Release Date: April 14, 2008</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Backward compatibility</a></li><li class="toc1"><a href="#id2">Forward compatibility</a></li><li class="toc1"><a href="#id3">Bug Fixes</a></li><li class="toc1"><a href="#id4">Performance: incremental validation</a></li><li class="toc1"><a href="#id5">Lock Management</a></li><li class="toc1"><a href="#id6">Repository purge</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1"></a></li></ul>
+</li><li class="toc1"><a href="#id7">Data Services</a></li><li class="toc1"><a href="#id8">Shared views</a></li><li class="toc1"><a href="#id9">Access permission resolution on nodes</a></li><li class="toc1"><a href="#id10">Documentation</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Backward compatibility</h2>
+<ul>
+<li><p> Method <code>Adaptation.getValidationReport()</code> :&nbsp;this method henceforth checks that the instance is activated, so as to ensure by default that mandatory elements ( <code>minOccurs=&quot;1&quot;</code> ) are all present. The previous behaviour of this method was less restrictive and was consequently error-prone because it could tell that there was no errors but indeed some mandatory elements were not present. </p></li><li><p> Method <code>Adaptation.checkActivable()</code> :&nbsp;this method has been deprecated, because its name is confusing. It has indeed the same result as <code>Adaptation.getValidationReport()</code> above. </p></li><li><p> Method <code>Adaptation.isSchemaDefinitionCompliant(boolean)</code> :&nbsp;The boolean parameter&#39;s meaning has changed, it henceforth checks whether the instance is activated (warnings are no more taken into account for the result). </p></li><li><p>Due to the enhancement on lock management the locks on homes are not migrated. When upgrading to this new version, all branches should be unlocked.</p></li></ul>
+<h2>
+<a name="id2"></a>Forward compatibility</h2>
+<ul>
+<li><p>Due to new view sharing feature, a repository from this version cannot be reused with an older version. Before upgrading to this new version, please backup your repository (database).</p></li></ul>
+<h2>
+<a name="id3"></a>Bug Fixes</h2>
+<ul>
+<li><p><strong>[01678]</strong> Table content does not support a read concurrent access when an archive&#39;s import is made. </p></li><li><p><strong>[01686]</strong> Optimize and Refactor - Mutualize common values procedure does nothing on tables without non-key columns. </p></li><li><p><strong>[01688]</strong> Count operation should return an integer but WSDL declares a string type. </p></li><li><p><strong>[01689]</strong> Validation operation may return empty validationReport but WSDL does not define a minOccurs=0 </p></li><li><p><strong>[01690]</strong> On an adaptation under an agreement, the distributor has a read-only access to tables, if he participates in a read-only role, even if there is no restriction defined. </p></li><li><p><strong>[01691]</strong> Service permission rules on table occurrence are checked upon any table even not targeted by the service definition. </p></li><li><p><strong>[01695]</strong> The domain name is limited to 3 characters for the &#39;email&#39; type. It should be unlimited (ex:.localdomain, .info, ..). </p></li><li><p><strong>[01696]</strong> Triggers <code>handleBeforeModify</code> and <code>handleAfterModify</code> are not executed if a mass-update is performed. </p></li><li><p><strong>[01697]</strong> The methode <code>ProcedureContext.doMergeToParent</code> does not consider the <code>allPriviledges</code> property set. </p></li><li><p><strong>[01698]</strong> EBX user session is lost (timeout) during long process (archive import-export, branch &amp; version validation, ...). </p></li></ul>
+<h2>
+<a name="id4"></a>Performance: incremental validation</h2>
+<p> Internal validation framework has been thoroughly reviewed so as to work <em>incrementally</em> .&nbsp;This means that if some data updates occur, only the potentially impacted parts will be revalidated. When an adaptation instance has been validated at least once, the validation time is extremely reduced, even on large repositories. </p><p>If application server is restarted, a full validation is still required, hence the validation time is not reduced for this scenario.</p><p> More recommendations for optimizing validation times is available in the new chapter <a href="../references/performance.html#validation">Performance Guidelines</a> .&nbsp;</p><h2>
+<a name="id5"></a>Lock Management</h2>
+<p>The branch&#39;s lock management has been rewritten:</p><ul>
+<li><p>It is now possible to have long process locking a branch without seeing the branch unlocked by a merge process.</p></li><li><p>User description of lock has been internationalized.</p></li><li><p> API has been moved to a dedicated Java class, <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/LockSpec.html">LockSpec</a> .&nbsp;</p></li></ul>
+<h2>
+<a name="id6"></a>Repository purge</h2>
+<p>Unused or obsolete homes can be physically deleted from the repository. This happens in two steps:</p><ol>
+<li><p>mark the home intended to be purged,</p></li><li><p>trigger the purge.</p></li></ol>
+<h3>
+<a name="id6s1"></a></h3>
+<h4>
+Purge process</h4>
+<ul>
+<li><p>Once a home has been marked for purge, it cannot be reopened, and its content becomes unavailable.</p></li><li><p>Physical purge happens only after step 2.</p></li><li><p>Physically deleting a home also deletes its index files on disk.</p></li></ul>
+<h4>
+EBX</h4>
+<p>EBX provides administrator profile a GUI for marking and purging a home at the same time.</p><h4>
+Performance</h4>
+<ul>
+<li><p>An optional modification of database schema is included in ddl.sql: adding the provided index on table EBX_HTB will speed up the purge process:</p><p><code>create index EBX_BIX on EBX_HTB (table_rid, bloc_id, revision_id);</code></p></li></ul>
+<h4>
+API</h4>
+<p> See <a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#markHomeForPurge(com.onwbp.adaptation.AdaptationHome, com.orchestranetworks.service.Session)">Repository.markHomeForPurge(AdaptationHome, Session)</a> .&nbsp;</p><p> See <a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#purgeHomes(com.orchestranetworks.service.Session)">Repository.purgeHomes(Session)</a> .&nbsp;</p><h2>
+<a name="id7"></a>Data Services</h2>
+<p>A new operation is available on Data Services, it is now possible to validate directly an instance.</p><h2>
+<a name="id8"></a>Shared views</h2>
+<p>Views can now be shared across several users.</p><ul>
+<li><p>View owner is now a profile (a user or a role).</p></li><li><p>Other profiles (users or roles) can be allowed to use a view defined by the owner.</p></li></ul>
+<h2>
+<a name="id9"></a>Access permission resolution on nodes</h2>
+<p>Resolution procedure for access permission on nodes has been reviewed, especially for table nodes and table child nodes.</p><p>A table node child resolved access permission is then computed as follows:</p><ul>
+<li><p><em>access right defined</em> on table child node is its specific access right if defined, or its table node specific access right if defined, or the default access right for instance&#39;s values; </p></li><li><p> at node level, <em>access right resolved</em> on table child node is: </p><ul>
+<li><p>the minimum of access rights defined for this table child node on all restricted profiles of the target user;</p></li><li><p>or the maximum of access rights defined for this table child node on all profiles of the target user, if no restriction is defined;</p></li></ul>
+</li><li><p> the <em>final resolved access right</em> is always the minimum between resolved access rights of: branch, instance, table node child and programmatic rules. </p></li></ul>
+<p>Consequently, at node level, a table node resolved access permission is always equal to the maximum of the resolved access right of its children. Its final resolved access right is the minimum between resolved access rights of: branch, instance, table node child and programmatic rules.</p><p> For more information, see also <a href="../references/permissions.html#resolution">Resolution of permissions</a> .&nbsp;</p><h2>
+<a name="id10"></a>Documentation</h2>
+<p> A &quot; <a href="../references/performance.html">Performance Guidelines</a> &quot; chapter has been added to the documentation. </p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

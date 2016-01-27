@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.5</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.5.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.5</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.2.5 fix 006</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.2.5 fix 005</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Commit threshold for massive updates</a></li></ul>
+</li><li class="toc1"><a href="#id3">4.2.5 fix 004</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id4">4.2.5 fix 003</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Bug Fixes</a></li><li class="toc2"><a href="#id4s2">Manager</a></li></ul>
+</li><li class="toc1"><a href="#id5">4.2.5 fix 002</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id6">4.2.5 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id7">4.2.5</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Bug Fixes</a></li><li class="toc2"><a href="#id7s2">Cardinality constraint on selection nodes</a></li><li class="toc2"><a href="#id7s3">API for managing branches and versions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.2.5 fix 006</h2>
+<p><strong>Release Date: September 6, 2007</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01523]</strong> Trigger method handleBeforeModify does not modify record data. </p></li></ul>
+<h2>
+<a name="id2"></a>4.2.5 fix 005</h2>
+<p><strong>Release Date: August 27, 2007</strong></p><h3>
+<a name="id2s1"></a>Commit threshold for massive updates</h3>
+<p> In order to limit memory requirements when large updates procedures are executed, a new method has been added to the class <code>ProcedureContext</code> :&nbsp;see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setCommitThreshold(int)">ProcedureContext.setCommitThreshold(int)</a> .&nbsp;</p><h2>
+<a name="id3"></a>4.2.5 fix 004</h2>
+<p><strong>Release Date: August 16, 2007</strong></p><h3>
+<a name="id3s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01511]</strong> When access rights on branches are given to a user and when this one creates a child branch, on the first child branch level the access rights are ok but on the other levels these ones are not ok because the user is considered as an ancestor owner (then has all rights on the descendant branches). </p></li><li><p><strong>[01512]</strong> SearchFilter on boolean attribute is not conform: instead of true/false, acceptable criterion must be Yes/No (or in french, Oui/Non) if codeOnly=false. </p></li><li><p><strong>[01513]</strong> The lock / unlock procedure does not use access rights control. </p></li><li><p><strong>[01514]</strong> The lock / unlock procedure does not use access rights control. </p></li><li><p><strong>[01515]</strong> Specific privileges of the owner are not clearly explained in the documentation. </p></li></ul>
+<h2>
+<a name="id4"></a>4.2.5 fix 003</h2>
+<p><strong>Release Date: August 7, 2007</strong></p><h3>
+<a name="id4s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01510]</strong> Validation reports cannot be displayed or is too large if many errors or warning are detected on branch or adaptation validation. </p></li></ul>
+<h3>
+<a name="id4s2"></a>Manager</h3>
+<ul>
+<li><p>Branch validation report does not show adaptation validation in details to avoid very large display; a link to adaptation validation report detail is available.</p></li><li><p>Adaptation validation report is limited to first 100 items to avoid very large display.</p></li></ul>
+<h2>
+<a name="id5"></a>4.2.5 fix 002</h2>
+<p><strong>Release Date: July 30, 2007</strong></p><h3>
+<a name="id5s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01508]</strong> The <code>mergeToParent()</code> method in <code>ProcedureContext</code> does not merge modifications in tables. </p></li><li><p><strong>[01509]</strong><code>AdaptationHome</code> localized documentation (label &amp; description) modification using Java API is not persistent. </p></li></ul>
+<h2>
+<a name="id6"></a>4.2.5 fix 001</h2>
+<p><strong>Release Date: July 25, 2007</strong></p><h3>
+<a name="id6s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01506]</strong> Using a selection node ( <code>osd:select</code> ) with a specification targeted to a record key causes an « acces denied » if targeted record does not exist. </p></li></ul>
+<h2>
+<a name="id7"></a>4.2.5</h2>
+<p><strong>Release Date: July 18, 2007</strong></p><h3>
+<a name="id7s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01500]</strong> XPath filter does not work on &gt;= and &lt;=.&nbsp;</p></li><li><p><strong>[01502]</strong> If an access right is defined on a table and if another access right is specified on one of its field, the last one is ignored. </p></li><li><p><strong>[01503]</strong> In the table homes of the repository adaptation, the administrator has a write access on the creator field. </p></li><li><p><strong>[01504]</strong> When importing an archive, the parent of the target home is also locked. At the end of the import procedure only target home is unlocked, the parent home is still locked (hence it must be unlocked manually). </p></li><li><p><strong>[01505]</strong> When creating a child branch, access rights are not computed from the ones defined on the parent branch. </p></li></ul>
+<h3>
+<a name="id7s2"></a>Cardinality constraint on selection nodes</h3>
+<p> The element <code>minOccurs</code> has been added to the selection node specification ( <code>osd:select</code> ). </p><p> With <code>minOccurs</code> ,&nbsp;the validation checks that the contextual and dynamic selection is at least of the size specified. </p><pre class="ebx_example brush: xml">
+&lt;xs:element name="linkToAuthorTitles" minOccurs="0" maxOccurs="0" > 
+	&lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		&lt;osd:select> 
+		  &lt;minOccurs>1&lt;/minOccurs> 
+		  &lt;xpath>//Titles[au_id =${../au_id}]&lt;/xpath> 
+		&lt;/osd:select> 
+	  &lt;/xs:appinfo> 
+	&lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p> For more details, see <a href="../models/tables.html#select">Selection nodes</a> .&nbsp;</p><h3>
+<a name="id7s3"></a>API for managing branches and versions</h3>
+<p>The following new methods have been added to the API</p><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#closeHome(com.onwbp.adaptation.AdaptationHome, com.orchestranetworks.service.Session)">Repository.closeHome(...)</a> :&nbsp;closes a branch or a version. </p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#setDocumentationLabel(com.onwbp.adaptation.AdaptationHome, java.lang.String, java.util.Locale, com.orchestranetworks.service.Session)">Repository.setDocumentationLabel(...)</a> :&nbsp;modifies the label of a branch or a version. </p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#setDocumentationDescription(com.onwbp.adaptation.AdaptationHome, java.lang.String, java.util.Locale, com.orchestranetworks.service.Session)">Repository.setDocumentationDescription(...)</a> :&nbsp;modifies the description of a branch or a version. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.8.8</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.8.8.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.8.8</h1>
+<p><em>Release Date: February 11, 2011</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">New features</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">User backup</a></li></ul>
+</li><li class="toc1"><a href="#id2">Data Services</a></li><li class="toc1"><a href="#misc">Miscellaneous</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Filter &amp; Search</a></li></ul>
+</li><li class="toc1"><a href="#id4">API</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Archive</a></li><li class="toc2"><a href="#id4s2">XPath Predicate</a></li></ul>
+</li><li class="toc1"><a href="#backwardCompatibility">Backward Compatibility</a></li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model &amp; DMA</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>New features</h2>
+<h3>
+<a name="id1s1"></a>User backup</h3>
+<p>New methods have been added in <code>Directory</code> to offer capabilities to define backup for users. See <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#getBackedUpUsers(com.orchestranetworks.service.UserReference)">getBackedUpUsers</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#getBackingUpUsers(com.orchestranetworks.service.UserReference)">getBackingUpUsers</a> .&nbsp;</p><p>The consequences are the following:</p><ul>
+<li><p>A user will be able to log-as any user returned by <code>getBackedUpUsers</code> .</p></li><li><p>For a given user receiving mails during workflow execution, each user returned by <code>getBackingUpUsers</code> will receive a carbon-copy of these e-mails.</p></li></ul>
+<h2>
+<a name="id2"></a>Data Services</h2>
+<p>Branch and version creation has evolved and offers new <a href="../references/dataservices_execution.html#repository">parameters</a> :</p><ul>
+<li><p>owner</p></li><li><p>homeToCopyPermissionFrom</p></li><li><p>documentation </p></li></ul>
+<h2>
+<a name="misc"></a>Miscellaneous</h2>
+<h3>
+<a name="id3s1"></a>Filter &amp; Search</h3>
+<p>The quick search can now be used for numeric values by checking the <em>code only</em> option.</p><h2>
+<a name="id4"></a>API</h2>
+<h3>
+<a name="id4s1"></a>Archive</h3>
+<p>Method <code>Archive.forDirectory(File)</code> is deprecated and will be removed in forthcoming versions.</p><h3>
+<a name="id4s2"></a>XPath Predicate</h3>
+<p>New function are available to create case-insensitive XPath request.</p><ul>
+<li><p> osd:matches-case-insensitive(s,&#39;x&#39;)</p></li><li><p> osd:is-equal-case-insensitive(s,&#39;x&#39;)</p></li><li><p> osd:starts-with-case-insensitive(s,&#39;x&#39;)</p></li><li><p> osd:ends-with-case-insensitive(s,&#39;x&#39;)</p></li><li><p> osd:contains-case-insensitive(s,&#39;x&#39;)</p></li></ul>
+<h2>
+<a name="backwardCompatibility"></a>Backward Compatibility</h2>
+<p>The correction of bug #2965 changed the behavior of the maximum total digits supported for decimals. Now the default maximum total digits supported on decimal numbers is set to 15 for precision loss and/or rounding issues. Furthermore, schemas defining a <code>totalDigits</code> facet with a value greater than 15 will be considered as an error.</p><p> For more information, see <code><a href="../references/mapping_to_java.html">mapping to java</a></code>.</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><strong>[3233]</strong> Comparison of <code>null</code> values is erroneous. </p><p>EBX.Platorm considers that <code>null</code> is the smallest value possible. But the predicates <code>&gt;</code> and <code>&gt;=</code> filter out adaptations with <code>null</code> values.</p></li><li><p><strong>[3243]</strong> An exception occurs while executing <code>TableTrigger.handleAfterDelete()</code>. </p><p>In a table trigger called after deleting an occurrence, a call to <code>AfterDeleteOccurrenceContext.getOccurrenceContext().getAdaptationInstance()</code> throws an <code>Exception</code>.</p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><strong>[3102]</strong> In the DMA, the spacing between input fields for business object parameters is incorrect using IE. </p><p>In the DMA, when creating or editing a business object, the spacing between the fields is very narrow. This behavior is seen using IE 6 and 8.</p></li><li><p><strong>[3206]</strong> The property <code>displayKey</code> is used on schema generation. </p><p>When a table reference is defined without a custom label in the data model assistant, the <code>displayKey</code> property is used on schema generation although it is deprecated.</p></li><li><p><strong>[3265]</strong> All tables are not listed when defining a foreign key constraint. </p><p>When defining a field as a foreign key, the drop-down list does not include all the tables available in the data model.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><strong>[2841]</strong> The message pane for service confirmation has no effect for occurrence services in tabular view. </p><p>The element <code>osd:confirmation</code> has no effect for occurrence services using the tabular view.</p></li><li><p><strong>[2874]</strong> When selecting a record in EBX.Manager, a fatal error appears if the session has been invalidated. </p><p>In EBX.Manager, a fatal error occurs when selecting a record in a table if the session has been invaldated in the meantime. An <code>IllegalArgumentException</code> is logged.</p></li><li><p><strong>[3112]</strong> In EBX.Manager, the &quot;date&quot; input component does not disappear in tabular view. </p><p>While editing a date field using the input component in tabular view, the component does not disappear after cancelling the form.</p></li><li><p><strong>[3174]</strong> Searching numeric fields by value is not possible. </p><p>When using the <code>UIListSearch</code> component or the quick search filter, for searching an integer node (or formatted integer), the user must specify the thousands&#39; separator in the search criterion.</p><p>For example, searching for &quot;1001&quot; will not return values &quot;1 001&quot; &quot;1 001 000&quot; etc, because of the thousands&#39; separator &quot; &quot; (blank space).</p></li><li><p><strong>[3175]</strong> The message pane for service confirmation has no effect for instance services. </p><p>The element <code>osd:confirmation</code> has no effect on instance services.</p></li><li><p><strong>[3218]</strong> In EBX.Manager, in tabular edition mode, the UIService &quot;Apply last modification&quot; is disabled. </p><p>After modifying a record in tabular edition mode, the &quot;Apply last modification&quot; UIService, accessible through the &quot;Actions...&quot; drop down box, stays disabled, when it should be accessible.</p></li><li><p><strong>[3238]</strong> In EBX.Manager, the <code>xs:unique</code> constraint on a node is not documented. </p><p>In the table report, the <code>xs:unique</code> constraint is reported neither by the table node, nor by the unique node.</p></li><li><p><strong>[3248]</strong> In EBX.Manager, a pop-up window infinitely toggles between opened and closed, when previewing a value. </p><p>When previewing a value using the magnifying glass, the pop-up window infinitely toggles between opened and closed.</p></li><li><p><strong>[3249]</strong> Error in redirection when closing the current branch in a UIService. </p><p>If the current AdaptationHome is closed while the execution of a UIService,the method <code>sContext.getURLForIncludingResource(..)</code> throws an error in EBX.Manager.</p></li><li><p><strong>[3267]</strong> In EBX.Manager, error with localized messages. </p><p>In EBX.Manager, some localized messages are displayed with a wrong locale.</p></li><li><p><strong>[3268]</strong> In EBX.Manager, the display of a multi-occurred &quot;osd:locale&quot; node is erroneous when the node is read-only. </p><p>In EBX.Manager, the display of a multi-occurred &quot;osd:locale&quot; node is erroneous when the node is read-only.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><strong>[3269]</strong> On a fresh installation, everyone is able to write on the ebx-repository adaptation. </p><p>After a repository installation, a permission on the ebx-repository adaptation allows all profiles to access it in Read-Write mode.</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><strong>[3211]</strong> Bad behaviour for enumeration on <code>xs:decimal</code> field. </p><p>Decimal values are truncated when submitted, hence the input is invalid if the enumeration value has not been truncated. Conversely, if the enumeration is reduced to its minimal expression (example, 5.5 instead of 5.50), a non reduced input is invalid.</p></li><li><p><strong>[3239]</strong> Using <code>fractionDigits</code> facet generates cryptic validation errors. </p><p>When using the <code>fractionDigits</code> facet, validation errors appear when importing or creating records with too many zeroes after the comma, hence not respecting the constraint. Zeros after the comma are not displayed in EBX.Manager for decimal field, hence making the validation error hard to understand.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

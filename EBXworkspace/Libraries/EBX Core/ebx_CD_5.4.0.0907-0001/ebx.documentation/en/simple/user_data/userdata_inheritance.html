@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Inheritance</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_inheritance" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data sets</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/userdata_inheritance.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+<h1>
+Inheritance</h1>
+<p>Usually people create one data set from one data model. EBX5 allows you to create additional data sets, branched off this initial root data set. Those child data sets inherit from their parent. Several levels of inheritance can be created.</p><p>This can be used to adapt master data to various context, like geographical areas and/or countries.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Standard behavior is to forbid data set inheritance. Be careful to explicitly activate it when creating your data model.</fieldset>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../user_datamodel/userdatamodel_configuring.html#configuration">Data model configuration</a></p></div>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#tree">Data set tree</a></li><li class="toc1"><a href="#value">Value inheritance</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Record inheritance</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="tree"></a>Data set tree</h2>
+<p>Once the root data set has been created, a child data set can be created using the <img alt="Create a child data set button" src="../resources/images/icons/ebx_add.png" width="16" height="16"></img> button located in the data set selection screen of the navigation pane. The user is then asked to provide a unique name for it. He can also, if he wishes to, give it an optional localized label and description.</p><p><strong>Note:</strong></p><ul>
+<li><p>A data set cannot be deleted if it has children data set. Its children must be deleted first.</p></li><li><p>If a child data set is duplicated, the newly created data set will be inserted into the existing data set tree as a sibling from the duplicated data set.</p></li></ul>
+<h2>
+<a name="value"></a>Value inheritance</h2>
+<p>When a child data set is created, it is inheriting all field&#39;s and table record&#39;s values from its father. A field or a record can either inherit its value or overwrite it.</p><p>Overwritten values uses the default style and inherited values can be identified by a mark on the top left corner of the cell.</p><p>The <img alt="Inherit/overwrite a value button" src="../resources/images/icons/ebx_setInherited.png" width="16" height="16"></img> button can be used to indicate if a value is inherited or overwritten.</p><h3>
+<a name="id2s1"></a>Record inheritance</h3>
+<p>A table in a child data set will inherit the record from the table located in its ancestor. It is possible to edit and delete those records, new records can also be created and will be inherited in child data set. Several states are defined to differentiate those records.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Root</p></td><td class="ebx_definitionListDefinition"><p>A root record is a record created in the current data set that doesn&#39;t exist in the ancestors data set. It will be inherited in the children data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Inherited</p></td><td class="ebx_definitionListDefinition"><p>An inherited record is defined in one of the ancestor data set of the current one.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Overwritten</p></td><td class="ebx_definitionListDefinition"><p>An overwritten record is an inherited record, whose values are edited in the current data set. The overwritten values will be inherited in the children data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Occulted</p></td><td class="ebx_definitionListDefinition"><p>An occulted record is an inherited record which is deleted in the current data set. It will still appear in the current data set as a crossed out record but it will not be inherited in the children data set.</p></td></tr>
+</table>
+<p>The <img alt="Inherit/overwrite a value button" src="../resources/images/icons/ebx_setInherited.png" width="16" height="16"></img> button indicates that a record is inherited. It can also be used for changing its state to overwritten or inherited. Please note it is the same button that allows you to change the status of an occulted record to inherited.</p><p>The following tables sum up what happens when creating, editing or deleting a record depending on its initial state.</p><table border="1px" cellpadding="5px" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>State \ Operation</strong></p></th><th><p><strong>Create</strong></p></th><th><p><strong>Edit value</strong></p></th><th><p><strong>Delete</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><strong>Root</strong></p></td><td valign="top"><p>Normal creation of a record. The newly created record will be inherited in children data set.</p></td><td valign="top"><p>Normal editing of a record. The new values will be inherited in children data set.</p></td><td valign="top"><p>Normal deletion of a record. The record will disappear from the inheriting data set.</p></td></tr>
+<tr>
+<td valign="top"><p><strong>Inherited</strong></p></td><td valign="top"><p>If a record is created using the primary key of an existing inherited record, the record state will be changed to overwritten and its value modified according to the one submitted at creation.</p></td><td valign="top"><p>An inherited record must be declared as overwritten in order to edit its value.</p></td><td valign="top"><p>Deleting an inherited record sets its state to occulted.</p></td></tr>
+<tr>
+<td valign="top"><p><strong>Overwritten</strong></p></td><td valign="top"><p>Not applicable. It is impossible to create a new record if the primary key is already used.</p></td><td valign="top"><p>An overwritten record can be returned to the inherited state, but its specific value will be lost.</p><p>Values from an overwritten record can be set to inherit or can be specified.</p></td><td valign="top"><p>Deleting an overwritten record changes its state to occulted.</p></td></tr>
+<tr>
+<td valign="top"><p><strong>Occulted</strong></p></td><td valign="top"><p>If a record is created using the primary key of an existing occulted record, the record state will be changed to overwritten and its value modified according to the one submitted at creation.</p></td><td valign="top"><p>An occulted record cannot be edited.</p></td><td valign="top"><p>Not applicable. An occulted record is already considered as deleted and as such cannot be deleted further.</p></td></tr>
+</tbody>
+</table>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

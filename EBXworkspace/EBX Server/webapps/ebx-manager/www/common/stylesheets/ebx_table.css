@@ -1,0 +1,71 @@
+
+/*table*/.ebx_StandardTable {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+/*table*/.ebx_StandardTable.ebx_FullWidth {
+	width: 100%;
+}
+
+/*table*/.ebx_StandardTable.ebx_Nbsp,
+/*table*/.ebx_StandardTable .ebx_Nbsp {
+	white-space: nowrap;
+}
+
+/*table*/.ebx_StandardTable td,
+/*table*/.ebx_StandardTable th {
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	padding: 5px 10px;
+}
+/*table*/.ebx_StandardTable tr:first-child td,
+/*table*/.ebx_StandardTable tr:first-child th {
+	border-top-width: 1px;
+}
+/*table*/.ebx_StandardTable td:first-child,
+/*table*/.ebx_StandardTable th:first-child {
+	border-left-width: 1px;
+}
+
+/*table*/.ebx_StandardTable.ebx_VertAlignTop td,
+/*table*/.ebx_StandardTable.ebx_VertAlignTop th {
+	vertical-align: top;
+}
+
+/*table*/.ebx_StandardTable th {
+	text-align: center;
+}
+	
+/*table*/.ebx_StandardTable td.ebx_AlignRight {
+	text-align: right;
+}
+/*table*/.ebx_StandardTable td.ebx_AlignCenter {
+	text-align: center;
+}
+
+/*START rounded corners */
+
+.ebx_StandardTable tr:first-child th:first-child,
+.ebx_StandardTable tr:first-child td:first-child {
+    border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+}
+.ebx_StandardTable tr:first-child th:last-child,
+.ebx_StandardTable tr:first-child td:last-child {
+    border-top-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+}
+
+.ebx_StandardTable tr:last-child th:first-child,
+.ebx_StandardTable tr:last-child td:first-child {
+    border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+}
+.ebx_StandardTable tr:last-child th:last-child,
+.ebx_StandardTable tr:last-child td:last-child {
+    border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+}
+
+/*END rounded corners */

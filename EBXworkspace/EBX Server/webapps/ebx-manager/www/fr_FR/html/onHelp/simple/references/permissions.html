@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Permissions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="advanced_permissions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/permissions.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+<h1>
+Permissions</h1>
+<p>Permissions dictate the access each user has to data and actions.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#principles">Overview</a><ul class="toc2">
+<li class="toc2"><a href="#profiles">Users, roles and profiles</a></li><li class="toc2"><a href="#id1s2">Permission rules</a></li><li class="toc2"><a href="#id1s3">Resolution of permissions</a></li><li class="toc2"><a href="#privilegesOnDataSet">Owner and administrator permissions on a data set</a></li><li class="toc2"><a href="#privilegesOnDataSpace">Owner and administrator permissions on a data space</a></li><li class="toc2"><a href="#id1s6">Impact of merge on permissions</a></li><li class="toc2"><a href="#id1s7">Important considerations about permissions</a></li></ul>
+</li><li class="toc1"><a href="#managerDefinition">Defining permissions and access rights in the user interface</a><ul class="toc2">
+<li class="toc2"><a href="#dataspacepermissions">Data space permissions</a></li><li class="toc2"><a href="#id2s2">Access rights on data spaces</a></li><li class="toc2"><a href="#id2s3">Permissions on a new data space</a></li><li class="toc2"><a href="#instancepermissions">Permissions on data set</a></li></ul>
+</li><li class="toc1"><a href="#resolution">Resolving permissions</a><ul class="toc2">
+<li class="toc2"><a href="#restrictionpolicy">Restriction policies</a></li><li class="toc2"><a href="#id3s2">Permission resolution examples</a></li></ul>
+</li><li class="toc1"><a href="#id4">Resolving access rights</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Resolving access rights defined using the user interface</a></li></ul>
+</li><li class="toc1"><a href="#id5">Resolving permissions for actions and services</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Action and service permission resolution example</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="principles"></a>Overview</h2>
+<p>Permissions are related to whether actions are authorized or not. They are also related to access rights, that is, whether an entity is hidden, read, or read-write. The main entities controlled by permissions are:</p><ul>
+<li><p>Data space</p></li><li><p>Data set</p></li><li><p>Table</p></li><li><p>Group</p></li><li><p>Field</p></li></ul>
+<h3>
+<a name="profiles"></a>Users, roles and profiles</h3>
+<p>The definition and resolution of permissions make extensive use of the notion of <em>profiles</em>, which is the generic term applied to users or roles.</p><p>Each user can participate in several roles, and a role can be shared by several users.</p><p><strong>Special definitions:</strong></p><ul>
+<li><p>An <em>administrator</em> is a member of the built-in role &#39;ADMINISTRATOR&#39;.</p></li><li><p>An <em>owner of a data set</em> is a member of the <em>owner</em> attribute specified in the information of a root data set. In this case, the built-in role &#39;OWNER&#39; is activated when permissions are resolved in the context of the data set.</p></li><li><p>An <em>owner of a data space</em> is a member of the <em>owner</em> attribute specified for a data space. In this case, the built-in role &#39;OWNER&#39; is activated when permissions are resolved in the context of the data space.</p></li></ul>
+<h3>
+<a name="id1s2"></a>Permission rules</h3>
+<p>A permission rule defines the authorization granted to a profile for a particular entity.</p><p>User-defined permission rules are created through the user interface. See the section <a href="#managerDefinition">Defining permissions and access rights in the user interface</a>.</p><h3>
+<a name="id1s3"></a>Resolution of permissions</h3>
+<p>Permissions are always resolved in the context of an authenticated user session. Thus, the defined permission rules can take user&#39;s roles into account.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="#resolution">Resolving permissions</a></p></div>
+<h3>
+<a name="privilegesOnDataSet"></a>Owner and administrator permissions on a data set</h3>
+<p>An administrator or owner of a data set can perform the following actions:</p><ul>
+<li><p>Manage its permissions</p></li><li><p>Change its owner, if the data set is a root data set</p></li><li><p>Change its localized labels and descriptions</p></li></ul>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+While the definition of permissions can restrict an administrator or data set owner&#39;s right to view data or perform certain actions, it remains possible for them to modify their own access, as they will always have access to permissions management.</fieldset>
+<h3>
+<a name="privilegesOnDataSpace"></a>Owner and administrator permissions on a data space</h3>
+<p>To be a <em>super owner</em> of a data space, a user must either:</p><ul>
+<li><p>Own the data space and be allowed to manage its permissions, or</p></li><li><p>Own a data space that is an ancestor of the current data space and be allowed to manage the permissions of that ancestor data space.</p></li></ul>
+<p>An administrator or super owner of a data space can perform the following actions:</p><ul>
+<li><p>Manage its permissions of data space.</p></li><li><p>Change its owner</p></li><li><p>Lock it or unlock it</p></li><li><p>Change its localized labels and descriptions</p></li></ul>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+While the definition of permissions can restrict an administrator or data space owner&#39;s right to view data or perform certain actions, it remains possible for them to modify their own access, as they will always have access to permissions management.</fieldset>
+<h3>
+<a name="id1s6"></a>Impact of merge on permissions</h3>
+<p>When a data space is merged, the permissions of the child data set are merged with those of the parent data space if and only if the user specifies to do so during the merge process. The permissions of its parent data space are never impacted.</p><p>If some elements are hidden for the profile attempting to perform a merge, it will not be possible to proceed as the impacts of the merge on data will not be fully visible.</p><h3>
+<a name="id1s7"></a>Important considerations about permissions</h3>
+<p>The following statements should be kept in mind while working with permissions:</p><ul>
+<li><p>Resolution of custom display labels for tables (&#39;defaultLabel&#39; property) and relationships (&#39;display&#39; property) ignores permission, and fields usually hidden due to access rights restrictions will be displayed in such labels. As a result, these labels should not contain any confidential field. Otherwise, a permission strategy should also be defined to restrict the display of the whole label.</p></li><li><p>To increase permissions resolution, a dedicated cache is implemented at the session-level; it only takes user-defined permission rules into account, not programmatic rules (which are not cached since they are contextual and dynamic). The session cache life cycle depends on the context, as described hereafter:</p><ul>
+<li><p>In the UI, the cache is cleared for every non-ajax event (i.e on page display, pop-up opening, etc.).</p></li><li><p>In programmatic procedures, the cache lasts until the end of the procedure, unless explicitly cleared (see below).</p></li></ul>
+</li></ul>
+<h2>
+<a name="managerDefinition"></a>Defining permissions and access rights in the user interface</h2>
+<p>Each level has a similar schema, which allows defining permission rules for profiles.</p><h3>
+<a name="dataspacepermissions"></a>Data space permissions</h3>
+<p>For a given data space, the allowable permissions for each profile are as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data space access</p></td><td class="ebx_definitionListDefinition"><p>Defines access rights as read-write, read-only or hidden.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Restriction</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether this data space profile-permission association should have priority over other permissions rules.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create a child data space</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile can create child data spaces from the current data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create a child snapshot</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile can create snapshots of the current data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Initiate merge</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile can merge the current data space with its parent data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Export archive</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile can export the current data space as an archive.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Import archive</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile can import an archive into the current data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Close a data space</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile can close the current data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Close a snapshot</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile can close a snapshot of the current data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Permissions of child data space when created</p></td><td class="ebx_definitionListDefinition"><p>Defines the same data space permissions as the current data space on child data spaces.</p></td></tr>
+</table>
+<h3>
+<a name="id2s2"></a>Access rights on data spaces</h3>
+<table border="1" cellpadding="2" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Mode</strong></p></th><th><p><strong>Authorization</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Write</p></td><td><ul>
+<li><p>Can view the data space.</p></li><li><p>Can access data sets according to data set permissions.</p></li></ul>
+</td></tr>
+<tr>
+<td><p>Read-only</p></td><td><ul>
+<li><p>Can view the data space and its snapshots.</p></li><li><p>Can view child data spaces, if allowed by permissions.</p></li><li><p>Can view contents of the data space, though cannot modify them.</p></li></ul>
+</td></tr>
+<tr>
+<td><p>Hidden</p></td><td><ul>
+<li><p>Can neither see the data space nor its snapshots.</p></li><li><p>If allowed to view child data space, can see the current data space but cannot select it.</p></li><li><p>Cannot access the data space contents, including data sets.</p></li><li><p>Cannot perform any actions on the data space.</p></li></ul>
+</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id2s3"></a>Permissions on a new data space</h3>
+<p>When a user creates a child data space, the permissions of this new data space are automatically assigned to the profile&#39;s owner, based on the permissions defined under &#39;Permissions of child data space when created&#39; in the parent data space. If multiple permissions are defined for the owner through different roles, <a href="#resolution">resolved permissions</a> are applied.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<p>Only the administrator and owner of a data space can define a new owner for the data space or modify associated permissions. They can also modify the general information on the data space and permissions of the users.</p><p>Furthermore, in a workflow, when using a &quot;Create a data space&quot; or &quot;Create a snapshot&quot; built-in script task, resolved permissions are computed using the owner defined in the script task&#39;s configuration, rather than the current session. This is because, in these cases, the current session is associated with a system user.</p></fieldset>
+<h3>
+<a name="instancepermissions"></a>Permissions on data set</h3>
+<p>For a given data set, the allowable permissions for each profile are as follows:</p><h4>
+Actions on data sets</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Restricted mode</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether this data set profile-permission association should have priority over other permissions rules.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create a child data set</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile has the right to create a child data set of the current data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Duplicate data set</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile has the right to duplicate the current data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Change the data set parent</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile has the right to change the parent data set of a given child data set.</p></td></tr>
+</table>
+<h4>
+Actions on tables</h4>
+<p>For a specific table, permissions can be defined, which override the default permissions defined in its containing data set. The allowable permissions for each profile are as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create a record</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile has the right to create records in the table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Modify a record</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile has the right to modify records in the table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Hide a record</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile has the right to hide records in the table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delete a record</p></td><td class="ebx_definitionListDefinition"><p>Indicates whether the profile has the right to delete records in the table.</p></td></tr>
+</table>
+<h4>
+Access rights on node values</h4>
+<p>Permissions defined on specific terminal nodes override their default access rights.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Read-write</p></td><td class="ebx_definitionListDefinition"><p>Can view and modify node values.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Read</p></td><td class="ebx_definitionListDefinition"><p>Can view nodes, but cannot modify their values.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Hidden</p></td><td class="ebx_definitionListDefinition"><p>Cannot view nodes.</p></td></tr>
+</table>
+<h4>
+Permissions on services</h4>
+<p>By default, all data set services are allowed. An administrator or an owner of the current data space can modify these permissions to restrict data set services for certain profiles.</p><h2>
+<a name="resolution"></a>Resolving permissions</h2>
+<p>The resolution of permissions is always performed in the context of a user session according to the associated roles. In general, resolution of restrictive permissions is performed between a given level and its parent level. Thus, at any given level, a user cannot have a higher permission than the one resolved at a parent level.</p><h3>
+<a name="restrictionpolicy"></a>Restriction policies</h3>
+<p>When a restrictive permission is defined for a profile, it takes precedence over the other permissions potentially accorded by the user&#39;s other roles. Generally:</p><ul>
+<li><p>If restrictions are defined, the minimum permissions based on all the restricted profiles is applied.</p></li><li><p>If no restrictions are defined, the maximum permissions based on all profiles is applied.</p></li></ul>
+<h3>
+<a name="id3s2"></a>Permission resolution examples</h3>
+<p>Given two profiles <em>P1</em> and <em>P2</em> concerning the same user, the following table lists the possibilities when resolving that user&#39;s access to a service.</p><table border="1" cellpadding="5%" cellspacing="0" width="750px" class="">
+<thead>
+<tr>
+<th>P1 authorization</th><th>P2 authorization</th><th>Permission resolution</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Allowed</td><td>Allowed</td><td>Allowed. Restrictions do not make any difference.</td></tr>
+<tr>
+<td>Forbidden</td><td>Forbidden</td><td>Forbidden. Restrictions do not make any difference.</td></tr>
+<tr>
+<td>Allowed</td><td>Forbidden</td><td>Allowed, unless P2&#39;s authorization is a restriction.</td></tr>
+<tr>
+<td>Forbidden</td><td>Allowed</td><td>Allowed, unless P1&#39;s authorization is a restriction.</td></tr>
+</tbody>
+</table>
+<p>In another example, a data space can be hidden from all users by defining a restrictive association between the built-in profile &quot;Profile.EVERYONE&quot; and the access right &quot;hidden&quot;. </p><h2>
+<a name="id4"></a>Resolving access rights</h2>
+<h3>
+<a name="id4s1"></a>Resolving access rights defined using the user interface</h3>
+<p>Access rights defined using the user interface are resolved on three levels: data space, data set and node.</p><p>If a profile is associated with restrictive access rights at a given level, the minimum of all restrictive rights defined at that level is resolved. If no restrictions are defined at that level, the maximum of all access rights defined at that level is resolved.</p><p>At any given level, the most restrictive access rights between those resolved at this level and higher levels are applied. For instance, if a user&#39;s data set access permissions resolve to read-write access, but the container data space only allows read access, the user will only have read-only access to this data set.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The data set inheritance mechanism applies to both values and access rights. That is, access rights defined on a data set will be applied to its child data sets. It is possible to override these rights in the child data set.</p></div>
+<h4>
+Access rights resolution example</h4>
+<p>In this example, there are three users who belong to the following defined roles and profiles: </p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>User</p></th><th class="ebx_definitionListHeader"><p>Profile</p></th><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 1</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p>user1</p></li><li><p>role A</p></li><li><p>role B</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 2</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p>role A</p></li><li><p>role B</p></li><li><p>role C</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 3</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p>user3</p></li><li><p>role A</p></li><li><p>role C</p></li></ul>
+</td></tr>
+</table>
+<p>The access rights of the profiles on a given element are as follows:</p><table border="1" cellpadding="5%" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Profile</strong></p></th><th><p><strong>Access rights</strong></p></th><th><p><strong>Restriction policy</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>user1</p></td><td><p>Hidden</p></td><td><p>Yes</p></td></tr>
+<tr>
+<td><p>user3</p></td><td><p>Read</p></td><td><p>No</p></td></tr>
+<tr>
+<td><p>Role A</p></td><td><p>Read/Write</p></td><td><p>No</p></td></tr>
+<tr>
+<td><p>Role B</p></td><td><p>Read</p></td><td><p>Yes</p></td></tr>
+<tr>
+<td><p>Role C</p></td><td><p>Hidden</p></td><td><p>No</p></td></tr>
+</tbody>
+</table>
+<p>After resolution based on the role and profile access rights above, the right that are applied to each user are as follows: </p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>User</p></th><th class="ebx_definitionListHeader"><p>Resolved access rights</p></th><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 1</p></td><td class="ebx_definitionListDefinition"><p>Hidden</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 2</p></td><td class="ebx_definitionListDefinition"><p>Read</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 3</p></td><td class="ebx_definitionListDefinition"><p>Read/Write</p></td></tr>
+</table>
+<h4>
+Resolving data space and snapshot access rights</h4>
+<p>At data space level, access rights are resolved as follows:</p><ul>
+<li><p>If a user has several rights defined through multiple profiles:</p><ul>
+<li><p>If the rights include restrictions, the minimum of the restrictive profile-rights associations is applied.</p></li><li><p>Otherwise, the maximum of the profile-rights associations is applied.</p></li></ul>
+</li><li><p>If the user has no rights defined:</p><ul>
+<li><p>If the user is an administrator or is the owner of the data space, read-write access is given for this data space.</p></li><li><p>Otherwise, the data space will be hidden.</p></li></ul>
+</li></ul>
+<h4>
+Resolving data set access rights</h4>
+<p>At the data set level, the same principle applies as at the data space level. After resolving the access rights at the data set level alone, the final access rights are determined by taking the minimum rights between the resolved data space rights and the resolved data set rights. For example, if a data space is resolved to be read-only for a user and one of its data sets is resolved to be read-write, the user will only have read-only access to that data set.</p><h4>
+Resolving node access rights</h4>
+<p>At the node level, the same principle applies as at the data space and data set levels. After resolving the access rights at the node level alone, the final access rights are determined by taking the minimum rights between the resolved data set rights and the resolved node rights.</p><p>Specific access rights can be defined at the node level. If no specific access right is defined, the default access right is used for the resolution process.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The resolution procedure is slightly different for table and table child nodes.</p></div>
+<h4>
+Special case for table and table child nodes</h4>
+<p>This describes the resolution process used for a given table node or table record <em>N</em>.</p><p>For each user-defined permission rule that matches one of the user&#39;s profiles, the access rights for <em>N</em> are either:</p><ol>
+<li><p>The locally defined access rights for <em>N</em>;</p></li><li><p>Inherited from the access rights defined on the table node;</p></li><li><p>Inherited from the default access rights for data set values.</p></li></ol>
+<p>All matching user-defined permission rules are used to resolve the access rights for <em>N</em>. Resolution is done according to the <a href="#restrictionpolicy">restriction policy</a>.</p><p>The final resolved access rights will be the minimum between the data space, data set and the resolved access right for <em>N</em>.</p><h2>
+<a name="id5"></a>Resolving permissions for actions and services</h2>
+<p>The resolution of actions and services available to a given user follows the same process as the resolution of access rights.</p><p>When several action lists are defined on a data set for a given profile, the final actions list is dynamically generated after evaluating each individual action across all lists associated with the same user.</p><p>If some profile-action list associations are restrictive, an action is forbidden if at least one restrictive association forbids it. If there are no restrictive associations, an action is allowed if any association allows it.</p><h3>
+<a name="id5s1"></a>Action and service permission resolution example</h3>
+<p>In this example, there are two users belonging to different roles and profiles:</p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>User</p></th><th class="ebx_definitionListHeader"><p>Profiles</p></th><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 1</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p>user1</p></li><li><p>role A</p></li><li><p>role B</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User 2</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p>role C</p></li><li><p>role D</p></li></ul>
+</td></tr>
+</table>
+<p>The permissions associated with the roles and profiles on a given table are as follows:</p><table border="1" cellpadding="5%" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Profile</strong></p></th><th><p><strong>Create a record</strong></p></th><th><p><strong>Modify a record</strong></p></th><th><p><strong>Hide a record</strong></p></th><th><p><strong>Duplicate a record</strong></p></th><th><p><strong>Delete a record</strong></p></th><th><p><strong>Restriction policy</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>user1</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Allowed</p></td><td><p>No</p></td></tr>
+<tr>
+<td><p>Role A</p></td><td><p>Allowed</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Yes</p></td></tr>
+<tr>
+<td><p>Role B</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Allowed</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Yes</p></td></tr>
+<tr>
+<td><p>Role C</p></td><td><p>Allowed</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Forbidden</p></td><td><p>Forbidden</p></td><td><p>No</p></td></tr>
+<tr>
+<td><p>Role D</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>Forbidden</p></td><td><p>Allowed</p></td><td><p>Forbidden</p></td><td><p>No</p></td></tr>
+</tbody>
+</table>
+<p>The actions available to each user after rights resolution are as follows:</p><table border="1" cellpadding="2" cellspacing="0" width="400px" class="">
+<thead>
+<tr>
+<th><p><strong>Users</strong></p></th><th><p><strong>Available actions</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2" align="center"><p><strong>User 1</strong></p></td><td><p>Create a record</p></td></tr>
+<tr>
+<td><p>Duplicate a record</p></td></tr>
+<tr>
+<td rowspan="3" align="center"><p><strong>User 2</strong></p></td><td><p>Create a record</p></td></tr>
+<tr>
+<td><p>Modify a record</p></td></tr>
+<tr>
+<td><p>Duplicate a record</p></td></tr>
+</tbody>
+</table>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

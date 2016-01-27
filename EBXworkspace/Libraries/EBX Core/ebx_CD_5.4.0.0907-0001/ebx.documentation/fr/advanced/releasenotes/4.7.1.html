@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.1</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.1.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.1</h1>
+<p><strong>Release Date: July 2, 2009</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Inherited Attributes</a></li><li class="toc1"><a href="#id2">Directory and default Directory</a></li><li class="toc1"><a href="#id3">Dependencies and validation</a></li><li class="toc1"><a href="#id4">Data Services</a></li><li class="toc1"><a href="#id5">Data Model Assistant</a></li><li class="toc1"><a href="#id6">Bug Fixes</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Inherited Attributes</h2>
+<p> An inherited attribute can now inherit from a node in the same record. The <em>sourceRecord</em> element in schema is no longer mandatory. </p><h2>
+<a name="id2"></a>Directory and default Directory</h2>
+<p> The class <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/ProfileListContext.html">ProfileListContext</a> has been enhanced: it now offers the possibility to retrieve the list of Profiles allowed to interact with the Workflow. </p><p> This feature must be considered for the specific implementation of a Directory, in particular for the method <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#getProfiles(com.orchestranetworks.service.directory.ProfileListContext)">getProfiles()</a> .&nbsp;</p><h2>
+<a name="id3"></a>Dependencies and validation</h2>
+<p> The class <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintContext.html">ConstraintContext</a> has been enhanced: it now offers the possibility to specify dependencies between nodes more precisely. </p><p>For further details, see the following methods:</p><ul>
+<li><p><code>ConstraintContext.addDependencyToModify(SchemaNode)</code></p></li><li><p><code>ConstraintContext.addDependencyToInsertAndDelete(SchemaNode)</code></p></li><li><p><code>ConstraintContext.addDependencyToInsertDeleteAndModify(SchemaNode)</code></p></li></ul>
+<p> As a consequence, the method addValueDependencyToNode(SchemaNode) is now deprecated. </p><p>The possibility to manually reset the validation report of an adaptation has been added. This option is available from the validation report section in EBX. This functionality is only available for users granted with the Administrator role.</p><h2>
+<a name="id4"></a>Data Services</h2>
+<p> The WSDL wizard generator has been enhanced so as to offer the possibility to choose the tables and the actions to expose in the WSDL. </p><h2>
+<a name="id5"></a>Data Model Assistant</h2>
+<p><a target="_self" href="../models/constraints.html#constraintOnNull">Constraint on null value</a> propertry has been removed from the advanced properties section. A constraint on null is now directly usable setting a rule defining either a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/Constraint.html">constraint</a> or a constraint based on an <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintEnumeration.html">enumeration</a> or on a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintNomenclature.html">nomenclature</a> implementing the interface <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintOnNull.html">ConstraintOnNull</a> .&nbsp;</p><h2>
+<a name="id6"></a>Bug Fixes</h2>
+<ul>
+<li><p><strong>[01783]</strong> On WebSphere Application Server, an exception is logged when closing connection after read-only statements (re-fix). </p></li><li><p><strong>[01886]</strong> NullPointerException while comparing in Merge branches if no difference in table. </p></li><li><p><strong>[01887]</strong> EBX does not show the columns of the primary key at table&#39;s record creation if these nodes are embedded in a complex node. </p></li><li><p><strong>[01888]</strong> User message &quot; <em>Please submit these updates (max. new occurrences quantity reached)</em> &quot; is not accurate when a node with maxOccurs &gt;1 has reached its maxOccurs value. </p></li><li><p><strong>[01889]</strong> The request optimizer starts the index screening at a wrong point. If a request has a predicate corresponding to a part of a composite primary key, it can return a wrong result (some records are missing). </p></li><li><p><strong>[01890]</strong> NullPointerException on first access to default hierarchy using <code>UIHttpManagerComponent</code> (or equivalent selection and filter set). </p></li><li><p><strong>[01891]</strong> Specific role in default directory are not displayed as expected if no localized label defined. </p></li><li><p><strong>[01892]</strong> The setup of a schema throws a NullPointerException if an Inherited Attribute refers to a table (source) which contains a selection node ( <code>osd:select</code> ). </p></li><li><p><strong>[01893]</strong> Unable to download the result of a table content export (XML or CSV) using Internet Explorer under HTTPS. </p></li><li><p><strong>[01894]</strong> Cannot apply last modification(s) in a table selection if the source record has been deleted. </p></li><li><p><strong>[01895]</strong> Adding a dependency refering a non terminal node is ignored. </p></li><li><p><strong>[01896]</strong> Adding a dependency refering a table node set the current constraint in an unknown dependency state. </p></li><li><p><strong>[01897]</strong> A migration code (from version 4.1.4) throws SQL exceptions on DB server (table IHD unknown). </p></li><li><p><strong>[01898]</strong> Display of actions menu in hierarchies does not take scrolling into account. </p></li><li><p><strong>[01899]</strong> Workflow definition: standard actions &quot;attach, dettach and move&quot; might be disabled. </p></li><li><p><strong>[01900]</strong> Workflow definition: a referenced process node cannot be &quot;un-referenced&quot;. </p></li><li><p><strong>[01901]</strong> View: in filter pane, button &quot;apply&quot; and &quot;reset&quot; are available even if the view has no filter criteria. </p></li><li><p><strong>[01902]</strong> The request optimizer starts the index screening at a wrong point. If a request has a &quot;starts-width()&quot; predicate corresponding to a part of a composite primary key, it can return a wrong result (too many records are returned). </p></li><li><p><strong>[01903]</strong> Dimension link by join table reference the instance from which it has been initialized. It cause severe error when working with instance duplication. </p></li><li><p><strong>[01904]</strong> A character &quot;linefeed&quot; in the description of a node in the schema can prevent data display correctly in EBX if the server is a Unix-like system. </p></li><li><p><strong>[01905]</strong> A perspective defined on an hidden table can be view by all possible readers in the perspectives menu. Moreover, when applied, it cause a NullPointerException </p></li><li><p><strong>[01906]</strong> In some cases when triggers are disabled while inserting values into a table, the auto-increment value does not take into account the maximum value in the table. </p></li><li><p><strong>[01907]</strong> In API, if the method <code>SessionPermissions.getOccurrenceActionPermissionToDelete</code> is invoked with an undefined record, it does not take into account removal restrictions specified in schema, on <code>osd:table/mayDelete</code> property. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Introduction to workflow models</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="wm_introduction" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Workflow models</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_workflowmodel/introworkflowmodel.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+<h1>
+Introduction to workflow models</h1>
+<p>Collaborative work is a powerful way to produce, update, merge and validate data in a business. However it is not always easy to get people from various places and with different skills, to work together in order to meet in time a common deadline.</p><p>In this, you may find workflow modeling to be quite a useful tool. Indeed it will allow you to define data management processes involving your collaborators. To do so, you will need to:</p><ul>
+<li><p>define tasks to be performed by a user (see <a target="_self" href="./usertask.html">user task</a>) or automatically by the system (see <a target="_self" href="./workflowModel.html#step_script">script task</a>),</p></li><li><p>specify everybody&#39;s responsibilities (see <a target="_self" href="./workflowModel.html">creation</a>),</p></li><li><p>send notification emails to colleagues, whose involvement is required (see <a target="_self" href="../user_workflowmodel/actions_workflowmodel.html#notification">notification</a>),</p></li><li><p>know the limits of your model; what can and cannot be done (see <a target="_self" href="../user_workflowmodel/actions_workflowmodel.html#limitation">limitations</a>),</p></li><li><p>publish your model as a workflow to get it going (see <a target="_self" href="./publication.html">publication</a>).</p></li></ul>
+<p>A workflow model defines the tasks to be performed and the involved responsibilities. It can then be published as a workflow publication. It is a succession of two kinds of tasks: <em>script and user tasks</em>, with the possibility to have a conditional fork between two of them.</p><p>To find out a word&#39;s meaning, you can check it out in our <a target="_self" href="../glossary/simple_glossary.html#workflowmodels">glossary</a>.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#introduction">Workflow model overview</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Access within the interface</a></li><li class="toc2"><a href="#id1s2">Associated notions and tools</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="introduction"></a>Workflow model overview</h2>
+<h3>
+<a name="id1s1"></a>Access within the interface</h3>
+<p align="center"><img alt="/WorkflowModel.png" src="../resources/images/user_workflowmodel/WorkflowModel.png" align="middle"></img></p><h3>
+<a name="id1s2"></a>Associated notions and tools</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Script task / <em>Script</em></p></td><td class="ebx_definitionListDefinition"><p>No user are involved in this kind of task. It can be, for instance, an automatic merge, a data space snapshot creation, etc.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>User task</p></td><td class="ebx_definitionListDefinition"><p>It involves at least one user and eventually several, who have to fulfil work items.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Work item</p></td><td class="ebx_definitionListDefinition"><p>Basic task carried out by the user, it has been allocated to, and whose execution allows the workflow to move forward.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Conditional fork / <em>Condition</em></p></td><td class="ebx_definitionListDefinition"><p>It decides from the result of previous tasks, which route has to be taken during the workflow. This switch is made from two derivations. For instance, one can continue the workflow normally, while the other returns to a previous task; or there could be two different parallel routes.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data context </p></td><td class="ebx_definitionListDefinition"><p>It is a variable hosting temporary input/output data related to a workflow execution. Its aim is to facilitate the transfert of key information from one step to another (example: a data space name created in step 1 and reused in step 2 for another purpose).</p></td></tr>
+</table>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:ebx-schemas:module_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:ebx-schemas:module_3.0 http://schema.orchestranetworks.com/internal/module_3.0.xsd">
+	<name>ebx-addon-adix</name>
+	<publicPath>ebx-addon-adix</publicPath>
+	<services>
+		<service name="ExportCSV">
+			<resourcePath>/services-dispatcher?action=exportCSV</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onTable />
+					<onRecord>
+						<onHierarchy />
+					</onRecord>
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.services.permissions.AdixExportSingleTablePermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        	    <perspective />				
+			</globalActivation>
+			<documentation id="services.ExportCSV" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+				<property name="xpath" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.xpath" />
+				</property>
+			</properties>
+		</service>
+		<service name="ExportExcel">
+			<resourcePath>/services-dispatcher?action=exportExcel</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onTable />
+					<onRecord>
+						<onHierarchy />
+					</onRecord>
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.services.permissions.AdixExportSingleTablePermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.ExportExcel" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+				<property name="xpath" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.xpath" />
+				</property>
+			</properties>
+		</service>
+		<service name="ExportMultipleTables">
+			<resourcePath>/services-dispatcher?action=exportMultipleTables</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onInstance />
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.services.permissions.AdixExportMultipleTablesPermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.ExportMultipleTables" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+			</properties>
+		</service>
+		<service name="ImportSingleCSV">
+			<resourcePath>/services-dispatcher?action=importCSV</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onTable />
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.services.permissions.AdixImportSingleTablePermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.ImportSingleCSV" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+				<property name="xpath" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.xpath" />
+				</property>
+			</properties>
+		</service>
+		<service name="ImportSingleExcel">
+			<resourcePath>/services-dispatcher?action=importExcel</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onTable />
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.services.permissions.AdixImportSingleTablePermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.ImportSingleExcel" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+				<property name="xpath" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.xpath" />
+				</property>
+			</properties>
+		</service>
+		<service name="ImportMultipleTables">
+			<resourcePath>/services-dispatcher?action=multiImport</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onInstance />
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.services.permissions.AdixImportMultipleTablesPermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.ImportMultipleTables" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+			</properties>
+		</service>
+		<service name="TransferData">
+			<resourcePath>/dataexchange?action=TransferData</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onInstance />
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.dataexchange.permissions.DataExchangeExportMultipleTablesPermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.TransferData" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+			</properties>
+		</service>
+		<service name="ImportXML">
+			<resourcePath>/dataexchange?action=ImportXML</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onTable />
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.dataexchange.permissions.DataExchangeImportSingleTablePermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.ImportXML" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+				<property name="xpath" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.xpath" />
+				</property>
+			</properties>
+		</service>
+		<service name="ExportXML">
+			<resourcePath>/dataexchange?action=ExportXML</resourcePath>
+			<instanceActivation all="true">
+				<scope>
+					<onInstance></onInstance>
+					<onTable></onTable>
+					<onRecord>
+						<onHierarchy />
+					</onRecord>
+					<onPermission>
+						<instancePermission />
+					</onPermission>
+					<permission
+						class="com.orchestranetworks.addon.adix.dataexchange.permissions.DataExchangeExportMultipleTablesPermissions" />
+				</scope>
+			</instanceActivation>
+			<globalActivation>
+				<workflow />
+        		<perspective />				
+			</globalActivation>
+			<documentation id="services.ExportXML" />
+			<confirmation disable="true" />
+			<properties>
+				<property name="branch" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.branch" />
+				</property>
+				<property name="instance" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.instance" />
+				</property>
+				<property name="xpath" input="true">
+					<documentation id="services.UIServiceDispatcher.properties.xpath" />
+				</property>
+			</properties>
+		</service>
+	</services>
+	<ajaxComponents>
+		<ajaxComponent name="AddonServiceExportFile_AjaxProcedure"
+			className="com.orchestranetworks.addon.adix.exports.controller.ExportAjaxComponent" />
+		<ajaxComponent name="AddonServiceImportUploadFile_AjaxProcedure"
+			className="com.orchestranetworks.addon.adix.imports.controller.ImportUploadFileAjax" />
+		<ajaxComponent name="AddonServiceImportProcess_AjaxProcedure"
+			className="com.orchestranetworks.addon.adix.imports.controller.ImportProcessAjax" />
+		<ajaxComponent name="DataExchangeLoadDataset_AjaxProcedure"
+			className="com.orchestranetworks.addon.adix.dataexchange.ui.transferdata.LoadSelectForTransferDataAjaxComponent" />
+		<ajaxComponent name="DataExchangeService_AjaxProcedure"
+			className="com.orchestranetworks.addon.adix.dataexchange.ui.ajax.ProgressInformationAjaxComponent" />
+		<ajaxComponent name="DataExchangeServiceUploadFile_AjaxProcedure"
+			className="com.orchestranetworks.addon.adix.dataexchange.ui.imports.fileupload.DataExchangeImportUploadFileAjax" />
+	</ajaxComponents>
+</module>
+

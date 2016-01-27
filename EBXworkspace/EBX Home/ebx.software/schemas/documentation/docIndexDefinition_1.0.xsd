@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="urn:ebx-schemas:docindexdef_1_0"
+	targetNamespace="urn:ebx-schemas:docindexdef_1_0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<xs:element name="definition">
+		<xs:complexType>
+			<xs:sequence>			
+				<xs:element name="title" type="titleType" minOccurs="1"/>	
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="guide" type="guideType">
+						<xs:annotation>
+							<xs:documentation>A guide is an index main section. It generates a table of content in HTML and a cover page in PDF.</xs:documentation>
+						</xs:annotation>
+					</xs:element>						
+					<xs:element name="link" type="linkType">
+						<xs:annotation>
+							<xs:documentation>Allow to include a link in the HTML index. Ignored during PDF generation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>	
+					<xs:element name="linkToJavaApi" type="linkToJavaApiType">
+						<xs:annotation>
+							<xs:documentation>Allow to include a link to the JavaApi in the HTML index. Ignored during PDF generation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>	
+					<xs:element name="includeDef" type="includeDefType">
+						<xs:annotation>
+							<xs:documentation>DO NOT USE YET : NOT WORKING.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>		
+			</xs:sequence>			
+			<xs:attribute name="msgBundle" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Defines the default message bundle to use when no overwriting msgBundle is specified on guide and section elements.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="guideType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="section" type="sectionType">
+				<xs:annotation>
+					<xs:documentation>A section is a group of sections and chapter. Note: Level one section will generate a title page in PDF.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="chapter" type="chapterType">
+				<xs:annotation>
+					<xs:documentation>A chapter is a reference to a docbook XDB file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="link" type="linkType">
+				<xs:annotation>
+					<xs:documentation>Allow to include a link in the HTML index. Ignored during PDF generation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>	
+			<xs:element name="linkToJavaApi" type="linkToJavaApiType">
+				<xs:annotation>
+					<xs:documentation>Allow to include a link to the JavaApi in the HTML index. Ignored during PDF generation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>	
+			<xs:element name="includeDef" type="includeDefType">
+				<xs:annotation>
+					<xs:documentation>DO NOT USE YET : NOT WORKING.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>		
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Guide ID in the table of content. Must be unique in the definition. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgKey" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines the bundle message key for the guide. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="audience" type="audienceType">
+			<xs:annotation>
+				<xs:documentation>Defines in which context this guide will be generated, i.e to which audience.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgBundle" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Allows to overwrite the message bundle specified in the definition node. Applies to the current node only (there is no inheritance)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="sectionType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="section" type="sectionType">
+				<xs:annotation>
+					<xs:documentation>A section is a group of sections and chapter.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="chapter" type="chapterType">
+				<xs:annotation>
+					<xs:documentation>A chapter is a reference to a docbook XDB file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="link" type="linkType">
+				<xs:annotation>
+					<xs:documentation>Allow to include a link in the HTML index. Ignored during PDF generation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="linkToJavaApi" type="linkToJavaApiType">
+				<xs:annotation>
+					<xs:documentation>Allow to include a link to the JavaApi in the HTML index. Ignored during PDF generation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>	
+			<xs:element name="includeDef" type="includeDefType">
+				<xs:annotation>
+					<xs:documentation>DO NOT USE YET : NOT WORKING.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="msgKey" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines the bundle message key for the section. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="audience" type="audienceType">
+			<xs:annotation>
+				<xs:documentation>Defines in which context this guide will be generated, i.e to which audience.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgBundle" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Allows to overwrite the message bundle specified in the definition node. Applies to the current node only (there is no inheritance)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="titleType">
+		<xs:attribute name="msgKeyTitle" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines the bundle message key for the HTML index page title. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgKeyPdfTitle" type="xs:string" >
+			<xs:annotation>
+				<xs:documentation>Defines the bundle message key for the PDF doc main title. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgKeyPdfSubtitle" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines the bundle message key for the PDF doc secondary title. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgBundle" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Allows to overwrite the message bundle specified in the definition node. Applies to the current node only (there is no inheritance)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="chapterType">
+		<xs:attribute name="localized" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines whether this chapter is to be displayed either in the default language or for each locale. When localized a XDB file must exists in each locale directory, otherwise the XDB file must be located in the "common" directory.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="path" type="chapterPathType" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines a relative path to the docbook XDB file. The path is relative to the locale (or "common") directoy and must have at least one sub directory. See "localized" attribute description for more information.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="audience" type="audienceType">
+			<xs:annotation>
+				<xs:documentation>Defines in which context this chapter will be generated, i.e to which audience.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="linkType">
+		<xs:attribute name="localized" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines whether this link is to be displayed in the default language only or for each locale.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgKey" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines the bundle message key for the link. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="href" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Defines the link href.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="audience" type="audienceType">
+			<xs:annotation>
+				<xs:documentation>Defines in which context this link will be generated, i.e to which audience.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="msgBundle" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Allows to overwrite the message bundle specified in the definition node. Applies to the current node only (there is no inheritance)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="linkToJavaApiType">
+		<xs:attribute name="audience" type="audienceType">
+			<xs:annotation>
+				<xs:documentation>Defines in which context this link will be generated, i.e to which audience.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="includeDefType">
+		<xs:attribute name="subdir" type="xs:string" use="required"/>
+		<xs:attribute name="docIndexFile" type="xs:string" use="required"/>
+		<xs:attribute name="ignoreRoot" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="audienceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ifCloud"/>
+			<xs:enumeration value="unlessCloud"/>
+			<xs:enumeration value="advanced"/>
+			<xs:enumeration value="advancedIfCloud"/>
+			<xs:enumeration value="advancedUnlessCloud"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="chapterPathType">
+		<xs:restriction base="xs:string">
+	      <xs:pattern value="[\-_\w]+/[\-_\w/]+\.xdb"/>
+	    </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

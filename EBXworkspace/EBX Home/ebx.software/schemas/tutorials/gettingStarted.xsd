@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--                                                                  -->
+<!--	Copyright © Orchestra Networks 2000-2004. All rights reserved.  -->
+<!--                                                                  -->
+<xs:schema xmlns:fmt="urn:ebx-schemas:format_1.0" xmlns:osd="urn:ebx-schemas:common_1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="urn:ebx-schemas:common_1.0" schemaLocation="http://schema.orchestranetworks.com/common_1.0.xsd"/>
+	<xs:element name="root" osd:access="--">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="rebate">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="label" type="xs:string"/>
+							<xs:element name="beginDate" type="xs:date"/>
+							<xs:element name="endDate" type="xs:date"/>
+							<xs:element name="rate">
+								<xs:annotation>
+									<xs:documentation>
+										<osd:label>Rate discount</osd:label>
+										<osd:description>Discount rate offered, in percent (%)</osd:description>
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:maxInclusive value="50"/>
+										<xs:minExclusive value="0"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="product_xv34" type="ProductType"/>
+				<xs:element name="product_xv37" type="ProductType"/>
+				<xs:element name="product_xz12" type="ProductType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ProductType">
+		<xs:sequence>
+			<xs:element name="productLabel" type="xs:string"/>
+			<xs:element name="availability" type="xs:date"/>
+			<xs:element name="price" type="xs:decimal"/>
+			<xs:element name="isDisplayed" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: Orchestra Networks
+Implementation-Title: Web application 'ebx-dma' of EBX5
+Implementation-Version: 5.6.1 Fix A [0985:0003] at 2015/05/18 17:39:34
+  [CEST]
+Implementation-Vendor: Orchestra Networks
+Class-Path: lib/ebx.jar
+

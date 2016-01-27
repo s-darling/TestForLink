@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.0.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.0.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.0.0</h1>
+<p><strong>Release Date: February 12, 2007</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Life Cycle Management</a></li><li class="toc1"><a href="#id2">Search &amp; Filters</a></li><li class="toc1"><a href="#id3">Directory and Permissions Management</a></li><li class="toc1"><a href="#id4">Miscellaneous</a></li><li class="toc1"><a href="#id5">Repository and Core Engine</a></li><li class="toc1"><a href="#id6">Known limitations:</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Life Cycle Management</h2>
+<ul>
+<li><p>Advanced life-cycle management becomes operational with the notions of branch and version.</p><p>A branch is a isolated &quot;home&quot; updatable by multiple users.</p><p>A version is a &quot;home&quot; that is a fixed snapshot of a branch.</p></li></ul>
+<ul>
+<li><p>The concept of Adaptation edition becomes obsolete since a branch is a more general and more consistent way for storing updates.</p></li><li><p>Compare &amp; Merge: Automatic merge of a branch to its parent branch. In version 4.0 the merge process has a limited interactivity (override-all or nothing).</p></li></ul>
+<h2>
+<a name="id2"></a>Search &amp; Filters</h2>
+<ul>
+<li><p>Added default end-user search GUI on tables.</p></li></ul>
+<h2>
+<a name="id3"></a>Directory and Permissions Management</h2>
+<ul>
+<li><p>A new API for external directory integration is added. This API supports a simple and flexible user-roles model.</p></li><li><p>In EBX, it is now possible to fully manage users and roles if default directory is used.&nbsp;Default directory provided is indeed based on EBX.Platform repository (Directory is a standard adaptation).</p></li><li><p>Version 3.x default directory is transparently migrated.</p></li><li><p>In EBX, it is now possible to manage extended definition of access rights and action permissions (with a multiple rights and multiple profiles model).</p></li><li><p>In EBX, it is now possible to change an adaptation tree owner.</p></li><li><p>A full permission management is also provided for managing branches and delegating rights.</p></li><li><p>Permission resolution is generally based on a restriction principle: the resolved permission that the user has is the minimal right granted by: the branch, the instance and the node.</p></li></ul>
+<h2>
+<a name="id4"></a>Miscellaneous</h2>
+<ul>
+<li><p>Some deprecated methods have been removed.</p><p> - <code>ProcedureContext.writeAdaptation(Adaptation, File)</code></p><p> - <code>ProcedureContext.writeAdaptation(Adaptation, OutputStream, boolean)</code></p><p>Other (non-deprecated) methods have been removed:</p><p> - <code>ProcedureContext.computeChangesForImport(Archive)</code></p><p> - <code>ProcedureContext.doApplyDiff(CfDiffComputer)</code></p><p> - <code>ProcedureContext.doExportAllRepositoryToArchive(Archive)</code></p><p>These methods were probably not used. If this is nevertheless the case, please contact technical support.</p></li><li><p> Published API for computing and accessing differences, in package <code>com.orchestranetworks.service.comparison</code> (see javadoc). </p></li><li><p> Added class <code>com.orchestranetworks.instance.Repository</code> , as a central access point to the repository and its resources. </p></li><li><p> Published method <code>refreshSchemas(boolean)</code> for hot schema refresh, in class <code>com.orchestranetworks.instance.Repository</code> (see javadoc). </p></li></ul>
+<h2>
+<a name="id5"></a>Repository and Core Engine</h2>
+<ul>
+<li><p><strong>Optimized caching:</strong> EBX.Platform Cache now supports large volumes of data in a constrained memory space. </p></li><li><p><strong>Repository persistence:</strong> File system persistence is no more supported. Default persistence becomes &quot;HSQLDB standalone&quot;. </p></li><li><p><strong>Repository migration from File System:</strong> A 3.x file system repository is transparently migrated at server startup. </p></li><li><p><strong>Repository migration from Relational Databases:</strong> if the 3.x repository to migrate is based on a relational database, it cannot be migrated transparently. In this case, you must follow the following steps: </p><ol>
+<li><p>In EBX 3.x, release or cancel all the adaptation editions.</p></li><li><p>In EBX 3.x, export a full repository archive (under &quot;Deployment&quot; tab).</p></li><li><p> In a new installation of EBX.Platform 4.0, in the &quot;repository&quot; directory (specified by property <code>{ebx.repository.directory}</code> ), delete all files and sub-directories. Then, copy the &quot;repository&quot; directory of 3.x installation to this location. </p></li><li><p> In the new installation of EBX.Platform 4.0, under directory <code>{ebx.repository.directory}/Adaptation</code> ,&nbsp;replace all files with the files contained in the archive generated at step 2. </p></li><li><p>Run EBX.Platform 4.0. The repository migration will be transparently executed when the first request is sent to the server.</p></li></ol>
+</li></ul>
+<h2>
+<a name="id6"></a>Known limitations:</h2>
+<ul>
+<li><p><strong>Optimizations:</strong> for large number of tables (in the order of 10,000 tables) and for large number of occurrences (in the order of 10,000,000 occurrences), optimizations are not yet available. </p></li><li><p><strong>Merge process:</strong> in case of instances&#39; add-add conflict, tables in the source are ignored. </p><p>Workaround: first create instances and merge, then tables may be populated and merged.</p></li><li><p><strong>Comparison and Merge:</strong> Header information are not yet included in the comparison user interface nor in the merge process. </p><p>Workaround: for merging header information, a least one value must be updated on instance.</p></li><li><p><strong>Comparison and Merge:</strong> Permissions defined are not yet included in the comparison user interface nor in the merge process. </p></li><li><p><strong>Repository locking:</strong> it is not yet detected when two Java virtual machines share the same physical repository. </p><p>Workaround: Repositories&#39; administrator must take care that a repository is not refered by two environments.</p></li><li><p><strong>Permissions management:</strong> a user without the built-in <code>PROVIDER</code> role cannot access on adaptation instances above agreements. </p><p> Workaround: the user must have the built-in <code>PROVIDER</code> role. </p></li><li><p><strong>Access right management:</strong> a node can be set as <code>ReadWrite</code> even it is not adaptable according to schema definition. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

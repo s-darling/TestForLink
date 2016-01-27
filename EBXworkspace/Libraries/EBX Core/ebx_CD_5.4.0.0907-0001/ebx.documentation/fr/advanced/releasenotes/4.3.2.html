@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.3.2</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.3.2.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.3.2</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.3.2 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.3.2</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Backward compatibility</a></li><li class="toc2"><a href="#id2s2">Bug Fixes</a></li><li class="toc2"><a href="#id2s3">Invalid XML characters</a></li><li class="toc2"><a href="#id2s4">Data Services</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.3.2 fix 001</h2>
+<p><strong>Release Date: March 19, 2008</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01678]</strong> Table content does not support a read concurrent access when an archive&#39;s import is made. </p></li><li><p><strong>[01686]</strong> Optimize and Refactor - Mutualize common values procedure does nothing on tables without non-key columns. </p></li><li><p><strong>[01688]</strong> Data Services - Count operation should return an integer but WSDL declares a string type. </p></li><li><p><strong>[01689]</strong> Data Services - Validation operation may return empty validationReport but WSDL does not define a minOccurs=0 </p></li></ul>
+<h2>
+<a name="id2"></a>4.3.2</h2>
+<p><strong>Release Date: March 17, 2008</strong></p><h3>
+<a name="id2s1"></a>Backward compatibility</h3>
+<ol>
+<li><p> The API has changed for optimize and refactor handling. The methods in ProcedureContext have been moved into a <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/AdaptationTreeOptimizerSpec.html">new framework</a> . </p></li></ol>
+<h3>
+<a name="id2s2"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01654]</strong> &quot;Optimize and Refactor&quot; procedure does nothing on table contents. </p></li><li><p><strong>[01667]</strong> In advanced component for facet enumeration, if the programmatic enumeration throws an exception when trying to display an empty string, the user interface crashes. </p></li><li><p><strong>[01668]</strong> Advanced component for facet enumeration does not support osd:tableRef&#39;s container attribute. </p></li><li><p><strong>[01669]</strong> Accented characters are poorly managed in XML history files. </p></li><li><p><strong>[01672]</strong> If EBX.platform startup process includes dynamic creation of persistence tables, WAS DB2 datasource implementation will return a null ResultSet (forbidden according to JDBC spec). </p></li><li><p><strong>[01676]</strong> Invalid XML characters cause data loading failure (for instance: ascii #17). </p></li><li><p><strong>[01679]</strong> Character ascii #14 causes data loading failure. </p></li><li><p><strong>[01680]</strong> Persistent home lock does not record lock time (from timestamp) and lock comment. </p></li><li><p><strong>[01682]</strong> In EBX, constraint documentation link to target node (example: a table node for a table reference) is missing if target node label contains a &#39;&amp;&#39; character. </p></li><li><p><strong>[01683]</strong> Invalid XML characters in complex node cause data loading failure. </p></li><li><p><strong>[01684]</strong> Invalid XML characters in node with maxOccurs &gt; 1 cause data loading failure. </p></li><li><p><strong>[01685]</strong> Table column access may not be restricted as expected if several permissions match user profile. </p></li></ul>
+<h3>
+<a name="id2s3"></a>Invalid XML characters</h3>
+<ul>
+<li><p>If an input via EBX contains invalid XML characters, an error is raised and a message is returned.</p></li><li><p>If a value with invalid XML characters is set via EBX.API, an exception is thrown.</p></li></ul>
+<h3>
+<a name="id2s4"></a>Data Services</h3>
+<p><strong>Note: Data Services is no more in Beta Version.</strong></p><h4>
+Bug Fixes</h4>
+<ul>
+<li><p>Lists of complex nodes are now generated in the WSDL.</p></li><li><p>The WSDL now matches exactly the response to a select operation.</p></li><li><p>Fault description is not present into WSDL</p></li><li><p>minOccurs is not handled in WSDL</p></li><li><p>Some attributes in select operation are not compliant with the generated WSDL</p></li><li><p>Attribute xml:lang was in wrong format (en_US instead of en-US) in schema declaration</p></li><li><p>Operations documentation was not WSDL compliant</p></li></ul>
+<h4>
+Enhancements</h4>
+<ul>
+<li><p>Declaration of WSSE header added to the WSDL.</p></li><li><p>Add HTTP Basic Authentication Support</p></li><li><p>WSDL documentation has been changed so as to be fully WS-I Compliant.</p></li><li><p>Branch &amp; Version names generated follow the naming convention of the Manager.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

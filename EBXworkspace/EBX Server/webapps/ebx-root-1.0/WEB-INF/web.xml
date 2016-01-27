@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+	<servlet>
+		<servlet-name>com.onwbp.front.RegisterRootServlet</servlet-name>
+		<servlet-class>com.onwbp.front.RegisterRootServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>wfserviceDispatcher</servlet-name>
+		<display-name>wfserviceDispatcher</display-name>
+		<servlet-class>
+			com.orchestranetworks.workflow.module.WfserviceDispatcher
+    	</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>d3ServiceDispatcher</servlet-name>
+		<display-name>d3ServiceDispatcher</display-name>
+		<servlet-class>
+			com.orchestranetworks.d3.ui.D3ServiceDispatcher
+    	</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>evbServiceDispatcher</servlet-name>
+		<display-name>evbServiceDispatcher</display-name>
+		<servlet-class>
+			com.orchestranetworks.eventbroker.manager.EvbServiceDispatcher
+    	</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>wfserviceDispatcher</servlet-name>
+		<url-pattern>/wfserviceDispatcher</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>d3ServiceDispatcher</servlet-name>
+		<url-pattern>/d3ServiceDispatcher</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>evbServiceDispatcher</servlet-name>
+		<url-pattern>/evbServiceDispatcher</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

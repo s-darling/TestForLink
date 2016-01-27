@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Java EE deployment</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="installation_deploy_j2ee" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Administration Guide &gt; Installation &amp; configuration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=installation/deploy_on_j2ee.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Installation &amp; configuration</span></div>
+<h1>
+Java EE deployment</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Software components</a></li><li class="toc1"><a href="#thirdparty">Third-party libraries</a><ul class="toc2">
+<li class="toc2"><a href="#databaseDrivers">Database drivers</a></li><li class="toc2"><a href="#smtp_library">SMTP and emails</a></li><li class="toc2"><a href="#ssl">Secure Socket Layer (SSL)</a></li><li class="toc2"><a href="#jms">Java Message Service (JMS)</a></li></ul>
+</li><li class="toc1"><a href="#id3">Web applications</a><ul class="toc2">
+<li class="toc2"><a href="#appsBuiltin">EBX5 built-in web applications</a></li><li class="toc2"><a href="#appsCustom">Custom web applications</a></li></ul>
+</li><li class="toc1"><a href="#ebx_webapp">Deployment details</a><ul class="toc2">
+<li class="toc2"><a href="#dd_intro">Introduction</a></li><li class="toc2"><a href="#id4s2">User interface and web access</a></li><li class="toc2"><a href="#dataSource">Data source of the EBX5 repository</a></li><li class="toc2"><a href="#smtp">Mail sessions</a></li><li class="toc2"><a href="#jms_factory">JMS connection factory</a></li><li class="toc2"><a href="#jms_dataServices">JMS for data services</a></li><li class="toc2"><a href="#jms_d3">JMS for distributed data delivery (D3)</a></li></ul>
+</li><li class="toc1"><a href="#examples">Java EE deployment examples</a></li><li class="toc1"><a href="#id6">Limitations</a><ul class="toc2">
+<li class="toc2"><a href="#clustering">Clustering</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Software components</h2>
+<p>EBX5 uses the following components:</p><ul>
+<li><p>Library <code>ebx.jar</code></p></li><li><p><a target="_self" href="#thirdparty">Third-party Java libraries</a></p></li><li><p><a target="_self" href="#appsBuiltin">EBX5 built-in web applications</a> and optional <a target="_self" href="#appsCustom">custom web applications</a></p></li><li><p><a target="_self" href="../installation/properties.html">EBX5 main configuration file</a></p></li><li><p><a target="_self" href="../engine/repository_administration.html">EBX5 repository</a></p></li><li><p><a target="_self" href="../engine/directory.html">Default user and roles directory</a>, integrated within the EBX5 repository, or a third-party system (LDAP, RDBMS) for user authentication</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/supported_env.html">Supported environments</a></p></div>
+<h2>
+<a name="thirdparty"></a>Third-party libraries</h2>
+<p>EBX5 requires several third party Java libraries. These libraries must be deployed and accessible from the class-loader of <code>ebx.jar</code>. Depending on the application server being used, these libraries may already be present or need to be added manually.</p><h3>
+<a name="databaseDrivers"></a>Database drivers</h3>
+<p>EBX5 repository requires a database. Generally, the required driver is configured along with a data source, if using one. Depending on the database configured in the main configuration file, one of the following drivers is required:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>H2</p></td><td class="ebx_definitionListDefinition"><p>Version 1.2 validated.</p><p><a target="_blank" href="http://www.h2database.com/">http://www.h2database.com/</a></p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Oracle JDBC</p></td><td class="ebx_definitionListDefinition"><p>Oracle 10g validated.</p><p>JAR files to include: <code>ojdbc14.jar</code> and <code>orai18n.jar</code></p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>DB2 JDBC</p></td><td class="ebx_definitionListDefinition"><p>DB2 UDB V8.2 validated.</p><p>JAR files to include: <code>db2jcc_license_cu.jar</code> and <code>db2jcc.jar</code></p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>SQL Server JDBC</p></td><td class="ebx_definitionListDefinition"><p>SQL Server 2005 and SQL Server 2008 validated. </p><p>JAR file to include: <code>sqljdbc.jar</code></p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>PostgreSQL</p></td><td class="ebx_definitionListDefinition"><p>PostgreSQL 8.3 validated. Contact Orchestra Networks Professional Services if considering PostgreSQL 8.4.</p><p>JAR file to include: <code>postgresql-8.3-604.jdbc3.jar</code></p></td></tr>
+</table>
+<div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../installation/deploy_on_j2ee.html#dataSource">Data source of the EBX5 repository</a></li><li><a target="_self" href="../installation/properties.html#ebxPersistence">Configuring the EBX5 repository</a></li></ul>
+</div>
+<h3>
+<a name="smtp_library"></a>SMTP and emails</h3>
+<p>The libraries for JavaMail 1.2 email management and the JavaBean Activation Framework are required.</p><p>The following libraries are used by email features in EBX5. See <a target="_self" href="../installation/properties.html#smtp">Activating and configuring SMTP and e-mails</a> for the details of the configuration.</p><ul>
+<li><p><code>mail.jar</code>, version 1.2, from December 5, 2000</p></li><li><p><code>smtp.jar</code>, version 1.2, from December 5, 2000</p></li><li><p><code>pop3.jar</code>, version 1.2, from December 5, 2000</p></li><li><p><code>activation.jar</code>, version 1.0.1, from May 21, 1999, or the maintenance release version 1.0.2, from August 28, 2002</p></li></ul>
+<div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/technetwork/java/javamail/index.html">JavaMail</a></li><li><a target="_blank" href="http://www.oracle.com/technetwork/java/jaf11-139815.html">JavaBeans Activation Framework</a></li></ul>
+</div>
+<h3>
+<a name="ssl"></a>Secure Socket Layer (SSL)</h3>
+<p>These libraries are required if your web applications use SSL features.</p><ul>
+<li><p><code>jsse.jar</code>: <a target="_blank" href="http://www.oracle.com/technetwork/java/download-141865.html">http://www.oracle.com/technetwork/java/download-141865.html</a></p></li><li><p><code>ibmjsse.jar</code>: <a target="_blank" href="http://www.ibm.com/developerworks/java/jdk/security/">http://www.ibm.com/developerworks/java/jdk/security/</a></p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/properties.html">EBX5 main configuration file</a></p></div>
+<h3>
+<a name="jms"></a>Java Message Service (JMS)</h3>
+<p>When using JMS, a version 1.1 or higher is required.</p><p>Depending on whether a Java EE application server or a Servlet/Java Server Pages (JSP) implementation is being used, the library required is as follows:</p><ul>
+<li><p>For an application server based on Java EE (Java Platform Enterprise Edition), the required JMS provider library is available by default. See <a target="_blank" href="http://www.oracle.com/technetwork/java/javaee/overview">http://www.oracle.com/technetwork/java/javaee/overview</a> for more information.</p></li><li><p>For a Servlet/Java Server Pages (JSP) implementation using Java SE (Java Platform Standard Edition), for example Apache Tomcat, a JMS provider library such as <a target="_blank" href="http://activemq.apache.org">Apache ActiveMQ</a> may need to be added. See <a target="_blank" href="http://www.oracle.com/technetwork/java/javase/overview">http://www.oracle.com/technetwork/java/javase/overview</a> for more information.</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/properties.html">EBX5 main configuration file</a></p></div>
+<h2>
+<a name="id3"></a>Web applications</h2>
+<p>EBX5 provides pre-packaged EARs that you may deploy directly if your enterprise has no custom web applications to add as EBX5 modules. If you are deploying custom web applications as EBX5 modules, it is recommended that you rebuild an EAR containing your custom modules packaged at the same level as the built-in web applications.</p><p>For more information, see the note on <a target="_self" href="#ear_packaging">repackaging the EBX5 EAR</a> at the end of this chapter.</p><h3>
+<a name="appsBuiltin"></a>EBX5 built-in web applications</h3>
+<p>EBX5 includes the following built-in web applications.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>ebx</code></p></td><td class="ebx_definitionListDefinition"><p>EBX5 entry point, which handles the initialization upon start up. See <a target="_self" href="#ebx_webapp">Deployment details</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>ebx-root-1.0</code></p></td><td class="ebx_definitionListDefinition"><p>EBX5 root web application. Any application that uses EBX5 requires the root web application to be deployed.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>ebx-manager</code></p></td><td class="ebx_definitionListDefinition"><p>EBX5 user interface web application.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>ebx-dma</code></p></td><td class="ebx_definitionListDefinition"><p>EBX5 data model assistant, which helps with the creation of data models through the user interface.</p><p><strong>Note:</strong> EBX5 modeling tool requires the deployment of <code>ebx-manager</code> user interface web application.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>ebx-dataservices</code></p></td><td class="ebx_definitionListDefinition"><p>EBX5 data services web application. Data services allow external interactions with data spaces, data workflows, and the user and roles directory in the EBX5 repository using the SOAP and Web Services Description Language (WSDL) standards.</p><p><strong>Note:</strong> The EBX5 web service generator requires the deployment of the <code>ebx-manager</code> user interface web application.</p></td></tr>
+</table>
+<h3>
+<a name="appsCustom"></a>Custom web applications</h3>
+<p>Every custom web application that is defined as an <a target="_self" href="../models/modules_packaging.html#structure">EBX5 module</a> must be registered with the <code>ModulesRegister.registerWebApp()</code> API. Registration of modules is explained in the <a target="_self" href="../models/modules_packaging.html#registration">EBX5 modules</a> chapter.</p><div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../models/modules_packaging.html#registration">Registration</a></li><li><a target="_self" href="../installation/properties.html#moduleRegistration">Module registration</a></li></ul>
+</div>
+<h2>
+<a name="ebx_webapp"></a>Deployment details</h2>
+<h3>
+<a name="dd_intro"></a>Introduction</h3>
+<p>This section describes the various options that are offered for the deployment of <code>ebx</code> web application. These options are available in its deployment descriptor (the file <code>WEB-INF/web.xml</code>) and are complemented by the various properties defined in the main configuration file.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+For JBoss application servers, any unused resources must be removed from the <code>WEB-INF/web.xml</code> deployment descriptor.</fieldset>
+<div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../installation/properties.html">EBX5 main configuration file</a></li><li><a target="_self" href="../installation/supported_env.html#applicationServers">Supported application servers</a></li></ul>
+</div>
+<h3>
+<a name="id4s2"></a>User interface and web access</h3>
+<p>The web application &#39;<code>ebx</code>&#39; (packaged as <code>ebx.war</code>) contains the servlet <code>FrontServlet</code>, which handles initialization and serves as the single user interface entry point for the EBX5 web tools.</p><h4>
+Configuring the deployment descriptor for &#39;FrontServlet&#39;</h4>
+<p>In the file <code>WEB-INF/web.xml</code> of the web application &#39;<code>ebx</code>&#39;, the following elements must be configured for <code>FrontServlet</code>:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>/web-app/servlet/load-on-startup</code></p></td><td class="ebx_definitionListDefinition"><p>To ensure that <code>FrontServlet</code> initializes upon EBX5 start up, the <code>web.xml</code> deployment descriptor must specify the element <code>&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</code>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><code>/web-app/servlet-mapping/url-pattern</code></p></td><td class="ebx_definitionListDefinition"><p><code>FrontServlet</code> must be mapped to the path &#39;<code>/</code>&#39;.</p></td></tr>
+</table>
+<h4>
+Configuring the application server for &#39;FrontServlet&#39;</h4>
+<ul>
+<li><p><code>FrontServlet</code> must be authorized to access other contexts, such as <code>ServletContext</code>.</p><p>For example, on Tomcat, this configuration is done using the attribute <code>crossContext</code> in the configuration file <code>server.xml</code>, as follows: </p><pre class="ebx_example brush: html">
+&lt;Context path="/ebx" docBase="(...)" crossContext="true"/>
+</pre>
+</li><li><p>When several EBX5 web components are to be displayed on the same HTML page, for instance using iFrames, it may be required to disable the management of cookies due to limitations present in certain Internet browsers.</p><p>For example, on Tomcat, this configuration is provided by the attribute <code>cookies</code> in the configuration file <code>server.xml</code>, as follows:</p><pre class="ebx_example brush: html">
+&lt;Context path="/ebx" docBase="(...)" cookies="false"/>
+</pre>
+</li></ul>
+<h3>
+<a name="dataSource"></a>Data source of the EBX5 repository</h3>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If the EBX5 main configuration specifies the property <code>ebx.persistence.url</code>, then the environment entry below will be ignored by EBX5 runtime. See <a target="_self" href="../installation/properties.html#ebxPersistence">Configuring the EBX5 repository</a> for more information on this property.</fieldset>
+<p>The JDBC data source for EBX5 is specified in the deployment descriptor <code>WEB-INF/web.xml</code> of the <code>ebx</code> web application as follows:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Reserved resource name</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>jdbc/EBX_REPOSITORY</code></p></td><td valign="top"><p>JDBC data source for EBX5 Repository.</p><p>Java type: <code>javax.sql.DataSource</code></p></td></tr>
+</tbody>
+</table>
+<div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../installation/properties.html#ebxPersistence">Configuring the EBX5 repository</a></li><li><a target="_self" href="../engine/repository_administration.html#privileges">Rules for the access to the database and user privileges</a></li><li><a target="_self" href="../deployment_examples/OracleConfigurationOnWebSphere6.html">Oracle data source configuration on WebSphere Application Server 6</a></li><li><a target="_self" href="../deployment_examples/SqlServerConfigurationOnWebSphere6.html">SQL Server data source configuration on WebSphere Application Server 6</a></li></ul>
+</div>
+<h3>
+<a name="smtp"></a>Mail sessions</h3>
+<p></p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If the EBX5 main configuration does not set <code>ebx.mail.activate</code> to &#39;true&#39;, or if it specifies the property <code>ebx.mail.smtp.host</code>, then the environment entry below will be ignored by EBX5 runtime. See <a target="_self" href="../installation/properties.html#smtp">SMTP</a> in the EBX5 main configuration properties for more information on these properties.</fieldset>
+<p>SMTP and email is declared in the deployment descriptor <code>WEB-INF/web.xml</code> of the <code>ebx</code> web application as follows:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Reserved resource name</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>mail/EBX_MAIL_SESSION</code></p></td><td valign="top"><p>Java Mail session used to send e-mails from EBX5.</p><p>Java type: <code>javax.mail.Session</code></p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="jms_factory"></a>JMS connection factory</h3>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If the EBX5 main configuration does not activate JMS through the property <code>ebx.jms.activate</code>, then environment entry below will be ignored by the EBX5 runtime. See <a target="_self" href="../installation/properties.html#jms">JMS</a> in the EBX5 main configuration properties for more information on this property.</fieldset>
+<p>The JMS connection factory is declared in the deployment descriptor <code>WEB-INF/web.xml</code> of the <code>ebx</code> web application as follows:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Reserved resource name</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>jms/EBX_JMSConnectionFactory</code></p></td><td valign="top"><p>JMS connection factory used by EBX5 to create connections with the JMS provider configured in the operational environment of the application server.</p><p>Java type: <code>javax.jms.QueueConnectionFactory</code></p></td><td valign="top"><p>Yes</p></td></tr>
+</tbody>
+</table>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+For deployment on JBoss and WebLogic application servers with JNDI capabilities, it is necessary to update <code>EBX5.ear</code> or <code>EBX5ForWebLogic.ear</code> respectively for additional mappings of all required resource names to JNDI names.</fieldset>
+<h3>
+<a name="jms_dataServices"></a>JMS for data services</h3>
+<p>To configure data services to use JMS instead of the default HTTP, you must configure the <a target="_self" href="#jms_factory">JMS connection factory</a> and the following queues, declared in the <code>WEB-INF/web.xml</code> deployment descriptor of the <code>ebx</code> web application. This is the only method for configuring JMS for data services.</p><p>See <a target="_self" href="../installation/properties.html#jms">JMS</a> for more information on the associated EBX5 main configuration properties.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If the EBX5 main configuration does not activate JMS through the property <code>ebx.jms.activate</code>, then the environment entries below will be ignored by EBX5 runtime. See <a target="_self" href="../installation/properties.html#jms">JMS</a> in the EBX5 main configuration properties for more information on this property.</fieldset>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Reserved resource name</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>jms/EBX_QueueIn</code></p></td><td valign="top"><p>JMS queue for incoming messages sent to EBX5 by other applications.</p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>jms/EBX_QueueFailure</code></p></td><td valign="top"><p>JMS queue for failures. It is used for incoming messages for which an error has occurred. This allows replaying these messages if necessary.</p><p>Java type: <code>javax.jms.Queue</code></p><p><strong>Note:</strong> For this property to be read, the main configuration must also activate the queue for failures through the property <code>ebx.jms.activate.queueFailure</code>. See <a target="_self" href="../installation/properties.html#jms">JMS</a> in the EBX5 main configuration properties for more information on these properties.</p></td><td valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="jms_d3"></a>JMS for distributed data delivery (D3)</h3>
+<p>To configure D3 to use JMS instead of the default HTTP and TCP protocols, you must configure the <a target="_self" href="#jms_factory">JMS connection factory</a> and the following queues, declared in the <code>WEB-INF/web.xml</code> deployment descriptor of the <code>ebx</code> web application.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If the EBX5 main configuration does not activate JMS and D3 (slave, hub or master node) through the properties <code>ebx.d3.mode</code>, <code>ebx.jms.activate</code> and <code>ebx.jms.d3.activate</code> then the environment entries below will be ignored by EBX5 runtime. See <a target="_self" href="../installation/properties.html#jms">JMS</a> and <a target="_self" href="../installation/properties.html#jms">Distributed data delivery (D3)</a> in the EBX5 main configuration properties for more information on these properties.</fieldset>
+<h4>
+Common declarations for master and slave nodes</h4>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Reserved resource name</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Master node</strong></p></th><th valign="top"><p><strong>Slave node</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>jms/EBX_D3MasterQueue</code></p></td><td valign="top"><p>D3 master JMS queue (only for D3 mode &#39;slave&#39; or &#39;hub&#39;). It specifies the name of the communication queue with master D3 node.</p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Required</p></td></tr>
+<tr>
+<td valign="top"><p><code>jms/EBX_D3ReplyQueue</code></p></td><td valign="top"><p>D3 Reply JMS queue (for all D3 modes except &#39;single&#39; mode). It specifies the name of the reply queue for D3 node conversation.</p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>Required</p></td><td valign="top"><p>Required</p></td></tr>
+<tr>
+<td valign="top"><p><code>jms/EBX_D3SlaveArchiveQueue</code></p></td><td valign="top"><p>D3 slave Archive JMS queue (only for D3 mode &#39;slave&#39; or &#39;hub&#39;). It specifies the name of slave transfer archive queue used by master D3 node.</p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Required</p></td></tr>
+<tr>
+<td valign="top"><p><code>jms/EBX_D3SlaveCommunicationQueue</code></p></td><td valign="top"><p>D3 slave Communication JMS queue (only for D3 mode &#39;slave&#39; or &#39;hub&#39;). It specifies the name of the slave communication queue used by master D3 node.</p><p>If this property is not specified, EBX5 uses <code>jms/EBX_QueueIn</code> by default.</p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Optional</p></td></tr>
+</tbody>
+</table>
+<h4>
+Additional declarations on the master node</h4>
+<p>If D3 enables JMS, then the deployment descriptor of the master node must specify the specific queues associated with each slave. The following table provides an example of the additional entries that are needed for communicating with a slave node &quot;SL1&quot; (the next section describes the environment on which these settings are declared). </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Resource name for slave &quot;SL1&quot;</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>SL1_QueueIn</code> (custom name, see note below)</p></td><td valign="top"><p>Queue corresponding to <code>jms/EBX_QueueIn</code> of slave node. </p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>One of either this queue or the queue &#39;SL1_D3SlaveCommunicationQueue&#39; must be defined</p></td></tr>
+<tr>
+<td valign="top"><p><code>SL1_D3SlaveArchiveQueue</code> (custom name, see note below)</p></td><td valign="top"><p>Queue corresponding to <code>jms/EBX_D3SlaveArchiveQueue</code> of slave node. </p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>SL1_D3SlaveCommunicationQueue</code> (custom name, see note below)</p></td><td valign="top"><p>Queue corresponding to <code>jms/EBX_D3SlaveCommunicationQueue</code> of slave node. </p><p>Java type: <code>javax.jms.Queue</code></p></td><td valign="top"><p>One of either this queue or the queue &#39;SL1_QueueIn&#39; must be defined</p></td></tr>
+</tbody>
+</table>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Due to restrictions on the master node, the resource name of the slave communication queue must be the same as the physical name of the queue.</fieldset>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+For deployment on JBoss and WebLogic application servers with JNDI capabilities, it is necessary to update <code>EBX5.ear</code> or <code>EBX5ForWebLogic.ear</code> respectively for additional mappings of all required resource names to JNDI names.</fieldset>
+<h4>
+Example of a simple JMS configuration between a master node and a slave node</h4>
+<p align="center"><img alt="/simple_jms_config_110dpi.png" src="../resources/images/d3/simple_jms_config_110dpi.png"></img></p><h2>
+<a name="examples"></a>Java EE deployment examples</h2>
+<p>EBX5 can be deployed on any Java EE application server supporting at least Servlet 2.3. The following documentation on Java EE deployment and installation notes are available:</p><ul>
+<li><p><a target="_self" href="../deployment_examples/tomcat5.html">Installation on Tomcat 5</a></p></li><li><p><a target="_self" href="../deployment_examples/websphere6.html">Installation on WebSphere 6</a></p></li><li><p><a target="_self" href="../deployment_examples/weblogic81.html">Installation on WebLogic 8.1</a></p></li></ul>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<ul>
+<li><p>The EBX5 installation notes on Java EE application servers do not replace the native documentation of each application server.</p></li><li><p>They are <em>not</em> general installation recommendations, as the installation process is determined by architectural decisions, such as the technical environment, application mutualization, delivery process, and organizational decisions.</p></li><li><p><a name="ear_packaging"></a>In these examples, no additional EBX5 modules are deployed. To deploy additional modules, the best practice is to rebuild an EAR with the module as a web application at the same level as the other EBX5 modules. The web application must declare its class path dependency as specified by the Java™ 2 Platform Enterprise Edition Specification, v1.4:</p><blockquote><p><em><strong>J2EE.8.2 Optional Package Support</strong></em></p><p><em>(...)</em></p><p><em>A JAR format file (such as a JAR file, WAR file, or RAR file) can reference a JAR file by naming the referenced JAR file in a Class-Path header in the Manifest file of the referencing JAR file. The referenced JAR file is named using a URL relative to the URL of the referencing JAR file. The Manifest file is named META-INF/MANIFEST.MF in the JAR file. The Class-Path entry in the Manifest file is of the form:</em></p><p><em><code>Class-Path: list-of-jar-files-separated-by-spaces</code></em></p></blockquote><p>In an &quot;industrialized&quot; process, it is strongly recommended to develop a script that automatically builds the EAR, with the custom EBX5 modules, the EBX5 web applications, as well as all the required shared libraries.</p></li><li><p> In order to avoid unpredictable behavior, the guideline to follow is to avoid any duplicates of <code>ebx.jar</code> and other libraries in the class-loading system.</p></li></ul>
+</fieldset>
+<h2>
+<a name="id6"></a>Limitations</h2>
+<h3>
+<a name="clustering"></a>Clustering</h3>
+<p>EBX5 does not include a cache synchronization mechanism, thus it cannot be deployed into a cluster of active instances.</p><p>See <a target="_self" href="../engine/repository_administration.html#architecture">Technical Architecture</a> for more information.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Installation &amp; configuration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

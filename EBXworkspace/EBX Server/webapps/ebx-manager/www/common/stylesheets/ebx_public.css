@@ -1,0 +1,90 @@
+
+.ebx_ColoredBorder {
+	border-width: 1px;
+	border-style: solid;
+}
+
+.ebx_Selected {
+	color: #000000;
+}
+
+.ebx_Disabled {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+
+.ebx_FatalError,
+.ebx_DataSetValidationInfo a.ebx_FatalError {
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E00000;
+	outline: 4px double #E00000;
+	padding: 0 0.2em;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.ebx_Error,
+.ebx_DataSetValidationInfo a.ebx_Error,
+.ebx_ProductInfo .ebx_LicenseTimeLimited,
+.ebx_LicenseExpired,
+#ebx_MessageBoxErrorTabLabel,
+#ebx_MessageBoxErrorList,
+#EBX_NodeDocumentation_Panel .dcpError {
+	color: #E00000;
+}
+#ebx_MessageBoxErrorList .ebx_MessageBoxMessageUnread {
+	border-color: #E00000;
+}
+#EBX_NodeDocumentation_Panel .dcpError {
+	background-color: #F0D0D0;
+}
+
+.ebx_Warning,
+.ebx_DataSetValidationInfo a.ebx_Warning,
+#ebx_MessageBoxWarningTabLabel,
+#ebx_MessageBoxWarningList,
+#EBX_NodeDocumentation_Panel .dcpWarning {
+	color: #926100;
+}
+#ebx_MessageBoxWarningList .ebx_MessageBoxMessageUnread {
+	border-color: #926100;
+}
+#EBX_NodeDocumentation_Panel .dcpWarning {
+	background-color: #FFE0B0;
+}
+
+.ebx_Info,
+.ebx_DataSetValidationInfo a.ebx_Info,
+#ebx_MessageBoxInfoTabLabel,
+#ebx_MessageBoxInfoList,
+#EBX_NodeDocumentation_Panel .dcpInfo {
+	color: #436CCB;
+}
+#ebx_MessageBoxInfoList .ebx_MessageBoxMessageUnread {
+	border-color: #436CCB;
+}
+#EBX_NodeDocumentation_Panel .dcpInfo {
+	background-color: #D0D0FF;
+}
+
+.ebx_ValueND,
+.ebx_InputTip {
+	color: #505050;
+	font-style: italic;
+}
+
+/***START accessibility ***/
+
+@media aural, braille, embossed {
+	.ebx_AccessibilityOnly {
+	}
+}
+
+@media handheld, print, projection, screen, tty, tv {
+	.ebx_AccessibilityOnly {
+		display: none;
+	}
+}
+/***END accessibility ***/
+

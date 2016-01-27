@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.7</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.7.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.7</h1>
+<p><em>Release Date: January 14, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Database Support</a><ul class="toc2">
+<li class="toc2"><a href="#PostgreSQL">PostgreSQL</a></li></ul>
+</li><li class="toc1"><a href="#id2">Data Model</a><ul class="toc2">
+<li class="toc2"><a href="#constraintsOnTable">Constraints at table level.</a></li><li class="toc2"><a href="#id2s2">Schema generation process in Data Model Assistant</a></li></ul>
+</li><li class="toc1"><a href="#id3">Data Services</a><ul class="toc2">
+<li class="toc2"><a href="#DataServicesClose">New services</a></li></ul>
+</li><li class="toc1"><a href="#id4">Validation</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Constraints on table</a></li><li class="toc2"><a href="#id4s2">Performance</a></li></ul>
+</li><li class="toc1"><a href="#id5">User &amp; Permission</a><ul class="toc2">
+<li class="toc2"><a href="#PermissionValidate">Permission to validate</a></li></ul>
+</li><li class="toc1"><a href="#id6">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">New feature: the graphical workflow history</a></li></ul>
+</li><li class="toc1"><a href="#id7">Miscellaneous</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Auto-increment enhancements</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model &amp; DMA</a></li><li class="toc2"><a href="#bug-Documentation">Documentation</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Database Support</h2>
+<h3>
+<a name="PostgreSQL"></a>PostgreSQL</h3>
+<p>PostgreSQL (8.3 and further) is now officially supported as a database backend.</p><h2>
+<a name="id2"></a>Data Model</h2>
+<h3>
+<a name="constraintsOnTable"></a>Constraints at table level.</h3>
+<p> A new kind of constraint has been defined to support rich validation plans on tables. Constraints on table allow to perform complex checks on records inside a table. See <a href="../models/constraints.html#constraintsOnTable">constraints on table</a> .&nbsp;</p><h3>
+<a name="id2s2"></a>Schema generation process in Data Model Assistant</h3>
+<p> Schema generation process has been simplified, allowing the user to generate in a simpler way their first schema in a newly installed repository. The user no longer needs to define technical properties about the model.</p><h2>
+<a name="id3"></a>Data Services</h2>
+<h3>
+<a name="DataServicesClose"></a>New services</h3>
+<p>New services are available to close a branch or a version.</p><h2>
+<a name="id4"></a>Validation</h2>
+<h3>
+<a name="id4s1"></a>Constraints on table</h3>
+<p><a href="#constraintsOnTable">Constraints on table</a> have been defined for optimizing the global validation process on adaptation table. </p><h3>
+<a name="id4s2"></a>Performance</h3>
+<p> The validation process has been enhanced so as to reduce the cost and the duration of the initial and successive validations. Some criteria are statically detected from the model, allowing to avoid the unnecessary validation of nodes. For example, a node which has no constraints and a <code>minOccurs</code> equal to &#39;0&#39; will never be validated. This also concerns the <a href="../models/constraints.html#computedValues">computed values</a> .&nbsp;On large tables using such nodes, the duration of the validation process can be drastically reduced. </p><h2>
+<a name="id5"></a>User &amp; Permission</h2>
+<h3>
+<a name="PermissionValidate"></a>Permission to validate</h3>
+<p>The validation service is now subjected to specific permissions. These permissions can be set explicitly on instance level. On home level, the current user cannot perform the validation if it is forbidden on at least one of the instances.</p><p>Note: This permission does not apply when the validation is called programmatically.</p><h2>
+<a name="id6"></a>Workflow</h2>
+<h3>
+<a name="id6s1"></a>New feature: the graphical workflow history</h3>
+<p>This new display mode offers a simple and attractive presentation of a running process instance. The information is visual and intuitive.</p><p align="center"><img alt="Graphical Workflow History Preview" src="../resources/images/releasenotes/4.7.7-GraphicalWorkflowHistoryPreview.png" align="middle"></img></p><h2>
+<a name="id7"></a>Miscellaneous</h2>
+<h3>
+<a name="id7s1"></a>Auto-increment enhancements</h3>
+<p>This release fixes some auto-increment issues. A local cache henceforth avoids expensive intermediate commits of the persisted auto-increment value. Insertions in &#39;overwriting&#39; and &#39;occulting&#39; mode are now supported.</p><p>Some projects can exploit the fact that the last auto increment value was not stored according to the maximum value found in the updated table. This can now be configured when necessary.</p><p> For more information, please refer to the section <a href="../models/constraints.html#autoIncrementedValues">Auto incremented values</a> .&nbsp;</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[1318]</em> History schema is not up-to-date regarding the history documents that are currently generated. </p></li><li><p><em>[2168]</em> Inter-instance dependencies are not built when loading a home. </p><p> The method <code>SdpInterInstanceDependenciesBuilder::buildDependencies(CfHome aHome)</code> is only called when creating and deleting instances or updating the home. </p><p>It should also be called when loading a home for read-only.</p></li><li><p><em>[2284]</em> Cannot occult a table record if its key is auto incremented. </p><p>When trying to occult an inherited record, it reports an error message: &#39;cannot create a new occurrence because primary key has undefined elements&#39;.</p></li><li><p><em>[2285]</em> Cannot overwrite a table record if its key is auto incremented. </p><p>When trying to overwrite an inherited record, it reports an error message: &#39;cannot create a new occurrence because primary key has undefined elements&#39;.</p></li><li><p><em>[2330]</em><code>ConcurrentModificationException</code> at EBX.Platform boot. </p><p> In some cases, EBX.Platform may issue a <code>ConcurentModificationException</code> and fails to start. </p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2199]</em> The buttons &#39;new agreement&#39; and &#39;new adaptation&#39; are visible in the DMA context even if they are useless. </p><p>In EBX, in the DMA Branch, the buttons &#39;new agreement&#39; and &#39;new adaptation&#39; are visible at Data Model instance level even if they are useless.</p><p>Those buttons should be hidden.</p></li><li><p><em>[2281]</em> In Data Model Assistant, the service &quot;Import a model&quot; is erroneous on complex type properties. </p><p> When a complex type is defined with advanced properties ( <code>osd:class</code> ,&nbsp;<code>osd:access</code> , <code>UiBeanEditor</code> ), these are not imported during the import of an XSD model. </p></li><li><p><em>[2286]</em> In Data Model Assistant, the service &quot;Import a model&quot; is erroneous on &quot;rules&quot; parameters. </p><p>When the same rule is used on several nodes, the class parameters are imported for the first occurrence of the class but not in the others.</p></li><li><p><em>[2322]</em> An inherited attribute field shall not be able to inherit from itself locally. </p><p> It is possible to specify a field declaring a local <code>osd:inheritance</code> (that is, the property <code>sourceRecord</code> is not specified) and inheriting from itself (that is, <code>sourceNode</code> is itself). This case is conceptually inconsistent and it leads to infinite loops at runtime. It must be detected and forbidden when validating the schema. </p></li><li><p><em>[2333]</em> Auto increment negative step is not supported by EBX.Platform. </p><p>In Data Model Assistant, auto increment step can be set to a negative value.</p><p>Schema setup does not check for negative step also.</p><p>However, this feature is not supported by EBX.Platform.</p></li></ul>
+<h3>
+<a name="bug-Documentation"></a>Documentation</h3>
+<ul>
+<li><p><em>[2294]</em> The sample for uniqueness constraint in documentation is not a valid xsd declaration. </p><p><code>&lt;xs:unique&gt;</code> tag must be defined under <code>&lt;element&gt;</code> tag. Otherwise, the schema will be validated with errors in XML Spy or Eclipse. </p><p> In the documentation sample, <code>&lt;xs:unique&gt;</code> tag is defined under <code>&lt;complexType&gt;</code> tag. </p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><em>[2274]</em> Problem during import when fields contain the &#39;\&#39; char. </p><p>When fields contain the &#39;\&#39; char, the import services are erroneous.</p></li><li><p><em>[2282]</em> XML Import in update mode wrongfully executes <code>TableTrigger.handleNewContext()</code> .&nbsp;</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><em>[2235]</em> The service &quot;Mutualize common values&quot; does nothing if there is only one adaptation child. </p><p>Table values are not mutualized on adaptation parent if there is only one child adaptation.</p></li><li><p><em>[2236]</em> Mutualized common value procedure cannot reset a table record to inherited if it includes computed values. </p><p> Computed values ( <code>ValueFunction</code> ) prevent from setting a record to inherited (delete overwrite) insofar as computed values are considered as values set, not inherited. </p></li><li><p><em>[2237]</em> Table view is not refreshed after &#39;Mutualize common values&#39; procedure. </p><p>If a table (or a hierarchy) is selected in EBX before calling the &#39;Mutualize common values&#39; procedure, the table view is not refreshed after the end of the procedure, and table content changes may not appear.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2228]</em> Text fields are no longer focusable with Internet Explorer 8. </p><p>In the form view of a table record, if an attribute is a foreign key, the related record is viewable by clicking on the Magnifying glass.</p><p>It opens an editable zone (HTML IFrame); after closing this zone, text fields of the original form are no longer focusable or editable.</p></li><li><p><em>[2245]</em> In EBX, the page displaying the permissions table is too heavy for large models with numerous nodes. </p><p>When a model has a few thousands of nodes, the access to an occurrence of the permissions table could take several minutes.</p><p>That case has been optimized in order to improve display times.</p></li><li><p><em>[2271]</em> Top banner links are not visible with Mozilla Firefox. </p><p>User &amp; Administrate links are not visible when running EBX in non-development mode; background color appears white and links are written in white also.</p></li><li><p><em>[2292]</em> On Internet Explorer, a Javascript error may occur when selecting a hierarchy dimension. </p><p>On Internet Explorer, when selecting a dimension for hierarchy, a Javascript error occurs if the mouse pointer is over a line of the dimensions tree while opening.</p></li><li><p><em>[2296]</em> In the standard &#39;print service&#39; on table, programmaticaly hidden rows are displayed. </p><p>The rows which are programmatically hidden via a SchemaExtension must not be in the printed rows when using the &#39;print service&#39;.</p></li><li><p><em>[2311]</em> EBX is XSS (Cross Site Scripting) vulnerable. </p><p>This is a regression since it matches the issue 1739 corrected in release 4.5.3.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><em>[2273]</em> Super-owner can access any data without specific permissions. </p><p>Permissions management:&nbsp;the super-owner can access any data without specific permissions even though he is not allowed to.</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><em>[2238]</em> Incremental validation may report a minOccurs error on a wrong table. </p><p>If table has defined &#39;minOccurs=0&#39; and table content is emptied, incremental validation may report &#39;The number of occurrences is less than the minimum specified&#39; on a wrong table node.</p></li><li><p><em>[2316]</em><code>The method ValueContextForValidation.getValue()</code> is erroneous when it is called on a complex node implementing a javaBean. </p><p> On a multi-occurrenced complex node, if a programmatic constraint is implemented, the method <code>ValueContextForValidation.getValue(Path)</code> throws a fatal error if a JavaBean is implemented. </p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><em>[2293]</em> Error in workflow language evaluation if user preferences are not initialized. </p><p>In workflow, variables are evaluated for sending mail or displaying label.</p><p> This evaluation depends on a locale. If the preferred locale is not initialized for the concerned user, an error may occur ( <code>NullPointerException</code> ). </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

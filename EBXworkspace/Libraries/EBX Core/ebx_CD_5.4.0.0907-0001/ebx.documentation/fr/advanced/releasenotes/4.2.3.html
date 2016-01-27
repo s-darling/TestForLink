@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.3</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.3.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.3</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.2.3 fix 002</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.2.3 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id3">4.2.3</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Bug Fixes</a></li><li class="toc2"><a href="#id3s2">Services on table occurrences: better accessibility and multiple selections</a></li><li class="toc2"><a href="#id3s3">Permissions on services defined by users</a></li><li class="toc2"><a href="#id3s4">New API for accessing to permissions</a></li><li class="toc2"><a href="#id3s5">Comparisons</a></li><li class="toc2"><a href="#id3s6">Merge process locks branches</a></li><li class="toc2"><a href="#id3s7">Merge process disables triggers</a></li><li class="toc2"><a href="#id3s8">Archives management</a></li><li class="toc2"><a href="#id3s9">Trigger as guard</a></li><li class="toc2"><a href="#id3s10">New behaviour for UI Components ( )</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.2.3 fix 002</h2>
+<p><strong>Release Date: July 11, 2007</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01495]</strong> Calling a Service by means of <code>UIHttpManagerComponent</code> API returns an illegal state exception. </p></li></ul>
+<h2>
+<a name="id2"></a>4.2.3 fix 001</h2>
+<p><strong>Release Date: July 10, 2007</strong></p><h3>
+<a name="id2s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01493]</strong> Service permissions can not be configured as UI does not display service names clearly. </p></li><li><p><strong>[01494]</strong> Table reference items ( <code>osd:tableRef</code> ) should be displayed sorted by formatted label. </p></li></ul>
+<h2>
+<a name="id3"></a>4.2.3</h2>
+<p><strong>Release Date: July 6, 2007</strong></p><h3>
+<a name="id3s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01484]</strong> In compare UI: there is no conflict detection for content types permissions and header information. </p></li><li><p><strong>[01486]</strong> Unability to define a uiBean for a multi occurrenced complex. The declared complex is used for all records as a whole but causes a ClassCastException. UIBean may apply for each single occurrence of the complex that could be hence repeated. </p></li><li><p><strong>[01487]</strong> Complex unbounded node can not be validated through EBX. </p></li><li><p><strong>[01482]</strong> In the compare UI, if node&#39;s path are too long, Microsoft Internet Explorer does not conform to the limit of the page for the differences table. Thus, user needs to scroll to see the button &quot;mark as decided&quot;. </p></li><li><p><strong>[01466]</strong> Only the owner (or administrator) of an adaptation should have access to the Activate/Inactivate button. </p></li><li><p><strong>[01491]</strong> When a table occurrence is created in the context of a user session, another user session that is already on a descendant of this table is not systematically notified of the new occurrence (the user must reselect the table for viewing the update). </p></li></ul>
+<h3>
+<a name="id3s2"></a>Services on table occurrences: better accessibility and multiple selections</h3>
+<p>Services that are defined on occurrences are accessible directly on the table view. However, the user can still execute them from the occurrence view.</p><p> Services can also be declared as executable on any number of occurrences. The attribute <code>activatedForPaths</code> has evolved consequently with a new syntax (previous one is still supported for ascendant compatibility). The new syntax is the following: </p><blockquote><p> If the path to the table is <code>/root/myTable</code> :&nbsp;</p><ul>
+<li><p><code>/root/myTable</code> activates the service on the table globally. </p></li><li><p><code>/root/myTable{1}</code> activates the service if one occurrence is selected. </p></li><li><p><code>/root/myTable{2}</code> activates the service if two occurrence are selected. </p></li><li><p><code>/root/myTable{</code><em><code>n</code></em><code>}</code> activates the service if exactly <em><code>n</code></em> occurrences are selected ( <em><code>n</code></em> is a positive integer). </p></li><li><p><code>/root/myTable{+}</code> activates the service if one, two, ..., <code>n</code> occurrences are selected (unbounded selection). </p></li></ul>
+</blockquote><p> For more details, see <a target="_self" href="../references/ui_services.html#instanceSchema">Schema Definition</a> .&nbsp;</p><p>For accessing to the multiple selection, the service container API has now a new method:</p><blockquote><p><code>ServiceContext.getSelectedOccurrences()</code></p></blockquote><h3>
+<a name="id3s3"></a>Permissions on services defined by users</h3>
+<p>Up to this version, permissions to execute services could be configured only through programmtic schema extensions. Permissions to execute a service are now also defined in the standard instance permissions (&quot;Permissions&quot; tab on an adaptation instance).</p><h3>
+<a name="id3s4"></a>New API for accessing to permissions</h3>
+<p> A new class is added to the API, <code>SessionPermissions</code> . It is a facade for checking the various permissions to access to Master Data entities (branches, instances, table occurrences, individual nodes) and to perform actions on them. </p><p>Those permissions are resolved in the context of a current user session and they can be accessed through the following new method:</p><blockquote><p><code>Session.getPermissions()</code> .&nbsp;</p></blockquote><h3>
+<a name="id3s5"></a>Comparisons</h3>
+<p>Up to this version, when a user compared two occurrences, he got all the details on terminal complex nodes, even values that were not different. The interface displays now only the values actually different</p><p>The API has a new method for comparing with full details under terminal nodes:</p><blockquote><p><code>DifferenceHelper.compareOccurrences(..., showDetails)</code></p></blockquote><h3>
+<a name="id3s6"></a>Merge process locks branches</h3>
+<p>Merge process first locks the branches involved, so as to ensure merge consistency. This means that until the merge is finalized, nobody can update neither the source branch that is merged nor the target branch.</p><p>If a user begins a merge without finalizing it, it is still possible to unlock the branches manually. Only the user that initiated the merge, the owners of the branch or of an ancestor branch, or the administrator have the permission to unlock.</p><h3>
+<a name="id3s7"></a>Merge process disables triggers</h3>
+<p>Merge process now systematically disables all the triggers, when the merge is finalized.</p><h3>
+<a name="id3s8"></a>Archives management</h3>
+<p>Import process first locks the current branch, so as to ensure merge consistency.</p><p>The Manager &quot;Archive&quot; actions have been augmented with the following options:</p><ul>
+<li><p>export without change set</p></li><li><p>export Reference (always without change set)</p></li><li><p>import without change set</p></li></ul>
+<p>Note: an import without change set involves a replace strategy. For example the content of a table is first deleted before the archive table content is added.</p><h3>
+<a name="id3s9"></a>Trigger as guard</h3>
+<p> Triggers can be used for preventing the execution of the associated action (for example the modification of a table occurrence). This type of usage has been made more explicit by the declaration of <code>throws OperationException</code> in trigger methods <code>handleBefore...</code> .&nbsp;</p><h3>
+<a name="id3s10"></a>New behaviour for UI Components ( )</h3>
+<p> From this version, when a complex node with <code>maxOccurs &gt; 1</code> has a <code>osd:uiBean</code> declaration, the associated editor component will be instanciated for the corresponding <code>List</code><em>and also</em> for each occurrence in the list. </p><p> In order to distinguish the whole <code>List</code> from one of its item, the developer can check current context path. For example: </p><pre class="ebx_example brush: java">
+public void addForEdit(UIResponseContext aContext)
+{
+   Step step =	aContext.getPathInAdaptation().getLastStep();
+   if (step.isIndexed())
+   {
+	  int i = step.getIndex(); 
+	  // Editor applies to occurrence at index i .../... 
+   }
+   else
+   {
+	  // Editor applies to the list
+	  // Use the default behaviour 	for default list management
+	  aContext.addUIBestMatchingEditor(Path.SELF, ""); 
+	} 
+}
+</pre>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

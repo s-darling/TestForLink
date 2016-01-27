@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Mapping to Java</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_mapping" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Developer Guide &gt; Java reference</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/mapping_to_java.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Java reference</span></div>
+<h1>
+Mapping to Java</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#access">How to access data from Java?</a></li><li class="toc1"><a href="#concurrency">Concurrency and isolation levels</a><ul class="toc2">
+<li class="toc2"><a href="#concurrencySerializable">Highest isolation level</a></li><li class="toc2"><a href="#id2s2">Default isolation level</a></li><li class="toc2"><a href="#id2s3">Java access specificities</a></li></ul>
+</li><li class="toc1"><a href="#mapping">Mapping of datatypes</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Basic rules for simple datatypes</a></li><li class="toc2"><a href="#id3s2">Multiple cardinality on a simple element</a></li><li class="toc2"><a href="#id3s3">Complex type definition without osd:class declaration</a></li><li class="toc2"><a href="#javabeans">Mapping of complex types to specific JavaBeans</a></li><li class="toc2"><a href="#id3s5">Multiple cardinality on a complex element</a></li></ul>
+</li><li class="toc1"><a href="#bindings">Java bindings</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Benefits</a></li><li class="toc2"><a href="#id4s2">XML Declaration</a></li><li class="toc2"><a href="#id4s3">Example</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="access"></a>How to access data from Java?</h2>
+<p> Read-access to data is possible from various generic Java classes, mainly <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html">Adaptation</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/instance/ValueContext.html">ValueContext</a> .&nbsp;The getter methods return objects according to the mapping rules described in the next section. </p><p>Any update on data is possible only in a well-managed context:</p><ul>
+<li><p> in the context of a procedure execution, by calling the methods <code>setValue...</code> of interface <a target="_blank" href="../Java_API/com/orchestranetworks/service/ValueContextForUpdate.html">ValueContextForUpdate</a> ;&nbsp;</p></li><li><p> during user input validation, by calling the method <code>setNewValue</code> of class <a target="_blank" href="../Java_API/com/orchestranetworks/instance/ValueContextForInputValidation.html">ValueContextForInputValidation</a>. </p></li></ul>
+<p> According to the mapping that is described in the next section, some accessed Java objects are mutable objects: these are instances of <code>List</code> ,&nbsp;<code>Date</code> or any JavaBean. Consequently, these objects can be locally modified by means of their own methods. However such modifications will remain local to the returned object unless one of the above setters is invoked (and the current transaction is successfully committed). </p><h2>
+<a name="concurrency"></a>Concurrency and isolation levels</h2>
+<h3>
+<a name="concurrencySerializable"></a>Highest isolation level</h3>
+<p>The highest isolation level in ANSI/ISO SQL is SERIALIZABLE. Three execution modes guarantee the SERIALIZABLE isolation level, within the scope of a data space:</p><ul>
+<li><p> if client code is run inside a <code>Procedure</code> container; this is the case for every update, XML, CSV or archive export and for data services; </p></li><li><p> if client code accesses a data space that has been explicitly locked (see Java class <code>LockSpec</code>); </p></li><li><p> if client code accesses a data space snapshot. </p></li></ul>
+<h3>
+<a name="id2s2"></a>Default isolation level</h3>
+<p>If the client code is run outside the contexts enabling SERIALIZABLE, its isolation level depends on the persistence mode: </p><ul>
+<li><p> In semantic mode, the default isolation level is READ UNCOMMITTED. </p></li><li><p> In relational mode, the default isolation level is the database default isolation level. </p></li></ul>
+<h3>
+<a name="id2s3"></a>Java access specificities</h3>
+<p>From a Java application, a record is represented by an instance of the class <code>Adaptation</code>, this object being initially linked to the corresponding persisted record. Then, unless the client code is executed in a context enabling the <a target="_self" href="#concurrencySerializable">SERIALIZABLE isolation level</a>, the object can become &quot;disconnected&quot; from the persisted record: if concurrent updates have occurred they will not be reflected by the <code>Adaptation</code> object. </p><p> So, it is important for the client code to either be in a SERIALIZABLE context, or to regularly look up or refresh the <code>Adaptation</code> object. </p><div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationHome.html#findAdaptationOrNull(com.onwbp.adaptation.AdaptationName)">AdaptationHome.findAdaptationOrNull()</a></li><li><a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#lookupAdaptationByPrimaryKey(com.onwbp.adaptation.PrimaryKey)">AdaptationTable.lookupAdaptationByPrimaryKey()</a></li><li><a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#getUpToDateInstance()">Adaptation.getUpToDateInstance()</a></li></ul>
+</div>
+<h2>
+<a name="mapping"></a>Mapping of datatypes</h2>
+<h3>
+<a name="id3s1"></a>Basic rules for simple datatypes</h3>
+<p>Each XML Schema simple type corresponds to a Java class. The mapping is summarized in the following table.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Schema Datatype</strong></p></th><th valign="top"><p><strong>Java class</strong></p></th><th valign="top"><p><strong>Comment</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#string">xs:string</a></p></td><td><p><code>java.lang.String</code></p></td><td></td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#boolean">xs:boolean</a></p></td><td><p><code>java.lang.Boolean</code></p></td><td></td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#decimal">xs:decimal</a></p></td><td><p><code>java.math.BigDecimal</code></p></td><td><p>A <code>BigDecimal</code> is converted to <code>double</code> at display. Some precision loss and/or rounding problem can appear if the <code>BigDecimal</code> is made up of more than 15 digits. Moreover, the erroneous displayed value will replace the correct one if the form is submitted.</p></td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#date">xs:date</a></p></td><td><p><code>java.util.Date</code></p></td><td>The returned <code>Date</code> is the beginning moment of each day, that is &#39;00:00:00&#39;.</td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#dateTime">xs:dateTime</a></p></td><td><p><code>java.util.Date</code></p></td><td></td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#time">xs:time</a></p></td><td><p><code>java.util.Date</code></p></td><td>The returned <code>Date</code> is always set to the following day: 1970/01/01.</td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#anyURI">xs:anyURI</a></p></td><td><p><code>java.net.URI</code></p></td><td></td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#Name">xs:Name</a></p></td><td><p><code>java.lang.String</code></p></td><td></td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#int">xs:int</a></p></td><td><p><code>java.lang.Integer</code></p></td><td></td></tr>
+<tr>
+<td><p><a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#integer">xs:integer</a></p></td><td><p><code>java.lang.Integer</code></p></td><td>Note that this mapping does not comply with the XML Schema recommendation. Indeed XML Schema specification states that <code>xs:integer</code> have no value space limitations but this value space is restricted by the Java specifications of the <code>java.lang.Integer</code> object.</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id3s2"></a>Multiple cardinality on a simple element</h3>
+<p> If the attribute <code>maxOccurs</code> is greater than 1, then the element is an aggregated list and the corresponding instance in Java is an instance of <code>java.util.List</code> .&nbsp;</p><p>Elements of the list are instances of the Java class deduced from the rules in the table above.</p><h3>
+<a name="id3s3"></a>Complex type definition without osd:class declaration</h3>
+<p> By default, a terminal node on a complex type is instantiated with an EBX5 internal class. This class provides a generic JavaBean implementation, but when Java access is needed, it is recommended to use a specific JavaBean, by using the <code>osd:class</code> declaration described in the next section. </p><h3>
+<a name="javabeans"></a>Mapping of complex types to specific JavaBeans</h3>
+<p> It is possible to map a XML Schema complex type to a specific Java class. This is achieved by adding the attribute <em>osd:class</em> in the complex node definition. It is also required to specify the attribute <em>osd:access</em> (see example), so that the node is considered as <em>terminal</em> , unless the element has <em>xs:maxOccurs &gt; 1</em> (because in this latter case, it is already considered as terminal). </p><p>The Java class must conform to the JavaBean protocol. This means that each child of the complex type must correspond to a JavaBean property of the class. Additionally each JavaBean property must be a read-write property, and its implementation must ensure that the value set by the setter method is returned as-is by the getter method (more particularly, contextual computations are not allowed in these methods).</p><p><em>Example:</em></p><pre class="ebx_example brush: html">
+&lt;xs:element name="customer" osd:access="RW">
+  &lt;xs:complexType name="subscriber" osd:class="com.carRental.Customer">
+	&lt;xs:sequence>
+	  &lt;xs:element name="firstName" type="xs:string"/>
+	  ...
+	&lt;/xs:sequence>
+  &lt;/xs:complexType>
+&lt;/xs:element></pre>
+<p> In this example,&nbsp;the class Java <em>com.carRental.Customer</em> must define the methods <em>getFirstName()</em> and <em>setFirstName(String)</em> .&nbsp;</p><p> A JavaBean may have a specific user interface within EBX5. This is achieved using a <code><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditor.html">UIBeanEditor</a></code> .&nbsp;</p><h3>
+<a name="id3s5"></a>Multiple cardinality on a complex element</h3>
+<p> If the attribute <code>maxOccurs</code> is greater than 1, then the corresponding instance in Java is: </p><ul>
+<li><p> either an instance of <code>java.util.List</code> for an aggregated list, and every element in the list is an instance of the Java class deduced from the rules in the table above; </p></li><li><p> or an instance of <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html">AdaptationTable</a> ,&nbsp;if the property <code>osd:table</code> is specified. </p></li></ul>
+<h2>
+<a name="bindings"></a>Java bindings</h2>
+<p>Java bindings allow to generate Java types that reflect the structure of the data model. The Java code generation can be done in EBX5.</p><h3>
+<a name="id4s1"></a>Benefits</h3>
+<p>Ensuring the link between XML Schema structure and Java code provides a number of benefits:</p><ul>
+<li><p>Development assistance:</p><p>automatic completion when writing access path to parameters (if supported by your IDE) ;</p></li><li><p>Access code verification:</p><p>all accesses to parameters are verified at code compilation ;</p></li><li><p>Impact verification:</p><p>each modification of the data model impacts the code compilation state ;</p></li><li><p>Cross-references:</p><p>by using the reference tools of your IDE, it is easy to verify where a parameter is used</p></li></ul>
+<p>Consequently, we strongly recommend to use Java bindings.</p><h3>
+<a name="id4s2"></a>XML Declaration</h3>
+<p>The specification of the Java types to be generated from the data model is included in the main schema.</p><p> Each binding element defines a generation target. It must be located at <code>xs:schema/xs:annotation/xs:appinfo/ebxbnd:binding</code> (XPath notation) where the prefix <code>ebxbnd</code> is a reference to the naming space identified by the URI <code>urn:ebx-schemas:binding_1.0</code> . Several binding elements can be defined if you have different generation targets. </p><p> The attribute <code>targetDirectory</code> of the element <code>ebxbnd:binding</code> defines the root directory for Java types generation (generally, it is the directory of the project source codes <em>&quot;src&quot;</em> ). A relative path is interpreted relatively to the current runtime directory of the VM (not relative to the XML schema). </p><p> See the <a target="_self" href="../resources/xs_binding_generated/main.html">bindings XML Schema</a> .&nbsp;</p><h3>
+<a name="id4s3"></a>Example</h3>
+<pre class="ebx_example brush: html">
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ebxbnd="urn:ebx-schemas:binding_1.0">
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;!-- The bindings define how this schema will be represented in Java.
+			Several &lt;binding> elements may be defined, one for each target. -->
+			&lt;ebxbnd:binding
+				targetDirectory="../_ebx-demos/src-creditOnLineStruts-1.0/">
+				&lt;javaPathConstants typeName="com.creditonline.RulesPaths">
+					&lt;nodes root="/rules" prefix="" />
+				&lt;/javaPathConstants>
+				&lt;javaPathConstants typeName="com.creditonline.StylesheetConstants">
+					&lt;nodes root="/stylesheet" prefix="" />
+				&lt;/javaPathConstants>
+			&lt;/ebxbnd:binding>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+	...
+&lt;/xs:schema>
+</pre>
+<p>Therefore, we can define Java constants for XML schema paths. For that, we generate one or several interfaces from a schema node (that can be the root node <em>&quot;/&quot;</em> ). Hence, in the previous example, we generate two interfaces of java paths constants, one from node <em>&quot;/rules&quot;</em> and the other from node <em>&quot;/stylesheet&quot;</em> of the considered schema. Interfaces names are described by the tags <em>javaPathConstants</em> with the attribute <em>typeName</em> and the associated node is described by the tag <em>nodes</em> with the attribute <em>root</em> .&nbsp;</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Java reference</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

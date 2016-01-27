@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - History</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="ref_history" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Persistence</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/history.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Persistence</span></div>
+<h1>
+History</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#overview">Overview</a></li><li class="toc1"><a href="#configuration">Configuring history</a><ul class="toc2">
+<li class="toc2"><a href="#profile">Configuring history in the repository</a></li><li class="toc2"><a href="#id2s2">Configuring history in the data model</a></li><li class="toc2"><a href="#integrity">Integrity</a></li></ul>
+</li><li class="toc1"><a href="#views">History views and permissions</a><ul class="toc2">
+<li class="toc2"><a href="#historyTableView">Table history view</a></li><li class="toc2"><a href="#permissions">Permissions for table history</a></li><li class="toc2"><a href="#historyTransactionView">Transaction history views</a></li></ul>
+</li><li class="toc1"><a href="#sqlAccess">SQL access to history</a><ul class="toc2">
+<li class="toc2"><a href="#sqlAccessRestrictions">Access restrictions</a></li><li class="toc2"><a href="#schema">Relational schema overview</a></li><li class="toc2"><a href="#example">Example of a generated history table</a></li><li class="toc2"><a href="#operationFieldsValues">Operation field values</a></li></ul>
+</li><li class="toc1"><a href="#limitations">Impacts and limitations of the historized mode</a><ul class="toc2">
+<li class="toc2"><a href="#validation">Validation</a></li><li class="toc2"><a href="#limitationsDataModel">Data model restrictions for historized tables</a></li><li class="toc2"><a href="#id5s3">Other limitations</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="overview"></a>Overview</h2>
+<p>History is a feature allowing to track all data modifications on a table (records creation, update and deletion). </p><p>Some RDBMS are not supported yet (see <a target="_self" href="#limitations">Limitations of the historized mode</a> for more details). <a target="_self" href="../engine/audit_trail.html">XML audit trail</a> can then be used as an alternative. XML audit trail is activated by default; it can be safely deactivated if your RDBMS is supported.</p><div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../glossary/simple_glossary.html#history">History</a></li><li><a target="_self" href="../references/relationalMode.html">Relational mode</a></li><li><a target="_self" href="../references/replication.html">Replication</a></li><li><a target="_self" href="../references/datamodel_evolutions.html">Data model evolutions</a></li></ul>
+</div>
+<h2>
+<a name="configuration"></a>Configuring history</h2>
+<p>In order to activate historization for a table, a history profile has to be set for the table in the data model. This section describes history profiles and the way they are associated with tables.</p><h3>
+<a name="profile"></a>Configuring history in the repository</h3>
+<p>A history profile specifies when the historization is to be created and the level of guarantee requested. In order to edit history profiles, select <strong>Administration &gt; History and logs</strong>.</p><p>A history profile is identified by a name and defines the following information:</p><ul>
+<li><p>An internationalized label.</p></li><li><p>A list of data spaces (branches) for which history is activated. It is possible to specify whether direct children and/or all descendants should also be concerned.</p></li><li><p>The attribute <em>Transaction fails if historization is not available</em>. It allows you to specify whether a transaction must fail when historization is requested but not available. Usually, it will be disabled in a development environment, but enabled in a production environment.</p></li></ul>
+<p> Some profiles are already created when installing the repository. These profiles can neither be deleted nor modified. </p><table width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Profile Id</strong></p></th><th><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p><code>ebx-referenceBranch-strict</code></p></td><td><p>This profile is activated only on the reference data space. Its attribute <em>Transaction fails if historization is not available</em> is activated.</p></td></tr>
+<tr>
+<td><p><code>ebx-referenceBranch-lax</code></p></td><td><p>This profile is activated only on the reference data space. Its attribute <em>Transaction fails if historization is not available</em> is deactivated.</p></td></tr>
+<tr>
+<td><p><code>ebx-allBranches-strict</code></p></td><td><p>This profile is activated on all data spaces. Its attribute <em>Transaction fails if historization is not available</em> is activated.</p></td></tr>
+<tr>
+<td><p><code>ebx-allBranches-lax</code></p></td><td><p>This profile is activated on all data spaces. Its attribute <em>Transaction fails if historization is not available</em> is deactivated.</p></td></tr>
+<tr>
+<td><p><code>ebx-instanceHeaders</code></p></td><td><p>This profile historizes data set headers. However, this profile will only be setup in a future version, given that the internal data model only defines data set nodes.</p></td></tr>
+<tr>
+<td><p><code>ebx-xxx</code></p></td><td><p>This profile historizes internal data space <em>xxx</em>, for example <em>ebx-dataSpace</em>.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id2s2"></a>Configuring history in the data model</h3>
+<h4>
+<a name="activation"></a>Activating table history</h4>
+<p>History can be activated on a table either through the data model assistant, or by editing the underlying data model.</p><p>To activate history by editing the data model, a history profile should be declared on the table using the <code>historyProfile</code> element.</p><pre class="ebx_example brush: xml">
+&lt;osd:table>
+	&lt;primaryKeys>/key&lt;/primaryKeys>
+	&lt;historyProfile>historyProfileForProducts&lt;/historyProfile>
+&lt;/osd:table></pre>
+<p>The data model assistant allows you to view the historization profiles defined in the repository.</p><p>Historization must be activated for each table separately. See <a target="_self" href="../models/intro_xml_schema.html">model design</a> documentation for more details. </p><h4>
+<a name="disableHistory"></a>Disabling history on a specific field or group</h4>
+<p>For a historized table, the default behavior is to historize all its supported elements (see <a target="_self" href="#limitations">Impacts and limitations of the historized mode</a>).</p><p>It is possible to disable history for a given field or group, either through the data model assistant, or by editing the underlying data model.</p><p>To disable the history of a field or group by editing the data model, use the element <code>osd:history</code> with the attribute <code>disable=&quot;true&quot;</code>.</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="longDescription" type="xs:string">
+    &lt;xs:annotation>
+        &lt;xs:appinfo>
+            &lt;osd:history disable="true" />
+        &lt;/xs:appinfo>
+    &lt;/xs:annotation>
+&lt;/xs:element></pre>
+<p>To disable the history of a field or group through the data model assistant, use the <code>History</code> property in the <code>Advanced properties</code> of the element.</p><p>When this property is defined on a group, history is disabled recursively for all its descendents. Once a group disables history, it is not possible to specifically re-enable history on a descendant.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+<p>If the table containing the field or group is not historized, this property will not have any effect.</p><p>It is not possible to disable history for primary key fields.</p></fieldset>
+<h3>
+<a name="integrity"></a>Integrity</h3>
+<p>If problems are detected at data model compilation, warning messages or error messages will be added to the validation report associated with this data model. Furthermore, if any error is detected, each associated instance (data set) will be inaccessible. The most common error cases are the following:</p><ul>
+<li><p>A table references a profile that is not defined in the repository.</p></li><li><p> A history profile that is referenced in the data model mentions a non-defined or closed data space in the current repository.</p></li></ul>
+<p>Note: Deploying a data model on a repository that does not have the expected profiles requires the administrator to add them.</p><h2>
+<a name="views"></a>History views and permissions</h2>
+<h3>
+<a name="historyTableView"></a>Table history view</h3>
+<p>When the history has been activated on a table in the data model, it is possible to access the history view from various locations in the user interface: record, selection of records, table and data set.</p><p> The next section explains how permissions are resolved. </p><p>For more information, see <a target="_self" href="../glossary/simple_glossary.html#historyTableView">table history view</a> section. To access the table history view from Java, the method <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#getHistory()">AdaptationTable.getHistory()</a> must be invoked.</p><h3>
+<a name="permissions"></a>Permissions for table history</h3>
+<p> Data permissions are also applied to data history. History permissions are resolved automatically as the most restricted permission between data permissions and <em>read-only</em> access right. </p><p> This is true for user-defined permission rules and also for programmatic permission rules. </p><p> For defining a programmatic rule, there is sometimes a need to distinguish between the functional data set context and the history view context. This can also be required, for instance if the permission rule accesses some data set&#39;s fields that are not historized (in such a case, they are not present in the history structure). The methods <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#isHistory()">Adaptation.isHistory()</a> and <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#getHistory()">AdaptationTable.getHistory()</a> can then be used in the programmatic rule in order to implement the specific behavior for the history. </p><h3>
+<a name="historyTransactionView"></a>Transaction history views</h3>
+<p>The transaction history view gives access to the executed transactions, independently of a table, a data set or a data model, directly from the user interface.</p><p>To see the &#39;Transaction history&#39; table, navigate to the Administration area and select &#39;History and logs&#39; using the down arrow menu in the navigation pane. Transaction history can also be accessed from the Data Spaces area by selecting a historized data space and using the <strong>Actions</strong> menu in the workspace.</p><p>For more information, see <a target="_self" href="../glossary/simple_glossary.html#historyTransactionView">transaction history view</a>. </p><h2>
+<a name="sqlAccess"></a>SQL access to history</h2>
+<p>This section describes how to directly access the history data by means of SQL.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../references/relationalMode.html#sqlAccess">SQL access to data in relational mode</a></p></div>
+<h3>
+<a name="sqlAccessRestrictions"></a>Access restrictions</h3>
+<p>The database tables must be accessed only in read-only mode. It is up to the database administrator to forbid write access except for the database user used by EBX5, as specified in the section <a target="_self" href="../engine/repository_administration.html#privileges">Rules for the access to the database and user privileges</a>.</p><h3>
+<a name="schema"></a>Relational schema overview</h3>
+<p> Here is a description of the history tables in the database. </p><p> The database schema contains (see also the diagram in the next section): </p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Common and generic tables</p></td><td class="ebx_definitionListDefinition"><p>The main table is <code>HV_TX</code>; each record of this table represents a transaction. Only transactions that involve at least one historized table are recorded.</p><p>These common tables are all prefixed by &quot;HV&quot;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Specific generated tables</p></td><td class="ebx_definitionListDefinition"><p>For each historized table, a specific history table is generated. This table contains the history of the data modifications on the table. </p><p>In the EBX5 user interface, the name of this table in database can be obtained by clicking on the table documentation pane (advanced mode). All the specific history tables are prefixed with &quot;HG&quot;.</p></td></tr>
+</table>
+<h3>
+<a name="example"></a>Example of a generated history table</h3>
+<p>In the following example, we are historizing a table called <code>product</code>. Let us assume this table declares three fields in EBX5 data model: </p><p> Product </p><ul>
+<li><p>productId: int</p></li><li><p>price: int</p></li><li><p>beginDate: Date</p></li></ul>
+<p> The diagram below shows the resulting relational schema: </p><p align="center"><img alt="scaphas" src="../resources/images/history/tables_structure.gif" width="717"></img></p><p> Activating history on this table generates the HG_product table shown in the history schema structure above. Here is the description of its different fields: </p><ul>
+<li><p><code>tx_id</code>: transaction ID.</p></li><li><p><code>instance</code>: instance ID.</p></li><li><p><code>op</code>: operation type - C (create), U (update) or D (delete).</p></li><li><p><code>productId</code>: <code>productId</code> field value.</p></li><li><p><code>OproductId</code>: operation field for <code>productId</code>, see next section.</p></li><li><p><code>price</code>: <code>price</code> field value.</p></li><li><p><code>Oprice</code>: operation field for <code>price</code>, see next section.</p></li><li><p><code>beginDate</code>: <code>date</code> field value.</p></li><li><p><code>ObeginDate</code>: operation field for <code>beginDate</code>, see next section.</p></li></ul>
+<h3>
+<a name="operationFieldsValues"></a>Operation field values</h3>
+<p>For each functional field, an additional operation field is defined, composed by the field name prefixed by the character <code>O</code>. This field specifies whether the functional field has been modified. It is set to one of the following values:</p><ul>
+<li><p><code>null</code>: if the functional field value has not been modified (and its value is not INHERIT).</p></li><li><p><code>M</code>: if the functional field value has been modified (not to INHERIT).</p></li><li><p><code>D</code>: if record has been deleted.</p></li></ul>
+<p>If <a target="_self" href="../references/inheritance.html">inheritance</a> is enabled, the operation field can have three additional values:</p><ul>
+<li><p><code>T</code>: if the functional field value has not been modified and its value is INHERIT.</p></li><li><p><code>I</code>: if the functional field value has been set to INHERIT.</p></li><li><p><code>O</code>: if the record has been set to OCCULTING mode.</p></li></ul>
+<h2>
+<a name="limitations"></a>Impacts and limitations of the historized mode</h2>
+<p>The history feature has some impacts and known limitations, which are listed in this section. If using historized mode, it is strongly recommended to read these limitations carefully and to contact Orchestra Networks support in case of questions.</p><p>See <a target="_self" href="../installation/supported_env.html#databases">Supported databases</a> for the databases on which historized mode is supported.</p><h3>
+<a name="validation"></a>Validation</h3>
+<p>Some EBX5 data model constraints become blocking constraints when table history is activated. For more information, see the section <a target="_self" href="../references/relationalMode.html#structuralConstraints">Structural constraints</a>.</p><h3>
+<a name="limitationsDataModel"></a>Data model restrictions for historized tables</h3>
+<p>Some restrictions apply to data models containing historized tables:</p><ul>
+<li><p><a target="_self" href="../references/persistence_overview.html#mappedRestrictions">Data model restrictions due to mapped mode</a>.</p></li><li><p>Limitations exist for two types of aggregated lists: embedded aggregated lists, and aggregated lists under a terminal complex type. Data models that contain such aggregated lists can be used, however these list fields will be ignored (not historized).</p></li><li><p>Computed values are ignored.</p></li><li><p>User-defined attributes on historized tables result in data model compilation errors.</p></li></ul>
+<p>Data model evolutions may also be constrained by the underlying RDBMS, depending on the data already contained in the concerned tables.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../references/datamodel_evolutions.html">Data model evolutions</a></p></div>
+<h3>
+<a name="id5s3"></a>Other limitations</h3>
+<ul>
+<li><p>No data copy is performed when a table with existing data is activated for history.</p></li><li><p>Global operations on data sets are not historized (create an instance and remove an instance), even if they declare an historized table.</p></li><li><p>Default labels referencing a computed field value are not supported for historized tables. The workaround is to implement the <code>UILabelRenderer</code> interface and adapt the label computation for history.</p></li><li><p>D3: the history can be enabled in the delivery data space of a master node, but in the delivery data space of the slave nodes, the historization features are always disabled.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Persistence</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

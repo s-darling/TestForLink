@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Install Note for Tomcat (Version 5.0.* or 5.5.*)</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="installation_j2ee_summary" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=deployment_examples/tomcat5.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+<h1>
+Install Note for Tomcat (Version 5.0.* or 5.5.*)</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Warnings</a></li><li class="toc1"><a href="#id2">Installation Example Overview</a></li><li class="toc1"><a href="#id3">Installation Example Detail</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Warnings</h2>
+<ul>
+<li><p> This chapter describes a <em>quick installation example</em> of EBX5 on Tomcat Application Server. </p></li><li><p>It does not replace the documentation of this application server.</p></li><li><p> It is <em>not</em> a general installation recommendation, since the actual installation process is fixed by architecture choices (technical environment, applications mutualization, delivery process, company choices, etc.). </p></li><li><p> The complete description of the components needed by EBX5 is given in chapter <a target="_self" href="../installation/deploy_on_j2ee.html">Java EE deployment</a>.</p></li><li><p> In order to avoid unpredictable behavior, the minimal rule to follow is to avoid any duplication of <code>ebx.jar</code> or other libraries on the class-loading system. </p></li><li><p>The description below uses the variable name $CATALINA_HOME to refer to the directory into which you have installed Tomcat 5, and from which most relative paths are resolved. However, if you have configured Tomcat 5 for multiple instances by setting a CATALINA_BASE directory, you should use $CATALINA_BASE instead of $CATALINA_HOME for each of these references.</p></li></ul>
+<h2>
+<a name="id2"></a>Installation Example Overview</h2>
+<ul>
+<li><p><em>Create EBX_HOME directory</em>: copy <code>ebx.properties</code></p></li><li><p><em>Install EBX5 libraries</em>: add libraries (<em>jar files</em>) to Tomcat shared lib directory </p></li><li><p><em>Configure JVM arguments (Java system properties)</em>: create the JAVA_OPTS environment variable </p></li><li><p><em>Deploy EBX5 application</em> :&nbsp;copy all war files to tomcat webapps directory </p></li></ul>
+<h2>
+<a name="id3"></a>Installation Example Detail</h2>
+<ol>
+<li><p> Create <em>EBX_HOME</em> directory, for example C:\EBX\home, or /home/ebx. </p></li><li><p> Copy <code>ebx.software\files\ebx.properties</code> file to <em>EBX_HOME</em> .&nbsp;In our example, we will then have the following file: </p><p>C:\EBX\home\ebx.properties, a text file</p></li><li><p> Copy <em>ebx.jar</em> to $CATALINA_HOME\shared\lib\ (or $CATALINA_BASE\shared\lib\) directory. The file ebx.jar is provided in the directory <em>ebx.software\lib\</em> .&nbsp;In our example, we will have: </p><p>$CATALINA_HOME\shared\lib\ebx.jar</p></li><li><p>Copy third-party library files to $CATALINA_HOME\shared\lib\ (or $CATALINA_BASE\shared\lib\) directory. In our example, we will have:</p><p>$CATALINA_HOME\shared\lib\activation.jar</p><p>$CATALINA_HOME\shared\lib\mail.jar</p><p>$CATALINA_HOME\shared\lib\h2.jar</p><p> The exact description of these components is given in chapter <a target="_self" href="../installation/deploy_on_j2ee.html">Components</a> . Obviously, if those components are already deployed on the class-loading system, they do not have to be duplicated. </p></li><li><p>Copy the war files in ebx.software\webapps\wars-packaging to the $CATALINA_HOME\webapps\ (or $CATALINA_BASE\webapps\) directory. In our example, we will have:</p><p>$CATALINA_HOME\webapps\ebx.war: Initialization servlet for EBX5 applications</p><p>$CATALINA_HOME\webapps\ebx-root-1.0.war: Provides a common default module for data models</p><p>$CATALINA_HOME\webapps\ebx-manager.war: Master Data Management web application</p></li><li><p>Modify $CATALINA_HOME\conf\server.xml (or $CATALINA_BASE\conf\server.xml) file. Add the following line to the &lt;Host&gt; element.</p><p><code>&lt;Context path=&quot;/ebx&quot; crossContext=&quot;true&quot; docBase=&quot;ebx.war&quot;/&gt;</code></p><p>After this modification, we will have:</p><p><code>&lt;Host name=...&gt;</code></p><p><code>... ...</code></p><p><code>&lt;Context path=&quot;/ebx&quot; crossContext=&quot;true&quot; docBase=&quot;ebx.war&quot;/&gt;</code></p><p><code>... ...</code></p><p><code>&lt;/Host&gt;</code></p></li><li><p>Configure launch properties.</p><p>If our Tomcat is launched by a command in Windows&#39; DOS console or Unix shell, we can create another launcher file:</p><p>In Windows, the launcher file can be start_ebx.bat, which will have the following command lines:</p><p><code>set EBX_HOME=&lt;path_to_the_directory_ebx_home&gt;</code></p><p><code>set JAVA_OPTS=-Debx.home=%EBX_HOME% -Debx.properties=%EBX_HOME%\ebx.properties</code></p><p><code>call %CATALINA_HOME%\bin\startup.bat</code></p><p>In Unix, the launcher file can be start_ebx.sh, which will have the following command lines:</p><p><code>export EBX_HOME=&lt;path_to_the_directory_ebx_home&gt;</code></p><p><code>export JAVA_OPTS=&quot;$JAVA_OPTS -Debx.properties=$EBX_HOME/ebx.properties -Debx.home=$EBX_HOME&quot;</code></p><p><code>exec $CATALINA_HOME/bin/startup.sh</code></p><p> (!) Accounts used to launch EBX5 must have create/update/delete rights on <code>$EBX_HOME</code> directory. </p><p>Windows users that have installed Tomcat as a service may set Java options through the Tomcat service manager GUI (Java tab).</p><p> Be sure to set options on separate lines in the <em>Java Options</em> field of the GUI: </p><pre class="ebx_example brush: html">
+-Debx.home=&lt;path_to_the_directory_ebx_home>
+-Debx.properties=&lt;path_to_the_directory_ebx_home>\ebx.properties
+</pre>
+<p> where &lt;path_to_the_directory_ebx_home&gt; is the directory where we copied <code>ebx.properties</code> .&nbsp;In our example, it is C:\EBX\home. </p></li><li><p>Run EBX5.</p><blockquote><p> After Tomcat launch, run EBX5 web application: <a target="_blank" href="http://localhost:8080/ebx/">http://localhost:8080/ebx/</a> .&nbsp;</p><p> At first launch, <a target="_self" href="../installation/configuration_wizard.html">EBX5 Wizard</a> helps you to configure the default properties of your initial repository. </p></blockquote></li></ol>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

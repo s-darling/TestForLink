@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.3.1</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.3.1.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.3.1</h1>
+<p><strong>Release Date: July 1, 2013</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of 5.3.1</a></li><li class="toc1"><a href="#id2">User interface custom layout API</a></li><li class="toc1"><a href="#datamodeling">Data modeling</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Uniqueness constraints on multiple fields</a></li><li class="toc2"><a href="#id3s2">Excluding elements from data comparison</a></li><li class="toc2"><a href="#validation">Validation message severities</a></li><li class="toc2"><a href="#id3s4">Hiding a field in the text search tool</a></li><li class="toc2"><a href="#id3s5">Facet property 'defaultErrorMessage' renamed to 'validationMessage'</a></li><li class="toc2"><a href="#id3s6">Simplification of the data model assistant user interface</a></li><li class="toc2"><a href="#id3s7">'Business objects and rules' renamed to 'Component library'</a></li><li class="toc2"><a href="#id3s8">Creation of User Defined Attributes</a></li></ul>
+</li><li class="toc1"><a href="#workflow">Data workflows</a></li><li class="toc1"><a href="#javaApi">Core Java API</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">New method for accessing the value of a node</a></li><li class="toc2"><a href="#ajax">Ajax API</a></li><li class="toc2"><a href="#id5s3">Get the table referenced by a foreign key constraint</a></li></ul>
+</li><li class="toc1"><a href="#versionUpgrade">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Backward compatibility</a></li><li class="toc2"><a href="#id6s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug-Dataservices">Data services</a></li><li class="toc2"><a href="#bug-DataspacesHistory">Data spaces & History</a></li><li class="toc2"><a href="#bug-Datavalidation">Data validation</a></li><li class="toc2"><a href="#bug-Dataviews">Data views</a></li><li class="toc2"><a href="#bug-Dataworkflows">Data workflows</a></li><li class="toc2"><a href="#bug-Documentation">Documentation</a></li><li class="toc2"><a href="#bug-Userinterface">User interface</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of 5.3.1</h2>
+<p><strong><em>This version includes all bug fixes and new features from the version <a target="_self" href="./5.2.7.html">5.2.7</a>.</em></strong></p><p>This version contains a number of evolutions, including:</p><ul>
+<li><p>Enhancements to data model elements and validation messages</p></li><li><p>Improvements to make data workflow executions more robust</p></li><li><p>New methods in the Java API</p></li></ul>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<strong>Before proceeding with the upgrade of an existing environment, ensure that you have carefully read the <a target="_self" href="#versionUpgrade">Version upgrade</a> section</strong>. </fieldset>
+<h2>
+<a name="id2"></a>User interface custom layout API</h2>
+<p>As of this version of EBX5, there are no longer any restrictions on using the custom layout API on inherited data sets.</p><p>Additionally, it is now possible to include buttons that set complex terminal nodes to <code>null</code> (&#39;Set field to [not defined]&#39;) in a custom layout.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/form/UIForm.html">UIForm</a> for more information.</p><h2>
+<a name="datamodeling"></a>Data modeling</h2>
+<h3>
+<a name="id3s1"></a>Uniqueness constraints on multiple fields</h3>
+<p>The XML Schema identity constraint <code>xs:unique</code> has been enhanced to support multiple fields. It is now possible to indicate in this constraint that a set of values must be unique within a table.</p><p>See <a target="_self" href="../models/constraints.html#xsdUnique">Uniqueness constraint</a> for more information.</p><h3>
+<a name="id3s2"></a>Excluding elements from data comparison</h3>
+<p>It is now possible to set a comparison mode on terminal node elements to indicate whether or not they should be included during data comparisons. This property can be set on an element using its advanced properties through the data model assistant, or in the data model&#39;s XML schema using the attribute <code>osd:comparison</code>.</p><p>See <a target="_self" href="../models/access_properties_categories.html#comparison_mode">Comparison mode</a> for more information.</p><h3>
+<a name="validation"></a>Validation message severities</h3>
+<p>The definition of XML schema facets has been enhanced to support the definition of specific severities on validation messages. It is now possible to indicate that the validation message associated with a facet is a warning or an information message instead of an error, which is the default severity for facets. A specific severity can be defined on: </p><ul>
+<li><p>XML Schema facets</p></li><li><p>Uniqueness constraints</p></li><li><p>EBX5 facets</p></li><li><p>Filters applied on foreign key constraints</p></li><li><p>Selection nodes</p></li></ul>
+<p>For more information, see <a target="_self" href="../models/labels_error_messages.html#validationMessage">Validation message with severity associated with a facet</a>, <a target="_self" href="../models/constraints.html">Constraints</a>, <a target="_self" href="../models/constraints.html#xsdUnique">Uniqueness constraint</a>, <a target="_self" href="../models/constraints.html#foreignKey">Foreign key constraint</a> and <a target="_self" href="../models/tables_filters.html#select">Selection nodes</a>.</p><h3>
+<a name="id3s4"></a>Hiding a field in the text search tool</h3>
+<p>It is now possible to specify that a field must be hidden in the text search of a table in a data set using the &#39;Default view&#39; advanced property in the data model assistant or the XML schema element <code>osd:defaultView/hiddenInSearch</code>.</p><p>See <a target="_self" href="../models/access_properties_categories.html#defaultViewHiddenInSeach">Default view</a> for more information.</p><h3>
+<a name="id3s5"></a>Facet property &#39;defaultErrorMessage&#39; renamed to &#39;validationMessage&#39;</h3>
+<p>The new element <code>osd:validationMessage</code> supports custom severities for validation messages. The pre-existing element <code>osd:defaultErrorMessage</code> for specifying a custom error message associated with a facet continues to be supported, however it can be replaced by the new element <code>osd:validationMessage</code>.</p><p>The <code>osd:defaultErrorMessage</code> element is also no longer documented. It has been replaced in the product documentation by the new element <code>osd:validationMessage</code>. Furthermore, in the data model assistant, existing error messages associated with a facet will now be converted to the new <code>osd:validationMessage</code> definition when exporting a data model to an XML Schema document or when publishing a data model in a module.</p><p>For more information, see <a target="_self" href="../models/labels_error_messages.html#validationMessage">Validation message with severity associated with a facet</a>. </p><h3>
+<a name="id3s6"></a>Simplification of the data model assistant user interface</h3>
+<p>The user interface of the data model assistant has been simplified by moving the additional information displayed next to each element in the data model data structure to the documentation pane of the element. That is, the navigation pane now only displays the name, type and cardinality of an element, while other information is available when the user opens the element&#39;s documentation pane.</p><h3>
+<a name="id3s7"></a>&#39;Business objects and rules&#39; renamed to &#39;Component library&#39;</h3>
+<p>To more accurately reflect its contents, the entry &#39;Business objects and rules&#39; in the data model assistant has been renamed to &#39;Component library&#39;. See <a target="_self" href="../user_datamodel/userdatamodel_ui.html#navigating">Navigating within the Data Model Assistant</a>.</p><h3>
+<a name="id3s8"></a>Creation of User Defined Attributes</h3>
+<p>Services for creating User Defined Attributes (UDA) and UDA catalogs have been added to the data model assistant. These services allow the user to directly create UDAs and UDA catalogs from the navigation pane of a data model.</p><p> See <a target="_self" href="../user_datamodel/userdatamodel_implementdatastructure.html#addUDACatalog">Creating catalogs of User Defined Attributes</a> and <a target="_self" href="../user_datamodel/userdatamodel_implementdatastructure.html#addUDA">Creating User Defined Attributes</a>.</p><h2>
+<a name="workflow"></a>Data workflows</h2>
+<p>Workflows are now more robust due to improvements to their associated transactions.</p><p>A new <code>SessionInteraction</code> interface has been added to represent the interaction object, namely the persistent run state of a UI service integrated in the workflow. This new interface replaces the methods of the class <code>InteractionHelper</code>. </p><p>The new method <code>Session.getInteraction</code> provides an access to the session&#39;s interaction, if it exists. It also provides the useful ability to look up an interaction in parent sessions.</p><p>The associated product documentation and Java API documentation have been updated and improved.</p><p>See <a target="_self" href="../references/ui_services.html#workflow">Integration of UI services with workflows</a>, <a target="_blank" href="../Java_API/com/orchestranetworks/interactions/SessionInteraction.html">SessionInteraction</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/service/Session.html#getInteraction(boolean)">getInteraction</a> for more information.</p><h2>
+<a name="javaApi"></a>Core Java API</h2>
+<h3>
+<a name="id5s1"></a>New method for accessing the value of a node</h3>
+<p>The method <code>getValue(SchemaNode)</code> has been added to the common interface <code>ValueContext</code>. It allows retrieving the value of a specific node without handling paths.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/instance/ValueContext.html#getValue(com.orchestranetworks.schema.SchemaNode)">getValue</a> for more information.</p><h3>
+<a name="ajax"></a>Ajax API</h3>
+<p>New methods have been added to <code>UIAjaxContext</code> to allow:</p><ol>
+<li><p>Adding a user message to the user message panel using <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxContext.html#addUserMessage(com.onwbp.base.text.UserMessage)"><code>addUserMessage</code></a></p></li><li><p>Getting the record or data set node that is currently selected using <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxContext.html#getCurrentRecordNode()"><code>getCurrentRecordNode()</code></a> or <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxContext.html#getCurrentDataSetNode()"><code>getCurrentDataSetNode()</code></a> respectively.</p></li></ol>
+<p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxContext.html">UIAjaxContext</a> for more information.</p><h3>
+<a name="id5s3"></a>Get the table referenced by a foreign key constraint</h3>
+<p>The <code>getTable</code> method has been added to the <code>SchemaFacetTableRef</code> API. It allows retrieving the table linked to a <code>tableRef</code> node.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/schema/info/SchemaFacetTableRef.html#getTable(com.orchestranetworks.instance.ValueContext)">getTable</a> for more information.</p><h2>
+<a name="versionUpgrade"></a>Version upgrade</h2>
+<h3>
+<a name="id6s1"></a>Backward compatibility</h3>
+<h4>
+<a name="main_config"></a>Java EE deployment and configuration changes</h4>
+<p><em>Initially included in 5.2.7.</em></p><p>Due to evolutions to the <a target="_self" href="./5.2.7.html#deploy">deployment and configuration of EBX5</a>, where all resources are now declared in the deployment descriptor of the web application &#39;ebx&#39;, several backwards incompatibilities have been introduced:</p><ul>
+<li><p>If configuring the repository data source using the standard deployment method, the optional property <code>ebx.persistence.url</code> must not be present in the EBX5 main configuration file or else the former will be ignored.</p></li><li><p>If configuring the Java Mail session using the standard deployment method, the property <code>ebx.mail.smtp.host</code> must be removed from the EBX5 main configuration file or else the former will be ignored.</p></li><li><p>For JMS, if no specific endpoint is given in Lineage administration, the default endpoint used will be <code>java:comp/env/jms/${ebx.jms.queue.in}</code> instead of the previous value, <code>jms:queue:${ebx.jms.queue.in}</code>.</p></li><li><p>In order to activate the JMS queue for failures, the new property <code>ebx.jms.activate.queueFailure</code> has been added.</p></li></ul>
+<p>Additionally, certain obsolete properties <em>must</em> be removed from the main configuration file:</p><ul>
+<li><p>The repository data source optional property <code>ebx.persistence.datasource</code></p></li><li><p>The Java Mail property <code>ebx.mail.datasource</code></p></li><li><p>The JMS properties <code>ebx.jms.connection.factory</code>, <code>ebx.jms.queue.in</code>, and <code>ebx.jms.queue.failure</code></p></li></ul>
+<p>See <a target="_self" href="./5.2.7.html#deploy">Deploying and configuring EBX5</a> and <a target="_self" href="../installation/deploy_on_j2ee.html">Java EE deployment</a> for more information.</p><h4>
+Data model compilation</h4>
+<p></p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+You must manually remove occurrences of any unsupported features <em>before upgrading</em> to this version, as they now raise errors at data model compilation time.</fieldset>
+<ul>
+<li><p>Data model compilation is now stricter regarding elements defining uniqueness constraints. It is now forbidden to specify a computed field as the target of a uniqueness constraint.</p></li><li><p>Data model compilation now verifies types on both sides of atomic predicates.</p><p>For example, table <em>A</em> has a primary key field &#39;oid&#39; of type <code>int</code>. Table <em>B</em> has a foreign key &#39;fkA&#39; that targets table <em>A</em> and a field &#39;intField&#39; of type <code>int</code>. In previous versions, the <code>osd:select</code> XPath expression <code>./fkA = ${../intField}</code> was tolerated even though <code>./fkA</code> is of type <code>string</code> and <code>${../intField}</code> is of type <code>int</code>. As of 5.3.1, such a type mismatch results in a validation error, and must be replaced with a correct <code>osd:select</code> XPath expression, that is <code>./fkA/oid = ${../intField}</code>. </p></li><li><p>As a consequence of fixing <a target="_self" href="#bug_7341">bug 7341</a>, data model compilation is now stricter regarding the definition of the label of a record using an XPath predicate. It is now forbidden to specify the label of a table record using an XPath predicate that contains a path to a node with a recursive foreign key constraint. A compilation error is now raised if such a label is defined for a table.</p></li><li><p>As a consequence of fixing <a target="_self" href="./5.2.7.html/#bug_6790">bug 6790</a>, the data model compilation process is now stricter regarding data models that define User Defined Attributes, using <code>osd:uda</code>. That is, these data models are now verified for any unsupported features defined on User Defined Attributes. As a consequence, you must manually remove unsupported features <em>before upgrading</em> to this version, as they now raise errors at data model compilation time.</p><p>See <a target="_self" href="../models/types.html#ebxUDARestrictions">UDA restrictions</a> for more information.</p></li><li><p>As a consequence of fixing <a target="_self" href="./5.2.7.html/#bug_4508">bug 4508</a>, the data model compilation process is now stricter regarding data models that define foreign key constraints that reference non-existent containers. That is, these data models are now considered invalid when they refer to a container that does not exist, whereas, in previous versions this resulted in a warning.</p><p>See the sections <a target="_self" href="../models/constraints.html#foreignKey">Foreign keys</a> and <a target="_self" href="../models/tables_filters.html#select">Selection nodes</a> for more information.</p></li><li><p>As a consequence of fixing <a target="_self" href="./5.2.7.html/#bug_7079">bug 7079</a>, the data model compilation process is now stricter regarding data models that define inherited fields referencing themselves as the source record. That is, these data models are now considered invalid when a field is a foreign key and inherited field that refers to itself using the property <code>sourceRecord</code>.</p></li></ul>
+<h4>
+Check and remove duplicate and obsolete validation messages</h4>
+<p>As a consequence of the evolution concerning the method <code>Adaptation.getValidationReport()</code>, existing constraints on tables that perform checks at the record level using the method <code>ConstraintOnTableWithRecordLevelCheck.checkRecord(ValueContextForValidationOnRecord)</code> must be verified in order to ensure that no conflicts exist between the validation messages added by checks at the table level and checks at the record level. To remove duplicate or obsolete validation messages, the new method <code>ValueContextForValidationOnRecord.removeRecordFromMessages(ValueContext)</code> must be now used.</p><p>See <a target="_self" href="./5.2.7.html#removeRecordFromMessages">Remove records from validation messages</a> for more information.</p><h4>
+HSQLDB no longer supported</h4>
+<p>As of version 5.2.1 of EBX5, HSQLDB was no longer an officially supported database engine. This version removes all support for this RDBMS. For standalone mode, H2 database can be used instead.</p><h3>
+<a name="id6s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+<strong>If using EBX5 add-ons, ensure that the versions of the add-ons are compatible with EBX5 version 5.3.1 before upgrading. </strong> For the backward compatibility of the add-ons themselves, consult the release notes of the add-ons.</fieldset>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Upon installation of this new version, a DDL for product upgrade will be executed, which rebuilds the index for the technical metadata table <code>{ebx.persistence.table.prefix}HV_TX</code>. On larger repositories, this may introduce a one-time performance hit when starting the server for the upgrade.</fieldset>
+<h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><p><a name="bug_6777"></a><strong>[6777]</strong> Data structure nodes are expanded and collapsed unexpectedly in the navigation pane. </p><p>In the DMA, the expand and collapse states of nodes in the data structure are not preserved in the navigation pane. Actions in the workspace result in collapsed nodes being automatically expanded.</p></li><li><p><a name="bug_6879"></a><strong>[6879]</strong> No error message given after declaring two indexes containing the exact same fields. </p><p>When the user declares two indexes containing the exact same fields then submits the form, no error message is given.</p></li><li><p><a name="bug_6883"></a><strong>[6883]</strong> A fatal error occurs when creating a group reusing a complex type. </p><p>If the user creates a complex reusable type, then creates a group using the type, the user interface displays a blank screen and the user cannot work with the data model even after starting a new session.</p></li><li><p><a name="bug_6895"></a><strong>[6895]</strong> A compilation error occurs when using an included complex type with a JavaBean contained in a different module. </p><p> A compilation error is raised when a data model uses a complex type that defines a &#39;Value container class&#39; JavaBean contained in an included data model from another module. </p></li><li><p><a name="bug_6931"></a><strong>[6931]</strong> Using &#39;F5&#39; key leads to a blank screen on the data model&#39;s version comparison page. </p><p>On the data model version comparison page, if one of the two versions has errors, a small page is displayed with the message &quot;View version &#39;Version:&nbsp;Version_name&#39; validation report.&quot; If the user then clicks on this link to view the report in an internal pop-up, closes the pop-up, and uses &#39;F5&#39; key to refresh the page, an empty workspace is displayed.</p><p>The same occurs when comparing publications.</p></li><li><p><a name="bug_6945"></a><strong>[6945]</strong> Incorrect behavior for fields that reuse simple data types defining a node category. </p><p>If a field reuses a simple data type defining a node category as &#39;hidden&#39;, this field remains hidden even if its node category property is overwritten by an empty string.</p></li><li><p><a name="bug_7012"></a><strong>[7012]</strong> Cannot publish a data model after unchecking &quot;Save a new snapshot for this publication&quot;. </p><p>In the DMA, if the user enters an invalid snapshot name when publishing a data model, it becomes impossible to publish the model with the &quot;Save a new snapshot for this publication&quot; checkbox deselected.</p></li><li><p><a name="bug_7013"></a><strong>[7013]</strong> An error occurs when creating a validation rule on a node within a reusable complex type. </p><p>When creating new criteria for a validation rule on a node contained within a reusable complex type, an exception occurs.</p></li><li><p><a name="bug_7078"></a><strong>[7078]</strong> It is not possible to use wizards on primary keys and indexes when converting a group to a table. </p><p>In the DMA, the wizards provided for defining primary keys and indexes are not available when converting a group to a table.</p></li><li><p><a name="bug_7296"></a><strong>[7296]</strong> Built-in table triggers are not available in the DMA. </p><p>In the DMA, the built-in table trigger for activating workflows is not available.</p></li></ul>
+<h3>
+<a name="bug-Dataservices"></a>Data services</h3>
+<ul>
+<li><p><a name="bug_7333"></a><strong>[7333]</strong> The method <code>Session.getTrackingInfo()</code> returns <code>null</code> even if there is tracking information. </p><p>When tracking information is set in the context of a SOAP request for a data service, the method <code>Session.getTrackingInfo()</code> still returns <code>null</code> when called from a trigger context.</p></li></ul>
+<h3>
+<a name="bug-DataspacesHistory"></a>Data spaces &amp; History</h3>
+<ul>
+<li><p><a name="bug_7271"></a><strong>[7271]</strong> Some history tables may contain unused data. </p><p>Due to purge-related issues, some history tables may not be purged correctly, thus behind leaving unused data.</p></li></ul>
+<h3>
+<a name="bug-Datavalidation"></a>Data validation</h3>
+<ul>
+<li><p><a name="bug_5394"></a><strong>[5394]</strong> On IE6, some buttons are disabled after closing a pop-up linked from a validation report. </p><p>On IE6, if the user opens a link in a validation report message then closes the pop-up, some buttons are disabled.</p></li><li><p><a name="bug_6649"></a><strong>[6649]</strong> Validation messages are duplicated on constraints with no dependencies. </p><p>If a table has a table dependency, validation messages may be duplicated on constraints that do not have dependencies on the target table.</p></li></ul>
+<h3>
+<a name="bug-Dataviews"></a>Data views</h3>
+<ul>
+<li><p><a name="bug_5859"></a><strong>[5859]</strong> An error occurs when defining a dynamic enumeration that refers to a node outside a table. </p><p>An error occurs when setting the value of a node that defines a dynamic enumeration referring to a node outside its table using an absolute path.</p></li><li><p><a name="bug_7020"></a><strong>[7020]</strong> Data set may have an incorrect schema reference if created concurrently with another. </p><p>Due to a conflict of concurrent access, a data set that the user creates using the user interface may refer to another schema than the one expected.</p></li><li><p><a name="bug_7022"></a><strong>[7022]</strong> Data set creation results may have an incorrect schema reference if the schema selection has changed. </p><p>When the user creates a data set through the user interface, if the schema reference is changed, the created data set may refer to the previously selected schema.</p></li><li><p><a name="bug_7322"></a><strong>[7322]</strong> Hierarchy node ordering does not work properly when the ordering field is in a join table. </p><p>If a hierarchy link is based on a join table and a hidden ordering field has been set on the join table, the ordering mechanism may not work properly.</p></li><li><p><a name="bug_7341"></a><strong>[7341]</strong> An error occurs when displaying a record in a table that has a recursive foreign key. </p><p>This issue occurs when a table has a recursive foreign key and includes a reference to it in the table&#39;s label. In this case, a blank page is displayed when the user submits the form. An error is displayed when the user logs back in and tries to access the table.</p></li></ul>
+<h3>
+<a name="bug-Dataworkflows"></a>Data workflows</h3>
+<ul>
+<li><p><a name="bug_7170"></a><strong>[7170]</strong> Redirect to a work item using the Java API does not work. </p><p>Using the method <code>UIResourceLocator.getURLForSelection(WorkItemKey)</code> to redirect to a work item does not work. The Data Workflows area is displayed, but the work item does not show up.</p></li></ul>
+<h3>
+<a name="bug-Documentation"></a>Documentation</h3>
+<ul>
+<li><p><a name="bug_7331"></a><strong>[7331]</strong> The documentation of categories is incomplete. </p><p>The product documentation for category filters on data model elements, that is, the attribute <code>osd:category</code> needs to be updated to state that it can only be used on elements within tables, along with the procedure for enabling such a filter.</p></li></ul>
+<h3>
+<a name="bug-Userinterface"></a>User interface</h3>
+<ul>
+<li><p><a name="bug_4382"></a><strong>[4382]</strong> Error in the user interface when the character &#39;&lt;&#39; is inputted in a label. </p><p>A user interface error occurs when the user inputs the character &#39;&lt;&#39; in a label.</p></li><li><p><a name="bug_5179"></a><strong>[5179]</strong> On IE7, a bug appears in the user interface after closing the history of a table or data space. </p><p>On IE7, after closing the history of a table or data space, the border of the table is still displayed.</p></li><li><p><a name="bug_6772"></a><strong>[6772]</strong> On IE, &#39;Tab properties&#39; field for a group is not displayed properly. </p><p>On IE, after activating tabs on a table, the &#39;Tab properties&#39; field is cut off when enabling tabs for a group. The field only appears after the user changes focus away from the &#39;Tab&#39; radio button.</p></li><li><p><a name="bug_6875"></a><strong>[6875]</strong> In the DMA, double-clicking on the arrow button for moving a field makes the field disappear. </p><p>In the DMA, double-clicking quickly on an arrow for moving a field in the data structure causes the field to disappear from the user interface.</p></li><li><p><a name="bug_6981"></a><strong>[6981]</strong> Custom labels for work item &#39;Accept&#39; and &#39;Reject&#39; buttons are ignored. </p><p>When accessing the workflow tab within a <code>UIHTTPManagerComponent</code>, custom labels for the buttons &#39;Accept&#39; and &#39;Reject&#39; are ignored, with the default labels displayed instead.</p></li><li><p><a name="bug_7157"></a><strong>[7157]</strong> Validation report contents should be visible in custom layout tabs. </p><p>In a record view, validation reports should be visible in each tab, even if the tab is a custom layout tab.</p></li><li><p><a name="bug_7294"></a><strong>[7294]</strong> An error occurs if there is no <code>User-Agent</code>. </p><p>If a browser does not set <code>User-Agent</code> in the header of the first HTTP request, a technical error is reported to the end user.</p></li><li><p><a name="bug_7320"></a><strong>[7320]</strong> An IP access restriction configuration causes an exception. </p><p>An IP access restriction configured in the user interface causes a <code>PathAccessException</code>.</p></li><li><p><a name="bug_7324"></a><strong>[7324]</strong> If a field&#39;s label contains a double quote, it is displayed in escaped format in the table view. </p><p>If the user enters a double quote character in the label of a field, its escaped value is displayed in the column header of the table view.</p></li><li><p><a name="bug_7367"></a><strong>[7367]</strong> On IE8, alignment issue occurs for data hierarchies. </p><p>On IE8, the user interface for data hierarchies has an alignment issue.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

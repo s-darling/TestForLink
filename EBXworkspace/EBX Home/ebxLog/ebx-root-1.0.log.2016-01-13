@@ -1,0 +1,3 @@
+2016-01-13 13:21:56,101 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [http-bio-8090-exec-8] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:27,817 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:46:44,463 EST INFO   log.wbp.ebx-root-1.0.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****

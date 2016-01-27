@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+		Copyright © Orchestra Networks 2000-2009. All rights reserved. 
+
+		******************************************************************************
+		EBX5 schema, it is not meant for modifications.
+		******************************************************************************
+		
+ --> 
+ 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="shortcuts">
+		<xs:annotation>
+			<xs:documentation>schema for writing shortcuts</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="shortcut" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="key" type="xs:Name" use="required"/>
+						<xs:attribute name="path" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="path_unicity">
+			<xs:selector xpath="shortcut"/>
+			<xs:field xpath="@path"/>
+		</xs:unique>
+		<xs:unique name="key_unicity">
+			<xs:selector xpath="shortcut"/>
+			<xs:field xpath="@key"/>
+		</xs:unique>
+	</xs:element>
+</xs:schema>

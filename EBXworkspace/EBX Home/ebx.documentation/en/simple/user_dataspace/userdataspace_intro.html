@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Introduction to data spaces</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="userdataspace_intro" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; User Guide &gt; Data spaces</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/userdataspace_intro.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data spaces</span></div>
+<h1>
+Introduction to data spaces</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#overview">Overview</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">What is a data space?</a></li><li class="toc2"><a href="#id1s2">Basic concepts related to data spaces</a></li></ul>
+</li><li class="toc1"><a href="#navigation">Using the Data Spaces area user interface</a></li></ul>
+</div>
+<h2>
+<a name="overview"></a>Overview</h2>
+<h3>
+<a name="id1s1"></a>What is a data space?</h3>
+<p>The life cycle of data can be complex. It may be necessary to manage a current version of data while working on several concurrent updates that will be integrated in the future, including keeping a trace of various states along the way. In EBX5, this is made possible through the use of data spaces and snapshots.</p><p>A data space is a container that isolates different versions of data sets and organizes them. A data space can be branched by creating a child data space, which is automatically initialized with the state of its parent. Thus, modifications can be made in isolation in the child data space without impacting its parent or any other data spaces. Once modifications in a child data space are complete, that data space can be compared with and merged back into the parent data space.</p><p>Snapshots, which are static, read-only captures of the state of a data space at a given point in time, can be taken for reference purposes. Snapshots can be used to revert the content of a data space later, if needed.</p><p align="center"><img alt="/lifecycle.png" src="../resources/images/user_dataspace/lifecycle.png"></img></p><h3>
+<a name="id1s2"></a>Basic concepts related to data spaces</h3>
+<p>A basic understanding of the following terms is beneficial when working with data spaces:</p><ul>
+<li><p><a href="../glossary/simple_glossary.html#dataspace">data space</a></p></li><li><p><a href="../glossary/simple_glossary.html#snapshot">snapshot</a></p></li><li><p><a href="../glossary/simple_glossary.html#dataset">data set</a></p></li><li><p><a href="../glossary/simple_glossary.html#merge">data space merge</a></p></li><li><p><a href="../glossary/simple_glossary.html#refdataspace">reference data space</a></p></li></ul>
+<h2>
+<a name="navigation"></a>Using the Data Spaces area user interface</h2>
+<p>Data spaces can be created, accessed and modified in the <strong>Data Spaces</strong> area.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">This area is available only to authorized users in the &#39;Advanced perspective&#39;.</p></div>
+<p>The navigation pane displays all existing data spaces, while the workspace displays information about the selected data space and lists its snapshots.</p><p align="center"><img alt="/DataSpace.png" src="../resources/images/user_dataspace/DataSpace.png" align="middle"></img></p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../user_dataspace/userdataspace_create.html">Creating a data space</a></li><li><a href="../user_dataspace/userdataspace_snapshot.html">Snapshots</a></li></ul>
+</div>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Related concepts</span><a href="../user_data/userdata_intro.html">Data sets</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data spaces</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

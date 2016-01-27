@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - T&acirc;che utilisateur</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="wm_usertask" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de workflow</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_workflowmodel/usertask.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de workflow</span></div>
+<h1>
+T&acirc;che utilisateur</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#label">Libellé et description</a></li><li class="toc1"><a href="#definition">Définition</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Profils</a></li><li class="toc2"><a href="#id2s2">Service à appeler</a></li></ul>
+</li><li class="toc1"><a href="#termination">Terminaison</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Critère de fin de tâche</a></li><li class="toc2"><a href="#rejectTolerance">Tolérance au rejet</a></li></ul>
+</li><li class="toc1"><a href="#customizedLabels">Libellés personnalisés</a></li><li class="toc1"><a href="#enableConfirmationRequest">Demande de confirmation activée</a></li><li class="toc1"><a href="#notification">Notification</a></li><li class="toc1"><a href="#reminder">Relance</a></li><li class="toc1"><a href="#deadline">Echéance</a></li></ul>
+</div>
+<h2>
+<a name="label"></a>Libell&eacute; et description</h2>
+<p>Le libell&eacute; et et la decription de la t&acirc;che utilisateur pouvent &ecirc;tre sp&eacute;cifi&eacute;s en diff&eacute;rentes langues, afin de renseigner l&#39;utilisateur sur la nature et le contenu de celle-ci</p><h2>
+<a name="definition"></a>D&eacute;finition</h2>
+<p></p><h3>
+<a name="id2s1"></a>Profils</h3>
+<p>Les profils designent les roles et les utilisateurs auxquels la t&acirc;che utilisateur est destin&eacute;e. Un bon de travail est cr&eacute;&eacute; pour chaque profil sp&eacute;cifi&eacute;. </p><p>Si un profil se rapporte &agrave; un utilisateur au lieu d&#39;un r&ocirc;le, le bon de travail lui est directement allou&eacute;.</p><h3>
+<a name="id2s2"></a>Service &agrave; appeler</h3>
+<p>EBX5 propose nativement les services suivants :</p><ul>
+<li><p>Acc&egrave;s &agrave; un contenu particulier (data space, data set, table, record, etc.).</p></li><li><p>Cr&eacute;er un nouvel enregistrement.</p></li><li><p>Valider un espace de donn&eacute;es, une image ou un jeu de donn&eacute;es.</p></li><li><p>Fusionner un espace de donn&eacute;es.</p></li><li><p>Comparer les contenus.</p></li><li><p>Exporter les donn&eacute;es d&#39;une table vers des fichiers XML.</p></li><li><p>Exporter les donn&eacute;es d&#39;une table vers des fichiers CSV.</p></li><li><p>Importer des donn&eacute;es d&#39;un fichier XML vers une table.</p></li><li><p>Importer des donn&eacute;es d&#39;un fichier CSV vers une table.</p></li></ul>
+<p>Chaque service requiert des param&egrave;tres sp&eacute;cifiques&nbsp;;&nbsp;Un assistant permet de s&eacute;lectionner des espaces de donn&eacute;es, des images ou des valeurs du contexte des donn&eacute;es&nbsp;:&nbsp;<img alt="ebx wizard button" src="../resources/images/icons/ebx_wizard.png" width="16" height="16"></img>.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../references/builtin.html">Services pr&eacute;d&eacute;finis de EBX5</a></p></div>
+<h2>
+<a name="termination"></a>Terminaison</h2>
+<h3>
+<a name="id3s1"></a>Crit&egrave;re de fin de t&acirc;che</h3>
+<p> Une t&acirc;che utilisateur peut &ecirc;tre assign&eacute;e &agrave; plusieurs <em>participants</em> et g&eacute;n&eacute;rer plusieurs bons de travail durant l&#39;ex&eacute;cution du workflow. Lors de la d&eacute;finition d&#39;une t&acirc;che utilisateur dans le mod&egrave;le de workflow, il est possible de s&eacute;lectionner un des crit&egrave;res pr&eacute;d&eacute;finis qui d&eacute;terminent quand une t&acirc;che utilisateur est termin&eacute;e, en se basant sur le statut des bons de travail associ&eacute;s. Lorsque la condition de sortie de la t&acirc;che utilisateur sera remplie, le workflow de donn&eacute;es avancera jusqu&#39;&agrave; l&#39;&eacute;tape suivante d&eacute;finie dans le mod&egrave;le. </p><p> Par exemple, pour le cas d&#39;une t&acirc;che utilisateur qui demande la validation d&#39;un enregistrement d&#39;un produit, il est possible de d&eacute;signer trois participants. Le crit&egrave;re de fin de t&acirc;che permet de pr&eacute;ciser si l&#39;enregistrement du produit doit &ecirc;tre valid&eacute; par les trois participants, ou uniquement par le premier utilisateur &agrave; r&eacute;pondre. </p><p>Le crit&egrave;re de fin de t&acirc;che par d&eacute;faut est &quot;Quand tous les bons de travail ont &eacute;t&eacute; accept&eacute;s&quot;.</p><h3>
+<a name="rejectTolerance"></a>Tol&eacute;rance au rejet</h3>
+<p> Par d&eacute;faut, si un utilisateur rejette un bon de travail durant l&#39;ex&eacute;cution d&#39;un workflow, la t&acirc;che utilisateur est positionn&eacute;e en erreur et l&#39;avancement du workflow est stopp&eacute;. </p><p> Pour changer ce comportement par d&eacute;faut, il est possible de d&eacute;finir un nombre de bons de travail rejet&eacute;s &agrave; tol&eacute;rer. Tant que la limite de rejets tol&eacute;r&eacute;s n&#39;est pas d&eacute;pass&eacute;e, aucune erreur ne se produit et c&#39;est le crit&egrave;re de fin de t&acirc;che qui d&eacute;termine quand la t&acirc;che utilisateur est termin&eacute;e. </p><p>Les crit&egrave;res de fin de t&acirc;che suivant tol&egrave;rent automatiquement tous les rejets :</p><ul>
+<li><p>&#39;Quand tous les bons de travails ont &eacute;t&eacute; accept&eacute;s ou rejet&eacute;s&#39;</p></li><li><p>&#39;Quand tous les bons de travail ont &eacute;t&eacute; accept&eacute;s, ou d&egrave;s qu&#39;un bon de travail a &eacute;t&eacute; rejet&eacute;&#39;</p></li></ul>
+<h2>
+<a name="customizedLabels"></a>Libell&eacute;s personnalis&eacute;s</h2>
+<p> Durant l&#39;ex&eacute;cution des t&acirc;ches utilisateur, l&#39;utilisateur peut accepter ou rejeter son bon de travail en cliquant sur le bouton correspondant. Dans la mod&eacute;lisation de workflow, il est possible pour certaine t&acirc;che utilisateur de d&eacute;finir un libell&eacute; et un message de confirmation personnalis&eacute;s pour ces boutons. Cette fonctionnalit&eacute; est particuli&egrave;rement utile pour ajouter une signification particuli&egrave;re &agrave; l&#39;action d&#39;accepter ou rejeter un bon de travail. </p><h2>
+<a name="enableConfirmationRequest"></a>Demande de confirmation activ&eacute;e</h2>
+<p>Par d&eacute;faut, quand un utilisateur enregistre sa d&eacute;cision en cliquant sur le bouton accepter ou rejeter, une demande de confirmation est affich&eacute;e.</p><p>Il est possible de d&eacute;sactiver cette demande de confirmation de la d&eacute;cision en positionnant ce champ &agrave; faux.</p><h2>
+<a name="notification"></a>Notification</h2>
+<p>Une notification par courrier &eacute;lectronique peut &ecirc;tre envoy&eacute;e aux utilisateurs quand des &eacute;v&eacute;nements sp&eacute;cifiques se produisent. Pour chaque &eacute;v&eacute;nement, vous pouvez sp&eacute;cifier un message type &agrave; utiliser.</p><p>En outre, il est possible de d&eacute;finir un profil, auquel une copie de chaque courrier envoy&eacute; sera transmise.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../user_workflowmodel/actions_workflowmodel.html#notification">Mod&egrave;les de message</a></p></div>
+<h2>
+<a name="reminder"></a>Relance</h2>
+<p>Des courriers &eacute;lectroniques de relance pour les bons de travail propos&eacute;s ou allou&eacute;s et inachev&eacute;s peuvent &ecirc;tre envoy&eacute;s aux utilisateurs concern&eacute;s de mani&egrave;re p&eacute;riodique.</p><p>Le contenu des courriers de relance d&eacute;pend de l&#39;&eacute;tat courant du bon de travail. En effet, si le bon de travail est propos&eacute;, la notification utilisera le mod&egrave;le de courrier &eacute;lectronique &quot;Bons de travail propos&eacute;s&quot;&nbsp;;&nbsp;si le bon de travail est allou&eacute;, la notification utilisera le mod&egrave;le &quot;Bons de travail allou&eacute;s&quot;.</p><h2>
+<a name="deadline"></a>Ech&eacute;ance</h2>
+<p>Une t&acirc;che utilisateur peut avoir une &eacute;ch&eacute;ance. Quand cette date est pass&eacute;e et si les bons de travail associ&eacute;s n&#39;ont pas &eacute;t&eacute; compl&eacute;t&eacute;s, un courrier &eacute;lectronique sp&eacute;cifique est envoy&eacute; aux utilisateurs concern&eacute;s. Ce courrier &eacute;lectronique va alors &ecirc;tre r&eacute;envoy&eacute; tous les jours jusqu&#39;&agrave; l&#39;ach&egrave;vement de la t&acirc;che.</p><p>Il y a deux types d&#39;&eacute;ch&eacute;ances&nbsp;:&nbsp;</p><ul>
+<li><p><em>Ech&eacute;ance absolue :</em> une date du calendrier.</p></li><li><p><em>Ech&eacute;ance relative :</em> dur&eacute;e (en heures, jours ou mois). La dur&eacute;e est &eacute;valu&eacute;e &agrave; partir d&#39;une date de r&eacute;f&eacute;rence&nbsp;:&nbsp;d&eacute;but d&#39;une t&acirc;che utilisateur ou d&eacute;but d&#39;un workflow. </p></li></ul>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de workflow</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.8.4</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.8.4.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.8.4</h1>
+<p><em>Release Date: September 3, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">New features</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Batch</a></li></ul>
+</li><li class="toc1"><a href="#id2">Backward Compatibility</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Data Model Assistant</a></li><li class="toc2"><a href="#id2s2">Data Model</a></li><li class="toc2"><a href="#id2s3">Data Services and Workflow</a></li><li class="toc2"><a href="#id2s4">Primary Key Syntax</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model & DMA</a></li><li class="toc2"><a href="#bug-DataServices">Data Services</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-Infrastructure">Infrastructure</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users & Permissions</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>New features</h2>
+<h3>
+<a name="id1s1"></a>Batch</h3>
+<p>It is now possible to run tasks in a &quot;server-less&quot; environment. See <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/Batch.html">Batch</a> for more information.</p><h2>
+<a name="id2"></a>Backward Compatibility</h2>
+<h3>
+<a name="id2s1"></a>Data Model Assistant</h3>
+<p> Facet <code>fraction digits</code> is no more allowed on types <code>xs:int</code> and <code>xs:integer</code>. </p><h3>
+<a name="id2s2"></a>Data Model</h3>
+<p> Validation restrictions on facets definition have been added according to XML Schema specifications for checking compatibility between facets. For more information, see <a target="_blank" href="http://www.w3.org/TR/xmlschema-2/#facets">Facets</a> .&nbsp;</p><h3>
+<a name="id2s3"></a>Data Services and Workflow</h3>
+<p> The permissions are now checked when starting or ending a process instance through Data Services. </p><h3>
+<a name="id2s4"></a>Primary Key Syntax</h3>
+<p> The values of the foreign key fields (<code>osd:tableRef</code>), are more strictly checked regarding the primary key syntax. For more information, see <a target="_blank" href="../Java_API/com/onwbp/adaptation/PrimaryKey.html#syntax">PrimaryKey syntax</a> .</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[2794]</em> XPath resolution fails for list nodes under another list nodes. </p><p>If an XPath expression refers to a list node that is under an another list node, its resolution fails. The raised error is of the following type: <code>ClassCastException: java.util.ArrayList</code>.</p></li><li><p><em>[2807]</em><code>NullPointerException</code> when filtering records using XPath predicate. </p><p><code>NullPointerException</code> occurs when filtering records using XPath predicate with an null or empty criteria value.</p></li><li><p><em>[2808]</em> XPath requests with <code>starts-with</code> or <code>ends-with</code> on a composite foreign key may throw a ClassCastExeption. </p><p>XPath requests with <code>starts-with(col3,&#39;xxx&#39;) and ends-with(col3,&#39;yyy&#39;)</code> throw a <code>ClassCastExeption</code> if &quot;col3&quot; is a composite foreign key, and the values does not contain any &quot;|&quot; (pipe).</p></li><li><p><em>[2813]</em> A Branch may not have more than about 2000 children branches. </p><p>A technical limitation was forbidding to create more than 2000 children to a branch when the branch creation was precising a home to copy permissions from.</p></li><li><p><em>[2828]</em><code>RequestResult.nextAdaptation()</code> can have inconsistent behaviour when iterating over large results (&gt;2000). </p><p>If the table is being modified during the iteration, the part of the request result which has already been computed may become inconsistent with the actual content of the table. In particular, an <code>IllegalStateException</code> may occur.</p><p>Note: this happens only if the <code>RequestResult</code> contains more than 2000 adaptations.</p></li><li><p><em>[2829]</em> If a path refers to an under list node, its resolution fails for an undefined value. </p><p>If a path refers to a complex node that is under a list, its resolution fails if some element in the list has a property set to <code>null</code>. The raised error is of the following type: <code>PathAccessException</code>[/listBean1/listBean2/name: When reading value, exception at key [name].]</p></li><li><p><em>[2832]</em> Some log information is not logged even with the right Log Level is enabled. </p><p>DEBUG and INFO levels log information is sometimes not logged even with the correct log levels are enabled.</p></li><li><p><em>[2843]</em> Deadlock can occur for some programmatic extensions. </p><p>It is possible to get a deadlock if a programmatic permission rule is set to a table and performs a request on another table. The same applies for a programmatic filter and a trigger. In particular, such deadlocks can occur in the context of the workflow console.</p></li><li><p><em>[2847]</em> An invalid foreign key format is not detected at record creation. </p><p>It is possible to create a record with a <code>osd:tableRef</code> field that does not conform to the expected primary key format. For example, for a primary key composed of several fields, a string without the pipe separator is accepted at record creation time.</p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2767]</em> Dependencies on predicates with composite tableRef are not supported due to the new XPath syntax. </p><p>For example, a Data Model defines a table Author and a table Titles. In the table Titles, the field &#39;author&#39; defines an <code>osd:tableRef</code> to the table Author. In the table Author, an <code>osd:select</code> is defined to its titles, by means of the expression <code>/root/Titles[author/id = ${../id}]</code>. It also defines <code>minOccurs</code> = 2.</p><p>An instance uses this Data Model. When the first title is created for an author, a validation error is displayed (titles are less than 2). But when others titles are added, the Author <code>osd:select</code> is not revalidated (even after a revalidation of the instance).</p><p>A full refresh is necessary in order to update the validation.</p></li><li><p><em>[2824]</em><code>ClassCastException</code> when checking <code>xs:fractionDigits</code> value equals 0. </p><p>A <code>ClassCastException</code> is thrown when checking <code>xs:fractionDigits</code> value equals &quot;0&quot; on <code>xs:int</code> or <code>xs:integer</code>.</p></li><li><p><em>[2827]</em><code>xs:fractionDigits</code> value can be greater than <code>xs:totalDigits</code>. </p><p>The compatibility between <code>xs:fractionDigits</code> and <code>xs:totalDigits</code> is not checked neither in the DMA nor at schema compilation.</p></li><li><p><em>[2839]</em> Schema publication is erroneous on services confirmation. </p><p>In the Data Model Assistant, if the &quot;yes&quot; radio button has been selected in the service confirmation field, then in the published model the confirmation for this service is defined as &quot;disable=true&quot;.</p></li><li><p><em>[2842]</em> Error with service confirmation message pane on services with a service permission. </p><p>If a service permission has been defined on a service and if a confirmation label is defined for this service, the schema validation reports an error.</p></li></ul>
+<h3>
+<a name="bug-DataServices"></a>Data Services</h3>
+<ul>
+<li><p><em>[2763]</em> Permission is not applied when invoking the workflow &quot;start process instance&quot; or &quot;end process instance&quot; Data Service. </p><p>Permission resolution is not applied when invoking the &quot;start process instance&quot; or the &quot;end process instance&quot; Data Service: any user can create or stop a process by using these Data Services.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><em>[2812]</em> CSV export from EBX, with specific separator, always exports with &quot;<code>-</code>&quot; separator. </p></li><li><p><em>[2814]</em> CSV import from EBX, with specific separator, always imports with &quot;<code>-</code>&quot; separator. </p></li><li><p><em>[2815]</em> CSV export with specific line separator always uses <code>\r\n</code>. </p><p>The line separator defined in <code>ExportImportCSVSpec.setLineSeparator()</code> is never used; Default line separator (<code>\r\n</code>) is always used.</p></li><li><p><em>[2816]</em> CSV import only handles <code>\r\n</code> or <code>\n</code> as line.separator. </p><p><code>ExportImportCSVSpec</code> API allows to specify a line separator, but this one is not handled if it is neither <code>\r\n</code> nor <code>\n</code>.</p></li><li><p><em>[2818]</em><code>ExportImportCSVSpec.setContentIndented()</code> method is published but is not applicable. </p><p>The method has been set deprecated.</p></li><li><p><em>[2819]</em> CSV export &quot;trims&quot; the values. </p><p>CVS export should not &#39;trim&#39; the exported formatted values.</p></li></ul>
+<h3>
+<a name="bug-Infrastructure"></a>Infrastructure</h3>
+<ul>
+<li><p><em>[2622]</em> Log files rotation is not effective if EBX.Platform is down at midnight. </p><p>Log files rotation mechanism is effective only if the server is up at midnight every day. When EBX.Platform is scheduled to be shutdown every night and restarted in the morning, there&#39;s no rotation of log files and one can end up with very big log files.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2746]</em> In EBX, fields with carriage return render the display of forms erroneous when validating. </p><p>In EBX, the fields of a record in a form are not displayed if there is a validation error with a carriage return <code>\n\r</code> in the error description.</p></li><li><p><em>[2803]</em><code>UIHttpManagerComponent.createOnServiceContext()</code> error if no <code>AdaptationHome</code> selection set. </p><p>Clicking on link generated by an <code>UIHttpManagerComponent.createOnServiceContext()</code>, with only <code>UIHttpComponent.setService()</code> set, raises a <code>NullPointerException</code>.</p></li><li><p><em>[2805]</em> Table filter result still displays page &#39;n&#39; even there is less than n pages after filtering. </p><p>After filtering a table, the result should be displayed from page 1.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><em>[2821]</em><code>AccessRule.getPermission()</code>: parameter <code>anAdaptation</code> is wrong in creation mode. </p><p>In creation mode, the <code>Adaptation</code> parameter should be the current instance but it is the current record.</p></li><li><p><em>[2830]</em> Error when checking access rules at record creation. </p><p>The parameter <code>Adaptation</code> of the method <code>AccessRule.getPermission()</code> is not well-formed during a record creation.</p><p>As long as the record has not been created, the method <code>Adaptation.get()</code> should return <code>null</code>.</p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><em>[2769]</em> No error raised in process when a script task fails. </p><p>When a script task fails, the process instance does not show the error. For instance, if a script task creates a branch from a parent that does not exist, the process status is running and the process instance error is not displayed.</p></li><li><p><em>[2799]</em> Completion strategy is not displayed in workflow with Internet Explorer. </p><p>When a user task is edited, completion strategy is not displayed whereas the value is not empty.</p></li><li><p><em>[2831]</em> Button &#39;replay the step&#39; is missing for condition and script. </p><p>In the workflow execution view, when a script or a condition is in the error state, the button &#39;replay the step&#39; is not displayed.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

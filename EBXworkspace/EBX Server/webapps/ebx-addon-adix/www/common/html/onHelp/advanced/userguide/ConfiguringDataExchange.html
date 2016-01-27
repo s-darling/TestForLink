@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4. Configuring Data Exchange</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="ConfiguringDataExchange" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Data Exchange Documentation &gt; Data Exchange Documentation &gt; User-guide</div>
+</div>
+<h1>
+<a name="ConfiguringDataExchange_topPage"></a>4. Configuring Data Exchange</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#GlobalView22cf_28">4.1. Global view</a></li><li class="toc1"><a href="#Application108b_29">4.2. Application</a><ul class="toc2">
+<li class="toc2"><a href="#Application234c_30">4.2.1. Application</a></li><li class="toc2"><a href="#ApplicationByType1cd8_31">4.2.2 Application by type</a></li><li class="toc2"><a href="#Versione86_32">4.2.3. Version</a></li><li class="toc2"><a href="#Interface236_33">4.2.4. Interface</a></li><li class="toc2"><a href="#ObjectClassByApplication1ae6_34">4.2.5. Object class by Application</a></li></ul>
+</li><li class="toc1"><a href="#SemanticModel1246_35">4.3. Semantic model</a><ul class="toc2">
+<li class="toc2"><a href="#ObjectClass1e7c_36">4.3.1. Object class</a></li><li class="toc2"><a href="#PropertyByObjectClass22ab_37">4.3.2. Property by Object Class</a></li><li class="toc2"><a href="#Propertyaff_38">4.3.3. Property</a></li></ul>
+</li><li class="toc1"><a href="#DataModel261_39">4.4. Data model</a><ul class="toc2">
+<li class="toc2"><a href="#Table908_40">4.4.1. Table</a></li><li class="toc2"><a href="#Field2309_41">4.4.2. Field</a></li></ul>
+</li><li class="toc1"><a href="#DataMapping3f6_42">4.5. Data mapping</a><ul class="toc2">
+<li class="toc2"><a href="#TableMapping13ff_43">4.5.1. Table mapping</a></li><li class="toc2"><a href="#FieldMappingd8f_44">4.5.2. Field mapping</a></li><li class="toc2"><a href="#FieldMappingTransformation1293_45">4.5.3. Field mapping transformation</a></li></ul>
+</li><li class="toc1"><a href="#ReferenceData1c44_46">4.6. Reference data</a><ul class="toc2">
+<li class="toc2"><a href="#ApplicationTypecc1_47">4.6.1. Application type</a></li><li class="toc2"><a href="#PredefinedApplicationType2209_48">4.6.2. Predefined Application type</a></li><li class="toc2"><a href="#DataType10c5_49">4.6.3. Data type</a></li><li class="toc2"><a href="#MappingType212c_50">4.6.4. Mapping type</a></li><li class="toc2"><a href="#PredefinedMappingType2613_51">4.6.5. Predefined Mapping type</a></li><li class="toc2"><a href="#TransformationFunction176b_52">4.6.6. Transformation function</a></li><li class="toc2"><a href="#PredefinedTransformationFunctionadd_53">4.6.7. Predefined Transformation function</a></li></ul>
+</li><li class="toc1"><a href="#Path1875_54">4.7. Path</a><ul class="toc2">
+<li class="toc2"><a href="#Path77e_55">4.7.1. Path</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="GlobalView22cf_28"></a>4.1. Global view</h2>
+<p align="center"><img alt="/10000000000000E90000013FE94F7992.png" src="./resources/pictures/10000000000000E90000013FE94F7992.png" width="237"></img></p><p>The Data Exchange repository for data mapping configurations is located in the &#39;Data exchange&#39; data set under the EBX5 &#39;Administration&#39; tab. The &#39;Application&#39; domain contains the portfolio of applications with the interface configuration. An interface is used to configure the source and the target applications involved in a data flow.</p><p>The &#39;Semantic model&#39; domain contains the Object Class and Property items used to link the Tables and Fields to the semantic layer. The Semantic model is not mandatory to configure data mapping. However, it allows you to improve data lineage and integration with Information governance. The &#39;Data model domain&#39; contains the configuration for Tables and Fields. The &#39;Data mapping&#39; domain contains the actual data mapping configuration applied at the table level, and then the field level.</p><h2>
+<a name="Application108b_29"></a>4.2. Application</h2>
+<p>The Application domain contains the declaration of every application that is involved in the data flow (import, export, transfer) managed by Data Exchange.</p><h3>
+<a name="Application234c_30"></a>4.2.1. Application</h3>
+<p>An application is used as a source and/or target in the execution of a data flow process (import, export or data transfer).</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Universal name</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Logical name</p></td><td valign="top"><p>The logical name is automatically provided by the add-on to ensure a unique identification.</p></td></tr>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Last modification date</p></td><td valign="top"><p>Date of the last modification applied to the application.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="ApplicationByType1cd8_31"></a>4.2.2 Application by type</h3>
+<p>An application can be associated with one or many of the following types: CSV, Excel, Default XML, XML and EBX5.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Application</p></td><td valign="top"><p>The reference to an application.</p></td></tr>
+<tr>
+<td valign="top"><p>Application type</p></td><td valign="top"><p>The type of the application.</p></td></tr>
+<tr>
+<td valign="top"><p>Application path</p></td><td valign="top"><p>When this is an EBX5 type application, the path gives the data space and data set.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="Versione86_32"></a>4.2.3. Version</h3>
+<p>An application can be associated to a version. This version is used as documentation included in the exported data file when the targeted format can integrate it (this is the case in XML as appinfo tag). It has no impact on the data mapping configuration management.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Version</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Application by type</p></td><td valign="top"><p>The reference to an application with its type.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="Interface236_33"></a>4.2.4. Interface</h3>
+<p>An interface allows data to flow between two applications.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Source application</p></td><td valign="top"><p>Reference to the application with its type playing the role of the source.</p></td></tr>
+<tr>
+<td valign="top"><p>Target application</p></td><td valign="top"><p>Reference to the application with its type playing the role of the target.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the interface.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="ObjectClassByApplication1ae6_34"></a>4.2.5. Object class by Application</h3>
+<p>An application can hold one to many Object Class items. You can use the Object Class to create the relationship between a Table in the Data model and its related item in the Semantic model. Several tables can be linked to the same Object Class.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Application</p></td><td valign="top"><p>Reference to an application.</p></td></tr>
+<tr>
+<td valign="top"><p>Object class</p></td><td valign="top"><p>Reference to an Object Class.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the relation between the application and the Object Class.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="SemanticModel1246_35"></a>4.3. Semantic model</h2>
+<p>The Semantic model provides a business data architecture based on Object Class and Property items. An Object Class can be linked to one or many tables. A Property can be linked to one or many fields.</p><h3>
+<a name="ObjectClass1e7c_36"></a>4.3.1. Object class</h3>
+<p>An Object class is a business concept that can be linked to one or many tables declared in the data models.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Is removed</p></td><td valign="top"><p>If set to True: The Object Class is no longer valid. It is logically removed. By using the purge service, the data will be physically deleted.</p><p>If set to False: The Object Class is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the Object Class.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="PropertyByObjectClass22ab_37"></a>4.3.2. Property by Object Class</h3>
+<p>A property is held by one or many Object Class items.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Object Class</p></td><td valign="top"><p>Reference to an Object Class.</p></td></tr>
+<tr>
+<td valign="top"><p>Property</p></td><td valign="top"><p>Reference to a Property held by the referenced Object Class.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the association between the Object Class and the Property.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="Propertyaff_38"></a>4.3.3. Property</h3>
+<p>A Property is a business concept that can be linked to one to many fields declared in the data models.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Is removed</p></td><td valign="top"><p>If set to True: The Property is no longer valid. It is logically removed. By using the purge service, the data will be physically deleted.</p><p>If set to False: The Property is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the Property.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="DataModel261_39"></a>4.4. Data model</h2>
+<p>The Data model provides a logical data architecture based on Table and Field items. The data mapping configuration is also based on these items.</p><h3>
+<a name="Table908_40"></a>4.4.1. Table</h3>
+<p>A table is a container of data that depends on the application type. For EBX5 type applications, it is directly a table in EBX5. For XML type applications, it is a node in the XML file.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Application</p></td><td valign="top"><p>Reference to the application that owns the table.</p></td></tr>
+<tr>
+<td valign="top"><p>Application type</p></td><td valign="top"><p>Type of the application.</p></td></tr>
+<tr>
+<td valign="top"><p>Object Class</p></td><td valign="top"><p>The table can be linked to an Object Class. This is the way to make an association between the logical data architecture and the business architecture.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Logical name of the table.</p></td></tr>
+<tr>
+<td valign="top"><p>Label</p></td><td valign="top"><p>Label of the table.</p></td></tr>
+<tr>
+<td valign="top"><p>Path</p></td><td valign="top"><p>The path of the table.</p></td></tr>
+<tr>
+<td valign="top"><p>Is removed</p></td><td valign="top"><p>If set to True: The Table is no longer valid. It is logically removed. By using the purge service, data will be physically deleted</p><p>If set to False: The Table is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the table.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="Field2309_41"></a>4.4.2. Field</h3>
+<p>A field is held by one Table only.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Any naming convention is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Table</p></td><td valign="top"><p>Reference to the table that owns the field.</p></td></tr>
+<tr>
+<td valign="top"><p>Property</p></td><td valign="top"><p>The field can be linked to a Property. This is the way to make an association between the logical data architecture and the business architecture.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Logical name of the field.</p></td></tr>
+<tr>
+<td valign="top"><p>Label</p></td><td valign="top"><p>Label of the field.</p></td></tr>
+<tr>
+<td valign="top"><p>Data type</p></td><td valign="top"><p>Reference to a Data type for the field.</p></td></tr>
+<tr>
+<td valign="top"><p>Order</p></td><td valign="top"><p>Order of the field in table. The first position is &#39;0&#39;.</p></td></tr>
+<tr>
+<td valign="top"><p>Path</p></td><td valign="top"><p>The path of the field.</p></td></tr>
+<tr>
+<td valign="top"><p>Is removed</p></td><td valign="top"><p>If set to True: The Field is no longer valid. It is logically removed. By using the purge service, data will be physically deleted.</p><p>If set to False: the Field is valid.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the field.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="DataMapping3f6_42"></a>4.5. Data mapping</h2>
+<p>This domain contains the data mapping configuration for tables and fields.</p><h3>
+<a name="TableMapping13ff_43"></a>4.5.1. Table mapping</h3>
+<p>The data mapping configuration between the tables.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Source table</p></td><td valign="top"><p>Reference to the table used as the source for the data flow.</p></td></tr>
+<tr>
+<td valign="top"><p>Target table</p></td><td valign="top"><p>Reference to the table used as the target for the data flow.</p></td></tr>
+<tr>
+<td valign="top"><p>Source application</p></td><td valign="top"><p>Used to sort the records based on the application name and type. This data is computed automatically from the source table value.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="FieldMappingd8f_44"></a>4.5.2. Field mapping</h3>
+<p>The data mapping configuration between the fields.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Source field</p></td><td valign="top"><p>Reference to the field used as the source for the data flow.</p></td></tr>
+<tr>
+<td valign="top"><p>Target field</p></td><td valign="top"><p>Reference to the field used as the target for the data flow.</p></td></tr>
+<tr>
+<td valign="top"><p>Mapping type</p></td><td valign="top"><p>The mapping can be performed in a &#39;direct&#39; way (the target field is equal to the source field) or based on split, or aggregation policies. In the current version of the add-on, only the direct mapping type is available.</p></td></tr>
+<tr>
+<td valign="top"><p>Source application</p></td><td valign="top"><p>Used to sort the records based on the application&#39;s name and type. This data is computed automatically from the source field value.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="FieldMappingTransformation1293_45"></a>4.5.3. Field mapping transformation</h3>
+<p>The data transformation applied during field data mapping.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Field mapping</p></td><td valign="top"><p>Reference to a Field mapping declaration.</p></td></tr>
+<tr>
+<td valign="top"><p>Transformation function</p></td><td valign="top"><p>Reference to the transformation function to be applied.</p></td></tr>
+<tr>
+<td valign="top"><p>Order</p></td><td valign="top"><p>Execution order of the transformation function in case several functions must be applied.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="ReferenceData1c44_46"></a>4.6. Reference data</h2>
+<h3>
+<a name="ApplicationTypecc1_47"></a>4.6.1. Application type</h3>
+<p>The current version of the add-on manages the following types: XML, Default XML and EBX5.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Code of the application type.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Name of the application type.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="PredefinedApplicationType2209_48"></a>4.6.2. Predefined Application type</h3>
+<p>The add-on provides these predefined Application types.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Application type</p></th><th valign="top"><p>Description</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>EBX5</p></td><td valign="top"><p>An EBX5 type application is referenced through a data set. Its tables and fields are described through an EBX5 path.</p></td></tr>
+<tr>
+<td valign="top"><p>Default XML</p></td><td valign="top"><p>A &#39;Default XML&#39; type application relies on default XML paths automatically created by Data Exchange when an export XML process executes.</p></td></tr>
+<tr>
+<td valign="top"><p>XML</p></td><td valign="top"><p>An XML type application relies on user-defined XML path declarations.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="DataType10c5_49"></a>4.6.3. Data type</h3>
+<p>This table references all the possible data type of a field.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Code of the data type.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Name of the data type.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="MappingType212c_50"></a>4.6.4. Mapping type</h3>
+<p>In the current version of the add-on, only the &#39;Direct&#39; mapping type is available. In future versions, other types will be provided to manage aggregation and split of fields.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Code of the mapping type.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Name of the mapping type.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the mapping type.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="PredefinedMappingType2613_51"></a>4.6.5. Predefined Mapping type</h3>
+<p>The add-on provides this predefined Mapping type.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Mapping type</p></th><th valign="top"><p>Description</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Direct</p></td><td valign="top"><p>The mapping between the source and target fields is executed in a direct way: the target value is equal to the source value. There is no aggregation and/or split of fields values.</p></td></tr>
+</tbody>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th colspan="2" valign="top"><p>Special notation:</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p align="center"><img alt="/100002010000000E0000000E86672C34.png" src="./resources/pictures/100002010000000E0000000E86672C34.png" width="18"></img></p></td><td valign="top"><p>Aggregation and split of fields values.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="TransformationFunction176b_52"></a>4.6.6. Transformation function</h3>
+<p>During data mapping, the data value can be transformed before moving to the target application. In the current version of the add-on, the &#39;No import&#39; (and &#39;No export&#39;, &#39;No transfer&#39;) transformation function is delivered.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Code</p></td><td valign="top"><p>Code of the transformation function.</p></td></tr>
+<tr>
+<td valign="top"><p>Name</p></td><td valign="top"><p>Name of the transformation function.</p></td></tr>
+<tr>
+<td valign="top"><p>Java class</p></td><td valign="top"><p>Java class of the transformation function.</p></td></tr>
+<tr>
+<td valign="top"><p>Description</p></td><td valign="top"><p>Description of the transformation function.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="PredefinedTransformationFunctionadd_53"></a>4.6.7. Predefined Transformation function</h3>
+<p>The add-on provides these predefined Mapping types.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Transformation function</p></th><th valign="top"><p>Description</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>No export</p></td><td valign="top"><p>The source field value is not exported.</p></td></tr>
+<tr>
+<td valign="top"><p>No import</p></td><td valign="top"><p>The target field value is not imported.</p></td></tr>
+<tr>
+<td valign="top"><p>No transfer</p></td><td valign="top"><p>The field value is not transferred.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="Path1875_54"></a>4.7. Path</h2>
+<p>The path domain contains the declaration of all paths used in the data mapping configurations.</p><h3>
+<a name="Path77e_55"></a>4.7.1. Path</h3>
+<p>The Path table collects all the path declarations used in the data mapping configuration.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Property</p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Application type</p></td><td valign="top"><p>A reference to the application type (EBX5, Default XML, XML).</p></td></tr>
+<tr>
+<td valign="top"><p>Path type</p></td><td valign="top"><p>Either Table, Field or Application.</p></td></tr>
+<tr>
+<td valign="top"><p>Path</p></td><td valign="top"><p>The path value.</p></td></tr>
+<tr>
+<td valign="top"><p>Comment</p></td><td valign="top"><p>Description of the path.</p></td></tr>
+</tbody>
+</table>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.0</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.2.0 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.2.0</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Interactive merge process</a></li><li class="toc2"><a href="#id2s2">Export/Import between repositories</a></li><li class="toc2"><a href="#id2s3">Comparison of occurrences</a></li><li class="toc2"><a href="#id2s4">Instance header management</a></li><li class="toc2"><a href="#id2s5">Triggers</a></li><li class="toc2"><a href="#id2s6">Sort API</a></li><li class="toc2"><a href="#id2s7">Known limitations</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.2.0 fix 001</h2>
+<p><strong>Release Date: June 8, 2007</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01444]</strong> The link <code>osd:select</code> does not work for adaptation instances under an agreement. </p></li><li><p><strong>[01445]</strong> If a table trigger handles <code>beforeModify</code> and sets new values on the occurrence to modify, these new values are not taken into account. </p></li><li><p><strong>[01446]</strong> The definition of a specific permission on a node under a table that has already a default permission is not taken into account in all combinations of access rights. </p></li><li><p><strong>[01447]</strong> On instance permissions, the list of nodes specific permission includes complex values that are not terminal. However the specification of a specific permission for such a node is not taken into account. </p></li></ul>
+<h2>
+<a name="id2"></a>4.2.0</h2>
+<p><strong>Release Date: June 5, 2007</strong></p><h3>
+<a name="id2s1"></a>Interactive merge process</h3>
+<p>The comparison and merge user interface has been completely reviewed so as to enhance the display and the interactivity.</p><p>From this version, the user is able to select which changes must be taken when he is doing a merge. He can make decisions on various Master Data entities and granularities: terminal node value, occurrence, table, and also instance values, instance header and instance permissions.</p><p>Limitations: When one user is performing a merge, other users can still access to the home being merged. If an update is done during the merge, this update is not systematically seen in the differences. For a safe merge, it is advised that the branch owner first forbids the writes on the branch.</p><h3>
+<a name="id2s2"></a>Export/Import between repositories</h3>
+<p>EBX.Platform Archive files are now enabled with change sets. That is, they define not only the current state of a home but also the updates that have been done in this home since a previous version.</p><p>The import and export of archives (including change sets) are subjected to access rights. The permissions have been modified to handle this. As a consequence, the programmatic procedures previously developed may have to be adapted either by being executed as an authenticated user allowed to export or import, or by setting all privileges in the procedure (method ProcedureContext.setAllPrivileges()).</p><p>EBX now provides built-in export and import wizzards. The button is available on the branch technical pane.</p><p><strong>Warning:</strong> the import wizzard does not import Archive that have not been exported with a change set. </p><p> The export / import functionalities are also available as programmatic API on <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html">ProcedureContext</a> class. </p><h3>
+<a name="id2s3"></a>Comparison of occurrences</h3>
+<p>The table user interface now provides the ability to select two occurrences so as to compare them.</p><p>For selecting easily the occurrences, the user has the possibility to use quick search and specific filters.</p><h3>
+<a name="id2s4"></a>Instance header management</h3>
+<p> The management information associated with an instance are called the <em>header</em> .&nbsp;They have been extended and included in the comparison and merge process. They include the internationalized label and description of the Master Data instance ( <em>adaptation</em> ), the parent reference, the activation state and delegation optional information (&quot;agreement&quot;). </p><h3>
+<a name="id2s5"></a>Triggers</h3>
+<p> The new schema declaration, <code>osd:trigger</code> , allows to add callbacks when operations are performed on a table and also on an instance (instance creation and deletion). </p><p>Triggers benefit of the common features of programmatic schema extensions: JavaBeans declaration at schema level; a context-enabled setup phase at schema validation time; and context-enabled methods at execution time.</p><p>For more information, please refer to:</p><ul>
+<li><p><a target="_self" href="../models/constraints.html#triggers">Triggers</a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/TableTrigger.html">TableTrigger class comment</a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/InstanceTrigger.html">InstanceTrigger class comment</a></p></li></ul>
+<h3>
+<a name="id2s6"></a>Sort API</h3>
+<p> The API now provides the possibility to sort request results. See <a target="_blank" href="../Java_API/com/onwbp/adaptation/RequestSortCriteria.html">RequestSortCriteria</a> class. </p><h3>
+<a name="id2s7"></a>Known limitations</h3>
+<ul>
+<li><p><strong>Validation performance:</strong> for a very large number of tables (in the order of 10,000 tables) with many occurrences (in the order of 10,000,000 occurrences), validation still take several minutes. </p></li><li><p><strong>Merge process:</strong> in case of instances&#39; add-add conflict, tables in the source are ignored. </p><p>Workaround: first create instances and merge, then tables may be populated and merged.</p></li><li><p><strong>Repository locking:</strong> it is not yet detected when two Java virtual machines share the same physical repository. </p><p>Workaround: Repositories&#39; administrator must take care that a repository is not refered by two environments.</p></li><li><p><strong>Access right management:</strong> a node can be set as ReadWrite even if it is not adaptable according to schema definition. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

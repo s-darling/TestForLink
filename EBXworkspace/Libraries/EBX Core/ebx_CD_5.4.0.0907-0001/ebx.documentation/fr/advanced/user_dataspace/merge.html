@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Fusion d&#39;un espace de donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dataspace_merge" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Espaces de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/merge.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Espaces de données</span></div>
+<h1>
+Fusion d&#39;un espace de donn&eacute;es</h1>
+<p>Quand le travail dans un espace de donn&eacute;es est termin&eacute;, vous pouvez effectuer une fusion unidirectionnelle de l&#39;espace de donn&eacute;es vers son espace de donn&eacute;es parent. Le processus de fusion est le suivant :</p><ol>
+<li><p>l&#39;espace de donn&eacute;es parent et l&#39;espace de donn&eacute;es enfant sont verrouill&eacute;s pour tous les utilisateurs. Les verrous restent pendant la dur&eacute;e de la fusion. C&#39;est &agrave; dire que les contenus des deux espaces de donn&eacute;es peuvent &ecirc;tre lus, mais ne peuvent pas &ecirc;tre modifi&eacute;s.</p><p><strong>Note :</strong> cette restriction sur l&#39;espace de donn&eacute;es parent s&#39;applique aussi aux fusions des autres espaces de donn&eacute;es enfants et non seulement aux modifications directes.</p></li><li><p>les changements dans l&#39;espace de donn&eacute;es qui ont &eacute;t&eacute; faits depuis sa cr&eacute;ation sont int&eacute;gr&eacute;s dans l&#39;espace de donn&eacute;es parent ;</p></li><li><p>l&#39;espace de donn&eacute;es enfant est ferm&eacute; ;</p></li><li><p>l&#39;espace de donn&eacute;es parent est d&eacute;verrouill&eacute;.</p></li></ol>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#merge">Initiation d'une fusion</a></li><li class="toc1"><a href="#id2">Revue et acceptation des changements</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Types de modifications</a></li><li class="toc2"><a href="#id2s2">Types de conflits</a></li></ul>
+</li><li class="toc1"><a href="#mergepolicy">Finalisation d'une fusion</a><ul class="toc2">
+<li class="toc2"><a href="#setmergepolicy">Configuration de la politique de fusion d'un espace de données</a></li></ul>
+</li><li class="toc1"><a href="#id4">Abandon d'une fusion</a></li></ul>
+</div>
+<h2>
+<a name="merge"></a>Initiation d&#39;une fusion</h2>
+<p>Suivez ces &eacute;tapes pour initier une fusion d&#39;un espace de donn&eacute;es dans son espace de donn&eacute;es parent :</p><ol>
+<li><p>s&eacute;lectionnez l&#39;espace de donn&eacute;es &agrave; fusionner dans le panneau de navigation de la section Espaces de donn&eacute;es ;</p></li><li><p>dans l&#39;espace de travail, s&eacute;lectionnez <strong>Fusionner l&#39;espace de donn&eacute;es</strong> dans le menu <strong>Actions</strong>.</p></li></ol>
+<h2>
+<a name="id2"></a>Revue et acceptation des changements</h2>
+<p>Avant la fusion d&eacute;finitive, vous devez d&eacute;cider quels changements survenus dans l&#39;espace de donn&eacute;es enfant (source) doivent &ecirc;tre fusionn&eacute;s dans l&#39;espace de donn&eacute;es parent (cible).</p><p><strong>Note:</strong> Cette &eacute;tape de revue n&#39;existe pas pour une fusion faite par l&#39;interm&eacute;diaire d&#39;un service de donn&eacute;es ou d&#39;un service programmatique. Pour les fusions automatis&eacute;es, tous les changements dans l&#39;espace de donn&eacute;es enfant remplacent les donn&eacute;es dans l&#39;espace de donn&eacute;es parent.</p><p>Pendant la fusion, un &eacute;cran de comparaison r&eacute;capitule tous les changements qui doivent &ecirc;tre revus. Deux colonnes de <em>listes de changements</em> sont affich&eacute;es, prenant en compte les changements des comparaisons d&#39;espaces de donn&eacute;es suivantes :</p><ul>
+<li><p>l&#39;espace de donn&eacute;es enfant par rapport &agrave; son image initiale ;</p></li><li><p>l&#39;espace de donn&eacute;es parent par rapport &agrave; l&#39;image initiale de l&#39;espace de donn&eacute;es enfant.</p></li></ul>
+<p>Par d&eacute;faut, tous les changements d&eacute;tect&eacute;s sont s&eacute;lectionn&eacute;s pour fusion. Vous pouvez d&eacute;s&eacute;lectionner les changements pour les exclure de la fusion. Vous pouvez voir les changements relatifs aux diff&eacute;rentes &eacute;tendues en s&eacute;lectionnant des &eacute;l&eacute;ments dans le panneau de navigation.</p><p>La <em>fusion &agrave; trois points</em> implique l&#39;espace de donn&eacute;es courant, l&#39;image initiale et l&#39;espace de donn&eacute;es parent. Elle permet de d&eacute;tecter les conflits. Parfois, les donn&eacute;es ont &eacute;t&eacute; modifi&eacute;es &agrave; la fois dans l&#39;espace de donn&eacute;es courant et dans son parent.</p><p>Le processus de fusion concerne aussi les droits d&#39;acc&egrave;s d&eacute;crits dans une table. Il faut &eacute;galement passer en revue les modifications des permissions pour d&eacute;cider si elles seront incluses dans la fusion.</p><p>Lorsque vous avez choisi les changements &agrave; fusionner, vous devez cliquer sur le bouton intitul&eacute; <em>Marquer les diff&eacute;rences comme revues</em> pour indiquer que vous avez verifi&eacute; les changements dans l&#39;&eacute;tendue actuelle. Tous les changements doivent &ecirc;tre revus pour effectuer la fusion.</p><h3>
+<a name="id2s1"></a>Types de modifications</h3>
+<p>Le processus de fusion consid&egrave;re comme modifications &agrave; &eacute;valuer :</p><ul>
+<li><p>la cr&eacute;ation d&#39;un enregistrement ou d&#39;un jeu de donn&eacute;es ;</p></li><li><p>la modification de toute entit&eacute; ;</p></li><li><p>la suppression d&#39;un enregistrement, d&#39;un jeu de donn&eacute;es, ou de la valeur d&#39;un noeud ;</p></li><li><p>la modification des permissions d&#39;une table.</p></li></ul>
+<h3>
+<a name="id2s2"></a>Types de conflits</h3>
+<p>Cette interface de revue affiche &eacute;galement les conflits trouv&eacute;s. Des conflits peuvent survenir quand une &eacute;tendue contient des modifications dans l&#39;espace de donn&eacute;es source et l&#39;espace de donn&eacute;es cible.</p><p>Les conflits sont cat&eacute;goris&eacute;s comme suit :</p><ul>
+<li><p><em>un conflit de cr&eacute;ation d&#39;un enregistrement ou d&#39;un jeu de donn&eacute;es,</em></p></li><li><p><em>un conflit de modification de toute entit&eacute;,</em></p></li><li><p><em>un conflit de suppression d&#39;un enregistrement ou d&#39;un jeu de donn&eacute;es,</em></p></li><li><p><em>tout autre conflit.</em></p></li></ul>
+<h2>
+<a name="mergepolicy"></a>Finalisation d&#39;une fusion</h2>
+<p>Lorsque vous avez v&eacute;rifi&eacute; tous les changements et d&eacute;cid&eacute; lesquels sont &agrave; inclure dans le r&eacute;sultat de la fusion, cliquez sur le bouton <strong>Fusionner &gt;&gt;</strong> dans le panneau de navigation.</p><p>En fonction de la politique de fusion de l&#39;espace de donn&eacute;es parent, le processus de finalisation peut diff&eacute;rer. Par d&eacute;faut, une fusion peut &ecirc;tre effectu&eacute;e m&ecirc;me si le r&eacute;sultat de la fusion contient des erreurs de validation. L&#39;administrateur de l&#39;espace de donn&eacute;es parent peut configurer la politique de fusion pour que les fusions avec ses espaces de donn&eacute;es enfants soient finalis&eacute;es uniquement si le resultat n&#39;a pas d&#39;erreur de validation.</p><p>Si la politique de fusion par d&eacute;faut est utilis&eacute;e, la fusion est achev&eacute;e quel que soit l&#39;&eacute;tat de validation de l&#39;espace de donn&eacute;es r&eacute;sultant.</p><p>Si la politique de fusion pr&eacute;-validante est utilis&eacute;e, un espace de donn&eacute;es d&eacute;di&eacute; est d&#39;abord cr&eacute;&eacute; pour contenir le contenu de la fusion. S&#39;il est valide, cet espace de donn&eacute;es est automatiquement fusionn&eacute; avec l&#39;espace de donn&eacute;es parent.</p><p>Dans le cas contraire, si des erreurs de validation sont d&eacute;tect&eacute;es dans l&#39;espace de donn&eacute;es d&eacute;di&eacute;, seuls l&#39;espace de donn&eacute;es d&#39;origine et l&#39;espace de donn&eacute;es d&eacute;di&eacute; contenant le r&eacute;sultat de la fusion - nomm&eacute; &quot;[fusion] &lt;<em>nom de l&#39;espace de donn&eacute;es enfant</em>&gt;&quot; - seront accessibles. Les options suivantes sont alors propos&eacute;es dans le menu de l&#39;espace de travail <strong> Actions &gt; Fusion en cours</strong>&nbsp;:&nbsp;</p><ul>
+<li><p><strong>Abandonner la fusion</strong>&nbsp;:&nbsp;cette action abandonne la fusion en cours et r&eacute;cup&egrave;re l&#39;espace de donn&eacute;es enfant dans l&#39;&eacute;tat d&#39;avant fusion.</p></li><li><p><strong>Poursuivre la fusion</strong>&nbsp;:&nbsp;cette action permet de retenter une fusion apr&egrave;s avoir effectu&eacute; les corrections n&eacute;cessaires dans l&#39;espace de donn&eacute;es de fusion d&eacute;di&eacute;.</p></li></ul>
+<h3>
+<a name="setmergepolicy"></a>Configuration de la politique de fusion d&#39;un espace de donn&eacute;es</h3>
+<p>En tant qu&#39;administrateur d&#39;un espace de donn&eacute;es, vous pouvez interrompre la finalisation des fusions avec ses espaces de donn&eacute;es enfant &agrave; travers de l&#39;interface utilisateur si le r&eacute;sultat contient des erreurs de validation. Pour cela, cliquez sur <strong>Actions &gt; Informations</strong> dans l&#39;espace de travail de l&#39;espace de donn&eacute;es parent. Sur la page des informations de cet espace de donn&eacute;es, positionnez la <strong>Politique de fusion des enfants</strong> &agrave; <strong>Fusion pr&eacute;-validante</strong>. Cette politique de fusion sera appliqu&eacute;e pour toutes les fusions des espaces de donn&eacute;es enfant avec l&#39;espace de donn&eacute;es parent ainsi param&eacute;tr&eacute;.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+En mode composant web, le comportement pour la politique de fusion est le m&ecirc;me&nbsp;;&nbsp;la politique d&eacute;finie par l&#39;espace de donn&eacute;es parent sera automatiquement utilis&eacute;e lors de la fusion des modifications de l&#39;espace de donn&eacute;es enfant. Cependant, cette politique n&#39;est pas appliqu&eacute;e pour les fusions programmatiques, donc ignor&eacute;e pour les t&acirc;ches automatiques des workflows de donn&eacute;es.</fieldset>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../user_dataspace/actions_dataspace.html#mergePolicy">Politique de fusion</a></p></div>
+<h2>
+<a name="id4"></a>Abandon d&#39;une fusion</h2>
+<p>Une fusion est effectu&eacute;e dans le contexte d&#39;une session utilisateur, et doit &ecirc;tre achev&eacute;e en une seule op&eacute;ration. Si vous d&eacute;cidez de ne pas poursuivre la fusion apr&egrave;s l&#39;avoir initi&eacute;e, vous pouvez cliquer sur le bouton <strong>Annuler</strong> afin d&#39;abandonner l&#39;op&eacute;ration.</p><p>Si vous naviguez vers une autre page pendant une fusion, la fusion sera abandonn&eacute;e, mais les verrous sur l&#39;espace de donn&eacute;es parent et l&#39;espace de donn&eacute;es enfant resteront. Il faudra les d&eacute;verrouiller dans la section Espaces de Donn&eacute;es.</p><p>Pour d&eacute;verrouiller un espace de donn&eacute;es, s&eacute;lectionnez l&#39;espace de donn&eacute;es dans le panneau de navigation, et ensuite cliquez sur le bouton <strong>D&eacute;verrouiller</strong> dans l&#39;espace de travail. Si vous effectuez le d&eacute;verrouillage depuis l&#39;espace de donn&eacute;es enfant, les deux espaces de donn&eacute;es seront d&eacute;verrouill&eacute;s. Si vous effectuez le d&eacute;verrouillage depuis l&#39;espace de donn&eacute;es parent, seulement l&#39;espace de donn&eacute;es parent sera d&eacute;verrouill&eacute;, donc vous devrez &eacute;galement effectuer un d&eacute;verrouillage de l&#39;espace de donn&eacute;es enfant.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Espaces de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

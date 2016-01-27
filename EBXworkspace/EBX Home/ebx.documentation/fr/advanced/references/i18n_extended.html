@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Extending EBX5 internationalization</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="i18n_extended" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Reference Manual &gt; Localization</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/i18n_extended.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Localization</span></div>
+<h1>
+Extending EBX5 internationalization</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">EBX5 native localization</a></li></ul>
+</li><li class="toc1"><a href="#id2">Extending EBX5 user interface localization</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Adding a new locale</a></li><li class="toc2"><a href="#id2s2">Specific localization deployment</a></li></ul>
+</li><li class="toc1"><a href="#id3">Known limitations</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Default localization</a></li><li class="toc2"><a href="#id3s2">Non extendable materials</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview</h2>
+<p>EBX5 offers the following localization capabilities:</p><ol>
+<li><p> The ability to internationalize of labels and specific data models, as described in section <a href="i18n.html">Labeling and Localization</a>, </p></li><li><p>The extensibility of EBX5 user interface localization</p></li></ol>
+<h3>
+<a name="id1s1"></a>EBX5 native localization</h3>
+<p>By default, EBX5 provides its built-in user interface and messages in:</p><ol>
+<li><p>English (en-US),</p></li><li><p>French (fr-FR).</p></li></ol>
+<p>The built-in localized contents are provided &#39;as-is&#39;, and cannot be changed.</p><h2>
+<a name="id2"></a>Extending EBX5 user interface localization</h2>
+<p>EBX5 now supports the localization of its user interfaces into any compatible language and region.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Currently, Latin &amp; Cyrillic characters are supported. Locales that use other character sets may be usable, but are not supported.</p></div>
+<h3>
+<a name="id2s1"></a>Adding a new locale</h3>
+<p>In order to add a new locale, the following steps must be performed:</p><ul>
+<li><p>Declare the new locale in the EBX5 main configuration file. For example:</p><p><span class="highlight">ebx.locales.available=en-US, fr-FR, xx</span></p><ul>
+<li><p>The first locale is always considered the default.</p></li><li><p>The built-in locales, en-US and fr-FR, may be removed if required.</p></li></ul>
+<p>See <a href="../installation/properties.html">EBX5 main configuration file</a>.</p></li><li><p>Deploy the following files in the EBX5 class-path:</p><ul>
+<li><p>A formatting policy file, named <code>com.orchestranetworks.i18n.frontEndFormattingPolicy_xx.xml</code>,</p></li><li><p>A set of localized message files in a resource bundle.</p></li></ul>
+<p> A complete template set of files is available <a href="../resources/i18n/i18n_xx.zip">here</a>. </p></li></ul>
+<h3>
+<a name="id2s2"></a>Specific localization deployment</h3>
+<p>Specific localized files can be deployed as a JAR file alongside <code>ebx.jar</code>.</p><h2>
+<a name="id3"></a>Known limitations</h2>
+<h3>
+<a name="id3s1"></a>Default localization</h3>
+<p>The EBX5 &#39;en-US&#39; and &#39;fr-FR&#39; localizations cannot be modified.</p><h3>
+<a name="id3s2"></a>Non extendable materials</h3>
+<p>Localization of the following cannot be extended:</p><ul>
+<li><p>EBX5 product documentation,</p></li><li><p>EBX5 HTML editor and viewer,</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Localization</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

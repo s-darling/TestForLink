@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - User interface services (UI services)</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_uiservices" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Integration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/ui_services.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration</span></div>
+<h1>
+User interface services (UI services)</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#overview">Overview</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Accessing UI services</a></li></ul>
+</li><li class="toc1"><a href="#instance">UI services on data sets</a><ul class="toc2">
+<li class="toc2"><a href="#useCaseInstance">Common use cases</a></li><li class="toc2"><a href="#instanceSchema">Declaration and configuration</a></li></ul>
+</li><li class="toc1"><a href="#branch">Global UI services on all data spaces and snapshots</a><ul class="toc2">
+<li class="toc2"><a href="#useCaseBranch">Common use cases</a></li><li class="toc2"><a href="#configuration">Declaration and configuration</a></li></ul>
+</li><li class="toc1"><a href="#workflow">Integration of UI services with workflows</a><ul class="toc2">
+<li class="toc2"><a href="#workflowOverview">Overview</a></li><li class="toc2"><a href="#commonProperties">Common properties for defining input and output parameters</a></li><li class="toc2"><a href="#type_workflow">Services on a data spaces or a snapshots for data workflows</a></li><li class="toc2"><a href="#id4s4">Service on data sets for data workflows</a></li><li class="toc2"><a href="#id4s5">Service extensions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="overview"></a>Overview</h2>
+<p>A user interface service (UI service) is an HTTP resource, such as a JSP or Java servlet, that is integrated into EBX5. Through UI services, users can perform specific and advanced functions directly from the user interface.</p><p>The following types of UI services exist:</p><ul>
+<li><p><a target="_self" href="./builtin.html">Built-in UI services</a> provided by EBX5,</p></li><li><p>Custom UI services on data sets declared in the data model,</p></li><li><p>Custom UI services on data spaces or snapshots that are declared in a module and are available to all data spaces or snapshots. These can be disabled on specific data spaces or snapshots using service permissions.</p></li></ul>
+<p>Additionally, to integrate a UI service with a workflow, it can be declared as an <em>interaction</em>. See <a target="_self" href="#workflow">Integration of UI services with workflows</a> in this chapter for more information.</p><h3>
+<a name="id1s1"></a>Accessing UI services</h3>
+<p>Depending on the nature of UI services and their declarations, users can access them in several ways: </p><ul>
+<li><p>Directly in the EBX5 user interface, from a <strong>Services</strong> or <strong>Actions</strong> menu,</p></li><li><p>From a data workflow, in which case the UI service must be declared as an interaction,</p></li><li><p>From the Java API, using <code><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.html#setService(com.orchestranetworks.service.ServiceKey)">UIHttpManagerComponent</a></code>.</p></li></ul>
+<h2>
+<a name="instance"></a>UI services on data sets</h2>
+<p>UI services can be declared in a specific data model contained in a module, which makes them available to data sets that implement that data model. These UI services can be defined to be executable on the entire data set, or on tables or record selections in the data set. They are launched in the user interface as follows:</p><ul>
+<li><p>For data sets, from the <strong>Services</strong> menu in the navigation pane.</p></li><li><p>For tables, from the <strong>Actions</strong> menu in the workspace.</p></li><li><p>For record selections, from the <strong>Actions</strong> menu in the workspace.</p></li></ul>
+<h3>
+<a name="useCaseInstance"></a>Common use cases</h3>
+<p>Common uses for UI services on data sets, tables, and record selections are:</p><ul>
+<li><p>Updating a table or a user selection of table records. For example, the field values of a column &#39;Product price&#39; can be adjusted by a ratio that is specified by the user.</p></li><li><p>Importing data from an external source into the current data set.</p></li><li><p>Exporting the selected records of a table.</p></li><li><p>Implementing specific events in the life cycle of MDM entities. For example, the creation of a product, which impacts several tables, or the &quot;closure&quot; of a product at a given date.</p></li><li><p>Displaying statistics on a table.</p></li></ul>
+<h3>
+<a name="instanceSchema"></a>Declaration and configuration</h3>
+<p>A UI service on a data set, a table, or a record selection must be declared in the associated data model under the element <code>xs:complexType/xs:annotation/xs:appinfo/osd:service</code>.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+The data model must be packaged in a module.</fieldset>
+<h4>
+Example</h4>
+<p>The following example declares the UI service &#39;Distribution&#39; on a table:</p><pre class="ebx_example brush: html">
+&lt;xs:complexType name="Distribution">
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;osd:service resourcePath="/Distribution/Distribution.jsp"
+				activatedForPaths="/root/Product" orderInMenu="1"/>
+		&lt;/xs:appinfo>
+		&lt;xs:documentation xml:lang="en-US">
+		   Distribute data for table 'Product'
+		&lt;/xs:documentation>
+	&lt;/xs:annotation>
+&lt;/xs:complexType></pre>
+<h4>
+Properties</h4>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Property</strong></p></th><th><p><strong>Definition</strong></p></th><th><p><strong>Mandatory</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>resourcePath</code></p></td><td valign="top"><p>Attribute that identifies the JSP or servlet resource to be called. The identifier is a path relative to the root of the EBX5 module containing the data model. It must begin with &#39;/&#39;.</p><div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html">ServiceContext</a></li><li><a target="_blank" href="http://download.oracle.com/docs/cd/E17802_01/products/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getRequestDispatcher(java.lang.String)">ServletContext.getRequestDispatcher(String)</a></li></ul>
+</div>
+</td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>activatedForPaths</code></p></td><td valign="top"><p>Attribute that specifies where the UI service will be available. The list of paths is white-space delimited. Each path must be the absolute XPath notation of the node. It is possible to activate the UI service on nodes or on data sets. The path &#39;/&#39; activates the UI service globally on the data set. On <code>osd:table</code>, an additional syntax allows you to specify whether the UI service is activated globally on the table or on record selections. If the path to the table is <code>/root/myTable</code>: </p><ul>
+<li><p><em>/root/myTable</em> activates the UI service globally on the table.</p></li><li><p><em>/root/myTable{n}</em> activates the UI service only if exactly &#39;n&#39; records are selected, where &#39;n&#39; is a positive integer.</p></li><li><p><em>/root/myTable{+}</em> activates the UI service if one or more records are selected (an unbounded selection).</p></li></ul>
+</td><td valign="top">No. If not defined, activates as a global UI service that is not attached to a particular node. </td></tr>
+<tr>
+<td valign="top"><p><code>activatedForPathRegexp</code></p></td><td valign="top"><p>Attribute that specifies where the UI service will be available based on a regular expression. The UI service will be available on all nodes whose full path in the data model match the regular expression. The format of the regular expression is defined in the <a target="_blank" href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html">Java specification</a>.</p></td><td valign="top">No. When set, it is exclusive with <code>activatedForPaths</code> attribute. </td></tr>
+<tr>
+<td valign="top"><p><code>class</code></p></td><td valign="top">Attribute that specifies a Java class that implements <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServicePermission.html"><code>ServicePermission</code></a>.</td><td valign="top">No. If not defined, service has no permission restriction.</td></tr>
+<tr>
+<td valign="top"><p><code>osd:confirmation</code></p></td><td valign="top">Element that specifies a confirmation message or that suppresses user confirmation before the UI service is launched. See <a target="_self" href="#confirmation">Confirmation message</a> below.</td><td valign="top">No. If not defined, a default confirmation message is displayed.</td></tr>
+<tr>
+<td valign="top"><p><code>orderInMenu</code></p></td><td valign="top">Attribute that specifies the position of this UI service among the UI services defined in the schema. This position is used for the display order of UI services.</td><td valign="top">No</td></tr>
+</tbody>
+</table>
+<h4>
+<a name="confirmation"></a>Confirmation messages</h4>
+<p> By default, the user is shown a generic message and must confirm the execution of the UI service. The element <code>osd:confirmation</code> allows you to specify a custom localized confirmation message: </p><pre class="ebx_example brush: html">
+&lt;osd:service...>
+ &lt;osd:confirmation>
+  &lt;osd:label xml:lang="fr-FR">
+  	Voulez-vous lancer le service ?
+  &lt;/osd:label>
+  &lt;osd:label xml:lang="en-US">
+  	Do you want to launch the service ?
+  &lt;/osd:label>
+ &lt;/osd:confirmation>
+&lt;/osd:service></pre>
+<p>The element <code>osd:confirmation</code> can also be used to disable the user confirmation entirely with the attribute <code>disable=&quot;true&quot;</code>.</p><h2>
+<a name="branch"></a>Global UI services on all data spaces and snapshots</h2>
+<p>A UI service can also be declared in such a way that they are available to all data spaces and/or snapshots in the repository. The purpose of such services is to write high-level core business procedures that involve actions such as merges, imports and exports, and validations.</p><h3>
+<a name="useCaseBranch"></a>Common use cases</h3>
+<p>Common uses for UI services on data spaces and snapshots are:</p><ul>
+<li><p>Importing data from an external source.</p></li><li><p>Exporting data to multiple systems.</p></li><li><p>Validating a data space or snapshot before exporting it</p></li><li><p>Sending messages to monitoring systems before performing a merge</p></li></ul>
+<h3>
+<a name="configuration"></a>Declaration and configuration</h3>
+<p>The Java applications, JSPs, and servlets for UI services on data spaces or snapshots must be declared in a module. It is recommended to create a dedicated module for UI services on data spaces and snapshots; these UI services will be available on all data spaces and snapshots, but may have a life cycle that is independent of the data life cycle.</p><p>UI services on data spaces and snapshots must be declared in the module configuration file <code>module.xml</code>, under the element <code>services/service</code>, where <code>services</code> is the root of all UI services declared in the module.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../models/modules_packaging.html">Packaging EBX5 modules</a></p></div>
+<h4>
+Example</h4>
+<p>The following example declares a UI service that validates and merges a data space: </p><pre class="ebx_example brush: html">
+&lt;service name="AdvancedMerge"> 
+	&lt;resourcePath>/services/advancedMerge.jsp&lt;/resourcePath> 
+	&lt;type>branch version&lt;/type> 
+	&lt;documentation xml:lang="en-US"> 
+		&lt;label>Merge/Validate&lt;/label> 
+		&lt;description>Merge current branch to parent if valid.&lt;/description> 
+	&lt;/documentation> 
+	&lt;confirmation>
+		&lt;label>A default confirmation message.&lt;/label>
+		&lt;label xml:lang="en-US">An English confirmation message.&lt;/label>
+		&lt;label xml:lang="fr-FR">Un message de confirmation en français.&lt;/label>
+	&lt;/confirmation>
+&lt;/service></pre>
+<h4>
+Properties</h4>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Property</strong></p></th><th><p><strong>Definition</strong></p></th><th><p><strong>Mandatory</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>name</code></p></td><td valign="top"><p>Attribute that specifies the name of the UI service. This name must be unique within the scope of a module.</p></td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>resourcePath</code></p></td><td valign="top"><p>Element that identifies the JSP or servlet resource to be called. The identifier is a path relative to the root of the EBX5 module containing the schema. It must begin with &#39;/&#39;.</p><div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html">ServiceContext</a></li><li><a target="_blank" href="http://download.oracle.com/docs/cd/E17802_01/products/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getRequestDispatcher(java.lang.String)">ServletContext.getRequestDispatcher(String)</a></li></ul>
+</div>
+</td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>type</code></p></td><td valign="top"><p>Element that defines the availability of the UI service as a whitespace-delimited list.</p><ul>
+<li><p>&#39;branch&#39;, which makes the UI service available to <em>data spaces</em></p></li><li><p>&#39;version&#39;, which makes the UI service available to <em>snapshots</em></p></li><li><p>&#39;workflow&#39;, which makes the UI service available to be defined for user tasks in workflow models</p><p>If <em>only</em> the value &#39;workflow&#39; is specified, the UI service will be available on any data space or snapshot, but only in the context of a workflow and not in any <strong>Services</strong> menus.</p><p>See <a target="_self" href="#type_workflow">Services on a data spaces or a snapshots for data workflows</a></p></li></ul>
+</td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>documentation</code></p></td><td valign="top"><p>Localized label and description of the UI service, displayed in the menu where the UI service appears.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>confirmation</code></p></td><td valign="top">Element that specifies a confirmation message or that suppresses user confirmation before the UI service is launched. See <a target="_self" href="#dataspace_confirmation">Confirmation message</a> below.</td><td valign="top"><p>No. If not defined, a default confirmation message is displayed.</p></td></tr>
+</tbody>
+</table>
+<h4>
+<a name="dataspace_confirmation"></a>Confirmation Message</h4>
+<p> By default, the user is shown a generic message and must confirm the execution of the UI service. The element <code>confirmation</code> allows you to specify a custom localized confirmation message: </p><pre class="ebx_example brush: html">
+&lt;service name="AdvancedMerge"> 
+	&lt;resourcePath>/services/advancedMerge.jsp&lt;/resourcePath> 
+	&lt;type>branch version&lt;/type> 
+	&lt;documentation xml:lang="en-US"> 
+		&lt;label>Merge/Validate&lt;/label> 
+		&lt;description>Merge current branch to parent if valid.&lt;/description> 
+	&lt;/documentation> 
+	&lt;confirmation disable="true"/>
+&lt;/service></pre>
+<p>The element <code>confirmation</code> can also be used to disable the user confirmation entirely with the attribute <code>disable=&quot;true&quot;</code>.</p><h2>
+<a name="workflow"></a>Integration of UI services with workflows</h2>
+<h3>
+<a name="workflowOverview"></a>Overview</h3>
+<p>In order to make a UI service available to workflows, an additional declaration must be made in the configuration file <code>module.xml</code> of the module that implements the UI service.</p><p>Once this declaration has been made, the UI service becomes available in the Workflow Models area where the user defines user tasks. The user then maps the input parameters and output parameters that are specified in the module configuration file <code>module.xml</code>.</p><p>Once the workflow model has been published and a workflow has been started, for every user starting a work item, the corresponding user session on the application server will be associated with a <a target="_blank" href="../Java_API/com/orchestranetworks/service/Session.html#getInteraction(boolean)">persistent interaction object</a> that contains the valued input parameters. Through the Java API, the running UI service can access these input parameters and adapt its behavior accordingly. Once the corresponding work item and associated UI services are complete, the completion method must be invoked with the output parameters specifying the resulting state of the work item. For more information, the developer of the UI service should read the JavaDoc of the interface <code><a target="_blank" href="../Java_API/com/orchestranetworks/interactions/SessionInteraction.html">SessionInteraction</a></code>. </p><p>Globally, UI services that are integrated into workflows benefit from a declarative and secure specification for a &quot;component-oriented&quot; approach. </p><h3>
+<a name="commonProperties"></a>Common properties for defining input and output parameters</h3>
+<p>Parameter declarations in the module configuration file <code>module.xml</code> are made under the element <code>services</code>. The element <code>properties</code> is used for declaring the input and output parameters of the UI service. These parameters will be available for the definition of user tasks that use the UI service.</p><p>For instance, the following sample specifies a service on a branch with one input parameter named <code>branch</code> and one output parameter named <code>choice</code>:</p><pre class="ebx_example brush: html">
+&lt;properties>
+	&lt;property name="branch" input="true">
+		&lt;documentation xml:lang="en-US">
+			&lt;label>Branch&lt;/label>
+			&lt;description>
+			This input parameter indicate the branch to work on.
+			&lt;/description>
+		&lt;/documentation>
+	&lt;/property>
+	&lt;property name="choice" output="true" />
+&lt;/properties></pre>
+<p>The following table summarizes the XML tags to use for defining input and output parameters:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Property</strong></p></th><th><p><strong>Definition</strong></p></th><th><p><strong>Mandatory</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>properties</code></p></td><td valign="top"><p>Element containing property declaration.</p></td><td valign="top">Yes. This element is unique for a service.</td></tr>
+<tr>
+<td valign="top"><p><code>name</code></p></td><td valign="top"><p>This attribute specifies the name of the property.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>input</code></p></td><td valign="top"><p>This attribute specifies if the property is an input one.</p></td><td valign="top">No</td></tr>
+<tr>
+<td valign="top"><p><code>output</code></p></td><td valign="top"><p>This attribute specifies if the property is an output one.</p></td><td valign="top">No</td></tr>
+<tr>
+<td valign="top"><p><code>documentation</code></p></td><td valign="top"><p>Label and description of the property.</p></td><td valign="top">No</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="type_workflow"></a>Services on a data spaces or a snapshots for data workflows</h3>
+<p>The declaration of a UI service on data spaces and/or snapshots that can be used during a data workflow based on the declaration of a simple UI service on data spaces and/or snapshots. If the <code>type</code> element contains the value <code>workflow</code> in the whitespace-delimited list, the UI service will be available to the definition of user tasks in workflow models.</p><p>For UI services on data spaces in workflows, an element <code>properties/property</code> with the attributes <code>name=&quot;branch&quot; input=&quot;true&quot;</code> are also required. Similarly, for UI services on snapshots in workflows, an element <code>properties/property</code> with the attributes <code>name=&quot;version&quot; input=&quot;true&quot;</code> are required.</p><h4>
+Example</h4>
+<p>This example declares a UI services that is available both in the <strong>Services</strong> menu for data spaces and for user tasks in workflow models. Note the mandatory inclusion of the element <code>property</code> with the attributes <code>name=&quot;branch&quot; input=&quot;true&quot;</code>.</p><pre class="ebx_example brush: html">
+&lt;service name="AdvancedMerge">
+	&lt;resourcePath>/services/advancedMerge.jsp&lt;/resourcePath>
+	&lt;type>branch workflow&lt;/type>
+	&lt;documentation xml:lang="en-US">
+		...Merge a branch to its parent if valid...
+	&lt;/documentation>
+	&lt;properties>
+		&lt;property name="branch" input="true"/>
+	&lt;/properties>
+&lt;/service></pre>
+<h3>
+<a name="id4s4"></a>Service on data sets for data workflows</h3>
+<p>UI services on data sets are declared at the data model-level. However, in order to make them definable for workflow user tasks, their declarations must include additional elements in the module configuration file <code>module.xml</code> of the module containing the data model.</p><p>Under the element <code>services/serviceLink</code>, several properties must be defined. The built-in parameters <code>branch</code> and <code>instance</code> are required, which respectively identify the data space and contained data set on which the UI service will be run.</p><h4>
+Example</h4>
+<p>The following example declares a data set service that imports a spreadsheet into a table in a data set.</p><pre class="ebx_example brush: html">
+&lt;serviceLink serviceName="ImportSpreadsheet">
+	&lt;importFromSchema>/WEB-INF/ebx/schema/my-ebx.xsd&lt;/importFromSchema>
+	&lt;properties>
+		&lt;property name="branch" input="true"/>
+		&lt;property name="instance" input="true"/>
+		&lt;property name="pathToTable" input="true"/>
+	&lt;/properties>
+&lt;/serviceLink></pre>
+<h4>
+Properties</h4>
+<p>The following table summarizes the elements and attributes under the element <code>services/serviceLink</code>:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Property</strong></p></th><th><p><strong>Definition</strong></p></th><th><p><strong>Mandatory</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>serviceName</code></p></td><td valign="top"><p>Attribute of <code>serviceLink</code> that defines the name of the UI service as it is specified in the data model.</p></td><td align="right" valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>importFromSchema</code></p></td><td valign="top"><p>Element that specifies the path to the data model, relative to the current module (web application).</p></td><td align="right" valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>properties</code></p></td><td valign="top"><p>Element that defines input and output parameters.</p></td><td align="right" valign="top">Yes. At least the properties for &quot;branch&quot; and &quot;instance&quot; must be defined.</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id4s5"></a>Service extensions</h3>
+<p>It is possible to extend UI services that have already been declared, by defining labels and descriptions and adding properties. You can extend built-in UI services, data space or snapshot UI services and data set UI services. However, it is not possible to further extend a service extension.</p><p>Service extensions must be declared in the module configuration file <code>module.xml</code>, under the element <code>services/serviceExtension</code>.</p><h4>
+Extending a built-in UI service</h4>
+<pre class="ebx_example brush: html">
+&lt;serviceExtension name="BuiltinCreationServiceExtension" extends="@creation" > 
+	&lt;documentation xml:lang="en-US">
+		&lt;label>Built in creation service extension&lt;/label>
+	&lt;/documentation>
+	&lt;properties>
+		...
+	&lt;/properties>
+&lt;/serviceExtension></pre>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Property</strong></p></th><th><p><strong>Definition</strong></p></th><th><p><strong>Mandatory</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>name</code></p></td><td valign="top"><p>Attribute that specifies the name of the service extension.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>extends</code></p></td><td valign="top"><p>Attribute that specifies the name of the built-in UI service being extended. The value is the <code><a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceKey.html">ServiceKey</a></code> of the built-in UI service. For the default built-in UI service &#39;Access data&#39;, this attribute must be empty.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>properties</code></p></td><td valign="top"><p>Element that declares properties being added to the built-in UI service.</p></td><td valign="top">No</td></tr>
+<tr>
+<td valign="top"><p><code>documentation</code></p></td><td valign="top"><p>Localized labels and descriptions to add to the built-in UI service.</p></td><td valign="top">No</td></tr>
+</tbody>
+</table>
+<h4>
+Extending data space and snapshot UI services</h4>
+<p>The service extension and the UI service being extended must be defined in the same <code>module.xml</code> module configuration file.</p><pre class="ebx_example brush: html">
+&lt;serviceExtension name="AdvancedMergeExtension" extends="AdvancedMerge">
+	&lt;documentation xml:lang="en-US">
+		...
+	&lt;/documentation>
+	&lt;properties>
+		...
+	&lt;/properties>
+&lt;/serviceExtension>
+</pre>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Property</strong></p></th><th><p><strong>Definition</strong></p></th><th><p><strong>Mandatory</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>name</code></p></td><td valign="top"><p>Attribute that specifies the name of the service extension.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>extends</code></p></td><td valign="top"><p>Attribute that specifies the name of the UI service being extended.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>properties</code></p></td><td valign="top"><p>Element that declares properties being added to the UI service.</p></td><td valign="top">No</td></tr>
+<tr>
+<td valign="top"><p><code>documentation</code></p></td><td valign="top"><p>Localized labels and descriptions to add to the UI service.</p></td><td valign="top">No</td></tr>
+</tbody>
+</table>
+<h4>
+Extending data set UI services</h4>
+<p>Since the service extension and the UI service being extended must be defined in the same <code>module.xml</code> module configuration file, you must first declare the UI service as an interaction using element <code>serviceLink</code>.</p><pre class="ebx_example brush: html">
+&lt;serviceExtension name="ImportSpreadsheetExtension" extends="ImportSpreadsheet" fromSchema="/WEB-INF/ebx/schema/my-ebx.xsd">
+	&lt;documentation xml:lang="en-US">
+		...
+	&lt;/documentation>
+	&lt;properties>
+		...
+	&lt;/properties>
+&lt;/serviceExtension></pre>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th><p><strong>Property</strong></p></th><th><p><strong>Definition</strong></p></th><th><p><strong>Mandatory</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>name</code></p></td><td valign="top"><p>Attribute that specifies the name for the service extension.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>extends</code></p></td><td valign="top"><p>Attribute that specifies the name of the UI service being extended.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>fromSchema</code></p></td><td valign="top"><p>Attribute that specifies the path to the schema that defines the UI service.</p></td><td valign="top">Yes</td></tr>
+<tr>
+<td valign="top"><p><code>properties</code></p></td><td valign="top"><p>Element that declares properties being added to the UI service.</p></td><td valign="top">No</td></tr>
+<tr>
+<td valign="top"><p><code>documentation</code></p></td><td valign="top"><p>Localized labels and descriptions to add to the UI service.</p></td><td valign="top">No</td></tr>
+</tbody>
+</table>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

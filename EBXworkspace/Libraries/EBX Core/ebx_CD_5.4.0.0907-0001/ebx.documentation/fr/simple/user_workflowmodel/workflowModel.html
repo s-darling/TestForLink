@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Mod&eacute;lisation du workflow</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="wm_wm" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de workflow</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_workflowmodel/workflowModel.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de workflow</span></div>
+<h1>
+Mod&eacute;lisation du workflow</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#creation">Création</a><ul class="toc2">
+<li class="toc2"><a href="#inheritance">Héritage</a></li></ul>
+</li><li class="toc1"><a href="#step">Etapes</a><ul class="toc2">
+<li class="toc2"><a href="#step_condition">Conditions</a></li><li class="toc2"><a href="#step_user">Tâche utilisateur</a></li><li class="toc2"><a href="#step_script">Tâche autonome</a></li><li class="toc2"><a href="#datacontext">Contexte des données</a></li></ul>
+</li><li class="toc1"><a href="#parameters">Quelques paramètres ajustables</a><ul class="toc2">
+<li class="toc2"><a href="#information">Informations</a></li><li class="toc2"><a href="#configuration">Paramétrage spécifique au modèle</a></li><li class="toc2"><a href="#permissions">Permission sur une publication de workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="creation"></a>Cr&eacute;ation</h2>
+<p>Un mod&egrave;le de workflow peut &ecirc;tre cr&eacute;&eacute; &agrave; partir de la section <em>Mod&eacute;lisation / Mod&egrave;le de workflow</em>. L&#39;assistant de cr&eacute;ation requiert seulement un nom. Ce nom doit &ecirc;tre unique, de mani&egrave;re &agrave; identifier chaque mod&egrave;le de workflow sp&eacute;cifiquement.</p><p>D&egrave;s lors, le mod&egrave;le de workflow est cr&eacute;e et les &eacute;tapes du mod&egrave;le de workflow sont initialis&eacute;es par la pr&eacute;sence d&#39;un transition initiale. L&#39;objet du mod&egrave;le de workflow est de d&eacute;crire l&#39;enchaînement des &eacute;tapes au del&agrave; de cette transition initiale.</p><h3>
+<a name="inheritance"></a>H&eacute;ritage</h3>
+<p>Il est possible d&#39;utiliser les m&eacute;canismes d&#39;h&eacute;ritage avec les limitations suivantes :</p><ul>
+<li><p>impossibilit&eacute; d&#39;ajouter des &eacute;tapes en d&eacute;but ou fin ;</p></li><li><p>impossibilit&eacute; d&#39;ins&eacute;rer des &eacute;tapes ;</p></li><li><p>impossibilit&eacute; de modifier des liens entre &eacute;tapes.</p></li></ul>
+<h2>
+<a name="step"></a>Etapes</h2>
+<p>Un mod&egrave;le de workflow d&eacute;finit des &eacute;tapes correspondant &agrave; des op&eacute;rations et des conditions. Les sections suivantes introduisent les diff&eacute;rents types d&#39;&eacute;tape.</p><h3>
+<a name="step_condition"></a>Conditions</h3>
+<h4>
+<a name="workflow.condition.library"></a>Condition de la biblioth&egrave;que</h4>
+<p>En outre, un libell&eacute; et une description peuvent &ecirc;tre sp&eacute;cifi&eacute;s en diff&eacute;rentes langues.</p><p> EBX5 met &agrave; disposition des conditions pr&eacute;d&eacute;finies, gr&acirc;ce auxquelles vous pouvez v&eacute;rifier&nbsp;:&nbsp;</p><ul>
+<li><p>si des donn&eacute;es sont valides (niveau espace de donn&eacute;es, jeu de donn&eacute;es ou table) ;</p></li><li><p>si un espace de donn&eacute;es a &eacute;t&eacute; modifi&eacute; ;</p></li><li><p>quelle &eacute;tait la derni&egrave;re t&acirc;che utilisateur accept&eacute;e ;</p></li><li><p>si deux valeurs sont &eacute;gales ;</p></li><li><p>si une valeur est nulle ou vide ;</p></li></ul>
+<p>Certaines conditions sont marqu&eacute;es comme &quot;obsol&egrave;tes&quot; car elles ne sont pas compatibles avec I18N. Il est recommand&eacute; d&#39;utiliser les nouvelles conditions compatibles avec I18N.</p><h3>
+<a name="step_user"></a>T&acirc;che utilisateur</h3>
+<p>La mod&eacute;lisation d&#39;une t&acirc;che utilisateur fait l&#39;objet d&#39;un <a target="_self" href="./usertask.html">chapitre</a> particulier.</p><h3>
+<a name="step_script"></a>T&acirc;che autonome</h3>
+<h4>
+<a name="workflow.scriptTask.library"></a>T&acirc;che autonome de la biblioth&egrave;que</h4>
+<p>Par ailleurs, un libell&eacute; et une description peuvent &ecirc;tre sp&eacute;cifi&eacute;s en diff&eacute;rentes langues.</p><p> EBX5 inclut des t&acirc;ches autonomes pr&eacute;d&eacute;finies, comme&nbsp;:&nbsp;</p><ul>
+<li><p>cr&eacute;er un espace de donn&eacute;es,</p></li><li><p>fermer un espace de donn&eacute;es,</p></li><li><p>cr&eacute;er une image,</p></li><li><p>fusionner un espace de donn&eacute;es,</p></li><li><p>importer une archive,</p></li><li><p>envoyer un courrier &eacute;lectronique.</p></li></ul>
+<p>Certaines t&acirc;ches autonomes sont marqu&eacute;es comme &quot;obsol&egrave;tes&quot; car elles ne sont pas compatibles avec I18N. Il est recommand&eacute; d&#39;utiliser les nouvelles t&acirc;ches compatibles avec I18N.</p><h3>
+<a name="datacontext"></a>Contexte des donn&eacute;es</h3>
+<p>Un contexte de donn&eacute;es est li&eacute; &agrave; chaque workflow. Ce contexte de donn&eacute;es peut &ecirc;tre utilis&eacute; pour d&eacute;finir des variables, qui pourront &ecirc;tre utilis&eacute;es en entr&eacute;e et/ou en sortie dans diff&eacute;rentes &eacute;tapes du workflow.</p><h2>
+<a name="parameters"></a>Quelques param&egrave;tres ajustables</h2>
+<h3>
+<a name="information"></a>Informations</h3>
+<p>Les informations d&#39;un mod&egrave;le de donn&eacute;es peuvent &ecirc;tre &eacute;dit&eacute;es &agrave; l&#39;aide du bouton <em>Actions</em> dans le panneau de navigation. Les informations &eacute;ditables sont les suivantes :</p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>Champs &eacute;ditables</p></th><th class="ebx_definitionListHeader"><p>Contenu requis</p></th><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Propri&eacute;taire</p></td><td class="ebx_definitionListDefinition"><p>Personne pouvant, en tant que propri&eacute;taire, &eacute;diter les informations du mod&egrave;le de workflow et y d&eacute;finir des r&egrave;gles de permissions.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation locale</p></td><td class="ebx_definitionListDefinition"><p>Libell&eacute; et description associ&eacute;s au mod&egrave;le de workflow en diff&eacute;rentes langues.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Activation</p></td><td class="ebx_definitionListDefinition"><p>Un mod&egrave;le de workflow doit &ecirc;tre activ&eacute; pour pouvoir &ecirc;tre publi&eacute;.</p></td></tr>
+</table>
+<h3>
+<a name="configuration"></a>Param&eacute;trage sp&eacute;cifique au mod&egrave;le</h3>
+<p>La configuration d&#39;un mod&egrave;le de worfklow est accessible depuis le panneau de navigation. Les propri&eacute;t&eacute;s principales sont les suivantes :</p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>Options de configuration</p></th><th class="ebx_definitionListHeader"><p>Contenu requis</p></th><tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Notification de d&eacute;marrage</p></td><td class="ebx_definitionListDefinition"><p>Liste des profils qui doivent recevoir une notification (choisie dans la liste des mod&egrave;les de messages) quand un workflow d&eacute;marre.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Notification de fin</p></td><td class="ebx_definitionListDefinition"><p>Liste des profils qui doivent recevoir une notification (choisie dans la liste des mod&egrave;les de messages), quand un workflow se termine.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Priorit&eacute;</p></td><td class="ebx_definitionListDefinition"><p>Par d&eacute;faut, chaque workflow associ&eacute; &agrave; ce mod&egrave;le sera lanc&eacute; avec cette priorit&eacute;. Cette valeur est facultative. Si aucune valeur n&#39;est d&eacute;finie ici, et une priorit&eacute; par d&eacute;faut est d&eacute;finie pour le r&eacute;f&eacute;rentiel, la prioriti&eacute; par d&eacute;faut pour le r&eacute;f&eacute;rentiel sera appliqu&eacute;e &agrave; tous les workflows et bons de travail sans priorit&eacute;. Voir <a target="_self" href="../user_dataworkflow/userdataworkflow_workitems.html#workitem_priorities">Priorit&eacute; de bons de travail</a> pour plus d&#39;informations.</p><p><strong>Note :</strong> Seuls les utilisateurs d&eacute;finis en tant qu&#39;administrateurs de workflows seront autoris&eacute;s &agrave; modifier la priorit&eacute; des workflows de donn&eacute;es associ&eacute;s manuellement.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Permissions</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit les permissions pour diff&eacute;rentes t&acirc;ches du workflow (voir section ci-dessous).</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Permissions programmatiques</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit le composant g&eacute;rant les permissions. S&#39;il est d&eacute;fini, il remplace l&#39;ensemble des permissions ci-dessus.</p></td></tr>
+</table>
+<h3>
+<a name="permissions"></a>Permission sur une publication de workflow</h3>
+<p>Pour trouver comment d&eacute;finir des permissions sur une publication de workflow, voir ci-dessous :</p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>Permissions</p></th><td class="ebx_definitionListDefinition"><p>D&eacute;finition des profils autoris&eacute;s</p></td><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Administration de workflow</p></td><td class="ebx_definitionListDefinition"><p>Permet de r&eacute;aliser des t&acirc;ches administratives sur une publication de workflow bas&eacute;e sur un mod&egrave;le de workflow. L&#39;autorisation de t&acirc;ches sp&eacute;cifiques peut &ecirc;tre d&eacute;finie &agrave; l&#39;aide du lien <em>Voir la configuration avanc&eacute;e</em>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Gestion des allocations</p></td><td class="ebx_definitionListDefinition"><p>Permet d&#39;allouer, d&eacute;sallouer ou r&eacute;allouer des bons de travail &agrave; des utilisateurs. Une autorisation pour une op&eacute;ration sp&eacute;cifique peut &ecirc;tre d&eacute;finie &agrave; l&#39;aide du lien <em>Voir la configuration avanc&eacute;e</em>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Lancement de workflow</p></td><td class="ebx_definitionListDefinition"><p>Permet de lancer un workflow.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Monitoring de workflow</p></td><td class="ebx_definitionListDefinition"><p>Permet de voir un workflow en cours, m&ecirc;me s&#39;il n&#39;est pas directement concern&eacute; par les bons de travail courants du workflow. Un tel utilisateur peut &eacute;galement voir l&#39;historique d&#39;un workflow termin&eacute;. </p></td></tr>
+</table>
+<p><strong>Note&nbsp;:&nbsp;</strong>Un utilisateur, qui n&#39;a aucun privil&egrave;ge particulier attribu&eacute;, pourra voir un bon de travail uniquement, si celui-ci lui est propos&eacute; ou personnellement allou&eacute;.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../user_dataworkflow/userdataworkflow_admin.html">Administration d&#39;un workflow</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de workflow</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

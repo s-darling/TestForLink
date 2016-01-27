@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML schema generated from EBX5 DMA instance [reference=DataExchange] on Thu Aug 21 16:00:35 ICT 2014 by user [hanh].-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebxbnd="urn:ebx-schemas:binding_1.0" xmlns:ebxs="urn:ebx-schemas:session_1.0" xmlns:fmt="urn:ebx-schemas:format_1.0" xmlns:osd="urn:ebx-schemas:common_1.0">
+	<xs:import namespace="urn:ebx-schemas:common_1.0" schemaLocation="http://schema.orchestranetworks.com/common_1.0.xsd" />
+	<xs:import namespace="urn:ebx-schemas:session_1.0" schemaLocation="http://schema.orchestranetworks.com/session_1.0.xsd" />
+	<xs:annotation>
+		<xs:appinfo>
+			<osd:extensions class="com.orchestranetworks.addon.adix.dataexchange.model.schemaextension.DataExchangeSchemaExtensions" />
+			<osd:inheritance>
+				<dataSetInheritance>none</dataSetInheritance>
+			</osd:inheritance>
+			<ebxbnd:binding targetDirectory="../addon-adix/src">
+				<javaPathConstants typeName="com.orchestranetworks.addon.adix.dataexchange.model.paths.DataExchangePaths">
+					<nodes prefix="" relativeToRoot="false" root="/" />
+				</javaPathConstants>
+			</ebxbnd:binding>
+			<osd:resourceBundle source="com.orchestranetworks.addon.adix.i18n.xsdSchema.ebx-addon-adix-dataexchange" />
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="DataExchange" osd:access="--">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Application" maxOccurs="1" minOccurs="1">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.DataExchange.Application" />
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="Application" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.Application.Application" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.ApplicationLabelForHierarchy" />
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.ApplicationProgrammaticLabel" />
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.ApplicationTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.Application.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="universalName" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.Application.universalName" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.Application.name" />
+												<xs:appinfo>
+													<osd:defaultView />
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.Application.code" />
+												<xs:appinfo>
+													<osd:defaultView />
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="lastModified" maxOccurs="1" minOccurs="0" type="xs:dateTime">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.Application.lastModified" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+								<xs:unique name="UniqueOn_DataExchange_Application_ApplicationA303AFA7-D12F-4FB6-8FA2-25489DF6928D">
+									<xs:selector xpath="." />
+									<xs:field xpath="name" />
+								</xs:unique>
+							</xs:element>
+							<xs:element name="ApplicationByType" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.Application.ApplicationByType" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKApplication /FKApplicationType</primaryKeys>
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.ApplicationByTypeLabelForHierarchy" />
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.ApplicationByTypeTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="FKApplication" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByType.FKApplication" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/Application</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplicationType" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByType.FKApplicationType" />
+												<xs:appinfo>
+													<osd:uiBean class="com.orchestranetworks.addon.adix.dataexchange.ui.editor.ApplicationTypeUIBeanEditor" />
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/ReferenceData/ApplicationType</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKRootPath" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByType.FKRootPath" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Path/Path</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.ApplicationByType_RootPathFilter" />
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByType.name" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ApplicationByTypeVersion" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.Application.ApplicationByTypeVersion" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.ApplicationByTypeVersionTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByTypeVersion.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByTypeVersion.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="version" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByTypeVersion.version" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplicationByType" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationByTypeVersion.FKApplicationByType" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/ApplicationByType</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.ApplicationByTypeVersion_ApplicationTypeFilter" />
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ApplicationInterfaceConfiguration" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.ApplicationInterfaceConfigurationTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="importMode" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.importMode" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="fileHeader" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.fileHeader" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="fileEncoding" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.fileEncoding" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="separator" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.separator" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="separatorCharacter" maxOccurs="1" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.separatorCharacter" />
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="delimiterCharacter" maxOccurs="1" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.delimiterCharacter" />
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="delimiterForStringOnly" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.delimiterForStringOnly" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="language" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.language" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="downloadInvalidData" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.downloadInvalidData" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="saveAsType" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.saveAsType" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="exportLabelPrimaryKey" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.exportLabelPrimaryKey" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="exportPermalinkPrimaryKey" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.exportPermalinkPrimaryKey" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="exportLabelForeignKey" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.exportLabelForeignKey" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="exportPermalinkForeignKey" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.exportPermalinkForeignKey" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="exportMappingMode" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.exportMappingMode" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplicationInterface" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterfaceConfiguration.FKApplicationInterface" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/ApplicationInterface</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ApplicationInterface" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterface" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKApplicationByTypeFrom /FKApplicationByTypeTo</primaryKeys>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.ApplicationInterfaceTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="FKApplicationByTypeFrom" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterface.FKApplicationByTypeFrom" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/ApplicationByType</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplicationByTypeTo" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterface.FKApplicationByTypeTo" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/ApplicationByType</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.ApplicationInterface_TargetFilter" />
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationInterface.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ApplicationObjectClass" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.Application.ApplicationObjectClass" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKApplication /FKObjectClass</primaryKeys>
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.ApplicationObjectClassLabelForHierarchy" />
+											</osd:table>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="FKApplication" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationObjectClass.FKApplication" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/Application</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKObjectClass" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationObjectClass.FKObjectClass" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/SemanticModel/ObjectClass</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Application.ApplicationObjectClass.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SemanticModel" maxOccurs="1" minOccurs="1">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.DataExchange.SemanticModel" />
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="ObjectClass" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClass" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.ObjectClassTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClass.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClass.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClass.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isRemoved" default="false" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClass.isRemoved" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClass.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ObjectClassProperty" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClassProperty" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKObjectClass /FKProperty</primaryKeys>
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.ObjectClassPropertyLabelForHierarchy" />
+											</osd:table>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="FKObjectClass" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClassProperty.FKObjectClass" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/SemanticModel/ObjectClass</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKProperty" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClassProperty.FKProperty" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/SemanticModel/Property</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.ObjectClassProperty.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Property" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.SemanticModel.Property" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.PropertyTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.Property.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.Property.code" />
+												<xs:appinfo>
+													<osd:defaultView />
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.Property.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isRemoved" default="false" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.Property.isRemoved" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.SemanticModel.Property.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DataModel" maxOccurs="1" minOccurs="1">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.DataExchange.DataModel" />
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="Table" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataModel.Table" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.TableLabelForHierarchy" />
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.TableProgrammaticLabel" />
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.TableConceptTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplication" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.FKApplication" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/Application</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplicationType" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.FKApplicationType" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/ReferenceData/ApplicationType</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.TableConcept_ApplicationTypeFilter" />
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKObjectClass" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.FKObjectClass" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/SemanticModel/ObjectClass</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="label" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.label" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKPath" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.FKPath" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Path/Path</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.TableConcept_PathFilter" />
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isRemoved" default="false" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.isRemoved" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Table.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Field" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataModel.Field" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.FieldLabelForHierarchy" />
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.FieldProgrammaticLabel" />
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.FieldConceptTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTable" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.FKTable" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataModel/Table</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKProperty" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.FKProperty" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/SemanticModel/Property</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.FieldConcept_PropertyFilter" />
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="label" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.label" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKDataType" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.FKDataType" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/ReferenceData/DataType</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="order" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.order" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKPath" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.FKPath" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Path/Path</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.FieldConcept_PathFilter" />
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isRemoved" default="false" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.isRemoved" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataModel.Field.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DataMapping" maxOccurs="1" minOccurs="1">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.DataExchange.DataMapping" />
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="TableMapping" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataMapping.TableMapping" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKTableSource /FKTableTarget</primaryKeys>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.TableMappingTableTrigger" />
+											<osd:otherFacets>
+												<osd:constraint class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.TableMappingConstraintOnTable" />
+											</osd:otherFacets>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="applicationByTypeName" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMapping.applicationByTypeName" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTableSource" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMapping.FKTableSource" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataModel/Table</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.TableMapping_SourceFilter" />
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTableTarget" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMapping.FKTableTarget" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataModel/Table</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.TableMapping_TargetFilter" />
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FieldMapping" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMapping" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKFieldSource /FKFieldTarget</primaryKeys>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.FieldMappingTableTrigger" />
+											<osd:otherFacets>
+												<osd:constraint class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.FieldMappingConstraintOnTable" />
+											</osd:otherFacets>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="applicationByTypeName" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMapping.applicationByTypeName" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKFieldSource" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMapping.FKFieldSource" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataModel/Field</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.FieldMapping_SourceFilter" />
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKFieldTarget" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMapping.FKFieldTarget" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataModel/Field</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.FieldMapping_TargetFilter" />
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKMappingType" default="[ON] Direct" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMapping.FKMappingType" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/ReferenceData/MappingType</tablePath>
+															<filter osd:class="com.orchestranetworks.addon.adix.dataexchange.model.filters.FieldMapping_MappingTypeFilter" />
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="order" default="1" maxOccurs="1" minOccurs="0" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMapping.order" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="TableMappingConfiguration" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.TableMappingConfigurationTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isIgnored" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.isIgnored" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="firstRowOfContent" maxOccurs="1" minOccurs="0" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.firstRowOfContent" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="firstColumnOfContent" maxOccurs="1" minOccurs="0" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.firstColumnOfContent" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isExportWithTitle" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.isExportWithTitle" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="title" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.title" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTitleStyle" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.FKTitleStyle" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/Style</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isExportWithSubtitle" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.isExportWithSubtitle" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="subtitle" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.subtitle" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKSubtitleStyle" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.FKSubtitleStyle" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/Style</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isExportWithBorder" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.isExportWithBorder" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKColumnTitleStyle" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.FKColumnTitleStyle" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/Style</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKDataStyle" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.FKDataStyle" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/Style</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTableMapping" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.FKTableMapping" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/TableMapping</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplicationInterfaceConfiguration" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.TableMappingConfiguration.FKApplicationInterfaceConfiguration" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/Application/ApplicationInterfaceConfiguration</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FieldMappingConfiguration" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingConfiguration" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.FieldMappingConfigurationTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingConfiguration.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingConfiguration.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isIgnored" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingConfiguration.isIgnored" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="dateTimePattern" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingConfiguration.dateTimePattern" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKFieldMapping" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingConfiguration.FKFieldMapping" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/FieldMapping</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTableMappingConfiguration" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingConfiguration.FKTableMappingConfiguration" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/TableMappingConfiguration</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FieldMappingTransformation" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingTransformation" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKFieldMapping /FKTransformationFunction</primaryKeys>
+											</osd:table>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="FKFieldMapping" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingTransformation.FKFieldMapping" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/FieldMapping</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTransformationFunction" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingTransformation.FKTransformationFunction" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/ReferenceData/TransformationFunction</tablePath>
+															<validation>
+																<blocksCommit>onInsertUpdateOrDelete</blocksCommit>
+															</validation>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="order" default="1" maxOccurs="1" minOccurs="1" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.FieldMappingTransformation.order" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Style" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataMapping.Style" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel>${./code}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.StyleTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="row" maxOccurs="1" minOccurs="0" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.row" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="column" maxOccurs="1" minOccurs="0" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.column" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="fontName" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.fontName" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="fontSize" maxOccurs="1" minOccurs="0" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.fontSize" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isBold" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.isBold" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isItalic" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.isItalic" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="isUnderline" maxOccurs="1" minOccurs="0" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.isUnderline" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="fontColor" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.fontColor" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="backgroundColor" maxOccurs="1" minOccurs="0" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataMapping.Style.backgroundColor" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ReferenceData" maxOccurs="1" minOccurs="1">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.DataExchange.ReferenceData" />
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="ApplicationType" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.ReferenceData.ApplicationType" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<mayCreateRoot>never</mayCreateRoot>
+												<mayDelete>never</mayDelete>
+												<mayDuplicate>never</mayDuplicate>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.ApplicationTypeTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.ApplicationType.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.ApplicationType.code" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:constraintEnumeration class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.ApplicationTypeEnumeration" />
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.ApplicationType.name" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DataType" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.ReferenceData.DataType" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<mayCreateRoot>never</mayCreateRoot>
+												<mayDelete>never</mayDelete>
+												<mayDuplicate>never</mayDuplicate>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.DataTypeTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.DataType.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.DataType.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.DataType.name" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="MappingType" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.ReferenceData.MappingType" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<mayCreateRoot>never</mayCreateRoot>
+												<mayDelete>never</mayDelete>
+												<mayDuplicate>never</mayDuplicate>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.MappingTypeTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.MappingType.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.MappingType.code" />
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.MappingType.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.MappingType.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="TransformationFunction" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.ReferenceData.TransformationFunction" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel>${./name}</defaultLabel>
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.TransformationTableTrigger" />
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.TransformationFunction.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.TransformationFunction.code" />
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.TransformationFunction.name" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="javaClass" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.TransformationFunction.javaClass" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="description" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.ReferenceData.TransformationFunction.description" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Path" maxOccurs="1" minOccurs="1">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.DataExchange.Path" />
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="Path" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.Path.Path" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/uuid</primaryKeys>
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.PathLabelRendererForHierarchy" />
+												<defaultLabel osd:class="com.orchestranetworks.addon.adix.dataexchange.model.labels.PathLabelRenderer" />
+											</osd:table>
+											<osd:trigger class="com.orchestranetworks.addon.adix.dataexchange.model.triggers.PathTableTrigger" />
+											<osd:otherFacets>
+												<osd:constraint class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.PathConstraintOnTable" />
+											</osd:otherFacets>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="uuid" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.uuid" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.code" />
+												<xs:appinfo>
+													<osd:defaultView>
+														<hidden>true</hidden>
+														<hiddenInSearch>true</hiddenInSearch>
+													</osd:defaultView>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKApplicationType" maxOccurs="1" minOccurs="1" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.FKApplicationType" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/ReferenceData/ApplicationType</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="pathType" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.pathType" />
+												<xs:appinfo>
+													<osd:uiBean class="com.orchestranetworks.addon.adix.dataexchange.ui.editor.PathTypeUIBeanEditor" />
+													<osd:otherFacets>
+														<osd:constraintEnumeration class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.PathTypeEnumeration" />
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="path" maxOccurs="1" minOccurs="0" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.path" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:constraint class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.PathConstraintOnNull" />
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="dataspace" maxOccurs="1" minOccurs="0" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.dataspace" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:constraint class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.DataspaceConstraintOnNull" />
+														<osd:constraintEnumeration class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.DataspaceEnumeration" />
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="dataset" maxOccurs="1" minOccurs="0" osd:checkNullInput="true" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.dataset" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:constraint class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.DatasetConstraintOnNull" />
+														<osd:constraintEnumeration class="com.orchestranetworks.addon.adix.dataexchange.model.constraints.DatasetEnumeration" />
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="comment" maxOccurs="unbounded" minOccurs="0" type="localizedDescription">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.Path.Path.comment" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DataLineage" maxOccurs="1" minOccurs="1" osd:category="Hidden">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.DataExchange.DataLineage" />
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="OrderFieldLineageStep" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataLineage.OrderFieldLineageStep" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKPropertyProcessLineage /FKFieldMapping</primaryKeys>
+											</osd:table>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="FKPropertyProcessLineage" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.OrderFieldLineageStep.FKPropertyProcessLineage" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataLineage/PropertyProcessLineage</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKFieldMapping" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.OrderFieldLineageStep.FKFieldMapping" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/FieldMapping</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="stepOrder" maxOccurs="1" minOccurs="1" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.OrderFieldLineageStep.stepOrder" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ObjectClassProcessLineage" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassProcessLineage" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/code</primaryKeys>
+											</osd:table>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassProcessLineage.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKObjectClass" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassProcessLineage.FKObjectClass" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/SemanticModel/ObjectClass</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassProcessLineage.name" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ObjectClassLineageStep" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassLineageStep" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/FKObjectClassProcessLineage /FKTableMapping</primaryKeys>
+											</osd:table>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="FKObjectClassProcessLineage" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassLineageStep.FKObjectClassProcessLineage" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataLineage/ObjectClassProcessLineage</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKTableMapping" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassLineageStep.FKTableMapping" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/DataMapping/TableMapping</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="stepOrder" maxOccurs="1" minOccurs="1" type="xs:int">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.ObjectClassLineageStep.stepOrder" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PropertyProcessLineage" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:annotation>
+										<xs:documentation osd:id="element.DataExchange.DataLineage.PropertyProcessLineage" />
+										<xs:appinfo>
+											<osd:table>
+												<primaryKeys>/code</primaryKeys>
+											</osd:table>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:sequence>
+										<xs:element name="code" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.PropertyProcessLineage.code" />
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FKProperty" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.PropertyProcessLineage.FKProperty" />
+												<xs:appinfo>
+													<osd:otherFacets>
+														<osd:tableRef>
+															<tablePath>/DataExchange/SemanticModel/Property</tablePath>
+														</osd:tableRef>
+													</osd:otherFacets>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="name" maxOccurs="1" minOccurs="1" type="xs:string">
+											<xs:annotation>
+												<xs:documentation osd:id="element.DataExchange.DataLineage.PropertyProcessLineage.name" />
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="localizedDescription" osd:access="RW" osd:class="com.orchestranetworks.addon.adix.dataexchange.ui.editor.DescriptionBean">
+		<xs:annotation>
+			<xs:documentation osd:id="complexType.localizedDescription" />
+			<xs:appinfo>
+				<osd:uiBean class="com.orchestranetworks.addon.adix.dataexchange.ui.editor.LocalizedTextAreaLabelUIBean" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="locale" maxOccurs="1" minOccurs="0" type="osd:locale">
+				<xs:annotation>
+					<xs:documentation osd:id="complexType.localizedDescription.locale" />
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="label" maxOccurs="1" minOccurs="0" type="osd:text">
+				<xs:annotation>
+					<xs:documentation osd:id="complexType.localizedDescription.label" />
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AutoMappingService">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/DataExchange/Application/ApplicationByType{1}" class="com.orchestranetworks.addon.adix.dataexchange.model.permissions.AdministrationItemPermissions" displayInMenu="true" orderInMenu="5" resourcePath="/dataexchange?action=AutoMappingService">
+					<osd:confirmation disable="true" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.AutoMappingService" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="DeletionDataMappingService">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/DataExchange/Application/ApplicationByType{1}" displayInMenu="true" orderInMenu="6" resourcePath="/dataexchange?action=DeletionDataMappingService">
+					<osd:confirmation disable="false">
+						<osd:label osd:id="complexType.DeletionDataMappingService.service.confirmation.label" />
+					</osd:confirmation>
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.DeletionDataMappingService" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="DeletionService">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/DataExchange/Application/ApplicationByType{1}" class="com.orchestranetworks.addon.adix.dataexchange.model.permissions.AdministrationItemPermissions" displayInMenu="true" orderInMenu="2" resourcePath="/dataexchange?action=DeletionService">
+					<osd:confirmation disable="true" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.DeletionService" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="GenerationService">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/DataExchange/Application/ApplicationByType{1}" class="com.orchestranetworks.addon.adix.dataexchange.model.permissions.GenerationModelPermissions" displayInMenu="true" orderInMenu="1" resourcePath="/dataexchange?action=GenerationService">
+					<osd:confirmation disable="true" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.GenerationService" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="PurgationService">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/DataExchange/Application/ApplicationByType{1}" class="com.orchestranetworks.addon.adix.dataexchange.model.permissions.AdministrationItemPermissions" displayInMenu="true" orderInMenu="3" resourcePath="/dataexchange?action=PurgationService">
+					<osd:confirmation disable="true" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.PurgationService" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="ValidationService">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/DataExchange/Application/ApplicationByType{1}" class="com.orchestranetworks.addon.adix.dataexchange.model.permissions.AdministrationItemPermissions" displayInMenu="true" orderInMenu="4" resourcePath="/dataexchange?action=ValidationService">
+					<osd:confirmation disable="true" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.ValidationService" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="DataExchangeService_AjaxProcedure">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:ajaxComponent class="com.orchestranetworks.addon.adix.dataexchange.ui.ajax.ProgressInformationAjaxComponent" />
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="DataExchangeServiceUploadFile_AjaxProcedure">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:ajaxComponent class="com.orchestranetworks.addon.adix.dataexchange.ui.imports.fileupload.DataExchangeImportUploadFileAjax" />
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+</xs:schema>
+

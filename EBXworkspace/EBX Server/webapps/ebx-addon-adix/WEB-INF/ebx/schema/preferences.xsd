@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML schema generated from EBX5 DMA instance [reference=AdixPreferences] on Wed Jun 18 11:37:25 ICT 2014 by user [1].-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebxbnd="urn:ebx-schemas:binding_1.0" xmlns:ebxs="urn:ebx-schemas:session_1.0" xmlns:fmt="urn:ebx-schemas:format_1.0" xmlns:osd="urn:ebx-schemas:common_1.0">
+	<xs:import namespace="urn:ebx-schemas:common_1.0" schemaLocation="http://schema.orchestranetworks.com/common_1.0.xsd" />
+	<xs:import namespace="urn:ebx-schemas:session_1.0" schemaLocation="http://schema.orchestranetworks.com/session_1.0.xsd" />
+	<xs:annotation>
+		<xs:appinfo>
+			<osd:extensions class="com.orchestranetworks.addon.adix.accessrule.PreferenceExtensions" />
+			<osd:inheritance>
+				<dataSetInheritance>none</dataSetInheritance>
+			</osd:inheritance>
+			<ebxbnd:binding targetDirectory="../addon-adix/src">
+				<javaPathConstants typeName="com.orchestranetworks.addon.adix.preferences.Paths">
+					<nodes prefix="" relativeToRoot="false" root="/" />
+				</javaPathConstants>
+			</ebxbnd:binding>
+			<osd:resourceBundle source="com.orchestranetworks.addon.adix.i18n.xsdSchema.preferences" />
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="root" osd:access="--">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="preferences" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.root.preferences" />
+							<xs:appinfo>
+								<osd:table>
+									<primaryKeys>/id</primaryKeys>
+									<recordForm osd:class="com.orchestranetworks.addon.adix.preferences.editor.PreferenceUIForm" />
+								</osd:table>
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="id" maxOccurs="1" minOccurs="1" type="xs:int">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.id" />
+									<xs:appinfo>
+										<osd:autoIncrement />
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="name" maxOccurs="1" minOccurs="1" type="xs:string">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.name" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="tablePath" maxOccurs="1" minOccurs="1" type="xs:string">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.tablePath" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="configuration" maxOccurs="1" minOccurs="1" type="osd:text">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.configuration" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="mapping" maxOccurs="1" minOccurs="1" type="osd:text">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.mapping" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="importMode" maxOccurs="1" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.importMode" />
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration osd:label="importCSV" value="importCSV">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.preferences.importMode.enumeration.importCSV" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="importExcel" value="importExcel">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.preferences.importMode.enumeration.importExcel" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="multiImport" value="multiImport">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.preferences.importMode.enumeration.multiImport" />
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="schemaLocation" maxOccurs="1" minOccurs="1" type="xs:string">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.schemaLocation" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="exportMode" maxOccurs="1" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.preferences.exportMode" />
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration osd:label="exportCSV" value="exportCSV">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.preferences.exportMode.enumeration.exportCSV" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="exportExcel" value="exportExcel">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.preferences.exportMode.enumeration.exportExcel" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="exportMultipleTables" value="exportMultipleTables">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.preferences.exportMode.enumeration.exportMultipleTables" />
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DateTimePattern" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.root.DateTimePattern" />
+							<xs:appinfo>
+								<osd:table>
+									<primaryKeys>/Pattern</primaryKeys>
+								</osd:table>
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="Pattern" maxOccurs="1" minOccurs="1" type="xs:string">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.DateTimePattern.Pattern" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Mode" maxOccurs="1" minOccurs="1">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.DateTimePattern.Mode" />
+									<xs:appinfo>
+										<osd:information>Mode of pattern including the values:</osd:information>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration osd:label="Common pattern" value="0">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.DateTimePattern.Mode.enumeration.0" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="Default CSV pattern" value="1">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.DateTimePattern.Mode.enumeration.1" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="Default Excel pattern" value="2">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.DateTimePattern.Mode.enumeration.2" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="Default" value="3">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.DateTimePattern.Mode.enumeration.3" />
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Type" maxOccurs="1" minOccurs="1">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.DateTimePattern.Type" />
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration osd:label="Date pattern" value="0">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.DateTimePattern.Type.enumeration.0" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="Time pattern" value="1">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.DateTimePattern.Type.enumeration.1" />
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration osd:label="Date time pattern" value="2">
+											<xs:annotation>
+												<xs:documentation osd:id="element.root.DateTimePattern.Type.enumeration.2" />
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Extensions" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation osd:id="element.root.Extensions" />
+							<xs:appinfo>
+								<osd:table>
+									<primaryKeys>/Oid</primaryKeys>
+								</osd:table>
+								<osd:trigger class="com.orchestranetworks.addon.adix.trigger.ExtensionsTrigger" />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="Oid" maxOccurs="1" minOccurs="1" type="xs:int">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.Extensions.Oid" />
+									<xs:appinfo>
+										<osd:autoIncrement />
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LabelAndDescription" maxOccurs="1" minOccurs="0" type="localizableLabelDescription">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.Extensions.LabelAndDescription" />
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ClassName" maxOccurs="1" minOccurs="1" type="xs:string">
+								<xs:annotation>
+									<xs:documentation osd:id="element.root.Extensions.ClassName" />
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="UniqueOn_root_Extensions_ClassName">
+						<xs:selector xpath="." />
+						<xs:field xpath="ClassName" />
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="localizableLabelDescription" osd:access="RW" osd:class="com.onwbp.base.text.bean.LabelDescription">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:uiBean class="com.onwbp.base.text.bean.UILabelDescription" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="localizedDocumentations" maxOccurs="unbounded" minOccurs="0" osd:class="com.onwbp.base.text.bean.LabelDescriptionForLocale">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="locale" maxOccurs="1" minOccurs="1" type="osd:locale">
+							<xs:annotation>
+								<xs:documentation osd:id="complexType.localizableLabelDescription.localizedDocumentations.locale" />
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="label" maxOccurs="1" minOccurs="0" type="xs:string">
+							<xs:annotation>
+								<xs:documentation osd:id="complexType.localizableLabelDescription.localizedDocumentations.label" />
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="description" maxOccurs="1" minOccurs="0" type="osd:text">
+							<xs:annotation>
+								<xs:documentation osd:id="complexType.localizableLabelDescription.localizedDocumentations.description" />
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--<xs:complexType name="MigrationService">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/preferences" displayInMenu="true" resourcePath="/dataexchange?action=MigrationService">
+					<osd:confirmation disable="false" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.MigrationService" />
+		</xs:annotation>
+	</xs:complexType>-->
+	<xs:complexType name="DataExchangeService_AjaxProcedure">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:ajaxComponent class="com.orchestranetworks.addon.adix.dataexchange.ui.ajax.ProgressInformationAjaxComponent" />
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+</xs:schema>
+

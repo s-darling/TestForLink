@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Main actions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dataspace" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data spaces</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/actions_dataspace.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+<h1>
+Main actions</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#creation">Creating a data space</a></li><li class="toc1"><a href="#information">Editing a data space</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Information</a></li><li class="toc2"><a href="#validate">Validation</a></li><li class="toc2"><a href="#export">Exporting an archive</a></li><li class="toc2"><a href="#import">Importing an archive</a></li><li class="toc2"><a href="#merge">Merge</a></li><li class="toc2"><a href="#snapshot">Snapshot</a></li><li class="toc2"><a href="#permissions">Permissions</a></li></ul>
+</li><li class="toc1"><a href="#closing">Closing a data space</a></li></ul>
+</div>
+<h2>
+<a name="creation"></a>Creating a data space</h2>
+<p>You can create a new data space using the <strong>Create a data space</strong> button located in the workspace area. The new data space will be a child of the data space from which the creation was initiated and it will contain all the content of the parent at the time of creation.</p><p>The following information are required: </p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Identifier</p></td><td class="ebx_definitionListDefinition"><p>Unique identifier for the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Owner</p></td><td class="ebx_definitionListDefinition"><p>Owner of the data space, allowed to modify its information and permissions. The owner is not necessarily the creator of the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Label</p></td><td class="ebx_definitionListDefinition"><p>Label and description associated with the data space, for which localized versions may be provided.</p></td></tr>
+</table>
+<h2>
+<a name="information"></a>Editing a data space</h2>
+<h3>
+<a name="id2s1"></a>Information</h3>
+<p>You can modify the information associated with a data space using the <strong>Actions</strong> button.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Current Owner</p></td><td class="ebx_definitionListDefinition"><p>Owner of the data space, allowed to modify its information and permissions. The owner is not necessarily the creator of the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation</p></td><td class="ebx_definitionListDefinition"><p>Label and description associated with the data space, for which localized versions may be provided.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Change owner</p></td><td class="ebx_definitionListDefinition"><p>Whether the current owner of the data space is allowed to modify the <em>Current owner</em> value of the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Change permissions</p></td><td class="ebx_definitionListDefinition"><p>Whether the current owner of the data space is allowed to modify its information and permissions.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Loading strategy</p></td><td class="ebx_definitionListDefinition"><p>Only the administrator can modify this setting.</p><ul>
+<li><p><strong>On demand loading and unloading:</strong> The main advantage of this strategy is the ability to free memory when needed. The disadvantage is that it implies a load cost when an accessed resource has not yet been loaded since server startup, or if it has been unloaded. This is the default mode.</p></li><li><p><strong>Forced loading:</strong> This mode is recommended for data spaces with long life cycles where snapshots are used heavily.</p></li><li><p><strong>Forced loading and prevalidation:</strong> This mode is recommended for data spaces with long life cycles where snapshots are used heavily and the validation process can take a long time.</p></li></ul>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Any change of loading strategy requires restarting the server.</fieldset>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Child merge policy</p></td><td class="ebx_definitionListDefinition"><a name="mergePolicy"></a><p>This merge policy only applies to merge processes initiated by a user. It does not apply to programmatic merges, for example, those performed by workflow script tasks.</p><p>Merge policies are:</p><ul>
+<li><p><strong>Allows validation errors in result:</strong> Child data spaces can be merged regardless of the validation result. This is the default policy.</p></li><li><p><strong>Pre-validating merge:</strong> A child data space can only be merged if the result is valid.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Child data space sort policy</p></td><td class="ebx_definitionListDefinition"><a name="childSortPolicy"></a><p>Defines the display order of child data spaces in data space trees. If not defined, the policy of the parent data space is considered. Default is &#39;by label&#39;.</p></td></tr>
+</table>
+<h3>
+<a name="validate"></a>Validation</h3>
+<p>The content of a data space can be validated globally using the validation service at the data space level. This service can be accessed by clicking the <em>Actions</em> button in the workspace area.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+In order to use this service, a user must have permission to validate every data set contained in the data space.</fieldset>
+<h3>
+<a name="export"></a>Exporting an archive</h3>
+<p>The content of a data space can be exported to an archive by using the service accessible through the <strong>Actions</strong> button.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Only the administrator can retrieve the exported archive. See <a target="_self" href="../engine/repository_administration.html#archive">Archives directory</a> in the Administration Guide for more information.</fieldset>
+<p>In order to export an archive, the following information must be specified:</p><ul>
+<li><p><strong>Name of the archive to create:</strong> The name of the exported archive.</p></li><li><p><strong>Export policy:</strong> Required.</p><p>The default export policy is <strong>The whole content of the data space</strong>, which exports all selected data to the archive.</p><p>If you are working in a child data space, it may be useful to compare the data space with its parent and include the differences using a change set. There are two available export options to do so: <strong>The updates with their whole content</strong> and <strong>The updates only </strong>. The first options exports all the data and includes the change set, whereas the second option only exports the data if a difference exists in the change set. The granularity of the detection of differences is on the table level. The comparison screen the selection of differences to include in the change set.</p></li><li><p><strong>Data sets to export:</strong> The data sets that should be exported, in table format. For each data set, you can choose whether to export data values, permissions, and information.</p></li></ul>
+<h3>
+<a name="import"></a>Importing an archive</h3>
+<p>The content of an archive can be imported into a data space by using the service accessible using the <em>Actions</em> button.</p><p>If the selected archive contains a change set, you can decide whether you want to apply it. The comparison screen allows the selection of differences from the change set to import.</p><h3>
+<a name="merge"></a>Merge</h3>
+<p>Changes in a data space can be applied to its parent data space by using the merge function, available through the <em>Actions</em> button. This process compares the parent and child data spaces being merged to find differences, which the user must verify.</p><p>See the <a target="_self" href="./merge.html">Merge</a> section for more information.</p><h3>
+<a name="snapshot"></a>Snapshot</h3>
+<p>In order to save a read-only copy of your data space at a given point in time, you can create a snapshot. Snapshots can act as reference points if subsequent changes in the data space need to be undone.</p><p>See the <a target="_self" href="./snapshot.html">Snapshot</a> section for more information.</p><h3>
+<a name="permissions"></a>Permissions</h3>
+<p>It is possible for the owner and the administrator to define the access rights for a data space (read-only, write, or hidden) and fine tune them for all available actions in order to protect the data space and its content from being accessed and/or modified by unauthorized users.</p><p>See the <a target="_self" href="../user_dataspace/userdataspace_permissions.html">Permissions</a> section for more information.</p><h2>
+<a name="closing"></a>Closing a data space</h2>
+<p>When a data space is no longer needed, it may be closed. This can be done using the <em>Actions</em> menu. Once closed, a data space can no longer be accessed. It may be reopened by an administrator if it has not yet been deleted.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

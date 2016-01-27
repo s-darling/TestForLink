@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Workflow modeling</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="wm_wm" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Workflow models</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_workflowmodel/workflowModel.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+<h1>
+Workflow modeling</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#creation">Creation</a><ul class="toc2">
+<li class="toc2"><a href="#inheritance">Inheritance</a></li></ul>
+</li><li class="toc1"><a href="#step">Steps</a><ul class="toc2">
+<li class="toc2"><a href="#step_condition">Conditions</a></li><li class="toc2"><a href="#step_user">User task</a></li><li class="toc2"><a href="#step_script">Script task</a></li><li class="toc2"><a href="#datacontext">Data context</a></li></ul>
+</li><li class="toc1"><a href="#parameters">Some adjustable parameters</a><ul class="toc2">
+<li class="toc2"><a href="#information">Information</a></li><li class="toc2"><a href="#configuration">Specific settings per model</a></li><li class="toc2"><a href="#permissions">Permissions on a workflow publication</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="creation"></a>Creation</h2>
+<p>A workflow model can be created from the <em>Modeling / Workflow Models</em> section. The creation assistant only requires a name. This name must be unique so as to identify each workflow model specifically.</p><p>Therefore, the workflow model is created and the steps of the workflow model are initialized by the presence of an initial transition. The purpose of the workflow model is to describe the sequence of steps beyond this initial transition.</p><h3>
+<a name="inheritance"></a>Inheritance</h3>
+<p>It is possible to use the inheritance mechanism with the following limitations:</p><ul>
+<li><p>It is not possible to add steps at the end nor at the beginning.</p></li><li><p>It is not possible to insert steps.</p></li><li><p>It is not possible to change the relations between steps.</p></li></ul>
+<h2>
+<a name="step"></a>Steps</h2>
+<p>A workflow model defines steps corresponding to the different operations and conditions. The following sections introduce the different kinds of step.</p><h3>
+<a name="step_condition"></a>Conditions</h3>
+<h4>
+<a name="workflow.condition.library"></a>Library conditions</h4>
+<p>Furthermore, a label and a description can be specified according to languages.</p><p> EBX5 provides built-in conditions, thanks to which you can check if: </p><ul>
+<li><p>Data is valid (data space, data set or table).</p></li><li><p>A data space has been modified.</p></li><li><p>What was the last user task accepted.</p></li><li><p>That two values are equal.</p></li><li><p>That a value is null or empty.</p></li></ul>
+<p> Some conditions are marked as &quot;deprecated&quot; because they are not compatible with I18N. It is recommended to use the new conditions compatible with I18N instead. </p><h3>
+<a name="step_user"></a>User task</h3>
+<p>The definition of a user task is described in a dedicated <a target="_self" href="./usertask.html">chapter</a>.</p><h3>
+<a name="step_script"></a>Script task</h3>
+<h4>
+<a name="workflow.scriptTask.library"></a>Library script tasks</h4>
+<p>Furthermore, a label and a description can be specified according to languages.</p><p> EBX5 provides built-in script tasks: </p><ul>
+<li><p>Create a data space.</p></li><li><p>Close a data space.</p></li><li><p>Create a snapshot.</p></li><li><p>Merge a data space.</p></li><li><p>Import an archive.</p></li><li><p>Send an email.</p></li></ul>
+<p> Some script tasks are markes as &quot;deprecated&quot; because they are not compatible with I18N. It is recommended to use the new script tasks compatible with I18N instead. </p><h3>
+<a name="datacontext"></a>Data context</h3>
+<p>A Data Context is linked to each workflow. This data context can be used to define variables which can be used as input and/or output variable in different steps of the workflow.</p><h2>
+<a name="parameters"></a>Some adjustable parameters</h2>
+<h3>
+<a name="information"></a>Information</h3>
+<p>Workflow model&#39;s information can be edited using the <em>Actions</em> button from the navigation pane. Editable information are the following:</p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>Editable fields</p></th><th class="ebx_definitionListHeader"><p>Content required</p></th><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Owner</p></td><td class="ebx_definitionListDefinition"><p>Person, who as the owner of the workflow model, can edit its information and define permission rules on it.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Localized documentation</p></td><td class="ebx_definitionListDefinition"><p>Label and description associated with the workflow model in various languages.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Activation</p></td><td class="ebx_definitionListDefinition"><p>A workflow model must be activated to be published.</p></td></tr>
+</table>
+<h3>
+<a name="configuration"></a>Specific settings per model</h3>
+<p>Configuration for a worfklow model is accessible in the navigation pane. Main properties are the following:</p><table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>Configuration options</p></th><th class="ebx_definitionListHeader"><p>Content required</p></th><tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Notification of start</p></td><td class="ebx_definitionListDefinition"><p>Specify a list of profiles, who should received a notification, chosen from the template list, when a workflow is started.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Notification of completion</p></td><td class="ebx_definitionListDefinition"><p>List of profiles, who should received a notification, chosen from the template list, when a workflow is completed.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Priority</p></td><td class="ebx_definitionListDefinition"><p>By default, each workflow associated with this model will be launched with this priority. Setting a priority is optional. If no priority is defined here, and a default priority set for the repository, the repository default priority will be used for any associated workflow with no priority. See <a target="_self" href="../user_dataworkflow/userdataworkflow_workitems.html#workitem_priorities">Work item priorities</a> for more information.</p><p><strong>Note:</strong> Only users that are defined as workflow administrators will be able to manually modify the priority level of any associated data workflows.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Permissions</p></td><td class="ebx_definitionListDefinition"><p>To find out how to define permissions for a workflow publication, please see below.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Programmatic action permissions</p></td><td class="ebx_definitionListDefinition"><p>Defines a component that handles permissions. If set, overrides all permissions defined above.</p></td></tr>
+</table>
+<h3>
+<a name="permissions"></a>Permissions on a workflow publication</h3>
+<table class="ebx_definitionList">
+<th class="ebx_definitionListHeader"><p>Permissions</p></th><th class="ebx_definitionListHeader"><p>Authorized Profile Definition</p></th><tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Workflow administration</p></td><td class="ebx_definitionListDefinition"><p>Allows you to perform administrative tasks on the workflow based on this workflow model. Authorization for specific tasks can be defined using the <em>Show advanced configuration</em> link.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Allocation management</p></td><td class="ebx_definitionListDefinition"><p>Allows you to allocate, deallocate or reallocate work items to users. Authorization for specific operation can be defined using the <em>Show advanced configuration</em> link.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Workflow launching</p></td><td class="ebx_definitionListDefinition"><p>To launch a workflow.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Workflow monitoring</p></td><td class="ebx_definitionListDefinition"><p>To view the running workflow even if it is not directly concerned by the current work items of the workflow. Such a user can also view the workflow history of completed data workflows. </p></td></tr>
+</table>
+<p><strong>Note:</strong> a user who has no specific privileges assigned can only see a work item of this workflow if it is offered or allocated to that user.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../user_dataworkflow/userdataworkflow_admin.html">Workflow administration</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

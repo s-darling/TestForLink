@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Relational mode</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="ref_externalized" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Reference Manual &gt; Persistence</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/relationalMode.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Persistence</span></div>
+<h1>
+Relational mode</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#compare">Overview of modes</a><ul class="toc2">
+<li class="toc2"><a href="#semanticModeExplained">Semantic mode explained</a></li><li class="toc2"><a href="#relationalModeExplained">Relational mode explained</a></li><li class="toc2"><a href="#id1s3">Direct comparison of semantic and relational modes</a></li></ul>
+</li><li class="toc1"><a href="#howto">Enabling relational mode for a data model</a></li><li class="toc1"><a href="#validation">Validation</a><ul class="toc2">
+<li class="toc2"><a href="#structuralConstraints">Structural constraints</a></li><li class="toc2"><a href="#blockingModeTableRef">Foreign key blocking mode</a></li><li class="toc2"><a href="#id3s3">Constraints on the whole table</a></li></ul>
+</li><li class="toc1"><a href="#sqlAccess">SQL access to data in relational mode</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Finding the table in the database</a></li><li class="toc2"><a href="#sqlRead">SQL reads</a></li><li class="toc2"><a href="#sqlWrite">SQL writes</a></li></ul>
+</li><li class="toc1"><a href="#limitations">Limitations of relational mode</a><ul class="toc2">
+<li class="toc2"><a href="#limitationsDataModel">Data model restrictions for tables in relational mode</a></li><li class="toc2"><a href="#id5s2">Other limitations of relational mode</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="compare"></a>Overview of modes</h2>
+<h3>
+<a name="semanticModeExplained"></a>Semantic mode explained</h3>
+<p>Semantic mode offers all EBX5 advanced features of master data management, in particular, data spaces, data set inheritance, and inherited fields.</p><p>Semantic mode is the default mode for persisting the data governed by the EBX5 repository. Data models are in semantic mode unless <a href="#relationalModeExplained">relational mode</a> is explicitly <a href="#howto">specified</a>.</p><p>Internally, the master data managed in semantic mode is represented as standard XML, which complies with the XML Schema Document of its data model. The XML representation is additionally compressed and segmented for storage into generic relational database tables. This mode provides efficient data storage and access, including for:</p><ul>
+<li><p>Data spaces: no data is duplicated when creating a child data space, and</p></li><li><p>Inheritance: no data is duplicated when creating an inherited instance.</p></li></ul>
+<p>Semantic mode also makes it possible to maintain an unlimited number of data sets for each data model, organized into an unlimited number of data spaces or snapshots. This can be done with no impact on the database schema.</p><p>As this mode only uses common, generic internal tables, modifications to the structure of the data model also never impact the database schema. Data model evolutions only impact the content of the generic database tables.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../user_dataspace/userdataspace_intro.html">data spaces</a></li><li><a href="../references/inheritance.html#dataSetInheritance">data set inheritance</a></li><li><a href="../references/inheritance.html#ina">inherited fields</a></li></ul>
+</div>
+<h3>
+<a name="relationalModeExplained"></a>Relational mode explained</h3>
+<p>Relational mode, which is a mapped mode, persists master data directly into the database. The primary function of relational mode is to be able to benefit from the performance and scalability capabilities of the underlying relational database. However, relational mode does not support the advanced governance features offered by semantic mode.</p><p>For some cases where the management advantages of semantic mode are not necessary, such as &quot;current time&quot; tables, or tables that are regularly updated by external systems, the performance gains offered by relational mode may be more valuable.</p><p>Generally, when a data set is in relational mode, every table in this data set has a corresponding table in the database and every field of its data model is mapped to a relational table column.</p><h3>
+<a name="id1s3"></a>Direct comparison of semantic and relational modes</h3>
+<p>This table summarizes the differences between the two persistence modes: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th align="center" valign="top"><p><strong></strong></p></th><th align="center" valign="top"><p><strong>Semantic mode</strong></p></th><th align="center" valign="top"><p><strong>Relational mode</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Data spaces</p></td><td valign="top"><p>Yes</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>Data set inheritance</p></td><td valign="top"><p>Yes</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>Inherited fields</p></td><td valign="top"><p>Yes</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>Data model</p></td><td valign="top"><p>All features are supported.</p></td><td valign="top"><p>Some restrictions, see <a href="../references/relationalMode.html#limitationsDataModel">Data model restrictions for tables in relational mode</a>.</p></td></tr>
+<tr>
+<td valign="top"><p>Direct SQL reads</p></td><td valign="top"><p>No</p></td><td valign="top"><p>Yes, see <a href="../references/relationalMode.html#sqlRead">SQL reads</a>.</p></td></tr>
+<tr>
+<td valign="top"><p>Direct SQL writes</p></td><td valign="top"><p>No</p></td><td valign="top"><p>Yes, but only under precise conditions, see <a href="../references/relationalMode.html#sqlWrite">SQL writes</a>.</p></td></tr>
+<tr>
+<td valign="top"><p>Data validation</p></td><td valign="top"><p>Yes, enables tolerant mode.</p></td><td valign="top"><p>Yes, some constraints become blocking, see <a href="../references/relationalMode.html#validation">Validation</a>. </p></td></tr>
+<tr>
+<td valign="top"><p>Transactions</p></td><td valign="top"><p>See <a href="../references/mapping_to_java.html#concurrency">Concurrency and isolation levels</a>.</p></td><td valign="top"><p>See <a href="../references/mapping_to_java.html#concurrency">Concurrency and isolation levels</a>.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="howto"></a>Enabling relational mode for a data model</h2>
+<p>The data model declares that it is in relational mode. Due to the necessary restrictions of relational mode, such as not having data spaces or snapshots, a specific relational data space must be provided, to which the data model will be published. Relational data spaces do not allow creating sub-data spaces or snapshots.</p><p>Example of a relational mode declaration:</p><pre class="ebx_example brush: xml">
+&lt;xs:schema>
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;osd:relationalMode>
+				&lt;dataSpace>aDataSpaceKey&lt;/dataSpace>
+				&lt;dataSet>aDataSetReference&lt;/dataSet>
+				&lt;tablesPrefix>aPrefixForTablesInRDBMS&lt;/tablesPrefix>
+			&lt;/osd:relationalMode>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+	...
+&lt;/xs:schema></pre>
+<p>with the elements:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>dataSpace</code></p></td><td valign="top"><p>Specifies the data space where the data model must be published. This data space must itself be in relational mode. No data space or snapshot can be created from a data space declared in such a mode. </p></td><td align="center" valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>dataSet</code></p></td><td valign="top"><p>Specifies the data set where the data model must be published.</p></td><td align="center" valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><code>tablesPrefix</code></p></td><td valign="top"><p>Specifies the common prefix used for naming the generated tables in the database.</p></td><td align="center" valign="top"><p>Yes</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="validation"></a>Validation</h2>
+<p>This section details the impact of relational mode on data validation.</p><h3>
+<a name="structuralConstraints"></a>Structural constraints</h3>
+<p>Some EBX5 data model constraints will generate a &quot;structural constraint&quot; on the underlying RDBMS schema for relational mode and also if <a href="./history.html">table history is activated</a>. This concerns the following facets:</p><ul>
+<li><p>facets <code>xs:maxLength</code> and <code>xs:length</code> on <code>string</code> elements;</p></li><li><p>facets <code>xs:totalDigits</code> and <code>xs:fractionDigits</code> on <code>xs:decimal</code> elements.</p></li></ul>
+<p>Databases do not support as tolerant a validation mode as EBX5. Hence, the above constraints become <em>blocking constraints</em>. A blocking constraint means that updates are rejected if they do not comply. Additionally, such constraints are no longer checked during validation process, except for foreign key constraints under some circumstances (see <a href="#blockingModeTableRef">Foreign key blocking mode</a>). When a transaction does not comply with a blocking constraint, it is cancelled and a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintViolationException.html"><code>ConstraintViolationException</code></a> is thrown.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../models/constraints.html#blocksCommit">Blocking and non-blocking constraints</a></p></div>
+<h3>
+<a name="blockingModeTableRef"></a>Foreign key blocking mode</h3>
+<p>The foreign key constraints defined on a table in relational mode and referencing a table in relational mode are also in blocking mode, so as to reduce validation time. For this constraint, blocking mode implies that attempting the following actions will result in a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintViolationException.html"><code>ConstraintViolationException</code></a>:</p><ul>
+<li><p>Deleting a record referenced by a foreign key constraint,</p></li><li><p>Deleting an instance referenced by a foreign key constraint,</p></li><li><p>Closing a data space referenced by a foreign key constraint.</p></li></ul>
+<p>However, in order to ensure the integrity of foreign key constraints after direct SQL writes that bypass the EBX5 governance framework, the foreign key constraints will be validated on the following cases:</p><ul>
+<li><p>On the first explicit validation through the user interface or API,</p></li><li><p>On the first explicit validation through the user interface or API after refreshing the schema,</p></li><li><p>On the first explicit validation through the user interface or API after resetting the validation report of a data set in the user interface.</p></li></ul>
+<p><strong>Important:</strong></p><ul>
+<li><p>Blocking aspect of the foreign key constraint does not concern filters that may be defined. That is, a foreign key constraint is non-blocking if a referenced record exists but does not satisfy a foreign key filter. In this case, updates are not rejected and thus an error will be added to the validation report.</p></li><li><p>Foreign key constraints are not in blocking mode upon archive import. Indeed, all blocking constraints, excepted structural constraints, are always disabled when importing archives. This allows flexibility upon archive import where under certain circumstances the import of foreign keys referencing records that are not yet imported must be tolerant. </p></li></ul>
+<h3>
+<a name="id3s3"></a>Constraints on the whole table</h3>
+<p>Programmatic <a target="_blank" href="../Java_API/com/orchestranetworks/schema/Constraint.html">constraints</a> are checked on each record of the table at validation time. If the table defines millions of records, this becomes a performance issue. It is then recommended to define a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintOnTable.html">table-level constraint</a>.</p><p>In the case where it is not possible to define such a table-level constraint, it is recommended to at least define a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/DependenciesDefinitionContext.html#dependencies">local or explicit dependency</a>, so as to reduce the cost of incremental validation.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintOnTable.html"><code>ConstraintOnTable</code></a></p></div>
+<h2>
+<a name="sqlAccess"></a>SQL access to data in relational mode</h2>
+<p>This section describes how to directly access the data in relational mode, through SQL.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/history.html#sqlAccess">SQL access to history</a></p></div>
+<h3>
+<a name="id4s1"></a>Finding the table in the database</h3>
+<p>For every EBX5 table in relational mode, a corresponding table is generated in the RDBMS. Using the EBX5 user interface, you can find the name of this database table by clicking on the documentation pane of the table.</p><h3>
+<a name="sqlRead"></a>SQL reads</h3>
+<p>Direct SQL reads are possible in well-managed, preferably short-lived transactions. However, for such accesses, EBX5 permissions are not taken into account. As a result, applications given allowed to perform reads must be trusted through other authentication processes and permissions.</p><h3>
+<a name="sqlWrite"></a>SQL writes</h3>
+<p> Direct SQL writes bypass the governance framework of EBX5. Therefore, they must be used with <em><strong>extreme caution</strong></em>. They could cause the following situations:</p><ul>
+<li><p>failure to historize EBX5 tables;</p></li><li><p>failure to execute EBX5 triggers;</p></li><li><p>failure to verify EBX5 permissions and constraints;</p></li><li><p>modifications missed by the incremental validation process;</p></li><li><p>losing visibility on EBX5 semantic tables, which might be referenced by foreign keys.</p></li></ul>
+<p>Consequently, direct SQL writes are to be performed <em>if, and only if, all the following conditions are verified</em>: </p><ul>
+<li><p>The written tables are not historized and have no EBX5 triggers.</p></li><li><p>The application performing the writes can be fully trusted with the associated permissions, to ensure the integrity of data. Specifically, the integrity of foreign keys (<code>osd:tableRef</code>) must be preserved at all times. See <a href="#blockingModeTableRef">Foreign key blocking mode</a> for more information.</p></li><li><p>The application server running EBX5 is shut down <em>whenever writes are performed</em>. This is to ensure that incremental validation does not become out-of-date, which would typically occur in a batch context. </p></li></ul>
+<h2>
+<a name="limitations"></a>Limitations of relational mode</h2>
+<p>The relational mode feature is fully functional, but has some known limitations, which are listed below. If using relational mode, it is strongly recommended to read these limitations carefully and to contact Orchestra Networks support in case of questions.</p><p>See <a href="../installation/supported_env.html#databases">Supported databases</a> for the databases on which relational mode is supported.</p><h3>
+<a name="limitationsDataModel"></a>Data model restrictions for tables in relational mode</h3>
+<p>Some restrictions apply to data models in relational mode:</p><ul>
+<li><p><a href="../references/persistence_overview.html#mappedRestrictions">Data model restrictions due to mapped mode</a></p></li><li><p><a href="../models/types.html#aggregatedList">Aggregated lists</a> are not supported in relational tables. Such a schema will cause a compilation error. </p></li><li><p>User-defined attributes on relational tables result in data model compilation errors.</p></li><li><p><a href="../references/inheritance.html#dataSetInheritance">Data set inheritance</a>.</p></li><li><p><a href="../references/inheritance.html#ina">Inherited fields</a>.</p></li><li><p>Programmatic constraints, since the computation cost of validation would be too high. However, <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintOnTable.html">constraints on tables</a> remain available.</p></li></ul>
+<p>Schema evolutions may also be constrained by the underlying RDBMS, depending on the data already contained in the concerned tables.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/datamodel_evolutions.html">Data model evolutions</a></p></div>
+<h3>
+<a name="id5s2"></a>Other limitations of relational mode</h3>
+<ul>
+<li><p><a href="../references/persistence_overview.html#mappedRestrictions">Limitations of mapped mode</a></p></li><li><p>From a data space containing data sets in relational mode, it is not possible to create child data spaces and snapshots.</p></li><li><p>For D3, it is not possible to broadcast a data space defined in relational mode.</p></li><li><p>For very large volumes of data, the validation will show poor performance if the relational table declares any of these features: <code>osd:function</code>, <code>osd:select</code>, <code>osd:uiFilter</code>, <code>osd:tableRef/filter</code>. Additionally, a sort cannot be applied on a <code>osd:function</code> column.</p></li><li><p>It is not possible to set the <code>AdaptationValue.INHERIT_VALUE</code> to a node belonging to a data model in relational mode.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Persistence</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

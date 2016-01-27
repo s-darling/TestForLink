@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Performance guidelines</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_performance" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/performance.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</span></div>
+<h1>
+Performance guidelines</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1"> Basic performance check-list</a><ul class="toc2">
+<li class="toc2"><a href="#javaExtensions">Expensive programmatic extensions</a></li><li class="toc2"><a href="#id1s2">Insufficient memory</a></li><li class="toc2"><a href="#id1s3">Relational mode</a></li><li class="toc2"><a href="#id1s4">Directory integration</a></li><li class="toc2"><a href="#id1s5">Aggregated lists</a></li><li class="toc2"><a href="#id1s6">Reorganization of database tables </a></li></ul>
+</li><li class="toc1"><a href="#memory">Memory Management</a><ul class="toc2">
+<li class="toc2"><a href="#loadingStrategy">Loading strategy</a></li><li class="toc2"><a href="#monitoring">Monitoring</a></li><li class="toc2"><a href="#id2s3">Tuning the memory</a></li></ul>
+</li><li class="toc1"><a href="#validation">Validation</a></li><li class="toc1"><a href="#id4">Massive updates</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Transaction boundaries</a></li><li class="toc2"><a href="#id4s2">Triggers</a></li></ul>
+</li><li class="toc1"><a href="#id5">Access to tables</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Functionalities</a></li><li class="toc2"><a href="#id5s2">Semantic mode: Architecture and design</a></li><li class="toc2"><a href="#id5s3">Semantic mode: Performance considerations</a></li><li class="toc2"><a href="#id5s4">Semantic mode: Other operations on tables</a></li><li class="toc2"><a href="#id5s5">Semantic mode: Conclusion about tables</a></li><li class="toc2"><a href="#id5s6">Relational mode: Performance considerations</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a> Basic performance check-list</h2>
+<p>While EBX5 is designed to support large volumes of data, several common factors can lead to poor performance. Addressing the key points discussed in this section will solve usual performance bottlenecks.</p><h3>
+<a name="javaExtensions"></a>Expensive programmatic extensions</h3>
+<p>The table below details the programmatic extensions that can be implemented.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Use case</strong></p></th><th valign="top"><p><strong>Programmatic extensions that can be involved</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><em>Validation</em></p></td><td><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/Constraint.html">programmatic constraints</a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/ValueFunction.html">computed values</a></p></li></ul>
+</td></tr>
+<tr>
+<td valign="top"><p><em>Table access</em></p></td><td><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaExtensionsContext.html#setAccessRuleOnOccurrence(com.orchestranetworks.schema.Path, com.orchestranetworks.service.AccessRule)">record-level permission rules</a></p></li><li><p><a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationFilter.html">programmatic filters</a></p></li></ul>
+</td></tr>
+<tr>
+<td valign="top"><p><em>EBX5 content display</em></p></td><td><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/ValueFunction.html">computed values</a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditor.html">UI Components</a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaExtensionsContext.html#setAccessRuleOnNode(com.orchestranetworks.schema.Path, com.orchestranetworks.service.AccessRule)">node-level permission rules</a></p></li></ul>
+</td></tr>
+<tr>
+<td valign="top"><p><em>Data update</em></p></td><td><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/package-summary.html">triggers</a></p></li></ul>
+</td></tr>
+</tbody>
+</table>
+<p> For large volume of data, cumbersome algorithms will have serious effects on performance. For example, a constraint algorithm&#39;s complexity is <em> O(n <sup>
+2</sup>
+)</em>; if size is 100, the resulting cost is proportional to 10,000 (this generally produces an immediate result); but if size is 10,000, the resulting cost will be proportional to 10,000,000. </p><p>Another source of slowness is a call to external resources. Local caching usually solves this type of problem.</p><p>If one of the specific use cases above shows poor performance, it is advised to track the problem either through code analysis or by means of a Java profiling tool.</p><h3>
+<a name="id1s2"></a>Insufficient memory</h3>
+<p>When a table is in semantic mode (default mode), the EBX5 Java memory cache is used. It ensures a much more efficient access to data when this data is already loaded in cache. If there is not enough space for working data, swaps between the Java heap space and the underlying database can heavily degrade overall performance.</p><p> These aspects are exposed in the section <a target="_self" href="#memory">Memory Management</a> below. </p><h3>
+<a name="id1s3"></a>Relational mode</h3>
+<p>If a table holds too many records to fit into the available memory, it is advised to use the relational mode.</p><p>For more information, see the chapter <a target="_self" href="../references/relationalMode.html">Relational mode</a>.</p><h3>
+<a name="id1s4"></a>Directory integration</h3>
+<p> Authentication and permissions management involve the <a target="_self" href="../engine/directory.html">directory</a> .&nbsp;</p><p> If a specific directory implementation is deployed and accesses an external directory, it can be useful to ensure local caching. More particularly, one of the most frequently called methods is <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#isUserInRole(com.orchestranetworks.service.UserReference, com.orchestranetworks.service.Role)">Directory.isUserInRole</a> .&nbsp;</p><h3>
+<a name="id1s5"></a>Aggregated lists</h3>
+<p> In a data model, when an element&#39;s cardinality constraint <code>maxOccurs</code> is greater than 1 and no <code>osd:table</code> is declared on this element, it is implemented as a Java List. We call this an <a target="_self" href="../models/types.html#aggregatedList">aggregated list</a> as opposed to a <em>table</em>. </p><p> It is important to consider that no particular optimizations are done to access aggregated lists (for example: iterations, GUI display, etc.). Additionally and outside performance concerns, the aggregated lists are limited regarding many functionalities that are supported by tables (see <a target="_self" href="../models/tables_filters.html">tables introduction</a> for a list of these features).</p><p> Hence <em>aggregated lists should be used only for small volumes of simple data (one or two dozens of records), with no advanced requirements</em> for their identification, lookups, permissions, etc. For larger volumes of data (or more advanced functionalities), it is recommended to use <code>osd:table</code> declarations. </p><h3>
+<a name="id1s6"></a>Reorganization of database tables </h3>
+<p>As with any database, inserting and deleting large volumes of data may lead to fragmented data, which can deteriorate performance over time. To resolve the issue, reorganizing the impacted database tables is necessary. See <a target="_self" href="../engine/repository_administration.html#monitoring_RDBMS">Repository Administration</a>. </p><p> A specificity of EBX5 is that the creation of data spaces and snapshots adds new entries to the table <code>{ebx.persistence.table.prefix}HTB</code> (see <a target="_self" href="../engine/repository_administration.html#monitoring_RDBMS">Repository Administration</a>). It may therefore be necessary to schedule regular reorganizations of this table for large repositories in which many data spaces are created and deleted.</p><h2>
+<a name="memory"></a>Memory Management</h2>
+<h3>
+<a name="loadingStrategy"></a>Loading strategy</h3>
+<p>The administrator can specify the loading strategy of a data space or snapshot in its information pane. The default strategy is to load and unload the resources on demand. For those which are heavily used, a <em>forced load</em> strategy is usually recommended.</p><p>Note: the loading strategy only affects the tables in semantic mode (relational tables are never loaded into cache anyway).</p><p>The following sections give details about the existing modes.</p><h4>
+On-demand loading and unloading</h4>
+<p>In this default mode, each resource in a data space is loaded or built only when it is needed. Moreover, the resources of the home are &quot;softly&quot; referenced by means of the standard Java <code>SoftReference</code> class; this implies that each resource can be unloaded <em>&quot;at the discretion of the garbage collector in response to memory demand&quot;</em>. </p><p>The main advantage of this default mode is the ability to free the memory when needed. As a counterpart, this implies a load/build cost when an accessed resource has not yet been loaded since server startup, or if it has been unloaded since.</p><h4>
+Forced loading</h4>
+<p>If the <em>Forced loading</em> strategy is enabled for a data space or snapshot, its resources are loaded asynchronously on server startup. Moreover, each resource of the home is maintained into memory until server is shut down or data space is closed.</p><p>This mode is particularly recommended for long-lived data space and/or those that are heavily used, namely any data space that serves as a reference.</p><h4>
+Forced loading and prevalidation</h4>
+<p>This strategy is similar to the <em>Forced loading</em> one, except that the content of the loaded data space or snapshot will also be validated on server startup.</p><h3>
+<a name="monitoring"></a>Monitoring</h3>
+<p> Indications of EBX5 load activity are provided by monitoring the underlying database, and also by the <a target="_self" href="../installation/properties.html#ebxLog">&#39;monitoring&#39; log category</a>.</p><p> If the numbers for <em>cleared</em> and <em>built</em> objects are high for a long time, this is an indication that EBX5 is swapping.</p><p>To facilitate the analysis of logs generated by EBX5, you can use the provided OpenOffice spreadsheet worksheet by right-clicking and saving this <a target="_self" href="../resources/utils/monitoring.ods">link</a>.</p><h3>
+<a name="id2s3"></a>Tuning the memory</h3>
+<p> The maximum size of memory allocation pool is usually specified by the Java command-line option <code>-Xmx</code>. As is the case for any intensive process, it is important that the size specified by this option does not go beyond the available physical RAM, so that the Java process does not swap to disk at operating-system level. </p><p>Tuning the garbage collector can also benefit to the overall performance. This tuning should be adapted to the use cases and to the specific Java Runtime Environment used.</p><h2>
+<a name="validation"></a>Validation</h2>
+<p>The internal incremental validation framework will optimize the work needed when some updates occur. The incremental validation process runs as follows:</p><ul>
+<li><p> A first call to a validation report performs the full validation of a data set. Note that the <a target="_self" href="#loadingStrategy">loading strategy</a> can also specify a data space to be prevalidated at server startup. </p></li><li><p>Then, data updates will transparently and asynchronously maintain the validation report, in so far as the updated nodes specify explicit dependencies. Note: standard and static facets, foreign key constraints, dynamics facets, selection nodes specify explicit dependencies.</p></li><li><p>If a mass-update is executed or if there are too many validation messages, the incremental validation process is stopped. Next call to the validation report will hence trigger a full validation.</p></li><li><p>Also, if a transaction is cancelled, the validation state of the updated adaptation instances is reset. Next call to the validation report will trigger a full validation as well.</p></li></ul>
+<p> However, there is an incompressible part that is systematically revalidated (even if no updates have occurred since last validation): these are nodes with <em>unknown dependencies</em>. A node has unknown dependencies if: </p><ul>
+<li><p> it possesses a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/Constraint.html">programmatic constraint</a> in default <em>unknown dependencies</em> mode; </p></li><li><p> it declares a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ValueFunction.html">computed value</a> ;&nbsp;</p></li><li><p> it declares a dynamic facet that depends on a node that is itself a <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ValueFunction.html">computed value</a> ;&nbsp;</p></li></ul>
+<p>Consequently, on large tables (beyond the order of 10 <sup>
+5</sup>
+), it is recommended to avoid nodes with unknown dependencies (or at least to minimize the number of such nodes). For programmatic constraints, the developer is able to specify two alternative modes that drastically reduce incremental validation cost: <em>local dependency</em> mode and <em>explicit dependencies</em>. For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/DependenciesDefinitionContext.html#dependencies">Dependencies and Validation</a> section.</p><p>Note: it is possible for a user granted with an Administrator role to manually reset the validation report of an adaptation. This option is available from the validation report section in EBX5.</p><h2>
+<a name="id4"></a>Massive updates</h2>
+<p>Massive updates can involve several hundreds of thousands of insertions, modifications or deletions. Those updates are normally not frequent (usually initial data imports), or performed in a non-interactive way (usually nightly batches); hence performance is less critical than for frequent and interactive operations. However, like classic batch processing, it has some specific issues.</p><h3>
+<a name="id4s1"></a>Transaction boundaries</h3>
+<p> It is generally not advised to use a single transaction when the number of atomic updates in the transaction is beyond the order of 10 <sup>
+4</sup>
+ .&nbsp;</p><p>The main reason is that large transactions require a lot of resources (more particularly memory) from EBX5 and from the underlying database.</p><p>For reducing transactions&#39; size, it is possible to:</p><ul>
+<li><p> specify the property <a target="_self" href="../installation/properties.html#tuning">ebx.manager.import.commit.threshold</a>, however, this property is used only for archive imports done interactively, in the context of the EBX5 user interface; </p></li><li><p> explicitly <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setCommitThreshold(int)">specify commit threshold</a> inside the batch procedure; </p></li><li><p> structurally limit the transaction scope by implementing <a target="_blank" href="../Java_API/com/orchestranetworks/service/Procedure.html">Procedure</a> onto a part of the task and executing it as many times as needed. </p></li></ul>
+<p>On the other hand, specifying a very small transaction size will be also hinder performance because of the persistent tasks done for each commit.</p><p><em>Note:</em> If intermediate commits are a problem because transactional atomicity is no longer guaranteed, it is recommended to execute the massive update inside a dedicated data space. This data space will be created just before the massive update. If update does not complete successfully, the data space must just be closed; if it succeeds, the data space can be merged safely. </p><h3>
+<a name="id4s2"></a>Triggers</h3>
+<p> If needed, triggers can be deactivated by means of method <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setTriggerActivation(boolean)">setTriggerActivation</a> .&nbsp;</p><h2>
+<a name="id5"></a>Access to tables</h2>
+<h3>
+<a name="id5s1"></a>Functionalities</h3>
+<p> Tables are commonly accessed through EBX5 and also through the <a target="_blank" href="../Java_API/com/onwbp/adaptation/Request.html">Request API</a> and data services. This access involves a unique set of functions, including a <em>dynamic resolution</em> process, that we detail for a better understanding of their performance implications. </p><ul>
+<li><p><em>Inheritance:</em> Inheritance in adaptations tree implies to take into account records and values that are defined by the parent instance, through a recursive process. Also in a root instance, a record can inherit some of its values from the data model default values (<code>xs:default</code> attribute). </p></li><li><p><em>Value computation:</em> A node declared as <code>osd:function</code> is always <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ValueFunction.html#getValue(com.onwbp.adaptation.Adaptation)">computed</a> on the fly, when the value is accessed. </p></li><li><p><em>Filtering:</em> A <a target="_self" href="../references/xpath_ref.html">XPath predicate</a> , a <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationFilter.html">programmatic filter</a> ,&nbsp;or a record-level <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaExtensionsContext.html#setAccessRuleOnOccurrence(com.orchestranetworks.schema.Path, com.orchestranetworks.service.AccessRule)">permission rule</a> imply a selection on records. </p></li><li><p><em>Sort:</em> Last but not least, a sort on the result can be made. </p></li></ul>
+<h3>
+<a name="id5s2"></a>Semantic mode: Architecture and design</h3>
+<p>In order to improve the speed of operations on tables, indexes are managed by the EBX5 engine.</p><p>EBX5 advanced features such as advanced life-cycle (snapshots and data spaces), data set inheritance and flexible XML Schema modeling, have led to a particular design on indexing mechanisms. This design can be summarized as follows:</p><ul>
+<li><p><em>Indexes</em> maintain an in-memory data structure on a full table, as it is defined in a data space or in a snapshot; however, it does not take into account data set inheritance.</p></li><li><p><em>Final access</em> to tables performs a <em>dynamic resolution</em> based on indexes.</p><p>An index is not persisted, and building it requires loading all of the table blocks from the database. This tradeoff is still beneficial, since the index can be retained in memory for longer than the corresponding table blocs.</p></li></ul>
+<h3>
+<a name="id5s3"></a>Semantic mode: Performance considerations</h3>
+<p>The request optimizer favors the use of indexes when computing a request result. Important note: only XPath filters are considered for optimization on index.</p><p>The impacts on performance are the following, if indexes are already built:</p><ol>
+<li><p>If the request implies no filter, no programmatic rule, and no sort, accessing its first few rows (these fetched by a paged view) is almost immediate.</p></li><li><p>If the request can be resolved with no extra sort step (this is the case if it has no sort criteria, or if its sort criteria relate to that of the index used for computing the request), accessing the first few rows of a table should be quick. More precisely, it depends on the cost of the specific filtering algorithm that is executed when fetching at least 2,000 records.</p></li><li><p> Both cases above guarantee an access time that is independent from the size of the table, and provides a view sorted on the index used. If an extra sort is required, then the first access time depends on the table size according to a <code>N log(N)</code> function (where <code>N</code> is the number of records in the resolved view). </p></li></ol>
+<p>If indexes are not yet built, or have been unloaded, additional time will be needed: the build time is <code>O(N log(N))</code>. </p><p>Access to the table data blocks is required when the request cannot be computed against a sole index (whether for resolving a rule, filter or sort), as well as for building the index; if the table blocs are not present in memory, additional time will be needed to fetch them from the database.</p><p>It is possible to get information through the <a target="_self" href="#monitoring">monitoring</a> and request log category.</p><h3>
+<a name="id5s4"></a>Semantic mode: Other operations on tables</h3>
+<p> The creation of new records (or <em>records insert</em> ) depends on the primary key index. Hence, a creation becomes almost immediate if this index is loaded. </p><h3>
+<a name="id5s5"></a>Semantic mode: Conclusion about tables</h3>
+<p>Faster access to tables is ensured if indexes are ready and maintained in memory cache. As mentioned above, it is important for the Java Virtual Machine to have enough space allocated, so that it does not release indexes too quickly.</p><h3>
+<a name="id5s6"></a>Relational mode: Performance considerations</h3>
+<p>In order to improve the speed of operations on tables, indexes may be declared on a table at data-model level. This will trigger the creation of an index on the corresponding table, in the database. </p><p>When computing a request result, the EBX5 engine delegates to the RDBMS:</p><ul>
+<li><p>handling of all the request sort criteria: they are translated to an ORDER BY clause;</p></li><li><p>whenever possible, handling of the request filters (they are translated to a WHERE clause). Important note: only XPath filters are considered for optimization on index. If the request includes non-optimizable filters, table rows will be fetched from the database, then filtered in Java memory by EBX5, until the requested page size is reached. This is not as efficient as filtering on the database side (especially regarding I/O).</p></li></ul>
+<p>It is possible to get information on the transmitted SQL request, through the <em>persistence</em> log category.</p><p>When designing an index aiming at improving the performance of a given request, the same rules apply as for traditional database index design.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

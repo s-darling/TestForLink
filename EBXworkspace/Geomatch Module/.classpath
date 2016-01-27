@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/Libraries/Apache Tomcat/apache-tomcat-7.0.42/lib/servlet-api.jar" sourcepath="/Users/justinrisch/.m2/repository/org/apache/tomcat/tomcat-servlet-api/7.0.42/tomcat-servlet-api-7.0.42-sources.jar"/>
+	<classpathentry kind="lib" path="/EBX Server/lib/ebx.jar"/>
+	<classpathentry kind="lib" path="/Users/susannahdarling/Downloads/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/susannahdarling/Downloads/geocoder-java-0.16.jar"/>
+	<classpathentry kind="lib" path="/Users/susannahdarling/Downloads/jackson-core-asl-1.8.5.jar"/>
+	<classpathentry kind="lib" path="/Users/susannahdarling/Downloads/jackson-mapper-asl-1.8.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/procedure"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,9 @@
+2016-01-13 11:21:01,231 EST INFO   log.request 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:22:50,130 EST INFO   log.request 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:23:00,814 EST INFO   log.request 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:23:06,445 EST INFO   log.request 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:43:54,771 EST INFO   log.request 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:44:35,787 EST INFO   log.request 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:19:44,662 EST INFO   log.request 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:27,819 EST INFO   log.request 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:46:35,537 EST INFO   log.request 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****

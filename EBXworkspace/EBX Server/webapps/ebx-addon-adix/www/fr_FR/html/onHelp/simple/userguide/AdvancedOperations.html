@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 3. Advanced operations</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="AdvancedOperations" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<h1>
+<a name="AdvancedOperations_topPage"></a>3. Advanced operations</h1>
+<p>In order to manage user-defined data mapping configurations, a portfolio of services is available depending on the application type. These services are located on the &#39;Application by type&#39; table in the &#39;Data exchange&#39; data space under the EXB5 &#39;Administration&#39; tab.</p><p align="center"><img alt="/1000000000000197000001A9ACD2532B.png" src="./resources/pictures/1000000000000197000001A9ACD2532B.png" width="398"></img></p><p>The creation of user-defined data mapping configurations requires IT skills. Based on these configurations, end-users can export, import and transfer the data easily, all the technical aspects of data mapping configuration are hidden from them.</p><p>The table below gives a short description of the services available to manage the user-defined data mapping configurations.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Services applied to an Application of type -&gt;</p></th><th valign="top"><p>Default XML</p></th><th valign="top"><p>XML </p></th><th valign="top"><p>EBX5</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>Delete data mapping</p></td><td colspan="3" valign="top"><p>Physical deletion of all Tables, Fields and related data mapping (Tables: Version, Interface Application, Table mapping, Field mapping, Field mapping transformation and Path ) for the Application.</p><p>For an EBX5 type application, the Object class, Property and related tables (Object Class by Application, Property by Object Class) are also removed.</p></td></tr>
+<tr>
+<td valign="top"><p>Generate models</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Tables and Fields are declared as XML Tags.</p><p>The generation is based on a sample XML file that must be provided as input data.</p></td><td valign="top"><p>Tables and Fields are declared as an EBX5 path.</p><p>Object classes and Properties can also be generated to get the semantic data model.</p><p>The generation is based on a data space - data set corresponding to the Application.</p></td></tr>
+<tr>
+<td valign="top"><p>Delete models</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Logical deletion of Object class and Property type items-if not used by another application. Logical deletion of all application Tables and Fields. The logical deletion is registered by using the property &#39;Is removed&#39;</p></td></tr>
+<tr>
+<td valign="top"><p>Purge removed information</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Physical deletion of the items that are tagged &#39;Is removed&#39; = &#39;Yes&#39; by the &#39;Delete models&#39; service. All data mappings that refer to the deleted items are also physically removed.</p></td></tr>
+<tr>
+<td valign="top"><p>Validate models</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Checks if the configuration is still updated with the EBX5&#39; data model. All unaligned Tables and Fields are then modified by changing the &#39;Is removed&#39; property into the value &#39;Yes&#39;</p></td></tr>
+<tr>
+<td valign="top"><p>Auto data mapping</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>N/A</p></td><td valign="top"><p>Automatically configures the data mapping between two EBX5 applications sharing the same Object class and property items.</p></td></tr>
+</tbody>
+</table>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

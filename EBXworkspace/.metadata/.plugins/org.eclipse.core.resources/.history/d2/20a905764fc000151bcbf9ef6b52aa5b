@@ -1,0 +1,61 @@
+package com.orchestranetworks.geomatch.match;
+public class Coordinate {
+
+	private Double x;
+	private Double y;
+	// flag used to show that a coordinate was verified.
+	private boolean valid = false;
+
+	public Coordinate(Integer x, Integer y, Boolean validity) {
+		setValid(validity);
+		this.setX(0.0 + x);
+		this.setY(0.0 + y);
+	}
+
+	public Coordinate(Double x, Double y, Boolean validity) {
+		setValid(validity);
+		this.setX(x);
+		this.setY(y);
+	}
+
+	public Coordinate(Integer x, Integer y) {
+		this.setX(0.0 + x);
+		this.setY(0.0 + y);
+	}
+
+	public Coordinate(Double x, Double y) {
+		this.setX(x);
+		this.setY(y);
+	}
+
+	public Double getY() {
+		return y;
+	}
+
+	public void setY(Double y) {
+		this.y = y;
+	}
+
+	public Double getX() {
+		return x;
+	}
+
+	@Override
+	public String toString() {
+		return new StringBuilder("[x:").append(x).append(", y:").append(y)
+				.append("]").toString();
+	}
+
+	public void setX(Double x) {
+		this.x = x;
+	}
+
+	public boolean isValid() {
+		return valid;
+	}
+
+	public void setValid(boolean valid) {
+		this.valid = valid;
+	}
+
+}

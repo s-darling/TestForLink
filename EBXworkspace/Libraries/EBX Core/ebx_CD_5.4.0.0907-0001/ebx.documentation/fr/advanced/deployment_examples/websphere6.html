@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Install Note for WebSphere 6</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="installation_j2ee_summary" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=deployment_examples/websphere6.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+<h1>
+Install Note for WebSphere 6</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Warnings</a></li><li class="toc1"><a href="#datasource_v4">Warning: Using a DataSource v4 in WebSphere 6</a></li><li class="toc1"><a href="#id3">Overview</a></li><li class="toc1"><a href="#id4">Detail</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Warnings</h2>
+<ul>
+<li><p> This chapter describes a <em>quick installation example</em> of EBX5 on IBM WebSphere 6 Application Server. </p></li><li><p>It does not replace the documentation of this application server.</p></li><li><p> It is <em>not</em> a general installation recommendation, since actual installation process is fixed by architecture choices (technical environment, applications mutualization, delivery process, company choices, etc.). </p></li><li><p> The complete description of the components needed by EBX5 is given in chapter <a target="_self" href="../installation/deploy_on_j2ee.html">Java EE deployment</a>. </p></li><li><p>In this document, we do not deploy an additional EBX5 module. For this, a good practice would be to rebuild an EAR with the EBX5 module as a web application at the same level as other EBX5 web applications. In this case, the web application must declare its class-path dependency in the standard manner specified by Java™ 2 Platform Enterprise Edition Specification, v1.4:</p><blockquote><p><strong style="font-size:16px">J2EE.8.2 Optional Package Support</strong></p><p>(...)</p><p>A JAR format file (such as a .jar file, .war file, or .rar file) can reference a .jar file by naming the referenced .jar file in a Class-Path header in the referencing JAR file&#39;s Manifest file. The referenced .jar file is named using a URL relative to the URL of the referencing JAR file. The Manifest file is named META-INF/MANIFEST.MF in the JAR file. The Class-Path entry in the Manifest file is of the form:</p><p><code>Class-Path: list-of-jar-files-separated-by-spaces</code></p></blockquote><p>In an &quot;industrialized&quot; process, we strongly recommend to develop a script that automatically builds the EAR with: the specific EBX5 module(s), the EBX5 web applications and also all the shared libraries needed.</p></li><li><p> In order to avoid unpredictable behavior, the minimal rule to follow is to avoid any duplication of <code>ebx.jar</code> or other libraries on the class-loading system. </p></li></ul>
+<h2>
+<a name="datasource_v4"></a>Warning: Using a DataSource v4 in WebSphere 6</h2>
+<ul>
+<li><p>The lookup mechanism used by WebSphere to retrieve a DataSource v4 is not compatible with the Servlet 2.3 specification. Therefore, using a DataSource v4 requires the Deployer to modify the DTD reference in the deployment descriptor (web.xml) of the &quot;ebx&quot; web application,</p><p>by replacing:</p><p>&lt;!DOCTYPE web-app PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot; &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot;&gt;</p><p>with:</p><p>&lt;!DOCTYPE web-app PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN&quot; &quot;http://java.sun.com/j2ee/dtds/web-app_2_2.dtd&quot;&gt;</p></li></ul>
+<h2>
+<a name="id3"></a>Overview</h2>
+<ol>
+<li><p><em>Create the EBX_HOME directory</em>; copy <code>ebx.properties</code></p></li><li><p> If required: install EBX5 third-party libraries: <em>WebSphere Server Application - First steps, Environment, Shared Libraries</em></p></li><li><p> Configure JVM arguments (Java system properties): <em>Servers, Application servers, Java and Process Management, Process Definition, Java Virtual Machine, Additional Properties, Generic JVM arguments</em></p></li><li><p> Deploy EBX5 application: <em>Applications, Install New Application</em></p></li></ol>
+<h2>
+<a name="id4"></a>Detail</h2>
+<ol>
+<li><p>Create the directory EBX_HOME on the server.</p></li><li><p> Copy file <code>ebx.software/files/ebx.properties</code> to <em>EBX_HOME</em>.</p></li><li><p>If required: create directory EBX_LIB on the server, and copy third-party library files to EBX_LIB. </p><p>The exact description of these components is given in chapter <a target="_self" href="../installation/deploy_on_j2ee.html">Components</a> . Obviously, if those components are already deployed on the class-loading system, they do not have to be duplicated (ex: activation.jar and mail.jar are already present in WebSphere, and the database driver is configured at the datasource level). </p></li><li><p>Launch the &quot;WebSphere Server Application - Fist steps&quot; console</p></li><li><p>Start the server</p></li><li><p>Launch the administration console and login</p></li><li><p>If required: specify the path for third-party library files:</p><ol>
+<li><p>In the menu on the left, click on&quot;Environment&quot;</p></li><li><p>Click on &quot;Shared Libraries&quot;</p></li><li><p>In the &quot;Shared Libraries&quot; page,&nbsp;click on the button &quot;New&quot;. The &quot;Shared Libraries &gt; New&quot; page is displayed.</p></li><li><p> In the field *Name, enter the library name, in our example it is <em>3rd_party_libs_for_ebx</em></p></li><li><p>In the field *Classpath, enter the EBX_LIB path</p></li><li><p>Click on the button &quot;OK&quot;</p></li><li><p>Save modifications by clicking on &quot;Save&quot; in the &quot;Messages&quot; panel at the bottom of the page &quot;Shared Libraries&quot;.</p></li><li><p>Click on the button &quot;Save&quot;</p></li></ol>
+</li><li><p>Specify the path for EBX5 configuration file:</p><ol>
+<li><p>In the menu on the left, click on &quot;Servers&quot;</p></li><li><p>Click on &quot;Application servers&quot;</p></li><li><p> In the page &quot;Application servers&quot;, click on the server name. In our example, the server name is <em>server1</em> .&nbsp;</p></li><li><p>In the configuration page of &quot;Application servers &gt; server &quot;, click on &quot;Java and Process Management&quot;, which is a sub-menu of &quot;Server Infrastructure&quot;</p></li><li><p>Click on &quot;Process Definition&quot;</p></li><li><p>Click on &quot;Java Virtual Machine&quot;, which is a sub-menu of &quot;Additional Properties&quot;</p></li><li><p>In the field &quot;Generic JVM arguments&quot;, enter:</p><p><code>-Debx.home=$EBX_HOME -Debx.properties=$EBX_PROPERTIES</code></p><p>where $EBX_HOME is the location of the EBX_HOME directory, and $EBX_PROPERTIES is the location of the ebx.properties file of EBX5. </p><p>For example, on Windows, this could be: -Debx.home=C:\ebx_home -Debx.properties=C:\ebx_home\ebx.properties </p><p> or, on Unix: -Debx.home=/home/ebx -Debx.properties=/home/ebx/ebx.properties </p></li><li><p>Click on the button &quot;OK&quot;, at the bottom of the page &quot;Application servers &gt; server1 &gt; Java Virtual Machine&quot;</p></li><li><p>Save modifications by clicking on &quot;Save&quot; in the &quot;Messages&quot; panel at the top of the page &quot;Application servers &gt; server1 &gt; Java Virtual Machine&quot;.</p></li></ol>
+</li><li><p>Deploy web Applications:</p><ol>
+<li><p>In the menu on the left, click on &quot;Applications&quot;</p></li><li><p>Click on &quot;Install New Application&quot;</p></li><li><p>In the page &quot;Preparing for the application installation&quot;, in the field &quot;Specify path&quot;, select EBX5.ear file.</p></li><li><p>Click on the button &quot;Next&quot; at the bottom of the page &quot;Preparing for the application installation&quot;</p></li><li><p>Select &quot;Use default virtual host name for Web modules&quot;</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>Click on the button &quot;Continue&quot;</p></li><li><p>In the page &quot;Install new Application, Step 1 Select installation options&quot;, the field &quot;Directory to install application&quot; is the installation directory of EBX5.</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>In the page &quot;Install new Application, Step 2 Map modules to servers&quot;, click on the button &quot;Next&quot;</p></li><li><p> In the page &quot;Install new Application, Step 3 Map resource references to resources&quot;: map the reference &quot;jdbc/EBX_REPOSITORY&quot; (declared in the EBX5 web application) to the data source declared in WebSphere.</p></li><li><p>In the page &quot;Install new Application, Step 4 Map virtual hosts for Web modules&quot;, map all modules: ebx.war, ebx-root-1.0.war, ebx-manager.war to default_host.</p></li><li><p>Click on the button &quot;Next&quot;</p></li><li><p>Click on the button &quot;Finish&quot;</p></li><li><p>The page &quot;Installing… &quot; is displayed. The message &quot;Application EBX5 installed successfully&quot; will be displayed at the bottom of the page.</p></li><li><p>Click on &quot;Save to Master Configuration&quot; at the bottom of the page</p></li><li><p>Click on the button &quot;Save&quot;</p></li></ol>
+</li><li><p>If required: link Web Applications to the third-party libraries.</p><ol>
+<li><p>In the menu on the left, click on &quot;Applications&quot;</p></li><li><p>Click on &quot;Enterprise Applications&quot;</p></li><li><p>In the page &quot;Enterprise Applications&quot;, click on EBX5</p></li><li><p>In the page &quot;Enterprise Applications &gt; EBX5&quot;, click on &quot;Libraries&quot;, which is below &quot;Additional Properties&quot;</p></li><li><p>Click on the button &quot;Add&quot;</p></li><li><p>Select the library we added earlier (<em>3rd_party_libs_for_ebx</em> in our example) </p></li><li><p>Click on the button &quot;OK&quot;</p></li><li><p>Save modifications by clicking on &quot;Save&quot; in the &quot;Messages&quot; panel at the top of the page &quot;Enterprise Applications&quot;</p></li><li><p>Click on the button &quot;Save&quot;</p></li></ol>
+</li><li><p>In the console &quot;WebSphere Server Application - First steps&quot;, stop the server</p></li><li><p>In the console &quot;WebSphere Server Application - First steps&quot;, start the server</p></li><li><p>Restart the administration console, in the menu on the left, click on &quot;Applications&quot;</p></li><li><p>Click on &quot;Enterprise Applications&quot;</p></li><li><p>In the page &quot;Enterprise Applications&quot;, select EBX5</p></li><li><p>Click on the button &quot;Start&quot;</p></li><li><p>Run EBX5.</p></li></ol>
+<blockquote><p> Run EBX5 Web application: <a target="_blank" href="http://localhost:9080/ebx/">http://localhost:9080/ebx/</a> .&nbsp;</p><p> At first launch, <a target="_self" href="../installation/configuration_wizard.html">EBX5 Wizard</a> helps you to configure the default properties of your initial repository. </p></blockquote><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+2016-01-26 10:48:32,056 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 10:48:41,239 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Starting repository ownership heart beat thread on entry: id=35, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 10:48:45,318 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 150 ms.
+2016-01-26 10:48:50,288 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #10: avgInterval=905: maxInterval=1009 ms.
+2016-01-26 10:49:00,343 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #20: avgInterval=955: maxInterval=1009 ms.
+2016-01-26 10:51:17,159 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 1 changes in Java Cache; in 12 ms.
+2016-01-26 10:51:22,681 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 10:52:01,100 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #200: avgInterval=999: maxInterval=1014 ms.
+2016-01-26 10:52:01,196 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 2 changes in Java Cache; in 14 ms.
+2016-01-26 10:52:01,205 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-26 10:52:01,211 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 10:52:01,212 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 10:52:01,342 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 64 ms.
+2016-01-26 10:52:02,188 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-26 10:52:02,199 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-26 10:52:02,200 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-26 10:52:02,227 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-26 10:52:02,253 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 20 ms.
+2016-01-26 10:52:02,265 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-26 10:52:02,332 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 28 ms.
+2016-01-26 10:52:02,341 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-26 10:55:21,853 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #400: avgInterval=1001: maxInterval=1014 ms.
+2016-01-26 10:58:42,587 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #600: avgInterval=1002: maxInterval=1014 ms.
+2016-01-26 11:00:14,027 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 12 ms.
+2016-01-26 11:00:37,915 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-6] Committed 2 changes in Java Cache; in 7 ms.
+2016-01-26 11:00:37,920 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-6] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 11:00:37,923 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 11:00:37,995 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 68 ms.
+2016-01-26 11:00:38,575 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 3 ms.
+2016-01-26 11:00:38,577 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-26 11:00:38,580 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 11:00:38,600 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 18 ms.
+2016-01-26 11:00:38,619 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-26 11:00:38,627 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-26 11:00:38,668 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 16 ms.
+2016-01-26 11:00:38,675 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-26 11:00:49,910 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 3 ms.
+2016-01-26 11:00:49,914 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 11:00:49,917 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 11:00:49,945 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-26 11:00:50,233 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-26 11:00:50,244 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 9 ms.
+2016-01-26 11:00:50,246 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 11 ms.
+2016-01-26 11:00:50,269 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 18 ms.
+2016-01-26 11:00:50,295 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 22 ms.
+2016-01-26 11:00:50,304 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-26 11:00:50,347 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 19 ms.
+2016-01-26 11:00:50,363 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-26 11:01:16,809 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-2] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-26 11:01:16,813 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-2] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 11:01:16,814 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 11:01:16,838 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 21 ms.
+2016-01-26 11:01:17,040 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 24 ms.
+2016-01-26 11:01:17,045 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 11:01:17,047 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 11:01:17,073 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-26 11:01:17,108 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 28 ms.
+2016-01-26 11:01:17,116 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-26 11:01:17,207 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 52 ms.
+2016-01-26 11:01:17,223 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 12 ms.
+2016-01-26 11:01:28,303 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-26 11:01:28,307 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 11:01:28,309 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 11:01:28,331 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 17 ms.
+2016-01-26 11:01:28,484 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-26 11:01:28,486 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 11:01:28,493 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 11:01:28,528 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 30 ms.
+2016-01-26 11:01:28,562 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 28 ms.
+2016-01-26 11:01:28,582 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 7 ms.
+2016-01-26 11:01:28,685 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 28 ms.
+2016-01-26 11:01:28,692 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-26 11:02:03,405 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #800: avgInterval=1002: maxInterval=1064 ms.
+2016-01-26 11:02:06,158 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-6] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 11:05:24,185 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #1000: avgInterval=1002: maxInterval=1064 ms.
+2016-01-26 11:22:07,603 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #2000: avgInterval=1003: maxInterval=1064 ms.
+2016-01-26 11:38:50,762 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #3000: avgInterval=1003: maxInterval=1064 ms.
+2016-01-26 11:55:34,240 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #4000: avgInterval=1003: maxInterval=1064 ms.
+2016-01-26 12:12:17,649 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #5000: avgInterval=1003: maxInterval=1064 ms.
+2016-01-26 12:37:58,950 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #6000: avgInterval=1092: maxInterval=538974 ms.
+2016-01-26 12:54:41,549 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #7000: avgInterval=1080: maxInterval=538974 ms.
+2016-01-26 13:11:24,802 EST INFO   log.persistence 0985:0003 [ebx-rro-35-unique] Heart beat #8000: avgInterval=1070: maxInterval=538974 ms.
+2016-01-26 13:17:45,949 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 13:32:59,341 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 13:33:09,288 EST INFO   log.persistence 0985:0003 [ebx-rro-36-unique] Starting repository ownership heart beat thread on entry: id=36, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 13:33:14,538 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 129 ms.
+2016-01-26 13:33:18,358 EST INFO   log.persistence 0985:0003 [ebx-rro-36-unique] Heart beat #10: avgInterval=907: maxInterval=1014 ms.
+2016-01-26 13:33:28,398 EST INFO   log.persistence 0985:0003 [ebx-rro-36-unique] Heart beat #20: avgInterval=955: maxInterval=1014 ms.
+2016-01-26 13:34:50,720 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 14:49:37,706 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 14:49:47,479 EST INFO   log.persistence 0985:0003 [ebx-rro-37-unique] Starting repository ownership heart beat thread on entry: id=37, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 14:49:52,203 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 121 ms.
+2016-01-26 14:49:56,542 EST INFO   log.persistence 0985:0003 [ebx-rro-37-unique] Heart beat #10: avgInterval=906: maxInterval=1009 ms.
+2016-01-26 14:50:06,657 EST INFO   log.persistence 0985:0003 [ebx-rro-37-unique] Heart beat #20: avgInterval=959: maxInterval=1071 ms.
+2016-01-26 14:51:08,294 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 33 ms.
+2016-01-26 14:51:08,308 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 14:51:08,311 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-26 14:51:08,315 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 14:51:08,500 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 123 ms.
+2016-01-26 14:51:09,284 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 68 ms.
+2016-01-26 14:51:09,292 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:51:09,331 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 34 ms.
+2016-01-26 14:51:09,351 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 14:51:09,377 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 14:51:09,464 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 65 ms.
+2016-01-26 14:51:09,469 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:51:09,497 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-26 14:51:27,291 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-8] Committed 2 changes in Java Cache; in 11 ms.
+2016-01-26 14:51:27,297 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-8] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:51:27,300 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 14:51:27,302 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-8] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:51:27,331 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 26 ms.
+2016-01-26 14:51:27,503 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 11 ms.
+2016-01-26 14:51:27,509 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:51:27,520 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 11 ms.
+2016-01-26 14:51:27,538 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-26 14:51:27,546 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 14:51:27,589 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 39 ms.
+2016-01-26 14:51:27,602 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:51:27,652 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 45 ms.
+2016-01-26 14:51:58,123 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 14:52:12,167 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 14:52:21,265 EST INFO   log.persistence 0985:0003 [ebx-rro-38-unique] Starting repository ownership heart beat thread on entry: id=38, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 14:52:25,633 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 87 ms.
+2016-01-26 14:52:30,323 EST INFO   log.persistence 0985:0003 [ebx-rro-38-unique] Heart beat #10: avgInterval=906: maxInterval=1008 ms.
+2016-01-26 14:52:40,370 EST INFO   log.persistence 0985:0003 [ebx-rro-38-unique] Heart beat #20: avgInterval=955: maxInterval=1008 ms.
+2016-01-26 14:53:05,466 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 2 changes in Java Cache; in 33 ms.
+2016-01-26 14:53:05,481 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:53:05,488 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 14:53:05,496 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 12 ms.
+2016-01-26 14:53:05,722 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 155 ms.
+2016-01-26 14:53:06,216 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 12 ms.
+2016-01-26 14:53:06,227 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-26 14:53:06,227 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-26 14:53:06,263 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 32 ms.
+2016-01-26 14:53:06,277 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:53:06,356 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 73 ms.
+2016-01-26 14:53:06,362 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 14:53:06,387 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 22 ms.
+2016-01-26 14:55:40,946 EST INFO   log.persistence 0985:0003 [ebx-rro-38-unique] Heart beat #200: avgInterval=998: maxInterval=1012 ms.
+2016-01-26 14:56:20,075 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 14:56:30,102 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 14:56:38,178 EST INFO   log.persistence 0985:0003 [ebx-rro-39-unique] Starting repository ownership heart beat thread on entry: id=39, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 14:56:41,596 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 82 ms.
+2016-01-26 14:56:47,233 EST INFO   log.persistence 0985:0003 [ebx-rro-39-unique] Heart beat #10: avgInterval=905: maxInterval=1008 ms.
+2016-01-26 14:56:57,278 EST INFO   log.persistence 0985:0003 [ebx-rro-39-unique] Heart beat #20: avgInterval=955: maxInterval=1008 ms.
+2016-01-26 14:57:07,030 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:57:20,076 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 2 changes in Java Cache; in 38 ms.
+2016-01-26 14:57:20,098 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 12 ms.
+2016-01-26 14:57:20,103 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-26 14:57:20,106 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:57:20,309 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 146 ms.
+2016-01-26 14:57:21,073 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 10 ms.
+2016-01-26 14:57:21,077 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 14:57:21,081 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:57:21,116 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 32 ms.
+2016-01-26 14:57:21,123 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 14:57:21,218 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 89 ms.
+2016-01-26 14:57:21,223 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:57:21,255 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 26 ms.
+2016-01-26 14:57:36,092 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-26 14:57:36,098 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:57:36,109 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 1 changes in Java Cache; in 13 ms.
+2016-01-26 14:57:36,119 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-26 14:57:36,129 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 26 ms.
+2016-01-26 14:57:36,325 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-26 14:57:36,329 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:57:36,336 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 9 ms.
+2016-01-26 14:57:36,342 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:57:36,362 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 17 ms.
+2016-01-26 14:57:36,385 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 19 ms.
+2016-01-26 14:57:36,425 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:57:36,451 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-26 14:58:01,210 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 2 changes in Java Cache; in 8 ms.
+2016-01-26 14:58:01,212 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-26 14:58:01,215 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-26 14:58:01,229 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 14 ms.
+2016-01-26 14:58:01,252 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 17 ms.
+2016-01-26 14:58:01,395 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-26 14:58:01,397 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 14:58:01,400 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 14:58:01,407 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:58:01,423 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 13 ms.
+2016-01-26 14:58:01,447 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 22 ms.
+2016-01-26 14:58:01,484 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 14:58:01,511 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 18 ms.
+2016-01-26 14:58:37,661 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 14:59:41,228 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 14:59:50,364 EST INFO   log.persistence 0985:0003 [ebx-rro-40-unique] Starting repository ownership heart beat thread on entry: id=40, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 14:59:53,984 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 118 ms.
+2016-01-26 14:59:59,427 EST INFO   log.persistence 0985:0003 [ebx-rro-40-unique] Heart beat #10: avgInterval=906: maxInterval=1012 ms.
+2016-01-26 15:00:09,488 EST INFO   log.persistence 0985:0003 [ebx-rro-40-unique] Heart beat #20: avgInterval=956: maxInterval=1026 ms.
+2016-01-26 15:00:17,261 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 2 changes in Java Cache; in 51 ms.
+2016-01-26 15:00:17,288 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 15:00:17,292 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:00:17,307 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 15 ms.
+2016-01-26 15:00:17,653 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 126 ms.
+2016-01-26 15:00:18,139 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 20 ms.
+2016-01-26 15:00:18,149 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-26 15:00:18,150 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-26 15:00:18,192 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 37 ms.
+2016-01-26 15:00:18,227 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-26 15:00:18,283 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 40 ms.
+2016-01-26 15:00:18,287 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 15:00:18,319 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 28 ms.
+2016-01-26 15:01:24,751 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 15:01:33,042 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 15:01:40,823 EST INFO   log.persistence 0985:0003 [ebx-rro-41-unique] Starting repository ownership heart beat thread on entry: id=41, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 15:01:44,387 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 104 ms.
+2016-01-26 15:01:49,880 EST INFO   log.persistence 0985:0003 [ebx-rro-41-unique] Heart beat #10: avgInterval=906: maxInterval=1009 ms.
+2016-01-26 15:01:59,923 EST INFO   log.persistence 0985:0003 [ebx-rro-41-unique] Heart beat #20: avgInterval=955: maxInterval=1009 ms.
+2016-01-26 15:02:16,106 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 2 changes in Java Cache; in 40 ms.
+2016-01-26 15:02:16,117 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:02:16,120 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 15:02:16,124 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 9 ms.
+2016-01-26 15:02:16,334 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 108 ms.
+2016-01-26 15:02:16,864 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 16 ms.
+2016-01-26 15:02:16,873 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 15:02:16,886 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 16 ms.
+2016-01-26 15:02:16,911 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 34 ms.
+2016-01-26 15:02:16,928 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 15:02:16,992 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 59 ms.
+2016-01-26 15:02:16,996 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 15:02:17,006 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 7 ms.
+2016-01-26 15:02:44,408 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:02:50,133 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 15:03:03,030 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 15:03:10,854 EST INFO   log.persistence 0985:0003 [ebx-rro-42-unique] Starting repository ownership heart beat thread on entry: id=42, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 15:03:14,497 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 96 ms.
+2016-01-26 15:03:19,903 EST INFO   log.persistence 0985:0003 [ebx-rro-42-unique] Heart beat #10: avgInterval=905: maxInterval=1007 ms.
+2016-01-26 15:03:29,957 EST INFO   log.persistence 0985:0003 [ebx-rro-42-unique] Heart beat #20: avgInterval=955: maxInterval=1008 ms.
+2016-01-26 15:03:51,239 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 2 changes in Java Cache; in 40 ms.
+2016-01-26 15:03:51,256 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-26 15:03:51,262 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:03:51,288 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 39 ms.
+2016-01-26 15:03:51,432 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 19 ms.
+2016-01-26 15:03:51,957 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-26 15:03:51,964 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 15:03:51,967 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-26 15:03:51,979 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 7 ms.
+2016-01-26 15:03:51,993 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-26 15:03:52,005 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 8 ms.
+2016-01-26 15:03:52,049 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 15:03:52,071 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 14 ms.
+2016-01-26 15:04:21,163 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 15:07:40,907 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 15:07:50,615 EST INFO   log.persistence 0985:0003 [ebx-rro-43-unique] Starting repository ownership heart beat thread on entry: id=43, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 15:07:54,361 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 83 ms.
+2016-01-26 15:07:59,667 EST INFO   log.persistence 0985:0003 [ebx-rro-43-unique] Heart beat #10: avgInterval=905: maxInterval=1007 ms.
+2016-01-26 15:08:09,710 EST INFO   log.persistence 0985:0003 [ebx-rro-43-unique] Heart beat #20: avgInterval=955: maxInterval=1010 ms.
+2016-01-26 15:11:10,344 EST INFO   log.persistence 0985:0003 [ebx-rro-43-unique] Heart beat #200: avgInterval=998: maxInterval=1016 ms.
+2016-01-26 15:14:31,036 EST INFO   log.persistence 0985:0003 [ebx-rro-43-unique] Heart beat #400: avgInterval=1001: maxInterval=1016 ms.
+2016-01-26 15:15:03,167 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-26 15:15:13,016 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-26 15:15:22,069 EST INFO   log.persistence 0985:0003 [ebx-rro-44-unique] Starting repository ownership heart beat thread on entry: id=44, hostName=Susannahs-MacBook-Pro.local, hostAddress=10.0.0.14, mode=unique, state=Not owner.
+2016-01-26 15:15:25,912 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 78 ms.
+2016-01-26 15:15:31,164 EST INFO   log.persistence 0985:0003 [ebx-rro-44-unique] Heart beat #10: avgInterval=910: maxInterval=1008 ms.
+2016-01-26 15:15:41,204 EST INFO   log.persistence 0985:0003 [ebx-rro-44-unique] Heart beat #20: avgInterval=957: maxInterval=1008 ms.
+2016-01-26 15:15:53,584 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 39 ms.
+2016-01-26 15:15:53,594 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-26 15:15:53,599 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:15:53,637 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 10 ms.
+2016-01-26 15:15:53,785 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-26 15:15:54,431 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 19 ms.
+2016-01-26 15:15:54,437 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 15:15:54,441 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 15:15:54,455 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 10 ms.
+2016-01-26 15:15:54,482 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-26 15:15:54,486 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-26 15:15:54,490 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 15:15:54,505 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 11 ms.
+2016-01-26 15:15:54,537 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 16 ms.
+2016-01-26 15:15:54,551 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 12 ms.
+2016-01-26 15:15:54,552 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 10 ms.
+2016-01-26 15:15:54,566 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 10 ms.
+2016-01-26 15:15:54,595 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 18 ms.
+2016-01-26 15:15:54,599 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 15:15:54,602 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 15:15:54,629 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-26 15:15:54,643 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-26 15:15:54,649 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-26 15:15:54,650 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 15:15:54,668 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 13 ms.
+2016-01-26 15:15:54,704 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-26 15:15:54,710 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:15:54,717 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-26 15:15:54,729 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-26 15:15:54,735 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:15:54,748 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 10 ms.
+2016-01-26 15:15:54,762 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 10 ms.
+2016-01-26 15:15:54,775 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 10 ms.
+2016-01-26 15:15:54,783 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-26 15:15:54,801 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 14 ms.
+2016-01-26 15:15:54,840 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-26 15:15:54,855 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 11 ms.
+2016-01-26 15:18:41,840 EST INFO   log.persistence 0985:0003 [ebx-rro-44-unique] Heart beat #200: avgInterval=998: maxInterval=1012 ms.
+2016-01-26 15:22:02,838 EST INFO   log.persistence 0985:0003 [ebx-rro-44-unique] Heart beat #400: avgInterval=1001: maxInterval=1012 ms.
+2016-01-26 15:25:23,648 EST INFO   log.persistence 0985:0003 [ebx-rro-44-unique] Heart beat #600: avgInterval=1002: maxInterval=1012 ms.
+2016-01-26 15:27:08,092 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

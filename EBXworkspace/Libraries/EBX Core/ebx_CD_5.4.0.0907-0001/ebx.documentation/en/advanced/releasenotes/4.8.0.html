@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.8.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.8.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.8.0</h1>
+<p><em>Release Date: May 25, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">D3 - Distributed Data Delivery [new]</a></li><li class="toc1"><a href="#id2">User Interface</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Multi-level Filters in Hierarchies</a></li><li class="toc2"><a href="#id2s2">Pruned Tree in Hierarchies</a></li><li class="toc2"><a href="#id2s3">Nodes Documentation</a></li><li class="toc2"><a href="#id2s4">CSV Encoding</a></li></ul>
+</li><li class="toc1"><a href="#id3">Data Model</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">More Intuitive Data Model Assistant</a></li><li class="toc2"><a href="#id3s2">Inter-branch and Inter-instance Links</a></li><li class="toc2"><a href="#id3s3">Indexes</a></li><li class="toc2"><a href="#id3s4">Services Display</a></li></ul>
+</li><li class="toc1"><a href="#id4">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">More Intuitive Workflow Definition</a></li><li class="toc2"><a href="#id4s2">Interaction retrieving</a></li></ul>
+</li><li class="toc1"><a href="#id5">API</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">XPath on Aggregated List</a></li><li class="toc2"><a href="#id5s2">CSV Imports and Exports</a></li><li class="toc2"><a href="#id5s3">Mapping to Java</a></li><li class="toc2"><a href="#id5s4">Internal parameters of an interaction</a></li></ul>
+</li><li class="toc1"><a href="#id6">Performance and Memory Usage</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Memory Usage</a></li><li class="toc2"><a href="#id6s2">Performance of Validation</a></li><li class="toc2"><a href="#id6s3">Performance of hierarchies</a></li><li class="toc2"><a href="#id6s4">Manager in constrained mode for large tables.</a></li></ul>
+</li><li class="toc1"><a href="#id7">Miscellaneous</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Inherited Attributes</a></li><li class="toc2"><a href="#id7s2">Monitoring</a></li><li class="toc2"><a href="#id7s3">Backward Compatibility</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model & DMA</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>D3 - Distributed Data Delivery [new]</h2>
+<p>EBX.Platform now offers the possibility to replicate Master Data from an EBX.Platform instance to several others. Rather than relying on one central hub, which can easily become a single point of failure, Orchestra Networks customers are able to deploy EBX.Platform in a distributed architecture to meet two key requirements:</p><ul>
+<li><p>Data as a Service in SOA: D3 allows any SOA infrastructure (Enterprise Service Bus) to consume real-time Data Services.</p></li><li><p>Geographical Federation: D3 allows to distribute data to worldwide users and applications, by synchronizing a central repository with local instances.</p></li></ul>
+<p>Technically, D3 is based on a transactional synchronization technology, using SOAP on HTTP/HTTPS and can be deployed on existing infrastructure, without any proprietary protocols or database replication systems.</p><p> For more information, see the <a target="_self" href="../engine/d3.html">reference documentation</a> .&nbsp;</p><h2>
+<a name="id2"></a>User Interface</h2>
+<h3>
+<a name="id2s1"></a>Multi-level Filters in Hierarchies</h3>
+<p>A filter can now be defined at each level of a custom hierarchy.</p><h3>
+<a name="id2s2"></a>Pruned Tree in Hierarchies</h3>
+<p>A pruned mode is now available in EBX: if pruned mode is enabled, the nodes that do not have any descendant in the target table are not displayed. This is particularly useful for searching items.</p><p>The pruned mode can be specified in a custom hierarchy. It is also always enabled in the context of a quick search.</p><h3>
+<a name="id2s3"></a>Nodes Documentation</h3>
+<p> The documentation on nodes, formerly displayed below nodes by a click on the documentation &quot;I&quot; button, is now displayed in a <strong>documentation pane</strong> .&nbsp;Moreover, the documentation is also henceforth available for &quot;under terminal node&quot; (that is nodes of a bean). </p><p>The documentation pane is a floating element in the Manager displayed near the label. It appears when the mouse hovers over the label more than one second. The pane displays the label and the description specified in the underlying schema but also the element&#39;s type, its constraints, an optional error message and the button of the assistant (in developer mode).</p><p> For a specific UI Component ( <code>UIBeanEditor</code> ), the developer is able to customize the text of the pane. To add a customized documentation, the method <code>UIResponseContext.addUILabel(UIFormLabelSpec)</code> must be invoked. </p><h3>
+<a name="id2s4"></a>CSV Encoding</h3>
+<p>The user is now able to specify the encoding of the CSV file to be imported or exported.</p><h2>
+<a name="id3"></a>Data Model</h2>
+<h3>
+<a name="id3s1"></a>More Intuitive Data Model Assistant</h3>
+<p>The user interface of the Data Model Assistant has been improved so as to be more intuitive:</p><ul>
+<li><p>The glossary has been simplified and unified.</p></li><li><p> The actions in the menus of the data structure page have been completed and reordered. </p></li><li><p>The &quot;Publish Model&quot; service (previously called &quot;Generate Model&quot;) has been enhanced. The impacted instances are displayed with a navigation link.</p></li><li><p>Some technical information is displayed only in development mode - except for an administrator, for whom all information is always displayed.</p></li><li><p>When a Data Model is created, it is automatically activated (indeed, activation is required in order to publish a model).</p></li></ul>
+<h3>
+<a name="id3s2"></a>Inter-branch and Inter-instance Links</h3>
+<h4>
+Inter-branch Foreign Keys</h4>
+<p> It is now possible to define a foreign key targeting a table defined in a specific branch ( <code>osd:tableRef</code> with <code>branch</code> element defined). </p><p> For more information, see <a target="_self" href="../models/constraints.html#foreignKey">foreign key constraint</a> .&nbsp;</p><h4>
+Filters on Inter-instance Foreign Keys</h4>
+<p> It is now possible to define a filter over an inter-instance foreign key ( <code>osd:tableRef</code> with <code>container</code> element defined). </p><p> For more information, see <a target="_self" href="../models/constraints.html#foreignKey">foreign key constraint</a> .&nbsp;</p><h4>
+Inter-instance Selection Links</h4>
+<p> It is now possible to define a selection link targeting a table in a specific container ( <code>osd:select</code> with <code>container</code> element defined). </p><p> For more information, see <a target="_self" href="../models/tables_filters.html#select">selection link</a> . </p><h3>
+<a name="id3s3"></a>Indexes</h3>
+<p>Indexing has been enhanced so as to support the declaration of an index on a sequence of columns. Indexing speeds up table access for requests matching these fields.</p><p> For more information, see <a target="_self" href="../models/tables_filters.html#tables">tables</a> .&nbsp;</p><p>Some indexes are automatically built from the model:</p><ul>
+<li><p>primary key fields;</p></li><li><p> any node defining a foreign key constraint ( <code>osd:tableRef</code> ); </p></li><li><p> nodes defined as being unique by the <code>xs:unique</code> constraint; </p></li><li><p> any auto incremented node ( <code>osd:autoIncrement</code> ). </p></li></ul>
+<h3>
+<a name="id3s4"></a>Services Display</h3>
+<p> Property <code>orderInMenu</code> on service declaration has been added to specify the position of the service. This position is used for ordering services at display in EBX. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html">ServiceContext</a> . </p><h2>
+<a name="id4"></a>Workflow</h2>
+<h3>
+<a name="id4s1"></a>More Intuitive Workflow Definition</h3>
+<p>The user interface of the Workflow Definition module has been enhanced so as to be more intuitive:</p><ul>
+<li><p>The glossary has been simplified and unified.</p></li><li><p>The user task definition interface has been improved: instead of a long form, tabs are proposed; documentation is displayed when the mouse hovers the fields.</p></li><li><p>When a Workflow Definition is created, it is automatically activated (indeed, activation is required in order to publish a workflow).</p></li></ul>
+<h3>
+<a name="id4s2"></a>Interaction retrieving</h3>
+<p> Built-in services have been improved in order to handle the interaction retrieving: </p><ul>
+<li><p>Creation service: when the service is called (&quot;Open Work Item&quot; button) whereas the interaction is already complete (record has been created), the created record is displayed in update or read-only mode (depending on the user rights). This way, it is no possible to create several records.</p></li><li><p>Duplication service: when the service is called whereas the interaction is already complete, the duplicated record is displayed in update or read-only mode (depending on the user rights). This way, it is no possible to duplicate several records.</p></li></ul>
+<p>For specific services, an internal parameters map is now available. Thanks to this map, it is possible to save and read values in order to have information about service progress. This way, the developper can handle special cases of interaction retrieving.</p><h2>
+<a name="id5"></a>API</h2>
+<h3>
+<a name="id5s1"></a>XPath on Aggregated List</h3>
+<p>XPath predicates can now be built upon aggregated list fields.</p><h3>
+<a name="id5s2"></a>CSV Imports and Exports</h3>
+<p> The new method <a target="_blank" href="..//Java_API/com/orchestranetworks/service/ExportImportCSVSpec.html#setEncoding(java.lang.String)">setEncoding</a> allows to specify an encoding other than &quot;UTF-8&quot;. </p><p> The new method <a target="_blank" href="..//Java_API/com/orchestranetworks/service/ExportImportCSVSpec.html#setForceEnclosingFields(boolean)">setForceEnclosingFields</a> specifies that the fields will always be enclosed by the text delimiter even if the fields do not contain any particular character. </p><h3>
+<a name="id5s3"></a>Mapping to Java</h3>
+<h4>
+Documentation</h4>
+<p> A new dedicated chapter, <a target="_self" href="../references/mapping_to_java.html">Mapping to Java</a> , has been added to the documentation so as to group and explain the various provided features and contracts that the developer has to follow. </p><h4>
+Mutable objects</h4>
+<p> Before this version, the contract to access Master Data represented in Java as &quot;mutable objects&quot; warned the developer that he should never directly modify these objects (dates, lists or beans), otherwise he could get unpredictable behavior. This limitation is henceforth removed: for more information, see section <a target="_self" href="../references/mapping_to_java.html#access">How to access Master Data from Java?</a> .&nbsp;</p><h4>
+Management of dates</h4>
+<p> As specified in the section <a target="_self" href="../references/mapping_to_java.html#mapping">Mapping of Datatypes</a> ,&nbsp;the Java <code>Date</code> object representing either a <code>xs:date</code> or a <code>xs:time</code> is henceforth immediately normalized when a random Java <code>Date</code> is set. </p><h4>
+Stricter checks</h4>
+<p>These two evolutions are based on an internal new mechanism, called &quot;value internalization&quot; (see also performance section below). Another benefit of this mechanism, is that stricter checks are performed when a value is set.</p><h3>
+<a name="id5s4"></a>Internal parameters of an interaction</h3>
+<p> The new method <a target="_blank" href="..//Java_API/com/orchestranetworks/interactions/InteractionHelper.html#getInternalParameters(com.orchestranetworks.service.Session)">getInternalParameters</a> allows to get the map of internal parameters. </p><p> The new method <a target="_blank" href="..//Java_API/com/orchestranetworks/interactions/InteractionHelper.html#setInternalParameters(com.orchestranetworks.interactions.InteractionHelper.ParametersMap, com.orchestranetworks.service.Session)">setInternalParameters</a> allows to update the map of internal parameters. </p><h2>
+<a name="id6"></a>Performance and Memory Usage</h2>
+<h3>
+<a name="id6s1"></a>Memory Usage</h3>
+<h4>
+Loading strategy</h4>
+<p> For each branch or version, it is now possible to specify the loading strategy of its resources. In addition to the previously existing &quot;Load and unload on demand&quot; mode, a &quot;Forced load&quot; mode can be set so that the resources are preloaded and cannot be cleared from memory unless the branch or version is closed. For more information see the <a target="_self" href="../references/performance.html#loadingStrategy">Loading strategy</a> section. </p><p>Additionally, in the default &quot;soft&quot; mode, branches and versions management has been improved so as to completely unload them off the memory if they are not used and/or memory is required.</p><h4>
+Object pooling</h4>
+<p> Object pooling is henceforth internally ensured for several model patterns (for example <code>xs:enumeration</code> and <code>osd:tableRef</code> ). Depending on the model and data, this can drastically reduce the memory required for fully loading tables (a gain of 90% of free space has been observed in some configurations). </p><h4>
+Value internalization</h4>
+<p> Another new mechanism, &quot;value internalization&quot;, is also performed transparently: this allows a cheaper representation of several data types. However this also involves an allocation cost when the Master Data is read, especially for large aggregated lists or &quot;fat beans&quot;. For more information, see section <a target="_self" href="../references/mapping_to_java.html#access">How to access Master Data from Java?</a> .&nbsp;</p><h4>
+Indexes</h4>
+<p>The structure of indexes has been simplified so that occupy less space. It is to be noted however that new indexes (see section above), while enhancing performance, imply a memory cost. It is therefore recommended to evaluate the memory figure required by existing repositories on this new version.</p><h4>
+Monitoring</h4>
+<p> In order to monitor the memory usage and object pooling, a new <a target="_self" href="../installation/properties.html#ebxLog">log category</a> has been added: <code>monitoring</code> category produces a log in CSV format. </p><h3>
+<a name="id6s2"></a>Performance of Validation</h3>
+<p>The validation of foreign key constraints has been optimized, using indexes, to reduce the cost and the duration of the initial and successive validations. Thus the validation state of a foreign key constraint is no more set as obsolete as soon as there is an insertion or a deletion in a referenced table. Indeed, when an insertion or a deletion occurs in a target table, depending foreign key constraint are immediately revalidated.</p><h3>
+<a name="id6s3"></a>Performance of hierarchies</h3>
+<p>Several enhancements have been made in the internal engine of hierarchies, so that algorithms are more efficient and allocate less objects.</p><h3>
+<a name="id6s4"></a>Manager in constrained mode for large tables.</h3>
+<p>When displaying tables which contain more than 1 million of records, the manager will automatically switch to a constrained mode, for non-administrator users; then:</p><ul>
+<li><p>the table may only be sorted according to columns which correspond to an index;</p></li><li><p>filtering and searching are disabled.</p></li></ul>
+<h2>
+<a name="id7"></a>Miscellaneous</h2>
+<h3>
+<a name="id7s1"></a>Inherited Attributes</h3>
+<p><a target="_self" href="../references/inheritance.html#ina">Inherited Attributes</a> are not in a Beta version anymore. </p><h3>
+<a name="id7s2"></a>Monitoring</h3>
+<p> Logging has new <a target="_self" href="../installation/properties.html#ebxLog">categories</a> : </p><ul>
+<li><p><code>ebx.log4j.category.log.monitoring</code> is available to display raw data from the cache monitoring, </p></li><li><p><code>ebx.log4j.category.log.request</code> is available to display the optimization strategy for every table request issued, </p></li><li><p><code>ebx.log4j.category.log.dataServices</code> is available to log Data Services access. </p></li><li><p><code>ebx.log4j.category.log.d3</code> is available to log D3 events. </p></li></ul>
+<p>Workflow logging has also been completed.</p><h3>
+<a name="id7s3"></a>Backward Compatibility</h3>
+<h4>
+Backward compatibility</h4>
+<p><a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html">Adaptation</a> is now an interface, when it formerly was an abstract class. This causes binary incompatibility between the 4.8.0 ebx.jar library and all existing client code making use of this class. As a consequence, in order to avoid Java error <code>IncompatibleClassChangeError</code>, existing client code has to be recompiled against the new 4.8.0 ebx.jar library, and redeployed together with the new EBX binaries; </p><h4>
+Adaptation instance activation</h4>
+<p> Now, when a new adaptation instance is created, it is activated by default. As a consequence, all constraints will be checked by default during validation (including <code>minOccurs</code> constraint). </p><h4>
+Removed deprecated methods</h4>
+<p> The following, already deprecated, methods have been removed: <code>compareTo</code> and <code>getValues</code> in class <code>PrimaryKey</code> ; <code>doCreateOcculting(PrimaryKey, AdaptationTable)</code> ,&nbsp;<code>doCreateOverwriting(PrimaryKey, HrNode, AdaptationTable)</code> ,&nbsp;in class <code>ProcedureContext</code> .&nbsp;</p><h4>
+Removed property</h4>
+<p> The property <code>ebx.repository.preload</code> has been removed from <code>ebx.properties</code> file. It is replaced by a &quot;Loading strategy&quot; that can be specified for each branch. For more information see the <a target="_self" href="../references/performance.html#loadingStrategy">Loading strategy</a> section. </p><h4>
+History of exports</h4>
+<p> Built-in XML and CSV Exports are henceforth no longer logged into history. If the service is used from EBX, it is considered that this information is useless in history (the exported is uploaded by the end user, it is similar to a simple read-only operation). For programmatic exports that directly use the class <code>ExportSpec</code> , it is considered the developer&#39;s responsibility to implement the log, if needed. </p><h4>
+CSV and XML export</h4>
+<p> The control of permissions is stronger. Now, the access rights are checked when exporting. Indeed the method <code>checkAccessRule</code> in class <code>ExportSpec</code> is set to true instead of false.&nbsp;</p><h4>
+Forgotten invocations of setValue do not work anymore</h4>
+<p> Before this version, the contract to access Master Data represented in Java as &quot;mutable objects&quot; warned the developer that he should never directly modify these objects (dates, lists or beans), however such a wrong usage of the API could not be detected and, under some conditions, it was apparently working. The typical scenario is the following: the mutable object obtained by means of the method <code>ValueContext.getValue</code> is directly modified (contract&#39;s violation), and the method <code>ValueContextForUpdate.setValue</code> is not invoked. It is henceforth mandatory to invoke the method <code>ValueContextForUpdate.setValue</code> for the modification to be taken into account. </p><p> .For more information, see section <a target="_self" href="../references/mapping_to_java.html#access">How to access Master Data from Java?</a> .&nbsp;</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[269]</em> XPath predicate can be case-insensitive. </p><p>Some XPath predicates are case-insensitive.</p></li><li><p><em>[1558]</em> Malformed predicate expressions are not correctly caught. </p><p>Malformed predicate expressions are not correctly caught.</p></li><li><p><em>[1650]</em> Uniqueness not correctly checked if primary key is of type xs:date. </p><p>A table primary key is of type xs:date and two new records with primary key D1 and D2 are created programmatically. The merge process does not detect the uniqueness of both records. This happens when D1 is the same day as D2 but is different in the time of the day. This leads to having the same primary key twice in the table after the merge.</p></li><li><p><em>[1967]</em> Granting all privileges is ineffective in the context of a CSV import. </p><p> The method <code>ProcedureContext.setAllPrivileges(true)</code> is ineffective in the context of a CSV import. </p></li><li><p><em>[2135]</em> XPath syntax: whitespace between the token and its brace. </p><p>If there is a space between the logical &#39;not&#39; token and its opening brace, the expression is not correctly evaluated (and there is no parsing error).</p><p>If there is a space between a function name and its opening brace, the error message is not clear (&quot;MalformedXPathPredicateException: Malformed atomic expression: No token in expression:...&quot;).</p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2203]</em> In Data Model Assistant, the foreign key setup does not display sorted choices. </p><p> When defining a foreign key ( <code>osd:tableRef</code> ), the list of target tables is provided unsorted in a drop-down list. Additionally, the component does not provide the functionalities of the default Ajax selection component (search, paging, etc.). </p></li><li><p><em>[2363]</em> In Data Model Assistant, a problem can occur if &quot;target branch&quot; has been closed. </p><p>In Data Model Assistant, when a &quot;target branch&quot; has been specified in &quot;schema configuration&quot; and when this branch has been closed and purged, then there is no validation error. When the user tries to generate the schema, a java.lang.NullPointerException is thrown.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><em>[229]</em> Error when importing an empty CSV file. </p><p>The CSV import service reports an error when we select the XPath header option and try to import an empty file (without any header).</p></li><li><p><em>[238]</em> CSV export/import: file encoding limitations. </p><p>Here are two limitations related to the encoding of CSV files:</p><p> In CSV Import, there is an error if the CSV file to be imported is not encoded in &quot;UTF-8&quot;. The error is <code>sun.io.MalformedInputException</code> . It can be fixed by re-encoding the file into UTF-8 before uploading it, but EBX.Platform should allow to specify the encoding. </p><p>In CSV Export, the line separator used in the generated files is a CR/LF. So the exported files are not portable to some environments, such as Unix. EBX.Platform should allow to specify another line separator.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2163]</em> Unexpected error reported when displaying the table. </p><p>A NullPointerException can occur when the table is displayed in a slow user-interface.</p></li><li><p><em>[2344]</em> A confusing message is displayed if too large an integer is submitted. </p><p>On a field of &#39;xs:int&#39; or &#39;xs:integer&#39; type, if the user fills an integer too long for the Integer Java Object, the error message displays &quot;Input value &#39;...&#39; is not an integer&quot;. A more understandable message should be displayed.</p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><em>[2353]</em> The built-in service &quot;create a new record&quot;,&nbsp;in a user task, allows to create several records. </p><p>For a user task invoking the service &quot;create a new record&quot;, the user opens the work item, fills in the fields, submits changes so as to create the new record, but does not accept nor reject the task (for example he just closes the user task window). Then he is able to open the work item again and to create another record... Hence the number of newly created records is not limited to a single one. Instead, when the user clicks again on the &quot;Open Work Item&quot; button he should be directed to the record he has previously created so as to be able to complete or review the data until he accepts (or rejects).</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

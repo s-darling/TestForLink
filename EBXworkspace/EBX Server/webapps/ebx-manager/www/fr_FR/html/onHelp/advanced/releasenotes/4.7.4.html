@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.4</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.4.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.4</h1>
+<p><strong>Release Date: September 28, 2009</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Libraries of Beans</a></li><li class="toc2"><a href="#id1s2">Libraries of UI services</a></li><li class="toc2"><a href="#id1s3">New checks before workflow publication</a></li><li class="toc2"><a href="#id1s4">New completion strategy</a></li><li class="toc2"><a href="#id1s5">Optional &#39;Reject&#39; button</a></li><li class="toc2"><a href="#id1s6">Activation of the &#39;Accept&#39; button</a></li><li class="toc2"><a href="#id1s7">Temporal tasks</a></li><li class="toc2"><a href="#id1s8">Mail CC for user task</a></li><li class="toc2"><a href="#id1s9">New mail for deleted work items</a></li><li class="toc2"><a href="#id1s10">New mail variables:</a></li><li class="toc2"><a href="#id1s11">Compatibility</a></li></ul>
+</li><li class="toc1"><a href="#id2">Graphical User Interface</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Enumerations and null value</a></li><li class="toc2"><a href="#id2s2">Number of records by page</a></li></ul>
+</li><li class="toc1"><a href="#id3">Data Model</a></li><li class="toc1"><a href="#id4">Data Model Assistant</a></li><li class="toc1"><a href="#id5">Directory (default)</a></li><li class="toc1"><a href="#id6">Validation</a></li><li class="toc1"><a href="#id7">Data Model API</a></li><li class="toc1"><a href="#id8">Directory API</a><ul class="toc2">
+<li class="toc2"><a href="#id8s1">Class Directory</a></li></ul>
+</li><li class="toc1"><a href="#id9">Validation API</a><ul class="toc2">
+<li class="toc2"><a href="#id9s1">Class Adaptation</a></li><li class="toc2"><a href="#id9s2">Class AdaptationTable</a></li><li class="toc2"><a href="#id9s3">Interface ConstraintContext</a></li><li class="toc2"><a href="#id9s4">Interface ValidationReportItemSubjectForAdaptation</a></li><li class="toc2"><a href="#id9s5">Interface ValidationReportItem</a></li></ul>
+</li><li class="toc1"><a href="#id10">Workflow API</a><ul class="toc2">
+<li class="toc2"><a href="#id10s1">Class CompletionStrategy</a></li><li class="toc2"><a href="#id10s2">Interface UserTaskResult</a></li><li class="toc2"><a href="#id10s3">Interface WorkItem</a></li><li class="toc2"><a href="#id10s4">Abstract class ScriptTaskBean</a></li><li class="toc2"><a href="#id10s5">Interface ScriptTaskBeanContext</a></li><li class="toc2"><a href="#id10s6">Interface ConditionContext</a></li><li class="toc2"><a href="#id10s7">Abstract class ConditionBean</a></li><li class="toc2"><a href="#id10s8">Interface ConditionBeanContext</a></li><li class="toc2"><a href="#id10s9">Data Services and Workflow</a></li></ul>
+</li><li class="toc1"><a href="#id11">Testing Environment API</a></li><li class="toc1"><a href="#id12">Bug Fixes</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Workflow</h2>
+<p>Various enhancements have been done, in order to make the workflow interfaces more intuitive. Areas for improvement are:</p><ul>
+<li><p><em>New tools:</em> workflow now provides built-in scripts and conditions. </p></li><li><p><em>Reusability:</em> it is possible to declare libraries of scripts, conditions and UI services. </p></li><li><p><em>Ergonomics:</em> services and beans that are declared in libraries can be documented along with their properties; thanks to these declarations, users are guided through the definition screens, with a localized documentation. </p></li><li><p><em>Reliability:</em> parameters are dynamically displayed from declarations in definition screens; in this way, many user mistakes are avoided. </p></li></ul>
+<h3>
+<a name="id1s1"></a>Libraries of Beans</h3>
+<p>Built-in and declared beans are automatically proposed in the drop-down list of definition screens. When a user selects a bean, the associated parameters are dynamically displayed.</p><p> For more information, see <a href="../user_workflowmodel/userworkflowmodel_createimplement.html#step_script">Built-in scripts</a> and <a href="../user_workflowmodel/userworkflowmodel_createimplement.html#step_condition">Built-in conditions</a> .&nbsp;</p><p> Except when they are built-in, beans must be declared in <code>module.xml</code> file: see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/package-summary.html#scriptTaskBean">Library script example</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/package-summary.html#conditionBean">Library condition example</a> .&nbsp;</p><h3>
+<a name="id1s2"></a>Libraries of UI services</h3>
+<p> Module services are already defined in <code>module.xml</code> file. This declaration can be completed: it is now possible to define the labels, descriptions, input parameters and output parameters to be displayed in a user task definition. For adaptation services, a tag <code>serviceLink</code> is available to declare its parameters. It is also possible to extend an existing service declaration in <code>module.xml</code> file. </p><p> For more information, see <a href="../user_workflowmodel/userworkflowmodel_createimplement.html#step_script">Specific UI services</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/interactions/InteractionHelper.html">InteractionHelper</a> .&nbsp;</p><h3>
+<a name="id1s3"></a>New checks before workflow publication</h3>
+<p>The adaptation of a workflow definition must be activated before publication, and must contain no validation errors (new warning).</p><p> For more information, see <a href="../user_workflowmodel/userworkflowmodel_publish.html">Publishing workflow models</a>.</p><h3>
+<a name="id1s4"></a>New completion strategy</h3>
+<p>A new completion strategy is available: &quot;terminate current tasks when all work items are completed&quot;. This new strategy is useful when associated to the built-in condition &quot;check if last user task was accepted&quot;. When this strategy is selected for a user task definition, the workflow progresses when all work items are completed (even though a work item is rejected). In this way, the workflow checks the condition &quot;last user task accepted&quot; and redirects to the next task depending on the last decisions.</p><h3>
+<a name="id1s5"></a>Optional &#39;Reject&#39; button</h3>
+<p>In a user task definition, &#39;reject&#39; is now optional. If it is not enabled, the &#39;reject&#39; button is not displayed to the end-user.</p><p> For more information, see <a href="../user_workflowmodel/userworkflowmodel_createimplement.html#rejectTolerance">Optional reject</a> .&nbsp;</p><h3>
+<a name="id1s6"></a>Activation of the &#39;Accept&#39; button</h3>
+<p>The &#39;Accept&#39; button is displayed only when the work item is declared as completed.</p><h3>
+<a name="id1s7"></a>Temporal tasks</h3>
+<p>Fields are added in definition user task for checking that tasks are executed on time. There are two check levels: mail reminder and deadline.</p><p> For more information, see <a href="../user_workflowmodel/userworkflowmodel_createimplement.html#reminder">Reminder</a>.</p><h3>
+<a name="id1s8"></a>Mail CC for user task</h3>
+<p> A new field is available in user task definition: <code>mail CC</code> .&nbsp;If this field is not empty, all mails are CC&#39;ed to the specified user or role. </p><h3>
+<a name="id1s9"></a>New mail for deleted work items</h3>
+<p> A new field is available in user task definition: <code>notification mail for deleted work items</code> .&nbsp;When an incomplete work item is deleted, a mail is sent to the concerned users. </p><h3>
+<a name="id1s10"></a>New mail variables:</h3>
+<ul>
+<li><p><code>${workflow.lastDecision}</code> :&nbsp;this variable displays the last user task decisions, by user (for each work item). </p></li><li><p><code>${system.date}</code> :&nbsp;this variable displays the current date. </p></li><li><p><code>${user.fullName}</code> :&nbsp;this variable displays the full name of the concerned user, with his salutation. </p></li></ul>
+<h3>
+<a name="id1s11"></a>Compatibility</h3>
+<h4>
+Scripts and conditions</h4>
+<p> Compatibility is complete, <strong>except for tasks which used input parameters</strong> .&nbsp;In this case, the process instance does not perform. The developer can use the new interfaces or use only data context. For all the other cases, compatibility is complete. Old scripts and conditions are displayed as specific beans in the definition screen, and processes execution performs. </p><h4>
+User tasks</h4>
+<p>Compatibility is complete. Old publish processes perform. Old definition of user tasks are always valid too. When a user edits an old user task, the Manager offers the matching service declaration if one is found. If the user selects it, the display is updated and the parameter values are retrieved. If the user does not select it, he can update parameters value, but he cannot add or delete parameters. For that purpose, a service declaration is required.</p><h2>
+<a name="id2"></a>Graphical User Interface</h2>
+<h3>
+<a name="id2s1"></a>Enumerations and null value</h3>
+<p> The input components for the enumeration facets (drop-down list and advanced component) now offers an &quot;empty&quot; choice for selection. If the facet already offers empty values, the input component behavior does not change. Otherwise, empty values are converted to <code>null</code> . </p><h3>
+<a name="id2s2"></a>Number of records by page</h3>
+<p>The number of records displayed by page is now saved in user preferences.</p><h2>
+<a name="id3"></a>Data Model</h2>
+<p> A new element <code>&lt;osd:information&gt;</code> has been defined for specifying additional information on schema nodes. This information can then be used by integration code for specific purposes. </p><h2>
+<a name="id4"></a>Data Model Assistant</h2>
+<p>The user interface has been enhanced for various components. Concerning the support of JavaBeans specification, it is now possible to define localized parameters inside rules and business objects.</p><h2>
+<a name="id5"></a>Directory (default)</h2>
+<p> Facet pattern ( <code>[A-Za-z0-9]{1,20}</code> ) on login has been removed from the default directory implementation. </p><p>In the default directory implementation, max length for a specific role name was 20 and is now 80.</p><h2>
+<a name="id6"></a>Validation</h2>
+<p>Various optimizations have been performed in the internal incremental validation framework:</p><ul>
+<li><p> Nodes defining an <em>inherited attribute</em> ( <code>osd:inheritance</code> ) are now concerned by the incremental validation by means of explicit dependencies. That is, a node of this kind will be subject to revalidation only if it is modified, if its source node is updated, or if any intermediate record is updated. </p></li><li><p>Constraints associated with a node are not all revalidated when a dependent node is modified. That is, if a constraint defines an explicit dependency to another node, then when an update occurs on this last node, only the dependent constraint will be revalidated.</p></li></ul>
+<h2>
+<a name="id7"></a>Data Model API</h2>
+<p>Introspection API has been extensively completed:</p><ul>
+<li><p> Interface <code>SchemaNodeInformation</code> has been added. It represents the <code>osd:information</code> element linked to a node in a schema. </p><p> For more information see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/info/SchemaNodeInformation.html">SchemaNodeInformation</a></p></li><li><p> Interfaces <code>SchemaFacet*</code> have been added. It is a hierarchy of interfaces for querying the facets associated with a node. </p><p> For more information see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/info/SchemaFacet.html">SchemaFacet</a></p></li><li><p> Interface <code>SelectionLink</code> has been added. It represents the information related to an <code>osd:select</code> element. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/info/SelectionLink.html">SelectionLink</a></p></li><li><p> The method <code>SchemaNode.isValueFunction()</code> has been added. It returns <code>true</code> if the node holds a function. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaNode.html#isValueFunction()">SchemaNode.isValueFunction()</a></p></li></ul>
+<h2>
+<a name="id8"></a>Directory API</h2>
+<h3>
+<a name="id8s1"></a>Class Directory</h3>
+<p>A new method is available to display a user with salutation.</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html">Directory</a></p><h2>
+<a name="id9"></a>Validation API</h2>
+<h3>
+<a name="id9s1"></a>Class Adaptation</h3>
+<ul>
+<li><p> Method <code>getValidationReport()</code> has been enhanced. It now allows to get an up-to-date validation report of a record. </p><p> For more information, see <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#getValidationReport()">Adaptation.getValidationReport()</a></p></li><li><p> New method: <code>getValidationReportForNode(SchemaNode aNode)</code> .&nbsp;It returns the up-to-date validation report of a specified adaptation node. </p><p> For more information, see <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#getValidationReportForNode(com.orchestranetworks.schema.SchemaNode)">Adaptation.getValidationReportForNode(SchemaNode aNode)</a></p></li></ul>
+<h3>
+<a name="id9s2"></a>Class AdaptationTable</h3>
+<p> New method: <code>getValidationReport()</code> .&nbsp;It returns the up-to-date validation report associated with a table. </p><p> For more information, see <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#getValidationReport()">AdaptationTable.getValidationReport()</a></p><h3>
+<a name="id9s3"></a>Interface ConstraintContext</h3>
+<p> Methods <code>addDependency*</code> have been improved for defining finer dependency links between nodes. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintContext.html">ConstraintContext</a></p><h3>
+<a name="id9s4"></a>Interface ValidationReportItemSubjectForAdaptation</h3>
+<p>Represents a subject of a validation report item in the context of an adaptation.</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ValidationReportItemSubjectForAdaptation.html">ValidationReportItemSubjectForAdaptation</a></p><h3>
+<a name="id9s5"></a>Interface ValidationReportItem</h3>
+<p> New method: <code>getSubjectForAdaptation()</code> .&nbsp;It returns the adaptation associated with a validation item. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ValidationReportItem.html#getSubjectForAdaptation()">ValidationReportItem.getSubjectForAdaptation()</a></p><h2>
+<a name="id10"></a>Workflow API</h2>
+<h3>
+<a name="id10s1"></a>Class CompletionStrategy</h3>
+<p>New strategy: ALL_WORK_ITEMS_COMPLETED. A user task is considered completed when all its work items are completed (ignore reject/accept).</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/UserTask.CompletionStrategy.html">CompletionStrategy</a></p><h3>
+<a name="id10s2"></a>Interface UserTaskResult</h3>
+<p>Represents a user task result (workitems list, decisions).</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/UserTaskResult.html">UserTaskResult</a></p><h3>
+<a name="id10s3"></a>Interface WorkItem</h3>
+<p>New methods:</p><ul>
+<li><p>getUserReference: returns user reference work item.</p></li><li><p>getComment: returns work item comment (check strategy).</p></li></ul>
+<p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/UserTask.WorkItem.html">WorkItem</a></p><h3>
+<a name="id10s4"></a>Abstract class ScriptTaskBean</h3>
+<p>The class to extend in order to declare a new library script Task bean.</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ScriptTaskBean.html">ScriptTaskBean</a></p><h3>
+<a name="id10s5"></a>Interface ScriptTaskBeanContext</h3>
+<p>Like ScriptTaskContext without dataContext access.</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ScriptTaskBeanContext.html">ScriptTaskBeanContext</a></p><h3>
+<a name="id10s6"></a>Interface ConditionContext</h3>
+<p>New method: getLastUserTaskResult: returns the UserTaskResult of the last user task (workitems list and workitems information)</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ConditionContext.html">ConditionContext</a></p><h3>
+<a name="id10s7"></a>Abstract class ConditionBean</h3>
+<p>The class to extend in order to declare a new library condition bean.</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ConditionBean.html">ConditionBean</a></p><h3>
+<a name="id10s8"></a>Interface ConditionBeanContext</h3>
+<p>Like ConditionContext without dataContext access.</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ConditionBeanContext.html">ConditionBeanContext</a></p><h3>
+<a name="id10s9"></a>Data Services and Workflow</h3>
+<p>It is now possible to start and to end a workflow process instance through Data Services.</p><h2>
+<a name="id11"></a>Testing Environment API</h2>
+<p> A new API class, <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/TestHelper.html">TestHelper</a> allows to write unit tests or integration tests. The class can be executed in a &quot;server-less&quot; EBX.Platform environment. In such an environment (java process), no application server is needed. </p><h2>
+<a name="id12"></a>Bug Fixes</h2>
+<ul>
+<li><p><strong>[01941]</strong> EBX does not display all changes during an archive import with change set; updated records are missing. </p></li></ul>
+<ul>
+<li><p><strong>[01942]</strong> EBX advanced graphical component may not retrieve enumeration values in tabular edition mode. </p></li></ul>
+<ul>
+<li><p><strong>[01943]</strong> When creating a record with an already used primary key, UIHttpManagerComponent redirects the user to an &quot;Access denied&quot; page. The usual EBX behavior is expected (stay in same page with an error display). </p></li></ul>
+<ul>
+<li><p><strong>[01944]</strong> When a user tries to create a new record with an already existing primary key, on &quot;submit and close&quot;, he is redirected to the table view with the error message &quot;Cannot create record since primary key is already used&quot;. Then, the user has lost all input values and must restart the creation process. </p></li></ul>
+<ul>
+<li><p><strong>[01945]</strong> A manager component called to create a record in a table displays the table grid after canceling creation, instead of closing the manager component pane. </p></li></ul>
+<ul>
+<li><p><strong>[01946]</strong> Cannot access a table record from validation report, if the table is filtered and the record does not match the applied filter. </p></li></ul>
+<ul>
+<li><p><strong>[01950]</strong> It is not allowed to delete reusable complex types in the data types table. Some problems may occur, for example when the name of a reusable data type does not match the syntax restriction; In this case, it is not possible to fix the error. </p></li></ul>
+<ul>
+<li><p><strong>[01951]</strong> TableRef with display patterns are not correctly sorted when they are displayed. </p></li></ul>
+<ul>
+<li><p><strong>[01952]</strong> The &quot;GetChanges&quot; operator showed all records as differences instead of none. </p></li></ul>
+<ul>
+<li><p><strong>[01953]</strong> When a UIBean is declared on a simple type with a defined default value, then, at display, the UIResponseContext can erroneously return the default value instead of <code>null</code> (happens if the current value is <code>null</code> and a validation error is associated to the displayed node). </p></li></ul>
+<ul>
+<li><p><strong>[01954]</strong> When a validation error is associated to the displayed node and this node inherits its value, then, at display, the component is no longer in &quot;inherit&quot; mode, but in &quot;defined value&quot; mode. </p></li></ul>
+<ul>
+<li><p><strong>[01956]</strong> A user can modify his profile info even if access right are read-only for him. </p></li></ul>
+<ul>
+<li><p><strong>[01959]</strong> With advanced input component, concurrent access is not managed properly. </p></li></ul>
+<ul>
+<li><p><strong>[01960]</strong> Defining a conversion error message in a type overrides the formatting policy. </p></li></ul>
+<ul>
+<li><p><strong>[01961]</strong> A user takes and starts a task. Admin tries to delegate this work item to an other user (through Workflow Executions -&gt; Executions -&gt; Executions of processes and history -&gt; Work Items). The user selects a user in &#39;allocate&#39; field and empties the offered field. This change is processed successfully, but after the new user tries to execute the task, he gets the error message &quot;An unexpected error has occurred&quot;. </p></li></ul>
+<ul>
+<li><p><strong>[01692]</strong> When a trigger raises an error on a user data submit, the user is unable to resubmit the corrected data once again </p></li></ul>
+<ul>
+<li><p><strong>[01963]</strong><code>TableRef</code> filter defined on an <code>osd:tableRef</code> is not applied when the advanced input component is used within EBX. </p></li></ul>
+<ul>
+<li><p><strong>[01964]</strong> Facet <code>totalDigist</code> does not check <code>xs:decimal</code> as expected: Digits are omitted. </p></li></ul>
+<ul>
+<li><p><strong>[01965]</strong><code>UIResponse.addUIListSearch()</code> with a specific <code>Nomenclature</code> displays current value instead of current label. </p></li></ul>
+<ul>
+<li><p><strong>[01966]</strong><code>UIResponse.addUIListSearch()</code> with a specific <code>Nomenclature</code> throw a <code>ClassCastException</code> if node type is not <code>xs:string</code> .&nbsp;</p></li></ul>
+<ul>
+<li><p><strong>[01968]</strong> Exclude values constraint is displayed on complex nodes. </p></li></ul>
+<ul>
+<li><p><strong>[01969]</strong> INA properties is displayed in DMA on non-terminal nodes. </p></li></ul>
+<ul>
+<li><p><strong>[01970]</strong> History may not report all updates in case of intermediate commits in a <code>Procedure</code> . </p></li></ul>
+<ul>
+<li><p><strong>[01971]</strong> When a modification has to create a new revision, the Manager does not replace selected content in its session context by the new revision. Then, even if modifications are persisted, user will not be able to see them if he does not change content selection. Moreover, if the user performs another modification after the first one, in the same page, the error message &#39;Failed to apply modifications. Reason: A concurrent update has been made.&#39; is displayed and modifications are rejected. </p></li></ul>
+<ul>
+<li><p><strong>[01972]</strong> A non-owner of an instance cannot activate nor deactivate adaptation, even if a permission has been set. </p></li></ul>
+<ul>
+<li><p><strong>[01973]</strong> A child branch or a child version does not share a table bloc with its parent branch, event if this bloc has not been modified. </p></li></ul>
+<ul>
+<li><p><strong>[01974]</strong> Duplicating a node in DMA does not increment the position of the duplicated node, The same position is kept. </p></li></ul>
+<ul>
+<li><p><strong>[01975]</strong> When deleting a node in DMA the positions of the nodes at the same level are not updated. </p></li></ul>
+<ul>
+<li><p><strong>[01976]</strong> ProcedureContext.doImportArchive does not import properly when containing a change set. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

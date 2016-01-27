@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.1.1</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.1.1.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.1.1</h1>
+<p><strong>Release Date: October 24, 2011</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#new">New features</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">User Interface API</a></li><li class="toc2"><a href="#id1s2">New option on table export</a></li></ul>
+</li><li class="toc1"><a href="#id2">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Backward compatibility</a></li><li class="toc2"><a href="#id2s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModeling">Data Modeling</a></li><li class="toc2"><a href="#bug-Documentation">Documentation</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="new"></a>New features</h2>
+<h3>
+<a name="id1s1"></a>User Interface API</h3>
+<p> It is now possible to customize the display of a <code>null</code> value within a <code>UIBeanEditor</code> .&nbsp;For more information, see the javadoc of the method <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditor.html#addForNull(com.orchestranetworks.ui.UIResponseContext)">UIBeanEditor.addForNull(UIRequestContext)</a> .&nbsp;</p><h3>
+<a name="id1s2"></a>New option on table export</h3>
+<p> EBX Manager export service has been enhanced, allowing users to export values in a user-friendly mode instead of raw values. For example, in user-friendly mode, a foreign key is exported as the corresponding record&#39;s label. It is to be noted however, that this mode prevents the re-import of the exported document back to EBX5. </p><h2>
+<a name="id2"></a>Version upgrade</h2>
+<h3>
+<a name="id2s1"></a>Backward compatibility</h3>
+<h4>
+Workflow notification by mail</h4>
+<p>Due to to the correction of bug #4138, the workflow notification to users may not be sent if the notification is not activated in the workflow configuration. It is henceforth required to activate it: the administrator has to check it is actually activated.</p><h3>
+<a name="id2s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><strong>[4147]</strong> With SQL Server 2008, an SQL exception occurs during the repository migration. </p><p>With SQL Server 2008, when migrating a repository from EBX4 to EBX5.1.0, an exception occurs.</p></li></ul>
+<h3>
+<a name="bug-DataModeling"></a>Data Modeling</h3>
+<ul>
+<li><p><strong>[4000]</strong> With IE8 and IE9, the content of an enumeration is not displayed correctly. </p><p>If a static enumeration is defined on a terminal node, and carriage returns are present in the enumeration element documentation, they are interpreted in the record view.</p></li></ul>
+<h3>
+<a name="bug-Documentation"></a>Documentation</h3>
+<ul>
+<li><p><strong>[3943]</strong> The &quot;print&quot; option returns a blank page. </p><p>In navigation mode, the &quot;print&quot; option in the upper right corner opens a browser window with the expected content, but the actual print is a blank page.</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><strong>[4152]</strong> In the &quot;User views&quot; table, it is not possible to run the CSV/XML imports whereas they are available in the action menu. </p><p>In the action menu of the &quot;User views&quot; table (located in Administration &gt; Views configuration), an administrator is able to launch the XML/CSV imports services. However, an exception is thrown at import execution because the user does not have write permissions on the records.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><strong>[3346]</strong> Users get trapped in <code>osd-select </code> when browsing a UIHttpManagerComponent. </p><p> If a user is executing a user task on a table containing an <code>osd:select</code> ,&nbsp;she or he can select it, but cannot go back. </p></li><li><p><strong>[3870]</strong> Breadcrumb is displayed even if not necessary. </p><p> A breadcrumb is displayed even if not necessary, for example when editing a record referenced by a foreign key ( <code>osd:tableRef</code> ). </p></li><li><p><strong>[4104]</strong> Two different sessions in EBX5 using the same logged user are not autonomous. </p><p>The selection of a functional category (data, data space) uses the persistent user preference (last working data space). </p></li><li><p><strong>[4110]</strong> Table search - key search: a problem occurs on the &quot;enter&quot; action when you submit the key value. </p><p>On IE8 only: when you do a key search on a table, a key field pop-up is opened. If you enter the searched value and press &quot;enter&quot; (instead of clicking on the &quot;submit and close&quot; button) a white page is displayed in the pop-up. The pop-up is not closed and the search criterion is not applied.</p></li><li><p><strong>[4123]</strong> In the administration section, the user cannot open data set selector from a validation report. </p><p>In the administration section, the user cannot select a data set from a validation report.</p><p>An &quot;Event XXX rejected&quot; error appears in the log.</p><p>The user must go back to data set view to get the available data sets list.</p></li><li><p><strong>[4135]</strong> EBX header and menu are displayed in &quot;@workflow&quot; service. </p><p>The manager focus is not well set: EBX header and menu are displayed in &quot;@workflow&quot; service</p></li><li><p><strong>[4137]</strong> The redirection of UI services on record is erroneous when working on an instance tree. </p><p>When the method &quot;ServiceContext.getURLForSelection(Adaptation)&quot; is called in a UI service on record, if the adaptation parameter is a record in a child data set, the URL is erroneous, since the data set in the URL is the root data set.</p></li><li><p><strong>[4140]</strong> With IE7, the web component of a user task is not displayed correctly. </p><p>With IE7, when accessing a table through a user task web component, the div is not well sized.</p></li><li><p><strong>[4142]</strong> In data modeling, one cannot edit the target of a foreign key in a record form. </p><p>In data modeling, the user cannot edit the target of a foreign key by clicking on the title or breadcrumb of this foreign key link.</p></li><li><p><strong>[4143]</strong> With IE6, an &quot;Unknown request&quot; can occur when a filter is applied. </p><p>If a user applies a filter by pressing &quot;return&quot; on the keyboard, an &quot;Unknown request&quot; is displayed. The filter is not applied and input values in the filter are lost.</p><p>This is an IE6 issue.</p></li><li><p><strong>[4155]</strong> The redirection of UI services is erroneous when working on a hierarchy. </p><p>When the method &quot;ServiceContext.getURLForSelection(Adaptation)&quot; is called in a service called on a hierarchy view, the redirection is erroneous. </p></li><li><p><strong>[4159]</strong> Long transaction check does not work in version 5.1.0. </p><p>If two distinct users access the same record in the user interface: one submits a modification, then the other also submits a modification on the same record; then, the second submit is no longer blocked with an error message telling a concurrent update has been made. This occurs only in version 5.1.0.</p></li><li><p><strong>[4166]</strong> With Firefox 7.0.1, if the label of a field is too long, it disappears. </p><p>With Firefox 7.0.1, if a field has too long a label, it disappears in the record view.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><strong>[4078]</strong> Children of a hidden complex are not visible in a record view. </p><p>If a data set permission rule defines a &#39;hidden&#39; default policy on a complex field, but defines a &#39;read-write&#39; policy on one of its child fields, then this child field will not be visible on the record view. On the contrary, the child field is correctly visible on the table view.</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><strong>[4128]</strong> A validation error is not suppressed after correction. </p><p>When a field is mandatory, if this field is absent in a record, there is a validation error. If the record is deleted, the validation error is still in the validation report.</p></li><li><p><strong>[4130]</strong> A fatal error occurs when accessing a table through the validation report. </p><p>If a validation report describes that numerous records do not verify a table constraint, and the user tries to access the table by selecting one of the records in error, a fatal error occurs.</p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><strong>[4084]</strong> Workflow instances may be duplicated when a user refreshes a page. </p><p>When a user creates an instance of a workflow model and then refreshes a page, the newly created instance is duplicated. </p></li><li><p><strong>[4133]</strong> The method Session.getTrackingInfo returns null while executing a workflow task. </p><p>When the tracking information is specified in the definition of a user task, if the method Session.getTrackingInfo is called while executing the task, it returns null.</p></li><li><p><strong>[4138]</strong> Setting of &#39;workflow mail activation&#39; is ignored. </p><p>Workfow may notify user by mail even if &#39;notification by mail&#39; has been disabled.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

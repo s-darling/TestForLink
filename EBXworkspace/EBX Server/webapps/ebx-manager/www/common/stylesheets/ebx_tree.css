@@ -1,0 +1,129 @@
+td.ygtvcontent {
+	white-space: nowrap;
+}
+
+.ebx_TreeNodeWithIcon td.ygtvcontent {
+	padding-left: 21px;
+	background-repeat: no-repeat;
+	background-position: 1px center;
+}
+
+.ygtvdepthcell,
+.ygtvtn,
+.ygtvtm,
+.ygtvtmh,
+.ygtvtmhh,
+.ygtvtp,
+.ygtvtph,
+.ygtvtphh,
+.ygtvln,
+.ygtvlm,
+.ygtvlmh,
+.ygtvlmhh,
+.ygtvlp,
+.ygtvlph,
+.ygtvlphh {
+	background-image: none;
+}
+
+.ygtvloading {
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+	background-position: 0 2px;
+}
+
+/*td*/.ygtvtn,
+/*td*/.ygtvln {
+	cursor: auto;
+}
+/*td*/.ygtvtn a.ygtvspacer,
+/*td*/.ygtvln a.ygtvspacer {
+	visibility: hidden;
+}
+
+/*td*/.ygtvcell a.ygtvspacer {
+	text-decoration: none;
+	display: inline-block;
+	height: 10px; /* yui-master-copy: 22px */
+	width: 10px; /* yui-master-copy: 18px */
+	margin: 6px 4px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ygtvtable {
+	width: 100%;
+}
+
+.ygtvrow .ygtvlabel,
+.ygtvrow .ygtvfocus .ygtvlabel,
+.ygtvrow .ygtvfocus {
+	background-color: transparent;
+	margin: 0;
+}
+
+.ygtvlabel,
+.ygtvlabel:link,
+.ygtvlabel:visited,
+.ygtvlabel:hover {
+    cursor: default;
+}
+a.ygtvlabel,
+a.ygtvlabel:link,
+a.ygtvlabel:visited,
+a.ygtvlabel:hover {
+    cursor: pointer;
+}
+a.ygtvlabel:hover {
+    text-decoration: underline;
+}
+
+.ygtvcontent .ebx_NodeActions {
+	float: right;
+	position: relative;
+	padding-right: 12px;
+}
+.ygtvcontent .ebx_RawLabel {
+	line-height: 22px;
+	height: 22px;
+}
+
+/***START Hierarchy depth ***/
+.ebx_TreeNodeWithoutIcon .ygtvcontent {
+	padding-left: 0;
+}
+.ebx_NodeLevelLabel {
+	padding-right: 5px;
+	border: 2px solid #FFFFFF;
+	
+	border-radius: 11px;
+	-moz-border-radius: 11px;
+}
+.ebx_ComputedIcon {
+	display: inline-block;
+	color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-align: center;
+	margin-right: 4px;
+	vertical-align: 1px;
+	
+	min-width: 6px; /* 14(height) - 2*4(padding) */
+	padding: 0 4px;
+	height: 14px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+.ebx_NodeLevelLabel .ebx_ComputedIcon {
+	vertical-align: 2px;
+	margin-left: 2px;
+}
+/***END Hierarchy depth ***/
+
+.ebx_TreeNodeSearchMatch .ygtvblankdepthcell:first-child>.ygtvspacer {
+ 	background-position: 50% -190px;
+ 	background-repeat: no-repeat;
+ 	height: 10px;
+}

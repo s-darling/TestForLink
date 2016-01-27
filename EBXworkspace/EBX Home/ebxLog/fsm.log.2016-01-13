@@ -1,0 +1,52 @@
+2016-01-13 11:21:01,192 EST INFO   log.fsm 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:21:01,193 EST INFO   log.fsm.dispatch 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:21:01,193 EST INFO   log.fsm.pageHistory 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:22:50,128 EST INFO   log.fsm.dispatch 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:22:50,130 EST INFO   log.fsm.pageHistory 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:22:50,131 EST INFO   log.fsm 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:23:00,772 EST INFO   log.fsm 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:23:00,773 EST INFO   log.fsm.dispatch 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:23:00,773 EST INFO   log.fsm.pageHistory 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:23:06,445 EST INFO   log.fsm.dispatch 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:23:06,445 EST INFO   log.fsm.pageHistory 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:23:06,447 EST INFO   log.fsm 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:43:54,726 EST INFO   log.fsm 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:43:54,727 EST INFO   log.fsm.dispatch 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:43:54,727 EST INFO   log.fsm.pageHistory 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:44:35,785 EST INFO   log.fsm.dispatch 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:44:35,787 EST INFO   log.fsm.pageHistory 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:44:35,788 EST INFO   log.fsm 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:19:44,622 EST INFO   log.fsm 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:19:44,622 EST INFO   log.fsm.dispatch 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:19:44,622 EST INFO   log.fsm.pageHistory 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:21:58,401 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-8] EC3A446525759EED0665D4C33EEF5A07:0	Registered user session.
+2016-01-13 13:21:58,421 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-8] 	0:0:0:0:0:0:0:1	EC3A446525759EED0665D4C33EEF5A07:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	--> .wizard.wizard_start wbp:_Manager.html 0
+2016-01-13 13:22:14,981 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-2] 3142A5B59F8DE0A670FB0B11FEA2707C:0	Registered user session.
+2016-01-13 13:22:14,983 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-2] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	--> .wizard.wizard_start wbp:_Manager.html 0
+2016-01-13 13:22:17,497 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-5] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.wizard.wizard_start	wbp:_Manager.html	0	wizard_license_Agreement	Uebx-unsetUser	--> .wizard.wizard_licenceAgreement wbp:_Manager.html 1
+2016-01-13 13:22:46,162 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-7] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.wizard.wizard_licenceAgreement	wbp:_Manager.html	1	wizard_repository	Uebx-unsetUser	--> .wizard.wizard_repository wbp:_Manager.html 2
+2016-01-13 13:23:46,633 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-9] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.wizard.wizard_repository	wbp:_Manager.html	2	wizard_directory	Uebx-unsetUser	--> .wizard.wizard_directory wbp:_Manager.html 3
+2016-01-13 13:24:06,125 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-7] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.wizard.wizard_directory	wbp:_Manager.html	3	wizard_summary	Uebx-unsetUser	--> .wizard.wizard_summary wbp:_Manager.html 4
+2016-01-13 13:24:12,421 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-7] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.wizard.wizard_summary	wbp:_Manager.html	4	wizard_installRequest	Uebx-unsetUser	--> .wizard.wizard_install wbp:_Manager.html 5
+2016-01-13 13:24:14,330 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-7] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.wizard.wizard_install	wbp:_Manager.html	5	wizard_installDo	Uebx-unsetUser	--> .wizard.wizard_end wbp:_Manager.html 6
+2016-01-13 13:24:17,500 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-7] 3142A5B59F8DE0A670FB0B11FEA2707C:1	Registered user session.
+2016-01-13 13:24:17,508 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-7] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:1	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	--> .sessionOut.sessionOutLogin wbp:_Manager.html 0
+2016-01-13 13:24:21,342 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-7] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:1	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uadmin	--> .sessionIn.data_root.data_main wbp:_Manager.html 1
+2016-01-13 13:46:27,814 EST INFO   log.fsm.dispatch 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:46:27,815 EST INFO   log.fsm.pageHistory 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:46:27,820 EST INFO   log.fsm 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:46:27,885 EST INFO   log.fsm 0985:0003 [localhost-startStop-2] EC3A446525759EED0665D4C33EEF5A07:0	Invalidated user session [onwbpInternalTimeOut].
+2016-01-13 13:46:27,885 EST INFO   log.fsm 0985:0003 [localhost-startStop-2] 3142A5B59F8DE0A670FB0B11FEA2707C:0	Invalidated user session [onwbpInternalTimeOut].
+2016-01-13 13:46:27,886 EST INFO   log.fsm 0985:0003 [localhost-startStop-2] 3142A5B59F8DE0A670FB0B11FEA2707C:1	Invalidated user session [onwbpInternalTimeOut].
+2016-01-13 13:46:35,475 EST INFO   log.fsm 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:35,475 EST INFO   log.fsm.dispatch 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:35,476 EST INFO   log.fsm.pageHistory 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:54,429 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-1] 3142A5B59F8DE0A670FB0B11FEA2707C:0	Registered user session.
+2016-01-13 13:46:54,431 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-2] 3142A5B59F8DE0A670FB0B11FEA2707C:1	Registered user session.
+2016-01-13 13:46:54,481 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-2] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:1	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	--> .sessionOut.sessionOutLogin wbp:_Manager.html 0
+2016-01-13 13:46:54,481 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	--> .sessionOut.sessionOutLogin wbp:_Manager.html 0
+2016-01-13 13:47:12,471 EST INFO   log.fsm 0985:0003 [http-bio-8090-exec-5] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:1	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uadmin	--> .sessionIn.data_root.data_main wbp:_Manager.html 1
+2016-01-13 14:17:45,342 EST INFO   log.fsm 0985:0003 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	U	onwbpInternalTimeOut	Uebx-unsetUser	--> FINAL.TIMEOUT root:undefined 1	session expiration (maxInactiveInterval=1800s, actualInactiveInterval=1850s)	/domain/sessionContext/userInfoLog=ebx-unsetUser
+2016-01-13 14:17:45,344 EST INFO   log.fsm 0985:0003 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] 3142A5B59F8DE0A670FB0B11FEA2707C:0	Invalidated user session [onwbpInternalTimeOut].
+2016-01-13 14:17:45,344 EST INFO   log.fsm 0985:0003 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] 	0:0:0:0:0:0:0:1	3142A5B59F8DE0A670FB0B11FEA2707C:1	ebx-manager	P	.sessionIn.data_root.data_main	wbp:_Manager.html	U	onwbpInternalTimeOut	Uadmin	--> FINAL.TIMEOUT root:undefined 2	session expiration (maxInactiveInterval=1800s, actualInactiveInterval=1832s)	/domain/sessionContext/userInfoLog=admin
+2016-01-13 14:17:45,345 EST INFO   log.fsm 0985:0003 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] 3142A5B59F8DE0A670FB0B11FEA2707C:1	Invalidated user session [onwbpInternalTimeOut].

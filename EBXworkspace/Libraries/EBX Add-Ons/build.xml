@@ -1,0 +1,38 @@
+<!DOCTYPE project>
+<project name="EBX Add-Ons" default="reset-project" basedir=".">
+
+	<property file="${basedir}/build.properties" />
+
+	<target name="check-properties" description="Check the build properties">
+	</target>
+
+	<target name="reset-project" description="Reset the project" depends="check-properties, install-add-ons">
+	</target>
+	
+	<target name="clean-project" description="Clean the project" depends="check-properties, install-add-ons">
+	</target>
+		
+	<target name="install-add-ons" description="Install the zipped add-ons in the project" depends="check-properties">
+		<unzip dest="${basedir}">
+			<fileset dir="${basedir}">
+				<include name="*.zip"/>
+		    </fileset>
+		</unzip>
+	</target>
+	
+	<macrodef name="checkpath" description="Fail when the provided path does not exist">
+	    <attribute name="path"/>
+        <attribute name="type"/>
+		<attribute name="message"/>
+	    <sequential>
+	        <fail message="@{message}">
+	            <condition>
+	                <not>
+	                    <available file="@{path}" type="@{type}"/>
+   				    </not>
+			    </condition>
+		    </fail>
+	    </sequential>
+	</macrodef>
+	
+</project>

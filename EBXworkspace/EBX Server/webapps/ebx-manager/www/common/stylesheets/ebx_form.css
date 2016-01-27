@@ -1,0 +1,712 @@
+
+label {
+	cursor: pointer;
+}
+
+fieldset {
+	border-style: solid;
+	border-width: 1px;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_BorderBlock {
+	margin: 0;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 2px;
+	
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_BorderBlockWithTitle {
+	margin-top: 9px; /* 10 title.top - 1 border-top */
+	padding-top: 6px;
+	position: relative;
+}
+.ebx_BorderBlockTitle {
+	position: absolute;
+	top: -10px;
+	left: 2px;
+	padding: 0 3px;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+
+/*
+Input types:
+  o button
+  o checkbox
+  o file
+  o hidden
+  o image
+  o password
+  o radio
+  o reset
+  o submit
+  o text
+*/
+
+input[type=text],
+input[type=password],
+input[type=file],
+select,
+textarea {
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+input[type=text],
+input[type=password] {
+    height: 22px;
+}
+input[type=text],
+input[type=password],
+input[type=file],
+textarea {
+    padding: 2px;
+}
+select {
+    padding: 1px;
+}
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	border-width: 1px;
+}
+textarea {
+	margin: 0;
+	overflow: auto;
+}
+.ebx_Form textarea {
+	vertical-align: baseline;
+}
+
+.ebx_TextareaBaselineAligner {
+    display: inline-table;
+	padding-top: 3px; /* - textarea margin-top */
+}
+.ebx_TextareaBaselineAligner textarea {
+	vertical-align: text-top;
+	margin-top: -3px;/* - (1(border-top) + 2(padding-top)) */
+}
+
+#ebx_WorkspaceFormBody {
+	overflow: auto;
+}
+
+#ebx_WorkspaceFormBodyWait {
+	display: none;
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+
+.ebx_WorkspaceContextualBlock {
+	display: none;
+}
+
+#ebx_ScrollShadow {
+	display: none;
+	position: absolute;
+	height: 4px;
+	background-repeat: repeat-x;
+	background-image: url(../images/onCommon/ebx_scrollShadow.png);
+}
+
+#ebx_WorkspaceFormTabview .ebx_WorkspaceFormTabContent {
+	overflow: auto;
+	padding-top: 5px;
+	
+	box-sizing:border-box;
+	-moz-box-sizing: border-box;
+}
+
+#ebx_TabScroller {
+	display: none;
+	
+	float: right;
+}
+
+#ebx_TabScrollerBorder {
+	padding: 1px 2px 2px 2px;
+	border-left: 1px solid #C0C0C0;/*{button-borderColor}*/
+}
+
+/* parent style is ebx_Button */
+#ebx_TabScrollLeft,
+#ebx_TabScrollRight {
+	height: 22px;
+	width: 11px;
+	margin: 0;
+	cursor: default;
+}
+
+#ebx_TabScrollLeft .ebx_Icon,
+#ebx_TabScrollRight .ebx_Icon {
+	display: inline-block;
+	height: 20px;
+	width: 10px;
+	background-repeat: no-repeat;
+}
+
+#ebx_TabScrollLeft.ebx_Disabled,
+#ebx_TabScrollRight.ebx_Disabled {
+	opacity: 1;
+	filter: none;
+}
+#ebx_TabScrollLeft.ebx_Disabled .ebx_Icon,
+#ebx_TabScrollRight.ebx_Disabled .ebx_Icon {
+	visibility: hidden;	
+}
+
+#ebx_TabScrollLeft {
+	border-width: 1px 0 1px 1px;
+	
+	border-radius: 2px 0 0 2px;
+	-moz-border-radius: 2px 0 0 2px;
+}
+
+#ebx_TabScrollRight {
+	border-width: 1px 1px 1px 0;
+	
+	border-radius: 0 2px 2px 0;
+	-moz-border-radius: 0 2px 2px 0;
+}
+
+#ebx_WorkspaceFormTree #ebx_WorkspaceFormTabviewTabs {
+	padding: 0 15px;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+
+#ebx_WorkspaceFormTree #ebx_WorkspaceFormTabviewTabs,
+#ebx_TabScroller {
+	
+	border-bottom-width: 5px;
+	border-bottom-style: solid;
+}
+
+#ebx_RootTab .ebx_Icon {
+	text-indent: -10000px;
+	vertical-align: 0px;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav li,
+#ebx_WorkspaceFormTabviewTabs.yui-nav li.selected {
+	margin: 0 10px 0 0;
+	vertical-align: bottom;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav a,
+#ebx_WorkspaceFormTabviewTabs.yui-navset-top .yui-nav a,
+#ebx_WorkspaceFormTabviewTabs.yui-nav a:focus,
+#ebx_WorkspaceFormTabviewTabs.yui-nav a:hover,
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a,
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a:focus,
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a:hover {
+	background-repeat: repeat-x;
+	background-position: 50% -7px;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav a {
+	border-width: 1px 1px 0 1px;
+	border-color: #C0C0C0;/*{button-borderColor}*/
+	border-style: solid;
+	
+	border-radius: 2px 2px 0 0;
+	-moz-border-radius: 2px 2px 0 0;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a {
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav a em {
+	padding: 4px 16px 3px 10px;
+	border: none;
+	height: 16px;/* height of help button ; if the help button is not present, the tab have the same height */
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav #ebx_RootTab a em {
+    padding: 4px 10px 3px 10px;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav .ebx_LabelDocButton .ebx_SmallIcon {
+	vertical-align: -1px;
+}
+
+#ebx_WorkspaceFormTabviewContents {
+	padding: 0;
+	
+	border: none;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.ebx_WorkspaceFormHeader {
+	padding: 0 5px;
+}
+.ebx_WorkspaceFormHeader ul {
+	margin: 0;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+table.ebx_FieldList,
+table.ebx_FieldListNoMargin {
+	border-collapse: collapse;
+	display: inline-table;
+}
+
+tr.ebx_FieldListBedrock {
+    visibility: hidden;
+}
+tr.ebx_FieldListBedrock > td {
+    padding: 0;
+}
+
+/* only the first level of input cell must reach the right border */
+.ebx_Field td.ebx_Input {
+	width: 100%;
+}
+.ebx_Input .ebx_Field td.ebx_Input {
+	width: auto;
+}
+
+#ebx_WorkspaceFormTree ul.ebx_ComplexFields {
+	padding: 2px; /* initial padding */
+}
+#ebx_WorkspaceFormTree ul.yui-nav {
+	padding: 0; /* initial YUI property */
+}
+
+.ebx_Field {
+	white-space: nowrap;
+}
+div.ebx_Field {
+	display: table-row;
+}
+div.ebx_Field>div {
+	display: table-cell;
+}
+
+tr.ebx_Field.ebx_Focused,
+div.ebx_Field.ebx_Focused {
+	background-color: transparent;
+}
+
+.ebx_Field>* {
+	vertical-align: baseline;
+}
+
+.ebx_Field>.ebx_Label,
+.ebx_Field>.ebx_Input,
+.ebx_InputInertMode {
+	padding: 5px;
+}
+.ebx_ButtonThroughInputLeftPadding {
+	margin-left: -5px;
+	margin-right: 5px;
+}
+.ebx_CollapsibleBlockForLocalization .ebx_CollapsibleBlockContainer .ebx_IconFlatButtonNoBorderSmall {
+	margin-left: -5px;
+	margin-right: 2px; /* only 2px because it's a text on the right, and not a border */
+}
+
+.ebx_Field>.ebx_Label {
+	padding-left: 15px;
+	padding-right: 2px;/* padding between the label and the docButton */
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ebx_FieldInfos,
+.ebx_FieldIcon,
+.ebx_FieldExpandCollapse,
+.ebx_FieldSpace,
+.ebx_FieldIndent {
+	padding: 0;
+	width: 1px;/* to force the td to be as small as possible */
+}
+
+.ebx_Label:hover + .ebx_FieldInfos>.ebx_LabelDocButton,
+.ebx_FieldInfos:hover>.ebx_LabelDocButton {
+	visibility: visible;
+}
+
+.ebx_FieldInfos {
+	min-width: 16px;
+}
+
+td.ebx_FieldInfos > *,
+td.ebx_FieldInfos > .ebx_LabelDocButton {
+	display: inline-block;
+	width: 16px;
+	margin-left: -16px;
+}
+
+td.ebx_FieldInfos :first-child {
+	margin-left: 0; 
+}
+
+.ebx_FieldExpandCollapse button {
+	margin: 0;
+}
+
+.ebx_FieldSpace {
+	padding-left: 1px;/* 0 would be better, but it moves input fields when hover without focus (on Chrome) */
+}
+
+.ebx_FieldIndent {
+	background-repeat: repeat-y;
+	background-position: 50% 50%;
+}
+
+.ebx_FieldDecorator {
+	display: inline-table;
+}
+
+.ebx_Form input[type=text],
+.ebx_Form input[type=password],
+.ebx_Form input[type=file],
+.ebx_Form select,
+.ebx_Form textarea,
+.ebx_Form .ebx_LargeValue,
+.ebx_InputTip {
+	box-sizing:border-box;
+	-moz-box-sizing: border-box;
+}
+.ebx_Form input[type=radio],
+.ebx_Form input[type=checkbox] {
+	margin: 0 3px;
+	vertical-align: -1px; /* to have a better impression of alignment */
+    outline-width: 2px;
+    padding: 0;
+}
+.ebx_Form input[type=radio]:first-child,
+.ebx_Form input[type=checkbox]:first-child {
+	margin-left: 0;
+}
+
+.ebx_Field .ebx_Input .ebx_ButtonAloneInInputCell {
+	margin: 0;
+}
+
+.ebx_InputWithEmptyButton {
+    padding-right: 17px; /* 16(button.width) + 1(padding) */
+}
+button.ebx_EmptyButtonForInput {
+    margin-left: -17px; /* 16(button.width) + 1(input.border.right.width) */
+    margin-right: 0;
+}
+button.ebx_EmptyButtonHidden {
+    display: none;
+}
+
+.ebx_Form .ebx_LargeValue,
+.ebx_InputTip {
+	white-space: normal;
+	max-height: 150px;
+	overflow: auto;
+	vertical-align: text-top;
+}
+.ebx_InputTip {
+    margin-top: 3px;
+    font-size: 0.9em;
+    text-align: justify;
+}
+/* also used in table cells */
+.ebx_LargeValue {
+	display: inline-block;
+	margin: 0;
+}
+
+.ebx_InputFocusRedirector {
+	height: 0;
+	width: 0;
+	position: fixed;
+	left: -10000px;
+}
+
+.ebx_InputsDateContainer {
+	display: inline-block;
+	/* Mantis #4387 */
+	vertical-align: 0;
+	border: 1px solid #E0E0E0; /*{input-borderColor}*/
+	background-color: #F8F8F8;/*{formWidgets-bgColor}*/
+	
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.ebx_InputsDateContainer input[type=text] {
+	text-align: center;
+	border: none;
+	height: 20px; /* 22px (original height) - 1 (border 1px removed) */
+	margin: 0 0.5em;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    outline-width: 2px;
+}
+
+.ebx_InheritedValue.ebx_SimpleType {
+	/* to have the text in the same position when toggle inherit(display)/overwrite(edit) */
+	/* 2px is for input border width & padding */
+	margin-top: 2px;
+	margin-left: 2px;
+}
+.ebx_OverwrittenValue .ebx_OverwrittenNull{
+	/* to simulate the gap of input border width & padding */
+	margin-left: 2px;
+	margin-top: 2px;
+}
+.ebx_InputFieldWrapper>.ebx_ValueND {
+	/* to simulate the gap of input border width & padding */
+	margin-left: 2px;
+	display: inline-block;
+}
+
+.ebx_InheritedValue {
+	display: none;
+}
+.ebx_OverwrittenValue {
+	display: inline;
+}
+
+.ebx_Inherited .ebx_InheritedValue {
+	display: inline;
+}
+.ebx_Inherited .ebx_OverwrittenValue {
+	display: none;
+}
+
+
+.ebx_InputFieldWrapper {
+	display: inline-table;
+}
+.ebx_OverwrittenNull {
+	display: none;
+}
+
+.ebx_Nil .ebx_InputFieldWrapper {
+	display: none;
+}
+.ebx_Nil .ebx_OverwrittenNull {
+	display: inline-block;
+}
+
+.ebx_OccurrenceListWrapper {
+	display: inline-table;
+}
+.ebx_OccurrenceList {
+	margin: 0;
+	padding-left: 20px;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent {
+	display: inline-table;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent {
+	border: 1px dashed transparent;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent.ebx_OccurrenceEditorContentHidden {
+	display: inline-block;
+	height: 16px; /* buttonDelete.height - 2 (border top & border-bottom)*/
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	border-color: #C0C0C0;
+	vertical-align: top;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent.ebx_OccurrenceEditorContentHidden * {
+	visibility: hidden;
+}
+
+.ebx_Form .ebx_OccurrenceListWrapper .ebx_AddOccurrence {
+	margin: 0;
+}
+
+/* TODO CCH make IconFlatButtonNoBorders *
+body .ebx_IconButtonSmall.ebx_ComplexFieldsCollapse,
+body .ebx_IconButtonSmall.ebx_ComplexFieldsExpand,
+body .ebx_IconButtonSmall.ebx_GroupExpandCollapse,
+body .ebx_IconFlatButtonSmall.ebx_ComplexFieldsCollapse,
+body .ebx_IconFlatButtonSmall.ebx_ComplexFieldsExpand,
+body .ebx_IconFlatButtonSmall.ebx_GroupExpandCollapse {
+	border: none;
+	background-color: transparent;
+}*/
+
+.ebx_ComplexFields,
+.ebx_CollapsibleBlock {
+	display: inline-table;
+	vertical-align: baseline;
+}
+
+.ebx_ComplexFields {
+	padding: 2px;
+	
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_ComplexFieldsCollapsed > table > tbody > tr.ebx_Field {
+	display: none;
+}
+.ebx_ComplexFieldsCollapsed > table > tbody > tr.ebx_Field:first-child {
+	display: table-row;
+}
+
+/* disabled for now (because it was too ugly and was not ISO with standard forms)
+.ebx_ComplexField_error > .ebx_Label,
+.ebx_ComplexField_warn > .ebx_Label,
+.ebx_ComplexField_info > .ebx_Label {
+	background-repeat: no-repeat;
+	background-position: 3px 0;
+	text-indent: 6px;
+}
+*/
+
+.ebx_CollapsibleBlockContainer {
+	margin: 2px;
+}
+.ebx_CollapsibleBlockForLocalization .ebx_CollapsibleBlockContainer {
+	margin: 2px 0;
+}
+.ebx_CollapsibleBlock {
+}
+.ebx_CollapsibleBlock.ebx_CollapsibleBlockCollapsed .ebx_CollapsibleBlockContent {
+	display: none;
+}
+.ebx_CollapsibleBlock .ebx_CollapsibleBlockContent textarea {
+	display: block;
+}
+
+.ebx_InaMessage {
+	clear: both;
+	color: #505050;
+	font-style: italic;
+}
+
+.ebx_UDATypesContainer > div {
+    margin-top: 3px;
+}
+
+.yui-skin-sam .yui-editor-container {
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-subcont {
+	border-color: #E0E0E0;/*{input-borderColor}*/
+}
+.yui-skin-sam .yui-editor-container h2,
+.yui-skin-sam .yui-editor-container h3 {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#ebx_WorkspaceFormFooter {
+	text-align: center;
+	padding: 15px;
+}
+
+#ebx_WorkspaceFormFooter .ebx_ActionsInPlace,
+#ebx_WorkspaceFormFooter .ebx_ActionsBack,
+#ebx_WorkspaceFormFooter .ebx_ActionsForward {
+	padding: 0 1em;
+}
+
+#ebx_WorkspaceFormFooter .ebx_ActionsInPlace {
+	display: inline-block;
+}
+#ebx_WorkspaceFormFooter .ebx_ActionsBack {
+	float: left;
+}
+#ebx_WorkspaceFormFooter .ebx_ActionsForward {
+	float: right;
+}
+
+#ebx_WorkspaceFormFooter .ebx_ProductInfo {
+	position: static;
+	margin-bottom: -15px;/*( #ebx_WorkspaceFormFooter.paddingBottom) to avoid the form footer to grow up */
+}
+#ebx_WorkspaceFormFooter .ebx_ProductInfo p {
+	margin: 0.5em 0;
+}
+#ebx_WorkspaceFormFooter .ebx_ProductInfo .ebx_LicenseTimeLimited {
+	margin-top: -15px;/*( #ebx_WorkspaceFormFooter.paddingTop) to avoid the form footer to grow up */
+}
+
+
+#ebx_FormStatusFlag {
+    visibility: hidden;
+    border: none;
+    opacity: 1;
+    filter: none;
+    
+    margin-left: -1em;
+}
+#ebx_FormStatusFlag.ebx_FormStatusFlagEnabled {
+    visibility: visible;
+}
+
+.ebx_HiddenDefaultSubmitButton {
+	position: absolute;
+	left: -10000px;
+}
+
+/**START presenter **/
+
+.ebx_FieldStatusFlag {
+	display: inline-block;
+	height: 18px; /* 16 flag.height + 1 border.top + 1 border.bottom */
+	width: 18px;
+	vertical-align: top;
+	margin-right: -1px; /* to touch the input text and merge with its left border */
+	
+	text-align: right;
+}
+
+
+.ebx_FieldStatusFlagContent {
+    display: none;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.ebx_WaitingFlag {
+	display: none;
+	
+	height: 16px;
+	width: 16px;
+	
+	background-image: url(../images/onCommon/ebx_wait_anim_small_3.gif);
+	background-repeat: no-repeat; 
+	background-position: 0 0;
+}
+
+.ebx_FieldStatusFlag_waiting .ebx_FieldStatusFlagContent {
+	display: inline-block;
+}
+
+.ebx_FieldStatusFlag_waiting .ebx_WaitingFlag {
+	display: inline-block;
+}
+
+.ebx_MessageContainer {
+	font-style: italic;
+	white-space: normal;
+}
+
+.ebx_MessageContainer > div {
+    margin-top: 3px;
+}
+
+/**END presenter **/

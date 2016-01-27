@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Tables and relationships</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_model_tables" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Developer Guide &gt; Model design</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=models/tables.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Developer Guide &gt; Model design</span></div>
+<h1>
+Tables and relationships</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#tables">Tables</a><ul class="toc2">
+<li class="toc2"><a href="#tables_overview">Overview</a></li><li class="toc2"><a href="#tables_declaration">Declaration</a></li><li class="toc2"><a href="#tables_commonProperties">Common properties</a></li><li class="toc2"><a href="#tables_example">Example</a></li><li class="toc2"><a href="#tables_dataSetInheritance">Properties related to data set inheritance</a></li></ul>
+</li><li class="toc1"><a href="#foreignKey">Foreign keys</a><ul class="toc2">
+<li class="toc2"><a href="#foreignKey_declaration">Declaration</a></li><li class="toc2"><a href="#foreignKey_example">Example</a></li></ul>
+</li><li class="toc1"><a href="#association">Associations</a><ul class="toc2">
+<li class="toc2"><a href="#association_overview">Overview</a></li><li class="toc2"><a href="#association_declaration">Declaration</a></li><li class="toc2"><a href="#association_ui">User interface integration</a></li><li class="toc2"><a href="#association_validation">Validation</a></li><li class="toc2"><a href="#association_dataServices">Data services integration</a></li><li class="toc2"><a href="#association_example">Examples</a></li></ul>
+</li><li class="toc1"><a href="#select">Selection nodes</a></li></ul>
+</div>
+<h2>
+<a name="tables"></a>Tables</h2>
+<h3>
+<a name="tables_overview"></a>Overview</h3>
+<p>EBX5 supports the features of relational database tables, including the handling of large volumes of records, and identification by primary key.</p><p>Tables provide many benefits that are not offered by <a href="./types.html#aggregatedList">aggregated lists</a>. Beyond relational capabilities, some features that tables provide are:</p><ul>
+<li><p>filters and searches;</p></li><li><p>sorting, views and hierarchies;</p></li><li><p>identity constraints: primary keys, <a href="../models/tables.html#foreignKey">foreign keys</a> and <a href="constraints.html#xsdUnique">uniqueness constraints</a>;</p></li><li><p>specific permissions for creation, modification, and deletion;</p></li><li><p>dynamic and contextual permissions at the individual record level;</p></li><li><p>detailed comparison and merge;</p></li><li><p>ability to have inheritance at the record level (see <a href="../references/inheritance.html#dataSetInheritanceRecords">data set inheritance</a>);</p></li><li><p>performance and memory optimization.</p></li></ul>
+<div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="#foreignKey">Foreign keys</a></li><li><a href="#association">Associations</a></li><li><a href="../user_data/userdata_actions.html">Working with existing data sets</a></li><li><a href="../user_data/userdata_viewing.html#simple">Simple tabular views</a></li><li><a href="../user_data/userdata_viewing.html#hierarchies">Hierarchical views</a></li><li><a href="../references/history.html">History</a></li></ul>
+</div>
+<h3>
+<a name="tables_declaration"></a>Declaration</h3>
+<p>A table element, which is an element with <em>maxOccurs &gt; 1</em>, is declared by adding the following annotation: </p><pre class="ebx_example brush: xml">
+&lt;xs:annotation>
+	&lt;xs:appinfo>
+		&lt;osd:table>
+			&lt;primaryKeys>/pathToField1 /pathToField...n&lt;/primaryKeys>
+		&lt;/osd:table>
+	&lt;/xs:appinfo>
+&lt;/xs:annotation>
+</pre>
+<h3>
+<a name="tables_commonProperties"></a>Common properties</h3>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>primaryKeys</code></p></td><td valign="top"><p>Specifies the primary key fields of the table.</p><p> Each field of the primary key must be denoted by its absolute XPath notation that starts just under the root element of the table. If there are multiple fields in the primary key, the list is delimited by whitespace.</p><p><strong>Note:</strong> Whitespaces in primary keys of type <code>xs:string</code> are handled differently. See <a href="../models/constraints.html#whitespaces_pk">Whitespace handling for primary keys of type string</a>.</p></td><td valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><a name="defaultLabel"></a><code>defaultLabel</code></p></td><td valign="top"><p>Defines the end-user display of records. Multiple variants can be specified:</p><ul>
+<li><p>A static non-localized expression is defined using the <code>defaultLabel</code> element, for example:</p><p><code>&lt;defaultLabel&gt;Product: ${./productCode}&lt;/defaultLabel&gt;</code></p></li><li><p>Static localized expressions are specified using the <code>defaultLabel</code> element with the attribute <code>xml:lang</code>, for example: </p><p><code>&lt;defaultLabel xml:lang=&quot;fr-FR&quot;&gt;Produit : ${./productCode}&lt;/defaultLabel&gt;</code></p><p><code>&lt;defaultLabel xml:lang=&quot;en-US&quot;&gt;Product: ${./productCode}&lt;/defaultLabel&gt;</code></p></li><li><p>A JavaBean that implements the interface <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRenderer.html"><code>UILabelRenderer</code></a> and/or the interface <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRendererForHierarchy.html"><code>UILabelRendererForHierarchy</code></a>. The JavaBean is specified by means of the attribute <code>osd:class</code>, for example:</p><p><code>&lt;defaultLabel osd:class=&quot;com.wombat.MyLabel&quot;&gt;&lt;/defaultLabel&gt;</code></p></li></ul>
+<p><strong>Note:</strong> The priority of the tags when displaying the user interface is the following: </p><ol>
+<li><p><code>defaultLabel</code> tags with a JavaBean (but it is not allowed to define several renderers of the same type);</p></li><li><p><code>defaultLabel</code> tags with a static localized expression using the <code>xml:lang</code> attribute;</p></li><li><p><code>defaultLabel</code> tag with a static non-localized expression.</p></li></ol>
+<p><strong>Attention: </strong>Access rights defined on associated data sets are not applied when displaying record labels. <br/> Fields that are usually hidden due to access rights restrictions will be displayed in labels.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>index</code></p></td><td valign="top"><p>Specifies an index for speeding up requests that match this index (see <a href="../references/performance.html">performances</a>).</p><p>The attribute <code>name</code> is mandatory. Each field of the index must be denoted by its absolute XPath notation, which starts just under the root element of the table. If there are multiple fields in the index, the list is delimited by whitespace.</p><p><strong>Note:</strong></p><ul>
+<li><p>Indexing only concerns semantic and relational tables. History and replica tables are not affected.</p></li><li><p>It is possible to define multiple indexes on a table.</p></li><li><p>It is not possible to define two indexes with the same name.</p></li><li><p>It is not possible to declare two indexes containing the same exact fields.</p></li><li><p>An indexed field must be terminal.</p></li><li><p>An indexed field cannot be a list or be under a list.</p></li><li><p>A field declared as an <em>inherited field</em> cannot be indexed.</p></li><li><p>A field declared as a function cannot be indexed.</p></li></ul>
+<p>For performance purposes, the following nodes are automatically indexed:</p><ul>
+<li><p>Primary keys nodes; See <a href="../models/tables.html#tables">primary keys</a>.</p></li><li><p>Nodes defining a foreign key constraint. See <a href="../models/tables.html#foreignKey">foreign key constraint</a>.</p></li><li><p>Nodes declared as being unique. See <a href="../models/constraints.html#xsdUnique">uniqueness constraint</a>.</p></li><li><p>Auto-incremented nodes. See <a href="../models/constraints.html#autoIncrementedValues">auto-incremented values</a>.</p></li></ul>
+</td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="tables_example"></a>Example</h3>
+<p>Below is an example of a product catalog:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="Products" minOccurs="0" maxOccurs="unbounded">
+	 &lt;xs:annotation>
+		 &lt;xs:documentation>
+			 &lt;osd:label>Product Table &lt;/osd:label>
+			 &lt;osd:description>List of products in Catalog &lt;/osd:description>
+		 &lt;/xs:documentation>
+	 &lt;/xs:annotation>
+	 &lt;xs:complexType>
+	 &lt;xs:annotation>
+		 &lt;xs:appinfo>
+			 &lt;osd:table>
+				 &lt;primaryKeys>./productRange /productCode&lt;/primaryKeys>
+				 &lt;index name="indexProductCode">/productCode&lt;/index>
+			 &lt;/osd:table>
+		 &lt;/xs:appinfo>
+	 &lt;/xs:annotation>
+		 &lt;xs:sequence>
+			 &lt;xs:element name="productRange" type="xs:string"/>&lt;!-- key -->
+			 &lt;xs:element name="productCode" type="xs:string"/>&lt;!-- key -->
+			 &lt;xs:element name="productLabel" type="xs:string"/>
+			 &lt;xs:element name="productDescription" type="xs:string"/>
+			 &lt;xs:element name="productWeight" type="xs:int"/>
+			 &lt;xs:element name="productType" type="xs:string"/>
+			 &lt;xs:element name="productCreationDate" type="xs:date"/>
+		 &lt;/xs:sequence>
+	 &lt;/xs:complexType>
+&lt;/xs:element>
+
+&lt;xs:element name="Catalogs" minOccurs="0" maxOccurs="unbounded">
+	 &lt;xs:annotation>
+		 &lt;xs:documentation>
+			 &lt;osd:label>Catalog Table&lt;/osd:label>
+			 &lt;osd:description>List of catalogs&lt;/osd:description>
+		 &lt;/xs:documentation>
+	 &lt;/xs:annotation>
+	 &lt;xs:complexType>
+		 &lt;xs:annotation>
+			 &lt;xs:appinfo>
+				 &lt;osd:table>
+					 &lt;primaryKeys>/catalogId&lt;/primaryKeys>
+				 &lt;/osd:table>
+			 &lt;/xs:appinfo>
+		 &lt;/xs:annotation>
+		 &lt;xs:sequence>
+			 &lt;xs:element name="catalogId" type="xs:string"/>&lt;!-- key -->
+			 &lt;xs:element name="catalogLabel" type="xs:string"/>
+			 &lt;xs:element name="catalogDescription" type="xs:string"/>
+			 &lt;xs:element name="catalogType" type="xs:string"/>
+			 &lt;xs:element name="catalogPublicationDate" type="xs:date"/>
+		 &lt;/xs:sequence>
+	 &lt;/xs:complexType>
+&lt;/xs:element>
+</pre>
+<h3>
+<a name="tables_dataSetInheritance"></a>Properties related to data set inheritance</h3>
+<p>The following properties are only valid in the context of data set inheritance: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>onDelete-deleteOccultingChildren</code></p></td><td valign="top"><p>Specifies whether, upon record deletion, child records in occulting mode are also to be deleted.</p><p>Valid values are: <code>never</code> or <code>always</code>.</p></td><td valign="top"><p>No, default is <code>never</code>.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayCreateRoot</code></p></td><td valign="top"><p>Specifies whether root record creation is allowed. The expression must follow the syntax below. See <a href="../references/inheritance.html#dataSetInheritanceRecords">definition modes</a>.</p></td><td valign="top"><p>No, default is <code>always</code>.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayCreateOverwriting</code></p></td><td valign="top"><p>Specifies whether records are allowed to be overwritten in child data sets. The expression must follow the syntax below. See <a href="../references/inheritance.html#dataSetInheritanceRecords">definition modes</a>.</p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayCreateOcculting</code></p></td><td valign="top"><p>Specifies whether records are allowed to be occulted in child data sets. The expression must follow the syntax below. See <a href="../references/inheritance.html#dataSetInheritanceRecords">definition modes</a>.</p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayDuplicate</code></p></td><td valign="top"><p>Specifies whether record duplication is allowed. The expression must follow the syntax below.</p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+<tr>
+<td valign="top"><p><code>mayDelete</code></p></td><td valign="top"><p>Specifies whether record deletion is allowed. The expression must follow the syntax below. </p></td><td valign="top"><p>No, default is &quot;always&quot;.</p></td></tr>
+</tbody>
+</table>
+<p><a name="may_syntax"></a>The <code>may...</code> expressions specify when the action is possible, though the ultimate availability of the action also depends user access rights. The expressions have the following syntax: </p><blockquote><p>expression ::= always | never | &lt;condition&gt;*</p><p>condition ::= [root:yes | root:no]</p><p>&quot;always&quot;: the operation is &quot;always&quot; possible (but user rights may restrict this).</p><p>&quot;never&quot;: the operation is never possible.</p><p>&quot;root:yes&quot;: the operation is possible if the record is in a root instance.</p><p>&quot;root:no&quot;: the operation is not possible if the record is in a root instance.</p></blockquote><p>If the record does not define any specific conditions, the default is used.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/inheritance.html#dataSetInheritance">Data set inheritance</a></p></div>
+<h2>
+<a name="foreignKey"></a>Foreign keys</h2>
+<h3>
+<a name="foreignKey_declaration"></a>Declaration</h3>
+<p>A reference to a <a href="tables.html#tables">table</a> is defined using the extended facet <code>osd:tableRef</code>.</p><p>The node holding the <code>osd:tableRef</code> declaration must be of type <code>xs:string</code>. At instantiation, any value of the node identifies a record in the target table using its <a target="_blank" href="../Java_API/com/onwbp/adaptation/PrimaryKey.html#syntax">primary key syntax</a>. This extended facet is also interpreted as an enumeration whose values refer to the records in the target table. </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>tablePath</code></p></td><td valign="top"><p>XPath expression that specifies the target table.</p></td><td valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><code>container</code></p></td><td valign="top"><p>Reference of the data set that contains the target table.</p></td><td valign="top"><p>Only if element &#39;branch&#39; (data space) is defined. Otherwise, default is current data set.</p></td></tr>
+<tr>
+<td valign="top"><p><code>branch</code></p></td><td valign="top"><p>Reference of the data space that contains the container data set.</p></td><td valign="top"><p>No, default is current data space or snapshot.</p></td></tr>
+<tr>
+<td valign="top"><p><code>display</code></p></td><td valign="top"><p>Custom display for presenting the selected foreign key in the current record and the sorted list of possible keys. Two variants can be specified, either pattern-based expressions, or a JavaBean if the needs are very specific:</p><ul>
+<li><p> Static expressions are specified using the <code>display</code> and <code>pattern</code> elements. These static expressions can be localized using the additional attribute <code>xml:lang</code> on the <code>pattern</code> element, for example: </p><p><code>&lt;display&gt;</code></p><p><code>&lt;pattern&gt;Product : ${./productCode}&lt;/pattern&gt;</code></p><p><code>&lt;pattern xml:lang=&quot;fr-FR&quot;&gt;Produit : ${./productCode}&lt;/pattern&gt;</code></p><p><code>&lt;pattern xml:lang=&quot;en-US&quot;&gt;Product: ${./productCode}&lt;/pattern&gt;</code></p><p><code>&lt;/display&gt;</code></p></li><li><p> A JavaBean that implements the interface <a target="_blank" href="../Java_API/com/orchestranetworks/schema/TableRefDisplay.html"><code>TableRefDisplay</code></a>. It is specified using the attribute <code>osd:class</code>. For example:</p><p><code>&lt;display osd:class=&quot;com.wombat.MyLabel&quot;&gt;&lt;/display&gt;</code></p></li></ul>
+<p>It is not possible to define both variants on the same foreign key element.</p><p><strong>Attention: </strong>Access rights defined on associated data sets are not applied when displaying record labels. <br/> Fields that are usually hidden due to access rights restrictions will be displayed in labels.</p></td><td valign="top"><p>No, if the <code>display</code> property is not specified, the <a href="tables.html#defaultLabel">table&#39;s record rendering</a> is used.</p></td></tr>
+<tr>
+<td valign="top"><p><code>filter</code></p></td><td valign="top"><p>Specifies an additional constraint that filters the records of the target table. Two types of filters are available: </p><ul>
+<li><p> An XPath filter is an XPath predicate in the target table context. It is specified using the <code>predicate</code> element. For example: </p><p><code>&lt;filter&gt;&lt;predicate&gt;type = ${../refType}&lt;/predicate&gt;&lt;/filter&gt;</code></p><p>A localized validation message can be specified using the element <code>validationMessage</code>, which will be displayed to the end-user at validation time if a record is not accepted by the filter.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default message for unsupported locales, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></li><li><p>A programmatic filter is a JavaBean that implements the interface <a target="_blank" href="../Java_API/com/orchestranetworks/schema/TableRefFilter.html"><code>TableRefFilter</code></a>. It is specified using the attribute <code>osd:class</code>. For example: </p><p><code>&lt;filter osd:class=&quot;com.wombat.MyFilter&quot;&gt;&lt;/filter&gt;</code></p><p>Additional validation messages can be specified during the setup of the programmatic filter using the dedicated methods of the interface <a target="_blank" href="../Java_API/com/orchestranetworks/schema/TableRefFilterContext.html"><code>TableRefFilterContext</code></a>.</p></li></ul>
+<p><strong>Note:</strong></p><p>The attributes <code>osd:class</code> and the property <code>predicate</code> cannot be set simultaneously. </p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>validation</code></p></td><td valign="top"><p>Specifies localized validation messages for the <code>osd:tableRef</code> and error management policy.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>An error management policy can be defined in a nested <code>blocksCommit</code> element. The error management policy that blocks all operations does not apply to filters. That is, a foreign key constraint is not blocking if a referenced record exists but does not satisfy a foreign key filter. In this case, updates are not rejected, and a validation error will be reported.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default message for unsupported locales, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<p>You can create a data set which has a foreign key to a container that does not exist in the repository. However, the content of this data set will not be available until the container is created. After the creation of the container, a data model refresh is required to make the data set available. When creating a data set that refers to a container that does not yet exist, the following limitations apply: </p><ul>
+<li><p>Triggers defined at the data set level are not executed.</p></li><li><p>Default values for fields that are not contained in tables are not initialized.</p></li><li><p>During an archive import, it is not possible to create a data set that refers to a container that does not exist.</p></li></ul>
+</fieldset>
+<h3>
+<a name="foreignKey_example"></a>Example</h3>
+<p> The example below specifies a foreign key in the &#39;Products&#39; table to a record of the &#39;Catalogs&#39; table.</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="catalog_ref" type="xs:string">
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;osd:otherFacets>
+				&lt;osd:tableRef>
+					&lt;tablePath>/root/Catalogs&lt;/tablePath>
+					&lt;display>
+						 &lt;pattern xml:lang="en-US">Catalog: ${./catalogId}&lt;/pattern>
+						 &lt;pattern xml:lang="fr-FR">Catalogue : ${./catalogId}&lt;/pattern>
+					&lt;/display>
+					 &lt;validation>	 
+						 &lt;severity>error&lt;/severity>
+						 &lt;blocksCommit>onInsertUpdateOrDelete&lt;/blocksCommit>
+						 &lt;message>A default error message&lt;/message>
+						 &lt;message xml:lang="en-US">A localized error message&lt;/message>
+						 &lt;message xml:lang="fr-FR">Un message d'erreur localisé&lt;/message>
+					&lt;/validation>
+				&lt;/osd:tableRef>
+			&lt;/osd:otherFacets>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+&lt;/xs:element></pre>
+<div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="tables.html#tables">Table definition</a></li><li><a target="_blank" href="../Java_API/com/onwbp/adaptation/PrimaryKey.html#syntax">Primary key syntax</a></li><li><a href="../references/xpath_ref.html#tableRef">Extraction of foreign keys (XPath predicate syntax)</a></li><li><a href="tables.html#association">Associations</a></li><li><a href="access_properties_categories.html#viewForAdvancedSelection">View for advanced selection</a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaNode.html#getFacetOnTableReference()"><code>SchemaNode.getFacetOnTableReference</code></a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/schema/info/SchemaFacetTableRef.html"><code>SchemaFacetTableRef</code></a></li></ul>
+</div>
+<h2>
+<a name="association"></a>Associations</h2>
+<h3>
+<a name="association_overview"></a>Overview</h3>
+<p>An association provides an abstraction over an existing relationship in the data model, and allows an easy model-driven integration of <em>associated objects</em> in the user interface and in data services.</p><p>Two main types of associations are supported:</p><ul>
+<li><p><em>&#39;By foreign key&#39;</em> specifies the inverse relationship of an existing <a href="../models/tables.html#foreignKey">foreign key field</a>.</p></li><li><p><em>&#39;Over a link table&#39;</em> specifies a relationship based on an intermediate link table (such tables are often called &quot;join tables&quot;). This link table has to define two foreign keys, one referring to the &#39;source&#39; table (the table holding the association element) and another one referring to the &#39;target&#39; table.</p></li></ul>
+<p>For an association it is also possible to:</p><ul>
+<li><p>Filter associated objects by specifying an additional XPath filter.</p></li><li><p>Configure a tabular view to define the fields that must be displayed in the associated table.</p></li><li><p>Define how associated objects are to be rendered in forms.</p></li><li><p>Hide/show associated objects in data service &#39;select&#39; operation. See <a href="../models/access_properties_categories.html#defaultViewHiddenInDataServices">Hiding a field in Data Services</a>. </p></li><li><p>Specify the minimum and maximum numbers of associated objects that are required.</p></li><li><p>Add validation constraints using XPath predicates for restricting associated objects.</p></li></ul>
+<div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaNode.html#getAssociationLink()"><code>SchemaNode.getAssociationLink</code></a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaNode.html#isAssociationNode()"><code>SchemaNode.isAssociationNode</code></a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/schema/info/AssociationLink.html"><code>AssociationLink</code></a></li></ul>
+</div>
+<h3>
+<a name="association_declaration"></a>Declaration</h3>
+<p>Associations are defined in the data model using the XML Schema element <code>osd:association</code> under <code>xs:annotation/appInfo</code>.</p><p><strong>Restrictions:</strong></p><ul>
+<li><p>An association must be a simple element of type <em>xs:string</em>.</p></li><li><p>An association can only be defined inside a table.</p></li></ul>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The &quot;official&quot; cardinality constraints (<code>minOccurs=&quot;0&quot; maxOccurs=&quot;0&quot;</code>) are required because, from an instance of XML Schema, the corresponding node is absent. In other words, an association has no value and is considered as a &quot;virtual&quot; element as far as XML and XML Schema is concerned.</p></div>
+<p>The table below presents the elements that can be defined under <code>xs:annotation/appInfo/osd:association</code>.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>tableRefInverse</code></p></td><td valign="top"><p>Defines the properties of an association that is the inverse relationship of a <em>foreign key</em>.</p><p>Element <code>fieldToSource</code> defines the foreign key that refers to the source table of the association. Element <code>fieldToSource</code> is mandatory and must specify a foreign key field that refers to the table containing the association. </p></td><td valign="top"><p>Yes if the association is the inverse relationship of a <em>foreign key</em>, otherwise no.</p></td></tr>
+<tr>
+<td valign="top"><p><code>linkTable</code></p></td><td valign="top"><p>Defines the properties of an association over a link table.</p><p>Element <code>table</code> specifies the link table used by the association. Element <code>table</code> is mandatory and must refer to an existing table.</p><p><strong>Important:</strong> In order to be used by an association, a link table must define a primary key that is composed of auto-incremented fields or/and the foreign key to the source or target table of the association. </p><p>Element <code>fieldToSource</code> defines the foreign key that refers to the source table of the association. Element <code>fieldToSource</code> is mandatory and must specify a foreign key field that refers to the table containing the association. </p><p>Element <code>fieldToTarget</code> defines the foreign key that refers to the target table of the association. Element <code>fieldToTarget</code> is mandatory and must specify a foreign key field. </p></td><td valign="top"><p>Yes if the association is over a link table, otherwise no.</p></td></tr>
+<tr>
+<td valign="top"><p><code>xpathFilter</code></p></td><td valign="top"><p>Defines an XPath predicate to filter associated objects. It is only possible to use fields from the source and the target table when defining an XPath filter. That is, if it is an association over a link table, it is not possible to use fields of the link table in the XPath filter.</p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<p>It is possible to refer to another data set. For that, the following properties must be defined either under element <code>tableRefInverse</code> or <code>linkTable</code> depending on the type of the association:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>schemaLocation</code></p></td><td valign="top"><p>Defines the data model containing the fields used by the association. The data model is defined using a specific URN that allows referring to embedded data models and data models packaged in modules. </p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaLocation.html"><code>SchemaLocation</code></a> for more information about specific URNs supported by EBX5. </p></td><td valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><code>dataSet</code></p></td><td valign="top"><p>Defines the data set used by the association. This data set must use the data model specified by the element <code>schemaLocation</code>. </p></td><td valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><code>dataSpace</code></p></td><td valign="top"><p>Defines the data space containing the data set used by the association.</p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> When creating a data set, you can create a data set that defines an association to a container that does not yet exist in the repository. However, the content of this data set will not be available immediately upon creation. After the absent container is created, a data model refresh is required in order to make the data set available. When creating a data set that refers to a container that does not yet exist, the following limitations apply: </p><ul>
+<li><p>Triggers defined at the data set level are not executed.</p></li><li><p>Default values on fields outside tables are not initialized.</p></li><li><p>During an archive import, it is not possible to create a data set that refers to a container that does not exist.</p></li></ul>
+<h3>
+<a name="association_ui"></a>User interface integration</h3>
+<p>It is possible to define how associated objects are to be rendered in forms, using the element <code>osd:defaultView/displayMode</code> under <code>xs:annotation/appinfo</code>.</p><p>Possible values are:</p><ul>
+<li><p><code>inline</code>, specifies that associated records are to be rendered in the form at the same position of the association in the data model.</p></li><li><p><code>tab</code>, specifies that associated records are to be rendered in a specific tab.</p></li></ul>
+<p>By default, associated records are rendered <code>inline</code> if this property is not defined. </p><p>The following example specifies that associated objects are to be rendered <code>inline</code> in the form:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		&lt;osd:association> 
+			&lt;tableRefInverse>
+			 	&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+			&lt;/tableRefInverse> 
+		&lt;/osd:association>
+		&lt;osd:defaultView>
+			&lt;displayMode>inline&lt;/displayMode>
+		&lt;/osd:defaultView> 
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p>The following example specifies that associated objects are to be rendered in a specific tab:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		&lt;osd:association> 
+			&lt;tableRefInverse>
+			 	&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+			&lt;/tableRefInverse> 
+		&lt;/osd:association>
+		&lt;osd:defaultView>
+			&lt;displayMode>tab&lt;/displayMode>
+		&lt;/osd:defaultView> 
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<h4>
+<a name="association_tabularView"></a>Customize view of associated objects</h4>
+<p>A specific tabular view can be specified to define the fields that must be displayed in the target table. If a tabular view is not defined, all columns that a user is allowed to view, according to the granted access rights, are displayed. A tabular view is defined using the element <code>osd:defaultView/tabularView</code> under <code>xs:annotation/appinfo</code>. </p><p>The table below shows the elements that can be defined under <code>osd:defaultView/tabularView</code>.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>column</code></p></td><td valign="top"><p>Define a field of the target table to display. The specified path must be absolute from the target table and must refer to an existing field. Several <code>column</code> elements can be defined to specify the fields that are to be displayed. </p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>sort</code></p></td><td valign="top"><p>Define a field that can be used to sort associated objects. Several<code>sort</code> elements can be defined to specify the fields that can be used to sort associated objects.</p><p>Element <code>nodePath</code> defines the path of the field that can be used to sort associated objects.</p><p>Element <code>isAscending</code> specifies whether the sort order is ascending (true) or descending (false).</p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<p>The following example shows how to define a tabular view from the previous association between a catalog and its products:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="Products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+	&lt;xs:annotation>
+		&lt;xs:appinfo> 
+			&lt;osd:association> 
+				&lt;tableRefInverse>
+					&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+				&lt;/tableRefInverse> 
+			&lt;/osd:association> 
+			&lt;osd:defaultView>
+				&lt;tabularView>
+					&lt;column>/productRange&lt;/column>
+					&lt;column>/productCode&lt;/column>
+					&lt;column>/productLabel&lt;/column>
+					&lt;column>/productDescription&lt;/column>
+					&lt;sort>
+					   &lt;nodePath>/productLabel&lt;/nodePath>
+					   &lt;isAscending>true&lt;/isAscending>
+					&lt;/sort>
+				&lt;/tabularView>
+			&lt;/osd:defaultView>
+		&lt;/xs:appinfo> 
+	&lt;/xs:annotation> 
+&lt;/xs:element></pre>
+<h4>
+<a name="association_actionsUI"></a>Actions in the user interface</h4>
+<p>In the user interface, it is possible to perform the following actions: </p><ul>
+<li><p><strong>Create</strong>: it allows directly creating an object in the target table of the association. When a new object is created, it is automatically associated with the current record. </p></li><li><p><strong>Associate</strong>: associates an existing object with the current record. In the case of an association over a link table, a record in the link table is automatically created to materialize the link between the current record and the existing object. </p></li><li><p><strong>Delete</strong>: deletes selected associated objects in the target table of the association.</p></li><li><p><strong>Detach</strong>: breaks the semantic link between the current record and the selected associated objects. In the case of an association over a link table, the records in the link table are automatically deleted, to break the links between the current record and associated objects.</p></li></ul>
+<h3>
+<a name="association_validation"></a>Validation</h3>
+<p>Some controls can be defined on associations, in order to restrict associated objects. These controls are defined under the element <code>osd:association</code>. </p><p> The table below presents the controls that can be defined under xs:annotation/appInfo/osd:association. </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>minOccurs</code></p></td><td valign="top"><p>Specifies the minimum number of associated objects that are required for this association. This minimum number is defined using the element <code>value</code> and must be a positive integer.</p></td><td valign="top"><p>No, by default the minimum is not restricted.</p></td></tr>
+<tr>
+<td valign="top"><p><code>maxOccurs</code></p></td><td valign="top"><p>Specifies the maximum number of associated objects that are allowed for this association. This maximum number is defined by the element <code>value</code> and must be either a positive integer or the raw string <code>unbounded</code> which indicates that this maximum is not restricted. The maximum number of associated objects must be greater than the minimum number of associated objects.</p></td><td valign="top"><p>No, by default the maximum is not restricted.</p></td></tr>
+<tr>
+<td valign="top"><p><code>constraint</code></p></td><td valign="top"><p>Defines an XPath predicate for restricting associated records. It is only possible to use fields from the source and the target table when defining an XPath predicate. That is, if it is an association over a link table, it is not possible to use fields of the link table in the XPath predicate. </p><p> In associated data sets, a validation message of the specified severity is added and displayed to the end user at validation time when an associated record does not comply with the specified constraint. </p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>validation</code></p></td><td valign="top"><p>A validation message can be defined under the elements <code>minOccurs</code>, <code>maxOccurs</code> and <code>constraint</code>, using the element <code>validation</code>. The severity of the validation message is specified using the element <code>severity</code>. Possible severities are: <code>error</code>, <code>warning</code> and <code>info</code>. </p><p>If the severity is not specified, then by default, the severity <code>error</code> is used.</p><p> A localized validation message can be specified using the element <code>message</code>, which will be displayed to the end-user at validation time if an association does not comply with this constraint. Each localized message variant is defined in a nested message element with its locale in an <code>xml:lang</code> attribute. To specify a default message for unsupported locales, define a message element with no xml:lang attribute. </p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="association_dataServices"></a>Data services integration</h3>
+<p>It is possible to define whether associated objects must be hidden in the Data Service <code>select</code> operation. For this, the property <code>osd:defaultView/hiddenInDataServices</code> under <code>xs:annotation/xs:appinfo</code> can be set on the association. Setting the property to &#39;true&#39; will hide associated objects in the Data Service <code>select</code> operation. If this property is not defined, then by default, associated objects will be shown in the Data Service <code>select</code> operation. </p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../models/access_properties_categories.html#defaultViewHiddenInDataServices">Hiding a field in Data Services</a></li><li><a href="../references/dataservices_execution.html#associationField">Association field</a></li></ul>
+</div>
+<h3>
+<a name="association_example"></a>Examples</h3>
+<p>For example, the product catalog data model defined <a href="#tables_example">previously</a> specifies that a product belongs to a catalog (explicitly defined by a foreign key in the &#39;Products&#39; table). The reverse relationship (that a catalog has certain products) is not easily represented in XML Schema, unless the &#39;Catalogs&#39; table includes the following association that is the inverse of a foreign key:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		 &lt;osd:association> 
+			&lt;tableRefInverse>
+			 	&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+			&lt;/tableRefInverse> 
+		 &lt;/osd:association> 
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p>For an association over a link table, we can consider the previous example and bring some updates. For instance, the foreign key in the &#39;Products&#39; table is deleted and the relation between a product and a catalog is redefined by a link table (named &#39;Catalogs_Products&#39;) that has a primary key made of two foreign keys: one that refers to the &#39;Products&#39; table (named &#39;productRef&#39;) and another to the &#39;Catalogs&#39; table (named &#39;catalogRef&#39;). The following example shows how to define an association over a link table from this new relationship:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		&lt;osd:association> 
+			&lt;linkTable>
+			 	&lt;table>/root/Catalogs_Products&lt;/table>
+			 	&lt;fieldToSource>./catalogRef&lt;/fieldToSource>
+			 	&lt;fieldToTarget>./productRef&lt;/fieldToTarget>
+			&lt;/linkTable> 
+		&lt;/osd:association>
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+
+</pre>
+<p>The following example shows an association that refers to a foreign key in another data set. In this example the &#39;Products&#39; and &#39;Catalogs&#39; tables are not in the same data set:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		 &lt;osd:association> 
+			&lt;tableRefInverse>
+				&lt;schemaLocation>urn:ebx:module:aModuleName:/WEB-INF/ebx/schema/products.xsd&lt;/schemaLocation>
+				&lt;dataSet>Products&lt;/dataSet>
+			 	&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+			&lt;/tableRefInverse> 
+		 &lt;/osd:association> 
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p>The following example defines an XPath filter to associate only products of type &#39;Technology&#39;:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		 &lt;osd:association> 
+			&lt;tableRefInverse>
+				&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+			&lt;/tableRefInverse> 
+			&lt;xpathFilter>./productType = 'Technology'&lt;/xpathFilter>
+		 &lt;/osd:association> 
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p>The following example specifies the minimum number of products that are required for a catalog:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+	&lt;xs:annotation> 
+		&lt;xs:appinfo> 
+			&lt;osd:association> 
+				&lt;tableRefInverse>
+			 		&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+				&lt;/tableRefInverse> 
+ 				&lt;minOccurs>
+					&lt;value>1&lt;/value>
+					&lt;validation>
+						&lt;severity>warning&lt;/severity>	
+						&lt;message xml:lang="en-US">One product should at least be associated to this catalog.&lt;/message>
+						&lt;message xml:lang="fr-FR">Un produit doit au moins être associé à ce catalogue.&lt;/message>
+					&lt;/validation>	
+				&lt;/minOccurs>
+			&lt;/osd:association> 
+		&lt;/xs:appinfo> 
+	&lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p>The following example specifies that an catalog must contain at most ten products:</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+	&lt;xs:annotation> 
+		&lt;xs:appinfo> 
+			&lt;osd:association> 
+				&lt;tableRefInverse>
+					&lt;fieldToSource>/root/Products/catalog_ref&lt;/fieldToSource>
+				&lt;/tableRefInverse> 
+				&lt;maxOccurs>
+					&lt;value>10&lt;/value>
+					&lt;validation>
+						&lt;severity>warning&lt;/severity>	
+						&lt;message xml:lang="en-US">Too much products for this catalog.&lt;/message>
+						&lt;message xml:lang="fr-FR">Ce catalogue a trop de produits.&lt;/message>
+					&lt;/validation>	
+				&lt;/maxOccurs>
+			&lt;/osd:association>
+		&lt;/xs:appinfo> 
+	&lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<h2>
+<a name="select"></a>Selection nodes</h2>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<p>From version EBX5 5.5.0, it is recommended to use associations instead of selection nodes. Associations provide more features than selection nodes, and no further evolutions will be made on selection nodes. The only characteristic on selection nodes that is not supported by associations is the way to display the selection of records as a link. </p><p> See <a href="#association">Associations</a> for more information. </p></fieldset>
+<p>An element declaration can define a dynamic contextual XPath selection. In this case, the user interface provides a link so that the user can navigate to the pre-filtered table corresponding to the selection.</p><p>A selection node is useful for creating an association between two entities in the user interface, as well as for validation purposes.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="#foreignKey">Foreign keys</a></p></div>
+<p>For example, the product catalog data model defined <a href="#tables_example">previously</a> specifies that a product belongs to a catalog (explicitly defined by a foreign key in the &#39;Products&#39; table). The reverse relationship (that a catalog has certain products) is not easily represented in XML Schema, unless the &#39;Catalogs&#39; table includes the following selection node: </p><pre class="ebx_example brush: xml">
+&lt;xs:element name="products" minOccurs="0" maxOccurs="0" type="xs:string"> 
+   &lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		 &lt;osd:select> 
+			&lt;xpath>/root/Products[catalog_ref =${../catalogId}]&lt;/xpath> 
+			&lt;minOccurs>1&lt;/minOccurs>
+			&lt;minOccursValidationMessage>
+				&lt;severity>error&lt;/severity>
+				&lt;message>A default validation message.&lt;/message>
+				&lt;message xml:lang="en-US">A validation message in English.&lt;/message>
+				&lt;message xml:lang="fr-FR">Un message de validation en français.&lt;/message>
+			&lt;/minOccursValidationMessage>
+			&lt;maxOccurs>10&lt;/maxOccurs>
+			&lt;maxOccursValidationMessage>
+				&lt;severity>error&lt;/severity>
+				&lt;message>A default validation message.&lt;/message>
+				&lt;message xml:lang="en-US">A validation message in English.&lt;/message>
+				&lt;message xml:lang="fr-FR">Un message de validation en français.&lt;/message>
+			&lt;/maxOccursValidationMessage>
+		 &lt;/osd:select> 
+	  &lt;/xs:appinfo> 
+   &lt;/xs:annotation> 
+&lt;/xs:element>
+</pre>
+<p>The element <code>minOccurs</code> specifies that, to be valid, an catalog must be associated with at least one product.</p><p>The element <code>maxOccurs</code> specifies that, to be valid, an catalog must be associated with at most ten products.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The &quot;official&quot; cardinality constraints (<code>minOccurs=&quot;0&quot; maxOccurs=&quot;0&quot;</code>) are required because, from an instance of XML Schema, the corresponding node is absent. In other words, a selection node is a &quot;virtual&quot; element as far as XML and XML Schema is concerned.</p></div>
+<p>It is also possible to specify additional constraints on the relationship. In the following example, each relationship between an catalog and a product is valid if the date of creation of the product is prior to the date of publication of the catalog:</p><pre class="ebx_example brush: xml">
+&lt;osd:select> 
+	&lt;xpath>/root/Products[catalog_ref =${../catalogId}]&lt;/xpath>  
+	&lt;constraintPredicate>date-less-than(productCreationDate, ${../catalogPublicationDate})&lt;/constraintPredicate> 
+	&lt;constraintPredicateValidationMessage>
+		&lt;severity>error&lt;/severity>
+		&lt;message>A default validation message.&lt;/message>
+		&lt;message xml:lang="en-US">A validation message in English.&lt;/message>
+		&lt;message xml:lang="fr-FR">Un message de validation en français.&lt;/message>
+	&lt;/constraintPredicateValidationMessage> 
+&lt;/osd:select> 
+</pre>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>xpath</code></p></td><td valign="top"><p>Specifies the selection to be performed, relative to the current node.</p><p> Examples: <code>/root/Products[catalog_ref =${../catalogId}]</code> or <code>//Products[catalog_ref =${../catalogId}]</code> or <code>../Products[catalog_ref =${../catalogId}]</code> .&nbsp;</p><p>The path up to the predicate, for example <code>../Products</code>, specifies the target table to be filtered. This part of the path is resolved relative to the current table root.</p><p> If the selection depends on the local state, the XPath expression predicate must include references to the node on which it depends using the notation <code>${&lt;relative-path&gt;}</code> where <code>relative-path</code> is a path that identifies the element relative to the node that holds the selection link.</p><p>See <a href="../references/xpath_ref.html">EBX5 XPath supported syntax</a>. </p></td><td valign="top"><p>Yes.</p></td></tr>
+<tr>
+<td valign="top"><p><code>container</code></p></td><td valign="top"><p>Reference of the data set that contains the target table.</p></td><td valign="top"><p>No, default is current data set.</p></td></tr>
+<tr>
+<td valign="top"><p><code>minOccurs</code></p></td><td valign="top"><p>Specifies an additional validation constraint: the selection must be at least the specified size.</p></td><td valign="top"><p>No, default is 0.</p></td></tr>
+<tr>
+<td valign="top"><p><code>minOccursValidationMessage</code></p></td><td valign="top"><p>Specifies additional localized messages that will be displayed if the selection does not comply with the <code>minOccurs</code> constraint.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default, non-localized message, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>maxOccurs</code></p></td><td valign="top"><p>Specifies an additional validation constraint: the selection must be at most the specified size.</p></td><td valign="top"><p>No, by default the maximum is not restricted.</p></td></tr>
+<tr>
+<td valign="top"><p><code>maxOccursValidationMessage</code></p></td><td valign="top"><p>Specifies an additional localized message that will be displayed if the selection does not comply with the <code>maxOccurs</code> constraint.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default, non-localized message, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>constraintPredicate</code></p></td><td valign="top"><p> Specifies an additional validation constraint: each relation of the selection must satisfy the specified XPath predicate. The notation <code>${&lt;relative-path&gt;}</code> has the same meaning as for the <code>xpath</code> element (see above). </p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>constraintPredicateValidationMessage</code></p></td><td valign="top"><p>Specifies a localized message to display when the constraint predicate is not satisfied.</p><p>A specific severity level can be defined in a nested <code>severity</code> element. The default severity is &#39;error&#39;.</p><p>Each localized message variant is defined in a nested <code>message</code> element with its locale in an <code>xml:lang</code> attribute. To specify a default, non-localized message, define a <code>message</code> element with no <code>xml:lang</code> attribute.</p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> When creating a data set, you can create a data set that defines a selection node to a container that does not yet exist in the repository. However, the content of this data set will not be available immediately upon creation. After the absent container is created, a data model refresh is required to make the data set available. When creating a data set that refers to a container that does not yet exist, the following limitations apply: </p><ul>
+<li><p>Triggers defined at the data set level are not executed.</p></li><li><p>Default values on fields outside tables are not initialized.</p></li><li><p>During an archive import, it is not possible to create a data set that refers to a container that does not exist.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Developer Guide &gt; Model design</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

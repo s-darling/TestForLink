@@ -1,0 +1,584 @@
+
+legend {
+    padding: 0;
+    margin-left: -5px;
+}
+
+#ebx_LayoutSelector {
+	display: none;
+}
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 0 11px 1px 11px; /* don't know why... */
+	line-height: 22px;
+	width: auto;
+	overflow: visible;
+}
+a.ebx_Button,
+a.ebx_FlatButtonNoBorder,
+a.ebx_FlatButton {
+	height: 20px;
+}
+
+.ebx_FlatButtonNoBorder,
+.ebx_FlatButton {
+    border: 1px solid #FFFFFF;
+}
+
+.ebx_ButtonGroup {
+	display: inline;
+	
+	border-left: 1px solid #C0C0C0;
+}
+
+button.ebx_IconButton {
+	width: 26px;
+}
+.ebx_Field .ebx_Input .ebx_IconButton,
+.yui-dt .ebx_IconButton {
+	height: 20px;
+	width: 20px;
+}
+button.ebx_IconButtonSmall {
+	width: 16px;
+}
+
+
+.ebx_Field .ebx_Input .ebx_MenuButton {
+	width: 31px;
+}
+.ebx_Field .ebx_Input .ebx_MenuButton .ebx_Icon {
+	float: left;
+}
+.ebx_Field .ebx_Input .ebx_MenuButton .ebx_MenuButtonArrow {
+	float: left;
+	margin: 6px 1px 0 2px;
+}
+
+button.ebx_IconButton,
+button.ebx_IconButtonSmall {
+	padding: 0;
+}
+a.ebx_IconButton,
+a.ebx_IconButtonSmall {
+	padding: 1px;
+}
+a.ebx_IconButton {
+	width: 22px;
+	height: 22px;
+}
+
+.ebx_IconButton .ebx_Icon,
+.ebx_IconButtonSmall .ebx_SmallIcon {
+	display: block;
+}
+
+a.ebx_TextAndIconLeftButton .ebx_Icon,
+a.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-top: -1px;
+}
+a.ebx_IconButton .ebx_Icon {
+	margin-top: 4px;
+	margin-left: 4px;
+}
+
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	margin-bottom: -3px;
+}
+
+.ebx_MenuButtonArrow {
+	margin-top: 0;
+	margin-bottom: 3px;
+	font-size: 5px;
+}
+.ebx_IconButton .ebx_MenuButtonArrow {
+	/* beacuse ebx_Icon is display block, the ebx_MenuButtonArrow is below the ebx_Icon */
+	/* so it needs a negative margin-top and a high margin-left */
+	margin: -10px 2px 0 18px;
+	float: right;
+}
+.ebx_IconButtonSmall .ebx_MenuButtonArrow {
+	margin: 0 -1px 2px 1px;
+}
+#ebx_SwitchButtonMenu .ebx_MenuButtonArrow {
+	margin: 7px 2px 0 2px;
+}
+
+#ebx_LoadingLayer {
+	width: 100%;
+	padding-bottom: 100%;
+}
+#ebx_LoadingLayerContent {
+	width: 100%;
+	padding-bottom: 60%;
+}
+.ebx_ProductInfo {
+	width: 100%;
+	padding-top: 1em;
+}
+
+#ebx_Logout {
+	margin-right: 0;
+}
+
+.ebx_IconButtonSmall {
+	font-size: 0;
+}
+
+#ebx_SelectorPanel_c {
+	width: 50%;
+}
+#ebx_SelectorPanel,
+#ebx_SelectorPanel .bd {
+	height: 100%;
+	width: 100%;
+}
+#ebx_SelectorPanel_c .underlay {
+	padding-top: 100%;
+}
+
+#ebx_NavigationHeader,
+#ebx_NavigationSubHeader {
+	overflow: hidden;
+	height: 48px;
+}
+
+#ebx_NavigationHeaderToolbar .ebx_ToolsAlignLeft {
+	float: none;
+}
+#ebx_NavigationHeaderToolbar .ebx_ToolsAlignRight {
+	float: none; /* I hope that a left and a right toolbar will not be in the same NavigationHeaderToolbar */
+	text-align: right;
+}
+
+#ebx_NavigationContent {
+	margin-left: 1px;
+}
+#ebx_NavigationTree {
+	width: auto;
+}
+
+td.ygtvcontent {
+	background-repeat: no-repeat;
+	background-position: -100px 0;
+}
+
+.ygtvcell a.ygtvspacer {
+	line-height: 0;
+}
+
+#ebx_SubSessioniFrameContainer {
+	height: 100%;
+	width: 100%;
+}
+#ebx_SubSessioniFrameContainer.ebx_SubSessioniFrameReplacingWorkspace {
+	height: 98%;
+	width: 99%;
+}
+
+/* scroll widget is not supported */
+#ebx_WorkspaceFormTree #ebx_WorkspaceFormTabviewTabs {
+	white-space: normal;
+}
+
+#ebx_RootTab .ebx_Icon {
+	display: block;
+}
+
+/* Mantis #4442 */
+.yui-navset .yui-content {
+	width: 300px;
+}
+#ebx_WorkspaceFormTabviewContents {
+	width: 100%;
+}
+
+#ebx_WorkspaceFormBody {
+	width: 100%;
+}
+#ebx_WorkspaceFormTree {
+	width: auto;
+}
+
+/* Mantis #5026 */
+.masked select {
+	visibility: visible;
+}
+
+.ebx_CompactBlock {
+	display: inline;
+}
+
+.ebx_Group,
+.ebx_Group_error,
+.ebx_Group_warn,
+.ebx_Group_info,
+.ebx_Field div.ebx_FieldIcon,
+.ebx_Field div.ebx_Label,
+.ebx_Field div.ebx_Input,
+.ebx_OverwrittenValue,
+.ebx_InputFieldWrapper,
+.ebx_ComplexFields,
+.ebx_CollapsibleBlock,
+.ebx_Inherited .ebx_InheritedValue,
+.ebx_Nil .ebx_OverwrittenNull,
+.ebx_CheckboxGroup,
+.ebx_RadioButtonGroup,
+.ebx_SelectMultiple,
+.ebx_FieldStatusFlag,
+.ebx_FieldDecorator {
+	display: inline;
+}
+.ebx_Field td.ebx_Label,
+.ebx_Field td.ebx_Input,
+.ebx_OccurrenceList li {
+	white-space: nowrap;
+}
+
+/* Mantis #4387 */
+.ebx_Field .ebx_Input .ebx_IconButton {
+	vertical-align: 1px;
+}
+.ebx_Field .ebx_Input .ebx_OccurrenceList .ebx_DeleteOccurrence {
+	/* Mantis #4387 */
+	margin-top: 2px; /* to have a better alignment with usual wizard components (date, selector ...) */
+}
+
+.ebx_Now .ebx_Icon {
+	padding-top: 0px;
+	text-indent: 0px;
+}
+
+#ebx_WorkspaceContent form input.ebx_InputFocusRedirector {
+	position: absolute;
+}
+
+.yui-skin-sam body .yui-toolbar-container .yui-toolbar-titlebar span.collapse {
+	left: -17px;
+}
+
+.ebx_Field .ebx_Input .ebx_OccurrenceList .ebx_OccurrenceEditorContent {
+	display: inline;
+}
+.ebx_Field .ebx_Input .ebx_OccurrenceList {
+	list-style-position: inside;
+}
+
+.yui-skin-sam .ebx_InvisibleMask,
+.ebx_PageMask,
+#ebx_InputTextWizardMask,
+#ebx_Form_CalendarMask,
+#ebx_ColorPickerMask {
+	width: 100%;
+	height: 10000px;
+	position: absolute;
+	background-image: url(../../images/onCommon/ebx_spacer.gif);
+}
+
+.ebx_CheckboxGroup table,
+.ebx_RadioButtonGroup table {
+    width: 0;
+}
+
+.ebx_inputTextWizards {
+	width: 350px; /* originally min-width */
+}
+
+.ebx_SearchField {
+	display: inline;
+}
+.ebx_SearchField .ebx_SearchFieldInput {
+	height: 14px;
+}
+.ebx_SearchField .ebx_SearchFieldButton {
+	height: 20px;
+	vertical-align: 0px;
+}
+
+.ebx_ComplexFields tr.ebx_Field td.ebx_Input {
+	width: auto;
+}
+
+.ebx_ComplexFieldsCollapsed tr.ebx_Field {
+	display: none;
+}
+.ebx_ComplexFieldsCollapsed tr.ebx_ComplexFirstField {
+	display: block;
+}
+
+#ebx_WorkspaceFormTree .ebx_ComplexFieldsCollapse,
+#ebx_WorkspaceFormTree .ebx_Collapse,
+#ebx_WorkspaceFormTree .ebx_ComplexFieldsExpand,
+#ebx_WorkspaceFormTree .ebx_Expand {
+	background-color: transparent;
+}
+
+/* Mantis #4386 */
+.yui-dt-data .yui-dt-col-ebx_cellSelect .yui-dt-liner {
+	padding-top: 5px;
+}
+
+.yui-skin-sam #ebx_WorkspaceContentArea.yui-dt th.yui-dt-col-ebx_cellSelect .yui-dt-liner {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 1px;
+}
+#ebx_WorkspaceContentArea.yui-dt th.yui-dt-col-ebx_cellSelect .yui-dt-liner input {
+	visibility: visible;
+}
+#ebx_WorkspaceContentArea.yui-dt th.yui-dt-col-ebx_cellSelect .yui-dt-liner {
+	background-image: none;
+	margin-bottom: 0;
+}
+
+.yui-skin-sam #ebx_WorkspaceContentArea.yui-dt th {
+	background-image: none;
+	background-color: #E0E0E0;
+}
+.yui-skin-sam #ebx_WorkspaceContentArea th.yui-dt-asc,
+.yui-skin-sam #ebx_WorkspaceContentArea th.yui-dt-desc {
+	background-image: none;
+	background-color: #D0D0D0;
+}
+.yui-skin-sam/* #ebx_WorkspaceContentArea*/ tr.yui-dt-selected td,
+.yui-skin-sam/* #ebx_WorkspaceContentArea*/ tr.yui-dt-selected td.yui-dt-asc,
+.yui-skin-sam/* #ebx_WorkspaceContentArea*/ tr.yui-dt-selected td.yui-dt-desc {
+	color: #000; /* IE6 does not support color: inherit */
+}
+
+#ebx_filtersButton button {
+	position: relative;
+}
+
+/* let the filter's knob overflow the yui-layout-doc */
+.ebx_WorkspaceContentAsLayout .yui-layout-doc {
+	overflow: visible;
+}
+
+/**START table filters **/
+
+.ebx_FilterBlock form {
+	margin: 0;
+}
+
+.ebx_FilterBlockTitle {
+	height: 25px;
+}
+.ebx_FilterBlock .ebx_FilterBlockTitle .ebx_ExpandCollapse {
+	float: left;
+	margin: 4px;
+}
+.ebx_FilterBlockTitle label {
+	display: block;
+	padding: 4px;
+	
+	cursor: default;
+}
+
+.ebx_FilterBlockFooterContainer {
+	height: 30px;
+}
+.ebx_FilterBlockFooterContainer .ebx_LineFloatElementsMaintainer {
+	display: none;
+}
+
+.ebx_SearchFilter .ebx_Criteria input {
+	width: 200px;
+}
+
+/**END table filters **/
+
+.ebx_SearchFilter .ebx_Criteria input {
+	width: 90%;
+	
+	border-width: 1px;
+}
+
+.ebx_SearchFilter .ebx_Fields {
+	padding: 0;
+	margin: 1px;
+}
+.ebx_SearchFilter .ebx_Fields legend {
+	margin-left: 0.5em;
+}
+.ebx_SearchFilter .ebx_Fields ul {
+	margin: 0;
+	padding: 0 1px 2px 1px;
+	list-style: none;
+}
+.ebx_SearchFilter .ebx_Fields ul li label {
+	cursor: default;
+}
+
+.ebx_SearchFilter .ebx_Fields ul {
+	height: 200px;
+	overflow: auto;
+}
+
+.ebx_SearchFilter .ebx_Fields ul li.ebx_Selected {
+	background-color: transparent;
+}
+.ebx_SearchFilter .ebx_Fields ul li.ebx_Selected label {
+	font-weight: bold;
+}
+
+.ebx_ViewFilter,
+.ebx_ViewFilter ul {
+	padding: 0;
+}
+.ebx_ViewFilter li {
+	width: 100%;
+}
+
+.ygtvcontent .ebx_NodeActions {
+	position: static;
+}
+
+.ebx_AtomicFilter {
+	width: 100%;
+	margin-right: 10px;
+}
+.ebx_AtomicFilter input {
+	width: 100%;
+	
+	margin: 1px -10px 1px 2px;
+}
+
+.ebx_SeverityFilter input {
+	float: none;
+}
+.ebx_SeverityFilter label {
+	display: inline;
+	padding-left: 20px;
+	background-position: 0 50%;
+}
+
+.ebx_ComparatorTable .ebx_DataType {
+	display: inline;
+}
+
+.ebx_ComputedIcon {
+	width: 6px;
+}
+
+.ebx_HistoryFlag {
+	display: inline;
+}
+
+.ebx_CheckboxReadOnly {
+	display: inline;
+}
+
+/* this feature is disabled for IE6
+ * only the system of rollover tooltip in enabled */
+.ebx_LabelDocButton {
+    display: none;
+}
+
+.nodeLabel {
+	margin-right: 0;
+}
+
+h2 .nodeLabel {
+	margin-right: 10px;
+}
+
+/***START Permalink ***/
+
+#ebx_Permalink_c {
+	width: 478px; /* 10(margin-left) + 400(input Text Url) + 3(input Text Url border & margin) + 25(mailto button) + 25 (parameters button) + 10(margin-right) */
+}
+
+#ebx_PermalinkCopyToClipboard,
+#ebx_PermalinkSendFromEmailClient,
+#ebx_PermalinkParameters {
+	vertical-align: 1px;
+}
+#ebx_PermalinkParametersBody .ebx_Knob {
+	top: 68px;
+	right: 17px;
+}
+
+/***END Permalink ***/
+
+/***START Incremental Search Selector ***/
+
+.ebx_ISS_Container {
+    display: inline;
+}
+
+.ebx_ISS_Container button.ebx_IconButton {
+    vertical-align: 2px;
+}
+.ebx_ISS_Container button.ebx_Empty {
+    background-color: #F8F8F8;/*{button-BgColor}*/
+}
+
+#ebx_ISS_list {
+    height: 100px;
+}
+
+.ebx_ISS_Item_WithPreview {
+    display: inline;
+}
+#ebx_ISS_OriginalLabel.ebx_Selected .ebx_Open,
+#ebx_ISS_Results .ebx_Selected .ebx_Open {
+    display: inline;
+}
+
+/***END Incremental Search Selector ***/
+
+#ebx_Menu,
+#ebx_Menu li {
+	display: inline;
+}
+
+#ebx_Menu li.ie6_MenuCurrentCategory .ebx_MenuLabel {
+	background-position-y: -40px;
+}
+
+.ebx_MenuLabel .ebx_WorkflowBadge {
+	padding-bottom: 3px;
+}
+
+#ebx_UserBloc {
+	top: -1px;
+}
+
+#ebx_UserBloc .ebx_FlatButtonNoBorder {
+	border: 0;
+	padding-top: 8px;
+}
+#ebx_UserBloc .ebx_FlatButtonNoBorder.ebx_IconButton {
+	padding: 0;
+}
+#ebx_UserBloc #ebx_Logout .ebx_Icon {
+	margin: 12px;
+}
+
+#ebx_HideHeader {
+	visibility: hidden;
+}
+/* Does not works */
+#ebx_Header:hover #ebx_HideHeader {
+	visibility: visible;
+}
+
+#ebx_NavigationExpandKnob {
+	height: 100%;
+}
+
+#ebx_NavigationExpandKnobBG .ebx_SmallIcon {
+	display: none;
+}
+#ebx_NavigationExpandKnob:hover #ebx_NavigationExpandKnobBG .ebx_SmallIcon {
+	display: block;
+}
+
+
+.ebx_WorkflowBadge {
+	border-style: solid;
+	border-width: 1px;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<servlet>
+		<servlet-name>ebx-addon-adix</servlet-name>
+		<description>
+			This servlet is used for registering this web application
+			as an EBX.Platform module.
+			In its init() method, it must call
+			"ModulesRegister.registerWebApp()".
+			You may create a dedicated servlet
+			like here, or reuse an existing servlet.
+		</description>
+		<servlet-class>com.orchestranetworks.addon.adix.module.AdixRegisterAddon
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>services-dispatcher</servlet-name>
+		<description>
+		</description>
+		<servlet-class>com.orchestranetworks.addon.adix.common.ServicesDispatcher
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>dataexchange</servlet-name>
+		<description>
+		</description>
+		<servlet-class>com.orchestranetworks.addon.adix.dataexchange.controller.common.DataExchangeServicesDispatcher
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>DownloadServlet</servlet-name>
+		<description></description>
+		<servlet-class>com.orchestranetworks.addon.adix.exports.controller.DownloadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DataExchangeDownloadServlet</servlet-name>
+		<description></description>
+		<servlet-class>com.orchestranetworks.addon.adix.dataexchange.controller.exports.DataExchangeDownloadServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>services-dispatcher</servlet-name>
+		<url-pattern>/services-dispatcher</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>dataexchange</servlet-name>
+		<url-pattern>/dataexchange</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/DownloadServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DataExchangeDownloadServlet</servlet-name>
+		<url-pattern>/DataExchangeDownloadServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

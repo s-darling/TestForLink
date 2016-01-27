@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.2.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.2.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.2.0</h1>
+<p><strong>Release Date: March 12, 2012</strong></p><p><span class="red"> Caution: This release contains new data modeling capabilities: if they are used, an existing repository will not be usable with previous versions of EBX5. Consequently, it is strongly recommended to backup your repository before installing this release. </span></p><p> This release includes all the new features and bug fixes up to version 5.1.4 (included). For more information on these updates, see <a href="5.1.4.html">Release Note 5.1.4</a> and previous notes. </p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#ui">User interface</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Filters and search enhancements</a></li><li class="toc2"><a href="#id1s2">Multi-table views [beta]</a></li><li class="toc2"><a href="#id1s3">Custom views unification</a></li><li class="toc2"><a href="#id1s4">Permanent link</a></li><li class="toc2"><a href="#id1s5">Confirmation before leaving a page</a></li><li class="toc2"><a href="#id1s6">Message box</a></li><li class="toc2"><a href="#id1s7">Table view sort indicators</a></li><li class="toc2"><a href="#id1s8">Documentation Search</a></li><li class="toc2"><a href="#id1s9">Internet Explorer 9 support</a></li></ul>
+</li><li class="toc1"><a href="#dataModel">Data modeling</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Data model publication</a></li><li class="toc2"><a href="#id2s2">Data model versioning</a></li><li class="toc2"><a href="#id2s3">Multiple publications</a></li><li class="toc2"><a href="#id2s4">Data models export and import services</a></li></ul>
+</li><li class="toc1"><a href="#history">History</a><ul class="toc2">
+<li class="toc2"><a href="#historyTableView">Table history view</a></li><li class="toc2"><a href="#historyTransactionView">Transaction history views</a></li><li class="toc2"><a href="#id3s3">Aggregated lists</a></li></ul>
+</li><li class="toc1"><a href="#workflow">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Open the current work item from an email</a></li><li class="toc2"><a href="#id4s2">New built-in condition</a></li><li class="toc2"><a href="#id4s3">New built-in scripts compatible with internationalization</a></li><li class="toc2"><a href="#id4s4">Notification emails</a></li></ul>
+</li><li class="toc1"><a href="#dataServices">Data services</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Data set comparison</a></li><li class="toc2"><a href="#id5s2">Access to the default directory</a></li></ul>
+</li><li class="toc1"><a href="#javaAPI">Java API</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Integration of Ajax components</a></li><li class="toc2"><a href="#id6s2">Standard look and feel in UI services and UI components</a></li><li class="toc2"><a href="#id6s3">Customization of hyperlinks in hierarchy views</a></li><li class="toc2"><a href="#id6s4">History views related methods</a></li><li class="toc2"><a href="#id6s5">Miscellaneous</a></li></ul>
+</li><li class="toc1"><a href="#id7">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Backward compatibility</a></li><li class="toc2"><a href="#id7s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-DataModeling">Data Modeling</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="ui"></a>User interface</h2>
+<h3>
+<a name="id1s1"></a>Filters and search enhancements</h3>
+<p> The filters pane available on the table view has been enhanced with several new features: an advanced search filter, a more intuitive management of applied versus unapplied filters and a simplified but more useful text search.</p><p>The advanced search provides the ability to define precise criteria on-the-fly and to combine them logically. These filters can be saved for later use; once saved, they are displayed as a whole separate filter. The advanced search provides type-related operators and general operators, such as &#39;is null&#39; and &#39;is not null&#39;. </p><p>Each filter pane header now has a check-box: checking it applies the filter, unchecking it unapplies the filter.</p><p>The <a href="../user_data/userdata_viewing.html#textSearch">Text search</a> has been simplified by removing useless options and by enhancing the search syntax: </p><ul>
+<li><p>it is possible to specify one of the usual wildcard characters, either the asterisk character (&quot;*&quot;) or the question mark character (&quot;?&quot;);</p></li><li><p>several words can be specified so as to be searched separately; they can also be enclosed in double quotes.</p></li></ul>
+<h3>
+<a name="id1s2"></a>Multi-table views [beta]</h3>
+<p> It is henceforth possible to define multi-table views. Multi-table views are tabular views which involve several tables by performing table joins. </p><p>An easy-to-use wizard allows the definition of such views, offering the ability to exploit the relationships specified in the data model. This wizard can be accessed from the table view, menu &quot;Views &gt; Create a new custom view&quot;. </p><p> From the same &quot;Views&quot; menu, once a multi-table view is applied, it is possible to switch between the tabular presentation (information is displayed in rows and columns) and the hierarchical presentation. </p><p>Beta version: since this new feature is not yet fully optimized and all combinations are not yet supported, the creation of this type of view is disabled by default. To enable it, it is necessary to set the following property in the main configuration file (<code>ebx.properties</code>):</p><p><code>ebx.view.multitable.activated=true</code></p><h3>
+<a name="id1s3"></a>Custom views unification</h3>
+<p> Three types of views are henceforth available: simple tabular, multi-table and hierarchies. These three types are all configured by means of a single wizard. Access to this wizard and to the available views is grouped under the same title &quot;Custom views&quot; in the &quot;Views&quot; menu. </p><p>This unification has also provided the opportunity to make the wizard more intuitive.</p><h3>
+<a name="id1s4"></a>Permanent link</h3>
+<p> The user interface offers to copy the permanent link (or &quot;permalink&quot;) of various entities. For this, the user has to go to the entity label, click on the question mark, thereby opening the entity&#39;s documentation pane, then click on the button on the upper-right of the documentation pane. </p><p>The permalink is available on data spaces, data sets, data set nodes, data set tables and records.</p><h3>
+<a name="id1s5"></a>Confirmation before leaving a page</h3>
+<p>From now on, when the user modifies a form, then clicks on a link, the form will first ask for confirmation to leave the page.</p><h3>
+<a name="id1s6"></a>Message box</h3>
+<p>Previously, messages of all severities (information, warning and error) were always displayed. With the new message box, only warnings and errors are displayed. An indicator on the top right of the workspace displays the number of unread messages for each severity. By clicking on it, the user is able to read the messages.</p><h3>
+<a name="id1s7"></a>Table view sort indicators</h3>
+<p>The header of the table now displays all sorting arrows (on multiple columns). The sorting rank appears when the mouse rolls over the table header. </p><h3>
+<a name="id1s8"></a>Documentation Search</h3>
+<p>Search in the documentation is henceforth available. A new field is displayed at the upper-right corner of the documentation window.</p><h3>
+<a name="id1s9"></a>Internet Explorer 9 support</h3>
+<p>Microsoft Internet Explorer 9 is now officially supported.</p><h2>
+<a name="dataModel"></a>Data modeling</h2>
+<h3>
+<a name="id2s1"></a>Data model publication</h3>
+<p>The publication process has been enhanced: data models which do not depend on a module are embedded directly in the repository, without any XML Schema documents stored on the file system.</p><p> See <a href="../user_datamodel/userdatamodel_publish.html">Publication </a> documentation for more information.</p><h3>
+<a name="id2s2"></a>Data model versioning</h3>
+<p>It is now possible to manage several versions of a data model, compare them and perform a rollback to a previous version of a data model. </p><p> See <a href="../user_datamodel/userdatamodel_versioning.html">Data model versioning </a> documentation for more information.</p><h3>
+<a name="id2s3"></a>Multiple publications</h3>
+<p>With the new publication management, it is possible to handle several data sets created from different versions of a data model. For that, distinct publications can be created from different versions of a data model. </p><p> See <a href="../user_datamodel/userdatamodel_publish.html#create_publication">Multiple publications mode </a> documentation for more information.</p><h3>
+<a name="id2s4"></a>Data models export and import services</h3>
+<p> It is henceforth possible to upload (&quot;Import XSD&quot;) and download (&quot;Export XSD&quot;) XML Schema documents from the Internet browser. These services are available under the &quot;Actions&quot;. The service previously named &quot;Reverse&quot; is also merged in the &quot;Import XSD&quot; service, to import XML Schema document from a module.</p><p>The &quot;export archive&quot; and &quot;import archive&quot; services have been moved to the &quot;Manage versions&quot; service. </p><h2>
+<a name="history"></a>History</h2>
+<h3>
+<a name="historyTableView"></a>Table history view</h3>
+<p>When the history has been activated on a table in the data model, it is henceforth possible to access the history view from various locations in the user interface: record, selection of records, table and data set.</p><p> In the table history view, permissions are resolved according to the current definition of permissions defined on the data set and on the data model. Table history views also benefit from standard functionalities such as exports, comparison and dedicated filters. </p><p>For more information, see <a href="../glossary/simple_glossary.html#historyTableView">table history view</a> section. </p><h3>
+<a name="historyTransactionView"></a>Transaction history views</h3>
+<p>The new transaction history view gives access to the executed transactions, independently of a table, a data set or a data model, directly from the user interface.</p><p> A row of the transaction history displays the technical and authentication data of the transaction. As a transaction can perform several operations on a single table or on distinct tables and data sets, the impacted tables are also displayed with, for each table, the number of creations, updates and deletions. Table history views benefit from standard functionalities such as exports, comparison and dedicated filters. </p><p>For more information, see <a href="../glossary/simple_glossary.html#historyTransactionView">transaction history view</a> section. </p><h3>
+<a name="id3s3"></a>Aggregated lists</h3>
+<p>In the previous versions, it was not possible to historize a table containing an aggregated list (the data model reported an error). This restriction has been partially lifted, by allowing such cases; however, the corresponding fields will be ignored, namely not historized. </p><h2>
+<a name="workflow"></a>Workflow</h2>
+<h3>
+<a name="id4s1"></a>Open the current work item from an email</h3>
+<p>The new workflow variable <code>workflow.workItem.link</code> has been added. It can be inserted in an email so as to open a web browser page on the current work item.</p><p>Also, a new field <code>URL definition</code> has been added in the mail configuration in Workflow-Executions. This field is used to build a concrete URL for the previous variable.</p><p> For more information, see the <a href="../user_workflowmodel/userworkflowmodel_createimplement.html#notification">reference documentation</a>.</p><h3>
+<a name="id4s2"></a>New built-in condition</h3>
+<p>In the workflow model, a new built-in condition is available to check that a value is null or empty.</p><h3>
+<a name="id4s3"></a>New built-in scripts compatible with internationalization</h3>
+<p>New scripts are available to provide internationalization compatibility and replace the old scripts &quot;create a data space&quot; and &quot;create a snapshot&quot;. Old scripts are renamed with a &quot;fr-en&quot; suffix and deprecated. But the old scripts are still available to ensure backward compatibility. </p><h3>
+<a name="id4s4"></a>Notification emails</h3>
+<p>In the workflow configuration, a new field allows a message to be declared as HTML in form.</p><h2>
+<a name="dataServices"></a>Data services</h2>
+<h3>
+<a name="id5s1"></a>Data set comparison</h3>
+<p>A new operation is available, it is now possible to <a href="../references/dataservices_execution.html#getChanges">compare</a> two data sets of the same data model. The response will contain only the differences between tables. </p><h3>
+<a name="id5s2"></a>Access to the default directory</h3>
+<p>The default user directory in EBX5 is implemented as a data set in a particular data space. In previous EBX5 versions, standard data services operations to access this data set were always forbidden; read-write operations are now allowed, provided that they are permitted by the standard permission system.</p><h2>
+<a name="javaAPI"></a>Java API</h2>
+<h3>
+<a name="id6s1"></a>Integration of Ajax components</h3>
+<p>In order to allow finer and more dynamic user interactions, Ajax techniques can now be used in UI services and in UI beans.</p><p>For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxComponent.html">UIAjaxComponent </a> documentation for more information.</p><h3>
+<a name="id6s2"></a>Standard look and feel in UI services and UI components</h3>
+<p> With EBX5, specific user interface extensions and specializations are mostly done by means of the UI services and UI components. With this release, the Java API has been enhanced so that the developer can build more components complying with the standard EBX5 look and feel (layout, colors, fonts, etc.):</p><ul>
+<li><p>EBX5 table cell style (ability to <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UITableCellStyleHandler.html">customize background color and background image of a table cell</a>, in a UI component)</p></li><li><p>Preview button (opens the standard modal inner pop-up)</p></li><li><p>Help button</p></li><li><p>JavaScript button (runs a JavaScript code)</p></li><li><p>Border (HTML <code>fieldset</code>)</p></li><li><p>Standard form row (composed of an icon, a label and the value display or component)</p></li><li><p>Standard form with buttons bar in UI services</p></li><li><p>basic HTML tables as CSS styles</p></li><li><p>Sub-titles and sub-sub-titles in UI services</p></li><li><p>&quot;static&quot; HTML tables</p></li></ul>
+<p> For UI services, the new interface <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIServiceComponentWriter.html"> UIServiceComponentWriter</a> is available. </p><p>For UI components, the existing class <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIResponseContext.html"> UIResponseContext</a> has been transformed to an interface and has new methods.</p><p>For basic CSS styles, common constants and static methods are available in the new classes <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UICSSClasses.html">UICSSClasses</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UICSSUtils.html">UICSSUtils</a>. </p><h3>
+<a name="id6s3"></a>Customization of hyperlinks in hierarchy views</h3>
+<p>On hierarchy display, the default link on a hierarchy node can be overridden. For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRendererForHierarchyContext.html#setDefaultLinkEnabled(boolean)">UILabelRendererForHierarchyContext </a> documentation for more information.</p><h3>
+<a name="id6s4"></a>History views related methods</h3>
+<p> New methods have been added to the public API in <code>Adaptation</code> and <code>AdaptationTable</code>. </p><p> See <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#isHistory()">Adaptation.isHistory()</a> and <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#getHistory()">AdaptationTable.getHistory()</a>. </p><h3>
+<a name="id6s5"></a>Miscellaneous</h3>
+<ul>
+<li><p>Getting the current directory from a user session is possible with the new method <a target="_blank" href="../Java_API/com/orchestranetworks/service/Session.html#getDirectory()">Session.getDirectory()</a>. </p></li><li><p>Defining a specific URL replacing the default login page can be done by overwrtiting the new method <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html#getUserAuthenticationURI(com.orchestranetworks.service.Session)">Directory.getUserAuthenticationURI</a>. </p></li><li><p>The new method <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UITableFilter.html#hasFilterToApply()">UITableFilter.hasFilterToApply()</a> can be overridden to hide the check-box when the filter does not specify any criterion.</p></li></ul>
+<h2>
+<a name="id7"></a>Version upgrade</h2>
+<h3>
+<a name="id7s1"></a>Backward compatibility</h3>
+<h4>
+Data model compilation</h4>
+<p> The data model compilation process is now stricter when defining several <code>enumerations</code> on a field. At data model compilation time, an error message is now added to the compilation report if several enumerations have been specified on a field.</p><h4>
+Java API evolutions</h4>
+<p>Some UI classes (such as <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIResponseContext.html"> UIResponseContext</a>) are now interfaces, when they formerly were abstract classes. This causes binary incompatibility between the 5.1 and 5.2 <code>ebx.jar</code> library and all existing client code which made use of these classes and compiled with a previous version. As a consequence, in order to avoid Java error <code>IncompatibleClassChangeError</code>, existing client code has to be rebuilt against the new 5.2 <code>ebx.jar</code> library, and redeployed together with these binaries.</p><p> Moreover, the refactoring done in the user interface extensions API has led to changes in the signature of the methods <code>UIResponseContext.add...</code>: the returned type has been &quot;upcasted&quot; (because these methods have been moved to either <code>UIBodyWriter</code> or <code>UIJavaScriptWriter</code>). In some cases, this could lead to compilation errors in existing client code. </p><h4>
+Stricter behavior on JavaBean properties access</h4>
+<p>When a complex type definition is mapped to a JavaBean, each element under the complex type definition is mapped to the JavaBean property with a name identical to the element name. Moreover, the JavaBean property has to conform to the JavaBean protocol (usually by defining the corresponding getter and setter methods). In the previous EBX5 versions, if the read-access property threw an exception (for example because the getter method could not be accessed), this exception was masked and the method returned <code>null</code>. This behavior has been removed; henceforth, this can change the behavior of the application if a read-access property of a specific JavaBean throws an exception. </p><p> For more information on JavaBeans mapping, see <a href="../references/mapping_to_java.html#javabeans">Mapping of complex types to custom JavaBeans</a>.</p><h3>
+<a name="id7s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<p><span class="red"> Caution: This release contains new data modeling capabilities: if they are used, an existing repository will not be usable with previous versions of EBX5.</span></p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-DataModeling"></a>Data Modeling</h3>
+<ul>
+<li><p><strong>[4280]</strong> When a UI service is defined on a data model with a servlet resource, validation errors occur. </p><p>It is not possible to define a service referring to an HTTPServlet in the data model assistant.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><strong>[3205]</strong> UIBeanEditor does not correctly handle an aggregated list if it is of a simple type. </p><p>The editor for an aggregated list of a simple type does not behave in the same way as for an aggregated list of a complex type.</p></li><li><p><strong>[3698]</strong> In the DMA view, clicking on the services arrow makes a scoll bar appear. </p><p>In the DMA view, clicking on the services arrow makes a scoll bar appear. This is disturbing because we can no longer check the checkbox on the left.</p></li><li><p><strong>[4315]</strong> Lack of a arrowhead in custom view and hierarchy menus. </p><p>In the &#39;Views&#39; menu for custom views and hierarchies, there is no arrowhead showing the existence of a sub-menu.</p></li><li><p><strong>[4641]</strong> Waiting indicator always appears when importing a file. </p><p>The waiting indicator is displayed as soon as the &#39;import XML&#39; screen is displayed.</p></li><li><p><strong>[4661]</strong> In Internet Explorer 7, quick help links do not work. </p><p>The help window collapses when clicking on links.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><strong>[4683]</strong> If permission &#39;create data set&#39; is disabled, the UI still displays &quot;duplicate&quot; action. </p><p>Even when &#39;create data set&#39; is disabled at data space level, the duplicate action is available (and cannot work).</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Tools for Java developers</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_tools" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Developer Guide &gt; Java reference</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/tools_java_developer.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Developer Guide &gt; Java reference</span></div>
+<h1>
+Tools for Java developers</h1>
+<p>EBX5 provides Java developers with tools to facilitate use of the EBX5 API, as well as integration with development environments.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#activation">Activating the development tools</a></li><li class="toc1"><a href="#id2">Data model refresh tool</a></li><li class="toc1"><a href="#generate_java">Generating Java bindings</a></li><li class="toc1"><a href="#id4">Path to a node</a></li></ul>
+</div>
+<h2>
+<a name="activation"></a>Activating the development tools</h2>
+<p>To activate the development tools, run EBX5 in <em>development mode</em>. This is specified in the EBX5 main configuration file <a href="../installation/properties.html#runningMode">EBX5 run mode</a> using the property <code>backend.mode=development</code>.</p><h2>
+<a name="id2"></a>Data model refresh tool</h2>
+<p>If you edit your data model directly as an XML Schema document without using the data-modeling tool provided by EBX5, you can refresh it without restarting the application server. </p><p>In the Administration area, select <strong>Actions &gt; Refresh updated data models</strong> (or <strong>Actions &gt; Refresh all data models</strong>).</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+Since the operation is critical regarding data consistency, refreshing the data models acquires a global exclusive lock on the repository. This means that most of the other operations (data access and update, validation, etc.) will wait until completion of the data model refresh.</fieldset>
+<h2>
+<a name="generate_java"></a>Generating Java bindings</h2>
+<p>The Java types specified by Java bindings can be generated from a data set or data model, by selecting <strong>Actions &gt; Generate Java</strong> in the navigation pane.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/mapping_to_java.html#bindings">Java bindings</a></p></div>
+<h2>
+<a name="id4"></a>Path to a node</h2>
+<p>The field &#39;Data path&#39; is displayed in the documentation pane of a node. This field indicates the path to the node, which can be useful when writing XPath formulas.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">This field is always available to administrators.</p></div>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Developer Guide &gt; Java reference</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Properties of data model elements</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_properties" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; User Guide &gt; Data models &gt; Implementing data models</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_datamodel/userdatamodel_elementproperties.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data models &gt; Implementing data models</span></div>
+<h1>
+Properties of data model elements</h1>
+<p>After the initial creation of an element, you can set additional properties in order to complete its definition.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../user_datamodel/userdatamodel_elementcontrols.html">Data validation controls on elements</a></p></div>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#common">Basic element properties</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Common basic properties</a></li><li class="toc2"><a href="#id1s2">Basic properties for fields</a></li></ul>
+</li><li class="toc1"><a href="#advanced_props">Advanced element properties</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Common advanced properties</a></li><li class="toc2"><a href="#AdvancedPropertiesFields">Advanced properties for fields</a></li><li class="toc2"><a href="#table">Advanced properties for tables</a></li><li class="toc2"><a href="#id2s4">Advanced properties for groups</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="common"></a>Basic element properties</h2>
+<h3>
+<a name="id1s1"></a>Common basic properties</h3>
+<p>The following basic properties are shared by several types of elements:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Information</p></td><td class="ebx_definitionListDefinition"><p>Additional non-internationalized information associated with the element.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Minimum number of values</p></td><td class="ebx_definitionListDefinition"><p>Minimum number of values for an element.</p><p>As primary keys cannot be multi-valued, they must have this property set to &#39;1&#39; or &#39;undefined&#39;. The minimum number of values is automatically set to &#39;0&#39; when defining the field as a selection node.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Maximum number of values</p></td><td class="ebx_definitionListDefinition"><p>Maximum number of values for an element. When set to a value greater than &#39;1&#39;, the element becomes multi-valued.</p><p>As primary keys cannot be multi-valued, they must have this property set to &#39;1&#39; or &#39;undefined&#39;.</p><p>For tables, the maximum number of values is automatically set to &#39;unbounded&#39; upon creation. The maximum number of values is automatically set to &#39;0&#39; when defining the field as a selection node.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="validationRules"></a>Validation rules</p></td><td class="ebx_definitionListDefinition"><p>This property is available for tables and fields in tables except <code>Password</code> fields, reusable types, fields in complex reusable types, and selection nodes. Used to define powerful and complex validation rules with the help of the provided XPath 1.0 criteria editor.</p><p>See <a href="../references/criteria_editor.html">Criteria editor</a> for more information. </p><p>This can be useful if the validation of the value depends on complex criteria or on the value of other fields.</p><p>Using the associated wizard, you can define localized labels for the validation rule, as well as define a localized message with severity to be displayed if the criteria is not met.</p><p>If a validation rule is defined on a table, it will be considered as a &#39;constraint on table&#39; and each record of the table will be evaluated against it at runtime. See <a href="../models/constraints.html#constraintsOnTable">Constraints on table</a> for more information. </p></td></tr>
+</table>
+<h3>
+<a name="id1s2"></a>Basic properties for fields</h3>
+<p>The following basic properties are specific to fields:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Default value</p></td><td class="ebx_definitionListDefinition"><p>Default value assigned to this field. In new data creation forms, the default value appears automatically in the user input field. The default value must comply with the defined type of the field.</p><p>See <a href="../models/access_properties_categories.html#defaultValue">Default value</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Conversion error message</p></td><td class="ebx_definitionListDefinition"><p>Internationalized messages to display to users when they enter a value that is invalid for the data type of this field.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="computationrules"></a>Computation rule</p></td><td class="ebx_definitionListDefinition"><p>This property is available for fields in tables, except in reusable types. Defines a rule for computing the value of the field using the provided XPath 1.0 editor.</p><p>See <a href="../references/criteria_editor.html">criteria editor</a></p><p>This can be useful if the value depends on other values in the same record, but does not require a programmatic computation.</p><p>The following limitations exist for computation rules:</p><ul>
+<li><p>Computation rules can only be defined on simple fields inside a table. </p></li><li><p>Computation rules cannot be defined on fields of type <code>OResource</code> or <code>Password</code>. </p></li><li><p>Computation rules cannot be defined on selection nodes and primary key fields.</p></li><li><p>Computation rules cannot be defined when accessing an element from the validation report.</p></li></ul>
+</td></tr>
+</table>
+<h2>
+<a name="advanced_props"></a>Advanced element properties</h2>
+<h3>
+<a name="id2s1"></a>Common advanced properties</h3>
+<p>The following advanced properties are shared by several types of elements:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="ui_bean"></a>UI bean</p></td><td class="ebx_definitionListDefinition"><p>This property is available for all elements except tables. Specifies a Java class to customize the user interface associated with this element in a data set. A UI bean can display the element differently and/or modify its value by extending the <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditor.html"><code>UIBeanEditor</code></a> class in the Java API.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="transform_export"></a>Transformation on export</p></td><td class="ebx_definitionListDefinition"><p>This property is available for fields and for groups that are terminal nodes. Specifies a Java class that defines transformation operations to be performed when exporting an associated data set as an archive. The input of the transformation is the value of this element.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/NodeDataTransformer.html"><code>NodeDataTransformer</code></a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="access_props"></a>Access properties</p></td><td class="ebx_definitionListDefinition"><p>Defines the access mode for the current element, that is, if its data can be read and/or written.</p><ul>
+<li><p>&#39;Read &amp; Write&#39; corresponds to the mode <code>RW</code> in the data model XSD.</p></li><li><p>&#39;Read only&#39; corresponds to the mode <code>R-</code> in the data model XSD.</p></li><li><p>&#39;Not a data set node&#39; corresponds to the mode <code>CC</code> in the data model XSD.</p></li><li><p>&#39;Non-terminal node&#39; corresponds to the mode <code>--</code> in the data model XSD.</p></li></ul>
+<p>See <a href="../models/access_properties_categories.html#accessproperties">Access properties</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="default_view"></a>Default view</p></td><td class="ebx_definitionListDefinition"><p>Using the default view property, it is possible to specify:</p><ul>
+<li><p>Whether or not this element is shown in the default view of a data set, in the text search of a data set or in the data service &quot;select&quot; operation. This property is ignored if it is set on an element that is not in a table. Setting the property to &#39;Hidden&#39; will hide the element from the default view of a table in a data set without having to define specific access permissions.</p></li><li><p>Whether or not this element is shown in a data set search tools. Setting the property to &#39;Hidden in all searches&#39; will hide the element both in the text and typed search tools of a data set. Setting the property to &#39;Hidden only in text search&#39; will only hide the element in the text search tool. If this property is not set, the element will be displayed in the text search tool by default.</p></li><li><p>Whether or not this element is shown in the data service <code>select</code> operation. Setting the property to &#39;Excluded from Data Services&#39; will hide the element in the data service <code>select</code> operation.</p></li></ul>
+<p>See <a href="../models/access_properties_categories.html#defaultView">Default view</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="Combobox_selector"></a>Default view &gt; Combo-box selector</p></td><td class="ebx_definitionListDefinition"><p> Specifies the name of the published view that will be used in the combo-box selection of the foreign key. </p><p> A selection button will be displayed at the bottom right corner of the drop-down list. When defining a foreign key, this feature allows accessing an advanced selection view through the &#39;Selector&#39; button that opens the advanced selection view, from where sorting and searching options can be used. </p><p> If no published view is defined, the advanced selection view will be disabled. </p><p> If the path of the referenced table is absolute then only the published views corresponding to this table will be displayed. If the path of the referenced table is relative then all the published views associated with the data model containing the target table will be displayed. </p><p>See <a href="../models/access_properties_categories.html#viewForAdvancedSelection">Defining a view for the combo box selector of a foreign key</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Comparison mode</p></td><td class="ebx_definitionListDefinition"><p>Defines the comparison mode associated with the element, which controls how its differences are detected in a data set.</p><ul>
+<li><p>&#39;Default&#39; means the element is visible when comparing associated data.</p></li><li><p>&#39;Ignored&#39; implies that no changes will be detected when comparing two versions of modified content (records or data sets).</p><p>During a merge, the data values of ignored elements are not merged even if the content has been modified. However, values of ignored data sets or records being created during the operation are merged.</p><p>During an archive import, values of ignored elements are not imported when the content has been modified. However, values of ignored data sets or records being created during the operation are imported.</p></li></ul>
+<p>See <a href="../models/access_properties_categories.html#comparison_mode">Comparison mode</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Apply last modifications policy</p></td><td class="ebx_definitionListDefinition"><p>Defines if this element must be excluded from the service allowing to apply the last modifications that have been performed on a record to the other records of the same table. </p><ul>
+<li><p>&#39;Default&#39; means that the last modification on this element can be applied to other records.</p></li><li><p>&#39;Ignored&#39; implies that the last modification on this element cannot be applied to other records. This element will not be visible in the apply last modifications service.</p></li></ul>
+<p>See <a href="../models/access_properties_categories.html#applyLastModification">Apply last modifications policy</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="node_cat"></a>Node category</p></td><td class="ebx_definitionListDefinition"><p>Defines a category for this element. Categories allow controlling the visibility of data in a data set to users. A node with the category &#39;Hidden&#39; is hidden by default. Restriction: Category specifications other than &#39;Hidden&#39; do not apply on table record nodes.</p><p>See <a href="../models/access_properties_categories.html#categories">Categories</a> for more information.</p></td></tr>
+</table>
+<h3>
+<a name="AdvancedPropertiesFields"></a>Advanced properties for fields</h3>
+<p>The following advanced properties are specific to fields.</p><h4>
+Check null input</h4>
+<p>Implements the property <code>osd:checkNullInput</code>. This property is used to activate and check a constraint on <code>null</code> at user input time.</p><p>By default, in order to allow for temporarily incomplete input, the check for mandatory elements is not performed upon user input, but only upon data set validation. If a mandatory element must be checked immediately upon user input, set this property to &#39;true&#39;. </p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">A value is considered mandatory if the &#39;Minimum number of values&#39; property is set to &#39;1&#39; or greater. For terminal elements, mandatory values are only checked in activated data sets. For non-terminal elements, the values are checked regardless of whether the data set is activated.</p></div>
+<p>See <a href="../models/constraints.html#checkNullInput">Constraints, triggers and functions</a> for more information.</p><h4>
+UI bean</h4>
+<p>See <a href="#ui_bean">Common advanced properties</a>.</p><h4>
+Function (computed value)</h4>
+<p>This property is available for non-primary key fields. Specifies a Java class that computes the value of this field programmatically. This can be useful if the value of the field depends on other values in the repository, or if the computation of the value needs to retrieve data from a third-party system.</p><p>A function can be created by implementing the <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ValueFunction.html"><code>ValueFunction</code></a> interface.</p><h4>
+Transformation on export</h4>
+<p>See <a href="#transform_export">Common advanced properties</a>.</p><h4>
+Access properties</h4>
+<p>See <a href="#access_props">Common advanced properties</a>.</p><h4>
+Selection node</h4>
+<p>This property is only available for fields of type &#39;String&#39;. Defines a record selection based on an XPath expression from a specified data set and table. This can be useful to link to records that are related to the current field. Records that satisfy the criteria will be displayed when the user clicks the generated link. When this property is set, the minimum and maximum number of values properties are automatically set to &#39;0&#39;. </p><p>See <a href="../models/tables.html#select">Selection nodes</a> for more information.</p><h4>
+Auto-increment</h4>
+<p>This property is only available for fields of type &#39;Integer&#39; that are contained in a table. When set, the value of the field is automatically calculated when a new record is created. This can be useful for primary keys, as it generates a unique identifier for each record. Two attributes can be specified:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Start value</p></td><td class="ebx_definitionListDefinition"><p>Value with which to begin the auto-increment. If this attribute is not specified, the default value is &#39;1&#39;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Increment step</p></td><td class="ebx_definitionListDefinition"><p>Amount the value is incremented based on the previous value of the auto-increment. If this attribute is not specified, the default is value is &#39;1&#39;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Disable auto-increment checks</p></td><td class="ebx_definitionListDefinition"><p>Specifies whether to disable the check of the auto-incremented field value in associated data sets against the maximum value in the table being updated.</p></td></tr>
+</table>
+<p>Auto-incremented values have the following behavior:</p><ul>
+<li><p>The computation and allocation of the field value are performed whenever a new record is inserted and the field value is yet undefined.</p></li><li><p>No allocation is performed if a programmatic insertion already specifies a non-<code>null</code> value. Consequently, the allocation is not performed for a record insertion in occulting or overwriting modes.</p></li><li><p>If an archive import specifies the value, the imported value takes precedence.</p></li><li><p>Whenever possible, the newly allocated value is unique in the scope of the repository.</p><p>That is, the uniqueness of the allocation spans over all data sets based upon this data model, in any data space in the repository. The uniqueness across different data spaces facilitates the merging of child data spaces parent data spaces while reasonably avoiding conflicts when a record&#39;s primary key includes the auto-incremented value. </p><p>Despite this policy, a specific limitation exists when a mass update transaction assigning specific values is performed concurrently with a transaction that allocates an auto-incremented value on the same field. It is possible that the latter transaction will allocate a value that has already been set in the former transaction, as there is no locking between different data spaces.</p></li></ul>
+<p>See <a href="../models/constraints.html#autoIncrementedValues">Auto incremented values</a> for more information.</p><h4>
+Default view</h4>
+<p>See <a href="#default_view">Common advanced properties</a>.</p><h4>
+Node category</h4>
+<p>See <a href="#node_cat">Common advanced properties</a>.</p><h4>
+Inherited field</h4>
+<p>Defines a relationship from the current field to a field in another table in order to automatically fetch its field value.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Source record</p></td><td class="ebx_definitionListDefinition"><p>A foreign key or white space-separated sequence of foreign keys that leads from the current element to the record from which to inherit this field&#39;s value. If this property is not specified, the current record is used as the source record for the inheritance.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Source element</p></td><td class="ebx_definitionListDefinition"><p>XPath of the element in the source record from which to inherit this field&#39;s value. The source element must be terminal, belong to the record described by &#39;Source record&#39;, and its type must match the type of this field. This property is mandatory when using field inheritance.</p></td></tr>
+</table>
+<p>See <a href="../glossary/simple_glossary.html#inheritance">inheritance</a> in the glossary. </p><p>For more information, see also <a href="../references/inheritance.html#ina">Inherited fields</a>. </p><h3>
+<a name="table"></a>Advanced properties for tables</h3>
+<p>The following advanced properties are specific to tables.</p><h4>
+Table</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Primary key</p></td><td class="ebx_definitionListDefinition"><p>A list of fields in the table that compose the table&#39;s primary key. You can add or remove primary key fields here, as in the &#39;Data structure&#39; view.</p><p>Each primary key field is denoted by its absolute XPath notation that starts under the table&#39;s root element.</p><p>If there are several elements in the primary key, the list is white-space delimited. For example, &quot;/name /startDate&quot;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Presentation</p></td><td class="ebx_definitionListDefinition"><p>Specifies how records are displayed in the user interface of this table in a data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><em>Presentation</em> <em>&gt;</em> Record labeling</p></td><td class="ebx_definitionListDefinition"><p>Defines the fields to provide the default and localized labels for records in the table.</p><p>Can also specify a Java class to set the label programmatically, or set the label in a hierarchy. This Java class must implement either the <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRenderer.html"><code>UILabelRenderer</code></a> interface or the <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRendererForHierarchy.html"><code>UILabelRendererForHierarchy</code></a> interface.</p><p><strong>Attention: </strong>Access rights defined on associated data sets are not applied when displaying record labels. <br/> Fields that are usually hidden due to access rights restrictions will be displayed in labels.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="rendering"></a><em>Presentation</em> <em>&gt;</em> Default rendering for groups in forms</p></td><td class="ebx_definitionListDefinition"><p>Specifies the default display rendering mode of the groups contained in this table. If nothing is defined here, the default policy set in the Administration area will be used to display groups.</p><p>See <a href="../engine/admin_frontend.html#rendering">Ergonomics &amp; behavior policy</a> for more information.</p><p><strong>Enabled rendering for groups</strong></p><p>Specifies a display rendering mode to be enabled for groups in the table in addition to the modes &#39;expanded&#39; and &#39;collapsed&#39;, which are always available. Tabs must be enabled on the table to have the option to display groups as tabs. Similarly, links must be enabled to have the option to display groups as links.</p><p><strong>Default rendering for groups</strong></p><p>Specifies the default display rendering mode to use for the groups contained in this table. If a group does not specify a default mode then the default mode defined for this table will be used. Links must be enabled to define the default rendering mode as &#39;Link&#39;. Select a rendering mode according to network and browser performance. Link mode is lighter as its content is not displayed on the same page, whereas the expanded and collapsed modes are heavier.</p><p><strong>Note:</strong> When the tabs view is enabled on a table, any groups that would otherwise have used links are automatically converted to collapsed mode. This is done to avoid the inherent display layout complexities that would arise from links and tabs coexisting in the same user interface.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><em>Presentation</em> <em>&gt;</em> Specific rendering of forms</p></td><td class="ebx_definitionListDefinition"><p>Defines a specific rendering for customizing the record form in a data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>History</p></td><td class="ebx_definitionListDefinition"><p>Specifies when historization is to be performed, and the level of guarantee requested. The available history profiles can be edited in <strong>Administration &gt; History and logs</strong>.</p><p>See <a href="../references/history.html#configuration">History configuration in the repository</a> for more information.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Indexes</p></td><td class="ebx_definitionListDefinition"><p>Defines the fields to index in the table. Indexing speeds up table access for requests on the indexed fields. No two indexes can contain the exact same fields.</p><p><strong>Index name</strong>: Unique name for this index.</p><p><strong>Fields to index</strong>: The fields to index, each represented by an absolute XPath notation starting under the table <code>root</code> element.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Specific filters</p></td><td class="ebx_definitionListDefinition"><p>Defines record display filters on the table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Actions</p></td><td class="ebx_definitionListDefinition"><p>Specifies the actions that are allowed on the table in associated data sets. By default, all actions are allowed unless specific access rights are defined in a data set.</p></td></tr>
+</table>
+<h4>
+Uniqueness constraints</h4>
+<p>Indicates which fields or set of fields must be unique across the table.</p><h4>
+Triggers</h4>
+<p>Specifies Java classes that defines methods to be automatically executed when modifications are performed on the table, such as record creation, updates, deletion, etc.</p><p>A built-in trigger for starting data workflows is included by default.</p><p>See <a href="../models/constraints.html#triggers">Triggers</a> for more information.</p><h4>
+Access properties</h4>
+<p>See <a href="#access_props">Common advanced properties</a>.</p><h4>
+Default view</h4>
+<p>See <a href="#default_view">Common advanced properties</a>.</p><h4>
+Node category</h4>
+<p>See <a href="#node_cat">Common advanced properties</a>.</p><h3>
+<a name="id2s4"></a>Advanced properties for groups</h3>
+<p>The following advanced properties are specific to groups.</p><h4>
+Value container class (JavaBean)</h4>
+<p>Specifies a Java class to hold the values of the children of this group. The Java class must conform to the JavaBean standard protocol. That is, each child of the group must correspond to a JavaBean property in the class, and all properties must have getter and setter accessors defined.</p><h4>
+UI bean</h4>
+<p>See <a href="#ui_bean">Common advanced properties</a>.</p><h4>
+Transformation on export</h4>
+<p>See <a href="#transform_export">Common advanced properties</a>.</p><h4>
+Access properties</h4>
+<p>See <a href="#access_props">Common advanced properties</a>.</p><h4>
+Default view</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Visibility</p></td><td class="ebx_definitionListDefinition"><p>See <a href="#default_view">Common advanced properties</a>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Rendering</p></td><td class="ebx_definitionListDefinition"><p>Defines the rendering mode of this group. If this property is not set, then the default view for groups specified by the container table will be used. &#39;Tab&#39; and &#39;Link&#39; are each only available when the container table enables it.</p><p><strong><em>Tab properties</em></strong></p><p><strong>Position:</strong> This attribute specifies the position of the tab with respect to all the tabs defined in the model. This position is used for determining tab order. If a position is not specified, the tab will be displayed according to the position of the group in the data model.</p></td></tr>
+</table>
+<h4>
+Node category</h4>
+<p>See <a href="#node_cat">Common advanced properties</a>.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Related concepts</span><a href="../user_datamodel/userdatamodel_elementcontrols.html">Data validation controls on elements</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a href="../table_contents_user.html">table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data models &gt; Implementing data models</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

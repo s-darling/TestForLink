@@ -1,0 +1,253 @@
+2016-01-21 10:06:46,183 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:06:53,954 EST INFO   log.persistence 0985:0003 [ebx-rro-24-unique] Starting repository ownership heart beat thread on entry: id=24, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 10:06:58,350 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 146 ms.
+2016-01-21 10:07:03,003 EST INFO   log.persistence 0985:0003 [ebx-rro-24-unique] Heart beat #10: avgInterval=905: maxInterval=1008 ms.
+2016-01-21 10:07:13,050 EST INFO   log.persistence 0985:0003 [ebx-rro-24-unique] Heart beat #20: avgInterval=954: maxInterval=1008 ms.
+2016-01-21 10:07:38,658 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 2 changes in Java Cache; in 18 ms.
+2016-01-21 10:07:38,674 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:07:38,677 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 10:07:38,689 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 10 ms.
+2016-01-21 10:07:38,768 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 50 ms.
+2016-01-21 10:07:39,353 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 10:07:39,371 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 13 ms.
+2016-01-21 10:09:45,198 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-9] Inserted 3 blocs references, pointing to home 47.
+2016-01-21 10:09:45,210 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-9] Committed 5 changes in Java Cache; in 14 ms.
+2016-01-21 10:09:45,230 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-9] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-21 10:10:13,681 EST INFO   log.persistence 0985:0003 [ebx-rro-24-unique] Heart beat #200: avgInterval=998: maxInterval=1008 ms.
+2016-01-21 10:10:21,715 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 10:10:32,563 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:10:41,316 EST INFO   log.persistence 0985:0003 [ebx-rro-25-unique] Starting repository ownership heart beat thread on entry: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 10:10:45,640 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 82 ms.
+2016-01-21 10:10:50,456 EST INFO   log.persistence 0985:0003 [ebx-rro-25-unique] Heart beat #10: avgInterval=914: maxInterval=1090 ms.
+2016-01-21 10:11:00,501 EST INFO   log.persistence 0985:0003 [ebx-rro-25-unique] Heart beat #20: avgInterval=959: maxInterval=1090 ms.
+2016-01-21 10:12:10,433 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:12:32,162 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:12:40,368 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #0 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:41,370 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #1 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:42,372 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #2 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:43,378 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #3 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:44,379 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #4 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:45,381 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #5 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:46,385 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #6 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:47,387 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #7 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:48,388 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #8 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:49,391 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #9 to take exclusive ownership of a repository apparently owned by: id=25, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:12:50,398 EST INFO   log.persistence 0985:0003 [ebx-rro-26-unique] Starting repository ownership heart beat thread on entry: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 10:12:54,438 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 121 ms.
+2016-01-21 10:12:59,437 EST INFO   log.persistence 0985:0003 [ebx-rro-26-unique] Heart beat #10: avgInterval=904: maxInterval=1007 ms.
+2016-01-21 10:13:09,480 EST INFO   log.persistence 0985:0003 [ebx-rro-26-unique] Heart beat #20: avgInterval=954: maxInterval=1007 ms.
+2016-01-21 10:15:39,307 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 2 changes in Java Cache; in 14 ms.
+2016-01-21 10:15:39,326 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:15:39,332 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 10:15:39,340 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 17 ms.
+2016-01-21 10:15:39,477 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 73 ms.
+2016-01-21 10:16:10,130 EST INFO   log.persistence 0985:0003 [ebx-rro-26-unique] Heart beat #200: avgInterval=998: maxInterval=1007 ms.
+2016-01-21 10:18:27,073 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:18:35,734 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #0 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:36,746 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #1 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:37,751 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #2 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:38,757 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #3 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:39,762 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #4 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:40,766 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #5 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:41,767 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #6 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:42,772 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #7 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:43,778 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #8 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:44,779 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #9 to take exclusive ownership of a repository apparently owned by: id=26, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:18:45,789 EST INFO   log.persistence 0985:0003 [ebx-rro-27-unique] Starting repository ownership heart beat thread on entry: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 10:18:49,724 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 164 ms.
+2016-01-21 10:18:49,931 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-21 10:18:50,015 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 2 changes in Java Cache; in 30 ms.
+2016-01-21 10:18:54,819 EST INFO   log.persistence 0985:0003 [ebx-rro-27-unique] Heart beat #10: avgInterval=903: maxInterval=1006 ms.
+2016-01-21 10:19:04,842 EST INFO   log.persistence 0985:0003 [ebx-rro-27-unique] Heart beat #20: avgInterval=952: maxInterval=1006 ms.
+2016-01-21 10:19:19,820 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-21 10:19:19,836 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-21 10:19:19,848 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 11 ms.
+2016-01-21 10:19:19,849 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 9 ms.
+2016-01-21 10:19:19,877 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 14 ms.
+2016-01-21 10:22:05,531 EST INFO   log.persistence 0985:0003 [ebx-rro-27-unique] Heart beat #200: avgInterval=998: maxInterval=1007 ms.
+2016-01-21 10:23:23,066 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:23:31,999 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #0 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:33,001 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #1 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:34,007 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #2 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:35,009 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #3 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:36,015 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #4 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:37,020 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #5 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:38,027 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #6 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:39,033 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #7 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:40,038 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #8 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:41,042 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Attempt #9 to take exclusive ownership of a repository apparently owned by: id=27, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:23:42,046 EST INFO   log.persistence 0985:0003 [ebx-rro-28-unique] Starting repository ownership heart beat thread on entry: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 10:23:45,717 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 123 ms.
+2016-01-21 10:23:45,931 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 9 ms.
+2016-01-21 10:23:46,008 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-21 10:23:51,094 EST INFO   log.persistence 0985:0003 [ebx-rro-28-unique] Heart beat #10: avgInterval=905: maxInterval=1017 ms.
+2016-01-21 10:24:01,132 EST INFO   log.persistence 0985:0003 [ebx-rro-28-unique] Heart beat #20: avgInterval=954: maxInterval=1017 ms.
+2016-01-21 10:24:14,322 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-21 10:24:14,339 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-21 10:24:14,374 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:24:14,379 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 10:24:14,389 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 31 ms.
+2016-01-21 10:25:01,385 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:25:01,406 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 17 ms.
+2016-01-21 10:25:40,849 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-21 10:25:40,855 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:25:40,856 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:25:40,867 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 10:25:40,884 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 24 ms.
+2016-01-21 10:27:01,814 EST INFO   log.persistence 0985:0003 [ebx-rro-28-unique] Heart beat #200: avgInterval=998: maxInterval=1017 ms.
+2016-01-21 10:47:02,757 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:47:11,912 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #0 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:12,918 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #1 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:13,920 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #2 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:14,924 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #3 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:15,928 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #4 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:16,929 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #5 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:17,930 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #6 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:18,934 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #7 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:19,936 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #8 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:20,940 EST INFO   log.persistence 0985:0003 [ebx-boot] Attempt #9 to take exclusive ownership of a repository apparently owned by: id=28, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Owner.
+2016-01-21 10:47:21,951 EST INFO   log.persistence 0985:0003 [ebx-rro-29-unique] Starting repository ownership heart beat thread on entry: id=29, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 10:47:27,773 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 116 ms.
+2016-01-21 10:47:27,917 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-21 10:47:28,059 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 2 changes in Java Cache; in 34 ms.
+2016-01-21 10:47:31,010 EST INFO   log.persistence 0985:0003 [ebx-rro-29-unique] Heart beat #10: avgInterval=906: maxInterval=1020 ms.
+2016-01-21 10:47:41,053 EST INFO   log.persistence 0985:0003 [ebx-rro-29-unique] Heart beat #20: avgInterval=955: maxInterval=1020 ms.
+2016-01-21 10:47:50,763 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-6] Committed 2 changes in Java Cache; in 8 ms.
+2016-01-21 10:47:50,771 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-6] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 10:47:50,781 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 10 ms.
+2016-01-21 10:47:50,783 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-6] Committed 1 changes in Java Cache; in 10 ms.
+2016-01-21 10:47:50,821 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-21 10:47:51,413 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-21 10:47:51,433 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-21 10:48:29,950 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-2] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-21 10:48:29,954 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-2] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-21 10:48:29,955 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 10:48:29,958 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-2] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 10:48:29,986 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 26 ms.
+2016-01-21 10:48:30,340 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 10 ms.
+2016-01-21 10:48:30,343 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 10:48:30,346 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:48:30,378 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-21 10:48:30,481 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 41 ms.
+2016-01-21 10:48:30,493 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-21 10:48:30,567 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 13 ms.
+2016-01-21 10:48:30,574 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-21 10:49:12,350 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 10:49:15,408 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 10:49:34,439 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:49:42,220 EST INFO   log.persistence 0985:0003 [ebx-rro-30-unique] Starting repository ownership heart beat thread on entry: id=30, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 10:49:45,508 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 71 ms.
+2016-01-21 10:49:51,273 EST INFO   log.persistence 0985:0003 [ebx-rro-30-unique] Heart beat #10: avgInterval=905: maxInterval=1008 ms.
+2016-01-21 10:50:01,326 EST INFO   log.persistence 0985:0003 [ebx-rro-30-unique] Heart beat #20: avgInterval=955: maxInterval=1008 ms.
+2016-01-21 10:50:53,266 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 2 changes in Java Cache; in 23 ms.
+2016-01-21 10:50:53,281 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 10:50:53,284 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 10:50:53,294 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-21 10:50:53,387 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 44 ms.
+2016-01-21 10:50:53,940 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-21 10:50:53,949 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 10:50:53,953 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-21 10:50:53,974 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-21 10:50:53,999 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 18 ms.
+2016-01-21 10:50:54,013 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-21 10:50:54,089 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 16 ms.
+2016-01-21 10:50:54,097 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-21 10:53:02,041 EST INFO   log.persistence 0985:0003 [ebx-rro-30-unique] Heart beat #200: avgInterval=999: maxInterval=1011 ms.
+2016-01-21 10:56:22,930 EST INFO   log.persistence 0985:0003 [ebx-rro-30-unique] Heart beat #400: avgInterval=1001: maxInterval=1026 ms.
+2016-01-21 10:59:43,738 EST INFO   log.persistence 0985:0003 [ebx-rro-30-unique] Heart beat #600: avgInterval=1002: maxInterval=1026 ms.
+2016-01-21 11:03:04,480 EST INFO   log.persistence 0985:0003 [ebx-rro-30-unique] Heart beat #800: avgInterval=1002: maxInterval=1026 ms.
+2016-01-21 11:03:34,595 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 11:03:59,014 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 11:04:08,026 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Starting repository ownership heart beat thread on entry: id=31, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 11:04:11,602 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 89 ms.
+2016-01-21 11:04:17,072 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #10: avgInterval=904: maxInterval=1008 ms.
+2016-01-21 11:04:27,127 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #20: avgInterval=955: maxInterval=1009 ms.
+2016-01-21 11:06:51,829 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 2 changes in Java Cache; in 26 ms.
+2016-01-21 11:06:51,841 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 11:06:51,846 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 11:06:51,852 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 7 ms.
+2016-01-21 11:06:51,979 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 85 ms.
+2016-01-21 11:06:52,533 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-21 11:06:52,538 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 11:06:52,541 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-21 11:06:52,565 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 20 ms.
+2016-01-21 11:06:52,592 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 21 ms.
+2016-01-21 11:06:52,604 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 7 ms.
+2016-01-21 11:06:52,704 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 16 ms.
+2016-01-21 11:06:52,718 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 11 ms.
+2016-01-21 11:07:27,912 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #200: avgInterval=999: maxInterval=1009 ms.
+2016-01-21 11:10:48,727 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #400: avgInterval=1001: maxInterval=1011 ms.
+2016-01-21 11:14:09,362 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #600: avgInterval=1002: maxInterval=1011 ms.
+2016-01-21 11:17:30,028 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #800: avgInterval=1002: maxInterval=1011 ms.
+2016-01-21 11:20:50,764 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #1000: avgInterval=1002: maxInterval=1019 ms.
+2016-01-21 11:37:35,580 EST INFO   log.persistence 0985:0003 [ebx-rro-31-unique] Heart beat #2000: avgInterval=1003: maxInterval=1019 ms.
+2016-01-21 11:38:14,728 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 15:34:18,993 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 15:34:28,049 EST INFO   log.persistence 0985:0003 [ebx-rro-32-unique] Starting repository ownership heart beat thread on entry: id=32, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 15:34:31,743 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 95 ms.
+2016-01-21 15:34:37,107 EST INFO   log.persistence 0985:0003 [ebx-rro-32-unique] Heart beat #10: avgInterval=906: maxInterval=1010 ms.
+2016-01-21 15:34:47,163 EST INFO   log.persistence 0985:0003 [ebx-rro-32-unique] Heart beat #20: avgInterval=955: maxInterval=1010 ms.
+2016-01-21 15:34:54,325 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 2 changes in Java Cache; in 29 ms.
+2016-01-21 15:34:54,336 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 15:34:54,343 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-10] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:34:54,360 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 11 ms.
+2016-01-21 15:34:54,493 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 94 ms.
+2016-01-21 15:34:55,340 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-21 15:34:55,348 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:34:55,357 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:34:55,373 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 21 ms.
+2016-01-21 15:34:55,395 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 17 ms.
+2016-01-21 15:34:55,409 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-21 15:34:55,494 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-21 15:34:55,502 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-21 15:35:31,392 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 15:43:56,466 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 15:44:05,299 EST INFO   log.persistence 0985:0003 [ebx-rro-33-unique] Starting repository ownership heart beat thread on entry: id=33, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 15:44:10,724 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 81 ms.
+2016-01-21 15:44:14,360 EST INFO   log.persistence 0985:0003 [ebx-rro-33-unique] Heart beat #10: avgInterval=906: maxInterval=1010 ms.
+2016-01-21 15:44:24,416 EST INFO   log.persistence 0985:0003 [ebx-rro-33-unique] Heart beat #20: avgInterval=956: maxInterval=1018 ms.
+2016-01-21 15:44:40,513 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-21 15:44:40,527 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 8 ms.
+2016-01-21 15:44:40,563 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:44:40,567 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-4] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:44:40,594 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 33 ms.
+2016-01-21 15:44:41,057 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 9 ms.
+2016-01-21 15:44:41,061 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:44:41,091 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 21 ms.
+2016-01-21 15:44:41,096 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:44:41,136 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 35 ms.
+2016-01-21 15:44:41,148 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-21 15:44:41,224 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-21 15:44:41,234 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-21 15:47:25,158 EST INFO   log.persistence 0985:0003 [ebx-rro-33-unique] Heart beat #200: avgInterval=999: maxInterval=1018 ms.
+2016-01-21 15:47:55,328 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 15:48:14,080 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 15:48:22,000 EST INFO   log.persistence 0985:0003 [ebx-rro-34-unique] Starting repository ownership heart beat thread on entry: id=34, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-21 15:48:25,688 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 140 ms.
+2016-01-21 15:48:31,050 EST INFO   log.persistence 0985:0003 [ebx-rro-34-unique] Heart beat #10: avgInterval=905: maxInterval=1008 ms.
+2016-01-21 15:48:41,089 EST INFO   log.persistence 0985:0003 [ebx-rro-34-unique] Heart beat #20: avgInterval=954: maxInterval=1008 ms.
+2016-01-21 15:49:06,431 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 2 changes in Java Cache; in 29 ms.
+2016-01-21 15:49:06,441 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 1 changes in Java Cache; in 5 ms.
+2016-01-21 15:49:06,457 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 17 ms.
+2016-01-21 15:49:06,536 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 45 ms.
+2016-01-21 15:49:06,957 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 14 ms.
+2016-01-21 15:49:06,969 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 9 ms.
+2016-01-21 15:49:06,970 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 1 changes in Java Cache; in 10 ms.
+2016-01-21 15:49:07,004 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 28 ms.
+2016-01-21 15:49:07,035 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 25 ms.
+2016-01-21 15:49:07,055 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 13 ms.
+2016-01-21 15:49:07,083 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 19 ms.
+2016-01-21 15:49:07,092 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-1] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-21 15:49:25,212 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-21 15:49:25,215 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-1] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-21 15:49:25,220 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-21 15:49:25,245 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 21 ms.
+2016-01-21 15:49:25,488 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 7 ms.
+2016-01-21 15:49:25,495 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-21 15:49:25,496 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-21 15:49:25,517 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 18 ms.
+2016-01-21 15:49:25,538 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 13 ms.
+2016-01-21 15:49:25,550 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-2] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-21 15:49:25,656 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 15 ms.
+2016-01-21 15:49:25,667 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-3] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-21 15:50:01,443 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

@@ -1,0 +1,1252 @@
+2016-01-19 10:29:23,623 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 10:29:23,625 EST INFO   log.setup 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 10:29:23,626 EST INFO   log.frontEnd 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 10:29:23,626 EST INFO   log.frontEnd.incomingRequest 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 10:29:23,626 EST INFO   log.frontEnd.requestHistory 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 10:29:23,626 EST INFO   log.frontEnd.UIComponentInput 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 10:29:23,687 EST WARN   log.kernel 0985:0003 [localhost-startStop-1] Could not initialize JMS environment, reason: java.lang.NoClassDefFoundError: javax/jms/JMSException > Caused by > java.lang.ClassNotFoundException: javax.jms.JMSException
+2016-01-19 10:29:23,820 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Initialized EBX5 core configuration:
+-----------------------EBX5 CONFIGURATION-----------------------
+  EBX5 product version                      : 5.6.1 Fix A [0985:0003] Not registered - Trial - Evaluation only (expires in 25 days)
+  EBX5 main configuration file              : System property [ebx.properties=/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Home/ebx.properties]
+  VM start time                             : 2016/01/19-10:29:22-0434 EST
+  Log directory (default)                   : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxLog/
+  EBX5 root directory                       : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/
+  Temporary directory                       : /private/var/folders/90/bh1r9lnx7rd03bjt6wnrd12h0000gn/T/
+  Repository persistence type               : h2.standalone
+  Repository ownership                      : unique - 1000 ms
+  Directory factory                         : default
+  Commit threshold                          : 100
+  Validation message threshold              : 100
+  Data workflow activated                   : true
+  SMTP service not activated                : -
+  JMS not activated                         : -
+  HTTPS support                             : true
+  HTTP servlet URL                          : http://{host}/ebx/
+  HTTPS servlet URL                         : https://{host}/ebx/
+  HTTP URL for web resources                : http://{host}/
+  HTTPS URL for web resources               : https://{host}/
+  External resource location                : inside web apps (directory '/www/')
+  Regular expressions for excluded resources: m:CVS/*:
+  EBX5 locales available                    : en_US, fr_FR
+  EBX5 default locale                       : en_US
+  Property file watch interval (ms)         : 1000
+  VM identifier                             : 1
+  Site name                                 : name@domain.com
+  EBX5 schema URL prefix                    : http://schema.orchestranetworks.com/
+  Container type                            : servlet container
+  EBX5 mode                                 : development
+--------------------------SYSTEM CONFIGURATION--------------------------
+  Java installation directory  : /Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre
+  Java vendor                  : Oracle Corporation
+  Java version number          : 1.8.0_65
+  Java VM name                 : Java HotSpot(TM) 64-Bit Server VM
+  Operating system architecture: x86_64
+  Operating system name        : Mac OS X
+  Operating system version     : 10.11.2
+  Local host                   : Susannahs-MBP (10.1.10.225)
+  User's working directory     : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server
+  User home directory          : /Users/susannahdarling
+  User account name            : susannahdarling
+  Java default Locale          : en_US
+  Java ClassPath               : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/activation.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/ebx.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/h2-1.3.170.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/mail.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/Libraries/Apache Tomcat/apache-tomcat-7.0.42/lib/servlet-api.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/Geomatch Module/bin
+                                 /EBX Server/bin
+  Servlet container            : Apache Tomcat/7.0.42
+  Servlet API version          : 3.0
+  JVM available processors     : 4
+  JVM allocated memory (MB)    : 363
+  JVM used memory (MB)         : 146
+  JVM free memory (MB)         : 217
+  JVM maximum memory (MB)      : 1820
+------------------------------------------------------------------------
+
+2016-01-19 10:29:23,823 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Performance log is not activated
+	Performance log is activated by means of property 'ebx.perf.log' in 'ebx.properties'.
+	Available operation tokens are: concurrency:csvExport:csvImport:dataService:miscellaneous:tablePagedView:xmlExport:xmlImport.
+	Example: 'ebx.perf.log=xmlExport:xmlImport'.
+2016-01-19 10:29:26,477 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Initialized EBX5 default repository: id=19, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner-jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository
+2016-01-19 10:29:26,485 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Logs update scheduled at 2016-01-19 00:02:00,484 EST each day.
+2016-01-19 10:29:26,486 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] END EBX5 initialization.
+2016-01-19 10:29:28,643 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #7884e620:
+	Registered module [ebx-addon-adix].
+	Registry now contains: ebx-addon-adix, Geomatch Module.
+2016-01-19 10:29:28,644 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Module addon [ebx-addon-adix] - Release: 2.0.9 -  Build #: 0018:0010.
+2016-01-19 10:29:30,787 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #7884e620:
+	Registered module [ebx-dma].
+	Registry now contains: ebx-dma, ebx-addon-adix, Geomatch Module.
+2016-01-19 10:29:30,787 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Core module [ebx-dma] - Release: 5.6.1 -  Build #: 0985:0003.
+2016-01-19 10:29:31,493 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #7884e620:
+	Registered module [ebx-manager].
+	Registry now contains: ebx-manager, ebx-dma, ebx-addon-adix, Geomatch Module.
+2016-01-19 10:29:31,493 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Core module [ebx-manager] - Release: 5.6.1 -  Build #: 0985:0003.
+2016-01-19 10:29:32,159 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #7884e620:
+	Registered module [ebx-root-1.0].
+	Module [ebx-root-1.0] is root module.
+	Registry now contains: ebx-root-1.0, ebx-manager, ebx-dma, ebx-addon-adix, Geomatch Module.
+2016-01-19 10:29:32,160 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Core module [ebx-root-1.0] - Release: 5.6.1 -  Build #: 0985:0003.
+2016-01-19 10:29:32,653 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 66 ms:
+ ****** Module[ebx-root-1.0]
+ **         info [-]: Formatting policy for locale 'en_US' described in file [/WEB-INF/ebx/en_US/frontEndFormattingPolicy.xml].
+ **         info [-]: Formatting policy for locale 'fr_FR' described in file [/WEB-INF/ebx/fr_FR/frontEndFormattingPolicy.xml].
+ ****** successful.
+2016-01-19 10:29:32,884 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 repository is ready!
+-----------------------EBX5 REPOSITORY-----------------------
+	Repository identity                    : 00BCB1E7F93B
+	Repository label                       : Repository
+	Store format                           : 2.0:h2:100:2048
+	Store location info                    : jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository
+	Current repository ownership connection: id=19; state='Owner'; conf='unique - 1000 ms'.
+	Database product name                  : H2
+	Database product version               : 1.3.170 (2012-11-30)
+	JDBC driver name                       : H2 JDBC Driver
+	JDBC driver version                    : 1.3.170 (2012-11-30)
+	Estimated number of records in EBX_HOM : 44
+	Estimated number of records in EBX_HTB : 35
+	Estimated number of records in EBX_BRV : 35
+	Number of data spaces                  : 22
+	Number of snapshots                    : 22
+	Number of open data spaces             : 22
+	Number of open snapshots               : 22
+	Cache hashcode                         : #541bdf80
+------------------------------------------------------------------------
+Repository content, summary by data set reference:
+ebx-dataSpaces (001:0002)	[module: ebx-root-1.0, java: com.onwbp.adaptation.RtaSchemaBuilder_V5]
+	Used by 1 homes: Bebx-dataSpaces
+ebx-directory (002:0003)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/directory.xsd]
+	Used by 1 homes: Bebx-directory
+ebx-autoIncrements (003:0004)	[module: ebx-root-1.0, java: com.onwbp.adaptation.AutoIncrementSchemaBuilder]
+	Used by 1 homes: Bebx-autoIncrements
+ebx-views (004:0005)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/viewsPreferences_5.0.xsd]
+	Used by 1 homes: Bebx-views
+ebx-preferences (005:0006)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/userPreferences_5.0.xsd]
+	Used by 1 homes: Bebx-preferences
+ebx-globalPermissions (006:0007)	[module: ebx-root-1.0, java: com.orchestranetworks.permissions.SPRGlobalPermissionsSchemaBuilder]
+	Used by 1 homes: Bebx-globalPermissions
+ebx-manager (007:0008)	[module: ebx-manager, path: /WEB-INF/ebx/dataModel.xsd]
+	Used by 1 homes: Bebx-manager
+ebx-scheduler (008:0009)	[module: ebx-root-1.0, java: com.orchestranetworks.scheduler.repository.SchedulerSchemaBuilder]
+	Used by 1 homes: Bebx-scheduler
+ebx-publications (009:0010)	[module: ebx-root-1.0, java: com.orchestranetworks.models.publication.DmvPublicationsSchemaDefinition]
+	Used by 1 homes: Bebx-dataModels-publications
+ebx-event-broker (010:0011)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/event-broker.xsd]
+	Used by 1 homes: Bebx-event-broker
+ebx-history (011:0012)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/history_1.0.xsd]
+	Used by 1 homes: Bebx-history
+ebx-addons (012:0013)	[module: ebx-root-1.0, java: com.orchestranetworks.addon.AddonsSchemaBuilder]
+	Used by 1 homes: Bebx-addons
+ebx-perspective (013:0014)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/perspective_1.0.xsd]
+	Used by 1 homes: Bebx-perspective
+ebx-advanced-perspective (014:0015)	child of ebx-perspective
+	Used by 1 homes: Bebx-perspective
+ebx-addon-adix (015:0016)	[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/preferences.xsd]
+	Used by 1 homes: Bebx-addon-adix
+ebx-addon-adix-dataexchange (016:0017)	[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/ebx-addon-adix-dataexchange.xsd]
+	Used by 1 homes: Bebx-addon-adix-dataexchange
+ebx-dataLineage (017:0018)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/dataLineage_1.0.xsd]
+	Used by 1 homes: Bebx-dataLineage
+ebx-interactions (018:0019)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/interaction_1.0.xsd]
+	Used by 1 homes: Bebx-interactions
+execution (019:0020)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_execution_1.1.xsd]
+	Used by 1 homes: Bebx-workflow-execution
+configuration (020:0021)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_configuration_1.1.xsd]
+	Used by 2 homes: Bebx-workflow-definitions V2016-01-15T15:05:53.297
+GeomatchDataModel (021:0022)	[module: ebx-dma, path: /WEB-INF/ebx/schemas/meta-model_1.0.xsd]
+	Used by 1 homes: Bebx-dma
+GeomatchDataSet (022:0023)	[PublicationName: GeomatchDataModel]
+	Used by 1 homes: BReference
+Geomatch (023:0024)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_definition_1.1.xsd]
+	Used by 2 homes: Bebx-workflow-definitions V2016-01-15T15:05:53.297
+2016-01-19 10:29:33,122 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 56 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd, iid=01D]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:33,254 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 126 ms (branch "ebx-history"):
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/history_1.0.xsd, iid=006]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:33,418 EST INFO   log.kernel 0985:0003 [ebx-boot] Beginning data models compilation...
+2016-01-19 10:29:33,445 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 16 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/dataLineage_1.0.xsd, iid=007]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:33,502 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 25 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/directory.xsd, iid=00F]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:33,503 EST INFO   log.kernel 0985:0003 [ebx-boot] Module[ebx-dma]: properties file [/WEB-INF/ebx/module.properties] does not exist.
+2016-01-19 10:29:33,503 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1 ms:
+ ****** Module[ebx-dma]
+ ****** successful.
+2016-01-19 10:29:33,524 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 4 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/customViewsTypes.xsd, iid=01F]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: No adaptation roots since there is no global element declarations.
+ ****** successful.
+2016-01-19 10:29:33,547 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1 ms:
+ ****** Schema[module: ebx-dma, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd, iid=01E]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:33,980 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 478 ms:
+ ****** Schema[module: ebx-dma, path: /WEB-INF/ebx/schemas/meta-model_1.0.xsd, iid=008]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/customViewsTypes.xsd.
+ **         info [-]: Import: Module: ebx-dma, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:33,998 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 17 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/event-broker.xsd, iid=016]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:34,016 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 0 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd, iid=020]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:34,020 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 8 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/interaction_1.0.xsd, iid=00C]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:34,069 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 48 ms:
+ ****** Module[ebx-manager]
+ ****** successful.
+2016-01-19 10:29:34,069 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation.
+2016-01-19 10:29:34,071 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/simple/: running...
+2016-01-19 10:29:34,076 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd, iid=01D]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:34,080 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 4 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/coreModel_1.0.xsd, iid=022]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:34,109 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 38 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/session_1.0.xsd, iid=021]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/coreModel_1.0.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:34,782 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 761 ms:
+ ****** Schema[module: ebx-manager, path: /WEB-INF/ebx/dataModel.xsd, iid=013]
+ **         info [-]: Redefines Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/session_1.0.xsd.
+ **         info [-]: Data model (XML Schema): described in Java class [com.orchestranetworks.manager.core.Installer].
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Default schema, since no global elements are declared, elements of type UserSessionType are used as adaptation roots.
+ ****** successful.
+2016-01-19 10:29:34,789 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1 ms:
+ ****** Schema[url: http://schema.orchestranetworks.com/common_1.0.xsd, iid=023]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:34,791 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1 ms:
+ ****** Schema[url: http://schema.orchestranetworks.com/session_1.0.xsd, iid=024]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/coreModel_1.0.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 10:29:34,815 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 33 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/perspective_1.0.xsd, iid=017]
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:34,888 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 35 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/viewsPreferences_5.0.xsd, iid=012]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/customViewsTypes.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:34,920 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 28 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd, iid=025]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: No adaptation roots since there is no global element declarations.
+ ****** successful.
+2016-01-19 10:29:34,924 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 36 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_configuration_1.1.xsd, iid=00A]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:35,045 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 120 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_definition_1.1.xsd, iid=009]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:35,076 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/simple/: done in 1005 ms.
+2016-01-19 10:29:35,077 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/advanced/: running...
+2016-01-19 10:29:35,146 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 100 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_execution_1.1.xsd, iid=00B]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:35,164 EST INFO   log.kernel 0985:0003 [ebx-boot] Module[Geomatch Module]: properties file [/WEB-INF/ebx/module.properties] does not exist.
+2016-01-19 10:29:35,166 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 2 ms:
+ ****** Module[Geomatch Module]
+ **         info [-]: Locales defined: en_US, fr_FR.
+ ****** successful.
+2016-01-19 10:29:35,228 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 57 ms:
+ ****** Module[ebx-addon-adix]
+ ****** successful.
+2016-01-19 10:29:35,403 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 10 ms (branch "ebx-preferences"):
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/userPreferences_5.0.xsd, iid=011]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:35,405 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 23 ms (branch "Reference"):
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:35,406 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 69 ms (branch "ebx-addon-adix"):
+ ****** Schema[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/preferences.xsd, iid=01A]
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:35,478 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 123 ms (branch "ebx-addon-adix-dataexchange"):
+ ****** Schema[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/ebx-addon-adix-dataexchange.xsd, iid=01B]
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:29:35,479 EST INFO   log.kernel 0985:0003 [ebx-boot] End of data models compilation...
+2016-01-19 10:29:35,522 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 event broker - Publisher for topic ID 'com.orchestranetworks.eventbroker.TopicForHome' is registered.
+2016-01-19 10:29:35,552 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 event broker - Publisher for topic ID 'com.orchestranetworks.eventbroker.TopicForRepository' is registered.
+2016-01-19 10:29:35,560 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 event broker - Publisher for topic ID 'com.orchestranetworks.eventbroker.TopicForSession' is registered.
+2016-01-19 10:29:35,571 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on com.orchestranetworks.addon.AddonLicenseInitializer@57eb011b...
+2016-01-19 10:29:35,580 EST INFO   log.kernel 0985:0003 [ebx-boot] Module addon [adix] is activated.
+2016-01-19 10:29:35,580 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.orchestranetworks.addon.adix.module.AdixRegisterAddon@5363955d]@ca721fb...
+2016-01-19 10:29:35,852 EST INFO   log.kernel 0985:0003 [ebx-boot] Executed the following action on home : branch "ebx-views"
+<entry request="Procedure" branch="ebx-views" date="2016-01-19T10:29:35.852" entryId="72321AC0-BEC1-11E5-A1D5-00BCB1E7F93B">
+	<sourceSystem trackingInfo="[Data Exchange: Initialize views...]" />
+	<Procedure javaClass="com.orchestranetworks.addon.adix.module.CreateViewsProcedure" />
+</entry>
+2016-01-19 10:29:35,853 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.orchestranetworks.dma.module.RegisterServlet@4f24a90d]@426b21a1...
+2016-01-19 10:29:35,854 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.orchestranetworks.manager.RegisterManagerServlet@13f8c250]@3a467e4c...
+2016-01-19 10:29:35,854 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.onwbp.front.RegisterRootServlet@50c0c4c8]@4b3d8158...
+2016-01-19 10:29:35,987 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Preloading EBX5 repository. ********
+2016-01-19 10:29:35,988 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-globalPermissions" has started...
+2016-01-19 10:29:35,996 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-globalPermissions" in 8 ms.
+2016-01-19 10:29:35,996 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-history" has started...
+2016-01-19 10:29:35,996 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-history" in 0 ms.
+2016-01-19 10:29:35,996 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-addons" has started...
+2016-01-19 10:29:35,996 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-addons" in 0 ms.
+2016-01-19 10:29:35,996 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-views" has started...
+2016-01-19 10:29:35,996 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-views" in 0 ms.
+2016-01-19 10:29:35,997 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-addon-adix" has started...
+2016-01-19 10:29:35,997 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-addon-adix" in 0 ms.
+2016-01-19 10:29:35,997 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-dataModels-publications" has started...
+2016-01-19 10:29:35,997 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-dataModels-publications" in 0 ms.
+2016-01-19 10:29:35,997 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-autoIncrements" has started...
+2016-01-19 10:29:36,003 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-autoIncrements" in 6 ms.
+2016-01-19 10:29:36,004 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-manager" has started...
+2016-01-19 10:29:36,004 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-manager" in 0 ms.
+2016-01-19 10:29:36,004 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-directory" has started...
+2016-01-19 10:29:36,007 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-directory" in 3 ms.
+2016-01-19 10:29:36,007 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-dataSpaces" has started...
+2016-01-19 10:29:36,018 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-dataSpaces" in 11 ms.
+2016-01-19 10:29:36,019 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-preferences" has started...
+2016-01-19 10:29:36,020 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-preferences" in 1 ms.
+2016-01-19 10:29:36,022 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-addon-adix-dataexchange" has started...
+2016-01-19 10:29:36,023 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-addon-adix-dataexchange" in 1 ms.
+2016-01-19 10:29:36,023 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Preloading EBX5 repository done. ********
+2016-01-19 10:29:36,023 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Prevalidating EBX5 repository. ********
+2016-01-19 10:29:36,024 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-globalPermissions" in 0 ms.
+2016-01-19 10:29:36,025 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-history" in 0 ms.
+2016-01-19 10:29:36,034 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 6 ms:
+ ****** Adaptation ebx-addons in branch "ebx-addons"
+ ****** successful.
+2016-01-19 10:29:36,035 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-addons" in 10 ms.
+2016-01-19 10:29:36,036 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-views" in 0 ms.
+2016-01-19 10:29:36,046 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 9 ms:
+ ****** Adaptation ebx-addon-adix in branch "ebx-addon-adix"
+ ****** successful.
+2016-01-19 10:29:36,047 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-addon-adix" in 10 ms.
+2016-01-19 10:29:36,047 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-dataModels-publications" in 0 ms.
+2016-01-19 10:29:36,047 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-autoIncrements" in 0 ms.
+2016-01-19 10:29:36,055 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 8 ms:
+ ****** Adaptation ebx-manager in branch "ebx-manager"
+ ****** successful.
+2016-01-19 10:29:36,055 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-manager" in 8 ms.
+2016-01-19 10:29:37,024 EST INFO   log.setup 0985:0003 [ebx-boot] Compilation done in 968 ms:
+ ****** FiniteStateMachine[ebx-manager]
+ **         info [-]: finite state machine described in Java class [com.orchestranetworks.manager.core.Installer]
+ ****** successful.
+2016-01-19 10:29:37,025 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-directory" in 1 ms.
+2016-01-19 10:29:37,025 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-dataSpaces" in 0 ms.
+2016-01-19 10:29:37,025 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-preferences" in 0 ms.
+2016-01-19 10:29:37,115 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 90 ms:
+ ****** Adaptation ebx-addon-adix-dataexchange in branch "ebx-addon-adix-dataexchange"
+ ****** 2 warnings.
+2016-01-19 10:29:37,160 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-addon-adix-dataexchange" in 135 ms.
+2016-01-19 10:29:37,160 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Prevalidating EBX5 repository done. ********
+2016-01-19 10:29:37,165 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 10:29:37,166 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Preload and prevalidation done. ********
+2016-01-19 10:29:37,167 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 10:29:37,167 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Auditing EBX5 repository security. ********
+2016-01-19 10:29:37,169 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Auditing EBX5 repository security done. ********
+2016-01-19 10:29:37,222 EST INFO   log.kernel 0985:0003 [ebx-boot] Starting EBX5 scheduler.
+2016-01-19 10:29:37,273 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - execution threads will use class loader of thread: ebx-boot
+2016-01-19 10:29:37,285 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - scheduler thread inheriting ContextClassLoader of thread: ebx-boot
+2016-01-19 10:29:37,288 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - job store initialized.
+2016-01-19 10:29:37,292 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - ebx-scheduler-resources started.
+2016-01-19 10:29:37,292 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 10:29:37,292 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** EBX5 scheduler started. ********
+2016-01-19 10:29:37,292 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 10:29:37,343 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 42 ms:
+ ****** Adaptation ebx-scheduler in branch "ebx-scheduler"
+ ****** 1 warnings.
+2016-01-19 10:29:37,344 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 10:29:37,345 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** EBX5 started and initialized. ********
+2016-01-19 10:29:37,345 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 10:29:38,399 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	3A0264B1706FF48F88A67E4C7767CB37:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	onwbpInitialDefault	INIT=> userAgent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) languages=en-us initialRequestReferer=null
+2016-01-19 10:29:38,481 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-2] 	0:0:0:0:0:0:0:1	C8A6C5FD137CAF12BDCF173930285B57:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	onwbpInitialDefault	INIT=> userAgent=Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 languages=en-us initialRequestReferer=null
+2016-01-19 10:29:38,998 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	onwbpInitialDefault	INIT=> userAgent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9 languages=en-us initialRequestReferer=null
+2016-01-19 10:29:39,781 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/advanced/: done in 4703 ms.
+2016-01-19 10:29:39,781 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/simple/: running...
+2016-01-19 10:29:40,218 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/simple/: done in 437 ms.
+2016-01-19 10:29:40,219 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/advanced/: running...
+2016-01-19 10:29:42,546 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/advanced/: done in 2327 ms.
+2016-01-19 10:29:42,546 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation done.
+2016-01-19 10:29:43,015 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-12] 	783F9772FA8836C8F6D01E03FB16975E:0	Manager session has been started with authenticated user [admin].
+2016-01-19 10:30:04,429 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Executed the following action on home : branch "ebx-preferences"
+<entry request="Procedure" branch="ebx-preferences" date="2016-01-19T10:30:04.428" entryId="833A74C0-BEC1-11E5-A1D5-00BCB1E7F93B">
+	<sourceSystem trackingInfo="User preferences: save user admin" />
+	<Procedure javaClass="com.orchestranetworks.persistence.MdpUpdateRecordEntity" />
+</entry>
+2016-01-19 10:30:26,851 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-2] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:0-X	ebx-manager	P	.sessionIn.modeling_root.modeling_wf.modeling_wf_main	wbp:_Manager.html	0	onwbpInitialDefault	INIT=> userAgent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9 languages=en-us initialRequestReferer=http://localhost:8090/ebx/?onwbpID=c0_L_ebx-manager&onwbpPage=9&requestID=on_select_datas&$functionalCategory=modelingWF&$instance=Geomatch&$xpath=%2Froot%2Fdefinition%2Fpnode&$branch=ebx-workflow-definitions&$hripath=%3A-1.0
+2016-01-19 10:31:44,713 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-9] Validation done in 2 ms:
+ ****** Adaptation Geomatch in branch "ebx-workflow-definitions"
+ ****** successful.
+2016-01-19 10:31:47,621 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Executed the following action on home : branch "ebx-dataSpaces"
+<entry request="Procedure" branch="ebx-dataSpaces" date="2016-01-19T10:31:47.620" entryId="C0BC4E40-BEC1-11E5-A1D5-00BCB1E7F93B">
+	<sourceSystem trackingInfo="[Workflow - Session]" />
+	<Procedure javaClass="com.onwbp.adaptation.es" executionInfo="5.6.1 Fix A [0985:0003] (internal): Creates home [Snapshot 2016-01-19T10:31:47.592]." />
+</entry>
+2016-01-19 10:31:47,625 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Initialized version "2016-01-19T10:31:47.592" [softRef - validation: strongRef]:
+	Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_configuration_1.1.xsd
+	configuration                   D9DB7200-BA22-11E5-A6F6-00BCB1E7F93B   20:21
+
+	Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_definition_1.1.xsd
+	Geomatch                        E3B8EB50-BBC0-11E5-9D97-00BCB1E7F93B   23:24
+
+2016-01-19 10:31:47,636 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Executed the following action on home : branch "ebx-workflow-execution"
+<entry request="Procedure" branch="ebx-workflow-execution" date="2016-01-19T10:31:47.635" entryId="C0BE9830-BEC1-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.workflow.PublicationSpecs$a" />
+</entry>
+2016-01-19 10:32:06,347 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-9] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	onwbpInitialDefault	INIT=> userAgent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9 languages=en-us initialRequestReferer=null
+2016-01-19 10:32:09,831 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-9] 	783F9772FA8836C8F6D01E03FB16975E:1	Manager session has been started with authenticated user [admin].
+2016-01-19 10:32:15,132 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-9] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1-X	ebx-manager	P	.sessionIn.modeling_root.modeling_wf.modeling_wf_main	wbp:_Manager.html	0	onwbpInitialDefault	INIT=> userAgent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9 languages=en-us initialRequestReferer=http://localhost:8090/ebx/?onwbpID=c1_L_ebx-manager&onwbpPage=2&requestID=on_select_datas&$functionalCategory=modelingWF&$instance=Geomatch&$xpath=%2Froot%2Fdefinition%2Fpnode&$branch=ebx-workflow-definitions&$hripath=%3A-1.0
+2016-01-19 10:33:50,848 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-9] Validation done in 17 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:33:51,089 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-4] Compilation done in 2 ms:
+ ****** Schema[VirtualName: GeomatchDataModel_0A520B30-BEC2-11E5-A1D5-00BCB1E7F93B.xsd, iid=0-9]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:33:51,102 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-4] Compilation done in 2 ms:
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:33:53,534 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-2] Validation done in 5 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:33:53,546 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-2] Executed the following action on home : branch "ebx-dataModels-publications"
+<entry request="Procedure" branch="ebx-dataModels-publications" date="2016-01-19T10:33:53.545" entryId="0BCAEF90-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.persistence.MdpUpdateRecordEntity" />
+</entry>
+2016-01-19 10:33:53,565 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-2] Compilation done in 2 ms (branch "Reference"):
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:33:53,566 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-2] Executed schema refresh: 
+	Reset schema [Publication: GeomatchDataModel].
+		Reset validation state of data set GeomatchDataSet in data space Reference.
+2016-01-19 10:34:14,832 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-10] Executed the following action on home : branch "Geomatch"
+<entry request="createInstance" branch="Geomatch" date="2016-01-19T10:34:14.832" entryId="187B1300-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<createInstance reference="Geomatch" uuid="187A28A0-BEC2-11E5-A1D5-00BCB1E7F93B" revision="25" schema="PublicationName: GeomatchDataModel" />
+</entry>
+2016-01-19 10:34:14,832 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-10] Validation done in 0 ms:
+ ****** Adaptation Geomatch in branch "Geomatch"
+ ****** successful.
+2016-01-19 10:34:40,813 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-10] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	18	startNodeRefRecordCreation	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:35:08,703 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:35:08.703" entryId="389722F0-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceSystem trackingInfo="Deletion of element 'Geomatch'" />
+	<Procedure javaClass="com.orchestranetworks.dma.services.deleteElement.DeleteComplexElementRecursivelyProcedure" />
+</entry>
+2016-01-19 10:35:11,685 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-10] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	20	startNodeRefRecordCreation	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:35:20,188 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-6] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:35:20.188" entryId="3F6F9BC0-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.dma.services.convertAnonymousComplexToType.CreateAnonymousComplexTypeProcedure" />
+</entry>
+2016-01-19 10:35:20,196 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-6] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:35:20.196" entryId="3F70D440-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./uuid)]" />
+</entry>
+2016-01-19 10:35:20,205 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-6] Validation done in 4 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** 1 errors, 0 warnings.
+2016-01-19 10:35:20,340 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	21	submitElementCreationForm	com.orchestranetworks.dma.ui.TableUIBean.displayLabellingPart(TableUIBean.java:155): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:35:20,354 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	21	submitElementCreationForm	com.orchestranetworks.dma.ui.DefaultTableViewUIBean.addForEdit(DefaultTableViewUIBean.java:27): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:35:36,013 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-4] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	22	startNodeRefRecordCreation	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:35:47,888 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:35:47.888" entryId="4FF24B00-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./uuid)]" />
+</entry>
+2016-01-19 10:35:47,897 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:35:47.895" entryId="4FF35C70-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.dma.services.createElement.DefinePrimayKeyProcedure" />
+</entry>
+2016-01-19 10:35:47,901 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-12] Validation done in 3 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:35:47,953 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-12] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	23	submitElementCreationFormAndCreateAnother	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:36:11,340 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:36:11.340" entryId="5DECC8C0-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./uuid)]" />
+</entry>
+2016-01-19 10:36:11,344 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-12] Validation done in 4 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:36:11,389 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-12] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	24	submitElementCreationFormAndCreateAnother	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:36:23,457 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-10] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:36:23.457" entryId="6525B110-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./uuid)]" />
+</entry>
+2016-01-19 10:36:23,461 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-10] Validation done in 3 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:36:23,510 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-10] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	25	submitElementCreationFormAndCreateAnother	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:36:31,070 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:36:31.070" entryId="69AF57E0-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./uuid)]" />
+</entry>
+2016-01-19 10:36:31,074 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-12] Validation done in 4 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:36:31,115 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-12] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	26	submitElementCreationFormAndCreateAnother	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:36:46,510 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-5] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:36:46.510" entryId="72E34CE0-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./uuid)]" />
+</entry>
+2016-01-19 10:36:46,515 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-5] Validation done in 4 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:36:46,566 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-5] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	27	submitElementCreationFormAndCreateAnother	com.orchestranetworks.ui.UIComponentWriterImpl.a(UIComponentWriterImpl.java:248): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:37:04,242 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-5] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	30	on_select_datas	com.orchestranetworks.dma.ui.TableUIBean.displayLabellingPart(TableUIBean.java:155): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:37:04,262 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-5] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	30	on_select_datas	com.orchestranetworks.dma.ui.DefaultTableViewUIBean.addForEdit(DefaultTableViewUIBean.java:27): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:37:17,927 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	32	on_select_datas	com.orchestranetworks.dma.ui.TableUIBean.displayLabellingPart(TableUIBean.java:155): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:37:17,941 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	32	on_select_datas	com.orchestranetworks.dma.ui.DefaultTableViewUIBean.addForEdit(DefaultTableViewUIBean.java:27): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:37:29,757 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	32	on_select_datas	com.orchestranetworks.dma.ui.UIJavaBeanSpec.displayParameters(UIJavaBeanSpec.java:74): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:38:17,846 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-1] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:38:17.846" entryId="A9541160-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.UpdateOccurrenceProcedure" executionInfo="Updated record [./uuid='3F6FC2D0-BEC2-11E5-A1D5-00BCB1E7F93B']" />
+</entry>
+2016-01-19 10:38:17,928 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	33	submitRecordForm	com.orchestranetworks.dma.ui.TableUIBean.displayLabellingPart(TableUIBean.java:155): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:38:17,933 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	33	submitRecordForm	com.orchestranetworks.dma.ui.DefaultTableViewUIBean.addForEdit(DefaultTableViewUIBean.java:27): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:38:18,156 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	33	submitRecordForm	com.orchestranetworks.dma.ui.UIJavaBeanSpec.displayParameters(UIJavaBeanSpec.java:74): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:38:45,629 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-6] Executed the following action on home : branch "ebx-workflow-definitions"
+<entry request="modifyContent" branch="ebx-workflow-definitions" date="2016-01-19T10:38:45.629" entryId="B9E36AD0-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<modifyContent reference="Geomatch" uuid="E3B8EB50-BBC0-11E5-9D97-00BCB1E7F93B" revision="26">
+		<value path="/root/definition/process/dataContext/variable">
+			<old />
+			<new>
+				<variable>
+					<name>record</name>
+					<defaultValue />
+					<inputParameter>true</inputParameter>
+					<outputParameter>true</outputParameter>
+				</variable>
+			</new>
+		</value>
+	</modifyContent>
+</entry>
+2016-01-19 10:38:48,041 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-6] Validation done in 1 ms:
+ ****** Adaptation Geomatch in branch "ebx-workflow-definitions"
+ ****** successful.
+2016-01-19 10:38:52,832 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-6] Executed the following action on home : branch "ebx-dataSpaces"
+<entry request="Procedure" branch="ebx-dataSpaces" date="2016-01-19T10:38:52.832" entryId="BE2E8200-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceSystem trackingInfo="[Workflow - Session]" />
+	<Procedure javaClass="com.onwbp.adaptation.es" executionInfo="5.6.1 Fix A [0985:0003] (internal): Creates home [Snapshot 2016-01-19T10:38:52.826]." />
+</entry>
+2016-01-19 10:38:52,836 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-6] Initialized version "2016-01-19T10:38:52.826" [softRef - validation: strongRef]:
+	Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_configuration_1.1.xsd
+	configuration                   D9DB7200-BA22-11E5-A6F6-00BCB1E7F93B   20:21
+
+	Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_definition_1.1.xsd
+	Geomatch                        E3B8EB50-BBC0-11E5-9D97-00BCB1E7F93B   23:26
+
+2016-01-19 10:38:52,839 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-6] Executed the following action on home : branch "ebx-workflow-execution"
+<entry request="Procedure" branch="ebx-workflow-execution" date="2016-01-19T10:38:52.839" entryId="BE2F9370-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.workflow.PublicationSpecs$a" />
+</entry>
+2016-01-19 10:38:58,027 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	42	on_select_datas	com.orchestranetworks.dma.ui.TableUIBean.displayLabellingPart(TableUIBean.java:155): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:38:58,034 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	42	on_select_datas	com.orchestranetworks.dma.ui.DefaultTableViewUIBean.addForEdit(DefaultTableViewUIBean.java:27): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:38:58,166 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-6] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	42	on_select_datas	com.orchestranetworks.dma.ui.UIJavaBeanSpec.displayParameters(UIJavaBeanSpec.java:74): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:39:12,422 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-10] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:39:12.422" entryId="C9DBB460-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.UpdateOccurrenceProcedure" executionInfo="Updated record [./uuid='3F6FC2D0-BEC2-11E5-A1D5-00BCB1E7F93B']" />
+</entry>
+2016-01-19 10:39:12,507 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-10] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	43	submitRecordForm	com.orchestranetworks.dma.ui.TableUIBean.displayLabellingPart(TableUIBean.java:155): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:39:12,511 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-10] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	43	submitRecordForm	com.orchestranetworks.dma.ui.DefaultTableViewUIBean.addForEdit(DefaultTableViewUIBean.java:27): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:39:12,673 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-10] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	43	submitRecordForm	com.orchestranetworks.dma.ui.UIJavaBeanSpec.displayParameters(UIJavaBeanSpec.java:74): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:39:16,232 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-12] Validation done in 3 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:39:16,378 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Compilation done in 3 ms:
+ ****** Schema[VirtualName: GeomatchDataModel_CC369450-BEC2-11E5-A1D5-00BCB1E7F93B.xsd, iid=0-9]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:39:16,391 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Compilation done in 2 ms:
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:39:16,407 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Compilation done in 3 ms:
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:39:19,054 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-1] Validation done in 3 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:39:19,074 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-1] Executed the following action on home : branch "ebx-dataModels-publications"
+<entry request="Procedure" branch="ebx-dataModels-publications" date="2016-01-19T10:39:19.074" entryId="CDD2B820-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.persistence.MdpUpdateRecordEntity" />
+</entry>
+2016-01-19 10:39:19,085 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-1] Compilation done in 3 ms (branch "Reference"):
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:39:19,085 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-1] Executed schema refresh: 
+	Reset schema [Publication: GeomatchDataModel].
+		Reset validation state of data set GeomatchDataSet in data space Reference.
+		Reset validation state of data set Geomatch in data space Geomatch.
+2016-01-19 10:39:42,854 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-2] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	53	on_select_datas	com.orchestranetworks.dma.ui.AutoIncrementUIBean.addForEdit(AutoIncrementUIBean.java:50): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:39:54,959 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-11] Executed the following action on home : branch "ebx-dma"
+<entry request="Procedure" branch="ebx-dma" date="2016-01-19T10:39:54.959" entryId="E33655F0-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.UpdateOccurrenceProcedure" executionInfo="Updated record [./uuid='4FF160A0-BEC2-11E5-A1D5-00BCB1E7F93B']" />
+</entry>
+2016-01-19 10:39:55,161 EST WARN   log.frontEnd 0985:0003 [http-bio-8090-exec-11] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:1	ebx-manager	P	.sessionIn.modeling_root.modeling_dma.modeling_dma_main	wbp:_Manager.html	54	submitRecordForm	com.orchestranetworks.dma.ui.AutoIncrementUIBean.addForEdit(AutoIncrementUIBean.java:50): surrounding form rows with start/endTableFormRow is strongly recommended.
+2016-01-19 10:39:57,903 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-12] Validation done in 5 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:39:58,059 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Compilation done in 2 ms:
+ ****** Schema[VirtualName: GeomatchDataModel_E50E9860-BEC2-11E5-A1D5-00BCB1E7F93B.xsd, iid=0-9]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:39:58,065 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Compilation done in 1 ms:
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:40:00,291 EST INFO   log.setup 0985:0003 [http-bio-8090-exec-12] Validation done in 3 ms:
+ ****** Adaptation GeomatchDataModel in branch "ebx-dma"
+ ****** successful.
+2016-01-19 10:40:00,298 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Executed the following action on home : branch "ebx-dataModels-publications"
+<entry request="Procedure" branch="ebx-dataModels-publications" date="2016-01-19T10:40:00.297" entryId="E664D990-BEC2-11E5-A1D5-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:1" />
+	<Procedure javaClass="com.orchestranetworks.persistence.MdpUpdateRecordEntity" />
+</entry>
+2016-01-19 10:40:00,304 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Compilation done in 4 ms (branch "Reference"):
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 10:40:00,304 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-12] Executed schema refresh: 
+	Reset schema [Publication: GeomatchDataModel].
+		Reset validation state of data set GeomatchDataSet in data space Reference.
+		Reset validation state of data set Geomatch in data space Geomatch.
+2016-01-19 10:50:37,147 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Shutting down EBX5...
+2016-01-19 10:50:37,150 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on com.orchestranetworks.addon.AddonLicenseInitializer@57eb011b...
+2016-01-19 10:50:37,150 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.orchestranetworks.addon.adix.module.AdixRegisterAddon@5363955d]@ca721fb...
+2016-01-19 10:50:37,151 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.orchestranetworks.dma.module.RegisterServlet@4f24a90d]@426b21a1...
+2016-01-19 10:50:37,151 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.orchestranetworks.manager.RegisterManagerServlet@13f8c250]@3a467e4c...
+2016-01-19 10:50:37,151 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.onwbp.front.RegisterRootServlet@50c0c4c8]@4b3d8158...
+2016-01-19 10:50:37,153 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Stopping workflow repository
+2016-01-19 10:50:37,153 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Stopping workflow queue manager
+2016-01-19 10:50:37,154 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Stopping workflow work item supervisor
+2016-01-19 10:50:37,154 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Shutting down repository [jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository]...
+2016-01-19 10:50:37,273 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] EBX5 FrontServlet receives a destroy, this will unload web application 'ebx' and shut down repository.
+2016-01-19 10:50:37,275 EST INFO   log.kernel 0985:0003 [ebx-memorySupervisor] Received InterruptedException.
+2016-01-19 10:50:37,275 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down EBX5 scheduler.
+2016-01-19 10:50:37,276 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] EBX5 scheduler - ebx-scheduler-resources shutting down.
+2016-01-19 10:50:37,276 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] EBX5 scheduler - ebx-scheduler-resources paused.
+2016-01-19 10:50:37,277 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] EBX5 scheduler - ebx-scheduler-resources shutdown complete.
+2016-01-19 10:50:37,277 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down repository [jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository]...
+2016-01-19 10:50:37,321 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down repository cache l[]@541bdf80...
+2016-01-19 10:50:37,326 EST INFO   log.frontEnd.incomingRequest 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 10:50:37,331 EST INFO   log.frontEnd 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 10:50:37,332 EST INFO   log.frontEnd.requestHistory 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 10:50:37,334 EST INFO   log.setup 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 10:50:37,334 EST INFO   log.frontEnd.UIComponentInput 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 10:50:37,334 EST INFO   log.kernel 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 10:50:37,351 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #7884e620:
+	Unregistered module [Geomatch Module].
+	Registry now contains: ebx-root-1.0, ebx-manager, ebx-dma, ebx-addon-adix.
+2016-01-19 10:50:37,375 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #7884e620:
+	Removed property file from watchdog: /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Server/webapps/ebx-manager/WEB-INF/ebx/module.properties.
+	Unregistered module [ebx-manager].
+	Removed property file from watchdog: /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Server/webapps/ebx-addon-adix/WEB-INF/ebx/module.properties.
+	Unregistered module [ebx-addon-adix].
+	Unregistered module [ebx-dma].
+	Removed property file from watchdog: /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Server/webapps/ebx-root-1.0/WEB-INF/ebx/module.properties.
+	Unregistered module [ebx-root-1.0].
+	Registry now contains: .
+2016-01-19 10:50:37,381 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] EBX5 FrontServlet receives a destroy, this will unload web application 'ebx' and shut down repository.
+2016-01-19 10:50:37,382 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down EBX5 scheduler.
+2016-01-19 10:50:37,382 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Repository is already shut down [jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository].
+2016-01-19 10:50:37,395 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #7884e620:
+2016-01-19 10:50:37,397 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] Module [ebx-manager] not found when dispatching onwbpInternalTimeOut (web application may have been stopped).
+2016-01-19 10:50:37,398 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] Module [ebx-manager] not found when dispatching onwbpInternalTimeOut (web application may have been stopped).
+2016-01-19 10:50:37,398 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] Module [ebx-manager] not found when dispatching onwbpInternalTimeOut (web application may have been stopped).
+2016-01-19 10:50:37,398 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] Module [ebx-manager] not found when dispatching onwbpInternalTimeOut (web application may have been stopped).
+2016-01-19 10:50:37,406 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #7884e620:
+2016-01-19 10:50:37,424 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #7884e620:
+2016-01-19 11:00:24,118 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 11:00:24,120 EST INFO   log.setup 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 11:00:24,121 EST INFO   log.frontEnd 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 11:00:24,121 EST INFO   log.frontEnd.incomingRequest 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 11:00:24,121 EST INFO   log.frontEnd.requestHistory 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 11:00:24,121 EST INFO   log.frontEnd.UIComponentInput 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 11:00:24,166 EST WARN   log.kernel 0985:0003 [localhost-startStop-1] Could not initialize JMS environment, reason: java.lang.NoClassDefFoundError: javax/jms/JMSException > Caused by > java.lang.ClassNotFoundException: javax.jms.JMSException
+2016-01-19 11:00:24,280 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Initialized EBX5 core configuration:
+-----------------------EBX5 CONFIGURATION-----------------------
+  EBX5 product version                      : 5.6.1 Fix A [0985:0003] Not registered - Trial - Evaluation only (expires in 25 days)
+  EBX5 main configuration file              : System property [ebx.properties=/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Home/ebx.properties]
+  VM start time                             : 2016/01/19-11:00:22-0910 EST
+  Log directory (default)                   : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxLog/
+  EBX5 root directory                       : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/
+  Temporary directory                       : /private/var/folders/90/bh1r9lnx7rd03bjt6wnrd12h0000gn/T/
+  Repository persistence type               : h2.standalone
+  Repository ownership                      : unique - 1000 ms
+  Directory factory                         : default
+  Commit threshold                          : 100
+  Validation message threshold              : 100
+  Data workflow activated                   : true
+  SMTP service not activated                : -
+  JMS not activated                         : -
+  HTTPS support                             : true
+  HTTP servlet URL                          : http://{host}/ebx/
+  HTTPS servlet URL                         : https://{host}/ebx/
+  HTTP URL for web resources                : http://{host}/
+  HTTPS URL for web resources               : https://{host}/
+  External resource location                : inside web apps (directory '/www/')
+  Regular expressions for excluded resources: m:CVS/*:
+  EBX5 locales available                    : en_US, fr_FR
+  EBX5 default locale                       : en_US
+  Property file watch interval (ms)         : 1000
+  VM identifier                             : 1
+  Site name                                 : name@domain.com
+  EBX5 schema URL prefix                    : http://schema.orchestranetworks.com/
+  Container type                            : servlet container
+  EBX5 mode                                 : development
+--------------------------SYSTEM CONFIGURATION--------------------------
+  Java installation directory  : /Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre
+  Java vendor                  : Oracle Corporation
+  Java version number          : 1.8.0_65
+  Java VM name                 : Java HotSpot(TM) 64-Bit Server VM
+  Operating system architecture: x86_64
+  Operating system name        : Mac OS X
+  Operating system version     : 10.11.2
+  Local host                   : Susannahs-MBP (10.1.10.225)
+  User's working directory     : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server
+  User home directory          : /Users/susannahdarling
+  User account name            : susannahdarling
+  Java default Locale          : en_US
+  Java ClassPath               : /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/activation.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/ebx.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/h2-1.3.170.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/lib/mail.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/Libraries/Apache Tomcat/apache-tomcat-7.0.42/lib/servlet-api.jar
+                                 /Users/susannahdarling/Documents/workspace/EBXworkspace/Geomatch Module/bin
+                                 /EBX Server/bin
+  Servlet container            : Apache Tomcat/7.0.42
+  Servlet API version          : 3.0
+  JVM available processors     : 4
+  JVM allocated memory (MB)    : 363
+  JVM used memory (MB)         : 145
+  JVM free memory (MB)         : 218
+  JVM maximum memory (MB)      : 1820
+------------------------------------------------------------------------
+
+2016-01-19 11:00:24,283 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Performance log is not activated
+	Performance log is activated by means of property 'ebx.perf.log' in 'ebx.properties'.
+	Available operation tokens are: concurrency:csvExport:csvImport:dataService:miscellaneous:tablePagedView:xmlExport:xmlImport.
+	Example: 'ebx.perf.log=xmlExport:xmlImport'.
+2016-01-19 11:00:26,865 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Initialized EBX5 default repository: id=20, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner-jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository
+2016-01-19 11:00:26,870 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Logs update scheduled at 2016-01-19 00:02:00,869 EST each day.
+2016-01-19 11:00:26,871 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] END EBX5 initialization.
+2016-01-19 11:00:28,743 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #664c38df:
+	Registered module [ebx-addon-adix].
+	Registry now contains: ebx-addon-adix, Geomatch Module.
+2016-01-19 11:00:28,743 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Module addon [ebx-addon-adix] - Release: 2.0.9 -  Build #: 0018:0010.
+2016-01-19 11:00:30,468 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #664c38df:
+	Registered module [ebx-dma].
+	Registry now contains: ebx-dma, ebx-addon-adix, Geomatch Module.
+2016-01-19 11:00:30,469 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Core module [ebx-dma] - Release: 5.6.1 -  Build #: 0985:0003.
+2016-01-19 11:00:31,294 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #664c38df:
+	Registered module [ebx-manager].
+	Registry now contains: ebx-manager, ebx-dma, ebx-addon-adix, Geomatch Module.
+2016-01-19 11:00:31,294 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Core module [ebx-manager] - Release: 5.6.1 -  Build #: 0985:0003.
+2016-01-19 11:00:32,107 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Modules' registry #664c38df:
+	Registered module [ebx-root-1.0].
+	Module [ebx-root-1.0] is root module.
+	Registry now contains: ebx-root-1.0, ebx-manager, ebx-dma, ebx-addon-adix, Geomatch Module.
+2016-01-19 11:00:32,107 EST INFO   log.kernel 0985:0003 [localhost-startStop-1] Core module [ebx-root-1.0] - Release: 5.6.1 -  Build #: 0985:0003.
+2016-01-19 11:00:33,058 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 74 ms:
+ ****** Module[ebx-root-1.0]
+ **         info [-]: Formatting policy for locale 'en_US' described in file [/WEB-INF/ebx/en_US/frontEndFormattingPolicy.xml].
+ **         info [-]: Formatting policy for locale 'fr_FR' described in file [/WEB-INF/ebx/fr_FR/frontEndFormattingPolicy.xml].
+ ****** successful.
+2016-01-19 11:00:33,331 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 repository is ready!
+-----------------------EBX5 REPOSITORY-----------------------
+	Repository identity                    : 00BCB1E7F93B
+	Repository label                       : Repository
+	Store format                           : 2.0:h2:100:2048
+	Store location info                    : jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository
+	Current repository ownership connection: id=20; state='Owner'; conf='unique - 1000 ms'.
+	Database product name                  : H2
+	Database product version               : 1.3.170 (2012-11-30)
+	JDBC driver name                       : H2 JDBC Driver
+	JDBC driver version                    : 1.3.170 (2012-11-30)
+	Estimated number of records in EBX_HOM : 46
+	Estimated number of records in EBX_HTB : 41
+	Estimated number of records in EBX_BRV : 35
+	Number of data spaces                  : 22
+	Number of snapshots                    : 24
+	Number of open data spaces             : 22
+	Number of open snapshots               : 24
+	Cache hashcode                         : #618220ee
+------------------------------------------------------------------------
+Repository content, summary by data set reference:
+ebx-dataSpaces (001:0002)	[module: ebx-root-1.0, java: com.onwbp.adaptation.RtaSchemaBuilder_V5]
+	Used by 1 homes: Bebx-dataSpaces
+ebx-directory (002:0003)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/directory.xsd]
+	Used by 1 homes: Bebx-directory
+ebx-autoIncrements (003:0004)	[module: ebx-root-1.0, java: com.onwbp.adaptation.AutoIncrementSchemaBuilder]
+	Used by 1 homes: Bebx-autoIncrements
+ebx-views (004:0005)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/viewsPreferences_5.0.xsd]
+	Used by 1 homes: Bebx-views
+ebx-preferences (005:0006)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/userPreferences_5.0.xsd]
+	Used by 1 homes: Bebx-preferences
+ebx-globalPermissions (006:0007)	[module: ebx-root-1.0, java: com.orchestranetworks.permissions.SPRGlobalPermissionsSchemaBuilder]
+	Used by 1 homes: Bebx-globalPermissions
+ebx-manager (007:0008)	[module: ebx-manager, path: /WEB-INF/ebx/dataModel.xsd]
+	Used by 1 homes: Bebx-manager
+ebx-scheduler (008:0009)	[module: ebx-root-1.0, java: com.orchestranetworks.scheduler.repository.SchedulerSchemaBuilder]
+	Used by 1 homes: Bebx-scheduler
+ebx-publications (009:0010)	[module: ebx-root-1.0, java: com.orchestranetworks.models.publication.DmvPublicationsSchemaDefinition]
+	Used by 1 homes: Bebx-dataModels-publications
+ebx-event-broker (010:0011)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/event-broker.xsd]
+	Used by 1 homes: Bebx-event-broker
+ebx-history (011:0012)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/history_1.0.xsd]
+	Used by 1 homes: Bebx-history
+ebx-addons (012:0013)	[module: ebx-root-1.0, java: com.orchestranetworks.addon.AddonsSchemaBuilder]
+	Used by 1 homes: Bebx-addons
+ebx-perspective (013:0014)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/perspective_1.0.xsd]
+	Used by 1 homes: Bebx-perspective
+ebx-advanced-perspective (014:0015)	child of ebx-perspective
+	Used by 1 homes: Bebx-perspective
+ebx-addon-adix (015:0016)	[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/preferences.xsd]
+	Used by 1 homes: Bebx-addon-adix
+ebx-addon-adix-dataexchange (016:0017)	[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/ebx-addon-adix-dataexchange.xsd]
+	Used by 1 homes: Bebx-addon-adix-dataexchange
+ebx-dataLineage (017:0018)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/dataLineage_1.0.xsd]
+	Used by 1 homes: Bebx-dataLineage
+ebx-interactions (018:0019)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/interaction_1.0.xsd]
+	Used by 1 homes: Bebx-interactions
+execution (019:0020)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_execution_1.1.xsd]
+	Used by 1 homes: Bebx-workflow-execution
+configuration (020:0021)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_configuration_1.1.xsd]
+	Used by 4 homes: Bebx-workflow-definitions V2016-01-15T15:05:53.297 V2016-01-19T10:31:47.592 V2016-01-19T10:38:52.826
+GeomatchDataModel (021:0022)	[module: ebx-dma, path: /WEB-INF/ebx/schemas/meta-model_1.0.xsd]
+	Used by 1 homes: Bebx-dma
+GeomatchDataSet (022:0023)	[PublicationName: GeomatchDataModel]
+	Used by 1 homes: BReference
+Geomatch (023:0024)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_definition_1.1.xsd]
+	Used by 2 homes: V2016-01-15T15:05:53.297 V2016-01-19T10:31:47.592
+Geomatch (023:0025)	[PublicationName: GeomatchDataModel]
+	Used by 1 homes: BGeomatch
+Geomatch (023:0026)	[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_definition_1.1.xsd]
+	Used by 2 homes: Bebx-workflow-definitions V2016-01-19T10:38:52.826
+2016-01-19 11:00:33,617 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 57 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd, iid=01D]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:33,856 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 202 ms (branch "ebx-history"):
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/history_1.0.xsd, iid=006]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:34,082 EST INFO   log.kernel 0985:0003 [ebx-boot] Beginning data models compilation...
+2016-01-19 11:00:34,199 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 86 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/dataLineage_1.0.xsd, iid=007]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:34,309 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 24 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/directory.xsd, iid=00F]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:34,311 EST INFO   log.kernel 0985:0003 [ebx-boot] Module[ebx-dma]: properties file [/WEB-INF/ebx/module.properties] does not exist.
+2016-01-19 11:00:34,311 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1 ms:
+ ****** Module[ebx-dma]
+ ****** successful.
+2016-01-19 11:00:34,383 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 6 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/customViewsTypes.xsd, iid=01F]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: No adaptation roots since there is no global element declarations.
+ ****** successful.
+2016-01-19 11:00:34,439 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 0 ms:
+ ****** Schema[module: ebx-dma, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd, iid=01E]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:35,052 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 742 ms:
+ ****** Schema[module: ebx-dma, path: /WEB-INF/ebx/schemas/meta-model_1.0.xsd, iid=008]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/customViewsTypes.xsd.
+ **         info [-]: Import: Module: ebx-dma, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:35,080 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 28 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/event-broker.xsd, iid=016]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:35,101 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 0 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd, iid=020]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:35,109 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 11 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/interaction_1.0.xsd, iid=00C]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/_reserved/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:35,202 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation.
+2016-01-19 11:00:35,227 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/simple/: running...
+2016-01-19 11:00:35,261 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 86 ms:
+ ****** Module[ebx-manager]
+ ****** successful.
+2016-01-19 11:00:35,270 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 0 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd, iid=01D]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:35,273 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 5 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/coreModel_1.0.xsd, iid=022]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:35,297 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 29 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/session_1.0.xsd, iid=021]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/coreModel_1.0.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:36,169 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1052 ms:
+ ****** Schema[module: ebx-manager, path: /WEB-INF/ebx/dataModel.xsd, iid=013]
+ **         info [-]: Redefines Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/session_1.0.xsd.
+ **         info [-]: Data model (XML Schema): described in Java class [com.orchestranetworks.manager.core.Installer].
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Default schema, since no global elements are declared, elements of type UserSessionType are used as adaptation roots.
+ ****** successful.
+2016-01-19 11:00:36,175 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 0 ms:
+ ****** Schema[url: http://schema.orchestranetworks.com/common_1.0.xsd, iid=023]
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:36,177 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 1 ms:
+ ****** Schema[url: http://schema.orchestranetworks.com/session_1.0.xsd, iid=024]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/coreModel_1.0.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: Reserved schema, internal build.
+ ****** successful.
+2016-01-19 11:00:36,253 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 83 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/perspective_1.0.xsd, iid=017]
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:36,334 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 35 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/viewsPreferences_5.0.xsd, iid=012]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/customViewsTypes.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:36,395 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 52 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd, iid=025]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ **         info [-]: No adaptation roots since there is no global element declarations.
+ ****** successful.
+2016-01-19 11:00:36,399 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 61 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_configuration_1.1.xsd, iid=00A]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:36,436 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/simple/: done in 1209 ms.
+2016-01-19 11:00:36,438 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/advanced/: running...
+2016-01-19 11:00:36,614 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 214 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_definition_1.1.xsd, iid=009]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:36,769 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 154 ms:
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_execution_1.1.xsd, iid=00B]
+ **         info [-]: Include: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/workflow/workflow_types_1.1.xsd.
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:36,783 EST INFO   log.kernel 0985:0003 [ebx-boot] Module[Geomatch Module]: properties file [/WEB-INF/ebx/module.properties] does not exist.
+2016-01-19 11:00:36,783 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 0 ms:
+ ****** Module[Geomatch Module]
+ **         info [-]: Locales defined: en_US, fr_FR.
+ ****** successful.
+2016-01-19 11:00:36,835 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 46 ms:
+ ****** Module[ebx-addon-adix]
+ ****** successful.
+2016-01-19 11:00:37,011 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 13 ms (branch "ebx-preferences"):
+ ****** Schema[module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/userPreferences_5.0.xsd, iid=011]
+ **         info [-]: Import: Module: ebx-root-1.0, path: /WEB-INF/ebx/schemas/common_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:37,017 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 17 ms (branch "Reference"):
+ ****** Schema[PublicationName: GeomatchDataModel, iid=01C]
+ **         info [-]: Available locales: en_US, fr_FR.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:37,019 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 74 ms (branch "ebx-addon-adix"):
+ ****** Schema[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/preferences.xsd, iid=01A]
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:37,060 EST INFO   log.kernel 0985:0003 [ebx-boot] Compilation done in 80 ms (branch "ebx-addon-adix-dataexchange"):
+ ****** Schema[module: ebx-addon-adix, path: /WEB-INF/ebx/schema/ebx-addon-adix-dataexchange.xsd, iid=01B]
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/common_1.0.xsd.
+ **         info [-]: Import: Model URI: http://schema.orchestranetworks.com/session_1.0.xsd.
+ ****** successful.
+2016-01-19 11:00:37,060 EST INFO   log.kernel 0985:0003 [ebx-boot] End of data models compilation...
+2016-01-19 11:00:37,111 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 event broker - Publisher for topic ID 'com.orchestranetworks.eventbroker.TopicForHome' is registered.
+2016-01-19 11:00:37,116 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 event broker - Publisher for topic ID 'com.orchestranetworks.eventbroker.TopicForRepository' is registered.
+2016-01-19 11:00:37,120 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 event broker - Publisher for topic ID 'com.orchestranetworks.eventbroker.TopicForSession' is registered.
+2016-01-19 11:00:37,122 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on com.orchestranetworks.addon.AddonLicenseInitializer@5d76eb60...
+2016-01-19 11:00:37,130 EST INFO   log.kernel 0985:0003 [ebx-boot] Module addon [adix] is activated.
+2016-01-19 11:00:37,130 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.orchestranetworks.addon.adix.module.AdixRegisterAddon@71fe11a6]@78af156b...
+2016-01-19 11:00:37,488 EST INFO   log.kernel 0985:0003 [ebx-boot] Executed the following action on home : branch "ebx-views"
+<entry request="Procedure" branch="ebx-views" date="2016-01-19T11:00:37.488" entryId="C7D13700-BEC5-11E5-B55A-00BCB1E7F93B">
+	<sourceSystem trackingInfo="[Data Exchange: Initialize views...]" />
+	<Procedure javaClass="com.orchestranetworks.addon.adix.module.CreateViewsProcedure" />
+</entry>
+2016-01-19 11:00:37,490 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.orchestranetworks.dma.module.RegisterServlet@49bf1c51]@16c0859d...
+2016-01-19 11:00:37,492 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.orchestranetworks.manager.RegisterManagerServlet@36c6b2b7]@1626d45c...
+2016-01-19 11:00:37,493 EST INFO   log.kernel 0985:0003 [ebx-boot] Executing handleRepositoryStart() on b[com.onwbp.front.RegisterRootServlet@274a1f5d]@35349a44...
+2016-01-19 11:00:37,612 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Preloading EBX5 repository. ********
+2016-01-19 11:00:37,612 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-globalPermissions" has started...
+2016-01-19 11:00:37,615 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-globalPermissions" in 3 ms.
+2016-01-19 11:00:37,615 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-history" has started...
+2016-01-19 11:00:37,615 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-history" in 0 ms.
+2016-01-19 11:00:37,615 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-addons" has started...
+2016-01-19 11:00:37,615 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-addons" in 0 ms.
+2016-01-19 11:00:37,615 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-views" has started...
+2016-01-19 11:00:37,616 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-views" in 0 ms.
+2016-01-19 11:00:37,616 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-addon-adix" has started...
+2016-01-19 11:00:37,617 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-addon-adix" in 1 ms.
+2016-01-19 11:00:37,617 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-dataModels-publications" has started...
+2016-01-19 11:00:37,617 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-dataModels-publications" in 0 ms.
+2016-01-19 11:00:37,617 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-autoIncrements" has started...
+2016-01-19 11:00:37,619 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-autoIncrements" in 2 ms.
+2016-01-19 11:00:37,620 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-manager" has started...
+2016-01-19 11:00:37,620 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-manager" in 0 ms.
+2016-01-19 11:00:37,620 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-directory" has started...
+2016-01-19 11:00:37,623 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-directory" in 3 ms.
+2016-01-19 11:00:37,623 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-dataSpaces" has started...
+2016-01-19 11:00:37,634 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-dataSpaces" in 11 ms.
+2016-01-19 11:00:37,634 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-preferences" has started...
+2016-01-19 11:00:37,635 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-preferences" in 1 ms.
+2016-01-19 11:00:37,635 EST INFO   log.kernel 0985:0003 [ebx-boot] Preload of branch "ebx-addon-adix-dataexchange" has started...
+2016-01-19 11:00:37,636 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the preload of branch "ebx-addon-adix-dataexchange" in 1 ms.
+2016-01-19 11:00:37,636 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Preloading EBX5 repository done. ********
+2016-01-19 11:00:37,636 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Prevalidating EBX5 repository. ********
+2016-01-19 11:00:37,637 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-globalPermissions" in 1 ms.
+2016-01-19 11:00:37,637 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-history" in 0 ms.
+2016-01-19 11:00:37,643 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 4 ms:
+ ****** Adaptation ebx-addons in branch "ebx-addons"
+ ****** successful.
+2016-01-19 11:00:37,643 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-addons" in 6 ms.
+2016-01-19 11:00:37,643 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-views" in 0 ms.
+2016-01-19 11:00:37,650 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 7 ms:
+ ****** Adaptation ebx-addon-adix in branch "ebx-addon-adix"
+ ****** successful.
+2016-01-19 11:00:37,650 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-addon-adix" in 7 ms.
+2016-01-19 11:00:37,650 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-dataModels-publications" in 0 ms.
+2016-01-19 11:00:37,651 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-autoIncrements" in 0 ms.
+2016-01-19 11:00:37,663 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 12 ms:
+ ****** Adaptation ebx-manager in branch "ebx-manager"
+ ****** successful.
+2016-01-19 11:00:37,665 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-manager" in 14 ms.
+2016-01-19 11:00:38,500 EST INFO   log.setup 0985:0003 [ebx-boot] Compilation done in 834 ms:
+ ****** FiniteStateMachine[ebx-manager]
+ **         info [-]: finite state machine described in Java class [com.orchestranetworks.manager.core.Installer]
+ ****** successful.
+2016-01-19 11:00:38,504 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-directory" in 0 ms.
+2016-01-19 11:00:38,504 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-dataSpaces" in 0 ms.
+2016-01-19 11:00:38,504 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-preferences" in 0 ms.
+2016-01-19 11:00:38,531 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 27 ms:
+ ****** Adaptation ebx-addon-adix-dataexchange in branch "ebx-addon-adix-dataexchange"
+ ****** 2 warnings.
+2016-01-19 11:00:38,532 EST INFO   log.kernel 0985:0003 [ebx-boot] Ensured the prevalidation of branch "ebx-addon-adix-dataexchange" in 28 ms.
+2016-01-19 11:00:38,532 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Prevalidating EBX5 repository done. ********
+2016-01-19 11:00:38,532 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 11:00:38,532 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Preload and prevalidation done. ********
+2016-01-19 11:00:38,532 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 11:00:38,533 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Auditing EBX5 repository security. ********
+2016-01-19 11:00:38,534 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** Auditing EBX5 repository security done. ********
+2016-01-19 11:00:38,550 EST INFO   log.kernel 0985:0003 [ebx-boot] Starting EBX5 scheduler.
+2016-01-19 11:00:38,596 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - execution threads will use class loader of thread: ebx-boot
+2016-01-19 11:00:38,607 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - scheduler thread inheriting ContextClassLoader of thread: ebx-boot
+2016-01-19 11:00:38,611 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - job store initialized.
+2016-01-19 11:00:38,612 EST INFO   log.kernel 0985:0003 [ebx-boot] EBX5 scheduler - ebx-scheduler-resources started.
+2016-01-19 11:00:38,612 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 11:00:38,612 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** EBX5 scheduler started. ********
+2016-01-19 11:00:38,613 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 11:00:38,638 EST INFO   log.setup 0985:0003 [ebx-boot] Validation done in 19 ms:
+ ****** Adaptation ebx-scheduler in branch "ebx-scheduler"
+ ****** 1 warnings.
+2016-01-19 11:00:38,638 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 11:00:38,639 EST INFO   log.kernel 0985:0003 [ebx-boot] ******** EBX5 started and initialized. ********
+2016-01-19 11:00:38,639 EST INFO   log.kernel 0985:0003 [ebx-boot]  
+2016-01-19 11:00:40,121 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'en', /www/common/html/onHelp/advanced/: done in 3684 ms.
+2016-01-19 11:00:40,122 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/simple/: running...
+2016-01-19 11:00:40,901 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/simple/: done in 779 ms.
+2016-01-19 11:00:40,902 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/advanced/: running...
+2016-01-19 11:00:43,175 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation for 'fr', /www/fr_FR/html/onHelp/advanced/: done in 2273 ms.
+2016-01-19 11:00:43,175 EST INFO   log.kernel 0985:0003 [ebx-docIndexing] Indexing EBX5 documentation done.
+2016-01-19 11:00:49,619 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	783F9772FA8836C8F6D01E03FB16975E:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	onwbpInitialDefault	INIT=> userAgent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9 languages=en-us initialRequestReferer=null
+2016-01-19 11:00:53,355 EST INFO   log.frontEnd 0985:0003 [http-bio-8090-exec-3] 	783F9772FA8836C8F6D01E03FB16975E:0	Manager session has been started with authenticated user [admin].
+2016-01-19 11:01:25,491 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-10] Executed the following action on home : branch "ebx-autoIncrements"
+<entry request="Procedure" branch="ebx-autoIncrements" date="2016-01-19T11:01:25.490" entryId="E46DBD20-BEC5-11E5-B55A-00BCB1E7F93B">
+	<sourceSystem trackingInfo="Update of sequences table: AutoIncrement[Publication: GeomatchDataModel, /root/Geomatch/id]" />
+	<Procedure javaClass="com.onwbp.adaptation.fc" />
+</entry>
+2016-01-19 11:01:25,496 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-10] Executed the following action on home : branch "Geomatch"
+<entry request="Procedure" branch="Geomatch" date="2016-01-19T11:01:25.496" entryId="E46EA780-BEC5-11E5-B55A-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./id)]" />
+</entry>
+2016-01-19 11:01:43,629 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-4] Executed the following action on home : branch "ebx-autoIncrements"
+<entry request="Procedure" branch="ebx-autoIncrements" date="2016-01-19T11:01:43.629" entryId="EF3D87D0-BEC5-11E5-B55A-00BCB1E7F93B">
+	<sourceSystem trackingInfo="Update of sequences table: AutoIncrement[Publication: GeomatchDataModel, /root/Geomatch/id]" />
+	<Procedure javaClass="com.onwbp.adaptation.fc" />
+</entry>
+2016-01-19 11:01:43,635 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-4] Executed the following action on home : branch "Geomatch"
+<entry request="Procedure" branch="Geomatch" date="2016-01-19T11:01:43.635" entryId="EF3E7230-BEC5-11E5-B55A-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./id)]" />
+</entry>
+2016-01-19 11:03:27,025 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-3] Executed the following action on home : branch "ebx-autoIncrements"
+<entry request="Procedure" branch="ebx-autoIncrements" date="2016-01-19T11:03:27.024" entryId="2CDE5B00-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceSystem trackingInfo="Update of sequences table: AutoIncrement[Publication: GeomatchDataModel, /root/Geomatch/id]" />
+	<Procedure javaClass="com.onwbp.adaptation.fc" />
+</entry>
+2016-01-19 11:03:27,028 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-3] Executed the following action on home : branch "Geomatch"
+<entry request="Procedure" branch="Geomatch" date="2016-01-19T11:03:27.027" entryId="2CDED030-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./id)]" />
+</entry>
+2016-01-19 11:03:43,471 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-4] Executed the following action on home : branch "Geomatch"
+<entry request="Procedure" branch="Geomatch" date="2016-01-19T11:03:43.471" entryId="36ABF7F0-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.UpdateOccurrenceProcedure" executionInfo="Updated record [./id=3]" />
+</entry>
+2016-01-19 11:04:06,614 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-4] Executed the following action on home : branch "ebx-autoIncrements"
+<entry request="Procedure" branch="ebx-autoIncrements" date="2016-01-19T11:04:06.614" entryId="44774F60-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceSystem trackingInfo="Update of sequences table: AutoIncrement[Publication: GeomatchDataModel, /root/Geomatch/id]" />
+	<Procedure javaClass="com.onwbp.adaptation.fc" />
+</entry>
+2016-01-19 11:04:06,619 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-4] Executed the following action on home : branch "Geomatch"
+<entry request="Procedure" branch="Geomatch" date="2016-01-19T11:04:06.617" entryId="4477C490-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./id)]" />
+</entry>
+2016-01-19 11:04:19,315 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-8] Executed the following action on home : branch "ebx-autoIncrements"
+<entry request="Procedure" branch="ebx-autoIncrements" date="2016-01-19T11:04:19.315" entryId="4C095430-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceSystem trackingInfo="Update of sequences table: AutoIncrement[Publication: GeomatchDataModel, /root/Geomatch/id]" />
+	<Procedure javaClass="com.onwbp.adaptation.fc" />
+</entry>
+2016-01-19 11:04:19,319 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-8] Executed the following action on home : branch "Geomatch"
+<entry request="Procedure" branch="Geomatch" date="2016-01-19T11:04:19.319" entryId="4C09F070-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./id)]" />
+</entry>
+2016-01-19 11:05:16,645 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Executed the following action on home : branch "ebx-autoIncrements"
+<entry request="Procedure" branch="ebx-autoIncrements" date="2016-01-19T11:05:16.645" entryId="6E353150-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceSystem trackingInfo="Update of sequences table: AutoIncrement[Publication: GeomatchDataModel, /root/Geomatch/id]" />
+	<Procedure javaClass="com.onwbp.adaptation.fc" />
+</entry>
+2016-01-19 11:05:16,649 EST INFO   log.kernel 0985:0003 [http-bio-8090-exec-9] Executed the following action on home : branch "Geomatch"
+<entry request="Procedure" branch="Geomatch" date="2016-01-19T11:05:16.648" entryId="6E35A680-BEC6-11E5-B55A-00BCB1E7F93B">
+	<sourceWebUser login="Uadmin" ipAddress="0:0:0:0:0:0:0:1" sessionId="783F9772FA8836C8F6D01E03FB16975E:0" />
+	<Procedure javaClass="com.orchestranetworks.manager.core.context.CreateOccurrenceProcedure" executionInfo="Created record [osd:is-null(./id)]" />
+</entry>
+2016-01-19 11:10:53,739 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Shutting down EBX5...
+2016-01-19 11:10:53,742 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on com.orchestranetworks.addon.AddonLicenseInitializer@5d76eb60...
+2016-01-19 11:10:53,743 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.orchestranetworks.addon.adix.module.AdixRegisterAddon@71fe11a6]@78af156b...
+2016-01-19 11:10:53,743 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.orchestranetworks.dma.module.RegisterServlet@49bf1c51]@16c0859d...
+2016-01-19 11:10:53,743 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.orchestranetworks.manager.RegisterManagerServlet@36c6b2b7]@1626d45c...
+2016-01-19 11:10:53,743 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Executing handleRepositoryShutdown() on b[com.onwbp.front.RegisterRootServlet@274a1f5d]@35349a44...
+2016-01-19 11:10:53,744 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Stopping workflow repository
+2016-01-19 11:10:53,744 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Stopping workflow queue manager
+2016-01-19 11:10:53,745 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Stopping workflow work item supervisor
+2016-01-19 11:10:53,749 EST INFO   log.kernel 0985:0003 [ebx-shutdown] Shutting down repository [jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository]...
+2016-01-19 11:10:53,856 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] EBX5 FrontServlet receives a destroy, this will unload web application 'ebx' and shut down repository.
+2016-01-19 11:10:53,860 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down EBX5 scheduler.
+2016-01-19 11:10:53,860 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] EBX5 scheduler - ebx-scheduler-resources shutting down.
+2016-01-19 11:10:53,861 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] EBX5 scheduler - ebx-scheduler-resources paused.
+2016-01-19 11:10:53,861 EST INFO   log.kernel 0985:0003 [ebx-memorySupervisor] Received InterruptedException.
+2016-01-19 11:10:53,864 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] EBX5 scheduler - ebx-scheduler-resources shutdown complete.
+2016-01-19 11:10:53,864 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down repository [jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository]...
+2016-01-19 11:10:54,239 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down repository cache l[]@618220ee...
+2016-01-19 11:10:54,243 EST INFO   log.frontEnd.incomingRequest 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 11:10:54,248 EST INFO   log.frontEnd 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 11:10:54,249 EST INFO   log.frontEnd.requestHistory 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 11:10:54,250 EST INFO   log.setup 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 11:10:54,251 EST INFO   log.frontEnd.UIComponentInput 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 11:10:54,251 EST INFO   log.kernel 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 11:10:54,256 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #664c38df:
+	Unregistered module [Geomatch Module].
+	Registry now contains: ebx-root-1.0, ebx-manager, ebx-dma, ebx-addon-adix.
+2016-01-19 11:10:54,270 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #664c38df:
+	Removed property file from watchdog: /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Server/webapps/ebx-manager/WEB-INF/ebx/module.properties.
+	Unregistered module [ebx-manager].
+	Removed property file from watchdog: /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Server/webapps/ebx-addon-adix/WEB-INF/ebx/module.properties.
+	Unregistered module [ebx-addon-adix].
+	Unregistered module [ebx-dma].
+	Removed property file from watchdog: /Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Server/../EBX Server/webapps/ebx-root-1.0/WEB-INF/ebx/module.properties.
+	Unregistered module [ebx-root-1.0].
+	Registry now contains: .
+2016-01-19 11:10:54,278 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] EBX5 FrontServlet receives a destroy, this will unload web application 'ebx' and shut down repository.
+2016-01-19 11:10:54,278 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Shutting down EBX5 scheduler.
+2016-01-19 11:10:54,278 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Repository is already shut down [jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository].
+2016-01-19 11:10:54,287 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #664c38df:
+2016-01-19 11:10:54,290 EST WARN   log.kernel 0985:0003 [localhost-startStop-2] Module [ebx-manager] not found when dispatching onwbpInternalTimeOut (web application may have been stopped).
+2016-01-19 11:10:54,301 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #664c38df:
+2016-01-19 11:10:54,319 EST INFO   log.kernel 0985:0003 [localhost-startStop-2] Modules' registry #664c38df:

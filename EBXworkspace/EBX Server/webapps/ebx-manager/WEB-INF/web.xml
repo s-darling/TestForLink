@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<servlet>
+		<servlet-name>WebProcessServlet</servlet-name>
+		<servlet-class>com.onwbp.front.WebProcessServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RegisterManagerServlet</servlet-name>
+		<servlet-class>com.orchestranetworks.manager.RegisterManagerServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<mime-mapping>
+		<extension>svg</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svgz</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+</web-app>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.4.3 Fix A</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.4.3.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.4.3 Fix A</h1>
+<p><em><strong>5.4.3 Fix A</strong> released on April 11, 2014 for <a href="#bugfix543FixA">bug fixes</a></em></p><p><em><strong>5.4.3</strong> released on April 3, 2014.</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of 5.4.3</a></li><li class="toc1"><a href="#id2">Data workflows</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Checks before work item completion</a></li><li class="toc2"><a href="#id2s2">Select a work item using a URL</a></li><li class="toc2"><a href="#id2s3">Automatically allocate and start a work item</a></li><li class="toc2"><a href="#id2s4">Select a data workflows section using a URL</a></li><li class="toc2"><a href="#id2s5"> Log a work item key </a></li></ul>
+</li><li class="toc1"><a href="#id3">Data space merge view</a></li><li class="toc1"><a href="#id4">Distributed data delivery (D3)</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Improved slave registration process on master</a></li></ul>
+</li><li class="toc1"><a href="#id5">Data views</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Java API to look up record</a></li></ul>
+</li><li class="toc1"><a href="#id6">Performance improvements</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">History</a></li></ul>
+</li><li class="toc1"><a href="#versionUpgrade">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Backward compatibility</a></li><li class="toc2"><a href="#id7s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#bugfix543FixA">5.4.3 Fix A bug fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug543FixA-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug543FixA-Userinterface">User interface</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">5.4.3 bug fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-Coreengine">Core engine</a></li><li class="toc2"><a href="#bug-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug-Dataservices">Data services</a></li><li class="toc2"><a href="#bug-Datavalidation">Data validation</a></li><li class="toc2"><a href="#bug-Dataviews">Data views</a></li><li class="toc2"><a href="#bug-Dataworkflows">Data workflows</a></li><li class="toc2"><a href="#bug-DistributedDataDelivery">Distributed Data Delivery (D3)</a></li><li class="toc2"><a href="#bug-Messagesi18n">Messages &amp; i18n</a></li><li class="toc2"><a href="#bug-Userinterface">User interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of 5.4.3</h2>
+<p>This interim version contains a limited set of new features specifically requested by clients, as well as <a href="#bugfix">bug fixes</a>. The evolutions include for blocking checks before completing work items, workflow portal integration, and a data space merge view.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<strong>Before proceeding with the upgrade of an existing environment, ensure that you have carefully read the <a href="#versionUpgrade">Version upgrade</a> section</strong>.</fieldset>
+<h2>
+<a name="id2"></a>Data workflows</h2>
+<h3>
+<a name="id2s1"></a>Checks before work item completion</h3>
+<p>A new feature is available to check constraints when the user clicks the &#39;Accept&#39; or the &#39;Reject&#39; button in a work item. If constraints have not been respected, a blocking message is displayed and the work item is not terminated.</p><p>To use this feature, a new method must be implemented in the extension of the user task. See <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/UserTask.html#checkBeforeWorkItemCompletion(com.orchestranetworks.workflow.UserTaskBeforeWorkItemCompletionContext)"><code>UserTask.checkBeforeWorkItemCompletion</code></a> in the Java API for more information. </p><h3>
+<a name="id2s2"></a>Select a work item using a URL</h3>
+<p>It is now possible to get a URL for selecting a work item in the workflow execution interface.</p><p>It is also possible to automatically take and start the target work item using the parameter <code>startWorkItem</code>.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.html#selectWorkItem(boolean, com.orchestranetworks.workflow.WorkItemKey)"><code>UIHttpManagerComponent.selectWorkItem</code></a> in the Java API for more information.</p><h3>
+<a name="id2s3"></a>Automatically allocate and start a work item</h3>
+<p>The new mail variable &#39;workflow.workItem.link.allocateAndStart&#39; is available to access a work item and to automatically take and start it.</p><p>For more information, see the <a href="../user_workflowmodel/userworkflowmodel_createimplement.html#notification">reference documentation</a>.</p><h3>
+<a name="id2s4"></a>Select a data workflows section using a URL</h3>
+<p>It is now possible to get a URL for selecting a section in the data workflows user interface, for example, the work item inbox or workflow monitoring.</p><p>The table of the selected section can also be filtered using the parameter <code>xpath</code>.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.html#setService(com.orchestranetworks.service.ServiceKey)"><code>UIHttpManagerComponent.setService</code></a> and <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceKey.html"><code>ServiceKey</code></a> in the Java API for more information.</p><h3>
+<a name="id2s5"></a> Log a work item key </h3>
+<p> A method has been added to the Java API to generate logs for a work item key. </p><p> See <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/WorkItemKey.html#toStringForLog()"><code>WorkItemKey.toStringForLog</code></a> in the Java API for more information. </p><h2>
+<a name="id3"></a>Data space merge view</h2>
+<p>A read-only data space merge view has been added. This view proposes the same merge comparison as is available during merges, without the confirmation checkboxes and the merge action.</p><p>This option can be used as follows:</p><ul>
+<li><p>For workflows: Using an &#39;Access the data space merge view&#39; user task.</p></li><li><p>For web component: Using the service name parameter <code>service=@merge.view</code>.</p></li><li><p>Through the Java API: Using <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceKey.html#MERGE_VIEW"><code>ServiceKey</code></a></p></li></ul>
+<p>See <a href="../references/builtin.html#merge.view">Access the data space merge view</a> and <a href="../references/manager_component_ref.html">Using EBX5 as a web component</a> for more information.</p><h2>
+<a name="id4"></a>Distributed data delivery (D3)</h2>
+<h3>
+<a name="id4s1"></a>Improved slave registration process on master</h3>
+<p>If a slave node identifier or name is modified, it can now be reassociated with an existing registration on the master node. If an existing registration is found by matching its &quot;communication layer&quot; parameter, the slave being registered will now replace the existing node.</p><p>See <a href="../engine/d3_broadcast.html#registration">Slave registration</a> for more information on the slave registration process. </p><h2>
+<a name="id5"></a>Data views</h2>
+<h3>
+<a name="id5s1"></a>Java API to look up record</h3>
+<p>Two new methods have been added to quickly look up the first record that matches an XPath expression or XPath predicate.</p><p>See <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#lookupFirstRecordMatchingPredicate(boolean, java.lang.String, boolean)"><code>AdaptationTable.lookupFirstRecordMatchingPredicate</code></a> and <a target="_blank" href="../Java_API/com/onwbp/adaptation/XPathExpressionHelper.html#lookupFirstRecordMatchingXPath(boolean, com.onwbp.adaptation.Adaptation, java.lang.String, boolean)"><code>XPathExpressionHelper.lookupFirstRecordMatchingXPath</code></a> in the Java API for more information.</p><h2>
+<a name="id6"></a>Performance improvements</h2>
+<h3>
+<a name="id6s1"></a>History</h3>
+<p>History performance has been improved by reducing database unitary accesses and by using batch writes to history tables. As a result, modifications to a historized table are at least five time faster. This optimization offers the greatest benefits during mass processing and with remote databases on a high latency networks.</p><h2>
+<a name="versionUpgrade"></a>Version upgrade</h2>
+<h3>
+<a name="id7s1"></a>Backward compatibility</h3>
+<h4>
+Database default collation must be case-sensitive with SQL Server</h4>
+<p>Starting from version 5.4.3, EBX5 will prevent startup when using Microsoft SQL Server databases whose default collation is case-insensitive. Please contact technical support for assistance regarding database migration. </p><h3>
+<a name="id7s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<p>If using EBX5 add-ons, ensure that the versions of the add-ons are compatible with EBX5 version 5.4.3 before upgrading. For the backward compatibility of the add-ons themselves, consult the release note of each add-on.</p><p>Once an EBX5 repository has been used with this version, using it with a previous version is not supported. Consequently, you must create a backup before upgrading, as described above, in order to maintain the possibility of downgrading later.</p></fieldset>
+<h2>
+<a name="bugfix543FixA"></a>5.4.3 Fix A bug fixes</h2>
+<h3>
+<a name="bug543FixA-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><p><a name="bug_10277"></a><strong>[10277]</strong> Data model compilation error when combining replication and links between instances. </p><p>When three data models reference each other and enable replication in the same data space, the following data model compilation errors are reported if a child data space has been accessed before accessing its parent: <code>java.lang.IllegalStateException: The IccAdapter has not been set for this node</code>.</p></li></ul>
+<h3>
+<a name="bug543FixA-Userinterface"></a>User interface</h3>
+<ul>
+<li><p><a name="bug_10333"></a><strong>[10333]</strong> Unexpected behaviour occurs on fields when no fraction digits are defined. </p><p>In the user interface, the decimal digits are truncated for fields that do not define a maximum number of fraction digits.</p></li></ul>
+<h2>
+<a name="bugfix"></a>5.4.3 bug fixes</h2>
+<h3>
+<a name="bug-Coreengine"></a>Core engine</h3>
+<ul>
+<li><p><a name="bug_8166"></a><strong>[8166]</strong> An error occurs on SQL Server when modifying the primary key of a relational table. </p><p>If a relational table is modified, adding a column &#39;c1&#39; to the primary key that is included in the definition of another index &#39;idx&#39;, the following error occurs:</p><p>&quot;The index &#39;EBXT001_IDX_idx&#39; is dependent on column &#39;c1&#39;.&quot;</p></li><li><p><a name="bug_9928"></a><strong>[9928]</strong> Cannot add new columns to a primary key in a non-empty table. </p><p>It is not possible to add a new column to a primary key in a relational table with existing records. Script execution fails, leaving the repository in an inconsistent state (metadata is committed but script execution cannot proceed).</p></li><li><p><a name="bug_9954"></a><strong>[9954]</strong> An error occurs when loading data from a replicated table. </p><p>A <code>NullPointerException</code> occurs when loading data from a replicated table.</p></li><li><p><a name="bug_10091"></a><strong>[10091]</strong> Start up of EBX5 fails if an administrative data space has an undefined owner. </p><p>If the owner of an administrative data space is undefined, an exception is raised. As a consequence, the EBX5 boot process cannot continue and the scheduler is not started.</p></li><li><p><a name="bug_10229"></a><strong>[10229]</strong> Requests with void filters are not optimized for sorts not using the primary key. </p><p>If a request has no specific filter, it is always resolved using the primary key index, even if another index exists that matches the sort criteria.</p></li><li><p><a name="bug_10238"></a><strong>[10238]</strong> An error occurs at server startup. </p><p>A <code>RepositoryAccessException</code> occurs when calculating the size of the <code>HTB</code> table at server startup if the size exceeds the maximum value for an integer.</p></li></ul>
+<h3>
+<a name="bug-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><p><a name="bug_10181"></a><strong>[10181]</strong> Function (computed value) is not offered for terminal groups in the DMA. </p><p>In a terminal group, it is possible to define a value function if the group also defines also a UI bean. The DMA does not offer this possibility, thus the user must directly modify the XSD.</p></li><li><p><a name="bug_10182"></a><strong>[10182]</strong> In the DMA, unable to select a terminal group in the wizard for inherited fields. </p><p>It is possible to define a terminal group as an inherited field, but the wizard in the DMA does not allow selecting it. The user must select one of its children, then manually modify the path.</p></li><li><p><a name="bug_10192"></a><strong>[10192]</strong> A data model with invalid constraints in a selection node should not be able to be published. </p><p>Currently, the user can successfully publish a data model with an unknown predicate operator in the constraint of a selection node field. A fatal error occurs in the referencing data set when creating a record in a table.</p></li></ul>
+<h3>
+<a name="bug-Dataservices"></a>Data services</h3>
+<ul>
+<li><p><a name="bug_9119"></a><strong>[9119]</strong> Generated WSDLs are invalid due to missing type definitions. </p><p>Generated WSDLs are not valid because there are no XSDs available with the namespace <code>urn:ebx-schemas:deployment_1.0</code>. This namespace is used for technical data, such as the last time of modification and the last modifying user.</p></li><li><p><a name="bug_9967"></a><strong>[9967]</strong> XML response of a multiple data service operation does not conform to WSDL standards. </p><p>When a multiple data service operation is validated, an invalid content error occurs.</p></li></ul>
+<h3>
+<a name="bug-Datavalidation"></a>Data validation</h3>
+<ul>
+<li><p><a name="bug_10085"></a><strong>[10085]</strong> Unable to close a data space if contains a data model that uses another data model with errors. </p><p>When closing a data space containing a data model with a foreign key to a data set with errors in its data model, the operation is aborted with an exception.</p></li></ul>
+<h3>
+<a name="bug-Dataviews"></a>Data views</h3>
+<ul>
+<li><p><a name="bug_8919"></a><strong>[8919]</strong> Browser pop-up appears when cross-scripting content is entered in a field. </p><p>When the user inputs cross-scripting content into a decimal, integer, or URI field and saves the form, a browser pop-up appears.</p></li><li><p><a name="bug_8956"></a><strong>[8956]</strong> Browser pop-up appears when cross-scripting is inputted into the localized label description UIBean. </p><p>In the Administration area, under &#39;Workflows&#39;, when the user inputs cross-scripting into the field &#39;Specific label&#39; in the &#39;Workflows&#39; table, a browser pop-up appears.</p></li><li><p><a name="bug_9176"></a><strong>[9176]</strong> Join table fields may be duplicated when creating a new record in a hierarchy view. </p><p>When the user creates a new record in a hierarchy view based on a ternary field join table, additional fields in the join table may be duplicated.</p></li><li><p><a name="bug_9362"></a><strong>[9362]</strong> Hierarchy orphan mode impacts record creation. </p><p>When orphan nodes are excluded from a hierarchical view, record creation is not completed properly.</p></li><li><p><a name="bug_9801"></a><strong>[9801]</strong> In a hierarchy, error message is displayed when clicking to view node whose primary containing pipe character. </p><p>In a hierarchy, an error occurs when viewing a child node whose primary key contains a pipe character. The error message is &quot;The element to be selected was not found.&quot;</p></li><li><p><a name="bug_9917"></a><strong>[9917]</strong> An HTML field is displayed as a text area in tables containing groups with more than one HTML field and tabs enabled. </p><p>This issue occurs when a table contains a group that enables tabs and this group has more than one HTML field. The HTML field is displayed as a text area when the user creates a record for this table.</p></li><li><p><a name="bug_9964"></a><strong>[9964]</strong> The drop-down menu for a foreign key may be sorted incorrectly if it links to another foreign key. </p><p>If a foreign key targets a table whose primary key is also a foreign key that targets a labeled primary key table, the drop-down menu items are incorrectly sorted.</p></li><li><p><a name="bug_10185"></a><strong>[10185]</strong> An error occurs when applying the last modifications for a node in a hierarchy at a different level. </p><p>When the user updates records in a parent node, then click to apply the last modifications from a different hierarchy level, a blank page is displayed.</p><p>It should not be possible to apply previous modifications on a different dimension level.</p></li><li><p><a name="bug_10240"></a><strong>[10240]</strong> On Firefox 3.6, a browser pop-up appears when data set documentation contains cross-scripting. </p><p>On Firefox 3.6, when a localized data set label or description contains cross-scripting, a browser pop-up appears when a user clicks on the documentation pane of that data set.</p></li><li><p><a name="bug_10255"></a><strong>[10255]</strong> Fields that are not included in the custom view are not displayed on the page of proposed previous modifications to apply. </p><p>This issue occurs when the user applies a custom view and makes a modification on fields that are not included in this custom view. These fields are not displayed on the page of proposed modifications to apply.</p></li></ul>
+<h3>
+<a name="bug-Dataworkflows"></a>Data workflows</h3>
+<ul>
+<li><p><a name="bug_10194"></a><strong>[10194]</strong> No record found when searching on &#39;Priority&#39; criterion in the data workflow tables. </p><p>This issue occurs when the user searches on certain workflow tables using the &#39;Priority&#39; criterion. Records are not displayed in the results even though they contain searched value.</p></li><li><p><a name="bug_10197"></a><strong>[10197]</strong> A JavaScript error occurs when publishing a workflow model without any steps. </p><p>When publishing a workflow model that does not define any steps, the user interface displays a JavaScript error.</p></li></ul>
+<h3>
+<a name="bug-DistributedDataDelivery"></a>Distributed Data Delivery (D3)</h3>
+<ul>
+<li><p><a name="bug_10087"></a><strong>[10087]</strong> Error occurs when deleting a slave delivery data space. </p><p>On a slave node, if an exception occurs during a delivery data space deletion request, the record in the &quot;Slave delivery data space&quot; technical tableis still deleted. The transaction is not respected. This leads to a <code>NullPointerException</code> upon the next request.</p></li></ul>
+<h3>
+<a name="bug-Messagesi18n"></a>Messages &amp; i18n</h3>
+<ul>
+<li><p><a name="bug_10154"></a><strong>[10154]</strong> Cannot publish data models that include Oracle Hyperion EPM. </p><p>A data model including data types from the Oracle Hyperion EPM add-on has compilation errors due to a missing resource bundle declaration.</p></li></ul>
+<h3>
+<a name="bug-Userinterface"></a>User interface</h3>
+<ul>
+<li><p><a name="bug_9844"></a><strong>[9844]</strong> Display issue with scope when using the <code>@selectDataspace</code> service. </p><p>Whe using the <code>@selectDataspace</code> service, user interface scopes are not displayed properly. For example, the scope mode node allows accessing data without being able to navigate within data sets.</p></li><li><p><a name="bug_9952"></a><strong>[9952]</strong> An error occurs when selecting a data set with a severe error. </p><p>A blank screen is displayed when selecting a data set with a severe error, and an <code>UnavailableContentError</code> exception occurs.</p></li><li><p><a name="bug_10264"></a><strong>[10264]</strong> Closed or purged data spaces are not displayed correctly in the history table. </p><p>In the history table, the names of closed or purged data spaces should be displayed with a strikethrough, but instead include HTML styling text.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><a name="bug_10019"></a><strong>[10019]</strong> Complex types under permissions are not aligned with the other fields. </p><p>On the permission definition screen, the complex values access policy fields are aligned left in the list of fields. They should be aligned with the other fields.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

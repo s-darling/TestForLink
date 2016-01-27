@@ -1,0 +1,152 @@
+
+#ebx_Header a {
+	border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+#ebx_Menu {
+	margin: 0;
+	padding: 0;
+	
+	display: inline-block;
+	vertical-align: top;
+	
+	white-space: nowrap;
+}
+
+#ebx_Menu li {
+	display: inline-block;
+}
+
+/*#ebx_Menu li a/span*/.ebx_MenuLabel {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	
+	height: 40px;
+	width: 40px;
+	
+	background-repeat: no-repeat;
+}
+.ebx_MenuLabel,
+.ebx_MenuLabel:hover,
+.ebx_MenuLabel:active {
+	text-decoration: none;
+}
+
+#ebx_Menu li.ebx_data .ebx_MenuLabel {
+	background-position: 0 0;
+}
+#ebx_Menu li.ebx_data.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: 0 -40px;
+}
+
+#ebx_Menu li.ebx_dataSpaces .ebx_MenuLabel {
+	background-position: -40px 0;
+}
+#ebx_Menu li.ebx_dataSpaces.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -40px -40px;
+}
+
+#ebx_Menu li.ebx_workflow .ebx_MenuLabel {
+	background-position: -80px 0;
+}
+#ebx_Menu li.ebx_workflow.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -80px -40px;
+}
+
+#ebx_Menu li.ebx_modelingDMA .ebx_MenuLabel {
+	background-position: -120px 0;
+}
+#ebx_Menu li.ebx_modelingDMA.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -120px -40px;
+}
+
+#ebx_Menu li.ebx_modelingWF .ebx_MenuLabel {
+	background-position: -160px 0;
+}
+#ebx_Menu li.ebx_modelingWF.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -160px -40px;
+}
+
+#ebx_Menu li.ebx_dataServices .ebx_MenuLabel {
+	background-position: -200px 0;
+}
+#ebx_Menu li.ebx_dataServices.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -200px -40px;
+}
+
+#ebx_Menu li.ebx_admin .ebx_MenuLabel {
+	background-position: -240px 0;
+}
+#ebx_Menu li.ebx_admin.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -240px -40px;
+}
+
+/*START Module Header Menu Item */
+.ebx_HeaderIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active:focus {
+	background-position: 0 0;
+}
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: 0 -40px;
+}
+
+.ebx_HeaderIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active:focus {
+	background-position: -40px 0;
+}
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -40px -40px;
+}
+
+.ebx_HeaderIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active:focus {
+	background-position: -80px 0;
+}
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -80px -40px;
+}
+/*END Module Header Menu Item */
+
+#ebx_Menu .ebx_WorkflowBadge {
+	float: right;
+	margin: 3px;
+}
+
+
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:hover,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:focus,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:active,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:active:focus {/*
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel {
+	cursor: default;
+}
+
+#ebx_Menu li:hover {/*
+	background-color: #F8F8F8;/*{menu-Active-BgColor}*/
+}
+
+
+.ebx_MenuLabel:focus,
+#ebx_UserBloc .ebx_FlatButtonNoBorder:focus {
+	outline: none;
+	box-shadow: none;/* defined in MssCssSettings */
+}
+#ebx_UserBloc .ebx_FlatButtonNoBorder:focus {
+	border-color: transparent;
+}

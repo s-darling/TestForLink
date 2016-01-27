@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Data model administration</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_publication_admin" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Administration Guide &gt; Technical administration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/admin_models.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+<h1>
+Data model administration</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#pub_administrate">Administrating publications and versions</a></li><li class="toc1"><a href="#pub_migration">Migration of previous data models in repository</a></li></ul>
+</div>
+<h2>
+<a name="pub_administrate"></a>Administrating publications and versions</h2>
+<p>Technical data about data model publications and versions can be accessed in the <em>Administration</em> section by an administrator.</p><p><em>Data Modeling</em> contains the two following tables:</p><ul>
+<li><p><em>Publications</em>. Stores the publications available in the repository.</p></li><li><p><em>Versions</em>. Stores the versions of the data models available in the repository.</p></li></ul>
+<p>These tables are in read-only but it is however possible to delete manually a publication or a version. </p><p><strong>Important: </strong> If a publication or a version is deleted then the content of associated data sets will become unavailable. So these technical data must be deleted with caution.</p><p>It is possible to spread these technical data to other EBX5 repositories exporting an archive from a EBX5 repository and importing it to another one. It may be useful for propagating the evolutions of data models to other repositories.</p><h2>
+<a name="pub_migration"></a>Migration of previous data models in repository</h2>
+<p>In versions before <em>5.2.0</em>, published data models not depending on module were generated in the file system directory <code>${<a href="../installation/properties.html#rootDirectory">ebx.repository.directory</a>}/schemas/</code>, with the name of the data model (<em>product.xsd</em> for example if the data model is named <em> Product</em>). Since the <em> 5.2.0</em>, this kind of data model is now fully managed inside EBX5 through <em> Publications</em>. That is, republishing an existing data model migrates it as a <em>Publication</em> and redirects linked data sets to the new embedded data model. The previous XML Schema Document located in <code>${<a href="../installation/properties.html#rootDirectory">ebx.repository.directory</a>}/schemas/</code> is renamed and suffixed with <em>toDelete</em> meaning that the document is no more used and can be safely deleted. </p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+
+.wpihTaskFlow {
+	position: relative;
+}
+#wpihInfoPreview .wpihTaskFlow {
+	margin: 0 15px;
+	overflow: hidden;
+}
+
+.wpihTaskContainerWithTimeline {
+	height: 132px;
+	overflow: hidden;
+}
+#wpihInfoPreview .wpihTaskContainerWithTimeline {
+	height: 118px;
+}
+
+.wpihTaskScroll {
+	position: relative;
+	
+	height: 18px; /* 1(paddingTop) + 16(button.height) + 1(paddingBottom) */
+}
+
+.wpihTaskScrollBtnLeft,
+.wpihTaskScrollBtnRight {
+	position: absolute;
+	padding: 1px; /* to let the focus line to be displayed */
+	top: 0;
+}
+.wpihTaskScrollBtnLeft {
+	left: 0;
+}
+.wpihTaskScrollBtnRight {
+	right: 0;
+}
+
+.wpihTaskScrollBtnLeft .ebx_FlatButton,
+.wpihTaskScrollBtnRight .ebx_FlatButton {
+	margin: 0;
+}
+
+.wpihTaskScrollBGPast,
+.wpihTaskScrollBGPresent,
+.wpihTaskScrollBGError,
+.wpihTaskScrollBGFuture {
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+}
+
+.wpihTaskScrollSlideLeft,
+.wpihTaskScrollKnob,
+.wpihTaskScrollKnobDD,
+.wpihTaskScrollSlideRight {
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+}
+
+.wpihTaskScrollSlideLeft,
+.wpihTaskScrollSlideRight {
+	background-image: url(../images/onWorkflow/slideMask.png);
+	background-position: center center;
+}
+
+.wpihTaskScrollKnob {
+	border: 1px solid #808080;
+	
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.wpihTaskScrollKnobDD {
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+body.wpihTaskScrollGrabbing * {
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+
+.wpihTaskContainer {
+	position: relative;
+	height: 150px;
+	
+	width: 100%;
+	
+	white-space: nowrap;
+	
+	overflow: auto;
+}
+
+#wpihInfoPreview .wpihTaskContainer {
+	cursor: pointer;
+}
+
+.wpihIcon,
+.wpihTask {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+.wpihIcon {
+	margin-top: 10px;
+}
+
+.wpihTask {
+	height: 100px;
+	width: 100px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+	
+	margin-top: 1px;/* for SelectIndicator */
+	position: relative;
+	z-index: 20;
+}
+.wpihSelectIndicator {
+	/* SelectIndicator is under the Task, and borders around it */
+	height: 102px;
+	width: 102px;
+	margin-left: -1px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+	
+	position: absolute;
+	z-index: 10;
+}
+
+.wpihTask {
+	text-align: center;
+	cursor: pointer;
+}
+
+
+.wpihTaskAfterCondition .wpihTask {
+	cursor: default;
+}
+#wpihInfoPreview .wpihTaskAfterCondition .wpihTask:hover {
+	background-color: #FFFFFF;
+}
+
+.wpihIconStart {
+	margin-left: 10px;
+}
+
+.wpihIconSeparator {/*
+	margin-left: -5px;
+	margin-right: -5px;*/
+	position: relative;
+	z-index: 21;
+}
+
+.wpihIconEnd {
+	margin-right: 10px;
+}
+
+.wpihIconUnknown {
+	margin-right: 10px;
+}
+
+.wpihTask .ebx_BigIcon {
+	margin: 10px;
+}
+
+.wpihTaskLabel {
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 43px;/* 100(task.height) - 10(icon.marginTop) - 32(icon.height) - 10(icon.margin-bottom) - 5(margin-bottom)*/
+}
+.wpihFutureTask .wpihTaskLabel {
+	color: #808080;
+}
+
+.wpihTaskCommentFlag {
+	position: absolute;
+	
+	height: 16px;
+	width: 16px;
+	
+	top: 0px;
+	left: 28px;
+}
+
+.wpihTaskIteration {
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	color: #808080;
+	font-size: 0.9em;
+	
+	visibility: hidden;
+}
+.wpihTask:hover .wpihTaskIteration {
+	visibility: visible;
+}
+
+.wpihSelectIndicator {
+	border: 1px solid #C0C0C0;
+	top: 0;
+	left: -100%;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+    -webkit-transition: left ease 0.5s;
+    -moz-transition: left ease 0.5s;
+}
+.wpihSelectIndicatorPointer {
+	height: 11px;
+	width: 20px;
+	position: absolute;
+	
+	margin-top: 100%;
+	margin-left: 40px;
+	
+	background-position: 0 -80px;
+	background-repeat: no-repeat;
+}
+
+.wpihTimeLinePast,
+.wpihTimeLinePresent,
+.wpihTimeLineError,
+.wpihTimeLineFuture {
+	position: absolute;
+	bottom: 0;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+	height: 23px;
+	
+	text-align: center;
+	padding: 4px;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+#wpihInfoPreview .wpihTimeLinePast,
+#wpihInfoPreview .wpihTimeLinePresent,
+#wpihInfoPreview .wpihTimeLineError,
+#wpihInfoPreview .wpihTimeLineFuture {
+	height: 17px;
+	padding: 1px;
+}
+
+
+#wpihInfoTitle {
+	padding: 10px 15px;
+	margin: 0;
+}
+
+#wpihInfoBody {
+	overflow: auto;
+}
+
+#wpihInfoBody #ebx_ScrollShadow {
+	z-index: 100;
+}
+
+#wpihInfoText {
+	
+}
+
+#wpihInfoText p {
+	margin: 10px 0;
+}
+
+.wpihInfoTextDescription {
+	text-align: justify;
+}
+
+#wpihInfoPreview {
+	margin-bottom: 15px;
+}
+
+.wpihWorkItem {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin: 15px 0 0 15px;
+	padding: 5px;
+	
+	width: 295px;
+}
+
+.wpihWorkItem .ebx_BigIcon {
+	float: left;
+	margin: 15px 10px 5px 10px;
+}
+
+.wpihWorkItemProfile {
+	
+	margin-top: 15px;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wpihWorkItemStatus {
+	font-weight: bold;
+}
+.wpihWorkItemComment {
+	clear: both;
+	font-style: italic;
+	text-align: justify;
+}
+
+.wpihWorkItemInfoButton {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+}
+.wpihWorkItemInfoButton:focus {
+    -moz-outline-radius: 100%;
+}
+.wpihWorkItem .wpihWorkItemInfoButton {
+	margin: 0;
+}
+
+.wpihTaskAfterCondition {
+	display: inline-block;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+.wpihTaskAfterConditionLegend {
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+.wpihSubWorkflowTitle {
+	margin: 0;
+	padding: 10px 15px 0 15px;
+}
+

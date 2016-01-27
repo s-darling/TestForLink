@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Users and roles directory</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="admin_directory" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Administration Guide &gt; Technical administration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/directory.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+<h1>
+Users and roles directory</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#overview">Overview</a></li><li class="toc1"><a href="#model">Concepts</a></li><li class="toc1"><a href="#DirectoryDefault">Default directory</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Directory content</a></li><li class="toc2"><a href="#id3s2">Password recovery procedure</a></li><li class="toc2"><a href="#id3s3">Administrator recovery procedure</a></li></ul>
+</li><li class="toc1"><a href="#DirectorySpecific">Custom directory</a></li></ul>
+</div>
+<h2>
+<a name="overview"></a>Overview</h2>
+<p>EBX5 uses a directory for user authentication and user role definition.</p><p>A default directory is provided and integrated into EBX5 repository. It is also possible to integrate another type of enterprise directory.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../installation/properties.html#userDirectory">Configuring the user and roles directory</a></li><li><a href="#DirectorySpecific">Custom directory</a></li></ul>
+</div>
+<h2>
+<a name="model"></a>Concepts</h2>
+<p>In EBX5, a user can be a member of several roles, and a role can be shared by several users. Moreover, a role can be included in another role. The generic term <em>profile</em> is used to describe either a user or a role.</p><p> In addition to the directory-defined roles, EBX5 provides the following <em>built-in roles</em>: </p><table border="1" cellpadding="5" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Role</strong></th><th><strong>Definition</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Profile.ADMINISTRATOR</p></td><td><p>Built-in Administrator role. Allows performing general administrative tasks.</p></td></tr>
+<tr>
+<td><p>Profile.READ_ONLY</p></td><td><p>Built-in read-only role. A user associated with the read-only role can only view the EBX5 repository, with no rights for performing modifications in the repository.</p></td></tr>
+<tr>
+<td><p>Profile.OWNER</p></td><td><p>Dynamic built-in owner role. This role is checked dynamically depending on the current element. It is only activated if the user belongs to the profile defined as owner of the current element.</p></td></tr>
+<tr>
+<td><p>Profile.EVERYONE</p></td><td><p>All users belong to this role.</p></td></tr>
+</tbody>
+</table>
+<p>Information related to profiles is primarily defined in the directory.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+Associations between users and the built-in roles <em>OWNER</em> and <em>EVERYONE</em> are managed automatically by EBX5, and thus must not be modified by the directory.</fieldset>
+<p>User permissions are managed separately from the directory. See <a href="../references/permissions.html">Permissions</a>.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../glossary/simple_glossary.html#profile">profile</a></li><li><a href="../glossary/simple_glossary.html#role">role</a></li><li><a href="../glossary/simple_glossary.html#user">user</a></li><li><a href="../glossary/simple_glossary.html#administrator">administrator</a></li><li><a href="../glossary/simple_glossary.html#directory">user and roles directory</a></li></ul>
+</div>
+<h2>
+<a name="DirectoryDefault"></a>Default directory</h2>
+<h3>
+<a name="id3s1"></a>Directory content</h3>
+<p>The default directory is represented by the data set &#39;Directory&#39;, in the Administration area.</p><p>This data set contains tables for users and roles.</p><p>Depending on the policies defined, users can modify information related to their own accounts.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">It is not possible to delete or duplicate the default directory.</p></div>
+<h3>
+<a name="id3s2"></a>Password recovery procedure</h3>
+<p>In the default directory, passwords are encrypted (by default with a SHA256-like algorithm), and stored in this state. Consequently, it is impossible to retrieve lost passwords. A new password must be generated and sent to the user.</p><p>There are two options for this procedure:</p><ol>
+<li><p>A notification email is sent to the administrator, the administrator manually changes the password and sends the new password to the user.</p></li><li><p>A procedure automatically generates a new password and sends it to the user.</p></li></ol>
+<p> By default, the first option is used. To activate the second option, specify the property <code>ebx.password.remind.auto=true</code> in the <a href="../installation/properties.html">EBX5 main configuration file</a>.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">For security reasons, the password recovery procedure is not available for administrator profiles. If required, use the administrator recovery procedure instead.</p></div>
+<h3>
+<a name="id3s3"></a>Administrator recovery procedure</h3>
+<p>If all the &#39;login/password&#39; credentials of the administrators are lost, a special procedure must be followed. A specific directory class redefines an administrator user with login &#39;admin&#39; and password &#39;admin&#39;.</p><p>To activate this procedure:</p><ul>
+<li><p>Specify the following property in the <a href="../installation/properties.html">EBX5 main configuration file</a>:</p><p><code>ebx.directory.factory= com.orchestranetworks.service.directory.DirectoryDefaultRecoverFactory</code></p></li><li><p>Start EBX5 and wait until the procedure completes.</p></li><li><p>Reset the &#39;<code>ebx.directory.factory</code>&#39; property.</p></li><li><p>Restart EBX5 and connect using the &#39;admin&#39; account.</p></li></ul>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">While the &#39;<code>ebx.directory.factory</code>&#39; property is set for recovery procedure, authentication of users will be denied.</p></div>
+<h2>
+<a name="DirectorySpecific"></a>Custom directory</h2>
+<p>As an alternative to the default directory, it is possible to integrate a specific enterprise directory. For example, an LDAP instance, a relational database or a specific directory model instantiated into EBX5.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/DirectoryFactory.html"><code>DirectoryFactory</code></a></p></div>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

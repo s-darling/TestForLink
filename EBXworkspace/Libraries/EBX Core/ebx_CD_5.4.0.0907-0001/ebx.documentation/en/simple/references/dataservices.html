@@ -1,0 +1,1046 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Data services</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dataservices" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Integration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/dataservices.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration</span></div>
+<h1>
+Data services</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of data services</a></li><li class="toc1"><a href="#id2">SOAP interactions</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Input and output message encoding</a></li><li class="toc2"><a href="#tracking">Tracking information</a></li><li class="toc2"><a href="#id2s3">Exceptions handling</a></li></ul>
+</li><li class="toc1"><a href="#id3">Data services security</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Authentication</a></li><li class="toc2"><a href="#overridingSecurity">Overriding the default security header</a></li><li class="toc2"><a href="#id3s3">Lookup mechanism</a></li></ul>
+</li><li class="toc1"><a href="#id4">Data service operations generated from a data model</a><ul class="toc2">
+<li class="toc2"><a href="#common">Common data model operation request parameters</a></li><li class="toc2"><a href="#select">Select operation</a></li><li class="toc2"><a href="#delete">Delete operation</a></li><li class="toc2"><a href="#count">Count operation</a></li><li class="toc2"><a href="#update">Update operation</a></li><li class="toc2"><a href="#insert">Insert operation</a></li><li class="toc2"><a href="#getChanges">Get changes operations</a></li><li class="toc2"><a href="#getCredentialRequest">Get credentials operation</a></li><li class="toc2"><a href="#multiRequest">Multiple chained operations</a></li><li class="toc2"><a href="#locking">Optimistic locking</a></li></ul>
+</li><li class="toc1"><a href="#repository">Data service operations on data sets and data spaces</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Validate a data space</a></li><li class="toc2"><a href="#id5s2">Validate a data set</a></li><li class="toc2"><a href="#id5s3">Create a data space</a></li><li class="toc2"><a href="#id5s4">Create a snapshot</a></li><li class="toc2"><a href="#mergeDataSpace">Merge a data space</a></li><li class="toc2"><a href="#closeDataSpaceSnapshot">Close a data space or snapshot</a></li></ul>
+</li><li class="toc1"><a href="#workflow">Data service operations on data workflows</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Start a workflow</a></li><li class="toc2"><a href="#id6s2">End a workflow</a></li></ul>
+</li><li class="toc1"><a href="#id7">Known limitations</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Naming convention</a></li><li class="toc2"><a href="#id7s2">Date, time & dateTime format</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of data services</h2>
+<p>Data services allow external systems to interact with the data governed in the EBX5 repository using the SOAP and Web Services Description Language (WSDL) standards.</p><p>A number of WSDLs can be dynamically generated from data models, then used to perform operations such as:</p><ul>
+<li><p>Selecting, inserting, updating, deleting, or counting records</p></li><li><p>Getting the differences on a table between data spaces or snapshots, or between two data sets based on the same data model</p></li><li><p>Getting the credentials of records</p></li></ul>
+<p>Other generic operations for:</p><ul>
+<li><p>Creating, merging, or closing a data space</p></li><li><p>Creating or closing a snapshot</p></li><li><p>Validating a data set, data space, or a snapshot</p></li><li><p>Starting or ending a data workflow</p></li></ul>
+<h2>
+<a name="id2"></a>SOAP interactions</h2>
+<h3>
+<a name="id2s1"></a>Input and output message encoding</h3>
+<p>All input messages must be <em>exclusively</em> in UTF-8. All output messages are in UTF-8. </p><h3>
+<a name="tracking"></a>Tracking information</h3>
+<p>Depending on the data services operation being called, it may be possible to specify session tracking information in an optional SOAP header. For example:</p><pre class="ebx_example brush: xml">
+&lt;SOAP-ENV:Header> 
+	&lt;!-- optional security header here --> 
+	&lt;m:session xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+		&lt;trackingInformation>String&lt;/trackingInformation> 
+	&lt;/m:session> 
+&lt;/SOAP-ENV:Header></pre>
+<h3>
+<a name="id2s3"></a>Exceptions handling</h3>
+<p>Exceptions are re-thrown to the consumer through the <code>soap:fault</code> element within a standard exception. For example:</p><pre class="ebx_example brush: xml">
+&lt;soapenv:Fault>
+	&lt;faultcode>soapenv:java.lang.IllegalArgumentException&lt;/faultcode>
+	&lt;faultstring />
+	&lt;faultactor>admin&lt;/faultactor>
+	&lt;detail>
+		&lt;m:StandardException xmlns:m="urn:ebx-schemas:dataservices_1.0">
+			&lt;code>java.lang.IllegalArgumentException&lt;/code>
+			&lt;label/>
+			&lt;description>java.lang.IllegalArgumentException:
+				Parent home not found at
+				com.orchestranetworks.XXX.YYY.ZZZ.AAA.BBB(AAAA.java:44) at
+				com.orchestranetworks.XXX.YYY.ZZZ.CCC.DDD(CCC.java:40) ... &lt;/description>
+		&lt;/m:StandardException>
+	&lt;/detail>
+&lt;/soapenv:Fault>
+</pre>
+<h2>
+<a name="id3"></a>Data services security</h2>
+<h3>
+<a name="id3s1"></a>Authentication</h3>
+<p>Authentication is mandatory. By default, several methods of authentication exist. They are described below, in the look-up order attempted by the Web Service connector.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+When using JMS, only the standard HTTP &#39;Base64 Basic Authentication&#39; is attempted.</fieldset>
+<ul>
+<li><p>Standard HTTP &#39;Base64 Basic Authentication&#39; encoded using HTTP-Header <code>Authorization</code>, as described in <a target="_blank" href="http://www.ietf.org/rfc/rfc2617.txt">RFC 2324</a> .</p><pre class="ebx_example brush: plain">
+If the user agent wishes to send the userid "Aladdin" and password "open
+sesame", it will use the following header field: Authorization: Basic
+QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+</pre>
+</li><li><p>A simple authentication based on the specification <a target="_blank" href="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf">Web Services Security UsernameToken Profile 1.0</a>. </p><p>Only the mode <code>PasswordText</code> is supported. This is done with the following SOAP header defined in the WSDL:</p><pre class="ebx_example brush: xml">
+&lt;SOAP-ENV:Header>
+	&lt;wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/04/secext">
+		&lt;wsse:UsernameToken>
+			&lt;wsse:Username>user&lt;/wsse:Username>
+			&lt;wsse:Password Type="wsse:PasswordText">password&lt;/wsse:Password>
+		&lt;/wsse:UsernameToken>
+	&lt;/wsse:Security>
+&lt;/SOAP-ENV:Header>
+</pre>
+</li></ul>
+<h3>
+<a name="overridingSecurity"></a>Overriding the default security header</h3>
+<p>It is possible to override the WSS header in order to define another security authentication mechanism. Such an override is taken into account for both HTTP and JMS. To define and override, use the &#39;SOAP Header Security declaration&#39; configuration settings under Administration &gt; Lineage, which includes the following fields:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Schema location</p></td><td class="ebx_definitionListDefinition"><p>The URI of the Security XML Schema to import into the WSDL.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Target namespace</p></td><td class="ebx_definitionListDefinition"><p>The target namespace of elements in the schema.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Namespace prefix</p></td><td class="ebx_definitionListDefinition"><p>The prefix for the target namespace.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Message name</p></td><td class="ebx_definitionListDefinition"><p>The message name to use in the WSDL.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Root element name</p></td><td class="ebx_definitionListDefinition"><p>The root element name of the security header. The name must be the same as the one declared in the schema.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>wsdl:part element name</p></td><td class="ebx_definitionListDefinition"><p>The name of the <code>wsdl:part</code> of the message.</p></td></tr>
+</table>
+<p>The purpose of overriding the default security header is to change the declaration of the WSDL message matching the security header so that it contains the following:</p><pre class="ebx_example brush: plain">
+&lt;wsdl:definitions ... xmlns:MyPrefix="MyTargetNameSpace" ...
+  ...
+  &lt;xs:schema ...>
+    &lt;xs:import namespace="MyTargetNameSpace" schemaLocation="MySchemaURI"/>
+    ...
+  &lt;/xs:schema>
+  ...
+  &lt;wsdl:message name="MySecurityMessage">
+    &lt;wsdl:part name="MyPartElementName" element="MyPrefix:MySecurityRootElement"/>
+  &lt;/wsdl:message>
+  ...
+  &lt;wsdl:operation name="...">
+    &lt;soap:operation soapAction="..." style="document"/>
+    &lt;wsdl:input>
+      &lt;soap:body use="literal"/>
+      &lt;soap:header message="impl:MySecurityMessage" part="MyPartElementName" use="literal"/>
+  ...
+  &lt;/wsdl:operation>
+&lt;/wsdl:definitions></pre>
+<p>The corresponding XML Schema header declaration would be as follows:</p><pre class="ebx_example brush: plain">
+&lt;schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="MyNameSpace" xmlns:MyPrefix="MyNameSpace">
+  &lt;element name="MySecurityRootElement" type="MyPrefix:SpecificSecurity"/>
+  &lt;complexType name="SpecificSecurity">
+    &lt;sequence>
+      &lt;element name="AuthToken" type="string"/>
+    &lt;/sequence>
+  &lt;/complexType>
+&lt;/schema></pre>
+<p>A SOAP message using the XML schema and configuration above would have the following header:</p><pre class="ebx_example brush: plain">
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  &lt;SOAP-ENV:Header>
+    &lt;m:MySecurityRootElement xmlns:m="MyNameSpace">
+      &lt;AuthToken>String&lt;/AuthToken>
+    &lt;/m:MySecurityRootElement>
+    ...
+  &lt;/SOAP-ENV:Header>
+  &lt;SOAP-ENV:Body>
+    ...
+  &lt;/SOAP-ENV:Body>
+&lt;/SOAP-ENV:Envelope></pre>
+<h3>
+<a name="id3s3"></a>Lookup mechanism</h3>
+<p>Using HTTP, the web service connector attempts authentication in the following order:</p><ol>
+<li><p>Using an HTTP Request</p></li><li><p>Using the HTTP Header <code>Authorization</code></p></li><li><p>Looking for a security header (WSS or custom)</p></li></ol>
+<p>When using JMS, the authentication process only looks for a security header (WSS or custom).</p><h2>
+<a name="id4"></a>Data service operations generated from a data model</h2>
+<p>These operations are generated using a given data model. For example, for a table located at the path <code>/root/XX/exampleTable</code>, the generated requests would follow the structure of its underlying data model and include the name of the table <code>&lt;m:{operation}_exampleTable xmlns:m=&quot;urn:ebx-schemas:dataservices_1.0&quot;&gt;</code>.</p><h3>
+<a name="common"></a>Common data model operation request parameters</h3>
+<p>Several parameters are common to several operations and are detailed below.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><a name="branch"></a>branch</p></td><td valign="top"><p>The identifier of the data space to which the data set belongs.</p></td><td valign="top"><p>One of either this parameter or the &#39;version&#39; parameter must be defined</p></td></tr>
+<tr>
+<td valign="top"><p><a name="version"></a>version</p></td><td valign="top"><p>The identifier of the snapshot to which the data set belongs.</p></td><td valign="top"><p>One of either this parameter or the &#39;branch&#39; parameter must be defined</p></td></tr>
+<tr>
+<td valign="top"><p><a name="instance"></a>instance</p></td><td valign="top"><p>The unique name of the data set which contains the table to query.</p></td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><a name="predicate"></a>predicate</p></td><td valign="top"><p><a target="_self" href="../references/xpath_ref.html">XPath predicate</a> defines the records on which the request is applied. If empty, all records will be retrieved, except for the &#39;delete&#39; operation where this field is mandatory.</p></td><td valign="top"><p>Only required for the &#39;delete&#39; operation</p></td></tr>
+<tr>
+<td valign="top"><p><a name="data"></a>data (used by the insert and update operations)</p></td><td valign="top"><p>Contains the records to be modified, represented within the structure of their data model. The whole operation is equivalent to an XML import. The details of the operations performed on data content are specified in the section <a target="_self" href="../references/xml_services.html#import">Import</a>.</p></td><td align="right" valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p><a name="viewPublication"></a>viewPublication</p></td><td valign="top"><p>This parameter can be combined with the <a target="_self" href="#predicate">predicate</a> parameter as a logical <code>AND</code> operation.</p><p>The behavior of this parameter is described in the section <a target="_self" href="../references/manager_component_ref.html#viewPublication">EBX5 as a web component</a>.</p><p>It cannot be used if the &#39;viewId&#39; parameter is used, and cannot be used on hierarchical views.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><a name="viewId"></a>viewId</p></td><td valign="top"><p><em>Deprecated since version 5.2.3</em>. This parameter has been replaced by the parameter &#39;viewPublication&#39;. While it remains available for backward compatibility, it will eventually be removed in a future version.</p><p>This parameter cannot be used if the &#39;viewPublication&#39; parameter is used.</p></td><td valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="select"></a>Select operation</h3>
+<h4>
+Select request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:select_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;predicate>String&lt;/predicate>
+	&lt;viewPublication>String&lt;/viewPublication>
+	&lt;exportCredentials>boolean&lt;/exportCredentials>
+	&lt;pagination>
+		&lt;previousPageLastRecordPredicate>String&lt;/previousPageLastRecordPredicate>
+		&lt;pageSize>Integer&lt;/pageSize>
+	&lt;/pagination>
+&lt;/m:select_{TableName}>
+</pre>
+<p> with: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>predicate</p></td><td valign="top"><p>See the description under <a target="_self" href="#predicate">Common parameters</a>.</p><p>This parameter can be combined with the <a target="_self" href="#viewPublication">viewPublication</a> parameter as a logical <code>AND</code> operation.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>viewPublication</p></td><td valign="top"><p>See the description under <a target="_self" href="#viewPublication">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>includesTechnicalData</p></td><td valign="top"><p>The response will contain technical data if &#39;true&#39;. See also the <a target="_self" href="#locking">optimistic locking</a> section.</p><p> Each returned record will contain additional attributes for this technical information, for instance:</p><pre class="ebx_example brush: xml">
+...&lt;table
+ebxd:lastTime="2010-06-28T10:10:31.046" ebxd:lastUser="Uadmin"
+ebxd:uuid="9E7D0530-828C-11DF-B733-0012D01B6E76">... .</pre>
+</td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>exportCredentials</p></td><td valign="top"><p>If &#39;true&#39; the select will also return the credentials for each record.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>pagination</p></td><td valign="top"><p>Enables pagination, see child elements below.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>pageSize (nested under the pagination element)</p></td><td valign="top"><p>When pagination is enabled, defines the number of records to retrieve.</p></td><td valign="top"><p>When pagination is enabled, yes</p></td></tr>
+<tr>
+<td valign="top"><p>previousPageLastRecordPredicate (nested under the pagination element)</p></td><td valign="top"><p>When pagination is enabled, XPath predicate that defines the record after which the page must fetched, this value is provided by the previous response, as the element <code>lastRecordPredicate</code>. If the passed record is not found, the first page will be returned. </p></td><td valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<h4>
+Select response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:select_{TableName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;data>
+		&lt;XX>
+			&lt;TableName>
+				&lt;a>key1&lt;/a>
+				&lt;b>valueb&lt;/b>
+				&lt;c>1&lt;/c>
+				&lt;d>1&lt;/d>
+			&lt;/TableName>
+		&lt;/XX>
+	&lt;/data>
+	&lt;credentials>
+		&lt;XX>
+			&lt;TableName predicate="./a='key1'">
+				&lt;a>W&lt;/a>
+				&lt;b>W&lt;/b>
+				&lt;c>W&lt;/c>
+				&lt;d>W&lt;/d>
+			&lt;/TableName>
+		&lt;/XX>
+	&lt;/credentials>
+	&lt;lastRecordPredicate>./a='key1'&lt;/lastRecordPredicate>
+&lt;/ns1:select_{TableName}Response></pre>
+<p>See also the <a target="_self" href="#locking">optimistic locking</a> section.</p><h3>
+<a name="delete"></a>Delete operation</h3>
+<h4>
+Delete request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:delete_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;predicate>String&lt;/predicate>
+&lt;/m:delete_{TableName}>
+</pre>
+<p> with: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>predicate</p></td><td valign="top"><p>See the description under <a target="_self" href="#predicate">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>occultIfInherit</p></td><td valign="top"><p>Occults the record if it is in inherit mode. Default value is &#39;false&#39;.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>checkNotChangedSinceLastTime</p></td><td valign="top"><p>Timestamp used to ensure that the record has not been modified since the last read. Also see the <a target="_self" href="#locking">optimistic locking</a> section.</p></td><td valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<h4>
+Delete response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:delete_{TableName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+&lt;/ns1:delete_{TableName}Response></pre>
+<p> with: </p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>status</p></td><td valign="top"><p>&#39;00&#39; indicates that the operation has been executed successfully.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="count"></a>Count operation</h3>
+<h4>
+Count request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:count_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;branch>String&lt;/branch> 
+	&lt;version>String&lt;/version> 
+	&lt;instance>String&lt;/instance> 
+	&lt;predicate>String&lt;/predicate>
+&lt;/m:count_{TableName}>
+</pre>
+<p> with: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td></tr>
+<tr>
+<td valign="top"><p>predicate</p></td><td valign="top"><p>See the description under <a target="_self" href="#predicate">Common parameters</a>.</p></td></tr>
+</tbody>
+</table>
+<h4>
+Count response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:count_{TableName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;count>Integer&lt;/count>
+&lt;/ns1:count_{TableName}Response>
+</pre>
+<p> with: </p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>count</p></td><td valign="top"><p>The number of records that correspond to the predicate in the request.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="update"></a>Update operation</h3>
+<h4>
+Update request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:update_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;updateOrInsert>true&lt;/updateOrInsert>
+	&lt;byDelta>true&lt;/byDelta>
+	&lt;data>
+		&lt;XX>
+			&lt;TableName>
+				&lt;a>String&lt;/a>
+				&lt;b>String&lt;/b>
+				&lt;c>String&lt;/c>
+				&lt;d>String&lt;/d>
+				...
+			&lt;/TableName>
+		&lt;/XX>
+	&lt;/data>
+&lt;/m:update_{TableName}>
+</pre>
+<p>with:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>updateOrInsert</p></td><td valign="top"><p>If &#39;true&#39; and the record does not currently exist, the operation creates the record. </p></td><td align="right" valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>byDelta</p></td><td valign="top"><p>If &#39;true&#39; and an element does not currently exist in the incoming message, the target value is not changed.</p><p>The complete behavior is described in the sections <a target="_self" href="../references/xml_services.html#insertUpdateOperation">Insert and update operations</a>.</p></td><td align="right" valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>data</p></td><td valign="top"><p>See the description under <a target="_self" href="#data">Common parameters</a>.</p></td><td align="right" valign="top"></td></tr>
+</tbody>
+</table>
+<h4>
+Update response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:update_{TableName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+&lt;/ns1:update_{TableName}Response>
+</pre>
+<p> with: </p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>status</p></td><td valign="top"><p>&#39;00&#39; indicates that the operation has been executed successfully.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="insert"></a>Insert operation</h3>
+<h4>
+Insert request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:insert_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;data>
+		&lt;XX>
+			&lt;TableName>
+				&lt;a>String&lt;/a>
+				&lt;b>String&lt;/b>
+				&lt;c>String&lt;/c>
+				&lt;d>String&lt;/d>
+				...
+			&lt;/TableName>
+		&lt;/XX>
+	&lt;/data>
+&lt;/m:insert_{TableName}>
+</pre>
+<p>with:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>data</p></td><td valign="top"><p>See the description under <a target="_self" href="#data">Common parameters</a>.</p></td><td align="right" valign="top"></td></tr>
+<tr>
+<td valign="top"><p><a name="byDeltaInsert"></a>byDelta</p></td><td valign="top"><p>If &#39;true&#39; and an element does not currently exist in the incoming message, the target value is not changed.</p><p>The complete behavior is described in the sections <a target="_self" href="../references/xml_services.html#insertUpdateOperation">Insert and update operations</a>.</p></td><td align="right" valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<h4>
+Insert response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:insert_{TableName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+	&lt;inserted>
+		&lt;predicate>./a='String'&lt;/predicate>
+	&lt;/inserted>
+&lt;/ns1:insert_{TableName}Response>
+</pre>
+<p> with: </p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>status</p></td><td valign="top"><p>&#39;00&#39; indicates that the operation has been executed successfully.</p></td></tr>
+<tr>
+<td valign="top"><p>predicate</p></td><td valign="top"><p>A predicate matching the primary key of the inserted record. When several records are inserted, the predicates follow the declaration order of the records in the input message.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="getChanges"></a>Get changes operations</h3>
+<h4>
+Get changes requests</h4>
+<p><strong>Changes between two data sets:</strong></p><pre class="ebx_example brush: xml">
+&lt;m:getChangesOnDataSet_{schemaName} xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;compareWithBranch>String&lt;/compareWithBranch>
+	&lt;compareWithVersion>String&lt;/compareWithVersion>
+	&lt;compareWithInstance>String&lt;/compareWithInstance>
+	&lt;resolvedMode>boolean&lt;/resolvedMode>
+&lt;/m:getChangesOnDataSet_{schemaName}>
+</pre>
+<p><strong>Changes between two tables:</strong></p><pre class="ebx_example brush: xml">
+&lt;m:getChanges_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;compareWithBranch>String&lt;/compareWithBranch>
+	&lt;compareWithVersion>String&lt;/compareWithVersion>
+	&lt;resolvedMode>boolean&lt;/resolvedMode>
+&lt;/m:getChanges_{TableName}> 
+</pre>
+<p> with: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td><p><a name="compareWithBranch"></a>compareWithBranch</p></td><td><p>The identifier of the data space with which to compare. You must use only one parameter between this one and <a target="_self" href="#compareWithVersion">compareWithVersion</a>.</p></td><td><p>No</p></td></tr>
+<tr>
+<td><p><a name="compareWithVersion"></a>compareWithVersion</p></td><td><p>The identifier of the snapshot with which to compare. You must use only one parameter between this one and <a target="_self" href="#compareWithBranch">compareWithBranch</a>. </p></td><td><p>No</p></td></tr>
+<tr>
+<td><p>resolvedMode</p></td><td><p>Defines whether or not the difference is calculated in resolved mode. Default is &#39;true&#39;.</p></td><td><p>No</p></td></tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> If neither <em>compareWithBranch</em> nor <em>compareWithVersion</em> are specified, the comparison will be made with its parent: </p><ul>
+<li><p>if the current data space or snapshot is a data space, the comparison is made with its initial snapshot (includes all changes made in the data space);</p></li><li><p>if the current data space or snapshot is a snapshot, the comparison is made with its parent data space (includes all changes made in the parent data space since the current snapshot was created);</p></li><li><p>returns an exception if the current data space is the &#39;Reference&#39; data space.</p></li></ul>
+<h4>
+Get changes responses</h4>
+<p><strong>Changes between two data sets:</strong></p><pre class="ebx_example brush: xml">
+&lt;ns1:getChangesOnDataSet_{schemaName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;getChanges_{TableName1}>
+		... see the getChanges between tables response example ...
+	&lt;/getChanges_{TableName1}>
+	&lt;getChanges_{TableName2}>
+		... see the getChanges between tables response example ...
+	&lt;/getChanges_{TableName2}>
+	...
+&lt;/ns1:getChangesOnDataSet_{schemaName}Response></pre>
+<p><strong>Changes between two tables:</strong></p><pre class="ebx_example brush: xml">
+&lt;ns1:getChanges_{TableName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;inserted>
+		&lt;XX>
+			&lt;TableName>
+				&lt;a>AVALUE3&lt;/a>
+				&lt;b>BVALUE3&lt;/b>
+				&lt;c>CVALUE3&lt;/c>
+				&lt;d>DVALUE3&lt;/d>
+			&lt;/TableName>
+		&lt;/XX>
+	&lt;/inserted>
+	&lt;updated>
+		&lt;changes>
+			&lt;change predicate="./a='AVALUE2'">
+				&lt;path>/b&lt;/path>
+				&lt;path>/c&lt;/path>
+			&lt;/change>
+		&lt;/changes>
+		&lt;data>
+			&lt;XX>
+				&lt;TableName>
+					&lt;a>AVALUE2&lt;/a>
+					&lt;b>BVALUE2.1&lt;/b>
+					&lt;c>CVALUE2.1&lt;/c>
+					&lt;d>DVALUE2&lt;/d>
+				&lt;/TableName>
+			&lt;/XX>
+		&lt;/data>
+	&lt;/updated>
+	&lt;deleted>
+		&lt;predicate>./a='AVALUE1'&lt;/predicate>
+	&lt;/deleted>
+&lt;/ns1:getChanges_{TableName}Response>
+</pre>
+<h3>
+<a name="getCredentialRequest"></a>Get credentials operation</h3>
+<h4>
+Get credentials request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:getCredentials_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;predicate>String&lt;/predicate>
+	&lt;viewPublication>String&lt;/viewPublication>
+&lt;/m:getCredentials_{TableName}></pre>
+<p> with: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>viewPublication</p></td><td valign="top"><p>See the description under <a target="_self" href="#viewPublication">Common parameters</a>.</p></td><td valign="top"></td></tr>
+</tbody>
+</table>
+<h4>
+Get credentials response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:getCredentials_{TableName}Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;XX>
+		&lt;TableName>
+			&lt;a>R&lt;/a>
+			&lt;b>W&lt;/b>
+			&lt;c>H&lt;/c>
+			&lt;d>W&lt;/d>
+			...
+		&lt;/TableName>
+	&lt;/XX>
+&lt;/ns1:getCredentials_{TableName}Response></pre>
+<p> With the following possible values: </p><ul>
+<li><p>R: for read-only</p></li><li><p>W: for read-write</p></li><li><p>H: for hidden</p></li></ul>
+<h3>
+<a name="multiRequest"></a>Multiple chained operations</h3>
+<h4>
+Multiple operations request</h4>
+<p>It is possible to run multiple operations across tables in the data set, while ensuring a consistent response. The operations are executed sequentially, according to the order defined on the client side. All operations are executed in a single transaction with a <code>&#39;SERIALIZABLE&#39;</code> isolation level. When an error occurs during one operation in the sequence, all updates are rolled back and the client receives a <code>StandardException</code> error message with details. </p><pre class="ebx_example brush: xml">
+&lt;m:multi xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version>
+	&lt;instance>String&lt;/instance>
+	&lt;request id="id1">
+		&lt;m:{operation}_{TableName}>
+		...
+		&lt;/m:{operation}_{TableName}>
+	&lt;/request>
+	&lt;request id="id2">
+		&lt;m:{operation}_{TableName}>
+		...
+		&lt;/m:{operation}_{TableName}>
+	&lt;/request>
+&lt;/m:multi></pre>
+<p> with: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>branch</p></td><td valign="top"><p>See the description under <a target="_self" href="#branch">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>version</p></td><td valign="top"><p>See the description under <a target="_self" href="#version">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td valign="top"><p>instance</p></td><td valign="top"><p>See the description under <a target="_self" href="#instance">Common parameters</a>.</p></td><td valign="top"></td></tr>
+<tr>
+<td><p>request</p></td><td><p>This element contains one operation, like a single operation without branch, version and instance parameters. This element can be repeated multiple times for additional operations. Each request can be identified by an &#39;id&#39; attribute. In a response, this &#39;id&#39; attribute is returned for identification purposes.</p><p>Operations such as <code>count</code>, <code>select</code>, <code>getChanges</code>, <code>getCredentials</code>, <code>insert</code>, <code>delete</code> or <code>update</code>.</p></td><td><p>Yes</p></td></tr>
+</tbody>
+</table>
+<p><strong>Note:</strong></p><ul>
+<li><p>Does not accept a limit on the number of <code>request</code> elements.</p></li><li><p>The request <code>id</code> attribute must be unique in multi-operation requests.</p></li><li><p>If all operations are read only (<code>count</code>, <code>select</code>, <code>getChanges</code>, or <code>getCredentials</code>) then the whole transaction is set as read-only for performance considerations.</p></li></ul>
+<p> Limitation: </p><ul>
+<li><p>The <code>multi</code> operation applies to one model and one data set (parameter <code>instance</code>).</p></li><li><p>The <code>select</code> operation cannot use the pagination parameter.</p></li></ul>
+<h4>
+Multiple operations response</h4>
+<p>See each response operation for details.</p><pre class="ebx_example brush: xml">
+&lt;ns1:multiResponse xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;response id="id1">
+		&lt;ns1:{operation}_{TableName}Response>
+		...
+		&lt;/ns1:{operation}_{TableName}Response>
+	&lt;/response>
+	&lt;response id="id2">
+		&lt;ns1:{operation}_{TableName}Response>
+		...
+		&lt;/ns1:{operation}_{TableName}Response>
+	&lt;/response>
+&lt;/ns1:multiResponse></pre>
+<p> with: </p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>response</p></td><td><p>This element contains the response of one operation. It is be repeated multiple times for additional operations. Each response is identified by an &#39;id&#39; attribute set in the request or automatically generated.</p><p>The content of the element corresponds to the response of a single operation, such as <code>count</code>, <code>select</code>, <code>getChanges</code>, <code>getCredentials</code>, <code>insert</code>, <code>delete</code> or <code>update</code>.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="locking"></a>Optimistic locking</h3>
+<p>To prevent an update or a delete operation from being performed on a record that was read earlier but may have changed in the meantime, an optimistic locking mechanism is provided.</p><p>In the select request, it is possible to ask for technical information by adding the element <code>includesTechnicalData</code>: </p><pre class="ebx_example brush: xml">
+&lt;m:select_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;branch>String&lt;/branch> 
+	&lt;version>String&lt;/version> 
+	&lt;instance>String&lt;/instance> 
+	&lt;predicate>String&lt;/predicate> 
+	&lt;includesTechnicalData>true&lt;/includesTechnicalData> 
+&lt;/m:select_{TableName}>
+</pre>
+<p>The value of the <code>lastTime</code> attribute can then be used in the update request. If the record has been changed since the specified time, the update will be cancelled. The attribute <code>lastTime</code> has to be added on the record to be updated. </p><pre class="ebx_example brush: xml">
+&lt;m:update_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;branch>String&lt;/branch> 
+   	&lt;version>String&lt;/version> 
+	&lt;instance>String&lt;/instance> 
+	&lt;updateOrInsert>true&lt;/updateOrInsert> 
+	&lt;data> 
+		&lt;XX> 
+			&lt;TableName ebxd:lastTime="2010-06-28T10:10:31.046"> 
+				&lt;a>String&lt;/a> 
+				&lt;b>String&lt;/b> 
+				&lt;c>String&lt;/c> 
+				&lt;d>String&lt;/d> 
+				... 
+			&lt;/TableName> 
+		&lt;/XX> 
+	&lt;/data> 
+&lt;/m:update_{TableName}>
+</pre>
+<p>The value of the <code>lastTime</code> attribute can also be used to prevent deletion on a modified record:</p><pre class="ebx_example brush: xml">
+&lt;m:delete_{TableName} xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;branch>String&lt;/branch> 
+	&lt;version>String&lt;/version> 
+	&lt;instance>String&lt;/instance> 
+	&lt;predicate>String&lt;/predicate> 
+	&lt;checkNotChangedSinceLastTime>2010-06-28T10:10:31.046&lt;/checkNotChangedSinceLastTime> 
+&lt;/m:delete_{TableName}>
+</pre>
+<p>The element <code>checkNotChangedSinceLastTime</code> can be used for one and only one record upon request. This means that if the predicate returns more than one record, the request will fail if the element <code>checkNotChangedSinceLastTime</code> is set.</p><h2>
+<a name="repository"></a>Data service operations on data sets and data spaces</h2>
+<p>Parameters for operations on data spaces and snapshots are as follows:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><em>Element</em></p></th><th valign="top"><p><em>Description</em></p></th><th valign="top"><p><em>Required</em></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p><a name="branch_datasets"></a>branch</p></td><td><p>Identifier of the target data space on which the operation is applied. When not specified, the &#39;Reference&#39; data space is used except for the merge data space operation where it is required.</p></td><td><p>One of either this parameter or the &#39;version&#39; parameter must be defined. Required for the data space merge and replication refresh operations.</p></td></tr>
+<tr>
+<td><p>version</p></td><td><p>Identifier of the target snapshot on which the operation is applied.</p></td><td><p>One of either this parameter or the &#39;branch&#39; parameter must be defined</p></td></tr>
+<tr>
+<td><p>versionName</p></td><td><p>Identifier of the snapshot to create. If empty, it will be defined on the server side.</p></td><td><p>No</p></td></tr>
+<tr>
+<td><p>childBranchName</p></td><td><p>Identifier of the data space child to create. If empty, it will be defined on the server side.</p></td><td><p>No</p></td></tr>
+<tr>
+<td><p><a name="instance_datasets"></a>instance</p></td><td><p>The unique name of the data set on which the operation is applied.</p></td><td><p>Required for the replication refresh operation.</p></td></tr>
+<tr>
+<td><p>ensureActivation</p></td><td><p>Defines if validation must also check whether this instance is activated.</p></td><td><p>Yes</p></td></tr>
+<tr>
+<td><p>details</p></td><td><p>Defines if validation returns details.</p><p>The optional attribute <code>severityThreshold</code> defines the lowest severity level of message to return. The possible values are, in descending order of severity, &#39;fatal&#39;, &#39;error&#39;, &#39;warning&#39;, or &#39;info&#39;. For example, setting the value to &#39;error&#39; will return error and fatal validation messages. If this attribute is not defined, all levels of messages are returned by default.</p><p>The optional attribute <code>locale</code> (default &#39;en-US&#39;) defines the language in which the validation messages are to be returned.</p></td><td><p>No. If not specified, no details are returned.</p></td></tr>
+<tr>
+<td><p>owner</p></td><td><p>Defines the owner. </p></td><td><p>No</p></td></tr>
+<tr>
+<td><p>branchToCopyPermissionFrom</p></td><td><p>Defines the identifier of the data space from which to copy the permissions.</p></td><td><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>documentation</p></td><td valign="top"><p>Documentation for the data space or the snapshot to create. Multiple documentation elements may be used.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>locale (nested under the documentation element)</p></td><td valign="top"><p>Locale of the data space or snapshot documentation.</p></td><td valign="top"><p>Only required when the <code>documentation</code> element is used</p></td></tr>
+<tr>
+<td valign="top"><p>label (nested under the documentation element)</p></td><td valign="top"><p>Label of the data space or the snapshot to create.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>description (nested under the documentation element)</p></td><td valign="top"><p>Description of the data space or the snapshot to create.</p></td><td valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id5s1"></a>Validate a data space</h3>
+<h4>
+Validate data space request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:validate xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;branch>String&lt;/branch>
+	&lt;version>String&lt;/version> 
+&lt;/m:validate>
+</pre>
+<h4>
+Validate data space response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:validate_Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;validationReport>
+		&lt;instanceName>String&lt;/instanceName>
+		&lt;fatals>boolean&lt;/fatals>
+		&lt;errors>boolean&lt;/errors>
+		&lt;infos>boolean&lt;/infos>
+		&lt;warnings>boolean&lt;/warnings>
+	&lt;/validationReport>
+&lt;/ns1:validate_Response></pre>
+<h3>
+<a name="id5s2"></a>Validate a data set</h3>
+<h4>
+Validate data set request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:validateInstance xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;branch>String&lt;/branch> 
+	&lt;version>String&lt;/version> 
+	&lt;instance>String&lt;/instance> 
+	&lt;ensureActivation>true&lt;/ensureActivation> 
+	&lt;details severityThreshold="fatal|error|warning|info" locale="en-US"/>
+&lt;/m:validateInstance>
+</pre>
+<h4>
+Validate data set response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:validateInstance_Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;validationReport>
+		&lt;instanceName>String&lt;/instanceName>
+		&lt;fatals>boolean&lt;/fatals>
+		&lt;errors>boolean&lt;/errors>
+		&lt;infos>boolean&lt;/infos>
+		&lt;warnings>boolean&lt;/warnings>
+		&lt;details>
+			&lt;reportItem>
+				&lt;severity>{fatal|error|warning|info}&lt;/severity>
+				&lt;message>
+					&lt;internalId />
+					&lt;text>String&lt;/text>
+				&lt;/message>
+				&lt;subject>
+					&lt;table>Path&lt;/table>
+					&lt;predicate>String&lt;/predicate>
+					&lt;path>Path&lt;/path>
+				&lt;/subject>
+			&lt;/reportItem>
+		&lt;/details>
+	&lt;/validationReport>
+&lt;/ns1:validateInstance_Response></pre>
+<h3>
+<a name="id5s3"></a>Create a data space</h3>
+<h4>
+Create data space request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:createBranch xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;owner>String&lt;/owner>
+	&lt;branchToCopyPermissionFrom>String&lt;/branchToCopyPermissionFrom>
+	&lt;documentation>
+		&lt;locale>Locale&lt;/locale>
+		&lt;label>String&lt;/label>
+		&lt;description>String&lt;/description>
+	&lt;/documentation>
+	&lt;childBranchName>String&lt;/childBranchName>
+&lt;/m:createBranch>
+</pre>
+<h4>
+Create data space response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:createBranch_Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+	&lt;childBranchName>String&lt;/childBranchName>
+&lt;/ns1:createBranch_Response></pre>
+<p> with: </p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>status</p></td><td valign="top"><p>&#39;00&#39; indicates that the operation has been executed successfully.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id5s4"></a>Create a snapshot</h3>
+<h4>
+Create snapshot request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:createVersion xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;versionName>String&lt;/versionName>
+	&lt;owner>String&lt;/owner>
+	&lt;documentation>
+		&lt;locale>Locale&lt;/locale>
+		&lt;label>String&lt;/label>
+		&lt;description>String&lt;/description>
+	&lt;/documentation>
+&lt;/m:createVersion>
+</pre>
+<h4>
+Create snapshot response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:createVersion_Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+	&lt;versionName>String&lt;/versionName>
+&lt;/ns1:createVersion_Response></pre>
+<p> with: </p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>status</p></td><td valign="top"><p>&#39;00&#39; indicates that the operation has been executed successfully.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="mergeDataSpace"></a>Merge a data space</h3>
+<h4>
+Merge data space request</h4>
+<pre class="ebx_example brush: xml">
+&lt;m:mergeBranch xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;branch>String&lt;/branch>
+	&lt;deleteDataOnMerge>false&lt;/deleteDataOnMerge>
+	&lt;deleteHistoryOnMerge>false&lt;/deleteHistoryOnMerge>
+&lt;/m:mergeBranch>
+</pre>
+<p>with:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><em>Element</em></p></th><th valign="top"><p><em>Description</em></p></th><th valign="top"><p><em>Required</em></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>deleteDataOnMerge</p></td><td valign="top"><p>This parameter is available for the merge data space operation. Sets whether the specified data space and its associated snapshots will be deleted upon merge.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>deleteHistoryOnMerge</p></td><td valign="top"><p>This parameter is available for the merge data space operation. Sets whether the history associated with the specified data space will be deleted upon merge. Default value is &#39;false&#39;.</p></td><td valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+The merge decision step is bypassed during merges performed through data services. In such cases, the data in the child data space automatically overrides the data in the parent data space.</fieldset>
+<h4>
+Merge data space response</h4>
+<pre class="ebx_example brush: xml">
+&lt;ns1:mergeBranch_Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+&lt;/ns1:mergeBranch_Response></pre>
+<p> with: </p><table cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>status</p></td><td valign="top"><p>&#39;00&#39; indicates that the operation has been executed successfully.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="closeDataSpaceSnapshot"></a>Close a data space or snapshot</h3>
+<h4>
+Close data space or snapshot request</h4>
+<p><strong>Close data space request:</strong></p><pre class="ebx_example brush: xml">
+&lt;m:closeBranch xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;branch>String&lt;/branch>
+	&lt;deleteDataOnClose>false&lt;/deleteDataOnClose>
+	&lt;deleteHistoryOnClose>false&lt;/deleteHistoryOnClose>
+&lt;/m:closeBranch></pre>
+<p><strong>Close snapshot request:</strong></p><pre class="ebx_example brush: xml">
+&lt;m:closeVersion xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;version>String&lt;/version>
+	&lt;deleteDataOnClose>false&lt;/deleteDataOnClose>
+&lt;/m:closeVersion></pre>
+<p>with:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><em>Element</em></p></th><th valign="top"><p><em>Description</em></p></th><th valign="top"><p><em>Required</em></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>deleteDataOnClose</p></td><td valign="top"><p>This parameter is available for the close data space and close snapshot operations. Sets whether the specified snapshot, or data space and its associated snapshots, will be deleted upon closure.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>deleteHistoryOnClose</p></td><td valign="top"><p>This parameter is available for the close data space operation. Sets whether the history associated with the specified data space will be deleted upon closure. Default value is &#39;false&#39;.</p></td><td valign="top"><p>No</p></td></tr>
+</tbody>
+</table>
+<h4>
+Close data space or snapshot response</h4>
+<p><strong>Close data space response:</strong></p><pre class="ebx_example brush: xml">
+&lt;ns1:closeBranch_Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+&lt;/ns1:closeBranch_Response></pre>
+<p><strong>Close snapshot request:</strong></p><pre class="ebx_example brush: xml">
+&lt;ns1:closeVersion_Response xmlns:ns1="urn:ebx-schemas:dataservices_1.0">
+	&lt;status>00&lt;/status>
+&lt;/ns1:closeVersion_Response></pre>
+<h2>
+<a name="workflow"></a>Data service operations on data workflows</h2>
+<p>Parameters for operations on data workflows are as follows:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Element</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p>publishedProcessKey</p></td><td valign="top"><p>Identifier of the workflow to start.</p></td><td valign="top"><p>Yes</p></td></tr>
+<tr>
+<td valign="top"><p>documentation</p></td><td valign="top"><p>Documentation for the process instance to be created.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>parameters</p></td><td valign="top"><p>Input parameters for the process instance to be created.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p>processInstanceId </p></td><td valign="top"><p>Identifier of the process instance, as returned by the <code>workflowProcessInstanceStart</code> operation.</p></td><td valign="top"><p>Yes</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id6s1"></a>Start a workflow</h3>
+<pre class="ebx_example brush: xml">
+&lt;m:workflowProcessInstanceStart xmlns:m="urn:ebx-schemas:dataservices_1.0">
+	&lt;publishedProcessKey>String&lt;/publishedProcessKey>
+	&lt;documentation>
+		&lt;locale>Locale&lt;/locale>
+		&lt;label>String&lt;/label>
+		&lt;description>String&lt;/description>
+	&lt;/documentation>
+	&lt;parameters>
+		&lt;parameter>
+			&lt;name>String&lt;/name>
+			&lt;value>String&lt;/value>
+		&lt;/parameter>
+	&lt;/parameters>
+&lt;/m:workflowProcessInstanceStart>
+</pre>
+<h3>
+<a name="id6s2"></a>End a workflow</h3>
+<pre class="ebx_example brush: xml">
+&lt;m:workflowProcessInstanceEnd xmlns:m="urn:ebx-schemas:dataservices_1.0"> 
+	&lt;publishedProcessKey>String&lt;/publishedProcessKey> 
+	&lt;processInstanceId>String&lt;/processInstanceId> 
+&lt;/m:workflowProcessInstanceEnd>
+</pre>
+<h2>
+<a name="id7"></a>Known limitations</h2>
+<h3>
+<a name="id7s1"></a>Naming convention</h3>
+<p>Due to the naming convention of the data service operations, each table defined within a data model must have a unique name for WSDL generation.</p><h3>
+<a name="id7s2"></a>Date, time &amp; dateTime format</h3>
+<p>Data services only support the following date and time formats:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Type</strong></p></th><th valign="top"><p><strong>Format</strong></p></th><th valign="top"><p><strong>Example</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p>xs:date</p></td><td><p>yyyy-MM-dd</p></td><td><p>2007-12-31</p></td></tr>
+<tr>
+<td><p>xs:time</p></td><td><p>HH:mm:ss or HH:mm:ss.SSS</p></td><td><p>11:55:00</p></td></tr>
+<tr>
+<td><p>xs:dateTime</p></td><td><p>yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS</p></td><td><p>2007-12-31T11:55:00</p></td></tr>
+</tbody>
+</table>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

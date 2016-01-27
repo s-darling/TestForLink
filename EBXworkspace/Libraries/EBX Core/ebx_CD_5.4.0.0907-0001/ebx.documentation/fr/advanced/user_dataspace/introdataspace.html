@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Introduction aux espaces de donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="introdataspace" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Espaces de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/introdataspace.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Espaces de données</span></div>
+<h1>
+Introduction aux espaces de donn&eacute;es</h1>
+<p>Un espace de donn&eacute;es est un r&eacute;cipient de donn&eacute;es, dont le contenu peut &ecirc;tre mis &agrave; jour en toute isolation, c&#39;est-&agrave;-dire sans affecter les donn&eacute;es situ&eacute;es &agrave; l&#39;ext&eacute;rieur de celui-ci. Apr&egrave;s avoir d&eacute;cid&eacute; comme vous souhaitez organiser vos donn&eacute;es, vous pouvez &ecirc;tre amen&eacute; &agrave; :</p><ul>
+<li><p>cr&eacute;er des espaces de donn&eacute;es (voir <a target="_self" href="./actions_dataspace.html#creation">cr&eacute;ation</a>),</p></li><li><p>les &eacute;tiqueter et en d&eacute;crire le contenu et l&#39;utilit&eacute; (voir <a target="_self" href="./actions_dataspace.html#information">information</a>),</p></li><li><p>exporter ou importer un jeu de donn&eacute;es dans l&#39;espace de donn&eacute;es, puis valider ce changement (voir <a target="_self" href="./actions_dataspace.html#import">import d&#39;archive</a> ou <a target="_self" href="./actions_dataspace.html#export">export archive</a>),</p></li><li><p>comparer le contenu de deux espaces de donn&eacute;es (voir <a target="_self" href="./actions_dataspace.html">actions</a>),</p></li><li><p>prendre une image de l&#39;espace de donn&eacute;es avant d&#39;y appliquer tout autre changement (voir <a target="_self" href="./snapshot.html">image</a>),</p></li><li><p>appliquer les m&ecirc;mes changements d&#39;un espace de donn&eacute;es fils &agrave; son parent (voir <a target="_self" href="./merge.html#merge">fusion</a>),</p></li><li><p>g&eacute;rer les droits d&#39;acc&egrave;s &agrave; un espace de donn&eacute;es (voir <a target="_self" href="../user_dataspace/userdataspace_permissions.html">permissions</a>),</p></li><li><p>fermer un espace de donn&eacute;es, qui n&#39;est plus requis (voir <a target="_self" href="./actions_dataspace.html#closing">fermeture</a>).</p></li></ul>
+<p>Un espace de donn&eacute;es est toujours cr&eacute;&eacute; &agrave; partir d&#39;un autre espace de donn&eacute;es, &agrave; l&#39;exception de l&#39;espace de donn&eacute;es de r&eacute;f&eacute;rence, qui est la racine de tous les autres espaces de donn&eacute;es.</p><p>Pour une meilleure compr&eacute;hension, n&#39;h&eacute;sitez pas &agrave; chercher un mot dans le <a target="_self" href="../glossary/simple_glossary.html#dataspaces">glossaire</a>.</p><div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#concepts">Concepts</a></li><li class="toc1"><a href="#navigation">Vue d'ensemble d'un espace de données</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Modalités d'accès dans l'interface</a></li><li class="toc2"><a href="#id2s2">Concepts et outils associés</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="concepts"></a>Concepts</h2>
+<p>Le cycle de vie des donn&eacute;es est souvent complexe. Par exemple, une entreprise a besoin d&#39;avoir une version courante de ses donn&eacute;es tout en travaillant sur des &eacute;volutions futures. De plus, cette entreprise a besoin de conserver une trace de ses &eacute;volutions.</p><p>EBX5 permet de cr&eacute;er et g&eacute;rer plusieurs espaces de donn&eacute;es ainsi que des images. Il est possible, en utilisant des espaces de donn&eacute;es, de faire des modifications simultan&eacute;es dans un m&ecirc;me r&eacute;f&eacute;rentiel, de les comparer et de les fusionner.</p><p>Une image permet de prendre un instantan&eacute; d&#39;un espace de donn&eacute;es afin de conserver une version des donn&eacute;es et de pouvoir d&eacute;tecter des modifications ult&eacute;rieures.</p><p align="center"><img alt="/lifecycle.png" src="../resources/images/user_dataspace/lifecycle.png"></img></p><h2>
+<a name="navigation"></a>Vue d&#39;ensemble d&#39;un espace de donn&eacute;es</h2>
+<h3>
+<a name="id2s1"></a>Modalit&eacute;s d&#39;acc&egrave;s dans l&#39;interface</h3>
+<p>Le panneau de navigation affiche l&#39;organisation hi&eacute;rarchique des espaces de donn&eacute;es existants, tandis que l&#39;espace de travail est utilis&eacute; pour interagir avec l&#39;espace de donn&eacute;es s&eacute;lectionn&eacute;, dont il liste les images prises. Pour g&eacute;rer vos espace de donn&eacute;es, s&eacute;lectionner <em>Espace de donn&eacute;es</em> dans la barre de menu.</p><p align="center"><img alt="/DataSpace.png" src="../resources/images/user_dataspace/DataSpace.png" align="middle"></img></p><h3>
+<a name="id2s2"></a>Concepts et outils associ&eacute;s</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Intanstan&eacute;</p></td><td class="ebx_definitionListDefinition"><p>Photographie du contenu d&#39;un espace de donn&eacute;es &agrave; un instant t.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Espace de donn&eacute;es R&eacute;f&eacute;rence</p></td><td class="ebx_definitionListDefinition"><p>Anc&ecirc;tre de tous les autres espaces de donn&eacute;es, n&#39;ayant pas de parent et ne pouvant &ecirc;tre fusionn&eacute;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Fusion</p></td><td class="ebx_definitionListDefinition"><p>Copie de changements fait sur un espace de donn&eacute;es fils vers son parent, qui requiert l&#39;arbitrage de l&#39;utilisateur en cas de conflits.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Espace de donn&eacute;es relationnel</p></td><td class="ebx_definitionListDefinition"><p> Un espace de donn&eacute;es relationnel est r&eacute;serv&eacute; aux mod&egrave;les de donn&eacute;es en mode relationnel. Dans ce mode, la gestion des donn&eacute;es est d&#39;avantage d&eacute;l&eacute;gu&eacute;e &agrave; la base de donn&eacute;es et certaines fonctionnalit&eacute;s ne sont pas disponibles&nbsp;:&nbsp;par exemple, il n&#39;est pas possible de cr&eacute;er une image ou un espace de donn&eacute;es fils. </p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../references/relationalMode.html">Mode relationnel (en anglais)</a></p></div>
+</td></tr>
+</table>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Espaces de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

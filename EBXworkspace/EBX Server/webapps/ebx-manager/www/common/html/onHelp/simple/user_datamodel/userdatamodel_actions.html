@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Working with an existing data model</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_actions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; User Guide &gt; Data models &gt; Implementing data models</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_datamodel/userdatamodel_actions.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data models &gt; Implementing data models</span></div>
+<h1>
+Working with an existing data model</h1>
+<p>Once your data model has been created, you can perform a number of actions that are available from the <a href="../user_datamodel/userdatamodel_intro.html#ui"><strong>data model &#39;Actions&#39;</strong></a> menu in the workspace.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#validation">Validating a data model</a></li><li class="toc1"><a href="#xsdImportExport">XML Schema Document (XSD) import and export</a></li><li class="toc1"><a href="#duplicate_model">Duplicating a data model</a></li><li class="toc1"><a href="#deletion">Deleting a data model</a></li></ul>
+</div>
+<h2>
+<a name="validation"></a>Validating a data model</h2>
+<p>To validate a data model at any time, select <strong>Actions &gt; Validate</strong> from the navigation pane. The generated report provides the results of the validation. From the validation report, you have the option to update the reported validation status by clicking the <strong>Revalidate</strong> button, or to click the <strong>Reinitialize validation report</strong> button to clear the current validation report associated with the data model in order to be able to rerun a full validation from scratch.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The validation process checks basic data model integrity, but more complex checks are only performed at publication time. More messages may be reported when you try to publish your data model.</p></div>
+<h2>
+<a name="xsdImportExport"></a>XML Schema Document (XSD) import and export</h2>
+<p>EBX5 includes built-in data model services to import from and export to XML Schema Document (XSD) files. XSD imports and exports can be performed from the <a href="../user_datamodel/userdatamodel_intro.html#ui"><strong>data model &#39;Actions&#39;</strong></a> menu of the target data model in the navigation pane. An XSD import or export is always performed in the context of a single data model. That is, during imports, the structure of the target data model is completely replaced with the content of the imported XSD. Similarly, during exports, the entire data model is included in the XSD file.</p><p>When importing an XSD file, the file must be well-formed and must comply with EBX5 validation rules. If this document declares resources that are located in a module, the module must also be declared in the configuration of the data model. If the module has not been declared, you will not be able to import the XSD file. See <a href="../user_datamodel/userdatamodel_configuring.html#configuration">Data model properties</a> for more information on declaring modules.</p><p>To perform an import select &#39;Import XSD&#39; from the <a href="../user_datamodel/userdatamodel_intro.html#ui"><strong>data model &#39;Actions&#39;</strong></a> menu of the data model into which you are importing.</p><p>You can import an XML Schema Document (XSD) from the local file system. To do so, click the &#39;From a local document&#39; button in the import wizard and follow the next step:</p><ul>
+<li><p><strong>Document name:</strong> path on the local file system of the XSD file to import.</p></li></ul>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Imported XSD files must be encoded in &#39;UTF-8&#39;. Exported XSD files are always encoded in &#39;UTF-8&#39;.</p></div>
+<h2>
+<a name="duplicate_model"></a>Duplicating a data model</h2>
+<p>To duplicate a data model, select &#39;Duplicate&#39; from the <a href="../user_datamodel/userdatamodel_intro.html#ui"><strong>data model &#39;Actions&#39;</strong></a> menu for that data model. You must give the new data model a name that is unique in the repository.</p><h2>
+<a name="deletion"></a>Deleting a data model</h2>
+<p>To delete a data model, select &#39;Delete&#39; from the <a href="../user_datamodel/userdatamodel_intro.html#ui"><strong>data model &#39;Actions&#39;</strong></a> menu for that data model. When you delete a data model, all of its existing publications will remain and continue to be accessible to their associated data sets. If you recreate a new data model with the same name as one that was previously deleted, the new data model will be reassociated with all the existing publications in the repository. At publication time of the new data model, you will have the opportunity to confirm the replacement of an existing publication.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Only an administrator can clean up the publications of deleted data models in the &#39;Administration&#39; area.</p></div>
+<p>See <a href="../user_datamodel/userdatamodel_publish.html">Publishing data models</a> for more information on the publication process.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a href="../table_contents_user.html">table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data models &gt; Implementing data models</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

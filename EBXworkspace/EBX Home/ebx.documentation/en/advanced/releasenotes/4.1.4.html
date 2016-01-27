@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.1.4</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.1.4.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.1.4</h1>
+<p><strong>Release Date: May 21, 2007</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Triggers</a></li><li class="toc1"><a href="#id2">Export/Import between repositories</a></li><li class="toc1"><a href="#id3">Optimizations</a></li><li class="toc1"><a href="#id4">XPath generalization</a></li><li class="toc1"><a href="#id5">Bug fixes</a></li><li class="toc1"><a href="#id6">Known limitations</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Triggers</h2>
+<p> A new schema declaration, <code>osd:trigger</code> ,&nbsp;allows to add callbacks when operations are performed on a table. </p><p>Triggers benefit of the common features of programmatic schema extensions: JavaBeans declaration at schema level; a context-enabled setup phase at schema validation time; and context-enabled methods at execution time.</p><p>For more information, please refer to:</p><ul>
+<li><p><a href="../models/constraints.html#triggers">Triggers</a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/TableTrigger.html"><code>TableTrigger</code> class comment</a></p></li></ul>
+<h2>
+<a name="id2"></a>Export/Import between repositories</h2>
+<p>EBX.Platform Archive files are now enabled with change sets. That is, they define not only the current state of a home but also the updates that have been done in this home since a previous version.</p><p>EBX now provides built-in export and import wizzards. The button is available on the branch technical pane.</p><p><strong>Warning:</strong> the import wizzard does not import Archive that have not been exported with a change set. </p><p> The export / import functionalities are also available as programmatic API on <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html">ProcedureContext</a> class. </p><h2>
+<a name="id3"></a>Optimizations</h2>
+<p>The comparison between two homes has been optimized. The performance enhancement is drastic in non-resolved mode, when the user requests a merge of a branch to its parent branch.</p><p>The number of SQL requests has been reduced. We have observed performance enhancements up to two times faster in heavy load phases (when many tables are declared).</p><h2>
+<a name="id4"></a>XPath generalization</h2>
+<p> XPath standard is more extensively supported, in its syntax and also in its usages. For example, new methods on <code>AdaptationTable</code> allow to select directly occurrences with a XPath expression. </p><p>For more information, please refer to:</p><ul>
+<li><p><a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#selectOccurrences(java.lang.String)">AdaptationTable.selectOccurrences(xpath)</a></p></li><li><p><a href="../references/integration_introduction.html#components">Manager Component API</a></p></li><li><p><a href="../models/tables.html#select">Navigation to filtered views</a> ( <code>osd:select</code> ) </p></li><li><p><a href="../references/xpath_ref.html">XPath supported syntax</a></p></li></ul>
+<h2>
+<a name="id5"></a>Bug fixes</h2>
+<ul>
+<li><p>[01264] DateTime: 2005-10-10T10:10:10 should be good format, and 2005/10/10 10:10:10 should be wrong format.</p></li><li><p>[01265] Date: 2005-10-10 should be good format, and 2005/10/10 should be wrong format.</p></li><li><p>[01437] Default directory schema does not allow numerics in user login..</p></li><li><p>[01438] View filter does not work if applied on terminal nodes which have children..</p></li><li><p>[01439] EBX allow a version name without conformance to &lt;code&gt;HomeKey.KEY_PATTERN&lt;/code&gt;. As a result, version creation causes a fatal error..</p></li><li><p>[01440] Unable to import an element of type dateTime: an error is raised and a &quot;null&quot; value is set.</p></li><li><p>[01442] Programmatic occurrences creation in an adaptation with a name that previously existed and was deleted in repository causes occurrences to disappear on EBX.Platform restart.</p></li></ul>
+<h2>
+<a name="id6"></a>Known limitations</h2>
+<ul>
+<li><p><strong>Performance:</strong> for large number of tables (in the order of 10,000 tables) and for large number of occurrences (in the order of 10,000,000 occurrences), optimizations are not yet available. </p></li><li><p><strong>Merge process:</strong> in case of instances&#39; add-add conflict, tables in the source are ignored. </p><p>Workaround: first create instances and merge, then tables may be populated and merged.</p></li><li><p><strong>Comparison and Merge:</strong> Header information are not yet included in the comparison user interface nor in the merge process. </p><p>Workaround: for merging header information, a least one value must be updated on instance.</p></li><li><p><strong>Repository locking:</strong> it is not yet detected when two Java virtual machines share the same physical repository. </p><p>Workaround: Repositories&#39; administrator must take care that a repository is not refered by two environments.</p></li><li><p><strong>Access right management:</strong> a node can be set as <code>ReadWrite</code> even if it is not adaptable according to schema definition. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

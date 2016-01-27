@@ -1,0 +1,132 @@
+package com.orchestranetworks.geomatch.match;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.util.HashMap;
+
+import com.onwbp.adaptation.Adaptation;
+import com.onwbp.adaptation.AdaptationName;
+import com.onwbp.adaptation.XPathExpressionHelper;
+import com.orchestranetworks.instance.HomeKey;
+import com.orchestranetworks.instance.Repository;
+import com.orchestranetworks.instance.ValueContext;
+import com.orchestranetworks.schema.Path;
+import com.orchestranetworks.service.OperationException;
+import com.orchestranetworks.service.Session;
+import com.orchestranetworks.geomatch.match.AddressConverter;
+import com.orchestranetworks.geomatch.procedure.ModifyValuesProcedure;
+import com.orchestranetworks.workflow.DataContextReadOnly;
+import com.orchestranetworks.workflow.ScriptTaskBean;
+import com.orchestranetworks.workflow.ScriptTaskBeanContext;
+
+public class CarmenSandiago extends ScriptTaskBean {
+	/*
+	 * Initializing globally used variables, the data set adaptation, the latitude and longitude doubles, and the coordinate. 
+	 */
+	public final static Adaptation GeomatchDataset = Repository.getDefault()
+			.lookupHome(HomeKey.forBranchName("Geomatch")).findAdaptationOrNull(AdaptationName.forName("Geomatch"));
+	public static Double lat = null;
+	public static Double lng = null;
+	public static Coordinate coord = new Coordinate(lng,lat);
+
+	/*
+	 * Looks up the record to use from the valuecontext
+	 */
+	public static Adaptation lookUpRecord(ValueContext vc) {
+		Adaptation returnable = null;
+		try {
+			//vc.getAdaptationTable() could potentially be used instead of the following
+			returnable = GeomatchDataset.getTable(vc.getAdaptationTable().getTablePath())
+					.lookupAdaptationByPrimaryKey(vc);
+		} catch (Exception e) {
+			System.err.println("Could not look up record in Geomatch database.");
+			e.printStackTrace();
+		}
+		return returnable;
+	}
+
+
+	/**
+	 * Get a record based on the xpath.
+	 * 
+	 * @see XPathExpressionHelper.lookupFirstRecordMatchingXPath(boolean,
+	 *      Adaptation, String)
+	 *
+	 * @param recordXpath
+	 *            the xpath
+	 * @param dataSet
+	 *            the data set
+	 * @param checkActualPrimaryKey
+	 *            Whether the xpath specifies each member of the primary key,
+	 *            for faster lookup
+	 * @param errorIfNotFound
+	 *            Whether to consider not found to be an error
+	 * @throws OperationException
+	 *             if an error occurs, or if not found and
+	 *             <code>errorIfNotFound</code> is <code>true</code>
+	 */
+	public static Adaptation getRecord(String recordXpath, Adaptation dataSet, boolean checkActualPrimaryKey,
+			boolean errorIfNotFound) throws OperationException {
+		if (recordXpath == null || dataSet == null) {
+			return null;
+		}
+		Adaptation recordAdaptation = XPathExpressionHelper.lookupFirstRecordMatchingXPath(checkActualPrimaryKey,
+				dataSet, recordXpath);
+		if (recordAdaptation == null && errorIfNotFound) {
+			throw OperationException.createError("Record for '" + recordXpath + "' has not been found");
+		}
+		return recordAdaptation;
+	}
+	
+	//creates the coordinate object using the given address by calling addressconverter. 
+	public static void createCoordinate(String address) throws NumberFormatException, IOException{
+		//Double lg = Double.parseDouble(AddressConverter.ResLng(address));
+		//lng = lg;
+		//Double latty = Double.parseDouble(AddressConverter.ResLat(address));
+		//lat = latty;
+		//coord.setLongitude(lng);
+		//coord.setLatitude(lat);
+		coord = AddressConverter.setCord(address);
+	}
+
+	/*
+	 * update the data record using a hashmap, adds both latitude and longitude through the correct path
+	 * (non-Javadoc)
+	 * @see com.orchestranetworks.workflow.ScriptTaskBean#executeScript(com.orchestranetworks.workflow.ScriptTaskBeanContext)
+
+	 */
+	void updateDataValue(final Adaptation a, Session s) {
+		final HashMap<Path, Object> pathValueMap = new HashMap<>();
+		//System.out.println(a.get(Path.parse("Latitude")).getClass());
+		MathContext mc = new MathContext(6);
+		pathValueMap.put(Path.parse("Latitude"), (BigDecimal.valueOf(coord.getDLatitude()).round(mc)));
+		pathValueMap.put(Path.parse("Longitude"), (BigDecimal.valueOf(coord.getDLongitude()).round(mc)));
+		try {
+			ModifyValuesProcedure.execute(a, pathValueMap, s);
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+	}
+
+	/*
+	 * Basically execute script is the main method where everything is called. get to
+	 * the table Then, get the address from the table Then put Lat/Long back in
+	 * the table. key is the path inside of the adaptation /lat /lng
+	 */
+	@Override
+	public void executeScript(ScriptTaskBeanContext context) throws OperationException {
+		DataContextReadOnly dc = context.getProcessInstance().getDataContext();
+		Adaptation a = getRecord(dc.getVariableString("record"), GeomatchDataset, true, true);
+		Session s = context.getSession();
+		String address = a.getString(Path.parse("Address"));
+		try {
+			createCoordinate(address);
+			//breaks
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		updateDataValue(a, s);
+	}
+}

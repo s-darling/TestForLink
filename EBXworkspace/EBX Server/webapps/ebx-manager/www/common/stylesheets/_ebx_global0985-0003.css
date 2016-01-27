@@ -1,0 +1,7491 @@
+﻿
+/********* font-awesome.min.css *********/
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */@font-face{font-family:'FontAwesome';src:url('../fonts/fontawesome-webfont.eot?v=4.2.0');src:url('../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-fw{width:1.28571429em;text-align:center}.fa-ul{padding-left:0;margin-left:2.14285714em;list-style-type:none}.fa-ul>li{position:relative}.fa-li{position:absolute;left:-2.14285714em;width:2.14285714em;top:.14285714em;text-align:center}.fa-li.fa-lg{left:-1.85714286em}.fa-border{padding:.2em .25em .15em;border:solid .08em #eee;border-radius:.1em}.pull-right{float:right}.pull-left{float:left}.fa.pull-left{margin-right:.3em}.fa.pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}.fa-rotate-90{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);-webkit-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);-webkit-transform:scale(-1, 1);-ms-transform:scale(-1, 1);transform:scale(-1, 1)}.fa-flip-vertical{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);-webkit-transform:scale(1, -1);-ms-transform:scale(1, -1);transform:scale(1, -1)}:root .fa-rotate-90,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-flip-horizontal,:root .fa-flip-vertical{filter:none}.fa-stack{position:relative;display:inline-block;width:2em;height:2em;line-height:2em;vertical-align:middle}.fa-stack-1x,.fa-stack-2x{position:absolute;left:0;width:100%;text-align:center}.fa-stack-1x{line-height:inherit}.fa-stack-2x{font-size:2em}.fa-inverse{color:#fff}.fa-glass:before{content:"\f000"}.fa-music:before{content:"\f001"}.fa-search:before{content:"\f002"}.fa-envelope-o:before{content:"\f003"}.fa-heart:before{content:"\f004"}.fa-star:before{content:"\f005"}.fa-star-o:before{content:"\f006"}.fa-user:before{content:"\f007"}.fa-film:before{content:"\f008"}.fa-th-large:before{content:"\f009"}.fa-th:before{content:"\f00a"}.fa-th-list:before{content:"\f00b"}.fa-check:before{content:"\f00c"}.fa-remove:before,.fa-close:before,.fa-times:before{content:"\f00d"}.fa-search-plus:before{content:"\f00e"}.fa-search-minus:before{content:"\f010"}.fa-power-off:before{content:"\f011"}.fa-signal:before{content:"\f012"}.fa-gear:before,.fa-cog:before{content:"\f013"}.fa-trash-o:before{content:"\f014"}.fa-home:before{content:"\f015"}.fa-file-o:before{content:"\f016"}.fa-clock-o:before{content:"\f017"}.fa-road:before{content:"\f018"}.fa-download:before{content:"\f019"}.fa-arrow-circle-o-down:before{content:"\f01a"}.fa-arrow-circle-o-up:before{content:"\f01b"}.fa-inbox:before{content:"\f01c"}.fa-play-circle-o:before{content:"\f01d"}.fa-rotate-right:before,.fa-repeat:before{content:"\f01e"}.fa-refresh:before{content:"\f021"}.fa-list-alt:before{content:"\f022"}.fa-lock:before{content:"\f023"}.fa-flag:before{content:"\f024"}.fa-headphones:before{content:"\f025"}.fa-volume-off:before{content:"\f026"}.fa-volume-down:before{content:"\f027"}.fa-volume-up:before{content:"\f028"}.fa-qrcode:before{content:"\f029"}.fa-barcode:before{content:"\f02a"}.fa-tag:before{content:"\f02b"}.fa-tags:before{content:"\f02c"}.fa-book:before{content:"\f02d"}.fa-bookmark:before{content:"\f02e"}.fa-print:before{content:"\f02f"}.fa-camera:before{content:"\f030"}.fa-font:before{content:"\f031"}.fa-bold:before{content:"\f032"}.fa-italic:before{content:"\f033"}.fa-text-height:before{content:"\f034"}.fa-text-width:before{content:"\f035"}.fa-align-left:before{content:"\f036"}.fa-align-center:before{content:"\f037"}.fa-align-right:before{content:"\f038"}.fa-align-justify:before{content:"\f039"}.fa-list:before{content:"\f03a"}.fa-dedent:before,.fa-outdent:before{content:"\f03b"}.fa-indent:before{content:"\f03c"}.fa-video-camera:before{content:"\f03d"}.fa-photo:before,.fa-image:before,.fa-picture-o:before{content:"\f03e"}.fa-pencil:before{content:"\f040"}.fa-map-marker:before{content:"\f041"}.fa-adjust:before{content:"\f042"}.fa-tint:before{content:"\f043"}.fa-edit:before,.fa-pencil-square-o:before{content:"\f044"}.fa-share-square-o:before{content:"\f045"}.fa-check-square-o:before{content:"\f046"}.fa-arrows:before{content:"\f047"}.fa-step-backward:before{content:"\f048"}.fa-fast-backward:before{content:"\f049"}.fa-backward:before{content:"\f04a"}.fa-play:before{content:"\f04b"}.fa-pause:before{content:"\f04c"}.fa-stop:before{content:"\f04d"}.fa-forward:before{content:"\f04e"}.fa-fast-forward:before{content:"\f050"}.fa-step-forward:before{content:"\f051"}.fa-eject:before{content:"\f052"}.fa-chevron-left:before{content:"\f053"}.fa-chevron-right:before{content:"\f054"}.fa-plus-circle:before{content:"\f055"}.fa-minus-circle:before{content:"\f056"}.fa-times-circle:before{content:"\f057"}.fa-check-circle:before{content:"\f058"}.fa-question-circle:before{content:"\f059"}.fa-info-circle:before{content:"\f05a"}.fa-crosshairs:before{content:"\f05b"}.fa-times-circle-o:before{content:"\f05c"}.fa-check-circle-o:before{content:"\f05d"}.fa-ban:before{content:"\f05e"}.fa-arrow-left:before{content:"\f060"}.fa-arrow-right:before{content:"\f061"}.fa-arrow-up:before{content:"\f062"}.fa-arrow-down:before{content:"\f063"}.fa-mail-forward:before,.fa-share:before{content:"\f064"}.fa-expand:before{content:"\f065"}.fa-compress:before{content:"\f066"}.fa-plus:before{content:"\f067"}.fa-minus:before{content:"\f068"}.fa-asterisk:before{content:"\f069"}.fa-exclamation-circle:before{content:"\f06a"}.fa-gift:before{content:"\f06b"}.fa-leaf:before{content:"\f06c"}.fa-fire:before{content:"\f06d"}.fa-eye:before{content:"\f06e"}.fa-eye-slash:before{content:"\f070"}.fa-warning:before,.fa-exclamation-triangle:before{content:"\f071"}.fa-plane:before{content:"\f072"}.fa-calendar:before{content:"\f073"}.fa-random:before{content:"\f074"}.fa-comment:before{content:"\f075"}.fa-magnet:before{content:"\f076"}.fa-chevron-up:before{content:"\f077"}.fa-chevron-down:before{content:"\f078"}.fa-retweet:before{content:"\f079"}.fa-shopping-cart:before{content:"\f07a"}.fa-folder:before{content:"\f07b"}.fa-folder-open:before{content:"\f07c"}.fa-arrows-v:before{content:"\f07d"}.fa-arrows-h:before{content:"\f07e"}.fa-bar-chart-o:before,.fa-bar-chart:before{content:"\f080"}.fa-twitter-square:before{content:"\f081"}.fa-facebook-square:before{content:"\f082"}.fa-camera-retro:before{content:"\f083"}.fa-key:before{content:"\f084"}.fa-gears:before,.fa-cogs:before{content:"\f085"}.fa-comments:before{content:"\f086"}.fa-thumbs-o-up:before{content:"\f087"}.fa-thumbs-o-down:before{content:"\f088"}.fa-star-half:before{content:"\f089"}.fa-heart-o:before{content:"\f08a"}.fa-sign-out:before{content:"\f08b"}.fa-linkedin-square:before{content:"\f08c"}.fa-thumb-tack:before{content:"\f08d"}.fa-external-link:before{content:"\f08e"}.fa-sign-in:before{content:"\f090"}.fa-trophy:before{content:"\f091"}.fa-github-square:before{content:"\f092"}.fa-upload:before{content:"\f093"}.fa-lemon-o:before{content:"\f094"}.fa-phone:before{content:"\f095"}.fa-square-o:before{content:"\f096"}.fa-bookmark-o:before{content:"\f097"}.fa-phone-square:before{content:"\f098"}.fa-twitter:before{content:"\f099"}.fa-facebook:before{content:"\f09a"}.fa-github:before{content:"\f09b"}.fa-unlock:before{content:"\f09c"}.fa-credit-card:before{content:"\f09d"}.fa-rss:before{content:"\f09e"}.fa-hdd-o:before{content:"\f0a0"}.fa-bullhorn:before{content:"\f0a1"}.fa-bell:before{content:"\f0f3"}.fa-certificate:before{content:"\f0a3"}.fa-hand-o-right:before{content:"\f0a4"}.fa-hand-o-left:before{content:"\f0a5"}.fa-hand-o-up:before{content:"\f0a6"}.fa-hand-o-down:before{content:"\f0a7"}.fa-arrow-circle-left:before{content:"\f0a8"}.fa-arrow-circle-right:before{content:"\f0a9"}.fa-arrow-circle-up:before{content:"\f0aa"}.fa-arrow-circle-down:before{content:"\f0ab"}.fa-globe:before{content:"\f0ac"}.fa-wrench:before{content:"\f0ad"}.fa-tasks:before{content:"\f0ae"}.fa-filter:before{content:"\f0b0"}.fa-briefcase:before{content:"\f0b1"}.fa-arrows-alt:before{content:"\f0b2"}.fa-group:before,.fa-users:before{content:"\f0c0"}.fa-chain:before,.fa-link:before{content:"\f0c1"}.fa-cloud:before{content:"\f0c2"}.fa-flask:before{content:"\f0c3"}.fa-cut:before,.fa-scissors:before{content:"\f0c4"}.fa-copy:before,.fa-files-o:before{content:"\f0c5"}.fa-paperclip:before{content:"\f0c6"}.fa-save:before,.fa-floppy-o:before{content:"\f0c7"}.fa-square:before{content:"\f0c8"}.fa-navicon:before,.fa-reorder:before,.fa-bars:before{content:"\f0c9"}.fa-list-ul:before{content:"\f0ca"}.fa-list-ol:before{content:"\f0cb"}.fa-strikethrough:before{content:"\f0cc"}.fa-underline:before{content:"\f0cd"}.fa-table:before{content:"\f0ce"}.fa-magic:before{content:"\f0d0"}.fa-truck:before{content:"\f0d1"}.fa-pinterest:before{content:"\f0d2"}.fa-pinterest-square:before{content:"\f0d3"}.fa-google-plus-square:before{content:"\f0d4"}.fa-google-plus:before{content:"\f0d5"}.fa-money:before{content:"\f0d6"}.fa-caret-down:before{content:"\f0d7"}.fa-caret-up:before{content:"\f0d8"}.fa-caret-left:before{content:"\f0d9"}.fa-caret-right:before{content:"\f0da"}.fa-columns:before{content:"\f0db"}.fa-unsorted:before,.fa-sort:before{content:"\f0dc"}.fa-sort-down:before,.fa-sort-desc:before{content:"\f0dd"}.fa-sort-up:before,.fa-sort-asc:before{content:"\f0de"}.fa-envelope:before{content:"\f0e0"}.fa-linkedin:before{content:"\f0e1"}.fa-rotate-left:before,.fa-undo:before{content:"\f0e2"}.fa-legal:before,.fa-gavel:before{content:"\f0e3"}.fa-dashboard:before,.fa-tachometer:before{content:"\f0e4"}.fa-comment-o:before{content:"\f0e5"}.fa-comments-o:before{content:"\f0e6"}.fa-flash:before,.fa-bolt:before{content:"\f0e7"}.fa-sitemap:before{content:"\f0e8"}.fa-umbrella:before{content:"\f0e9"}.fa-paste:before,.fa-clipboard:before{content:"\f0ea"}.fa-lightbulb-o:before{content:"\f0eb"}.fa-exchange:before{content:"\f0ec"}.fa-cloud-download:before{content:"\f0ed"}.fa-cloud-upload:before{content:"\f0ee"}.fa-user-md:before{content:"\f0f0"}.fa-stethoscope:before{content:"\f0f1"}.fa-suitcase:before{content:"\f0f2"}.fa-bell-o:before{content:"\f0a2"}.fa-coffee:before{content:"\f0f4"}.fa-cutlery:before{content:"\f0f5"}.fa-file-text-o:before{content:"\f0f6"}.fa-building-o:before{content:"\f0f7"}.fa-hospital-o:before{content:"\f0f8"}.fa-ambulance:before{content:"\f0f9"}.fa-medkit:before{content:"\f0fa"}.fa-fighter-jet:before{content:"\f0fb"}.fa-beer:before{content:"\f0fc"}.fa-h-square:before{content:"\f0fd"}.fa-plus-square:before{content:"\f0fe"}.fa-angle-double-left:before{content:"\f100"}.fa-angle-double-right:before{content:"\f101"}.fa-angle-double-up:before{content:"\f102"}.fa-angle-double-down:before{content:"\f103"}.fa-angle-left:before{content:"\f104"}.fa-angle-right:before{content:"\f105"}.fa-angle-up:before{content:"\f106"}.fa-angle-down:before{content:"\f107"}.fa-desktop:before{content:"\f108"}.fa-laptop:before{content:"\f109"}.fa-tablet:before{content:"\f10a"}.fa-mobile-phone:before,.fa-mobile:before{content:"\f10b"}.fa-circle-o:before{content:"\f10c"}.fa-quote-left:before{content:"\f10d"}.fa-quote-right:before{content:"\f10e"}.fa-spinner:before{content:"\f110"}.fa-circle:before{content:"\f111"}.fa-mail-reply:before,.fa-reply:before{content:"\f112"}.fa-github-alt:before{content:"\f113"}.fa-folder-o:before{content:"\f114"}.fa-folder-open-o:before{content:"\f115"}.fa-smile-o:before{content:"\f118"}.fa-frown-o:before{content:"\f119"}.fa-meh-o:before{content:"\f11a"}.fa-gamepad:before{content:"\f11b"}.fa-keyboard-o:before{content:"\f11c"}.fa-flag-o:before{content:"\f11d"}.fa-flag-checkered:before{content:"\f11e"}.fa-terminal:before{content:"\f120"}.fa-code:before{content:"\f121"}.fa-mail-reply-all:before,.fa-reply-all:before{content:"\f122"}.fa-star-half-empty:before,.fa-star-half-full:before,.fa-star-half-o:before{content:"\f123"}.fa-location-arrow:before{content:"\f124"}.fa-crop:before{content:"\f125"}.fa-code-fork:before{content:"\f126"}.fa-unlink:before,.fa-chain-broken:before{content:"\f127"}.fa-question:before{content:"\f128"}.fa-info:before{content:"\f129"}.fa-exclamation:before{content:"\f12a"}.fa-superscript:before{content:"\f12b"}.fa-subscript:before{content:"\f12c"}.fa-eraser:before{content:"\f12d"}.fa-puzzle-piece:before{content:"\f12e"}.fa-microphone:before{content:"\f130"}.fa-microphone-slash:before{content:"\f131"}.fa-shield:before{content:"\f132"}.fa-calendar-o:before{content:"\f133"}.fa-fire-extinguisher:before{content:"\f134"}.fa-rocket:before{content:"\f135"}.fa-maxcdn:before{content:"\f136"}.fa-chevron-circle-left:before{content:"\f137"}.fa-chevron-circle-right:before{content:"\f138"}.fa-chevron-circle-up:before{content:"\f139"}.fa-chevron-circle-down:before{content:"\f13a"}.fa-html5:before{content:"\f13b"}.fa-css3:before{content:"\f13c"}.fa-anchor:before{content:"\f13d"}.fa-unlock-alt:before{content:"\f13e"}.fa-bullseye:before{content:"\f140"}.fa-ellipsis-h:before{content:"\f141"}.fa-ellipsis-v:before{content:"\f142"}.fa-rss-square:before{content:"\f143"}.fa-play-circle:before{content:"\f144"}.fa-ticket:before{content:"\f145"}.fa-minus-square:before{content:"\f146"}.fa-minus-square-o:before{content:"\f147"}.fa-level-up:before{content:"\f148"}.fa-level-down:before{content:"\f149"}.fa-check-square:before{content:"\f14a"}.fa-pencil-square:before{content:"\f14b"}.fa-external-link-square:before{content:"\f14c"}.fa-share-square:before{content:"\f14d"}.fa-compass:before{content:"\f14e"}.fa-toggle-down:before,.fa-caret-square-o-down:before{content:"\f150"}.fa-toggle-up:before,.fa-caret-square-o-up:before{content:"\f151"}.fa-toggle-right:before,.fa-caret-square-o-right:before{content:"\f152"}.fa-euro:before,.fa-eur:before{content:"\f153"}.fa-gbp:before{content:"\f154"}.fa-dollar:before,.fa-usd:before{content:"\f155"}.fa-rupee:before,.fa-inr:before{content:"\f156"}.fa-cny:before,.fa-rmb:before,.fa-yen:before,.fa-jpy:before{content:"\f157"}.fa-ruble:before,.fa-rouble:before,.fa-rub:before{content:"\f158"}.fa-won:before,.fa-krw:before{content:"\f159"}.fa-bitcoin:before,.fa-btc:before{content:"\f15a"}.fa-file:before{content:"\f15b"}.fa-file-text:before{content:"\f15c"}.fa-sort-alpha-asc:before{content:"\f15d"}.fa-sort-alpha-desc:before{content:"\f15e"}.fa-sort-amount-asc:before{content:"\f160"}.fa-sort-amount-desc:before{content:"\f161"}.fa-sort-numeric-asc:before{content:"\f162"}.fa-sort-numeric-desc:before{content:"\f163"}.fa-thumbs-up:before{content:"\f164"}.fa-thumbs-down:before{content:"\f165"}.fa-youtube-square:before{content:"\f166"}.fa-youtube:before{content:"\f167"}.fa-xing:before{content:"\f168"}.fa-xing-square:before{content:"\f169"}.fa-youtube-play:before{content:"\f16a"}.fa-dropbox:before{content:"\f16b"}.fa-stack-overflow:before{content:"\f16c"}.fa-instagram:before{content:"\f16d"}.fa-flickr:before{content:"\f16e"}.fa-adn:before{content:"\f170"}.fa-bitbucket:before{content:"\f171"}.fa-bitbucket-square:before{content:"\f172"}.fa-tumblr:before{content:"\f173"}.fa-tumblr-square:before{content:"\f174"}.fa-long-arrow-down:before{content:"\f175"}.fa-long-arrow-up:before{content:"\f176"}.fa-long-arrow-left:before{content:"\f177"}.fa-long-arrow-right:before{content:"\f178"}.fa-apple:before{content:"\f179"}.fa-windows:before{content:"\f17a"}.fa-android:before{content:"\f17b"}.fa-linux:before{content:"\f17c"}.fa-dribbble:before{content:"\f17d"}.fa-skype:before{content:"\f17e"}.fa-foursquare:before{content:"\f180"}.fa-trello:before{content:"\f181"}.fa-female:before{content:"\f182"}.fa-male:before{content:"\f183"}.fa-gittip:before{content:"\f184"}.fa-sun-o:before{content:"\f185"}.fa-moon-o:before{content:"\f186"}.fa-archive:before{content:"\f187"}.fa-bug:before{content:"\f188"}.fa-vk:before{content:"\f189"}.fa-weibo:before{content:"\f18a"}.fa-renren:before{content:"\f18b"}.fa-pagelines:before{content:"\f18c"}.fa-stack-exchange:before{content:"\f18d"}.fa-arrow-circle-o-right:before{content:"\f18e"}.fa-arrow-circle-o-left:before{content:"\f190"}.fa-toggle-left:before,.fa-caret-square-o-left:before{content:"\f191"}.fa-dot-circle-o:before{content:"\f192"}.fa-wheelchair:before{content:"\f193"}.fa-vimeo-square:before{content:"\f194"}.fa-turkish-lira:before,.fa-try:before{content:"\f195"}.fa-plus-square-o:before{content:"\f196"}.fa-space-shuttle:before{content:"\f197"}.fa-slack:before{content:"\f198"}.fa-envelope-square:before{content:"\f199"}.fa-wordpress:before{content:"\f19a"}.fa-openid:before{content:"\f19b"}.fa-institution:before,.fa-bank:before,.fa-university:before{content:"\f19c"}.fa-mortar-board:before,.fa-graduation-cap:before{content:"\f19d"}.fa-yahoo:before{content:"\f19e"}.fa-google:before{content:"\f1a0"}.fa-reddit:before{content:"\f1a1"}.fa-reddit-square:before{content:"\f1a2"}.fa-stumbleupon-circle:before{content:"\f1a3"}.fa-stumbleupon:before{content:"\f1a4"}.fa-delicious:before{content:"\f1a5"}.fa-digg:before{content:"\f1a6"}.fa-pied-piper:before{content:"\f1a7"}.fa-pied-piper-alt:before{content:"\f1a8"}.fa-drupal:before{content:"\f1a9"}.fa-joomla:before{content:"\f1aa"}.fa-language:before{content:"\f1ab"}.fa-fax:before{content:"\f1ac"}.fa-building:before{content:"\f1ad"}.fa-child:before{content:"\f1ae"}.fa-paw:before{content:"\f1b0"}.fa-spoon:before{content:"\f1b1"}.fa-cube:before{content:"\f1b2"}.fa-cubes:before{content:"\f1b3"}.fa-behance:before{content:"\f1b4"}.fa-behance-square:before{content:"\f1b5"}.fa-steam:before{content:"\f1b6"}.fa-steam-square:before{content:"\f1b7"}.fa-recycle:before{content:"\f1b8"}.fa-automobile:before,.fa-car:before{content:"\f1b9"}.fa-cab:before,.fa-taxi:before{content:"\f1ba"}.fa-tree:before{content:"\f1bb"}.fa-spotify:before{content:"\f1bc"}.fa-deviantart:before{content:"\f1bd"}.fa-soundcloud:before{content:"\f1be"}.fa-database:before{content:"\f1c0"}.fa-file-pdf-o:before{content:"\f1c1"}.fa-file-word-o:before{content:"\f1c2"}.fa-file-excel-o:before{content:"\f1c3"}.fa-file-powerpoint-o:before{content:"\f1c4"}.fa-file-photo-o:before,.fa-file-picture-o:before,.fa-file-image-o:before{content:"\f1c5"}.fa-file-zip-o:before,.fa-file-archive-o:before{content:"\f1c6"}.fa-file-sound-o:before,.fa-file-audio-o:before{content:"\f1c7"}.fa-file-movie-o:before,.fa-file-video-o:before{content:"\f1c8"}.fa-file-code-o:before{content:"\f1c9"}.fa-vine:before{content:"\f1ca"}.fa-codepen:before{content:"\f1cb"}.fa-jsfiddle:before{content:"\f1cc"}.fa-life-bouy:before,.fa-life-buoy:before,.fa-life-saver:before,.fa-support:before,.fa-life-ring:before{content:"\f1cd"}.fa-circle-o-notch:before{content:"\f1ce"}.fa-ra:before,.fa-rebel:before{content:"\f1d0"}.fa-ge:before,.fa-empire:before{content:"\f1d1"}.fa-git-square:before{content:"\f1d2"}.fa-git:before{content:"\f1d3"}.fa-hacker-news:before{content:"\f1d4"}.fa-tencent-weibo:before{content:"\f1d5"}.fa-qq:before{content:"\f1d6"}.fa-wechat:before,.fa-weixin:before{content:"\f1d7"}.fa-send:before,.fa-paper-plane:before{content:"\f1d8"}.fa-send-o:before,.fa-paper-plane-o:before{content:"\f1d9"}.fa-history:before{content:"\f1da"}.fa-circle-thin:before{content:"\f1db"}.fa-header:before{content:"\f1dc"}.fa-paragraph:before{content:"\f1dd"}.fa-sliders:before{content:"\f1de"}.fa-share-alt:before{content:"\f1e0"}.fa-share-alt-square:before{content:"\f1e1"}.fa-bomb:before{content:"\f1e2"}.fa-soccer-ball-o:before,.fa-futbol-o:before{content:"\f1e3"}.fa-tty:before{content:"\f1e4"}.fa-binoculars:before{content:"\f1e5"}.fa-plug:before{content:"\f1e6"}.fa-slideshare:before{content:"\f1e7"}.fa-twitch:before{content:"\f1e8"}.fa-yelp:before{content:"\f1e9"}.fa-newspaper-o:before{content:"\f1ea"}.fa-wifi:before{content:"\f1eb"}.fa-calculator:before{content:"\f1ec"}.fa-paypal:before{content:"\f1ed"}.fa-google-wallet:before{content:"\f1ee"}.fa-cc-visa:before{content:"\f1f0"}.fa-cc-mastercard:before{content:"\f1f1"}.fa-cc-discover:before{content:"\f1f2"}.fa-cc-amex:before{content:"\f1f3"}.fa-cc-paypal:before{content:"\f1f4"}.fa-cc-stripe:before{content:"\f1f5"}.fa-bell-slash:before{content:"\f1f6"}.fa-bell-slash-o:before{content:"\f1f7"}.fa-trash:before{content:"\f1f8"}.fa-copyright:before{content:"\f1f9"}.fa-at:before{content:"\f1fa"}.fa-eyedropper:before{content:"\f1fb"}.fa-paint-brush:before{content:"\f1fc"}.fa-birthday-cake:before{content:"\f1fd"}.fa-area-chart:before{content:"\f1fe"}.fa-pie-chart:before{content:"\f200"}.fa-line-chart:before{content:"\f201"}.fa-lastfm:before{content:"\f202"}.fa-lastfm-square:before{content:"\f203"}.fa-toggle-off:before{content:"\f204"}.fa-toggle-on:before{content:"\f205"}.fa-bicycle:before{content:"\f206"}.fa-bus:before{content:"\f207"}.fa-ioxhost:before{content:"\f208"}.fa-angellist:before{content:"\f209"}.fa-cc:before{content:"\f20a"}.fa-shekel:before,.fa-sheqel:before,.fa-ils:before{content:"\f20b"}.fa-meanpath:before{content:"\f20c"}
+
+/********* ebx_layout.css *********/
+
+html {
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+}
+
+#ebx_HiddenBody {
+	display: none;
+}
+
+/***START layout ***/
+html.yui-skin-sam .yui-layout {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+html.yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd {
+	border: none;
+	background-color: transparent;
+}
+/***END layout ***/
+
+/***START workspace ***/
+#ebx_WorkspaceHeaderUnit .yui-layout-bd {
+}
+#ebx_WorkspaceHeader {
+	position: relative;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+
+#ebx_WorkspaceHeader h2 {
+	white-space: nowrap;
+	overflow: hidden;
+}
+#ebx_WorkspaceHeader h2 .ebx_TitleWithIcon {
+}
+
+#ebx_TitleBreadcrumbScroll {
+	position: absolute;
+	
+	height: 100%;
+	width: 40px;
+	z-index: 1000;
+	
+	/* 20px for the width of scroll buttons */
+	background-image: -webkit-linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+	background-image: -moz-linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+	background-image: -ms-linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+	background-image: linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+}
+
+#ebx_TitleBreadcrumbScroll.ebx_TitleBreadcrumbScrollStopLeft {
+	background-image: none;
+	width: 20px;
+}
+#ebx_TitleBreadcrumbScroll.ebx_TitleBreadcrumbScrollStopLeft #ebx_TitleBreadcrumbScrollLeft {
+	display: none;
+}
+#ebx_TitleBreadcrumbScroll.ebx_TitleBreadcrumbScrollStopRight #ebx_TitleBreadcrumbScrollRight {
+	display: none;
+}
+
+#ebx_TitleBreadcrumbScrollLeft,
+#ebx_TitleBreadcrumbScrollRight {
+	visibility: hidden;
+	
+	cursor: pointer;
+	height: 100%;
+	width: 10px;
+	position: absolute;
+	padding-top: 19px;/* 48(height)/2 - 10(icon.height)/2 */
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+#ebx_WorkspaceHeader:hover #ebx_TitleBreadcrumbScrollLeft,
+#ebx_WorkspaceHeader:hover #ebx_TitleBreadcrumbScrollRight {
+	visibility: visible;
+}
+#ebx_TitleBreadcrumbScrollLeft {
+	left: 0;
+}
+#ebx_TitleBreadcrumbScrollRight {
+	left: 10px;
+}
+
+#ebx_TitleBreadcrumb {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#ebx_TitleBreadcrumb h2 {
+	display: inline;
+	padding: 10px 0;
+	margin-right: 20px;
+}
+
+.ebx_TitleBreadcrumbItem {
+	color: #808080;
+	display: inline-block;
+	padding: 10px 20px;
+	margin-left: -20px;
+	margin-right: 10px;
+	position: relative;
+	cursor: default;
+	
+	background-position: right -100px;
+	background-repeat: no-repeat;
+}
+.ebx_TitleBreadcrumbItemWithLink {
+	cursor: pointer;
+}
+.ebx_TitleBreadcrumbItem:first-child {
+	margin-left: 0;
+}
+#ebx_TitleBreadcrumb.ebx_TitleBreadcrumbNoScroll .ebx_TitleBreadcrumbItem:first-child {
+	padding-left: 15px;
+}
+.ebx_TitleBreadcrumbItem:hover {
+	background-position: right -150px;
+}
+.ebx_TitleBreadcrumbItem:hover .nodeLabel .ebx_LabelDocButton {
+    vertical-align: 2px;
+}
+
+.ebx_TitleWithIcon .ebx_TableFilteredFlag,
+.ebx_MultiTableFilteredFlag,
+.ebx_TabularViewFilteredFlag {
+	font-style: italic;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.ebx_TitleWithIcon .ebx_TableFilteredFlag {
+	background-position: 4px center;
+	background-repeat: no-repeat;
+	
+	padding: 0 10px;
+	margin-right: 10px;
+}
+.ebx_MultiTableFilteredFlag,
+.ebx_TabularViewFilteredFlag {
+	margin: -4px 0 -1px -3px;
+	padding: 2px 3px;
+}
+
+#ebx_WorkspaceCornerTools {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+#ebx_WorkspaceContentUnit .yui-layout-bd {
+}
+
+#ebx_WorkspaceContent {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+.ebx_WorkspaceContent {
+	overflow: auto;
+}
+.ebx_WorkspaceContentAsLayout {
+}
+
+.ebx_WorkspaceContentRelative {
+	position: relative;
+}
+
+.ebx_WorkspaceContentAsLayout > .yui-layout-doc {
+	overflow: visible;
+}
+
+#ebx_WorkspaceContentForm {
+}
+
+/**START workspace with main iFrame **/
+
+#ebx_SubSessioniFrameContainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#ebx_SubSessioniFrameContainer.ebx_SubSessioniFrameReplacingWorkspace {
+}
+
+#ebx_SubSessioniFrame {
+	width: 100%;
+	height: 100%;
+}
+
+/**END workspace with main iFrame **/
+
+/**START fullscreen toggle **/
+.yui-layout-clip {
+	visibility: hidden;
+}
+/**END fullscreen toggle **/
+
+/**START content **/
+#ebx_WorkspaceToolbarUnit .yui-layout-bd {
+	border-width: 0;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+#ebx_WorkspaceToolbar {
+	padding: 0 10px 15px 15px;
+}
+
+.ebx_MDMComponentWaitingToolbar {
+	cursor: wait;
+}
+.ebx_MDMComponentWaitingToolbar .ebx_Button,
+.ebx_MDMComponentWaitingToolbar .ebx_FlatButtonNoBorder,
+.ebx_MDMComponentWaitingToolbar .ebx_FlatButton,
+.ebx_MDMComponentWaitingToolbar .ebx_IconButtonSmall,
+.ebx_MDMComponentWaitingToolbar .ebx_IconFlatButtonSmall {
+	/* opacity: exactly like .ebx_Disabled */
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	
+	cursor: wait;
+}
+
+#ebx_WorkspaceContentAreaUnit {
+}
+
+.ebx_WorkspaceContentInfoBar {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 5px 10px 5px 15px;
+}
+
+#ebx_TextInWorkspace,
+.ebx_TextInWorkspace,
+.ebx_ContainerWithText {
+	margin: 10px 15px;
+}
+#ebx_TextInWorkspace > p,
+.ebx_TextInWorkspace > p {
+	margin: 5px 0;
+}
+
+#ebx_WorkspaceContentArea .ebx_TextInShortWorkspace {
+	text-align: center;
+	margin: 2em;
+}
+#ebx_WorkspaceContentArea .ebx_TextInShortWorkspace > p {
+	margin: 1em 0;
+}
+
+/**END content **/
+
+/**START filters **/
+
+.ebx_WorkspaceContentAsLayout .yui-layout-clip {
+	visibility: hidden;
+}
+
+#ebx_WorkspaceFilterUnit .yui-layout-bd {
+	border-width: 0;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+/** resize bar **/
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit.yui-layout-unit .yui-resize-handle-r,
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit .yui-resize-proxy .yui-layout-handle-r {/*
+	border-right: 1px solid #C0C0C0;/*{table-borderColor}*/
+}
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit.yui-layout-unit .yui-resize-handle-r {
+	right: 0;
+	z-index: 0;
+}
+/* knob */
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit.yui-layout-unit .yui-resize-handle-r .yui-layout-resize-knob {
+}
+/* dynamic resize bar */
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit .yui-resize-proxy .yui-layout-handle-r {
+	right: 0;
+}
+/**END filters **/
+
+/**START hierarchies **/
+.ygtvlabel .ebx_Position {
+	font-size: 0.8em;
+}
+
+/**END hierarchies **/
+
+/**START validation report **/
+.ebx_DataSetValidationReport {
+	
+}
+.ebx_DataSetValidationReport h4 {
+	padding-left: 20px; /* 16(icon.width) + 4(padding) */
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.ebx_DataSetValidationReport .ebx_DataSetValidationInfo {
+	display: inline;
+}
+.ebx_DataSetValidationReport ol li {
+	margin: 0.5em 0;
+}
+.ebx_DataSetValidationReport ol li .ebx_DataSetValidationLineOrigin {
+	padding-left: 12px;
+	background-image: url("../images/onIcons/ebx_actionForward.png");
+	background-repeat: no-repeat;
+	background-position: -4px 0;
+}
+.ebx_DataSetValidationReport ol li .ebx_DataSetValidationLineMessage {
+	margin: 0;
+	display: block;
+}
+/**END validation report **/
+
+/***END workspace ***/
+
+/***START navigation ***/
+#ebx_Navigation {
+}
+#ebx_NavigationHeader,
+#ebx_NavigationSubHeader {
+	position: relative;
+}
+
+#ebx_NavigationHeader h2,
+#ebx_NavigationSubHeader h2,
+#ebx_FloatingNavigationHeaderTitle,
+#ebx_FloatingNavigationSubHeaderTitle {
+	overflow: hidden;
+	white-space: nowrap;
+}
+#ebx_NavigationHeader h2.ebx_ActiveTitle,
+#ebx_NavigationSubHeader h2.ebx_ActiveTitle,
+#ebx_FloatingNavigationHeaderTitle h2.ebx_ActiveTitle,
+#ebx_FloatingNavigationSubHeaderTitle h2.ebx_ActiveTitle {
+	cursor: pointer;
+}
+
+#ebx_NavigationHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_Button,
+#ebx_FloatingNavigationHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_Button {
+	margin-left: 15px;
+	vertical-align: 3px;
+}
+#ebx_NavigationHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_Button {
+	margin-right: 0;
+}
+#ebx_FloatingNavigationHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_Button {
+	margin-right: 15px;
+}
+
+#ebx_FloatingNavigationHeaderTitle,
+#ebx_FloatingNavigationSubHeaderTitle {
+	/* apply the color (transparent) at the end of the transition */
+	transition: width 0.1s ease, background-color 0.1s step-end;
+	-moz-transition: width 0.1s ease, background-color 0.1s step-end;
+	-webkit-transition: width 0.1s ease, background-color 0.1s step-end;
+}
+#ebx_FloatingNavigationHeaderTitle:hover,
+#ebx_FloatingNavigationSubHeaderTitle:hover {
+	/* apply the color at the start of the transition */
+	transition: width 0.1s ease, background-color 0s step-start;
+	-moz-transition: width 0.1s ease, background-color 0s step-start;
+	-webkit-transition: width 0.1s ease, background-color 0s step-start;
+}
+#ebx_FloatingNavigationHeaderTitle.ebx_WidthNotAnimated,
+#ebx_FloatingNavigationSubHeaderTitle.ebx_WidthNotAnimated {
+	transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+
+#ebx_NavigationHeader h3,
+#ebx_NavigationSubHeader h3 {
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0 15px 10px 15px;
+}
+
+#ebx_NavigationHeader {
+	border-bottom: 1px solid #E0E0E0;/*{table-borderColor}*/
+}
+
+#ebx_NavigationHeaderToolbar,
+#ebx_NavigationSubHeaderToolbar {
+	padding: 0 15px 10px 15px;
+	white-space: nowrap;
+}
+
+#ebx_NavigationSubHeaderToolbar {
+}
+
+#ebx_NavigationSubHeaderToolbar h3.ebx_InstanceMetaData {
+	margin-top: 0.2em;
+	margin-left: 0.3em;
+	margin-bottom: 0;
+	padding-left: 20px;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+}
+
+#ebx_NavigationSubHeaderToolbar .ebx_DataSetValidationInfo {
+	font-size: 0.9em;
+	margin: 0.5em 0.5em 0 0.5em;
+	display: inline-block;
+}
+
+#ebx_NavigationContent {
+}
+
+#ebx_NavigationTree {
+	display: table;
+	width: 100%;
+}
+
+#ebx_NavigationTree .ygtvtable {
+	width: auto;
+	
+	border-radius: 0 2px 2px 0;
+	-moz-border-radius: 0 2px 2px 0;
+}
+#ebx_NavigationTree.ebx_NavigationTreeForDMA .ygtvtable,
+#ebx_NavigationTree.ebx_NavigationTreeForComparison .ygtvtable {
+	width: 100%;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+#ebx_NavigationTree td:first-child {
+	border-left: 12px solid transparent;
+}
+
+#ebx_NavigationTree td.ygtvcontent {
+	padding-right: 16px;/* 16(labelDocButton.width) */
+	color: #606060;/*{clickableText-fontColor}*/
+}
+#ebx_NavigationTree.ebx_NavigationTreeForDMA td.ygtvcontent,
+ebx_NavigationTree.ebx_NavigationTreeForComparison td.ygtvcontent {
+	padding-right: 0;
+}
+
+/** resize bar **/
+/* knob */
+.yui-skin-sam #layout-doc .yui-layout-unit .yui-resize-handle-r .yui-layout-resize-knob,
+.yui-skin-sam #layout-doc .yui-layout-unit .yui-resize-handle-l .yui-layout-resize-knob {
+	background-position: 0 -44px;
+	width: 5px;
+	height: 16px;
+}
+/* dynamic resize bar */
+.yui-skin-sam #layout-doc .yui-resize-proxy .yui-layout-handle-r {
+	border: none;
+}
+.yui-skin-sam .yui-resize .yui-resize-handle {
+	background-color: transparent;
+}
+
+#ebx_NavigationExpandKnob {
+	display: none;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 10px;
+	
+	cursor: pointer;
+}
+#ebx_NavigationExpandKnob.ebx_NavigationExpandKnobDisplayed {
+	display: block;
+}
+
+#ebx_NavigationExpandKnobBG {
+	width: 0;
+	height: 100%;
+	
+	overflow: hidden;
+    
+	transition: width 0.2s ease-out;
+	-moz-transition: width 0.2s ease-out;
+	-webkit-transition: width 0.2s ease-out;
+    
+}
+#ebx_NavigationExpandKnob:hover #ebx_NavigationExpandKnobBG {
+	width: 100%;
+}
+
+#ebx_NavigationExpandKnobBG .ebx_SmallIcon {
+    background-position: 0 -100px;
+    
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+.ebx_NavigationProxyCollapsed {	
+	/* 10px is the width of the knob */
+	background-image: -webkit-linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	background-image: -moz-linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	background-image: -ms-linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	background-image: linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	
+}
+.ebx_NavigationProxyCollapsed .yui-layout-handle-r {
+	right: auto;
+	left: 0;
+}
+.yui-skin-sam .yui-layout .yui-resize-proxy.ebx_NavigationProxyCollapsed .yui-layout-handle-r {
+	width: 10px;
+}
+
+.yui-layout-handle-r .ebx_SmallIcon {
+	display: none;
+}
+.yui-skin-sam .yui-layout .yui-resize-proxy .ebx_SmallIcon {
+	border: 0;
+	position: relative;
+}
+.ebx_NavigationProxyCollapsed .yui-layout-handle-r .ebx_SmallIcon {
+    background-position: 0 -90px;
+    
+	display: inline-block;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+/***END navigation ***/
+
+/***START header ***/
+
+#ebx_Header {
+	height: 40px;
+	overflow: hidden;
+}
+
+#ebx_AppLogo {
+	vertical-align: top;
+}
+
+#ebx_UserBloc {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#ebx_HiddenBody #ebx_UserBloc {
+	display: none;
+}
+
+#ebx_Logout {
+	margin-right: 1px;
+}
+
+#ebx_HideHeader {
+	position: absolute;
+	top: 25px; /* 40(header.height) - 15(height) */
+	left: 50%;
+	margin: 0 0 0 -12px;
+	
+	height: 15px;
+	width: 25px;
+	
+	cursor: pointer;
+	
+	overflow: hidden;
+	
+	opacity: 0;
+    
+	transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-webkit-transition: opacity 0.3s ease;
+}
+#ebx_Header:hover #ebx_HideHeader {
+	opacity: 1;
+}
+
+#ebx_HideHeader .ebx_SmallIcon {
+    background-position: 0 -70px;
+    
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+#ebx_HeaderExpandKnob {
+	display: none;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 10px;
+	
+	cursor: pointer;
+}
+#ebx_HeaderExpandKnob.ebx_HeaderExpandKnobDisplayed {
+	display: block;
+}
+
+#ebx_HeaderExpandKnobBG {
+	width: 100%;
+	height: 0;
+	
+	overflow: hidden;
+    
+	transition: height 0.2s ease-out;
+	-moz-transition: height 0.2s ease-out;
+	-webkit-transition: height 0.2s ease-out;
+}
+#ebx_HeaderExpandKnob:hover #ebx_HeaderExpandKnobBG {
+	height: 100%;
+}
+
+#ebx_HeaderExpandKnobBG .ebx_SmallIcon {
+    background-position: 0 -80px;
+    
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+/***END header ***/
+
+/***START loading layer ***/
+#ebx_LoadingLayer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	text-align: center;
+}
+
+#ebx_LoadingLayerContent {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.ebx_LoadingLayerWithHeader #ebx_LoadingLayerContent {
+	top: 40px;
+}
+
+/*
+#ebx_LoadingLayerContent h1 {
+	display: block;
+	margin: 1em 1em 10px 1em;
+	font-style: italic;
+	
+	padding-bottom: 40px;
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+
+#ebx_LoadingProgressBar {
+	text-align: center;
+}
+#ebx_LoadingProgressBar .yui-pb {
+	display: inline-block;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList {
+	font-size: 1.2em;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList,
+#ebx_LoadingLayer ul.ebx_TaskList ul {
+	list-style: none;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_CurrentTaskCursor,
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_State,
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.Message {
+	float: left;
+	height: 20px;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_CurrentTaskCursor,
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_State {
+	width: 20px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_CurrentTask div.ebx_CurrentTaskCursor {
+	background-image: url(../images/onCommon/ebx_current_loading_task.gif);
+}
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_State_OnStarting div.ebx_State {
+	
+}
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_State_Processing div.ebx_State {
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+}
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_State_Done div.ebx_State {
+	background-image: url(../images/onCommon/ebx_loading_task_done.gif);
+}
+*/
+
+/***END loading layer ***/
+
+/***START selector panel ***/
+#ebx_SelectorPanel_c {
+	top: 10px;
+	right: 50%;
+	bottom: 10px;
+	left: 10px;
+}
+
+#ebx_SelectorPanel,
+#ebx_SelectorPanel .bd {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#ebx_SelectorPanel {
+	border: none;
+}
+
+#ebx_SelectorPanel .bd {
+	border: 1px solid #808080;
+	overflow: auto;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 0;
+}
+
+#ebx_SelectorPanel .ebx_Knob {
+	top: -10px;
+	left: 5px;
+}
+#ebx_SelectorPanelWaiting {
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	height: 32px;
+	margin-top: 50px;
+}
+
+#ebx_SelectorPanelToolbar {
+	padding: 6px 4px;
+	background-color: #F0F0F0;
+}
+
+#ebx_SelectorPanelTree {
+	padding: 5px;
+	overflow: auto;
+}
+
+#ebx_SelectorPanelTree .ygtvtable {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+#ebx_SelectorPanel .container-close {
+	top: 7px
+}
+/***END selector panel ***/
+
+/***START internal popup ***/
+
+#ebx_InternalPopup_mask {
+	cursor: pointer;
+}
+
+.ebx_InteractivMask:hover {
+	background-color: #404040;
+}
+
+#ebx_InternalPopup_c {
+	padding: 0;
+}
+
+#ebx_InternalPopup {
+	border: 0;
+}
+
+#ebx_InternalPopup .bd {
+	padding: 0;
+	margin: 0;
+	
+	border: none;
+	border-top: 1px solid #E0E0E0;
+}
+
+/***END internal popup ***/
+
+/***START toolbar ***/
+.ebx_Toolbar .ebx_ToolsAlignLeft {
+	float: left;
+}
+.ebx_Toolbar .ebx_ToolsAlignRight {
+	float: right;
+}
+.ebx_Toolbar .ebx_ToolbarSeparator {
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+}
+/***END toolbar ***/
+
+/***START print ***/
+@media print {
+}
+/***END print ***/
+
+/***START browser override ***/
+a:focus,
+button:focus,
+:focus {
+	outline-style: solid;
+	outline-width: 0px;
+}
+span:focus,
+div:focus,
+td:focus,
+fieldset:focus,
+table:focus,
+iframe:focus,
+.yuimenuitem a:focus {
+	outline: none;
+	box-shadow: none;/* defined in MssCssSettings */
+}
+/**START to respect shadow style ***/
+.container-close,
+.link-close,
+.calnavleft,
+.calnavright {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+/**END to respect shadow style ***/
+
+/***END browser override ***/
+
+/***START workflow ***/
+
+/**START Workflow Badge **/
+.ebx_WorkflowBadge {
+	display: inline-block;
+	
+	line-height: 11px;
+	min-width: 5px;
+	min-height: 12px;
+	padding: 0 3px;
+	
+	font-size: 10px;
+	font-weight: bold;
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+#ebx_NavigationTree .ebx_WorkflowBadge {
+	margin-right: 4px;
+	margin-left: 1px;
+	vertical-align: 1px;
+}
+
+.ebx_workflow_deadline {
+	position: relative;
+	display: inline-block;
+	
+	margin-left: -3px;/* ebx_WorkflowBadge.paddingLeft */
+	
+	border-style: solid;
+	border-width: 1px;
+	
+	width: 10px;
+	line-height: 10px;
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+.ebx_Input .ebx_workflow_deadline,
+.tvContainer .ebx_workflow_deadline {
+	margin-left: 0;
+	vertical-align: 1px;
+}
+
+.ebx_workflow_deadline_exclamation,
+.ebx_workflow_deadline_point {
+	position: absolute;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.ebx_workflow_deadline_exclamation {
+	top: 1px;
+	left: 4px;
+	height: 5px;
+	width: 2px;
+}
+.ebx_workflow_deadline_point {
+	top: 7px;
+	left: 4px;
+	height: 2px;
+	width: 2px;
+}
+
+/**END Workflow Badge **/
+
+/***END workflow ***/
+
+/***START noscript ***/
+
+#ebx_Noscript {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10; /* loading layer elevation */
+	
+	background-color: #E0E0E0;
+}
+
+#ebx_NoscriptBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	height: 64px; /* 5(image bottom gap) + 64(image) + 5(image top gap) - 5(padding top) - 5(padding bottom) */
+	margin-top: -37px;
+	width: 300px;
+	margin-left: -150px;
+	
+	background-color: #FFFFFF;
+	background-image: url(../images/onStatus/ebx_fatalError.png);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	
+	padding: 5px 5px 5px 74px;
+	
+	border: 1px solid #000000;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	
+	box-shadow: 0 0 10px #000000;
+	-moz-box-shadow: 0 0 10px #000000;/*
+	filter:progid:DXImageTransform.Microsoft.Glow(color='#808080', Strength='10');*/
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#808080,direction=135);
+}
+
+#ebx_NoscriptMessage {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+#ebx_NoscriptLink {
+	position: absolute;
+	bottom: 5px;
+}
+
+/***END noscript ***/
+
+
+/***START Login page ***/
+.ebx_LoginPage h2 {
+	font-size: 2em;
+}
+.ebx_LoginPage .ebx_Form input[type="text"],
+.ebx_LoginPage .ebx_Form input[type="password"] {
+	width: 200px;
+}
+
+.ebx_LoginPage table td p {
+	margin: 20px 5px;
+}
+
+.ebx_LoginPage .ebx_CompactBlock fieldset {
+	display: inline-block;
+	margin-top: 30px;
+	padding: 0 5px;
+	font-weight: bold;
+}
+
+.ebx_LoginPage .ebx_CompactBlock fieldset fieldset {
+	padding: 0 5px;
+	margin-bottom: 5px;
+}
+
+/***END Login page ***/
+
+/***START others ***/
+.ebx_Hidden {
+	visibility: hidden;
+}
+
+.ebx_LineFloatElementsMaintainer {
+	clear: both;
+	display: block;
+}
+.ebx_ScrollingPane {
+	overflow: auto;
+}
+/***END others ***/
+
+.ebx_Knob {
+	background-position: 0 -29px;
+	background-repeat: no-repeat;
+	height: 11px;
+	width: 20px;
+	position: absolute;
+}
+
+#ebx_contextualMenu {
+	border-color: #C0C0C0;
+}
+
+#ebx_contextualMenu .bd {
+	padding: 2px;
+	background-color: #FFFFFF;
+	border-color: #C0C0C0;
+}
+
+/********* ebx_icons.css *********/
+
+/***START public button icons ***/
+.ebx_Add .ebx_Icon {
+	background-position: 0 -80px;
+}
+.ebx_Calendar .ebx_Icon {
+	background-position: 0 -160px;
+}
+.ebx_Delete .ebx_Icon {
+	background-position: 0 -592px;
+}
+.ebx_Empty .ebx_Icon {
+	background-position: 0 -144px;
+}
+.ebx_Trashcan .ebx_Icon {
+	background-position: 0 -208px;
+}
+
+.ebx_IconError,
+.ebx_IconWarning,
+.ebx_IconInfo,
+.ebx_IconAttribute,
+.ebx_IconPrimaryKey,
+.ebx_IconForeignKey,
+.ebx_IconPrimaryForeignKey,
+.ebx_IconGroup,
+.ebx_IconAnimWait {
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 21px; /* 16 + 5(a little margin for text) */
+	min-height: 16px;
+	line-height: 16px;
+}
+.ebx_IconAnimWaitBig {
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+.ebx_IconAnimWait {
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+}
+.ebx_IconAnimWaitBig {
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+}
+/***END public button icons ***/
+
+.ebx_Icon,
+.ebx_SmallIcon,
+.ebx_BigIcon {
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+.ebx_Icon {
+	height: 16px;
+	width: 16px;
+	vertical-align: -4px; /* 12(line-height) - 16(icon height) */
+}
+.ebx_SmallIcon {
+	height: 10px;
+	width: 10px;
+}
+.ebx_BigIcon {
+	height: 32px;
+	width: 32px;
+}
+
+.ebx_MenuButtonIcon .ebx_Icon {
+	background-position: 0 -16px;
+}
+
+.ebx_SearchButton .ebx_Icon {
+	background-position: 0 -96px;
+}
+.ebx_FilterButtonShowMatches .ebx_SmallIcon {
+	background-position: 0 -190px;
+}
+
+.ebx_SeeMore .ebx_Icon {
+	background-position: 0 -608px;
+}
+#ebx_ISS_HasNext {
+    background-position: center -609px;
+}
+
+.ebx_LabelDocButton .ebx_SmallIcon,
+.ebx_LabelDocButtonTooltip .ebx_SmallIcon {
+	background-position: 0 -10px;
+}
+#ebx_FlyingHelp .ebx_Icon {
+	background-position: 0 -624px;
+}
+.ebx_dcpPermalink .ebx_SmallIcon {
+	background-position: 0 -20px;
+}
+
+
+#ebx_TitleBreadcrumbScrollLeft .ebx_SmallIcon {
+	background-position: 0 -170px;
+}
+#ebx_TitleBreadcrumbScrollRight .ebx_SmallIcon {
+	background-position: 0 -180px;
+}
+
+#ebx_DisplayMessageBox .ebx_Icon,
+#ebx_MessageBoxTitle .ebx_Icon {
+	background-position: 0 -640px;
+}
+
+/***START User actions ***/
+.ebx_Logout .ebx_Icon {
+	background-position: 0 -48px;
+}
+
+.ebx_Close .ebx_Icon {
+	background-position: 0 -64px;
+}
+
+#ebx_Help .ebx_Icon,
+#ebx_ContextualDoc .ebx_Icon,
+.ebx_Help .ebx_Icon {
+	background-position: 0 -32px;
+}
+
+/***END User actions ***/
+
+/***START Permalink ***/
+#ebx_PermalinkCopyToClipboard .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_copyToClipboard.png);
+}
+
+#ebx_PermalinkSendFromEmailClient .ebx_Icon {
+	background-position: 0 -256px;
+}
+
+#ebx_PermalinkParameters .ebx_Icon {
+	background-position: 0 -272px;
+}
+/***END Permalink ***/
+
+/***START Instance metadata ***/
+h3.ebx_InstanceMetaDataInfo {
+	background-image: url(../images/onIcons/ebx_information.png);
+}
+
+h3.ebx_InstanceMetaDataPerms {
+	background-image: url(../images/onIcons/ebx_permission.png);
+}
+/***END Instance metadata ***/
+
+/***START Paging ***/
+.ebx_PagingFirst .ebx_Icon {
+	background-position: 0 -688px;
+}
+.ebx_PagingPrevious .ebx_Icon {
+	background-position: 0 -112px;
+}
+.ebx_PagingNext .ebx_Icon {
+	background-position: 0 -128px;
+}
+.ebx_PagingLast .ebx_Icon {
+	background-position: 0 -704px;
+}
+.ebx_PagingFirstSmall .ebx_SmallIcon {
+	background-position: 0 -130px;
+}
+.ebx_PagingPreviousSmall .ebx_SmallIcon {
+	background-position: 0 -140px;
+}
+.ebx_PagingNextSmall .ebx_SmallIcon {
+	background-position: 0 -150px;
+}
+.ebx_PagingLastSmall .ebx_SmallIcon {
+	background-position: 0 -160px;
+}
+
+/***END Paging ***/
+
+/***START Table Actions ***/
+.ebx_AddTableRow .ebx_Icon {
+	background-position: 0 -80px;
+}
+
+.ebx_SortFlagAsc .ebx_SmallIcon {
+	background-position: 0 -110px;
+}
+.ebx_SortFlagDesc .ebx_SmallIcon {
+	background-position: 0 -120px;
+}
+
+.ebx_MoveUp .ebx_Icon {
+	background-position: 0 -800px;
+}
+.ebx_MoveDown .ebx_Icon {
+	background-position: 0 -816px;
+}
+
+.ebx_MoveLeft .ebx_Icon,
+.ebx_MoveAbove .ebx_Icon {
+	background-position: 0 -832px;
+}
+.ebx_MoveRight .ebx_Icon {
+	background-position: 0 -848px;
+}
+
+.ebx_MoveAllLeft .ebx_Icon {
+	background-position: 0 -864px;
+}
+.ebx_MoveAllRight .ebx_Icon {
+	background-position: 0 -880px;
+}
+
+.ebx_RemoveItem .ebx_Icon {
+	background-position: 0 -896px;
+}
+.ebx_RemoveAllItems .ebx_Icon {
+	background-position: 0 -912px;
+}
+
+.ebx_MoveTop .ebx_Icon {
+	background-position: 0 -928px;
+}
+.ebx_MoveBottom .ebx_Icon {
+	background-position: 0 -944px;
+}
+
+/***END Table Actions ***/
+
+/***START label flags severity ***/
+.ebx_FlagError/*,
+.ebx_ComplexField_error > .ebx_Label*/  {
+	background-image: url(../images/onIcons/ebx_error_icon_layer.png);
+}
+.ebx_FlagWarning/*,
+.ebx_ComplexField_warn > .ebx_Label*/ {
+	background-image: url(../images/onIcons/ebx_warning_icon_layer.png);
+}
+.ebx_FlagInfo/*,
+.ebx_ComplexField_info > .ebx_Label*/ {
+	background-image: url(../images/onIcons/ebx_info_icon_layer.png);
+}
+/***END label flags severity ***/
+
+/***START expand collapse ***/
+
+
+.ygtvtp a.ygtvspacer,
+.ygtvlp a.ygtvspacer,
+.ebx_Expand .ebx_SmallIcon {
+	background-position: 0 -30px;
+}
+.ygtvtph a.ygtvspacer,
+.ygtvtphh a.ygtvspacer,
+.ygtvlph a.ygtvspacer,
+.ygtvlphh a.ygtvspacer,
+.ebx_Expand:hover .ebx_SmallIcon {
+	background-position: 0 -40px;
+}
+.ygtvtm a.ygtvspacer,
+.ygtvlm a.ygtvspacer,
+.ebx_Collapse .ebx_SmallIcon {
+	background-position: 0 -50px;
+}
+.ygtvtmh a.ygtvspacer,
+.ygtvtmhh a.ygtvspacer,
+.ygtvlmh a.ygtvspacer,
+.ygtvlmhh a.ygtvspacer,
+.ebx_Collapse:hover .ebx_SmallIcon {
+	background-position: 0 -60px;
+}
+
+/***END expand collapse ***/
+
+/***START data types ***/
+table.ebx_TreeNodeWithIcon.ebx_Domain tr td.ygtvcontent,
+table.ebx_TreeNodeWithIcon.ebx_Group tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_Group,
+.ebx_NamedTypesPreview .ebx_Domain {
+	background-image: url(../images/onIcons/ebx_group.png);
+}
+.ebx_ComparatorTable .ebx_Domain_error {
+	background-image: url(../images/onIcons/ebx_group_error.png);
+}
+.ebx_ComparatorTable .ebx_Domain_warn {
+	background-image: url(../images/onIcons/ebx_group_warn.png);
+}
+.ebx_ComparatorTable .ebx_Domain_info {
+	background-image: url(../images/onIcons/ebx_group_info.png);
+}
+.ebx_ComparatorTable .ebx_Domain {
+	background-image: url(../images/onIcons/ebx_groupGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_Table tr td.ygtvcontent,
+.ebx_ComparatorTable .ebx_Table,
+.ebx_NamedTypesPreview .ebx_Table {
+	background-image: url(../images/onIcons/ebx_table.png);
+}
+.ebx_ComparatorTable .ebx_Table_error {
+	background-image: url(../images/onIcons/ebx_table_error.png);
+}
+.ebx_ComparatorTable .ebx_Table_warn {
+	background-image: url(../images/onIcons/ebx_table_warn.png);
+}
+.ebx_ComparatorTable .ebx_Table_info {
+	background-image: url(../images/onIcons/ebx_table_info.png);
+}
+
+.ebx_ComparatorTable .ebx_attribute_error {
+	background-image: url(../images/onIcons/ebx_attribute_error.png);
+}
+.ebx_ComparatorTable .ebx_attribute_warn {
+	background-image: url(../images/onIcons/ebx_attribute_warn.png);
+}
+.ebx_ComparatorTable .ebx_attribute_info {
+	background-image: url(../images/onIcons/ebx_attribute_info.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_attribute tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_attribute {
+	background-image: url(../images/onIcons/ebx_attribute.png);
+}
+.ebx_ComparatorTable .ebx_attribute {
+	background-image: url(../images/onIcons/ebx_attributeGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_primary_key tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_primary_key {
+	background-image: url(../images/onIcons/ebx_pkey.png);
+}
+.ebx_ComparatorTable .ebx_primary_key_error {
+	background-image: url(../images/onIcons/ebx_pkey_error.png);
+}
+.ebx_ComparatorTable .ebx_primary_key_warn {
+	background-image: url(../images/onIcons/ebx_pkey_warn.png);
+}
+.ebx_ComparatorTable .ebx_primary_key_info {
+	background-image: url(../images/onIcons/ebx_pkey_info.png);
+}
+.ebx_ComparatorTable .ebx_primary_key {
+	background-image: url(../images/onIcons/ebx_pkeyGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_foreign_key tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_foreign_key {
+	background-image: url(../images/onIcons/ebx_fkey.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key_error {
+	background-image: url(../images/onIcons/ebx_fkey_error.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key_warn {
+	background-image: url(../images/onIcons/ebx_fkey_warn.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key_info {
+	background-image: url(../images/onIcons/ebx_fkey_info.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key {
+	background-image: url(../images/onIcons/ebx_fkeyGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_primary_foreign_key tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_primary_foreign_key {
+	background-image: url(../images/onIcons/ebx_pfkey.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key_error {
+	background-image: url(../images/onIcons/ebx_pfkey_error.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key_warn {
+	background-image: url(../images/onIcons/ebx_pfkey_warn.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key_info {
+	background-image: url(../images/onIcons/ebx_pfkey_info.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key {
+	background-image: url(../images/onIcons/ebx_pfkeyGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_AssociationNode tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_AssociationNode,
+.ebx_ComparatorTable .ebx_AssociationNode {
+	background-image: url(../images/onIcons/ebx_AssociationNode.png);
+}
+
+.ebx_Field.ebx_Group .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -720px;
+}
+.ebx_Field.ebx_attribute .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -736px;
+}
+.ebx_Field.ebx_primary_key .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -752px;
+}
+.ebx_Field.ebx_foreign_key .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -768px;
+}
+.ebx_Field.ebx_primary_foreign_key .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -784px;
+}
+
+/***END data types ***/
+
+/***START Workflow Model ***/
+table.ebx_workflow_definition_userTask tr td.ygtvcontent,
+table.ebx_workflow_definition_scriptTask tr td.ygtvcontent,
+table.ebx_workflow_definition_conditional tr td.ygtvcontent,
+table.ebx_workflow_definition_virtualFirstTask tr td.ygtvcontent,
+table.ebx_workflow_definition_subWorkflowsInvocation tr td.ygtvcontent,
+table.ebx_workflow_definition_waitStep tr td.ygtvcontent {
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	background-position: 1px 3px;
+}
+
+table.ebx_workflow_definition_userTask tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowWorkItem.png);
+}
+table.ebx_workflow_definition_scriptTask tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowScript.png);
+}
+table.ebx_workflow_definition_conditional tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowCondition.png);
+}
+table.ebx_workflow_definition_virtualFirstTask tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowEntryPoint.png);
+}
+table.ebx_workflow_definition_subWorkflowsInvocation tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowSubWorkflowsInvocation.png);
+}
+table.ebx_workflow_definition_waitStep tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowWaitStep.png);
+}
+/***END Workflow Model ***/
+
+/***START Workflow Priority ***/
+
+.ebx_workflow_priority {
+    background-repeat: no-repeat;
+    
+    display: inline-block;
+    height: 16px;
+    width: 32px;
+}
+.ebx_workflow_priority_withTooltip {
+    cursor: help;
+}
+
+
+.ebx_workflow_priority_lower {
+    background-position: 0 -16px;
+}
+.ebx_workflow_priority_low {
+    background-position: 0 -32px;
+}
+.ebx_workflow_priority_normal {
+    background-position: 0 -48px;
+}
+.ebx_workflow_priority_high {
+    background-position: 0 -64px;
+}
+.ebx_workflow_priority_higher {
+    background-position: 0 -80px;
+}
+.ebx_workflow_priority_urgent {
+    background-position: 0 -96px;
+}
+.ebx_workflow_priority_meter_0 {
+    background-position: 0 -112px;
+}
+.ebx_workflow_priority_meter_1 {
+    background-position: 0 -128px;
+}
+.ebx_workflow_priority_meter_2 {
+    background-position: 0 -144px;
+}
+.ebx_workflow_priority_meter_3 {
+    background-position: 0 -160px;
+}
+.ebx_workflow_priority_meter_4 {
+    background-position: 0 -176px;
+}
+.ebx_workflow_priority_meter_5 {
+    background-position: 0 -192px;
+}
+.ebx_workflow_priority_meter_6 {
+    background-position: 0 -208px;
+}
+.ebx_workflow_priority_meter_7 {
+    background-position: 0 -224px;
+}
+.ebx_workflow_priority_meter_8 {
+    background-position: 0 -240px;
+}
+.ebx_workflow_priority_meter_9 {
+    background-position: 0 -256px;
+}
+.ebx_workflow_priority_meter_10 {
+    background-position: 0 -272px;
+}
+
+/***END Workflow Priority ***/
+
+/***START Workflow Process Instance History ***/
+
+.wpihConditionTask .ebx_BigIcon {
+    background-position: 0 -96px;
+}
+.wpihScriptTask .ebx_BigIcon {
+    background-position: 0 -64px;
+}
+.wpihWorkItemAllocated .ebx_BigIcon,
+.wpihUserTask .ebx_BigIcon {
+    background-position: 0 -32px;
+}
+.wpihSubWorkflowTask .ebx_BigIcon {
+    background-position: 0 -128px;
+}
+.wpihWaitTask .ebx_BigIcon {
+    background-position: 0 -416px;
+}
+
+.ebx_BigIcon.wpihIconStart {
+    background-position: 0 -192px;
+}
+.ebx_BigIcon.wpihIconSeparator {
+    background-position: 0 -256px;
+}
+.ebx_BigIcon.wpihIconEnd {
+    background-position: 0 -224px;
+}
+.ebx_BigIcon.wpihIconUnknown {
+    background-position: 0 -160px;
+}
+
+.wpihWorkItemOffered .ebx_BigIcon {
+    background-position: 0 -288px;
+}
+.wpihWorkItemStarted .ebx_BigIcon {
+    background-position: 0 -320px;
+}
+.wpihWorkItemCompleted .ebx_BigIcon {
+    background-position: 0 -384px;
+}
+.wpihWorkItemError .ebx_BigIcon {
+    background-position: 0 -352px;
+}
+
+.ebx_Icon.wpihTaskCommentFlag {
+	background-position: 0 -640px;
+}
+
+.wpihWorkItemInfoButton .ebx_Icon {
+	background-position: 0 -960px;
+}
+
+.ebx_ScrollLeft .ebx_SmallIcon {
+	background-position: 0 -170px;
+}
+.ebx_ScrollRight .ebx_SmallIcon {
+	background-position: 0 -180px;
+}
+
+/***END Workflow Process Instance History ***/
+
+/***START DataSpace ***/
+
+table.ebx_TreeNodeWithIcon.ebx_DataSelector_Instance tr td.ygtvcontent,
+#ebx_WorkspaceContent form .ebx_Field.ebx_DataSelector_Instance .ebx_FieldIcon{
+	background-image: url(../images/onIcons/ebx_instance.png);
+}
+.ebx_ComparatorTable .ebx_DataSelector_Instance {
+	background-image: url(../images/onIcons/ebx_instance_grey.png);
+}
+
+.ebx_Snapshot {
+	background-position: 0 -577px; /* 576 -1 */
+	height: 14px;
+	vertical-align: -2px;
+}
+
+h2 .ebx_Snapshot {
+	vertical-align: -1px;
+}
+
+/***END DataSpace ***/
+
+/***START Form ***/
+
+#ebx_RootTab .ebx_Icon {
+	background-position: 0 -656px;
+}
+
+#ebx_TabScrollLeft .ebx_Icon {
+	background-position: -1px -318px;
+}
+#ebx_TabScrollLeft:hover .ebx_Icon {
+	background-position: -2px -318px;
+}
+#ebx_TabScrollLeft.mousedown .ebx_Icon {
+	background-position: -3px -318px;
+}
+
+#ebx_TabScrollRight .ebx_Icon {
+	background-position: -4px -334px;
+}
+#ebx_TabScrollRight:hover .ebx_Icon {
+	background-position: -3px -334px;
+}
+#ebx_TabScrollRight.mousedown .ebx_Icon {
+	background-position: -2px -334px;
+}
+
+.ebx_ValueInherited .ebx_Icon {
+	background-position: 0 -352px;
+}
+.ebx_ValueINA .ebx_Icon {
+	background-position: 0 -368px;
+}
+.ebx_ValueNull .ebx_Icon {
+	background-position: 0 -240px;
+}
+.ebx_ValueEditable .ebx_Icon {
+	background-position: 0 -224px;
+}
+.ebx_DropDown .ebx_Icon {
+	background-position: 0 -16px;
+}
+
+.ebx_Infinite .ebx_Icon {
+	background-position: 0 -384px;
+}
+.ebx_Now .ebx_Icon {
+	background-position: 0 -176px;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	line-height: 18px;
+	text-indent: -2px;
+}
+button.ebx_IconButton.ebx_Now .ebx_Icon {
+	vertical-align: 0;
+}
+.ebx_Open .ebx_Icon {
+	background-position: 0 -192px;
+}
+.ebx_PreviewLink {
+	background-position: right -193px;
+}
+.ebx_Wizard .ebx_Icon {
+	background-position: 0 -400px;
+}
+
+.ebx_DeleteOccurrence .ebx_Icon {
+	background-position: 0 -208px;
+}
+.ebx_AddOccurrence .ebx_Icon {
+	background-position: 0 -80px;
+}
+
+.ebx_ServiceOnNode .ebx_Icon {
+	background-position: 0 -416px;
+}
+
+.ebx_CheckboxReadOnly {
+	background-image: url(../images/onIcons/ebx_checkboxReadOnly.png);
+}
+
+#ebx_FormStatusFlag .ebx_Icon {
+    background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+}
+
+/***END Form ***/
+
+
+/***START Hierarchies ***/
+
+table.ebx_TreeNodeWithoutIcon tr td.ygtvcontent .ygtvlabel .ebx_ComputedIcon.ebx_TreeNodeRoot {
+	background-image: url(../images/onIcons/ebx_treeNodeRoot.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeTarget {
+	background-image: url(../images/onIcons/ebx_treeNodeTarget.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeOrphan {
+	background-image: url(../images/onIcons/ebx_treeNodeOrphan.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeCycle {
+	background-image: url(../images/onIcons/ebx_treeNodeCycle.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeLinkedTable {
+	background-image: url(../images/onIcons/ebx_treeNodeLinkedTable.png);
+}
+
+/***END Hierarchies ***/
+
+
+/***START Back/Forward button ***/
+
+.ebx_ArrowBackButton .ebx_Icon {
+	background-position: 0 -288px;
+}
+.ebx_ArrowBackButton:hover .ebx_Icon,
+.ebx_ArrowBackButton:focus .ebx_Icon {
+	background-position: -1px -288px;
+}
+.ebx_ArrowBackButton:active .ebx_Icon {
+	background-position: -3px -288px;
+}
+
+.ebx_ArrowForwardButton .ebx_Icon {
+	background-position: 0 -304px;
+}
+.ebx_ArrowForwardButton:hover .ebx_Icon,
+.ebx_ArrowForwardButton:focus .ebx_Icon {
+	background-position: 1px -304px;
+}
+.ebx_ArrowForwardButton:active .ebx_Icon {
+	background-position: 3px -304px;
+}
+
+/***END Back/Forward button ***/
+
+/***START validation report ***/
+.ebx_DataSetValidationReport h4.ebx_FatalError {
+	background-image: url(../images/onIcons/ebx_fatalError.png);
+}
+.ebx_DataSetValidationReport h4.ebx_Error {
+	background-image: url(../images/onIcons/ebx_error.png);
+}
+.ebx_DataSetValidationReport h4.ebx_Warning {
+	background-image: url(../images/onIcons/ebx_warning.png);
+}
+.ebx_DataSetValidationReport h4.ebx_Info {
+	background-image: url(../images/onIcons/ebx_info.png);
+}
+/***END validation report ***/
+
+/***START Comparator states ***/
+.ebx_Comparator_decided {
+	background-image: url(../images/onIcons/ebx_comparator_decided.png);
+}
+.ebx_Comparator_OverwriteDecided {
+	background-image: url(../images/onIcons/ebx_comparatorOverwriteDecided.png);
+}
+.ebx_Comparator_NochangeDecided {
+	background-image: url(../images/onIcons/ebx_comparatorNoChangeDecided.png);
+}
+.ebx_Comparator_PartialOverwriteDecided {
+	background-image: url(../images/onIcons/ebx_comparatorPartialOverwriteDecided.png);
+}
+.ebx_Comparator_NotDecided {
+	background-image: url(../images/onIcons/ebx_comparatorNotDecided.png);
+}
+
+.ebx_Comparator_basic_difference {
+	background-image: url(../images/onIcons/ebx_comparator_diff.png);
+}
+.ebx_Comparator_add_void {
+	background-image: url(../images/onIcons/ebx_comparator_add_void.png);
+}
+.ebx_Comparator_add_add {
+	background-image: url(../images/onIcons/ebx_comparator_add_add.png);
+}
+.ebx_Comparator_modify_void {
+	background-image: url(../images/onIcons/ebx_comparator_modif_void.png);
+}
+.ebx_Comparator_modify_modify {
+	background-image: url(../images/onIcons/ebx_comparator_modif_modif.png);
+}
+.ebx_Comparator_modify_delete {
+	background-image: url(../images/onIcons/ebx_comparator_modif_del.png);
+}
+.ebx_Comparator_delete_void {
+	background-image: url(../images/onIcons/ebx_comparator_del_void.png);
+}
+.ebx_Comparator_delete_modify {
+	background-image: url(../images/onIcons/ebx_comparator_del_modif.png);
+}
+.ebx_Comparator_delete_delete {
+	background-image: url(../images/onIcons/ebx_comparator_del_del.png);
+}
+.ebx_Comparator_void_add {
+	background-image: url(../images/onIcons/ebx_comparator_void_add.png);
+}
+.ebx_Comparator_void_modify {
+	background-image: url(../images/onIcons/ebx_comparator_void_modif.png);
+}
+.ebx_Comparator_void_delete {
+	background-image: url(../images/onIcons/ebx_comparator_void_del.png);
+}
+
+/*START value states */
+.ebx_ComparatorValueStateNull {
+	background-image: url(../images/onIcons/ebx_null.png);
+}
+.ebx_ComparatorValueStateInherited {
+	background-image: url(../images/onIcons/ebx_setInherited.png);
+}
+/*END value states */
+/***END Comparator states ***/
+
+/***START Admin ***/
+
+table.ebx_TreeNodeWithIcon.ebx_DataspaceClosed tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataSpaceClosed.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_DataspaceSnapshotClosed tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataSpaceSnapshotClosed.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_History tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_history.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_DataspaceWithHistory tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataspaceWithHistory.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_DataspaceClosedWithHistory tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataspaceClosedWithHistory.png);
+}
+
+.ebx_SecuredSessionFlag {
+	background-image: url(../images/onIcons/ebx_securedSession.png);
+}
+
+.ebx_ColorPicker .ebx_Icon {
+	background-position: 0 -672px;
+}
+
+/**START D3 **/
+.ebx_Icon.ebx_d3Available {
+	background-image: url(../images/onIcons/ebx_d3Available.png);
+}
+.ebx_Icon.ebx_d3Out {
+	background-image: url(../images/onIcons/ebx_d3Out.png);
+}
+.ebx_Icon.ebx_d3Init {
+	background-image: url(../images/onIcons/ebx_d3Init.png);
+}
+.ebx_Icon.ebx_d3Unavailable {
+	background-image: url(../images/onIcons/ebx_d3Unavailable.png);
+}
+.ebx_Icon.ebx_d3Stopped {
+	background-image: url(../images/onIcons/ebx_d3Stopped.png);
+}
+/**END D3 **/
+
+/**Start Perspective Administration **/
+
+.ebx_ppv_icon
+{
+	width:1.4em;
+}
+
+.ebx_ppv_icon_url
+{
+	width: 1.4em;
+	display: inline-block;
+	background-size:1em 1em;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+
+.ebx_ppv_icon_url:before
+{
+	content:"\00a0"; 
+}
+
+/**End Perspective Administration **/
+
+/***END Admin ***/
+
+.ebx_workflow_execution_comment .ebx_Icon {
+	background-position: 0 -640px;
+}
+
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemOffered,
+button.ebx_workItemOffered .ebx_Icon {
+	background-position: 0 -448px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemAllocated,
+button.ebx_workItemAllocated .ebx_Icon {
+	background-position: 0 -464px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemError,
+button.ebx_workItemError .ebx_Icon {
+	background-position: 0 -512px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemStarted,
+button.ebx_workItemStarted .ebx_Icon {
+	background-position: 0 -480px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemCompleted,
+button.ebx_workItemCompleted .ebx_Icon {
+	background-position: 0 -496px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowError,
+button.ebx_workflowError .ebx_Icon {
+	background-position: 0 -560px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowIncoming,
+button.ebx_workflowIncoming .ebx_Icon {
+	background-position: 0 -432px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowPublication,
+button.ebx_workflowPublication .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_publications.png);
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowProcess,
+button.ebx_workflowProcess .ebx_Icon {
+	background-position: 0 -544px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowMonitoring,
+button.ebx_workflowMonitoring .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_monitoring.png);
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowHistory,
+button.ebx_workflowHistory .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_completedWF.png);
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowWorkitem,
+button.ebx_workflowWorkitem .ebx_Icon {
+	background-position: 0 -528px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowLauncher,
+button.ebx_workflowLauncher .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_launchWF.png);
+}
+
+.ebx_WFLabelDescriptionEmpty,
+.ebx_WFLabelDescription {
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin-left: -4px;
+	margin-right: 4px;
+}
+.ebx_WFLabelDescription {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(../images/onIcons/ebx_information.png);
+	cursor: help;
+}
+
+/********* ebx_menu.css *********/
+
+#ebx_Header a {
+	border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+#ebx_Menu {
+	margin: 0;
+	padding: 0;
+	
+	display: inline-block;
+	vertical-align: top;
+	
+	white-space: nowrap;
+}
+
+#ebx_Menu li {
+	display: inline-block;
+}
+
+/*#ebx_Menu li a/span*/.ebx_MenuLabel {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	
+	height: 40px;
+	width: 40px;
+	
+	background-repeat: no-repeat;
+}
+.ebx_MenuLabel,
+.ebx_MenuLabel:hover,
+.ebx_MenuLabel:active {
+	text-decoration: none;
+}
+
+#ebx_Menu li.ebx_data .ebx_MenuLabel {
+	background-position: 0 0;
+}
+#ebx_Menu li.ebx_data.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: 0 -40px;
+}
+
+#ebx_Menu li.ebx_dataSpaces .ebx_MenuLabel {
+	background-position: -40px 0;
+}
+#ebx_Menu li.ebx_dataSpaces.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -40px -40px;
+}
+
+#ebx_Menu li.ebx_workflow .ebx_MenuLabel {
+	background-position: -80px 0;
+}
+#ebx_Menu li.ebx_workflow.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -80px -40px;
+}
+
+#ebx_Menu li.ebx_modelingDMA .ebx_MenuLabel {
+	background-position: -120px 0;
+}
+#ebx_Menu li.ebx_modelingDMA.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -120px -40px;
+}
+
+#ebx_Menu li.ebx_modelingWF .ebx_MenuLabel {
+	background-position: -160px 0;
+}
+#ebx_Menu li.ebx_modelingWF.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -160px -40px;
+}
+
+#ebx_Menu li.ebx_dataServices .ebx_MenuLabel {
+	background-position: -200px 0;
+}
+#ebx_Menu li.ebx_dataServices.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -200px -40px;
+}
+
+#ebx_Menu li.ebx_admin .ebx_MenuLabel {
+	background-position: -240px 0;
+}
+#ebx_Menu li.ebx_admin.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -240px -40px;
+}
+
+/*START Module Header Menu Item */
+.ebx_HeaderIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active:focus {
+	background-position: 0 0;
+}
+.ebx_HeaderHighlightIconsDark #ebx_Menu li.ebx_ModuleHeaderMenuItem.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: 0 -40px;
+}
+
+.ebx_HeaderIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active:focus {
+	background-position: -40px 0;
+}
+.ebx_HeaderHighlightIconsMedium #ebx_Menu li.ebx_ModuleHeaderMenuItem.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -40px -40px;
+}
+
+.ebx_HeaderIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:hover,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:focus,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active,
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem .ebx_MenuLabel:active:focus {
+	background-position: -80px 0;
+}
+.ebx_HeaderHighlightIconsLight #ebx_Menu li.ebx_ModuleHeaderMenuItem.ebx_MenuCurrentCategory .ebx_MenuLabel {
+	background-position: -80px -40px;
+}
+/*END Module Header Menu Item */
+
+#ebx_Menu .ebx_WorkflowBadge {
+	float: right;
+	margin: 3px;
+}
+
+
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:hover,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:focus,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:active,
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel:active:focus {/*
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+
+#ebx_Menu li.ebx_MenuCurrentCategory a.ebx_MenuLabel {
+	cursor: default;
+}
+
+#ebx_Menu li:hover {/*
+	background-color: #F8F8F8;/*{menu-Active-BgColor}*/
+}
+
+
+.ebx_MenuLabel:focus,
+#ebx_UserBloc .ebx_FlatButtonNoBorder:focus {
+	outline: none;
+	box-shadow: none;/* defined in MssCssSettings */
+}
+#ebx_UserBloc .ebx_FlatButtonNoBorder:focus {
+	border-color: transparent;
+}
+
+/********* ebx_public.css *********/
+
+.ebx_ColoredBorder {
+	border-width: 1px;
+	border-style: solid;
+}
+
+.ebx_Selected {
+	color: #000000;
+}
+
+.ebx_Disabled {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+
+.ebx_FatalError,
+.ebx_DataSetValidationInfo a.ebx_FatalError {
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E00000;
+	outline: 4px double #E00000;
+	padding: 0 0.2em;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.ebx_Error,
+.ebx_DataSetValidationInfo a.ebx_Error,
+.ebx_ProductInfo .ebx_LicenseTimeLimited,
+.ebx_LicenseExpired,
+#ebx_MessageBoxErrorTabLabel,
+#ebx_MessageBoxErrorList,
+#EBX_NodeDocumentation_Panel .dcpError {
+	color: #E00000;
+}
+#ebx_MessageBoxErrorList .ebx_MessageBoxMessageUnread {
+	border-color: #E00000;
+}
+#EBX_NodeDocumentation_Panel .dcpError {
+	background-color: #F0D0D0;
+}
+
+.ebx_Warning,
+.ebx_DataSetValidationInfo a.ebx_Warning,
+#ebx_MessageBoxWarningTabLabel,
+#ebx_MessageBoxWarningList,
+#EBX_NodeDocumentation_Panel .dcpWarning {
+	color: #926100;
+}
+#ebx_MessageBoxWarningList .ebx_MessageBoxMessageUnread {
+	border-color: #926100;
+}
+#EBX_NodeDocumentation_Panel .dcpWarning {
+	background-color: #FFE0B0;
+}
+
+.ebx_Info,
+.ebx_DataSetValidationInfo a.ebx_Info,
+#ebx_MessageBoxInfoTabLabel,
+#ebx_MessageBoxInfoList,
+#EBX_NodeDocumentation_Panel .dcpInfo {
+	color: #436CCB;
+}
+#ebx_MessageBoxInfoList .ebx_MessageBoxMessageUnread {
+	border-color: #436CCB;
+}
+#EBX_NodeDocumentation_Panel .dcpInfo {
+	background-color: #D0D0FF;
+}
+
+.ebx_ValueND,
+.ebx_InputTip {
+	color: #505050;
+	font-style: italic;
+}
+
+/***START accessibility ***/
+
+@media aural, braille, embossed {
+	.ebx_AccessibilityOnly {
+	}
+}
+
+@media handheld, print, projection, screen, tty, tv {
+	.ebx_AccessibilityOnly {
+		display: none;
+	}
+}
+/***END accessibility ***/
+
+
+/********* ebx_text.css *********/
+
+@font-face {
+  font-family: 'Source Sans Pro Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/SourceSansPro-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  src: url(../fonts/SourceSansPro-Regular.ttf) format('truetype');
+}
+/* note: google mail for ipad = 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif */
+
+body,
+button,
+input,
+textarea,
+select,
+h1 .ebx_Button,
+h2 .ebx_Button,
+h3 .ebx_Button,
+h4 .ebx_Button,
+.ebx_WorkflowBadge {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select,
+h1 .ebx_Button,
+h2 .ebx_Button,
+h3 .ebx_Button,
+h4 .ebx_Button {
+	font-size: 12px;
+}
+
+.ebx_LoginPage .ebx_Field,
+.ebx_LoginPage .ebx_Form input[type="text"],
+.ebx_LoginPage .ebx_Form input[type="password"] {
+	font-family: 'Source Sans Pro Light', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	padding: 0 2px;/* else, Firefox truncates the descender of the 'g' */
+}
+
+legend {
+	color: #000000; /* otherwise, IE8 in WinXP takes a color among the color palette of windows */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	cursor: default;
+}
+
+h1 {
+	font-size: 1.7em;
+	display: none;
+}
+
+h2,
+.ebx_TitleBreadcrumbItem {
+	font-size: 1.8em;
+	font-family: 'Source Sans Pro Light', Helvetica, Arial, sans-serif;
+}
+h2 {
+	padding: 10px 15px;
+}
+
+h3 {
+	font-size: 1.5em;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	font-family: 'Source Sans Pro Light', Helvetica, Arial, sans-serif;
+}
+
+h4 {
+	font-size: 1.3em;
+	margin-top: 13px;
+	margin-bottom: 3px;
+	font-family: 'Source Sans Pro Light', Helvetica, Arial, sans-serif;
+}
+
+.ebx_ProductInfo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+.ebx_ProductInfo .ebx_Copyright {
+	font-size: 0.8em;
+}
+
+
+.ebx_LabelFlag {
+	margin-right: 0.2em;
+}
+
+a {
+	color: #606060;/*{clickableText-fontColor}*/
+	
+	/* used when focused */
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+/*
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+*/
+p {
+    margin: 0.5em 0;
+}
+
+/********* ebx_form.css *********/
+
+label {
+	cursor: pointer;
+}
+
+fieldset {
+	border-style: solid;
+	border-width: 1px;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_BorderBlock {
+	margin: 0;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 2px;
+	
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_BorderBlockWithTitle {
+	margin-top: 9px; /* 10 title.top - 1 border-top */
+	padding-top: 6px;
+	position: relative;
+}
+.ebx_BorderBlockTitle {
+	position: absolute;
+	top: -10px;
+	left: 2px;
+	padding: 0 3px;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+
+/*
+Input types:
+  o button
+  o checkbox
+  o file
+  o hidden
+  o image
+  o password
+  o radio
+  o reset
+  o submit
+  o text
+*/
+
+input[type=text],
+input[type=password],
+input[type=file],
+select,
+textarea {
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+input[type=text],
+input[type=password] {
+    height: 22px;
+}
+input[type=text],
+input[type=password],
+input[type=file],
+textarea {
+    padding: 2px;
+}
+select {
+    padding: 1px;
+}
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	border-width: 1px;
+}
+textarea {
+	margin: 0;
+	overflow: auto;
+}
+.ebx_Form textarea {
+	vertical-align: baseline;
+}
+
+.ebx_TextareaBaselineAligner {
+    display: inline-table;
+	padding-top: 3px; /* - textarea margin-top */
+}
+.ebx_TextareaBaselineAligner textarea {
+	vertical-align: text-top;
+	margin-top: -3px;/* - (1(border-top) + 2(padding-top)) */
+}
+
+#ebx_WorkspaceFormBody {
+	overflow: auto;
+}
+
+#ebx_WorkspaceFormBodyWait {
+	display: none;
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+
+.ebx_WorkspaceContextualBlock {
+	display: none;
+}
+
+#ebx_ScrollShadow {
+	display: none;
+	position: absolute;
+	height: 4px;
+	background-repeat: repeat-x;
+	background-image: url(../images/onCommon/ebx_scrollShadow.png);
+}
+
+#ebx_WorkspaceFormTabview .ebx_WorkspaceFormTabContent {
+	overflow: auto;
+	padding-top: 5px;
+	
+	box-sizing:border-box;
+	-moz-box-sizing: border-box;
+}
+
+#ebx_TabScroller {
+	display: none;
+	
+	float: right;
+}
+
+#ebx_TabScrollerBorder {
+	padding: 1px 2px 2px 2px;
+	border-left: 1px solid #C0C0C0;/*{button-borderColor}*/
+}
+
+/* parent style is ebx_Button */
+#ebx_TabScrollLeft,
+#ebx_TabScrollRight {
+	height: 22px;
+	width: 11px;
+	margin: 0;
+	cursor: default;
+}
+
+#ebx_TabScrollLeft .ebx_Icon,
+#ebx_TabScrollRight .ebx_Icon {
+	display: inline-block;
+	height: 20px;
+	width: 10px;
+	background-repeat: no-repeat;
+}
+
+#ebx_TabScrollLeft.ebx_Disabled,
+#ebx_TabScrollRight.ebx_Disabled {
+	opacity: 1;
+	filter: none;
+}
+#ebx_TabScrollLeft.ebx_Disabled .ebx_Icon,
+#ebx_TabScrollRight.ebx_Disabled .ebx_Icon {
+	visibility: hidden;	
+}
+
+#ebx_TabScrollLeft {
+	border-width: 1px 0 1px 1px;
+	
+	border-radius: 2px 0 0 2px;
+	-moz-border-radius: 2px 0 0 2px;
+}
+
+#ebx_TabScrollRight {
+	border-width: 1px 1px 1px 0;
+	
+	border-radius: 0 2px 2px 0;
+	-moz-border-radius: 0 2px 2px 0;
+}
+
+#ebx_WorkspaceFormTree #ebx_WorkspaceFormTabviewTabs {
+	padding: 0 15px;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+
+#ebx_WorkspaceFormTree #ebx_WorkspaceFormTabviewTabs,
+#ebx_TabScroller {
+	
+	border-bottom-width: 5px;
+	border-bottom-style: solid;
+}
+
+#ebx_RootTab .ebx_Icon {
+	text-indent: -10000px;
+	vertical-align: 0px;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav li,
+#ebx_WorkspaceFormTabviewTabs.yui-nav li.selected {
+	margin: 0 10px 0 0;
+	vertical-align: bottom;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav a,
+#ebx_WorkspaceFormTabviewTabs.yui-navset-top .yui-nav a,
+#ebx_WorkspaceFormTabviewTabs.yui-nav a:focus,
+#ebx_WorkspaceFormTabviewTabs.yui-nav a:hover,
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a,
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a:focus,
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a:hover {
+	background-repeat: repeat-x;
+	background-position: 50% -7px;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav a {
+	border-width: 1px 1px 0 1px;
+	border-color: #C0C0C0;/*{button-borderColor}*/
+	border-style: solid;
+	
+	border-radius: 2px 2px 0 0;
+	-moz-border-radius: 2px 2px 0 0;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav .selected a {
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav a em {
+	padding: 4px 16px 3px 10px;
+	border: none;
+	height: 16px;/* height of help button ; if the help button is not present, the tab have the same height */
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav #ebx_RootTab a em {
+    padding: 4px 10px 3px 10px;
+}
+
+#ebx_WorkspaceFormTabviewTabs.yui-nav .ebx_LabelDocButton .ebx_SmallIcon {
+	vertical-align: -1px;
+}
+
+#ebx_WorkspaceFormTabviewContents {
+	padding: 0;
+	
+	border: none;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.ebx_WorkspaceFormHeader {
+	padding: 0 5px;
+}
+.ebx_WorkspaceFormHeader ul {
+	margin: 0;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+table.ebx_FieldList,
+table.ebx_FieldListNoMargin {
+	border-collapse: collapse;
+	display: inline-table;
+}
+
+tr.ebx_FieldListBedrock {
+    visibility: hidden;
+}
+tr.ebx_FieldListBedrock > td {
+    padding: 0;
+}
+
+/* only the first level of input cell must reach the right border */
+.ebx_Field td.ebx_Input {
+	width: 100%;
+}
+.ebx_Input .ebx_Field td.ebx_Input {
+	width: auto;
+}
+
+#ebx_WorkspaceFormTree ul.ebx_ComplexFields {
+	padding: 2px; /* initial padding */
+}
+#ebx_WorkspaceFormTree ul.yui-nav {
+	padding: 0; /* initial YUI property */
+}
+
+.ebx_Field {
+	white-space: nowrap;
+}
+div.ebx_Field {
+	display: table-row;
+}
+div.ebx_Field>div {
+	display: table-cell;
+}
+
+tr.ebx_Field.ebx_Focused,
+div.ebx_Field.ebx_Focused {
+	background-color: transparent;
+}
+
+.ebx_Field>* {
+	vertical-align: baseline;
+}
+
+.ebx_Field>.ebx_Label,
+.ebx_Field>.ebx_Input,
+.ebx_InputInertMode {
+	padding: 5px;
+}
+.ebx_ButtonThroughInputLeftPadding {
+	margin-left: -5px;
+	margin-right: 5px;
+}
+.ebx_CollapsibleBlockForLocalization .ebx_CollapsibleBlockContainer .ebx_IconFlatButtonNoBorderSmall {
+	margin-left: -5px;
+	margin-right: 2px; /* only 2px because it's a text on the right, and not a border */
+}
+
+.ebx_Field>.ebx_Label {
+	padding-left: 15px;
+	padding-right: 2px;/* padding between the label and the docButton */
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ebx_FieldInfos,
+.ebx_FieldIcon,
+.ebx_FieldExpandCollapse,
+.ebx_FieldSpace,
+.ebx_FieldIndent {
+	padding: 0;
+	width: 1px;/* to force the td to be as small as possible */
+}
+
+.ebx_Label:hover + .ebx_FieldInfos>.ebx_LabelDocButton,
+.ebx_FieldInfos:hover>.ebx_LabelDocButton {
+	visibility: visible;
+}
+
+.ebx_FieldInfos {
+	min-width: 16px;
+}
+
+td.ebx_FieldInfos > *,
+td.ebx_FieldInfos > .ebx_LabelDocButton {
+	display: inline-block;
+	width: 16px;
+	margin-left: -16px;
+}
+
+td.ebx_FieldInfos :first-child {
+	margin-left: 0; 
+}
+
+.ebx_FieldExpandCollapse button {
+	margin: 0;
+}
+
+.ebx_FieldSpace {
+	padding-left: 1px;/* 0 would be better, but it moves input fields when hover without focus (on Chrome) */
+}
+
+.ebx_FieldIndent {
+	background-repeat: repeat-y;
+	background-position: 50% 50%;
+}
+
+.ebx_FieldDecorator {
+	display: inline-table;
+}
+
+.ebx_Form input[type=text],
+.ebx_Form input[type=password],
+.ebx_Form input[type=file],
+.ebx_Form select,
+.ebx_Form textarea,
+.ebx_Form .ebx_LargeValue,
+.ebx_InputTip {
+	box-sizing:border-box;
+	-moz-box-sizing: border-box;
+}
+.ebx_Form input[type=radio],
+.ebx_Form input[type=checkbox] {
+	margin: 0 3px;
+	vertical-align: -1px; /* to have a better impression of alignment */
+    outline-width: 2px;
+    padding: 0;
+}
+.ebx_Form input[type=radio]:first-child,
+.ebx_Form input[type=checkbox]:first-child {
+	margin-left: 0;
+}
+
+.ebx_Field .ebx_Input .ebx_ButtonAloneInInputCell {
+	margin: 0;
+}
+
+.ebx_InputWithEmptyButton {
+    padding-right: 17px; /* 16(button.width) + 1(padding) */
+}
+button.ebx_EmptyButtonForInput {
+    margin-left: -17px; /* 16(button.width) + 1(input.border.right.width) */
+    margin-right: 0;
+}
+button.ebx_EmptyButtonHidden {
+    display: none;
+}
+
+.ebx_Form .ebx_LargeValue,
+.ebx_InputTip {
+	white-space: normal;
+	max-height: 150px;
+	overflow: auto;
+	vertical-align: text-top;
+}
+.ebx_InputTip {
+    margin-top: 3px;
+    font-size: 0.9em;
+    text-align: justify;
+}
+/* also used in table cells */
+.ebx_LargeValue {
+	display: inline-block;
+	margin: 0;
+}
+
+.ebx_InputFocusRedirector {
+	height: 0;
+	width: 0;
+	position: fixed;
+	left: -10000px;
+}
+
+.ebx_InputsDateContainer {
+	display: inline-block;
+	/* Mantis #4387 */
+	vertical-align: 0;
+	border: 1px solid #E0E0E0; /*{input-borderColor}*/
+	background-color: #F8F8F8;/*{formWidgets-bgColor}*/
+	
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.ebx_InputsDateContainer input[type=text] {
+	text-align: center;
+	border: none;
+	height: 20px; /* 22px (original height) - 1 (border 1px removed) */
+	margin: 0 0.5em;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    outline-width: 2px;
+}
+
+.ebx_InheritedValue.ebx_SimpleType {
+	/* to have the text in the same position when toggle inherit(display)/overwrite(edit) */
+	/* 2px is for input border width & padding */
+	margin-top: 2px;
+	margin-left: 2px;
+}
+.ebx_OverwrittenValue .ebx_OverwrittenNull{
+	/* to simulate the gap of input border width & padding */
+	margin-left: 2px;
+	margin-top: 2px;
+}
+.ebx_InputFieldWrapper>.ebx_ValueND {
+	/* to simulate the gap of input border width & padding */
+	margin-left: 2px;
+	display: inline-block;
+}
+
+.ebx_InheritedValue {
+	display: none;
+}
+.ebx_OverwrittenValue {
+	display: inline;
+}
+
+.ebx_Inherited .ebx_InheritedValue {
+	display: inline;
+}
+.ebx_Inherited .ebx_OverwrittenValue {
+	display: none;
+}
+
+
+.ebx_InputFieldWrapper {
+	display: inline-table;
+}
+.ebx_OverwrittenNull {
+	display: none;
+}
+
+.ebx_Nil .ebx_InputFieldWrapper {
+	display: none;
+}
+.ebx_Nil .ebx_OverwrittenNull {
+	display: inline-block;
+}
+
+.ebx_OccurrenceListWrapper {
+	display: inline-table;
+}
+.ebx_OccurrenceList {
+	margin: 0;
+	padding-left: 20px;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent {
+	display: inline-table;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent {
+	border: 1px dashed transparent;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent.ebx_OccurrenceEditorContentHidden {
+	display: inline-block;
+	height: 16px; /* buttonDelete.height - 2 (border top & border-bottom)*/
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	border-color: #C0C0C0;
+	vertical-align: top;
+}
+.ebx_OccurrenceList .ebx_OccurrenceEditorContent.ebx_OccurrenceEditorContentHidden * {
+	visibility: hidden;
+}
+
+.ebx_Form .ebx_OccurrenceListWrapper .ebx_AddOccurrence {
+	margin: 0;
+}
+
+/* TODO CCH make IconFlatButtonNoBorders *
+body .ebx_IconButtonSmall.ebx_ComplexFieldsCollapse,
+body .ebx_IconButtonSmall.ebx_ComplexFieldsExpand,
+body .ebx_IconButtonSmall.ebx_GroupExpandCollapse,
+body .ebx_IconFlatButtonSmall.ebx_ComplexFieldsCollapse,
+body .ebx_IconFlatButtonSmall.ebx_ComplexFieldsExpand,
+body .ebx_IconFlatButtonSmall.ebx_GroupExpandCollapse {
+	border: none;
+	background-color: transparent;
+}*/
+
+.ebx_ComplexFields,
+.ebx_CollapsibleBlock {
+	display: inline-table;
+	vertical-align: baseline;
+}
+
+.ebx_ComplexFields {
+	padding: 2px;
+	
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_ComplexFieldsCollapsed > table > tbody > tr.ebx_Field {
+	display: none;
+}
+.ebx_ComplexFieldsCollapsed > table > tbody > tr.ebx_Field:first-child {
+	display: table-row;
+}
+
+/* disabled for now (because it was too ugly and was not ISO with standard forms)
+.ebx_ComplexField_error > .ebx_Label,
+.ebx_ComplexField_warn > .ebx_Label,
+.ebx_ComplexField_info > .ebx_Label {
+	background-repeat: no-repeat;
+	background-position: 3px 0;
+	text-indent: 6px;
+}
+*/
+
+.ebx_CollapsibleBlockContainer {
+	margin: 2px;
+}
+.ebx_CollapsibleBlockForLocalization .ebx_CollapsibleBlockContainer {
+	margin: 2px 0;
+}
+.ebx_CollapsibleBlock {
+}
+.ebx_CollapsibleBlock.ebx_CollapsibleBlockCollapsed .ebx_CollapsibleBlockContent {
+	display: none;
+}
+.ebx_CollapsibleBlock .ebx_CollapsibleBlockContent textarea {
+	display: block;
+}
+
+.ebx_InaMessage {
+	clear: both;
+	color: #505050;
+	font-style: italic;
+}
+
+.ebx_UDATypesContainer > div {
+    margin-top: 3px;
+}
+
+.yui-skin-sam .yui-editor-container {
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.yui-skin-sam .yui-toolbar-container .yui-toolbar-subcont {
+	border-color: #E0E0E0;/*{input-borderColor}*/
+}
+.yui-skin-sam .yui-editor-container h2,
+.yui-skin-sam .yui-editor-container h3 {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#ebx_WorkspaceFormFooter {
+	text-align: center;
+	padding: 15px;
+}
+
+#ebx_WorkspaceFormFooter .ebx_ActionsInPlace,
+#ebx_WorkspaceFormFooter .ebx_ActionsBack,
+#ebx_WorkspaceFormFooter .ebx_ActionsForward {
+	padding: 0 1em;
+}
+
+#ebx_WorkspaceFormFooter .ebx_ActionsInPlace {
+	display: inline-block;
+}
+#ebx_WorkspaceFormFooter .ebx_ActionsBack {
+	float: left;
+}
+#ebx_WorkspaceFormFooter .ebx_ActionsForward {
+	float: right;
+}
+
+#ebx_WorkspaceFormFooter .ebx_ProductInfo {
+	position: static;
+	margin-bottom: -15px;/*( #ebx_WorkspaceFormFooter.paddingBottom) to avoid the form footer to grow up */
+}
+#ebx_WorkspaceFormFooter .ebx_ProductInfo p {
+	margin: 0.5em 0;
+}
+#ebx_WorkspaceFormFooter .ebx_ProductInfo .ebx_LicenseTimeLimited {
+	margin-top: -15px;/*( #ebx_WorkspaceFormFooter.paddingTop) to avoid the form footer to grow up */
+}
+
+
+#ebx_FormStatusFlag {
+    visibility: hidden;
+    border: none;
+    opacity: 1;
+    filter: none;
+    
+    margin-left: -1em;
+}
+#ebx_FormStatusFlag.ebx_FormStatusFlagEnabled {
+    visibility: visible;
+}
+
+.ebx_HiddenDefaultSubmitButton {
+	position: absolute;
+	left: -10000px;
+}
+
+/**START presenter **/
+
+.ebx_FieldStatusFlag {
+	display: inline-block;
+	height: 18px; /* 16 flag.height + 1 border.top + 1 border.bottom */
+	width: 18px;
+	vertical-align: top;
+	margin-right: -1px; /* to touch the input text and merge with its left border */
+	
+	text-align: right;
+}
+
+
+.ebx_FieldStatusFlagContent {
+    display: none;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.ebx_WaitingFlag {
+	display: none;
+	
+	height: 16px;
+	width: 16px;
+	
+	background-image: url(../images/onCommon/ebx_wait_anim_small_3.gif);
+	background-repeat: no-repeat; 
+	background-position: 0 0;
+}
+
+.ebx_FieldStatusFlag_waiting .ebx_FieldStatusFlagContent {
+	display: inline-block;
+}
+
+.ebx_FieldStatusFlag_waiting .ebx_WaitingFlag {
+	display: inline-block;
+}
+
+.ebx_MessageContainer {
+	font-style: italic;
+	white-space: normal;
+}
+
+.ebx_MessageContainer > div {
+    margin-top: 3px;
+}
+
+/**END presenter **/
+
+/********* ebx_table.css *********/
+
+/*table*/.ebx_StandardTable {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+/*table*/.ebx_StandardTable.ebx_FullWidth {
+	width: 100%;
+}
+
+/*table*/.ebx_StandardTable.ebx_Nbsp,
+/*table*/.ebx_StandardTable .ebx_Nbsp {
+	white-space: nowrap;
+}
+
+/*table*/.ebx_StandardTable td,
+/*table*/.ebx_StandardTable th {
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	padding: 5px 10px;
+}
+/*table*/.ebx_StandardTable tr:first-child td,
+/*table*/.ebx_StandardTable tr:first-child th {
+	border-top-width: 1px;
+}
+/*table*/.ebx_StandardTable td:first-child,
+/*table*/.ebx_StandardTable th:first-child {
+	border-left-width: 1px;
+}
+
+/*table*/.ebx_StandardTable.ebx_VertAlignTop td,
+/*table*/.ebx_StandardTable.ebx_VertAlignTop th {
+	vertical-align: top;
+}
+
+/*table*/.ebx_StandardTable th {
+	text-align: center;
+}
+	
+/*table*/.ebx_StandardTable td.ebx_AlignRight {
+	text-align: right;
+}
+/*table*/.ebx_StandardTable td.ebx_AlignCenter {
+	text-align: center;
+}
+
+/*START rounded corners */
+
+.ebx_StandardTable tr:first-child th:first-child,
+.ebx_StandardTable tr:first-child td:first-child {
+    border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+}
+.ebx_StandardTable tr:first-child th:last-child,
+.ebx_StandardTable tr:first-child td:last-child {
+    border-top-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+}
+
+.ebx_StandardTable tr:last-child th:first-child,
+.ebx_StandardTable tr:last-child td:first-child {
+    border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+}
+.ebx_StandardTable tr:last-child th:last-child,
+.ebx_StandardTable tr:last-child td:last-child {
+    border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+}
+
+/*END rounded corners */
+
+/********* ebx_tabularView.css *********/
+
+#ebx_workspaceTable_container {
+	margin-left: 15px;
+}
+.ebx_FilterPresent #ebx_workspaceTable_container {
+	margin-left: 5px;
+}
+
+.tvContainer {
+	/* min size */
+	width: 200px;
+	height: 100px;
+	
+	cursor: default;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	border-collapse: separate;/* overwrites form table.ebx_FieldList, that disturbed IE */
+	
+	overflow: hidden;
+	
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+#ebx_workspaceTable_container.tvContainer {
+    border-radius: 0;
+    -moz-border-radius: 0;
+	
+    border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+}
+
+.tvContainer.tvContainerFixedHScroll,
+.tvContainer.tvContainerHScroll,
+.tvContainer.tvContainerVScroll {
+	border: 1px solid #E0E0E0;
+}
+
+.tv_thFixed_firstVisible,
+.tvContainerNoFixedColumn .tvHeaderMain th:first-child {
+    border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+}
+.tvHeaderMain,
+.tvHeaderMain .tv_thMain_lastVisible {
+    border-top-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+}
+.tvFixed tr:last-child td:first-child,
+.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child {
+    border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+}
+.tvMain tr:last-child td.tv_td_lastVisible {
+    border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+}
+.tvContainer.tvContainerFixedHScroll,
+.tvContainer.tvContainerHScroll,
+.tvContainer.tvContainerVScroll {
+	border: 1px solid #E0E0E0;
+}
+
+.tvContainerFixedHScroll .tv_thFixed_firstVisible,
+.tvContainerFixedHScroll.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerFixedHScroll .tvHeaderMain,
+.tvContainerFixedHScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainerFixedHScroll .tvFixed tr:last-child td:first-child,
+.tvContainerFixedHScroll.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child,
+.tvContainerFixedHScroll .tvMain tr:last-child td.tv_td_lastVisible,
+.tvContainerHScroll .tv_thFixed_firstVisible,
+.tvContainerHScroll.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerHScroll .tvHeaderMain,
+.tvContainerHScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainerHScroll .tvFixed tr:last-child td:first-child,
+.tvContainerHScroll.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child,
+.tvContainerHScroll .tvMain tr:last-child td.tv_td_lastVisible,
+.tvContainerVScroll .tv_thFixed_firstVisible,
+.tvContainerVScroll.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerVScroll .tvHeaderMain,
+.tvContainerVScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainerVScroll .tvFixed tr:last-child td:first-child,
+.tvContainerVScroll.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child,
+.tvContainerVScroll .tvMain tr:last-child td.tv_td_lastVisible {
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+/* START table containers */
+.tvHeaderFixedContainer,
+.tvHeaderMainContainerWrapper,
+.tvHeaderMainContainer,
+.tvFixedScrollerWrapper,
+.tvFixedScroller,
+.tvMainScroller {
+	display: inline-block;
+}
+
+.tvHeaderFixedContainer th,
+.tvHeaderMainContainer th {
+	background-color: #F8F8F8;
+}
+
+.tvHeaderFixedContainer,
+.tvHeaderMainContainerWrapper,
+.tvHeaderMainContainer {
+	overflow: hidden;
+}
+
+.tvFixedScrollerWrapper {
+	overflow: hidden;
+}
+.tvFixedScroller,
+.tvMainScroller {
+	overflow: auto;
+	position: relative; /* for the focusFlag */
+}
+
+.tvHeaderFixedContainer,
+.tvFixedScrollerWrapper {
+	width: 30%;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.tvContainerFixedHScrollLastBorderNotVisible .tvHeaderFixedContainer,
+.tvContainerFixedHScrollLastBorderNotVisible .tvFixedScrollerWrapper {
+	border-right: 1px dashed #C0C0C0;
+}
+.tvHeaderMainContainerWrapper,
+.tvMainScroller {
+	width: 70%;
+}
+
+.tvHeaderMainContainer {
+	width: 100%;
+}
+.tvContainer.tvContainerVScroll.tvContainerHScroll .tvHeaderMainContainer {
+	border-right: 1px solid #E0E0E0;
+}
+.tvFixedScroller {
+	width: 100%;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+.tvScrollMaker {
+	height: 1px;
+	display: none;
+}
+.tvContainer.tvEmptyTable .tvScrollMaker {
+	display: block;
+}
+
+.tvMessageContainer,
+.tvMessageEmpty {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+.tvMessageContainer {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.tvMessageEmpty,
+.tvMessageError,
+.tvMessageLoading,
+.tvMessageLogout {
+	display: none;
+	
+	background-color: #FFFFFF;
+	padding: 10px;
+	white-space: nowrap;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.tvSmallHeight .tvMessageEmpty {
+	padding-bottom: 5px;
+}
+
+/* Empty is outside message container */
+.tvStateNormal .tvMessageContainer,
+.tvStateEmpty .tvMessageContainer {
+	display: none;
+}
+.tvStateEmpty .tvMessageEmpty,
+.tvStateError .tvMessageError,
+.tvStateLoading .tvMessageLoading,
+.tvStateLogout .tvMessageLogout {
+	display: inline-block;
+}
+
+/* Error and Logout have an icon on the left */
+.tvMessageError,
+.tvMessageLogout {
+	padding: 10px 10px 10px 30px;
+	background-position: 10px center;
+}
+
+/* Loading have a big icon on the top */
+.tvMessageLoading {
+	padding: 50px 10px 10px 10px;
+	background-position: center 10px;
+}
+.tvSmallHeight .tvMessageLoading {
+	padding: 15px 15px 15px 50px;
+	background-position: 10px center;
+}
+
+.tvMessageError,
+.tvMessageLoading,
+.tvMessageLogout {
+	margin-top: 10px;
+	border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.tvSmallHeight .tvMessageError,
+.tvSmallHeight .tvMessageLoading,
+.tvSmallHeight .tvMessageLogout {
+	margin-top: 5px;
+}
+
+/* END table containers */
+
+.tvHeaderFixed,
+.tvHeaderMain,
+.tvFixed,
+.tvMain {
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 0;
+}
+
+.tvEven {
+	background-color: #FFFFFF;
+}
+
+.tvOdd {
+	background-color: #F8F8F8;
+}
+
+.tvContainer th {
+	text-align: left;
+	font-weight: normal;
+	color: #606060;/*{clickableText-fontColor}*/
+	border-color: #E0E0E0;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+}
+.tvContainer.tvContainerVScroll th,
+.tvContainer.tvContainerHScroll th,
+.tvContainer.tvContainerFixedHScroll th {
+	border-top-width: 0;
+}
+
+th.tvSortableColumn {
+	cursor: pointer;
+}
+
+.tvContainer td {
+	border-right: 1px solid #F0F0F0;
+}
+
+th.tv_thFixed_firstVisible,
+.tvFixed td:first-child,
+.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerNoFixedColumn .tvMain td:first-child {
+	border-left: 1px solid #E0E0E0;
+}
+.tvContainer.tvContainerVScroll .tvHeaderFixedContainer,
+.tvContainer.tvContainerVScroll .tvFixedScroller,
+.tvContainerNoFixedColumn.tvContainerVScroll .tvMainScroller,
+.tvContainer.tvContainerHScroll .tvHeaderFixedContainer,
+.tvContainer.tvContainerHScroll .tvFixedScroller,
+.tvContainerNoFixedColumn.tvContainerHScroll .tvMainScroller,
+.tvContainer.tvContainerFixedHScroll .tvHeaderFixedContainer,
+.tvContainer.tvContainerFixedHScroll .tvFixedScroller,
+.tvContainerNoFixedColumn.tvContainerFixedHScroll .tvMainScroller {
+	margin-left: -1px;
+}
+
+.tvFixed tr:last-child td,
+.tvMain tr:last-child td {
+	border-bottom: 1px solid #E0E0E0;
+}
+.tvMain td.tv_td_lastVisible {
+	border-right: 1px solid #E0E0E0;
+}
+
+.tvContainer.tvContainerHScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainer.tvContainerHScroll .tvMain td.tv_td_lastVisible {
+	border-right-width: 0;
+}
+.tvContainer.tvContainerVScroll .tvFixed tr:last-child td,
+.tvContainer.tvContainerVScroll .tvMain tr:last-child td {
+	border-bottom-width: 0;
+}
+
+.tvHeaderFixed.tvTableLayoutAutoForWebkit th,
+.tvHeaderMain.tvTableLayoutAutoForWebkit th,
+.tvFixed.tvTableLayoutAutoForWebkit td,
+.tvMain.tvTableLayoutAutoForWebkit td {
+	overflow: visible;
+}
+
+.tvHeaderFixed th,
+.tvHeaderMain th,
+.tvFixed td,
+.tvMain td {
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: baseline;
+	min-height: 23px;
+	padding: 4px 10px;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.tvHeaderFixed th.ebx_SelectCurrentPageCellHeader,
+.tvFixed td.tvSelectCell {
+	text-align: center;
+}
+.tvHeaderFixed th.ebx_SelectCurrentPageCellHeader {
+	padding: 0;
+	vertical-align: middle; /* avoid increasing the fixed header height by 1px that hide bottom-border */
+}
+.tvFixed td.tvSelectCell {
+	padding: 5px 0 0 0;
+}
+
+.tvHeaderFixed th.ebx_SelectCurrentPageCellHeader input[type="checkbox"],
+.tvFixed td.tvSelectCell input[type="checkbox"] {
+	margin: 0;
+	padding: 0; /* for IE */
+	vertical-align: -2px; /* better align with text baseline */
+}
+
+.tvFixed td.tvInheritanceCell {
+	padding: 0;
+	text-align: center;
+}
+
+th.ebx_SeverityCellHeader {
+	 /* I don't know why if I don't define this, the cell is higher and makes the bottom border disappear */
+	vertical-align: middle;
+}
+.tvSeverityCell {
+	/* background-position is computed by the JS depending to the offsetTop */
+	line-height: inherit;
+}
+
+.tvHeaderFixed th.ebx_BaselineAlignerCellHeader,
+.tvHeaderMain th.ebx_BaselineAlignerCellHeader {
+	visibility: hidden;
+	padding: 5px 0 0 0;
+}
+
+/*START MonochromaticTable */
+.ebx_MonochromaticTable .tvOdd {
+	background-color: #FFFFFF;
+}
+
+.ebx_MonochromaticTable td {
+	border-top: 1px solid #F0F0F0;
+}
+.ebx_MonochromaticTable tr:first-child td {
+	border-top: none;
+}
+/*END MonochromaticTable */
+
+/*START widgets */
+.tvContainer th .nodeLabel {
+	margin-right: 0;
+}
+
+.ebx_SortFlag {
+	float: right;
+	text-align: center;
+	margin-right: -3px;
+}
+.ebx_SortFlag .ebx_SmallIcon{
+	margin-top: 4px;
+	margin-bottom: -4px;
+}
+.ebx_SortNumber {
+	font-size: 10px;
+	color: #808080;
+	display: block;
+	
+	/* 4 (cell padding bottom) + 3 (approx letter descent height unused in digits) */
+	margin-bottom: -7px;
+	
+	visibility: hidden;
+}
+.tvHeaderContainer:hover .ebx_SortNumber {
+	visibility: visible;
+}
+
+.tvContainer .ebx_FieldDecorator,
+.ebx_OpenTableRefContainerInTable {
+	display: inline;
+}
+
+.tvContainer .ebx_IconButton.ebx_OpenTableRefButtonInTable {
+	float: right;
+	margin: -2px -5px -2px 2px;
+}
+
+.ebx_OpenTableRefLabelInTable {
+	display: block;
+	overflow: hidden;
+	/* reserved additional width for button while auto-resizing */
+	margin-right: 15px;
+	text-overflow: ellipsis;
+}
+
+.tvAlmostReady .ebx_Button,
+.tvAlmostReady .ebx_FlatButtonNoBorder,
+.tvAlmostReady .ebx_FlatButton,
+.tvAlmostReady .ebx_IconButtonSmall,
+.tvAlmostReady .ebx_IconFlatButtonSmall {
+	/* opacity: exactly like .ebx_Disabled */
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	
+	background-color: transparent;
+	cursor: wait;
+}
+/*END widgets */
+
+/*START resize column */
+
+.tvHeaderFixedContainer,
+.tvHeaderMainContainer {
+	position: relative;
+}
+.tvHeaderContainer {
+	position: relative;
+	overflow: hidden;
+}
+
+.ebx_ColumnResizeKnob {
+	height: 30px;
+	width: 5px;
+	top: 0;
+	position: absolute;
+	cursor: col-resize;
+    
+	margin-left: -3px;
+}
+.tvHeaderFixedContainer .ebx_ColumnResizeKnob {
+    margin-left: -2px; /* because of the margin-left: -1 */
+}
+
+.tvContainerFixedHScrollLastBorderNotVisible .tvHeaderContainer>.ebx_ColumnResizeKnob {
+	display: none;
+}
+
+.tvContainer {
+	position: relative;
+}
+
+.ebx_ResizeColumnBar {
+	display: none;
+	
+	height: 100%;
+	top: 0;
+	position: absolute;
+	cursor: col-resize;
+	
+	width: 1px;
+	background-color: #000000;
+	border-left: 2px solid #C0C0C0;
+	border-right: 2px solid #C0C0C0;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	
+	margin-left: -2px; /* remove 1px when tvContainer have not HScroll (first column have 1px border-left width) */
+}
+
+.tvContainer.tvContainerFixedHScroll .ebx_ResizeColumnBar,
+.tvContainer.tvContainerHScroll .ebx_ResizeColumnBar,
+.tvContainer.tvContainerVScroll .ebx_ResizeColumnBar {
+	margin-left: -3px;
+}
+
+/*END resize column */
+
+/*START selection */
+
+.ebx_TableSelectionNumber {
+	font-weight: bold;
+}
+
+.ebx_WaitingForSelection {
+	cursor: wait;
+	
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+	/* background-position is computed by the JS depending to the offsetTop */
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+.ebx_WaitingForSelection.ebx_SelectCurrentPageCellHeader {
+	background-position: center center;
+}
+
+.ebx_WaitingForSelection input {
+	visibility: hidden;
+}
+
+/*END selection */
+
+/*START resize */
+
+.yui-skin-sam .yui-resize-proxy.tvContainerResizeProxy {
+	border: 1px solid #E0E0E0;
+	
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+.yui-skin-sam .yui-resize.tvContainer .yui-resize-handle-br {
+    background-color: transparent;
+	background-position: 0 -68px;
+    bottom: 0;
+    height: 12px;
+    right: 0;
+    width: 12px;
+}
+
+.yui-skin-sam .yui-resize.tvContainer .yui-resize-handle-b .yui-resize-handle-inner-b {
+	background-position: 0 -215px;
+}
+
+/*END resize */
+
+.tvLineRoot {
+	font-weight: bold;
+}
+.tvLineOcculting td {
+	text-decoration: line-through;
+	color: #505050;
+}
+
+.ebx_HiddenCellValue {
+	display: inline-block;
+	width: 100%;
+	background-image: url(../images/onCommon/ebx_hatching.png);
+}
+
+.tvFocusFlag {
+	width: 2px;
+	position: absolute;
+	left: 1px;
+	
+	top: 0;
+	height: 0;
+	
+	transition: height 0.5s ease, top 0.5s ease;
+	-moz-transition: height 0.5s ease, top 0.5s ease;
+	-webkit-transition: height 0.5s ease, top 0.5s ease;
+}
+
+.ebx_OpenRecordContainer {
+	display: inline-block;
+	margin-left: 5px;
+	overflow: hidden;
+	/* overflow hidden brakes the vertical align baseline, top will align the top to other buttons */
+	vertical-align: top;
+}
+.ebx_OpenRecordContainer .ebx_OpenRecord {
+	margin-left: -100%;
+	
+	transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+}
+.ebx_OpenRecordContainer .ebx_OpenRecord.ebx_OpenRecordEnabled {
+	margin-left: 0;
+	
+	transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+}
+
+.ebx_AssociationNodeTable {
+	display: inline-block;
+	vertical-align: text-top;
+}
+.ebx_AssociationNodeTableToolbar {
+	padding-bottom: 5px;
+}
+/* Maybe it's risky to remove the overflow:hidden of tvContainer? */
+/* I don't know how to do otherwise to avoid the bottom knob to be on the bottom scrollBar */
+/* for now, this feature is limited to AssociationNodeTable */
+.ebx_AssociationNodeTable .yui-resize.tvContainer {
+	overflow: visible;
+}
+.ebx_AssociationNodeTable .yui-resize.tvContainer .yui-resize-handle-b {
+	margin-bottom: -6px;
+}
+
+/********* ebx_tree.css *********/
+td.ygtvcontent {
+	white-space: nowrap;
+}
+
+.ebx_TreeNodeWithIcon td.ygtvcontent {
+	padding-left: 21px;
+	background-repeat: no-repeat;
+	background-position: 1px center;
+}
+
+.ygtvdepthcell,
+.ygtvtn,
+.ygtvtm,
+.ygtvtmh,
+.ygtvtmhh,
+.ygtvtp,
+.ygtvtph,
+.ygtvtphh,
+.ygtvln,
+.ygtvlm,
+.ygtvlmh,
+.ygtvlmhh,
+.ygtvlp,
+.ygtvlph,
+.ygtvlphh {
+	background-image: none;
+}
+
+.ygtvloading {
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+	background-position: 0 2px;
+}
+
+/*td*/.ygtvtn,
+/*td*/.ygtvln {
+	cursor: auto;
+}
+/*td*/.ygtvtn a.ygtvspacer,
+/*td*/.ygtvln a.ygtvspacer {
+	visibility: hidden;
+}
+
+/*td*/.ygtvcell a.ygtvspacer {
+	text-decoration: none;
+	display: inline-block;
+	height: 10px; /* yui-master-copy: 22px */
+	width: 10px; /* yui-master-copy: 18px */
+	margin: 6px 4px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ygtvtable {
+	width: 100%;
+}
+
+.ygtvrow .ygtvlabel,
+.ygtvrow .ygtvfocus .ygtvlabel,
+.ygtvrow .ygtvfocus {
+	background-color: transparent;
+	margin: 0;
+}
+
+.ygtvlabel,
+.ygtvlabel:link,
+.ygtvlabel:visited,
+.ygtvlabel:hover {
+    cursor: default;
+}
+a.ygtvlabel,
+a.ygtvlabel:link,
+a.ygtvlabel:visited,
+a.ygtvlabel:hover {
+    cursor: pointer;
+}
+a.ygtvlabel:hover {
+    text-decoration: underline;
+}
+
+.ygtvcontent .ebx_NodeActions {
+	float: right;
+	position: relative;
+	padding-right: 12px;
+}
+.ygtvcontent .ebx_RawLabel {
+	line-height: 22px;
+	height: 22px;
+}
+
+/***START Hierarchy depth ***/
+.ebx_TreeNodeWithoutIcon .ygtvcontent {
+	padding-left: 0;
+}
+.ebx_NodeLevelLabel {
+	padding-right: 5px;
+	border: 2px solid #FFFFFF;
+	
+	border-radius: 11px;
+	-moz-border-radius: 11px;
+}
+.ebx_ComputedIcon {
+	display: inline-block;
+	color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-align: center;
+	margin-right: 4px;
+	vertical-align: 1px;
+	
+	min-width: 6px; /* 14(height) - 2*4(padding) */
+	padding: 0 4px;
+	height: 14px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+.ebx_NodeLevelLabel .ebx_ComputedIcon {
+	vertical-align: 2px;
+	margin-left: 2px;
+}
+/***END Hierarchy depth ***/
+
+.ebx_TreeNodeSearchMatch .ygtvblankdepthcell:first-child>.ygtvspacer {
+ 	background-position: 50% -190px;
+ 	background-repeat: no-repeat;
+ 	height: 10px;
+}
+
+/********* ebx_widget.css *********/
+
+.ebx_CompactBlock {
+	margin-top: 20px;
+	padding: 1em 5em;
+	text-align: center;
+}
+
+.ebx_CompactBlock > * {
+	text-align: left;
+}
+
+.ebx_CompactBlock .ebx_Field td.ebx_Input {
+	width: auto;
+	padding-top: 5px;
+}
+
+.ebx_CompactBlockButtonsInInertFormRow {
+	margin: 10px 0 20px 0;
+}
+
+/***START Buttons ***/
+
+.ebx_Button,
+.ebx_FlatButtonNoBorder,
+.ebx_FlatButton,
+.ebx_IconButtonSmall,
+.ebx_IconFlatButtonSmall,
+.ebx_IconFlatButtonNoBorderSmall {
+	white-space: nowrap;
+	display: inline-block;
+	
+	cursor: pointer;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.ebx_Button,
+.ebx_FlatButtonNoBorder,
+.ebx_FlatButton {
+	height: 26px;
+}
+.ebx_Button,
+.ebx_FlatButton {
+	margin: 0 5px;
+}
+.ebx_FlatButtonNoBorder {
+	margin: 0;
+}
+.ebx_Button:first-child,
+.ebx_FlatButton:first-child,
+.ebx_ButtonGroup:first-child,
+.ebx_IconButtonSmall:first-child,
+.ebx_IconFlatButtonSmall:first-child,
+.ebx_IconFlatButtonNoBorderSmall:first-child {
+	margin-left: 0;
+}
+.ebx_Button:last-child,
+.ebx_FlatButton:last-child,
+.ebx_ButtonGroup:last-child,
+.ebx_IconButtonSmall:last-child,
+.ebx_IconFlatButtonSmall:last-child,
+.ebx_IconFlatButtonNoBorderSmall:last-child {
+	margin-right: 0;
+}
+.ebx_Button,
+.ebx_FlatButton,
+.ebx_IconButtonSmall,
+.ebx_IconFlatButtonSmall,
+.ebx_IconFlatButtonNoBorderSmall {
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.ebx_Button,
+.ebx_FlatButton:hover,
+.ebx_FlatButton:focus,
+.ebx_FlatButton:active,
+.ebx_FlatButton.ebx_ButtonPushed,
+.ebx_IconButtonSmall,
+.ebx_IconFlatButtonSmall:hover,
+.ebx_IconFlatButtonSmall:focus,
+.ebx_IconFlatButtonSmall:active,
+.ebx_IconFlatButtonSmall.ebx_ButtonPushed {
+	border: 1px solid #C0C0C0;/*{button-borderColor}*/
+}
+.ebx_FlatButtonNoBorder,
+.ebx_FlatButton,
+.ebx_IconFlatButtonSmall,
+.ebx_IconFlatButtonNoBorderSmall {
+	border: 1px solid transparent;
+}
+
+.ebx_Button:active,
+.ebx_FlatButton:active,
+.ebx_ButtonPushed {
+	box-shadow: inset 0 0 5px -1px #000000, inset 0 0 5px -1px #FFFFFF;
+	-moz-box-shadow: inset 0 0 5px -1px #000000, inset 0 0 5px -1px #FFFFFF;
+}
+
+.ebx_FlatButtonNoBorder,
+.ebx_FlatButton,
+.ebx_IconFlatButtonSmall,
+.ebx_IconFlatButtonNoBorderSmall {
+    background-color: transparent;
+    color: #606060;/*{clickableText-fontColor}*/
+}
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 1px 9px 2px 9px; /* don't know why... */
+}
+a.ebx_Button,
+a.ebx_FlatButtonNoBorder,
+a.ebx_FlatButton {
+	padding: 2px 11px; /* don't know why... */
+	/* Mantis #4386 */
+	line-height: 21px;
+}
+
+.ebx_Button.ebx_Disabled,
+.ebx_FlatButtonNoBorder.ebx_Disabled,
+.ebx_FlatButton.ebx_Disabled,
+.ebx_IconButtonSmall.ebx_Disabled,
+.ebx_IconFlatButtonSmall.ebx_Disabled,
+.ebx_IconFlatButtonNoBorderSmall.ebx_Disabled {
+	cursor: default;
+}
+a.ebx_Disabled {
+	text-decoration: none;
+}
+
+.ebx_Button.ebx_IconButton,
+.ebx_FlatButtonNoBorder.ebx_IconButton,
+.ebx_FlatButton.ebx_IconButton {
+	padding: 2px;
+}
+.ebx_IconButton {
+	width: 26px;
+}
+
+a.ebx_IconButton .ebx_Icon {
+	margin: 2px;
+	vertical-align: -5px; /* 2 (margin-bottom) + 2 (button.padding-bottom) + 1 (button.border-bottom) */
+}
+
+.ebx_IconButtonSmall,
+.ebx_IconFlatButtonSmall,
+.ebx_IconFlatButtonNoBorderSmall {
+	padding: 2px;
+	height: 16px;
+	width: 16px;
+}
+.ebx_IconButtonSmall .ebx_SmallIcon,
+.ebx_IconFlatButtonSmall .ebx_SmallIcon,
+.ebx_IconFlatButtonNoBorderSmall .ebx_SmallIcon {
+	display: inline-block;
+    background-repeat: no-repeat;
+	
+	height: 10px;
+	width: 10px;
+}
+
+.ebx_IconButtonSmall:active,
+.ebx_IconFlatButtonSmall:active,
+.ebx_IconButtonSmall.ebx_ButtonPushed,
+.ebx_IconFlatButtonSmall.ebx_ButtonPushed {
+	box-shadow: inset 0 2px 10px -4px #000000, inset 0 2px 10px -4px #FFFFFF;
+	-moz-box-shadow: inset 0 2px 10px -4px #000000, inset 0 2px 10px -4px #FFFFFF;
+}
+
+.ebx_TextAndIconLeftButton .ebx_Icon,
+.ebx_TextAndIconRightButton .ebx_Icon {
+	display: inline-block;
+	height: 16px;
+	background-repeat: no-repeat;
+	vertical-align: text-bottom;
+}
+.ebx_TextAndIconLeftButton .ebx_Icon {
+	margin-right: 5px;
+}
+.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-left: 5px;
+}
+
+.ebx_MenuButtonArrow {
+	display: inline-block;
+	width: 8px;
+	height: 4px;
+	
+	background-repeat: no-repeat;
+	background-position: -4px -22px;
+	
+	vertical-align: bottom;
+	margin: 0 -5px 5px 5px;
+}
+.ebx_DefaultButton .ebx_MenuButtonArrow {
+    opacity: 1;
+    filter: none;
+}
+.ebx_IconButtonSmall>.ebx_MenuButtonArrow,
+.ebx_IconFlatButtonSmall>.ebx_MenuButtonArrow {
+	margin: 0 -1px 2px 1px;
+}
+
+.ebx_MenuButton.ebx_IconButton {
+	width: 37px;
+}
+.ebx_MenuButton.ebx_IconButton .ebx_MenuButtonArrow {
+	margin: 0 1px 5px 2px;
+}
+
+button.ebx_SwitchButtonWithMenu {
+	border-radius: 2px 0 0 2px;
+	-moz-border-radius: 2px 0 0 2px;
+}
+
+#ebx_SwitchButtonMenu {
+	padding: 0;
+	margin: 0;
+	
+	width: 20px;
+	
+	border-radius: 0 2px 2px 0;
+	-moz-border-radius: 0 2px 2px 0;
+}
+#ebx_SwitchButtonMenu>.ebx_MenuButtonArrow {
+	margin: 0;
+}
+
+.ebx_SelectButtonItemLabel .ebx_Icon,
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	display: inline-block;
+	background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.ebx_SelectButtonItemLabel .ebx_Icon {
+	height: 16px;
+	width: 16px;
+	vertical-align: text-bottom;
+}
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	height: 14px;
+	width: 14px;
+	vertical-align: text-bottom;
+}
+
+.ebx_DefaultButton {
+	font-weight: bold;
+}
+
+input.ebx_ToggleButtonCkb {
+	display: none;
+}
+
+/**START Special size for IconButton in form and table and workitem **/
+
+.ebx_Input .ebx_Button,
+.ebx_Input .ebx_FlatButton,
+.ebx_SmallFormButtons .ebx_Button,
+.ebx_SmallFormButtons .ebx_FlatButton,
+.tvFixedScroller .ebx_Button,
+.tvMainScroller .ebx_Button,
+.tvFixedScroller .ebx_FlatButton,
+.tvMainScroller .ebx_FlatButton {
+	height: 18px;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top: 0;
+}
+.ebx_Input a.ebx_Button,
+.ebx_Input a.ebx_FlatButton,
+.ebx_SmallFormButtons a.ebx_Button,
+.ebx_SmallFormButtons a.ebx_FlatButton,
+.tvFixedScroller a.ebx_Button,
+.tvMainScroller a.ebx_Button,
+.tvFixedScroller a.ebx_FlatButton,
+.tvMainScroller a.ebx_FlatButton {
+	padding-top: 2px;
+}
+.ebx_Input a.ebx_Button,
+.ebx_Input a.ebx_FlatButton,
+.ebx_SmallFormButtons a.ebx_Button,
+.ebx_SmallFormButtons a.ebx_FlatButton {
+	line-height: 14px;/* TODO vertical align near other buttons != FFX / Chrome / IE 11 ; IE8 works, except for link icons which are 1px too low*/
+}
+.tvFixedScroller a.ebx_Button,
+.tvMainScroller a.ebx_Button,
+.tvFixedScroller a.ebx_FlatButton,
+.tvMainScroller a.ebx_FlatButton {
+	line-height: 15px;
+}
+.ebx_Input .ebx_MenuButtonArrow,
+.ebx_SmallFormButtons .ebx_MenuButtonArrow,
+.tvFixedScroller .ebx_MenuButtonArrow,
+.tvMainScroller .ebx_MenuButtonArrow {
+	margin-left: 2px;
+	margin-right: -2px;
+}
+.ebx_Input .ebx_IconButton,
+.ebx_SmallFormButtons .ebx_IconButton,
+.tvFixedScroller .ebx_IconButton,
+.tvMainScroller .ebx_IconButton {
+	height: 18px;
+	width: 18px;
+	padding: 1px;
+	margin: 0 3px;
+}
+.ebx_Form .ebx_Button:first-child,
+.ebx_Form .ebx_FlatButton:first-child {
+	margin-left: 0;
+}
+.ebx_Form .ebx_Button:last-child,
+.ebx_Form .ebx_FlatButton:last-child {
+	margin-right: 0;
+}
+.ebx_Input .ebx_IconButton .ebx_Icon,
+.ebx_SmallFormButtons .ebx_IconButton .ebx_Icon,
+.tvFixedScroller .ebx_IconButton .ebx_Icon,
+.tvMainScroller .ebx_IconButton .ebx_Icon,
+.wpihWorkItem .ebx_IconButton .ebx_Icon {
+	margin-top: -1px;
+	margin-left: -1px;
+}
+.ebx_Input .ebx_MenuButton.ebx_IconButton,
+.ebx_SmallFormButtons .ebx_MenuButton.ebx_IconButton,
+.tvFixedScroller .ebx_MenuButton.ebx_IconButton,
+.tvMainScroller .ebx_MenuButton.ebx_IconButton {
+	width: 29px;
+}
+.ebx_Input .ebx_MenuButton.ebx_IconButton .ebx_MenuButtonArrow,
+.ebx_SmallFormButtons .ebx_MenuButton.ebx_IconButton .ebx_MenuButtonArrow,
+.tvFixedScroller .ebx_MenuButton.ebx_IconButton .ebx_MenuButtonArrow,
+.tvMainScroller .ebx_MenuButton.ebx_IconButton .ebx_MenuButtonArrow {
+	margin: 0 1px 6px 0;
+}
+
+.ebx_Input .ebx_Button:active,
+.ebx_Input .ebx_FlatButton:active,
+.ebx_Input .ebx_ButtonPushed,
+.ebx_SmallFormButtons .ebx_Button:active,
+.ebx_SmallFormButtons .ebx_FlatButton:active,
+.ebx_SmallFormButtons .ebx_ButtonPushed,
+.tvFixedScroller .ebx_Button:active,
+.tvMainScroller .ebx_Button:active,
+.tvFixedScroller .ebx_FlatButton:active,
+.tvMainScroller .ebx_FlatButton:active,
+.tvFixedScroller .ebx_ButtonPushed,
+.tvMainScroller .ebx_ButtonPushed {
+	box-shadow: inset 0 2px 10px -2px #000000, inset 0 2px 10px -2px #FFFFFF;
+	-moz-box-shadow: inset 0 2px 10px -2px #000000, inset 0 2px 10px -2px #FFFFFF;
+}
+
+/**END Special size for IconButton in form and table **/
+
+/**START Special size for buttons in user block **/
+
+div#ebx_Profile {
+	display: inline-block;
+	height: 40px;
+	padding: 0 20px;
+	vertical-align: top;
+	line-height: 41px;
+	cursor: default;
+}
+
+#ebx_UserBloc .ebx_FlatButtonNoBorder {
+	height: 40px;
+	padding: 10px 20px;
+	vertical-align: top;
+}
+#ebx_UserBloc .ebx_FlatButtonNoBorder.ebx_IconButton {
+	width: 40px;
+	padding: 10px;
+}
+
+#ebx_UserBloc a.ebx_IconButton .ebx_Icon {
+	margin: 1px;
+}
+/**END Special size for buttons in user block **/
+
+/**START Special size for IconButton and CancelMoveButton in tree label's NodeActions **/
+.ebx_NodeActions .ebx_ButtonGroup {
+	margin: 0 1px;
+}
+.ebx_NodeActions .ebx_IconButton,
+.ebx_NodeActions a.ebx_CancelMoveButton {
+	height: 20px;
+	margin: 1px;
+}
+.ebx_NodeActions .ebx_IconButton {
+	width: 20px;
+	padding: 1px;
+	vertical-align: top;
+}
+.ebx_NodeActions input[type="checkbox"] {
+	vertical-align: top;
+	margin-top: 5px;
+}
+	
+.ebx_NodeActions a.ebx_CancelMoveButton {
+	line-height: 14px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.ebx_NodeActions a.ebx_IconButton .ebx_Icon {
+	margin: 0;
+}
+/**END Special size for IconButton in tree label's NodeActions **/
+
+/**START Button Group **/
+
+.ebx_ButtonGroup {
+	display: inline-block;
+	
+	margin: 0 5px;
+}
+
+.ebx_ButtonGroup .ebx_Button,
+.ebx_ButtonGroup .ebx_FlatButton,
+.ebx_ButtonGroup .ebx_IconButtonSmall {
+	margin: 0 0 0 -1px;
+    
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.ebx_ButtonGroup .ebx_Button:first-child,
+.ebx_ButtonGroup .ebx_FlatButton:first-child,
+.ebx_ButtonGroup .ebx_IconButtonSmall:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-bottomleft: 2px;
+}
+.ebx_ButtonGroup .ebx_Button:first-child {
+	margin: 0;
+}
+
+.ebx_ButtonGroup .ebx_Button:last-child,
+.ebx_ButtonGroup .ebx_FlatButton:last-child,
+.ebx_ButtonGroup .ebx_IconButtonSmall:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+    -moz-border-radius-bottomright: 2px;
+}
+
+/**END Button Group **/
+
+/**START Vertical button container **/
+.ebx_VerticalButtonContainer .ebx_Button,
+.ebx_VerticalButtonContainer .ebx_FlatButton {
+	margin: 2px 0;
+}
+.ebx_VerticalButtonContainer .ebx_Button:first-child,
+.ebx_VerticalButtonContainer .ebx_FlatButton:first-child {
+	margin: 0 0 2px 0;
+}
+.ebx_VerticalButtonContainer .ebx_Button:last-child,
+.ebx_VerticalButtonContainer .ebx_FlatButton:last-child {
+	margin: 2px 0 0 0;
+}
+/**END Vertical button container **/
+
+/***END Buttons ***/
+
+/***START Node label and attached documentation ***/
+.nodeLabel {
+	display: inline-block;
+	margin-right: -12px; /* 2(button.marginLeft) + 2*1(button.border) + 10(button.width) */
+}
+
+h2 .nodeLabel .ebx_LabelDocButton {
+    vertical-align: 2px;
+}
+h3 .nodeLabel .ebx_LabelDocButton {
+    vertical-align: 1px;
+}
+
+button.ebx_LabelDocButton {
+	cursor: help;
+	visibility: hidden;
+	margin: 0 0 0 2px;
+	
+	/* flat button, but more visible */
+	border: 1px solid #C0C0C0;/*{button-borderColor}*/
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	
+	position: relative;/* allow button to be on top, unless z-index of element under says otherwise*/
+}
+.yuimenuitem button.ebx_LabelDocButton {
+    vertical-align: 0px;
+}
+
+body.ebx_DisplayAllLabelDocButtons .ebx_LabelDocButton,
+.nodeLabelForMouse:hover .ebx_LabelDocButton {
+	visibility: visible;
+}
+
+.ebx_MandatoryFlag {
+	color: #E00000;
+}
+
+.lineFloatElmtsMaintainer {
+	clear: both;
+	display: block;
+}
+/***END Node label and attached documentation ***/
+
+/***START Label tooltip ***/
+#ebx_LabelTooltip .bd {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	border: 1px solid #C0C0C0;
+	cursor: default;
+	overflow: hidden;
+	white-space: nowrap;
+	
+	margin-left: -2px;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+#ebx_LabelTooltip .bd a {
+	margin: 0 2px;
+}
+
+.ebx_LabelDocButtonTooltip {
+	display: inline-block;
+	margin: -1px -1px -1px 1px;
+	vertical-align: 0;
+}
+
+/***END Label tooltip ***/
+
+/***START documentation panel ***/
+#EBX_NodeDocumentation_Panel {
+	position: absolute;
+	
+	overflow-y: auto;
+	
+	z-index: 60;
+	
+	box-shadow: 2px 2px 4px 0px #C0C0C0;
+	-moz-box-shadow: 2px 2px 4px 0px #C0C0C0;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+#EBX_NodeDocumentation_Panel .dcpBody {
+	/* 100(label.width) + 400(dcpContent.width) + 5*2(padding) + 10(IE compliant) = 520 */
+	width: 520px;
+	
+	border: 1px solid #C0C0C0;
+}
+
+#EBX_NodeDocumentation_Panel .dcpBody {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+#EBX_NodeDocumentation_Panel .dcpBody>div:first-child {
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    -moz-border-radius-topleft: 1px;
+    -moz-border-radius-topright: 1px;
+}
+#EBX_NodeDocumentation_Panel .dcpBody>:last-child {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    -moz-border-radius-bottomleft: 1px;
+    -moz-border-radius-bottomright: 1px;
+}
+
+#EBX_NodeDocumentation_Panel .dcpTitle {
+	font-size: 1.2em;
+	padding: 5px 10px;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+#EBX_NodeDocumentation_Panel .dcpTitle .ebx_dcpPermalink {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+#EBX_NodeDocumentation_Panel .dcpError,
+#EBX_NodeDocumentation_Panel .dcpWarning,
+#EBX_NodeDocumentation_Panel .dcpInfo,
+#EBX_NodeDocumentation_Panel .dcpDescription {
+	padding: 5px 10px;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpLabel {
+	white-space: nowrap;
+}
+
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpContent {
+	color: #222222;
+	width: 100%;
+}
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpLabel,
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpContent {
+	padding: 5px 10px;
+	vertical-align: baseline;
+}
+
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpLabel,
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks /*.dcpContent*/.withoutLabel {
+	padding-left: 15px;
+	background-image: url(../images/onCommon/ebx_bullet6Alpha50.png);
+	background-position: 5px 10px;
+	background-repeat: no-repeat;
+}
+
+
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpContent ul {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpContent ul li {
+	padding-left: 7px;
+	background-image: url(../images/onCommon/ebx_bullet3Alpha50.png);
+	background-position: 0px 6px;
+	background-repeat: no-repeat;
+}
+
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlocks .dcpContent input.longValue {
+	border: none;
+	color: #222222;
+	background-color: transparent;
+	padding: 0;
+	
+	width: 100%;
+}
+/*
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlock .dcpContent.withLabel input.longValue {
+	width: 400px;
+}
+#EBX_NodeDocumentation_Panel .dcpAdditionalBlock .dcpContent.withoutLabel input.longValue {
+	width: 500px;
+}
+*/
+/***END documentation panel ***/
+
+/***START Breadcrumb ***/
+#ebx_WorkspaceBreadcrumb {
+	padding: 0 8px 5px 8px;
+}
+
+#ebx_WorkspaceBreadcrumb .ebx_BreadcrumbSeparator {
+	background-image: url(../images/onIcons/ebx_breadcrumbSeparator.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 0 2px;
+}
+
+#ebx_WorkspaceBreadcrumb .ebx_BreadcrumbLabel {
+	margin: 0 4px;
+}
+#ebx_WorkspaceBreadcrumb .ebx_FlagError,
+#ebx_WorkspaceBreadcrumb .ebx_FlagWarning,
+#ebx_WorkspaceBreadcrumb .ebx_FlagInfo {
+	padding-left: 10px;
+	background-repeat: no-repeat;
+	background-position: 0 -4px;
+}
+
+/***END Breadcrumb ***/
+
+/***START Compare/Merge ***/
+
+.ebx_ComparatorTable {
+	
+}
+
+/*.ebx_ComparatorTable */.ebx_ComparatorDecisionCheckboxAll,
+/*.ebx_ComparatorTable */.ebx_ComparatorDecisionCheckbox {
+	margin: 2px;
+}
+
+.ebx_ComparatorTable .ebx_HeaderBodySeparator {
+	border-left: none;
+	border-right: none;
+	height: 1em;
+}
+
+.ebx_ComparatorTable .ebx_CellLabelColumnForSourceAndTargetLine {
+	border-width: 0 0 1px 0;
+}
+
+.ebx_ComparatorTable .ebx_PagingLine {
+	text-align: right;
+}
+.ebx_ComparatorTable .ebx_PagingLineSeparator {
+	border-left: none;
+	border-right: none;
+	height: 0.5em;
+}
+
+.ebx_ComparatorTable .ebx_ComparatorContentColumn {
+}
+
+.ebx_ComparatorTable button.ebx_SeeDetails {
+	margin: 0;
+}
+
+.ebx_ComparatorTable .ebx_DataType {
+	display: inline-block;
+	vertical-align: -4px;
+	height: 16px;
+	width: 16px;
+	margin-right: 2px;
+	
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.ebx_ComparatorStateIcon,
+.ebx_ComparatorValueStateIcon {
+	height: 16px;
+	width: 16px;
+	margin: 0 2px;
+}
+.ebx_ComparatorStateIcon {
+	float: right;
+}
+#ebx_NavigationTree .ebx_ComparatorStateIcon {
+	margin: 0px 15px 0px 2px;
+}
+.ebx_ComparatorValueStateIcon {
+	float: left;
+}
+.ebx_ComparatorTable .ebx_ComparatorContentColumn .ebx_ComparatorValueStateIcon {
+	margin: 0 2px 0 0;
+}
+/***END Compare/Merge ***/
+
+/***START Data Model Compare ***/
+
+.ebx_DataModelCompareLineIconLeftPane,
+.ebx_DataModelCompareLineIconRightPane {
+	background-repeat: no-repeat;
+}
+.ebx_DataModelCompareLineIconLeftPane {
+	background-position: 0 50%;
+}
+.ebx_DataModelCompareLineIconRightPane {
+	background-position: 0 50%;
+}
+
+/***END Data Model Compare ***/
+
+/***START wait anim ***/
+div.ebx_waitAnimDiv
+{
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+	background-repeat: no-repeat;
+	background-position:center; 
+	display: block;
+	margin: 0.5em;
+	height: 4em;
+}
+
+.ebx_InitTreeWait {
+	text-align: center;
+	padding-top: 50px;
+}
+/***END wait anim ***/
+
+/***START Calendar ***/
+#ebx_Form_CalendarMask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.yui-skin-sam .yui-calcontainer {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	
+	box-shadow: 0 2px 4px 0px #000000, 0 2px 4px 0px #FFFFFF;
+	-moz-box-shadow: 0 2px 4px 0px #000000, 0 2px 4px 0px #FFFFFF;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav-mask {
+	border-radius: 1px;
+	-moz-border-radius: 1px;
+}
+.yui-skin-sam .yui-calcontainer .title {
+	border-radius: 1px 1px 0 0;
+	-moz-border-radius: 1px 1px 0 0;
+}
+
+.yui-calendar .ebx_PagingPrevious,
+.yui-calendar .ebx_PagingNext {
+	position: absolute;
+	margin: 0;
+}
+.yui-calendar .ebx_PagingPrevious {
+	top: 0;
+	left: 0;
+}
+.yui-calendar .ebx_PagingNext {
+	top: 0;
+	right: 0;
+}
+
+.yui-skin-sam .yui-calcontainer.withtitle .yui-cal-nav {
+	border-radius: 1px;
+	-moz-border-radius: 1px;
+}
+
+.yui-skin-sam .yui-calendar a.calnav,
+.yui-skin-sam .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn {
+	float: left;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn.yui-default {
+	float: right;
+}
+
+.ebx_Now {
+	overflow: hidden; /* because of the number inside */
+}
+/***END Calendar ***/
+
+/***START HTML Editor ***/
+.yui-skin-sam body .yui-toolbar-container .yui-toolbar-titlebar h2 {
+	padding: 2px 2px 2px 19px; /* 2(collapseButton.marginLeft) + 15(collapseButton.width) + 2(collapseButton.marginRight) */
+}
+.yui-skin-sam body .yui-toolbar-container .yui-toolbar-titlebar span.collapse {
+	left: 2px;
+	top: 2px;
+}
+
+/***END HTML Editor ***/
+
+/***START checkbox & radio button group ***/
+
+.ebx_CheckboxGroup,
+.ebx_RadioButtonGroup {
+    display: inline-table;
+}
+
+.ebx_CheckboxGroup table,
+.ebx_RadioButtonGroup table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ebx_CheckboxGroup table td,
+.ebx_RadioButtonGroup table td {
+    padding: 0 5px 0 0;
+    vertical-align: baseline;
+}
+
+/* label */
+/*.ebx_CheckboxGroup .ebx_CheckboxGroupChoice*/.ebx_CheckboxGroupChoiceSelected {
+	font-weight: bold;
+}
+
+/*.ebx_CheckboxGroup */.ebx_CheckboxGroupSelectAll {
+    font-style: italic;
+    
+	margin-top: 2px;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	border-color: #E0E0E0;/*{input-borderColor}*/
+	background-color: #F8F8F8;/*{formWidgets-bgColor}*/
+	
+	padding-top: 3px;
+	padding-bottom: 1px;
+}
+
+.ebx_CheckboxReadOnly {
+	display: inline-block;
+	background-repeat: no-repeat;
+	height: 11px;
+	width: 11px;
+	margin: 4px;
+}
+
+/***END checkbox & radio button group ***/
+
+/***START Select multiple ***/
+
+.ebx_SelectMultiple {
+    display: inline;
+	padding-top: 2px; /* - select margin-top */
+}
+.ebx_SelectMultiple select {
+	vertical-align: text-top;
+	margin-top: -2px;/* - (1(border-top) + 1(padding-top)) */
+}
+
+.ebx_OptionSelected {
+	font-weight: bold;
+}
+
+.ebx_SelectMultipleSelectAll {
+    font-style: italic;
+    
+    padding-right: 3px;
+    padding-bottom: 1px;
+    
+	background-color: #F8F8F8;/*{formWidgets-bgColor}*/
+}
+
+.ebx_SelectMultipleSelectAll input {
+    vertical-align: -2px;
+}
+
+/***END Select multiple ***/
+
+/***START Preview Image ***/
+
+#ebx_Form_PreviewPanel {
+	border: none;
+}
+#ebx_Form_PreviewPanel .bd {
+	border: 1px solid #808080;
+	padding-top: 25px; /* 10(inherited padding) + 15(buttonClose.height) */
+}
+#ebx_Form_PreviewPanelScroller {
+	overflow: auto;
+}
+
+#ebx_Form_PreviewPanel_c .bd,
+#ebx_Form_PreviewPanel_c .underlay {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+/***END Preview Image ***/
+
+/***START Incremental Search Selector ***/
+
+/** component **/
+
+.ebx_ISS_Container {
+    display: inline-block;
+}
+
+.ebx_ISS_Container input {
+    margin: 0;
+    
+    border-style: solid;
+    
+    padding-right: 20px; /* 20(dropDownButton.width) */
+    
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    
+    outline-radius: 4px;
+    -moz-outline-radius: 4px;
+}
+
+.ebx_ISS_Container_Active input {
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    
+    outline-radius: 4px 4px 0 0;
+    -moz-outline-radius: 4px 4px 0 0;
+}
+
+.ebx_ISS_Container .ebx_InputWithEmptyButton {
+    padding-right: 40px; /* 20(emptyButton.width) + 20(dropDownButton.width) */
+}
+.ebx_ISS_Container_Active .ebx_InputWithEmptyButton {
+    padding-right: 20px; /* 20(dropDownButton.width) */
+}
+
+.ebx_ISS_Container button.ebx_EmptyButtonForInput {
+    margin: 0 21px 0 -41px; /* 20(emptyButton.width) + 20(dropDownButton.width) + 1(input.border) */
+}
+.ebx_ISS_Container_Active button.ebx_EmptyButtonForInput {
+    display: none;
+}
+
+.ebx_ISS_Container button.ebx_DropDown {
+    margin: 0 0 0 -21px; /* 20(dropDownButton.width) + 1(input.border) */
+}
+
+
+.ebx_ISS_Container button.ebx_Empty {
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.ebx_ISS_Container button.ebx_DropDown {
+    border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+}
+.ebx_ISS_Container_Active button.ebx_DropDown {
+    border-radius: 0 2px 0 0;
+    -moz-border-radius: 0 2px 0 0;
+}
+
+.ebx_ISS_Container button.ebx_IconButton {
+	height: 20px; /* 22px (original height) - 1 (border 1px removed) */
+	width: 20px; /* 22px (original height) - 1 (border 1px removed) */
+}
+
+/** pane **/
+
+#ebx_ISS_pane .bd {
+    cursor: default;
+    
+    border-width: 1px 2px 2px 2px;
+    border-style: solid;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+    
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+}
+
+#ebx_ISS_pane .yui-resize-proxy {    
+    border-width: 1px 2px 2px 2px;
+    border-style: solid;
+    
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+}
+
+#ebx_ISS_OriginalLabel {
+    border-bottom: 1px solid #E0E0E0;/*{input-borderColor}*/
+    overflow: hidden;
+}
+#ebx_ISS_OriginalLabel.ebx_InputWithEmptyButton {
+}
+
+#ebx_ISS_list {
+    overflow: auto;
+    max-height: 100px;
+}
+
+#ebx_ISS_list #ebx_ISS_Error,
+#ebx_ISS_list #ebx_ISS_WaitingInput,
+#ebx_ISS_list.ebx_ISS_list_Error #ebx_ISS_Results,
+#ebx_ISS_list #ebx_ISS_HasNext,
+#ebx_ISS_list #ebx_ISS_NoResult,
+#ebx_ISS_list #ebx_ISS_Loading,
+#ebx_ISS_list #ebx_ISS_WaitingAPV {
+    display: none;
+}
+
+#ebx_ISS_list.ebx_ISS_list_Error #ebx_ISS_Error,
+#ebx_ISS_list.ebx_ISS_list_WaitingInput #ebx_ISS_WaitingInput,
+#ebx_ISS_list.ebx_ISS_list_HasNext #ebx_ISS_HasNext,
+#ebx_ISS_list.ebx_ISS_list_NoResult #ebx_ISS_NoResult,
+#ebx_ISS_list.ebx_ISS_list_Loading #ebx_ISS_Loading,
+#ebx_ISS_list.ebx_ISS_list_WaitingAPV #ebx_ISS_WaitingAPV {
+    display: block;
+}
+
+#ebx_ISS_WaitingInput,
+#ebx_ISS_HasNext,
+#ebx_ISS_NoResult,
+#ebx_ISS_Loading,
+#ebx_ISS_WaitingAPV {
+    background-color: #F0F0F0;
+}
+
+#ebx_ISS_WaitingInput,
+#ebx_ISS_NoResult,
+#ebx_ISS_Loading,
+#ebx_ISS_WaitingAPV {
+    font-style: italic;
+    text-align: center;
+    padding: 3px;
+    background-position: 3px 3px;
+}
+
+#ebx_ISS_HasNext {
+    text-indent: -10000px;
+    background-repeat: no-repeat;
+}
+
+#ebx_ISS_OriginalLabel,
+#ebx_ISS_Results .ebx_ISS_Item {
+    padding: 3px;
+    position: relative;
+}
+
+.ebx_ISS_Item_WithPreview {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+}
+
+#ebx_ISS_OriginalLabel .ebx_Open,
+#ebx_ISS_Results .ebx_Open {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    height: 100%;
+    width: 20px;
+    margin: 0;
+}
+#ebx_ISS_OriginalLabel.ebx_Selected .ebx_Open,
+#ebx_ISS_Results .ebx_Selected .ebx_Open {
+    display: inline-block;
+}
+#ebx_ISS_OriginalLabel .ebx_Open .ebx_Icon,
+#ebx_ISS_Results .ebx_Open .ebx_Icon {
+    height: 16px;
+    width: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+#ebx_ISS_OriginalLabel .ebx_Open:hover .ebx_Icon,
+#ebx_ISS_OriginalLabel .ebx_Open:active .ebx_Icon,
+#ebx_ISS_Results .ebx_Open:hover .ebx_Icon,
+#ebx_ISS_Results .ebx_Open:active .ebx_Icon {
+    background-color: transparent;
+}
+
+#ebx_ISS_Toolbar {
+    display: none;
+    
+    border-top: 1px solid #E0E0E0;/*{input-borderColor}*/
+}
+
+#ebx_ISS_CreateButton {
+    margin: 0;
+    
+    border-radius: 0 0 0 3px;
+    -moz-border-radius: 0 0 0 3px;
+}
+
+/***END Incremental Search Selector ***/
+
+/***START ComboBox multi ***/
+
+.ebx_LCB_List {
+	display: none;
+}
+.ebx_LCB_DisplayList .ebx_LCB_List {
+	display: block;
+}
+
+.ebx_LCB_Empty {
+	display: none;
+	
+	padding: 2px 4px 0 4px; /* 0 for padding bottom because ul has already 2px margin*/
+}
+.ebx_LCB_StateEmpty .ebx_LCB_Empty {
+	display: block;
+}
+
+.ebx_LCB_List {
+	max-height: 150px;
+	overflow: auto;
+	
+	box-sizing:border-box;
+	-moz-box-sizing: border-box;
+	
+	border-width: 1px 1px 0 1px;
+	border-style: solid;
+	border-color: #E0E0E0;/*{input-borderColor}*/
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+}
+.ebx_LCB_List ul {
+	list-style: none;
+	padding: 0;
+	margin: 2px;
+}
+.ebx_LCB_List li {
+	padding: 0 0 0 3px;
+	margin: 0;
+	line-height: 1.5em;
+	position: relative;
+	overflow: hidden;
+}
+.ebx_LCB_List li,
+.ebx_LCB_List .ebx_LCB_LineActions {
+	background-color: #FFFFFF;
+}
+
+.ebx_LCB_List .ebx_LCB_LineActions {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.ebx_Input .ebx_LCB_List li .ebx_IconButton {
+	margin-right: 0;
+}
+.ebx_LCB_List li .ebx_Open {
+	display: none;
+}
+.ebx_LCB_List li:hover .ebx_Open {
+	display: inline-block;
+}
+
+.ebx_LCB_List li.ebx_LCB_FreshlyAdded,
+.ebx_LCB_List li.ebx_LCB_FreshlyAdded .ebx_LCB_LineActions {
+	animation: LCB_freshlyAddedHighlight 1s ease-in;
+	-moz-animation: LCB_freshlyAddedHighlight 1s ease-in;
+	-webkit-animation: LCB_freshlyAddedHighlight 1s ease-in;
+}
+
+.ebx_LCB_DisplayList .ebx_ISS_Container input {
+    border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    outline-radius: 0 0 4px 4px;
+    -moz-outline-radius: 0 0 4px 4px;
+}
+.ebx_LCB_DisplayList .ebx_ISS_Container_Active input {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    outline-radius: 0;
+    -moz-outline-radius: 0;
+}
+
+.ebx_LCB_DisplayList .ebx_ISS_Container button.ebx_DropDown {
+    border-radius: 0 0 2px 0;
+    -moz-border-radius: 0 0 2px 0;
+}
+.ebx_LCB_DisplayList .ebx_ISS_Container_Active button.ebx_DropDown {
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+/***END ComboBox multi ***/
+
+/***START Invisible Mask ***/
+.yui-skin-sam .ebx_InvisibleMask {
+	background-color: transparent;
+}
+/***END Invisible Mask ***/
+
+/***START search field ***/
+.ebx_FacetEnumTitle {
+	height: 17px;
+}
+
+#ebx_FacetEnumerationSelectorValuesDivWrap {
+	height: 170px;
+}
+
+.ebx_SearchField {
+	display: inline-block;
+}
+.ebx_SearchField .ebx_SearchFieldInput {
+	height: 18px;
+	border-right: none;
+	padding-right: 3px;
+	
+	width: 285px;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.ebx_SearchField .ebx_SearchFieldButton {
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	margin-left: -5px;
+	vertical-align: bottom;
+}
+/***END search field ***/
+
+#onFacetEnum .bd {
+	padding: 0;
+}
+
+/***START InputText wizard ***/
+#ebx_InputTextWizardMask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.ebx_inputTextWizards {
+	display: none;
+	
+	border-width : 2px;
+	border-style: solid;
+	margin-top: 2px;
+	background-color: #ffffff;
+	min-width: 350px;
+	
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+#ebx_InputTextWizard .ebx_inputTextWizards {
+	display: block;
+}
+
+.ebx_inputTextWizards .ebx_wizardsRadioButtonBar {
+	border-bottom: 2px solid #c0c0c0;
+	margin-left: 0.3em; 
+	margin-right: 0.3em;
+	padding: 0.1em;
+}
+
+.ebx_inputTextWizards .ebx_wizardsRadioButtonBar input.ebx_wizardRadioButton {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+.ebx_inputTextWizards .ebx_wizardListDiv {
+	margin-top: 0.5em;
+	margin-left: 1em;
+	margin-bottom: 0.5em;
+}
+
+.ebx_inputTextWizards .ebx_wizardListDiv select.ebx_wizardSelect,
+.ebx_inputTextWizards .ebx_wizardTreeDiv .ebx_wizardTreeTitle {
+	font-style: normal;
+	color: #505050;
+}
+
+.ebx_inputTextWizards .ebx_wizardListDiv select.ebx_wizardSelect {
+	margin-left: 0.5em;
+}
+
+.ebx_inputTextWizards .ebx_wizardListDiv .ebx_wizardSelect .ebx_wizardOptionsWithValue {
+	color: #000000;
+}
+
+.ebx_inputTextWizards .ebx_wizardTreeDiv {
+	margin: 0.5em;
+}
+
+.ebx_inputTextWizards .ebx_wizardTreeDiv .ebx_wizardTreePane {
+	margin-top: 0.1em;
+	border : 1px solid silver;
+	height: 10em; 
+	overflow: auto;
+}
+
+.ebx_inputTextWizards table tr td.ygtvtn {
+	display: table-cell;
+}
+
+.ebx_inputTextWizards .ebx_wizardTreeDiv .ebx_wizardTreePane .ebx_wizardLineWithIcon {
+	/*padding-left : 19px;*/
+}
+
+.ebx_inputTextWizards .ebx_wizardTreeDiv .ebx_wizardTreePane .ebx_wizardLineEnable {
+	color : #000000;
+}
+
+.ebx_inputTextWizards .ebx_wizardTreeDiv .ebx_wizardTreePane .ebx_wizardLineUnable {
+	color : #505050;
+}
+
+/***END InputText wizard ***/
+
+/***START Table filters ***/
+
+#ebx_WorkspaceFilterUnit {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+#ebx_WorkspaceFilterUnit .yui-layout-bd {/*
+	border-top: 1px solid #808080;*/
+	overflow: visible;
+}
+
+.ebx_FilterPane {
+}
+
+.ebx_FilterPaneTitle {
+	text-align: left;
+	padding: 0 3px 0 15px;
+    background-color: #FFFFFF;/*{body-BgColor}*/
+}
+.ebx_FilterButtonResetAll {
+	margin: 0 0 10px 0;
+}
+
+#ebx_FilterBlockList {
+	overflow: auto;
+}
+
+.ebx_FilterBlock {
+	margin: 0 3px 10px 15px;
+	border: 1px solid #E0E0E0;/*{table-borderColor}*/
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_FilterBlockTitle {
+    background-color: #F8F8F8;/*{button-BgColor}*/
+	
+	border-radius: 1px;
+	-moz-border-radius: 1px;
+}
+.ebx_FilterBlockTitle > label > .ebx_ExpandCollapse {
+	margin: 0 3px 0 0;
+}
+
+.ebx_FilterBlockTitle > label {
+	display: block;
+	padding: 4px;
+	color: #606060;/*{clickableText-fontColor}*/
+}
+
+.ebx_FilterBlockTitle > label > .ebx_ApplyFilterCkb {
+	float: right;
+	margin: 1px;
+}
+
+.ebx_FilterBlockContent {
+}
+
+.ebx_FilterBlockBody {
+	background-color: white;
+}
+.ebx_FilterBlockFooterContainer {
+	margin-top: 1px;
+	padding: 5px;
+	
+	border-radius: 0 0 1px 1px;
+	-moz-border-radius: 0 0 1px 1px;
+}
+.ebx_FilterButtonFooterLeft {
+	float: left;
+}
+.ebx_FilterButtonFooterRight {
+	float: right;
+}
+/* ebx_FilterButtonHidden is added to filter button to hide it */
+.ebx_FilterBlockFooterContainer .ebx_FilterButtonHidden {
+	display: none;
+}
+
+/**START Search filter **/
+
+.ebx_SearchFilter {
+	padding: 5px 3px;
+}
+
+.ebx_SearchFilter .ebx_Criteria {
+	padding: 0 2px;
+	margin-bottom: 5px;
+}
+.ebx_SearchFilter .ebx_Criteria>input[type="text"] {
+	width: 100%;
+}
+
+.ebx_SearchFilter .ebx_SelectAllFields {
+	padding: 3px 0px;
+	margin-bottom: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	font-style: italic;
+}
+.ebx_SearchFilter .ebx_Fields {
+	padding: 0;
+	margin-top: 5px;
+}
+.ebx_SearchFilter .ebx_Fields legend {
+	margin-left: 0.5em;
+	color: #606060;/*{clickableText-fontColor}*/
+}
+.ebx_SearchFilter .ebx_Fields ul {
+	margin: 0;
+	padding: 0 1px 2px 1px;
+	list-style: none;
+	max-height: 200px;
+	overflow: auto;
+}
+.ebx_SearchFilter .ebx_Fields ul li label {
+	cursor: default;
+}
+.ebx_SearchFilter .ebx_Fields ul li.ebx_Selected label {
+	font-weight: bold;
+}
+.ebx_SearchFilter .ebx_Fields ul li input[type="checkbox"] {
+	vertical-align: -2px;
+
+}
+.ebx_SearchFilter .ebx_Warning {
+	margin: 5px 2px;
+}
+.ebx_SearchFilter .ebx_Warning .nodeLabelForMouse .ebx_LabelDocButton{
+	visibility: visible;
+}
+#ebx_UISearchFilter_searchOpts_CS {
+	margin-left: 7px;
+}
+/**END Search filter **/
+
+/**START severity filter **/
+.ebx_FilterBlockTitle .ebx_SeverityIcon {
+	display: inline-block;
+	height: 16px;
+	vertical-align: top;
+	margin: -1px 0;
+}
+
+.ebx_SeverityFilter {
+	overflow: hidden;
+	padding: 5px;
+}
+	
+.ebx_SeverityFilter .ebx_SeverityFilterSearchField[type="text"] {
+	width: 100%;
+}
+
+.ebx_SeverityFilter ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.ebx_SeverityFilter li {
+	margin: 5px 0;
+}
+.ebx_SeverityFilter li input[type="checkbox"] {
+	vertical-align: -2px;
+}
+.ebx_SeverityFilter label {
+	cursor: default;
+}
+.ebx_SeverityFilter .ebx_Warning {
+	margin: 5px 3px;
+}
+.ebx_SeverityFilter li .ebx_IconError, .ebx_SeverityFilter li .ebx_IconWarning, .ebx_SeverityFilter li .ebx_IconInfo {
+	display: inline-block;	
+}
+/**END severity filter **/
+
+/**START View filter **/
+.ebx_FilterBlock>.ebx_FilterBlockTitle>label>.ebx_ViewName {
+	margin: 0 0.2em;
+	font-style: italic;
+}
+
+.ebx_ViewFilter {
+	padding: 2px;
+}
+
+.ebx_ViewFilter>.ebx_NoFilterMessage {
+	
+}
+
+.ebx_ViewFilter ul {
+	list-style: none;
+	margin: 0 0 0.3em 0.2em;
+	padding: 0 0 0.3em 0.5em;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+}
+
+.ebx_ViewFilter .ebx_LogicalOperator {
+	font-weight: bold;
+}
+
+.ebx_ViewFilter .ebx_AtomicFilter label {
+	
+}
+.ebx_ViewFilter .ebx_AtomicFilter input {
+	width: 100%;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+/**END View filter **/
+
+/**START Simple Search filter **/
+.ebx_SimpleSearchFilter {
+	overflow: hidden;	
+	margin-bottom : 5px;
+}
+.ebx_SimpleSearchFilter .ebx_FieldDecorator {
+	white-space: nowrap;
+	display: inline;
+}
+.ebx_SimpleSearchFilter div.ebx_Field > div.ebx_FieldIcon {
+	display: none;
+}
+.ebx_SimpleSearchFilterNodeSelector {
+	margin: 5px 0 0 0;
+	padding: 0 2px;
+}
+.ebx_SimpleSearchFilterNodeSelectorListContainer {
+	padding: 10px 3px 0 3px;
+}
+.ebx_SimpleSearchFilterNodeSelectorList {
+	vertical-align: top;
+	margin-right: 1px;
+	width: 100%;
+}
+.ebx_SimpleSearchFilterCriterion {
+	margin: 5px 0 0 0;
+	padding: 10px 0 0 0;
+	position: relative;
+}
+.ebx_SSFFakeFieldset {
+	border-radius: 2px;
+	padding: 10px 5px 5px 5px;
+	margin: 0;
+	overflow: hidden;
+}
+.ebx_SSFCriterionLegend {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 200px;
+	position: absolute;
+	left: 4px;
+	top: 3px;
+	background: #FFF;
+	z-index: 200;
+	display: block;
+	padding: 0 3px;
+}
+.ebx_SimpleSearchFilterCriterionRemoveButtonIcon {
+	position: absolute; 
+	right: 6px;
+	top: 1px; 
+	background-color: #FFFFFF;
+}
+fieldset .ebx_SimpleSearchFilterCriterionRemoveButtonIcon {
+top: -2px;
+}
+.ebx_SSFFakeFieldsetHideOverflow {
+	width: 5px;
+	background: #FFF;
+	position: absolute;
+	right: 1px;
+	top: 20px;
+	bottom: 5px;
+}
+.ebx_SimpleSearchFilterCriterionValue {
+	display: inline-block;
+	vertical-align: top;
+}
+.ebx_SimpleSearchFilterCriterionValue.ebx_SimpleSearchFilterCriterionValueFullWidth,
+.ebx_SimpleSearchFilterCriterionValueFullWidth .ebx_FieldDecorator,
+.ebx_SimpleSearchFilterCriterionValueFullWidth .ebx_ISS_Container {
+	display: block;
+}
+.ebx_Form .ebx_SimpleSearchFilterCriterionValueFullWidth input[type="text"] {
+	width: 100%;
+}
+.ebx_ssfEnumSwitcher {
+	margin-bottom: 5px;
+}
+.ebx_SimpleSearchFilterCriterionValue.ebx_SsfForDisplay {
+	display: block;
+	margin: 0px 10px 5px;
+}
+.ebx_SimpleSearchFilterlogicalBlock {
+	margin: 7px 5px 0 5px;
+}
+.ebx_SimpleSearchFilter .ebx_SimpleSearchFilterlogicalBlockSelector,
+.ebx_SimpleSearchFilter .ebx_SimpleSearchFilterNodeSelectorList {
+	width: 100%;
+}
+.ebx_SimpleSearchFilterlogicalBlockTitle {
+	margin:0 8px;
+	overflow: hidden;
+}
+fieldset.ebx_SimpleSearchFilterlogicalBlock {
+	margin:	10px 7px 10px;
+	padding: 0;
+	min-height: 25px;
+	position: relative;
+}
+fieldset.ebx_SimpleSearchFilterlogicalBlock legend {
+	margin-left: 5px;
+}
+.ebx_SimpleSearchFilter .ebx_Warning {
+	margin: 10px 5px;
+}
+.ebx_SavePanel {
+	height:0;
+	opacity:0;
+	overflow:hidden;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+}
+.ebx_SavePanel .ebx_SavePanelTitle {
+    padding: 4px 7px;
+	border-radius: 2px 2px 0 0;
+}
+/**END Simple Search filter **/
+
+/***END Table filters ***/
+
+/***START Modeling Workflow ***/
+/*table*/.ebx_StandardTable /*tr td*/.ebx_WorkflowHistoryPublishedFlag {
+	text-align: center;
+}
+/*table*/.ebx_StandardTable /*tr*/.ebx_WorkflowHistoryPublishedLine /*td*/.ebx_WorkflowHistoryPublishedFlag {
+	font-weight: bold;
+}
+
+/***END Modeling Workflow ***/
+
+/***START Data Workflow ***/
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemOffered, 
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemAllocated, 
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemError, 
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowError,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemStarted,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemCompleted,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowIncoming,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowPublication,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowProcess,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowMonitoring,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowHistory,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowWorkitem,
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowLauncher {
+	margin-right: 2px;
+	vertical-align: -3px;
+}
+
+span.ebx_CommentLine {
+    color: #000000;
+    display: block;
+    width: 300px;
+    white-space: normal;
+}
+
+.ebx_Button.ebx_fullWidthButtonCell {
+	width: 100%;
+	text-align: center;
+	height: 21px;
+	line-height: 15px;
+	margin: 0;
+	
+	min-width: -moz-max-content;
+	min-width: -webkit-max-content;
+}
+
+/***END Data Workflow ***/
+
+/***START Admin ***/
+
+/*table*/.ebx_StandardTable /*tr td */.ebx_SecuredSessionFlag {
+	display: inline-block;
+	height: 12px;
+	width: 8px;
+	vertical-align: -1px;
+	margin: 0 2px;
+	background-position: -4px -3px;
+	background-repeat: no-repeat;
+}
+
+#ebx_purgeSelectAllContainer {
+	text-align: right;
+	padding: 0 10px;
+}
+
+/***END Admin ***/
+
+.yui-skin-sam .yui-layout .yui-panel-container .yui-resize-proxy {
+	position: fixed;
+	border: 1px dotted #C0C0C0;
+	outline: 1px dotted #303030;
+}
+
+/***START Message Box ***/
+#ebx_DisplayMessageBox {
+	display: none; /*
+	 width: auto;*/
+}
+
+#ebx_DisplayMessageBoxCounter { /*
+	 display: inline-block;
+	 margin-left: 5px;*/
+}
+
+.ebx_DisplayMessageBoxErrorFlag,
+.ebx_DisplayMessageBoxWarningFlag,
+.ebx_DisplayMessageBoxInfoFlag {
+	display: inline-block;
+	padding: 2px 4px;
+	font-size: 10px;
+	line-height: 1em;
+	vertical-align: 1px;
+	
+	margin-left: 2px;
+	
+	color: #FFFFFF;
+	font-weight: bold;
+	
+	/*
+	background-position: right center;
+	background-repeat: no-repeat;
+	*/
+}
+.ebx_DisplayMessageBoxErrorFlag {
+	background-color: #C00000; /* intended error flag background color for a better visual effect (CBO) */
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.ebx_DisplayMessageBoxWarningFlag {
+	padding: 0;
+}
+.ebx_DisplayMessageBoxWarningFlag_1digit {
+	display: inline-block;
+	text-align: center;
+	padding: 2px 0;
+	width: 14px;
+	background-image: url(../images/onIcons/ebx_warning_1digit.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.ebx_DisplayMessageBoxWarningFlag_left,
+.ebx_DisplayMessageBoxWarningFlag_center,
+.ebx_DisplayMessageBoxWarningFlag_right {
+	display: inline-block;
+}
+.ebx_DisplayMessageBoxWarningFlag_left,
+.ebx_DisplayMessageBoxWarningFlag_right {
+	width: 7px;
+	height: 14px;
+	vertical-align: -3px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+.ebx_DisplayMessageBoxWarningFlag_left {
+	background-image: url(../images/onIcons/ebx_warning_left.png);
+}
+.ebx_DisplayMessageBoxWarningFlag_center {
+	/* do not change this color unless editing the color of images */
+	background-color: #E07E00; /* intended warning flag background color for a better visual effect (CBO) */
+	padding: 2px 0;
+}
+.ebx_DisplayMessageBoxWarningFlag_right {
+	background-image: url(../images/onIcons/ebx_warning_right.png);
+}
+
+.ebx_DisplayMessageBoxInfoFlag {
+	background-color: #1717A8; /* intended info flag background color for a better visual effect (CBO) */
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+#ebx_MessageBox {
+	border: none;
+}
+#ebx_MessageBox .bd {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	
+	border: 1px solid #808080;
+	padding: 0;
+}
+
+#ebx_MessageBox_c .bd,
+#ebx_MessageBox_c .underlay {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+#ebx_MessageBoxTitle {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+
+	padding: 5px;
+	
+	border-radius: 2px 2px 0 0;
+	-moz-border-radius: 2px 2px 0 0;
+}
+
+#ebx_MessageBoxBody .yui-navset-left {
+	margin: 10px;
+	padding-left: 142px; /* 32(icon.width) + 120px */
+}
+
+#ebx_MessageBoxBody ul.yui-nav {
+	width: 142px; /* 32(icon.width) + 120px */
+}
+
+#ebx_MessageBoxBody ul.yui-nav li {
+	margin: 0 0 5px 0;
+}
+
+#ebx_MessageBoxBody .yui-navset-left .yui-nav a {
+	border-width: 1px 0 1px 1px;
+}
+
+#ebx_MessageBoxBody .yui-navset .yui-nav a,
+#ebx_MessageBoxBody .yui-navset .yui-navset-top .yui-nav a,
+#ebx_MessageBoxBody .yui-navset .yui-nav a:focus,
+#ebx_MessageBoxBody .yui-navset .yui-nav a:hover,
+#ebx_MessageBoxBody .yui-navset .yui-nav .selected a,
+#ebx_MessageBoxBody .yui-navset .yui-nav .selected a:focus,
+#ebx_MessageBoxBody .yui-navset .yui-nav .selected a:hover {
+	background-image: none;
+	
+	border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+}
+
+#ebx_MessageBoxBody .yui-navset .yui-nav a em,
+#ebx_MessageBoxBody .yui-navset .yui-nav .selected a em {
+	padding: 5px;
+}
+
+#ebx_MessageBoxBody .yui-navset .yui-nav a em {
+	border: none;
+}
+
+#ebx_MessageBoxErrorTabLabel,
+#ebx_MessageBoxWarningTabLabel,
+#ebx_MessageBoxInfoTabLabel {
+	display: inline-block;
+	padding-left: 35px; /* 32(icon.width) + 3(padding-left)>to have a impression of padding around the icon */
+	height: 32px;
+	
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+}
+
+#ebx_MessageBoxErrorTabLabel {
+	background-image: url("../images/onStatus/ebx_error.png");
+}
+#ebx_MessageBoxWarningTabLabel {
+	background-image: url("../images/onStatus/ebx_warning.png");
+}
+#ebx_MessageBoxInfoTabLabel {
+	background-image: url("../images/onStatus/ebx_info.png");
+}
+.ebx_MessageBoxTabUnread {
+	font-weight: bold;
+}
+
+#ebx_MessageBoxBody .yui-navset .yui-content {
+	border-color: #C0C0C0;/*{button-borderColor}*/
+	border-top-width: 1px;
+	border-left-width: 3px;
+}
+
+#ebx_MessageBoxErrorList,
+#ebx_MessageBoxWarningList,
+#ebx_MessageBoxInfoList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 300px;
+	width: 400px;
+	overflow: auto;
+}
+
+#ebx_MessageBoxErrorList li,
+#ebx_MessageBoxWarningList li,
+#ebx_MessageBoxInfoList li {
+	border-bottom: 1px solid #C0C0C0;
+	display: inline-block;
+	min-width: 100%;
+}
+
+.ebx_MessageBoxMessage {
+	padding: 3px 5px;
+	border: 1px solid transparent;
+	margin: 1px;
+}
+.ebx_MessageBoxMessageUnread {
+	cursor: pointer;
+}
+.ebx_MessageBoxMessageUnread:hover {
+	background-color: #F8F8F8;
+}
+
+/***END Message Box ***/
+
+/***START Permalink ***/
+
+#ebx_Permalink {
+	border: none;
+}
+#ebx_Permalink .bd {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	
+	border: 1px solid #808080;
+	padding: 0;
+}
+
+#ebx_Permalink_c .bd,
+#ebx_Permalink_c .underlay {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+#ebx_PermalinkTitle {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	
+	padding-right: 35px; /* for close button */
+	
+	border-radius: 2px 2px 0 0;
+	-moz-border-radius: 2px 2px 0 0;
+}
+
+#ebx_PermalinkBody p {
+	margin: 10px;
+}
+
+#ebx_PermalinkInputLink {
+	width: 400px;
+	margin-right: 2px; /* like buttons */
+	
+	height: 24px;
+	
+	box-sizing:border-box;
+	-moz-box-sizing: border-box;
+}
+
+#ebx_PermalinkParametersBody {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid #808080;
+	border-top: 1px solid #808080;
+}
+#ebx_PermalinkParametersBody .ebx_Knob {
+	top: 86px;
+	right: 17px;
+}
+
+#ebx_PermalinkParametersBody fieldset {
+	margin: 10px;
+	padding: 0;
+}
+#ebx_PermalinkParametersBody fieldset legend {
+	margin-left: 5px;
+}
+#ebx_PermalinkParametersBody fieldset div {
+	margin: 3px;
+}
+#ebx_PermalinkParameterScopeAuto {
+	border-bottom: 1px solid #C0C0C0;
+	padding-bottom: 3px;
+}
+
+#ebx_PermalinkParametersBody fieldset #ebx_PermalinkParameterScopes {
+	margin: 0;
+}
+.ebx_PermalinkScopeAutoEnabled label {
+	color: #808080;
+	cursor: default;
+}
+
+#ebx_PermalinkParametersBottomBar {
+	padding: 10px;
+}
+
+/***START Permalink ***/
+
+/**START expand/collapse mechanism **/
+#ebx_PermalinkParametersBlock {
+	overflow: hidden;
+	
+	height: 0;
+	transition: height 0.5s ease;
+	-moz-transition: height 0.5s ease;
+	-webkit-transition: height 0.5s ease;
+}
+#ebx_PermalinkParametersBlock #ebx_PermalinkParametersBody .ebx_Knob {
+	margin-top: -10000px;
+	transition: margin-top 0s linear 0.5s;
+	-moz-transition: margin-top 0s linear 0.5s;
+	-webkit-transition: margin-top 0s linear 0.5s;
+}
+#ebx_Permalink_c {
+	margin-top: 0px;
+	transition: margin-top 0.5s ease 0.5s;
+	-moz-transition: margin-top 0.5s ease 0.5s;
+	-webkit-transition: margin-top 0.5s ease 0.5s;
+}
+#ebx_Permalink_c.ebx_PermalinkExpanded {
+	transition: margin-top 0.5s ease;
+	-moz-transition: margin-top 0.5s ease;
+	-webkit-transition: margin-top 0.5s ease;
+}
+#ebx_Permalink_c.ebx_PermalinkExpanded #ebx_PermalinkParametersBlock {
+	transition: height 0.5s ease 0.5s;
+	-moz-transition: height 0.5s ease 0.5s;
+	-webkit-transition: height 0.5s ease 0.5s;
+}
+#ebx_Permalink_c.ebx_PermalinkExpanded #ebx_PermalinkParametersBody .ebx_Knob {
+	margin-top: 0;
+	transition: margin-top 0s linear 0.5s;
+	-moz-transition: margin-top 0s linear 0.5s;
+	-webkit-transition: margin-top 0s linear 0.5s;
+}
+/**END expand/collapse mechanism **/
+
+/***END Permalink ***/
+
+/***START History flag ***/
+
+.ebx_HistoryFlag {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	font-weight: bold;
+	margin-right: 8px;
+}
+
+.ebx_CellHistoryFlag {
+	padding: 0 5px;
+	border: 1px solid #D0D0D0;
+	margin-right: 2px;
+}
+
+/***END History flag ***/
+
+/***START Preview link ***/
+
+.ebx_PreviewLink {
+	padding-right: 18px;
+	background-repeat: no-repeat;
+}
+
+/***END Preview link ***/
+
+/***START Localized documentation block ***/
+
+.ebx_InputLabelLocalizedBlock {
+	margin-top: 1px;
+}
+
+/***END Localized documentation block ***/
+
+/***START Named Types Preview ***/
+.ebx_NamedTypesPreview .ygtvlabel,
+.ebx_NamedTypesPreview .ygtvlabel:hover {
+	cursor: default;
+}
+
+.ebx_NamedTypesPreview fieldset {
+	margin-right: 3px;
+	margin-bottom: 5px;
+	padding-right: 8px;
+	
+	display: inline-block;
+}
+
+.ebx_NamedTypesPreview fieldset legend {
+	color: #808080;
+}
+
+.ebx_NamedTypesPreviewNoChild {
+	margin-left: 18px; /* indent for no expand/collapse button */
+}
+
+.ebx_NamedTypesPreview .nodeLabel {
+    vertical-align: middle;
+}
+
+.ebx_NamedTypesPreviewNode {
+	padding-left: 19px;
+	height: 16px;
+	
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.ebx_NamedTypesPreviewNode,
+.ebx_NamedTypesPreview .ebx_CollapsibleBlockContainer {
+	margin-top: 3px;
+}
+.ebx_NamedTypesPreviewNode,
+.ebx_NamedTypesPreview .ebx_CollapsibleBlockTitle {
+	margin-bottom: 3px;
+}
+
+/***END Named Types Preview ***/
+
+/***START See more component ***/
+button.ebx_SeeMore {
+    margin: 0;
+}
+
+#EBX_SeeMore_Panel .bd {
+    background-color: #FFFFFF;/*{body-BgColor}*/
+    width: 300px;
+    padding: 1px 2px;
+    
+    border: 1px solid #C0C0C0;
+    
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+/***END See more component ***/
+
+/***START Color picker widget ***/
+
+#ebx_ColorPickerMask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#ebx_ColorPicker_Panel .bd {
+    background-color: #FFFFFF;/*{body-BgColor}*/
+    
+    width: 209px;
+    height: 190px;
+    
+    border: 1px solid #C0C0C0;
+    
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+#ebx_ColorPicker_Panel .yui-picker-bg {
+	top: 5px;
+	left: 5px;
+}
+
+#ebx_ColorPicker_Panel .yui-picker-hue-bg {
+	top: 5px;
+	left: 191px;
+	height: 182px;
+}
+
+#ebx_ColorPicker_Panel .yui-picker-controls, 
+#ebx_ColorPicker_Panel .yui-picker-swatch, 
+#ebx_ColorPicker_Panel .yui-picker-websafe-swatch {
+	display: none;
+}
+
+.yui-picker-thumb {
+	background-image: url(../images/onCommon/picker_thumb.png);
+}
+.yui-picker-hue-thumb {
+	background-image: url(../images/onCommon/hue_thumb.png);
+}
+
+
+.yui-picker-thumb img,
+.yui-picker-hue-thumb img {
+	display: none;
+}
+
+/***END Color picker widget ***/
+
+/***START Icon Selection ***/
+
+.ebx_PageMask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.ebx_iconDisplay {
+	display:inline-block; 
+	height:20px; 
+	width:30px; 
+	line-height:20px;
+	font-size: 14px;
+	font-style:normal; 
+	text-align:center;
+	color:#FFFFFF;
+}
+
+.ebx_iconSelector {
+	border-width : 2px;
+	margin-top: 2px;
+	background-color: #ffffff;
+	
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.ebx_iconSelectorHeader {
+	border-bottom: 2px solid #c0c0c0;
+	margin-left: 0.3em; 
+	margin-right: 0.3em;
+	padding: 0.1em;
+}
+
+.ebx_iconSelectorContent {
+	margin: 0.3em; 
+	cursor: default;
+	max-height: 150px;
+	overflow-y: scroll;
+    overflow-x: hidden;
+	font-size: 14px;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.ebx_iconSelectorItem {
+	margin: 0px; 
+	padding: 2px; 
+	cursor: pointer;
+	border-width : 2px;
+	border-style: solid;
+	border-color: transparent;
+	width: 12px;
+}
+
+.ebx_iconSelectorItem:hover {
+	background-color: #f0f0f0;
+	border-color: #c0c0c0;
+}
+
+/***END Icon Selection ***/
+
+
+/********* ebx_workflowProcessInstanceHistory.css *********/
+
+.wpihTaskFlow {
+	position: relative;
+}
+#wpihInfoPreview .wpihTaskFlow {
+	margin: 0 15px;
+	overflow: hidden;
+}
+
+.wpihTaskContainerWithTimeline {
+	height: 132px;
+	overflow: hidden;
+}
+#wpihInfoPreview .wpihTaskContainerWithTimeline {
+	height: 118px;
+}
+
+.wpihTaskScroll {
+	position: relative;
+	
+	height: 18px; /* 1(paddingTop) + 16(button.height) + 1(paddingBottom) */
+}
+
+.wpihTaskScrollBtnLeft,
+.wpihTaskScrollBtnRight {
+	position: absolute;
+	padding: 1px; /* to let the focus line to be displayed */
+	top: 0;
+}
+.wpihTaskScrollBtnLeft {
+	left: 0;
+}
+.wpihTaskScrollBtnRight {
+	right: 0;
+}
+
+.wpihTaskScrollBtnLeft .ebx_FlatButton,
+.wpihTaskScrollBtnRight .ebx_FlatButton {
+	margin: 0;
+}
+
+.wpihTaskScrollBGPast,
+.wpihTaskScrollBGPresent,
+.wpihTaskScrollBGError,
+.wpihTaskScrollBGFuture {
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+}
+
+.wpihTaskScrollSlideLeft,
+.wpihTaskScrollKnob,
+.wpihTaskScrollKnobDD,
+.wpihTaskScrollSlideRight {
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+}
+
+.wpihTaskScrollSlideLeft,
+.wpihTaskScrollSlideRight {
+	background-image: url(../images/onWorkflow/slideMask.png);
+	background-position: center center;
+}
+
+.wpihTaskScrollKnob {
+	border: 1px solid #808080;
+	
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.wpihTaskScrollKnobDD {
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+body.wpihTaskScrollGrabbing * {
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+
+.wpihTaskContainer {
+	position: relative;
+	height: 150px;
+	
+	width: 100%;
+	
+	white-space: nowrap;
+	
+	overflow: auto;
+}
+
+#wpihInfoPreview .wpihTaskContainer {
+	cursor: pointer;
+}
+
+.wpihIcon,
+.wpihTask {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+.wpihIcon {
+	margin-top: 10px;
+}
+
+.wpihTask {
+	height: 100px;
+	width: 100px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+	
+	margin-top: 1px;/* for SelectIndicator */
+	position: relative;
+	z-index: 20;
+}
+.wpihSelectIndicator {
+	/* SelectIndicator is under the Task, and borders around it */
+	height: 102px;
+	width: 102px;
+	margin-left: -1px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+	
+	position: absolute;
+	z-index: 10;
+}
+
+.wpihTask {
+	text-align: center;
+	cursor: pointer;
+}
+
+
+.wpihTaskAfterCondition .wpihTask {
+	cursor: default;
+}
+#wpihInfoPreview .wpihTaskAfterCondition .wpihTask:hover {
+	background-color: #FFFFFF;
+}
+
+.wpihIconStart {
+	margin-left: 10px;
+}
+
+.wpihIconSeparator {/*
+	margin-left: -5px;
+	margin-right: -5px;*/
+	position: relative;
+	z-index: 21;
+}
+
+.wpihIconEnd {
+	margin-right: 10px;
+}
+
+.wpihIconUnknown {
+	margin-right: 10px;
+}
+
+.wpihTask .ebx_BigIcon {
+	margin: 10px;
+}
+
+.wpihTaskLabel {
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 43px;/* 100(task.height) - 10(icon.marginTop) - 32(icon.height) - 10(icon.margin-bottom) - 5(margin-bottom)*/
+}
+.wpihFutureTask .wpihTaskLabel {
+	color: #808080;
+}
+
+.wpihTaskCommentFlag {
+	position: absolute;
+	
+	height: 16px;
+	width: 16px;
+	
+	top: 0px;
+	left: 28px;
+}
+
+.wpihTaskIteration {
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	color: #808080;
+	font-size: 0.9em;
+	
+	visibility: hidden;
+}
+.wpihTask:hover .wpihTaskIteration {
+	visibility: visible;
+}
+
+.wpihSelectIndicator {
+	border: 1px solid #C0C0C0;
+	top: 0;
+	left: -100%;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+    -webkit-transition: left ease 0.5s;
+    -moz-transition: left ease 0.5s;
+}
+.wpihSelectIndicatorPointer {
+	height: 11px;
+	width: 20px;
+	position: absolute;
+	
+	margin-top: 100%;
+	margin-left: 40px;
+	
+	background-position: 0 -80px;
+	background-repeat: no-repeat;
+}
+
+.wpihTimeLinePast,
+.wpihTimeLinePresent,
+.wpihTimeLineError,
+.wpihTimeLineFuture {
+	position: absolute;
+	bottom: 0;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+	height: 23px;
+	
+	text-align: center;
+	padding: 4px;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+#wpihInfoPreview .wpihTimeLinePast,
+#wpihInfoPreview .wpihTimeLinePresent,
+#wpihInfoPreview .wpihTimeLineError,
+#wpihInfoPreview .wpihTimeLineFuture {
+	height: 17px;
+	padding: 1px;
+}
+
+
+#wpihInfoTitle {
+	padding: 10px 15px;
+	margin: 0;
+}
+
+#wpihInfoBody {
+	overflow: auto;
+}
+
+#wpihInfoBody #ebx_ScrollShadow {
+	z-index: 100;
+}
+
+#wpihInfoText {
+	
+}
+
+#wpihInfoText p {
+	margin: 10px 0;
+}
+
+.wpihInfoTextDescription {
+	text-align: justify;
+}
+
+#wpihInfoPreview {
+	margin-bottom: 15px;
+}
+
+.wpihWorkItem {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin: 15px 0 0 15px;
+	padding: 5px;
+	
+	width: 295px;
+}
+
+.wpihWorkItem .ebx_BigIcon {
+	float: left;
+	margin: 15px 10px 5px 10px;
+}
+
+.wpihWorkItemProfile {
+	
+	margin-top: 15px;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wpihWorkItemStatus {
+	font-weight: bold;
+}
+.wpihWorkItemComment {
+	clear: both;
+	font-style: italic;
+	text-align: justify;
+}
+
+.wpihWorkItemInfoButton {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+}
+.wpihWorkItemInfoButton:focus {
+    -moz-outline-radius: 100%;
+}
+.wpihWorkItem .wpihWorkItemInfoButton {
+	margin: 0;
+}
+
+.wpihTaskAfterCondition {
+	display: inline-block;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+.wpihTaskAfterConditionLegend {
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+.wpihSubWorkflowTitle {
+	margin: 0;
+	padding: 10px 15px 0 15px;
+}
+
+
+/********* ebx_viewsConfiguration.css *********/
+/******************* Hierarchy dimension level configuration *******************/
+ 
+#onConfigurationPaneContainer {
+}
+
+div.ebx_PredicateEditorDiv,
+#onConfigurationPaneContainer div#ebx_WorkspacePredicateEditor {
+	overflow: auto;
+	height: 18em;
+	width: 50em;
+	border: none;
+	width: auto;
+}
+
+#onConfigurationPaneContainer ul {
+	margin: 0;
+	padding: 0.2em;
+	list-style: none;
+}
+
+#onConfigurationPaneContainer ul li {
+}
+
+#onConfigurationPaneContainer ul li select,
+#onConfigurationPaneContainer ul li input {
+	width: 30em;
+}
+
+#onConfigurationPaneContainer div.ebx_predicateExpression {
+	margin: 0.3em;
+}
+
+/***START Tabular View ColumnConfiguration ***/
+.ebx_dualListTitle {
+	margin-bottom: 0;
+}
+.ebx_dualListContainer, #ebx_SsfContainer {
+	float: left;
+	padding: 0 15px 10px 15px;
+	width: 690px;
+}
+.ebx_dualListContainer .ebx_hidden_selectedColumnsList, 
+.ebx_dualListContainer .ebx_hidden_availableColumnsList,
+.ebx_dualListContainer .ebx_hidden_fixedColumns,
+.ebx_dualListContainer .ebx_availableColumnsList li.ebx_HiddenListElement {
+	display: none;
+}
+.ebx_dualListContainer .ebx_dualListTitleHint {
+	display: inline-block;
+	width: 317px; /* columns list width + border */
+	margin: 0 25px 0 25px;
+	color: #606060;
+	text-align: center;
+	width: 317px;
+	font-size: 0.8em;
+}
+.ebx_dualListContainer .ebx_selectedColumnsList,
+.ebx_dualListContainer .ebx_availableColumnsList {
+	list-style: none;
+	float: left;
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	width: 315px;
+	height: 160px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0;
+	padding: 0;
+}
+.ebx_dualListContainer .ebx_availableColumnsList {
+	background-color: #FAFAFA;
+}
+.ebx_dualListContainer .ebx_selectedColumnsList li, .ebx_dualListContainer .ebx_availableColumnsList li {
+	text-decoration: none;
+	display: block;
+	cursor: default;
+	height: 16px;
+	padding: 0 3px;
+	white-space: nowrap;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	user-select: none; /* Not yet implemented */
+	position: relative;
+}
+.ebx_dualListContainer .ebx_InactiveSelectedColumnsList {
+	color: #505050; /* same as ValueND */
+	background-color: #EDEDED;
+}
+.ebx_dualListContainer .ebx_dualList_Item {
+}
+.ebx_dualListContainer .ebx_usingDataModelOrdering {
+	margin: 10px 0 0 22px;
+}
+.ebx_dualListContainer .ebx_SortingColumnButtonContainer {
+	display: inline-block;
+	float: right;
+	margin: 2px 0 2px 2px;
+	cursor: pointer;
+	height: 12px;
+	position: absolute;
+	right: 2px;
+	top: 0;
+	background-color: #FFF;
+	color: #000;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.ebx_dualListContainer .ebx_SortingColumnLabel {
+	display: inline-block;
+	overflow: hidden;
+	font-size: 8px;
+	text-transform: uppercase;
+	vertical-align: 1px;
+	padding: 0;
+	width: 0;
+}
+.ebx_dualListContainer .ebx_selectedColumnsList li:hover .ebx_SortingColumnLabel {
+	padding: 0 3px;
+	width: auto;
+}
+.ebx_dualListContainer .ebx_AscendingColumn, .ebx_dualListContainer .ebx_DescendingColumn {
+	width: 12px;
+	height:12px;
+	background-repeat: no-repeat;
+	padding: 1px;
+	margin: 0;
+}
+.ebx_dualListContainer .ebx_DescendingColumn .ebx_SmallIcon {
+	background-position: -1px -121px;
+}
+.ebx_dualListContainer .ebx_AscendingColumn .ebx_SmallIcon {
+	background-position: -1px -111px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls, .ebx_dualListContainer .ebx_middleCtrls {
+	float:left;
+	height: 158px;
+	width:25px;
+}
+.ebx_dualListContainer .ebx_middleCtrls .ebx_FlatButton {
+	margin: 0 3px;
+}
+.ebx_MoveAllLeft .ebx_Icon {
+	background-position: 0 -864px;
+}
+.ebx_MoveLeft .ebx_Icon {
+	background-position: 0 -832px;
+}
+.ebx_MoveRight .ebx_Icon {
+	background-position: -1px -848px;
+}
+.ebx_MoveAllRight .ebx_Icon {
+	background-position: -1px -880px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_FlatButton {
+	margin: 0 3px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveUp .ebx_Icon {
+	background-position: 0 -800px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveDown .ebx_Icon {
+	background-position: 0 -816px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveTop .ebx_Icon {
+	background-position: 0 -928px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveBottom .ebx_Icon {
+	background-position: 0 -944px;
+}
+.ebx_dualListContainer .ebx_selectedColumnsCtrls .ebx_MoveBottom {
+	margin-bottom: 0;
+}
+.ebx_dualListContainer .ebx_fixColumnsCountSelector {
+	width: 317px; /* columns list width + border */
+	margin: 5px 0 0 25px;
+}
+.ebx_dualListContainer .ebx_shortenedPathContainer {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: help;
+}
+.ebx_dualListContainer .ebx_shortenedPathIcon {
+	display: inline-block;
+	height: 10px;
+	width: 16px;
+	background-position: 0 -965px;
+	background-repeat: no-repeat;
+	vertical-align: -1px;
+}
+.ebx_dualListContainer .ebx_shortenedPathIcon:last-child {
+	margin-right: 3px;
+}
+.ebx_dualListContainer .ebx_shortenedPathContainer:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.ebx_cvSsfButtons {
+	padding: 10px 5px;
+}
+/***END Tabular View ColumnConfiguration ***/
+/***START Manage recommended views ***/
+#ebx_mdv_Container {
+	position: relative;
+}
+#ebx_mdv_Container .ebx_Selected .ebx_ValueND {
+	color: inherit;
+}
+#ebx_mdv_Container > div.ebx_VerticalButtonContainer,
+#ebx_mdv_Container table.ebx_mdv_OrderList {
+	margin-bottom: 10px;
+}
+.ebx_mdv_tableContainer {
+	position: absolute;
+	left: 25px;
+	right: 25px;
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	min-height: 75px;
+	max-height: 230px;
+	overflow-y: auto;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.ebx_mdv_OrderList {
+	width: 100%;
+	border-collapse: collapse;
+}
+.ebx_mdv_OrderList tr {
+	padding: 0 3px;
+	cursor: default;
+	vertical-align: top;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	user-select: none; /* Not yet implemented */
+}
+.ebx_mdv_OrderListButtons {
+	position: absolute;
+	left: 0;
+	width: 25px;
+}
+#ebx_mdv_Container .ebx_VerticalButtonContainer {
+}
+.ebx_mdv_OrderListButtons .ebx_FlatButton {
+margin: 1px 3px 0 0 !important;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveUp .ebx_Icon {
+	background-position: 0 -800px;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveDown .ebx_Icon {
+	background-position: 0 -816px;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveTop .ebx_Icon {
+	background-position: 0 -928px;
+}
+.ebx_mdv_OrderListButtons .ebx_MoveBottom .ebx_Icon {
+	background-position: 0 -944px;
+}
+.ebx_mdv_OrderTextLine {
+	display: inline-block;
+}
+.ebx_mdv_assignArrow {
+	margin: 0 10px;
+	background-position: 0 -848px;
+	vertical-align: 0;
+	height: 14px;
+}
+/***END Manage default views ***/
+#ebx_SsfInHriContainer {
+	width: 504px;
+	margin-left: -5px;
+}
+
+label.ebx_tabularView_hiddenNode
+{
+	color: #777777;
+	text-decoration: line-through;
+}
+
+div#ebx_WorkspacePredicateEditor,
+div#ebx_WorkspaceTableColumnConfigurator,
+div#ebx_WorkspaceTableSortConfigurator,
+div#ebx_WorkspaceHierarchyDimensionTree
+{
+	padding: 0.3em;
+	height: 200px;
+	width: 572px;
+	border: 1px solid #E0E0E0;/*{input-borderColor}*/
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+#ebx_WorkspaceHierarchyDimensionTree {
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+div.ebx_predicateExpression {
+	margin: 1em 3em;
+}
+
+div.ebx_predicateExpression textArea {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 6em;
+	padding: 0;
+	width: 100%;
+}
+
+#ebx_helperTreePanel {
+	border: none;
+}
+
+#ebx_helperTreePanel .bd {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	border-width: 0 1px 1px 1px ;
+	border-style: solid;
+	border-color: #E0E0E0;/*{input-borderColor}*/
+	overflow: auto;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 0;
+	
+    border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+}
+/***END Tabular View ColumnConfiguration ***/
+
+.ebx_levelConfHiddenButton
+{
+	display: none;
+}
+
+/********* ebx_perspectives.css *********/
+
+.ebx_Perspective .yui-layout-unit-left div.yui-layout-bd {
+	overflow: visible;
+}
+
+.ebx_Perspective #ebx_Navigation {
+	overflow: hidden;
+}
+
+#ebx_NavigationPaneToggleReduced {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 15px;
+	height: 25px;
+	padding: 5px 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	/* exactly like hide header button (#ebx_HideHeader) */
+	transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-webkit-transition: opacity 0.3s ease;
+}
+.yui-layout-unit-left:hover #ebx_NavigationPaneToggleReduced {
+	opacity: 1;
+}
+
+#ebx_NavigationPaneScrollTop,
+#ebx_NavigationPaneScrollBottom {
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	left: 0;
+	
+	visibility: hidden;
+	
+	z-index: 1; /* to avoid position:relative icons to be above */
+}
+#ebx_NavigationPaneScrollTop {
+	top: 0;
+}
+#ebx_NavigationPaneScrollBottom {
+	bottom: 0;
+}
+
+.ebx_ScrollTopButtonEnabled #ebx_NavigationPaneScrollTop,
+.ebx_ScrollBottomButtonEnabled #ebx_NavigationPaneScrollBottom {
+	visibility: visible;
+}
+
+#ebx_NavigationPaneToggleReduced .ebx_SmallIcon,
+#ebx_NavigationPaneScrollTop .ebx_SmallIcon,
+#ebx_NavigationPaneScrollBottom .ebx_SmallIcon {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+#ebx_NavigationPaneToggleReduced .ebx_SmallIcon {
+	background-position: 0 -90px;
+}
+.ebx_NavigationPanePerspectiveReduced #ebx_NavigationPaneToggleReduced .ebx_SmallIcon {
+	background-position: 0 -100px;
+}
+#ebx_NavigationPaneScrollTop .ebx_SmallIcon {
+	background-position: 0 -70px;
+}
+#ebx_NavigationPaneScrollBottom .ebx_SmallIcon {
+	background-position: 0 -80px;
+}
+
+.ebx_Perspective #ebx_NavigationContent {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.ebx_perspectiveSections {
+	margin: 25px 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ebx_perspectiveSectionWithSeparator {
+	border-width: 2px 0 0 0;
+	border-style: solid;
+}
+
+.ebx_perspectiveSections ul,
+.ebx_perspectiveSections li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ebx_perspectiveSections h2,
+.ebx_perspectiveSections h3,
+.ebx_perspectiveSections h4 {
+	font-family: 'Source Sans Pro';
+	white-space: nowrap;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveSection>.ebx_perspectiveGroups>.ebx_perspectiveGroup>.ebx_CollapsibleBlock {
+	position: absolute;
+	left: 40px;
+	
+	margin-top: 0;
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: margin 0.5s ease;
+	-moz-transition: margin 0.5s ease;
+	-webkit-transition: margin 0.5s ease;
+}
+
+.ebx_perspectiveSections h2 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+	font-size: 12px;
+	padding: 12px 15px;
+	
+	height: 40px;
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: height 0.5s ease, padding  0.5s ease;
+	-moz-transition: height 0.5s ease, padding  0.5s ease;
+	-webkit-transition: height 0.5s ease, padding  0.5s ease;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveSections h2 {
+	height: 0;
+	padding: 0;
+}
+.ebx_PerspectiveAvoidAnimationsOnLoading .ebx_perspectiveSections h2 {
+	transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+
+.ebx_perspectiveSections h3,
+.ebx_perspectiveSections h4 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	height: 40px;
+	font-size: 14px;
+	margin: 0;
+	cursor: pointer;
+	padding: 10px 10px 10px 0;
+}
+
+.ebx_perspectiveSections h3 {
+	/* pading-right: 30px is 10px(normal) + 20px to put the button in the padding-right of the title
+	and avoid having the text under the button in case of floating pane (auto-width) */
+	padding-right: 30px;
+}
+
+.ebx_perspectiveSections .ebx_Icon {
+	float: left;
+	vertical-align: -5px;
+	margin: 2px 12px;/* (40 - 16 = 24)/2 (and top/bottom padding is already 10px) */
+	text-align: center;
+	
+	position: relative;
+}
+.ebx_perspectiveSections .ebx_Icon.fa {
+	/* font awesome is text, so it correctly aligns on the text */
+	vertical-align: baseline;
+}
+.ebx_perspectiveSections .ebx_WorkflowBadge {
+	position: absolute;
+	top: -9px;
+	right: -10px;
+}
+
+.ebx_perspectiveGroup .ebx_CollapsibleBlock {
+	display: block;
+	padding-left: 20px;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveSection>.ebx_perspectiveGroups>.ebx_perspectiveGroup>.ebx_CollapsibleBlock {
+	padding-left: 0;
+}
+
+
+.ebx_PerspectiveLabel {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveLabel {
+	display: inline-block;
+	text-overflow: clip;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_CollapsibleBlock .ebx_PerspectiveLabel {
+	padding-right: 40px;/* to have a good computation of the icon (which is float:left, and so not taken in account in offset width) */
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveActionLabelFirstLevel,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	margin-top: -10px; /* to compensate this padding-top */
+	padding: 10px 0;
+	height: 40px; /* it's safer */
+	
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: width 0.5s ease-out;
+	-moz-transition: width 0.5s ease-out;
+	-webkit-transition: width 0.5s ease-out;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupExpanded .ebx_PerspectiveLabelFirstLevelFloating,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupCollapseTransition .ebx_PerspectiveLabelFirstLevelFloating {
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: width 0.5s ease-out, margin 0.5s ease;
+	-moz-transition: width 0.5s ease-out, margin 0.5s ease;
+	-webkit-transition: width 0.5s ease-out, margin 0.5s ease;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel {
+	overflow: visible;
+	padding-right: 30px;/* the location of the expand/collapse button */
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveLabelFirstLevelFloating {
+	position: absolute;
+	width: 0;
+	padding-right: 0;
+	z-index: 1;
+}
+.ebx_NavigationPanePerspectiveReduced a:hover .ebx_PerspectiveLabelFirstLevelFloating {
+	z-index: 2;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveLabelFirstLevelFloating .ebx_PerspectiveGroupLabelFirstLevel {
+	width: 100%;
+}
+
+.ebx_NavigationPanePerspectiveReduced ul.ebx_perspectiveGroups .ebx_perspectiveGroups {
+	padding-left: 0;/* no indent for sub group 1st level in case of Pane Reduced */
+}
+
+.ebx_perspectiveGroup>a {
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	float: right;
+	/* margin-right: -20px to put the button in the padding-right of the title
+	and avoid having the text under the button in case of floating pane (auto-width) */
+	margin: 1px -20px 1px 0;
+	
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: margin-right 0.5s ease-out;
+	-moz-transition: margin-right 0.5s ease-out;
+	-webkit-transition: margin-right 0.5s ease-out;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	/* there is 15px extra width and no padding in the label */
+	margin-right: 10px;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelFirstLevelFloatingCloseTransition .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelFirstLevelFloatingCloseTransition .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	margin-right: 0;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelFirstLevelFloatingClosedTransitionEnd {
+	display: inline-block;
+	position: static;
+	padding-top: 0;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveGroup .ebx_PerspectiveGroupLabelFirstLevelFloatingClosedTransitionEnd .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveGroup .ebx_PerspectiveGroupLabelFirstLevelFloatingClosedTransitionEnd .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	float: left;
+	margin-left: -15px;
+	margin-top: 11px;
+	margin-right: 0;
+}
+
+.ebx_perspectiveGroup a:focus,
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse:focus,
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Expand:focus {
+	outline: none;
+	box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse .ebx_SmallIcon {
+	background-position: 0 -79px;
+}
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Expand .ebx_SmallIcon {
+	background-position: 0 -100px;
+}
+
+/* show always only parents and children of the current level, never uncles nor siblings */
+
+.ebx_perspectiveGroup>.ebx_CollapsibleBlock.ebx_CollapsibleBlockCollapsed .ebx_CollapsibleBlockContent {
+	display: block;
+}
+
+.ebx_perspectiveAction,
+.ebx_perspectiveGroup>a {
+	display: block;
+	overflow: hidden;
+	
+	/* duration must be synchronized with JS constant EBX_Perspective.groupExpandCollapseCSSTransitionDuration */
+	transition: height 0.5s ease;
+	-moz-transition: height 0.5s ease;
+	-webkit-transition: height 0.5s ease;
+}
+
+/* default height */
+.ebx_perspectiveAction,
+.ebx_perspectiveGroup>a {
+	height: 40px;
+}
+
+.ebx_perspectiveAction.ebx_perspectiveItemHidden,
+.ebx_perspectiveGroup.ebx_perspectiveItemHidden>a {
+	height: 0;
+}
+/* hide if one of my parents is collapsed */
+.ebx_CollapsibleBlockCollapsed .ebx_perspectiveAction,
+.ebx_CollapsibleBlockCollapsed .ebx_perspectiveGroup>a {
+	height: 0;
+}
+
+.ebx_perspectiveActions {
+	
+}
+
+.ebx_perspectiveAction {
+	
+}
+
+.ebx_perspectiveAction a {
+	display: block;
+}
+
+.ebx_perspectiveTitleSelected {
+	border-width: 0 0 0 3px;
+	border-style: solid;
+}
+.ebx_perspectiveTitleSelected .ebx_Icon {
+	margin-left: 9px; /* 12(original margin) - 3(border-left) */
+}
+
+/********* ebx_yui.css *********/
+/**
+* For overwrite YUI Classes.
+*/
+.yui-skin-sam .yui-panel .ft {
+	font-size: 0.9em;
+}
+
+/***START menu ***/
+.yui-skin-sam .yuimenu {
+	font-size: 1em;
+}
+.yui-skin-sam .yuimenu .hd,
+.yui-skin-sam .yuimenu .bd,
+.yui-skin-sam .yuimenu .ft {
+	border-color: #C0C0C0;/*{button-borderColor}*/
+}
+.yui-skin-sam .yuimenu h6 {
+	color: #404040;
+	font-size: 0.9em;
+	font-weight: normal;
+	padding-left: 3px;
+	padding-top: 0;
+}
+.yui-skin-sam .yuimenu .hastitle {
+	padding-top: 0;
+}
+.yui-skin-sam .yuimenu .bd,
+.yui-skin-sam .yuimenu .topscrollbar,
+.yui-skin-sam .yuimenu .bottomscrollbar {
+	margin-left: -1px;
+	margin-top: -1px;
+	
+	box-shadow: 0 1px 2px #C0C0C0;
+	-moz-box-shadow: 0 1px 2px #C0C0C0;
+}
+.yui-skin-sam .yuimenu .bd {
+	border-radius: 0 2px 2px 2px;
+	-moz-border-radius: 0 2px 2px 2px;
+}
+
+.yui-skin-sam .yuimenu .topscrollbar {
+	border-radius: 0 2px 0 0;
+	-moz-border-radius: 0 2px 0 0;
+}
+.yui-skin-sam .yuimenu .bottomscrollbar {
+	margin-top: 0;
+	border-radius: 0 0 2px 2px;
+	-moz-border-radius: 0 0 2px 2px;
+}
+.yui-skin-sam .yuimenu .bd.yui-menu-body-scrolled {
+	margin-top: 0;
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.yui-skin-sam .yuimenuitem-checked {
+	background-image: none;
+}
+.yui-skin-sam .yuimenuitem-hassubmenu.yuimenuitem-checked {
+	background-image: url(../yui/assets/skins/sam/menuitem_submenuindicator.png);
+	background-position: right center;
+}
+.yui-skin-sam .yuimenuitemlabel-checked {
+	background-image: url(../yui/assets/skins/sam/menuitem_checkbox.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.yui-skin-sam .yuimenuitemlabel {
+	cursor: pointer;
+}
+.yui-skin-sam .yuimenuitemlabel.yuimenuitemlabel-hassubmenu {
+	cursor: default;
+}
+/***END menu ***/
+
+/***START paging ***/
+#ebx_WorkspaceTablePaging.yui-pg-container {
+	margin: 0 10px 0 0;
+	display: inline;
+	white-space: normal;
+}
+#ebx_WorkspaceTablePaging.yui-pg-container .yui-pg-current {
+	padding: 0;
+	margin: 0;
+}
+/***END paging ***/
+
+/***START tab view ***/
+.yui-navset-top {
+	position: static;
+}
+
+.yui-skin-sam .yui-navset .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav {
+	border: none;
+}
+.yui-skin-sam .yui-navset .yui-nav li,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav li,
+.yui-skin-sam .yui-navset .yui-nav .selected,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav .selected {
+	margin: 0 5px 0 0;
+}
+.yui-skin-sam .yui-navset .yui-nav li:last-child,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav li:last-child,
+.yui-skin-sam .yui-navset .yui-nav .selected:last-child,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav .selected:last-child {
+	margin: 0;
+}
+.yui-navset .yui-nav li,
+.yui-navset .yui-navset-top .yui-nav li,
+.yui-navset .yui-nav li a,
+.yui-navset-top .yui-nav li a {
+	vertical-align: baseline;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a {
+	position: static;
+	
+	border-width: 1px 1px 0 1px;
+	border-color: #C0C0C0;/*{button-borderColor}*/
+    
+    border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em {
+	position: static;
+	
+	border: none;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-nav .selected a em {
+	padding: 1px 13px 1px 8px;/* 13px to let a place for tooltip button to display */
+}
+
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a,
+.yui-skin-sam .yui-navset .yui-nav a:focus,
+.yui-skin-sam .yui-navset .yui-nav a:hover,
+.yui-skin-sam .yui-navset .yui-nav a:active,
+.yui-skin-sam .yui-navset .yui-nav .selected a,
+.yui-skin-sam .yui-navset .yui-nav .selected a:focus,
+.yui-skin-sam .yui-navset .yui-nav .selected a:hover {
+	background-image: none;
+}
+
+
+.yui-skin-sam .yui-navset .yui-content,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-content {
+	border-color: #E0E0E0;/*{input-borderColor}*/
+	border-top-width: 3px;
+
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	
+	padding: 2px;
+	
+	border-radius: 0 0 2px 2px;
+	-moz-border-radius: 0 0 2px 2px;
+	
+	/* Mantis #11716 */
+	min-width: -moz-max-content;
+	min-width: -webkit-max-content;
+}
+
+.yui-navset .yui-nav li.ebx_HiddenTab,
+.yui-navset .yui-navset-top .yui-nav li.ebx_HiddenTab {
+	display: none;
+}
+
+
+/***END tab view ***/
+
+
+/***START calendar ***/
+.yui-skin-sam .yui-calcontainer .title {
+	z-index: auto;
+	background-image: none;
+}
+.yui-skin-sam .yui-calendar .calcell.selected a {
+	font-weight: bold;
+}
+.yui-skin-sam .yui-calendar .calcell.today {
+	background-color: transparent;
+}
+.yui-skin-sam .yui-calendar .calcell.today a {
+	border: 1px solid #000000;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav {
+	font-size: 1em;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav-b {
+	height: 25px;
+}
+.yui-skin-sam .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn.yui-default button {
+	color: #000000;
+	font-weight: bold;
+}
+
+/***END calendar ***/
+
+/***START progress bar ***/
+.yui-skin-sam .yui-pb-ltr .yui-pb-bar {
+	background-image: url(../yui/assets/skins/sam/ebx_bar-h.png);
+}
+/***END progress bar ***/
+
+
+#ebx_ISS_pane .yui-resize-handle-br,
+#ebx_InternalPopup .yui-resize-handle-br {
+    background-color: transparent;
+	background-position: 0 -68px;
+    bottom: 1px;
+    height: 12px;
+    right: 1px;
+    width: 12px;
+}

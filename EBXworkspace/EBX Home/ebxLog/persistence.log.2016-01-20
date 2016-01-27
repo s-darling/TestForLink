@@ -1,0 +1,32 @@
+2016-01-20 13:55:12,981 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 13:55:22,395 EST INFO   log.persistence 0985:0003 [ebx-rro-21-unique] Starting repository ownership heart beat thread on entry: id=21, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-20 13:55:25,925 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 97 ms.
+2016-01-20 13:55:31,460 EST INFO   log.persistence 0985:0003 [ebx-rro-21-unique] Heart beat #10: avgInterval=906: maxInterval=1011 ms.
+2016-01-20 13:55:41,502 EST INFO   log.persistence 0985:0003 [ebx-rro-21-unique] Heart beat #20: avgInterval=955: maxInterval=1011 ms.
+2016-01-20 13:58:42,193 EST INFO   log.persistence 0985:0003 [ebx-rro-21-unique] Heart beat #200: avgInterval=999: maxInterval=1011 ms.
+2016-01-20 14:02:02,871 EST INFO   log.persistence 0985:0003 [ebx-rro-21-unique] Heart beat #400: avgInterval=1001: maxInterval=1011 ms.
+2016-01-20 14:05:23,574 EST INFO   log.persistence 0985:0003 [ebx-rro-21-unique] Heart beat #600: avgInterval=1001: maxInterval=1011 ms.
+2016-01-20 14:08:44,343 EST INFO   log.persistence 0985:0003 [ebx-rro-21-unique] Heart beat #800: avgInterval=1002: maxInterval=1014 ms.
+2016-01-20 14:11:21,904 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-20 14:46:59,819 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 14:47:08,638 EST INFO   log.persistence 0985:0003 [ebx-rro-22-unique] Starting repository ownership heart beat thread on entry: id=22, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-20 14:47:13,619 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 157 ms.
+2016-01-20 14:47:17,706 EST INFO   log.persistence 0985:0003 [ebx-rro-22-unique] Heart beat #10: avgInterval=907: maxInterval=1010 ms.
+2016-01-20 14:47:27,753 EST INFO   log.persistence 0985:0003 [ebx-rro-22-unique] Heart beat #20: avgInterval=955: maxInterval=1010 ms.
+2016-01-20 14:50:28,460 EST INFO   log.persistence 0985:0003 [ebx-rro-22-unique] Heart beat #200: avgInterval=999: maxInterval=1010 ms.
+2016-01-20 14:52:24,660 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-2] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-20 14:53:42,171 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-20 15:16:20,724 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 15:16:28,558 EST INFO   log.persistence 0985:0003 [ebx-rro-23-unique] Starting repository ownership heart beat thread on entry: id=23, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-20 15:16:31,928 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 85 ms.
+2016-01-20 15:16:37,620 EST INFO   log.persistence 0985:0003 [ebx-rro-23-unique] Heart beat #10: avgInterval=906: maxInterval=1014 ms.
+2016-01-20 15:16:47,670 EST INFO   log.persistence 0985:0003 [ebx-rro-23-unique] Heart beat #20: avgInterval=955: maxInterval=1014 ms.
+2016-01-20 15:17:05,462 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 2 changes in Java Cache; in 11 ms.
+2016-01-20 15:17:05,473 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-20 15:17:05,475 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-3] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-20 15:17:05,477 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-20 15:17:05,528 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 16 ms.
+2016-01-20 15:17:06,157 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-20 15:17:06,183 EST INFO   log.persistence 0985:0003 [ebx-workflow-tokenDefault-0] Committed 2 changes in Java Cache; in 20 ms.
+2016-01-20 15:19:48,396 EST INFO   log.persistence 0985:0003 [ebx-rro-23-unique] Heart beat #200: avgInterval=999: maxInterval=1014 ms.
+2016-01-20 15:20:44,640 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

@@ -1,0 +1,9 @@
+2016-01-13 11:21:01,191 EST INFO   log.mail 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:22:50,131 EST INFO   log.mail 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:23:00,772 EST INFO   log.mail 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:23:06,446 EST INFO   log.mail 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:43:54,721 EST INFO   log.mail 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:44:35,787 EST INFO   log.mail 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:19:44,621 EST INFO   log.mail 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:27,820 EST INFO   log.mail 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:46:35,474 EST INFO   log.mail 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.2.6 Fix 001</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.2.6.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.2.6 Fix 001</h1>
+<p><strong>Fix 001 Release Date: April 3, 2013</strong></p><p>EBX5 5.2.6 Fix 001 for optimization of the purge process for orphan blocks.</p><p><strong>Initial Release Date: March 4, 2013</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of 5.2.6</a></li><li class="toc1"><a href="#versionUpgrade">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Backward compatibility</a></li><li class="toc2"><a href="#id2s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#ui">User interface</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Hide similarities in comparison interface</a></li></ul>
+</li><li class="toc1"><a href="#hierarchy_export">CSV export from hierarchy views</a></li><li class="toc1"><a href="#tasksched">Task scheduler</a><ul class="toc2">
+<li class="toc2"><a href="#custom_tasks">Custom scheduled tasks</a></li><li class="toc2"><a href="#id5s2">Users and permissions</a></li></ul>
+</li><li class="toc1"><a href="#id6">History</a><ul class="toc2">
+<li class="toc2"><a href="#historization">Historization of operations performed during archive import</a></li><li class="toc2"><a href="#lastUpdate">Last update information on programmatic merge</a></li></ul>
+</li><li class="toc1"><a href="#javaApi">Core Java API</a><ul class="toc2">
+<li class="toc2"><a href="#adaptation_match">New method to match records using XPath predicates</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-Coreengine">Core engine</a></li><li class="toc2"><a href="#bug-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug-DataspacesHistory">Data spaces &amp; History</a></li><li class="toc2"><a href="#bug-Datavalidation">Data validation</a></li><li class="toc2"><a href="#bug-Dataviews">Data views</a></li><li class="toc2"><a href="#bug-Dataworkflows">Data workflows</a></li><li class="toc2"><a href="#bug-Documentation">Documentation</a></li><li class="toc2"><a href="#bug-ImportExport">Import / Export</a></li><li class="toc2"><a href="#bug-Messagesi18n">Messages &amp; i18n</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-Userinterface">User interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of 5.2.6</h2>
+<p>EBX5 5.2.6 for <a href="#bugfix">bug fixes</a> and an enhancement for <a href="#historization">historization on archive import</a>.</p><p>This version also includes previously released content, including from the minor version 5.2.5 Fix 001:</p><ul>
+<li><p><a href="#custom_tasks">Custom scheduled tasks</a></p></li><li><p><a href="#hierarchy_export">Exporting root or unset nodes to CSV from hierarchy views</a></p></li><li><p><a href="#lastUpdate">Improvement to programmatic branch merges</a></p></li><li><p><a href="#adaptation_match">Java API</a> for matching records using XPath predicates</p></li></ul>
+<h2>
+<a name="versionUpgrade"></a>Version upgrade</h2>
+<h3>
+<a name="id2s1"></a>Backward compatibility</h3>
+<p>No known backward compatibility issues between this version and the previous minor version of EBX5.</p><h3>
+<a name="id2s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><strong>If using EBX5 add-ons, ensure that the versions of the add-ons are compatible with EBX5 version 5.2.6 before upgrading. </strong> For the backward compatibility of the add-ons themselves, consult the release notes of the add-ons.</p></div>
+<h2>
+<a name="ui"></a>User interface</h2>
+<h3>
+<a name="id3s1"></a>Hide similarities in comparison interface</h3>
+<p>A filtering option has been added to the comparison interface to hide similarities.</p><h2>
+<a name="hierarchy_export"></a>CSV export from hierarchy views</h2>
+<p><em>Initially included in the release 5.2.5 Fix 001.</em></p><p>It is now possible to perform a CSV export from a hierarchical view starting from the root node or an <code>unset</code> node.</p><h2>
+<a name="tasksched"></a>Task scheduler</h2>
+<h3>
+<a name="custom_tasks"></a>Custom scheduled tasks</h3>
+<p><em>Initially included in the release 5.2.5 Fix 001.</em></p><p>As of 5.2.5 Fix 001, it is possible to define custom scheduled tasks. See <a href="../engine/scheduler.html">Task scheduler</a> for more information and the <a target="_blank" href="../Java_API/com/orchestranetworks/scheduler/package-summary.html">scheduler package</a> in the Java API for more information.</p><h3>
+<a name="id5s2"></a>Users and permissions</h3>
+<p>It is now possible to define users without passwords in the EBX5 default directory that are used only for running tasks in the <a href="../engine/scheduler.html">Task scheduler</a>.</p><h2>
+<a name="id6"></a>History</h2>
+<h3>
+<a name="historization"></a>Historization of operations performed during archive import</h3>
+<p>The operations performed during archive imports are now taken into account by the historization of tables. Previously, any such operations were not historized.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Due to this additional historization, archive imports could take longer and consume more database resources than in previous versions.</p></div>
+<h3>
+<a name="lastUpdate"></a>Last update information on programmatic merge</h3>
+<p><em>Initially included in the release 5.2.5 Fix 001.</em></p><p>All data sets and records have information on who performed the last update (<code>lastUser</code>) and when (<code>lastTime</code>). Previously, for programmatic merges, this was updated with the time and user of the merge operation itself; as a result, information about the last update performed in the child data space was lost. Now the time and user of the last operation performed in the child data space are preserved. </p><h2>
+<a name="javaApi"></a>Core Java API</h2>
+<h3>
+<a name="adaptation_match"></a>New method to match records using XPath predicates</h3>
+<p><em>Initially included in the release 5.2.5 Fix 001.</em></p><p>It is now possible to determine whether a record matches a given XPath predicate. This can be done by performing a query of the form <code>record.matches(&quot;./boolean=&#39;true&#39; and date-equal(./date,&#39;2001-01-01&#39;)&quot;);</code> using the method <code>matches</code> in the class <code>Adaptation</code>. See <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#matches(java.lang.String)">matches</a> in the Java API for more information.</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-Coreengine"></a>Core engine</h3>
+<ul>
+<li><p><a name="bug_6504"></a><strong>[6504]</strong> In relational mode, validation requires <code>maxLength</code> constraints on foreign keys. </p><p>Despite the documentation stating that foreign keys in a relational table do not require <code>maxLength</code> or <code>length</code> constraints, validation errors are raised upon publication on foreign keys without one of these constraints specified.</p></li><li><p><a name="bug_6512"></a><strong>[6512]</strong> Last update information is incorrect in relational mode. </p><p>The last update information for records in relational mode is either not available or is incorrect.</p></li></ul>
+<h3>
+<a name="bug-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><p><a name="bug_5865"></a><strong>[5865]</strong> In a form, if an error occurs at submit, the button &quot;set field to [undifined]&quot; does not work anymore. </p><p>In a form, if an error occurs at submit, the button &quot;set field to [undifined]&quot; does not work anymore if the node is null. If user click on this button to override the value of the node, nothing happens.</p></li><li><p><a name="bug_6032"></a><strong>[6032]</strong> Uniqueness constraint items must be set to &#39;null&#39; when empty. </p><p>To avoid errors when the user adds empty items to Advanced properties &gt; Uniqueness constraints in the DMA, set the value to &#39;null&#39; when the fields are empty.</p></li><li><p><a name="bug_6103"></a><strong>[6103]</strong> It should not be possible to create a &#39;User defined attributes&#39; type in a relational model. </p><p>In a relational model, the user can create a &#39;User defined attributes&#39; field under the root or a group even though there is no &#39;UDA Catalog path&#39; defined. This results in an error when publishing the data model.</p></li><li><p><a name="bug_6114"></a><strong>[6114]</strong> Incorrect XPath for a selection node field referring to itself. </p><p>When a field specifies itself as the source of the selection node, an incorrect XPath label is displayed for the field.</p></li><li><p><a name="bug_6187"></a><strong>[6187]</strong> Inappropriate error message displayed when duplicating an element without entering a name. </p><p>In the DMA, when the user duplicates an element without entering a name, a redundant validation message is displayed in addition to the missing name message.</p></li><li><p><a name="bug_6193"></a><strong>[6193]</strong> Cannot change data model after exporting to an XSD file. </p><p>In the DMA, after the user exports the data model to an XSD file and closes the completion notification pop-up, the button to switch data models is disabled.</p></li><li><p><a name="bug_6242"></a><strong>[6242]</strong> Blank user interface displayed during validation/computation rule creation if no criteria defined. </p><p>In the DMA, when the user creates a validation rule or computation rule without defining criteria, the workspace is empty after the user dismisses the resulting error notification.</p></li><li><p><a name="bug_6353"></a><strong>[6353]</strong> It is not possible to publish a data model containing a computation rule with only a formula returning a constant value. </p><p>In the DMA, an error is raised when publishing a data model containing a computed rule with only a formula.</p></li><li><p><a name="bug_6355"></a><strong>[6355]</strong> Error messages are not displayed in the rule editor when defining an invalid formula. </p><p>In the DMA, the errors raised by an invalid formula are not displayed when editing a validation or a computation rule.</p></li><li><p><a name="bug_6359"></a><strong>[6359]</strong> An error occurs in the validation rule editor when attempting to add a criterion on an empty table. </p><p>If a table contains no fields, a <code>NullPointerException</code> is raised in the validation rule editor when a user tries to add a criterion.</p></li><li><p><a name="bug_6438"></a><strong>[6438]</strong> Special characters are not serialized correctly when exporting a data model to an XSD file. </p><p>If a data model contains special characters, they are not correctly serialized when exporting the data model to an XML Schema document.</p></li><li><p><a name="bug_6459"></a><strong>[6459]</strong> Cannot publish data model after duplicating a validation rule. </p><p>In the DMA, if the user duplicates a validation rule more than once, an error is reported when publishing the data model.</p></li><li><p><a name="bug_6582"></a><strong>[6582]</strong> It should not be possible to disable the history of a primary key field. </p><p>An unexpected error occurs when the user publishes a data model that contains a historized table with history disabled on a primary key. A suitable error message should be provided.</p></li></ul>
+<h3>
+<a name="bug-DataspacesHistory"></a>Data spaces &amp; History</h3>
+<ul>
+<li><p><a name="bug_6091"></a><strong>[6091]</strong> Relational data space identifier syntax not accepted by the DMA. </p><p>When the user attempts to create a relational data model with a data space restriction referencing a relational data space, the DMA displays an invalid syntax error for the identifier even though it was validated at data space creation.</p></li></ul>
+<h3>
+<a name="bug-Datavalidation"></a>Data validation</h3>
+<ul>
+<li><p><a name="bug_6319"></a><strong>[6319]</strong> Method <code>SchemaFacet.getDocumentation</code> throws an exception in some cases. </p><p>When called on <code>SchemaFacetBoundaryMaxExclusive</code> or <code>SchemaFacetBoundaryMinInclusive</code>, <code>SchemaFacet.getDocumentation(Locale, ValueContext)</code> throws an exception.</p></li><li><p><a name="bug_6320"></a><strong>[6320]</strong> Method <code>SchemaFacet.getDocumentation</code> throws an exception when called on dynamic constraints. </p><p>When <code>SchemaFacet.getDocumentation</code> is called on a dynamic constraint (<code>osd:minInclusive</code>, <code>osd:minExclusive</code>, <code>osd:maxInclusive</code>, or <code>osd:maxExclusive</code>), it throws an exception.</p></li><li><p><a name="bug_6368"></a><strong>[6368]</strong> Foreign key constraints with an XPath filter are not revalidated if a criterion of the filter is updated. </p><p>When a criterion of an XPath filter is updated, the associated foreign key constraint is not validated. In this case, a reset of the validation report is required.</p></li></ul>
+<h3>
+<a name="bug-Dataviews"></a>Data views</h3>
+<ul>
+<li><p><a name="bug_5901"></a><strong>[5901]</strong> Hierarchy view labels containing a double-quote &quot; character are not handled properly. </p><p>When the user submits a value for a hierarchy view label containing a double-quote &quot; character, the value is truncated after that character.</p></li><li><p><a name="bug_5985"></a><strong>[5985]</strong> Unexpected behavior when moving a node to its current position. </p><p>When the user selects to move a node to its current position, its record is opened.</p></li><li><p><a name="bug_6204"></a><strong>[6204]</strong> Incorrect behavior of sort criteria in simple view creation. </p><p>In a data set, when the user removes criteria that was previously defined in a simple view on a table, the sort criteria remains applied.</p></li><li><p><a name="bug_6243"></a><strong>[6243]</strong> Selection node is not validated automatically when the data set or table has not already been validated. </p><p>Selection nodes are only automatically validated against cardinality constraints if the data set or table has previously been validated.</p></li><li><p><a name="bug_6420"></a><strong>[6420]</strong> Table is filtered despite no fields being selected in the validation message filter. </p><p>When the user does not select any fields in the validation message filter then click &#39;Apply&#39;, table is still filtered.</p></li><li><p><a name="bug_6421"></a><strong>[6421]</strong> Incorrect error messages if &quot;Duplicate&quot; is selected twice in a row on a data set. </p><p>When the user selects on Actions &gt; Duplicate on a data set twice, validation errors appear on all fields of the form.</p></li><li><p><a name="bug_6589"></a><strong>[6589]</strong> Deleting a hierarchy node on an inherited instance may fail. </p><p>In an inherited data set, if a hierarchy node record or a node join link record overwrites an inherited record, a delete action on the node will only remove the overwritten state instead of occulting the node and its linked records.</p></li></ul>
+<h3>
+<a name="bug-Dataworkflows"></a>Data workflows</h3>
+<ul>
+<li><p><a name="bug_5557"></a><strong>[5557]</strong> A fatal error occurs when importing a file into a closed data space. </p><p>In a data workflow, when the user imports a CSV or XML file into a closed data space, a fatal error occurs.</p></li><li><p><a name="bug_6090"></a><strong>[6090]</strong> The &#39;Label&#39; and &#39;Description&#39; fields in workflow models do not work after setting them to &#39;not defined&#39; and submitting.</p><p>In a workflow model, if the user sets the &#39;Label&#39; or &#39;Description&#39; fields of user tasks, scripts, or conditions to &#39;not defined&#39;, these fields stop working after submitting the form.</p></li><li><p><a name="bug_6094"></a><strong>[6094]</strong> Incorrect behavior in a data workflow when taking a user task with a scope set. </p><p>In a data workflow, when a user takes user task that has a scope set, the user interface displays two work lists.</p></li><li><p><a name="bug_6248"></a><strong>[6248]</strong> Users can modify existing records when performing record creation user tasks. </p><p>When the user submits the form after performing a new record creation user task, it is possible to modify existing records.</p></li><li><p><a name="bug_6330"></a><strong>[6330]</strong> A workflow instance missing a token prevents all users from executing workflows through the user interface. </p><p>If a workflow instance is missing its token, no users can execute workflows through the user interface.</p></li><li><p><a name="bug_6331"></a><strong>[6331]</strong> A work item missing a token prevents all users from executing workflows through the user interface. </p><p>If a work item is missing its token, no users can execute workflows through the user interface.</p></li></ul>
+<h3>
+<a name="bug-Documentation"></a>Documentation</h3>
+<ul>
+<li><p><a name="bug_6362"></a><strong>[6362]</strong> Linked documentation is in the default locale even if the language of the user session is French. </p><p>When the user&#39;s session is in a non-default locale, linked documentation is always displayed in English if an HTML anchor is referenced.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import / Export</h3>
+<ul>
+<li><p><a name="bug_4679"></a><strong>[4679]</strong> Export wizard does not keep correct value on field with error. </p><p>When a form is found to have an error after being submitted, the error is displayed but the radio button checked by the user isn&#39;t kept.</p></li><li><p><a name="bug_6222"></a><strong>[6222]</strong> Rights on services incorreclty set after importing from CSV. </p><p>When entries under &#39;Rights on services&#39; are disabled on a data set, they become reenabled when the data set is exported to CSV then reimported.</p></li></ul>
+<h3>
+<a name="bug-Messagesi18n"></a>Messages &amp; i18n</h3>
+<ul>
+<li><p><a name="bug_6524"></a><strong>[6524]</strong> An error occurs when no locales are specified under a <code>locales</code> element in a module. </p><p>If the file <code>module.xml</code> does not specify any <code>locale</code> elements within the <code>locales</code> element, a <code>NullPointerException</code> is raised for workflow services.</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><a name="bug_6336"></a><strong>[6336]</strong> Scheduler fires task even if EBX5 license is not valid. </p><p>If the product license is not valid, scheduled tasks still fire, resulting in exceptions in the task execution.</p></li></ul>
+<h3>
+<a name="bug-Userinterface"></a>User interface</h3>
+<ul>
+<li><p><a name="bug_4297"></a><strong>[4297]</strong> Data space information pop-up removes carriage returns in documentation. </p><p>When the user views the documentation for a data space, no carriage returns included in the text are displayed in the pop-up.</p></li><li><p><a name="bug_5885"></a><strong>[5885]</strong> Changing the screen layout of a pop-up pane does not work properly. </p><p>When changing the screen layout of a pop-up pane (for example, to view the details of a foreign key record), the layout change is not applied to the pop-up itself, but rather its parent.</p></li><li><p><a name="bug_5887"></a><strong>[5887]</strong> On IE, clear field button is not activated on &#39;Check null input&#39; radio button. </p><p>On IE, the &#39;Clear field&#39; button for the &#39;Check null input&#39; field remains inactive even if the user has selected a value.</p></li><li><p><a name="bug_5963"></a><strong>[5963]</strong> User interface does not work properly after using a permalink to a record. </p><p>After the user accesses a record by clicking on a permalink, then navigates to other functional areas, the user interface does not display properly. Namely, the DMA is displayed as a data set, with the data structure in tabular format.</p></li><li><p><a name="bug_6111"></a><strong>[6111]</strong> Hierarchy redirections fail if a primary key contains a &#39;#&#39; character. </p><p>If a primary key contains a &#39;#&#39; character, the redirection after submitting a form fails when creating a new record in a hierarchy view. The XPath predicate of the record is truncated at that character.</p></li><li><p><a name="bug_6146"></a><strong>[6146]</strong> UDA catalog path wizard button moves after inputting an invalid value. </p><p>In the DMA, after the user sets an invalid value for the UDA catalog path property, the wizard button moves to the line under the field.</p></li><li><p><a name="bug_6195"></a><strong>[6195]</strong> Unbounded button moves after an invalid value is inputted. </p><p>In the DMA, when the user inputs an invalid value into the &#39;Maximum number of values&#39; field, the &#39;unbounded&#39; button moves to the line under the field.</p></li><li><p><a name="bug_6202"></a><strong>[6202]</strong> On IE, hierarchy view creation user interface has display problem. </p><p>On IE, the labels pane of the hierarchy view creation form is displayed incorrectly.</p></li><li><p><a name="bug_6214"></a><strong>[6214]</strong> No cancel button in Import/Export XML Schema document interface. </p><p>In the DMA, there is no cancel button in the Import/Export XML Schema document interface.</p></li><li><p><a name="bug_6326"></a><strong>[6326]</strong> If a group contains a historized table and an un-historized table, history is not displayed correctly. </p><p>If a group contains both a historized table and an un-historized table, history is not displayed correctly. The user must click on the group&#39;s name to expand the group.</p></li><li><p><a name="bug_6351"></a><strong>[6351]</strong> In the DMA, drop-down menu disappears when adding a formula or a condition to a computation rule. </p><p>In the DMA, when the user adds a formula or a condition to a computation rule, the drop-down menu disappears. If a condition is being added, neither clicking on &#39;Save&#39; nor &#39;Save &amp; quit&#39; responds.</p></li><li><p><a name="bug_6357"></a><strong>[6357]</strong> If a saved advanced search is modified then re-saved, its name is lost. </p><p>If a saved advanced search is modified and re-saved, its name is lost and the predicate is displayed instead.</p></li><li><p><a name="bug_6360"></a><strong>[6360]</strong> A fatal error is raised if the &#39;Create new record&#39; service is called on a non-existent data set. </p><p>If the service &#39;Create new record&#39; is called on a data set that does not exist, a fatal error occurs.</p></li><li><p><a name="bug_6364"></a><strong>[6364]</strong> On IE6, sort criteria pane has a display issue. </p><p>On IE6, the criteria pane remains in the same position regardless of the scrollbar position.</p></li><li><p><a name="bug_6476"></a><strong>[6476]</strong> When exporting an XML file with special chararacters, the name of the exported file is altered. </p><p>When exporting a file with special characters in the name of the exported file, the result exported file name is incorrect.</p></li><li><p><a name="bug_6531"></a><strong>[6531]</strong> Pattern for data space names is inconsistant between areas. </p><p>The required pattern for data space names in the data model assistant is different from in the Data Spaces area.</p></li><li><p><a name="bug_6540"></a><strong>[6540]</strong> When exporting a CSV file with special chararacters, the name of the exported file is altered. </p><p>When exporting a file with special characters in the name of the exported file, the result exported file name is incorrect.</p></li><li><p><a name="bug_6541"></a><strong>[6541]</strong> When exporting an XSD file with special chararacters, the name of the exported file is altered. </p><p>When exporting a file with special characters in the target file name, the result exported file name is incorrect.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><a name="bug_6385"></a><strong>[6385]</strong> It is not possible to create auto-increments when importing into the auto-increments table. </p><p>Currently, it is impossible to create records in the table of auto-increments using XML or CSV import. It should be possible to do so when the property <code>ebx.autoIncrement.disableMaxTableCheck</code> is enabled.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

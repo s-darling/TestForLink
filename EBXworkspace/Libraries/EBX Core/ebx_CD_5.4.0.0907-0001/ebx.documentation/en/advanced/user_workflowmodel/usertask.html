@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - User task</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="wm_usertask" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Workflow models</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_workflowmodel/usertask.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+<h1>
+User task</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#label">Label and description</a></li><li class="toc1"><a href="#definition">Definition</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Profiles</a></li><li class="toc2"><a href="#id2s2">Service to be called</a></li></ul>
+</li><li class="toc1"><a href="#termination">Termination</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Task termination criteria</a></li><li class="toc2"><a href="#rejectTolerance">Reject tolerance</a></li></ul>
+</li><li class="toc1"><a href="#customizedLabels">Customized labels</a></li><li class="toc1"><a href="#enableConfirmationRequest">Enable confirmation request</a></li><li class="toc1"><a href="#extension">Extension</a></li><li class="toc1"><a href="#notification">Notification</a></li><li class="toc1"><a href="#reminder">Reminder</a></li><li class="toc1"><a href="#deadline">Deadline</a></li></ul>
+</div>
+<h2>
+<a name="label"></a>Label and description</h2>
+<p>The label and and the description of the task can be specified in various languages, in order to inform the user about the purpose of this task.</p><h2>
+<a name="definition"></a>Definition</h2>
+<p></p><h3>
+<a name="id2s1"></a>Profiles</h3>
+<p>The profiles define to whom the user task is intended for. A work item is created and offered to each specified profile. If a profile refers to a user instead of a role, the work item is directly allocated to him.</p><h3>
+<a name="id2s2"></a>Service to be called</h3>
+<p>EBX5 provides several built-in services:</p><ul>
+<li><p>Access to a content.</p></li><li><p>Create a new record.</p></li><li><p>Validate a data space, a snapshot or a data set.</p></li><li><p>Merge a data space.</p></li><li><p>Compare contents.</p></li><li><p>Export data from a table in XML files.</p></li><li><p>Export data from a table in CSV Files.</p></li><li><p>Import data from a XML file into a table .</p></li><li><p>Import data from a CSV file into a table.</p></li></ul>
+<p>Each service requires specific parameters, a wizard assistant is offered to select data space, snapshot or value from the data context: <img alt="ebx wizard button" src="../resources/images/icons/ebx_wizard.png" width="16" height="16"></img>.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../references/builtin.html">EBX5 built-in services</a></p></div>
+<h2>
+<a name="termination"></a>Termination</h2>
+<h3>
+<a name="id3s1"></a>Task termination criteria</h3>
+<p>A single user task may be assigned to multiple <em>participants</em> and generate multiple work items during workflow execution. When defining a user task in the workflow model, you may select one of the predefined methods for determining when the user task is finished, based on the statuses of its component work items. When the user task&#39;s exit requirement has been satisfied, the data workflow will move on to the next step defined in its model. </p><p>For example, for the case of a user task where a product record needs to be approved, you can designate three participants. The task termination criteria can specify whether the product record needs to be approved by all three users, or only the first user to respond.</p><p>The default user task termination criteria is &#39;When all work items have been accepted.&#39;</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If you specify a service extension overriding the method <code>UserTask.handleWorkItemCompletion</code> to handle the determination of the user task&#39;s completion, it is up to the developer of the extension to verify from within their code that the task termination criteria defined through the user interface has been met. See <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/UserTask.html">UserTask.handleWorkItemCompletion()</a> in the Javadoc for more information</fieldset>
+<h3>
+<a name="rejectTolerance"></a>Reject tolerance</h3>
+<p>By default, if a user rejects a work item during workflow execution, the user task is placed into an error state and the workflow progress is halted. When the user task is in an error state, a workflow administrator must intervene by replaying the step where the error occurred in order to continue the workflow execution. </p><p>In order to change this default behavior, it is possible to define a certain number of work item rejections to tolerate. While within the limit of tolerated rejections, no error will occur and it is the task termination criteria that determines when to end the user task.</p><p>The following task termination criteria automatically tolerate all rejections:</p><ul>
+<li><p>&#39;When all work items have been either accepted or rejected&#39;</p></li><li><p>&#39;Either when all work items have been accepted, or as soon as one work item has been rejected&#39;</p></li></ul>
+<h2>
+<a name="customizedLabels"></a>Customized labels</h2>
+<p> At the user tasks execution, the user can accept or reject his work item by clicking the matching button. In workflow modeling, it is possible for some user task to define a customized label and confirmation message for these buttons. This feature is useful to add a specific meaning to the accept or reject a work item action. </p><h2>
+<a name="enableConfirmationRequest"></a>Enable confirmation request</h2>
+<p>By default, when the user saves his decision by clicking on accept or reject button after the task execution, a confirmation request is displayed.</p><p>It is possible to disable this confirmation request for the decision by setting this field to false.</p><h2>
+<a name="extension"></a>Extension</h2>
+<p>By specifying a specific rule, the task is able to behave dynamically in the workflow execution context, for example if a specific behavior is needed, either for creating work items or for completing the user task. </p><p>The specified rule is a JavaBean that must extend <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/UserTask.html"><code>UserTask</code> class</a>. </p><p>Warning: if a rule is specified and the <code>handleWorkItemCompletion</code> method is overridden, the completion strategy is no longer automatically checked. The developer himself must check for the completion in this method.</p><h2>
+<a name="notification"></a>Notification</h2>
+<p>A notification email can be sent to users when specific events happen. For each event, you can specify a template to use.</p><p>Furthermore, it is possible to define a profile to whom every email sent will also be sent.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../user_workflowmodel/actions_workflowmodel.html#notification">Message templates</a></p></div>
+<h2>
+<a name="reminder"></a>Reminder</h2>
+<p>Reminder emails for outstanding offered or allocated work items can be sent to the concerned users periodically. The recipients are the users to which the work item is offered or allocated, as well as any recipient to copy.</p><p>The content of the reminder emails is determined by the current state of the work item. That is, if the work item is offered, the notification will use the &quot;Offered work items&quot; template; if the work item is allocated, the notification will use the &quot;Allocated work items&quot; template.</p><h2>
+<a name="deadline"></a>Deadline</h2>
+<p>A user task can have a deadline. When this date is passed and if the associated works items are not completed, a specific email is sent to the concerned users. This email will then be re-sent once a day until task completion.</p><p>There are two deadline types: </p><ul>
+<li><p><em>Absolute deadline:</em> a calendar date.</p></li><li><p><em>Relative deadline:</em> duration (in hours, days or months). The duration is evaluated from the reference date: beginning of the user task or beginning of the workflow. </p></li></ul>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Workflow models</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	
+	Copyright © Orchestra Networks 2000-2009. All rights reserved. 
+	
+	******************************************************************************
+	EBX5 schema for Simple Workflow.
+	This schema is not meant for modifications.
+	******************************************************************************
+	
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebxbnd="urn:ebx-schemas:binding_1.0" xmlns:fmt="urn:ebx-schemas:format_1.0" xmlns:osd="urn:ebx-schemas:common_1.0">
+	<xs:import namespace="urn:ebx-schemas:common_1.0" schemaLocation="../common_1.0.xsd" />
+	<xs:include schemaLocation="./workflow_types_1.1.xsd" />
+	<xs:annotation>
+		<xs:appinfo>
+			<!-- schema - java binding  -->
+			<ebxbnd:binding targetDirectory="../_ebx/src/">
+				<javaPathConstants typeName="com.orchestranetworks.workflow.impl.configuration.WfsCPaths">
+					<nodes prefix="" root="/root/configuration" />
+				</javaPathConstants>
+			</ebxbnd:binding>
+			<osd:resourceBundle source="com.orchestranetworks.i18n.xsdSchema.workflow_configuration" />
+			<osd:extensions class="com.orchestranetworks.workflow.impl.configuration.WfcSchemaExtensions" />
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="root" osd:access="--">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="configuration">
+					<xs:annotation>
+						<xs:documentation osd:id="element.root.configuration" />
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="notificationMessage" type="NotificationMessage" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+

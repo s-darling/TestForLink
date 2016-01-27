@@ -1,0 +1,28 @@
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 1px 8px 0 8px; /* don't know why... */
+}
+
+button.ebx_IconButton .ebx_Icon,
+button.ebx_IconButtonSmall .ebx_SmallIcon {
+	margin-top: -1px; /* don't know why... */
+	margin-left: -3px; /* don't know why... */
+}
+
+.ebx_TextAndIconLeftButton .ebx_Icon,
+.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-top: -1px;
+}
+
+.ebx_SelectButtonItemLabel .ebx_Icon {
+	margin-bottom: -1px;
+}
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	margin-bottom: -2px;
+}
+
+.tvFixedScrollerWrapper {
+	vertical-align: top;
+}

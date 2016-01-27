@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Permissions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_permissions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data sets</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/userdata_permissions.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+<h1>
+Permissions</h1>
+<p>Data set permissions can be accessed using the <em>Actions</em> button in the navigation pane.</p><p>Permissions are always granted through a profile.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Profile</a></li><li class="toc1"><a href="#id2">Restriction policy</a></li><li class="toc1"><a href="#id3">Data set actions</a></li><li class="toc1"><a href="#id4">Tables policy</a></li><li class="toc1"><a href="#id5">Values access policy</a></li><li class="toc1"><a href="#id6">Rights on services</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Profile</h2>
+<p>Defines the profile to which these permissions apply.</p><h2>
+<a name="id2"></a>Restriction policy</h2>
+<p>If &#39;Yes&#39;, indicates that when the permissions defined here are more strict than otherwise defined, these permissions are respected. This is contrary to the default where the most permissive rights defined take precedence. For more details, see <a target="_self" href="../references/permissions.html#restrictionpolicy">restriction policy</a>.</p><h2>
+<a name="id3"></a>Data set actions</h2>
+<p>This section specifies action permissions on the data set.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create a child data set</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can create a child data set. Inheritance also has to be activated in the data model.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Duplicate the data set</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can duplicate the data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delete the data set</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can delete the data set.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Activate/Inactivate the data set</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can modify the <em>Activated</em> property in the <a target="_self" href="./actions_dataset.html#information">data set information</a>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create a view</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can create custom views and hierarchies.</p></td></tr>
+</table>
+<h2>
+<a name="id4"></a>Tables policy</h2>
+<p>This section specifies the default permissions for all the tables. Specific permissions can also be defined for a table by clicking on the <em>Add an occurrence</em> button.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create a new record</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can create records in the table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Overwrite inherited record</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can overwrite inherited records in the table. This permission is useful when using data set inheritance.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Occult inherited record</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can occult inherited records in the table. This permission is useful when using data set inheritance.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delete a record</p></td><td class="ebx_definitionListDefinition"><p>Indicates if the profile can delete records in the table.</p></td></tr>
+</table>
+<h2>
+<a name="id5"></a>Values access policy</h2>
+<p>This section specifies the default access permissions for all the nodes of the data set and allows the definition of permissions for specific nodes. The default access permission is used if no specific permission has been granted for a node.</p><p>The specific policy selector allows granting a specific access permission for a node. The buttons <em>Hidden</em>, <em>Read-Only</em> and <em>Write</em> set the corresponding access permission to the selected node.</p><p> It is possible to remove a specific access permission using the <em>(default)</em> button.</p><h2>
+<a name="id6"></a>Rights on services</h2>
+<p>This section specifies the access permissions for services. A service is not accessible to a profile if it is crossed-out.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

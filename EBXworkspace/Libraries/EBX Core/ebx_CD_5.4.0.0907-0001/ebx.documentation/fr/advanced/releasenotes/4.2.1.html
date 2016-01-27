@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.1</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.1.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.1</h1>
+<p><strong>Release Date: June 14, 2007</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Sort on table columns</a></li><li class="toc1"><a href="#id2">Enhancements of table display</a></li><li class="toc1"><a href="#id3">Archive option</a></li><li class="toc1"><a href="#id4">Interactive import process</a></li><li class="toc1"><a href="#id5">Cache activity monitoring</a></li><li class="toc1"><a href="#id6">Bug fixes</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Sort on table columns</h2>
+<p>In the table view, when the user clicks on a column header, the table is sorted according the column in ascending order. If he clicks on the same column a second time, it is sorted in descending order.</p><h2>
+<a name="id2"></a>Enhancements of table display</h2>
+<p>The table view has been reorganized for a better display, a more intuitive interaction, and for future evolutions:</p><ul>
+<li><p>Table is full width on the HTML page.</p></li><li><p>Services on table and on its occurrences are grouped in a single &quot;Actions...&quot; menu.</p></li><li><p>The view configuration options are grouped in a single &quot;View...&quot; menu: filter display, tabular input mode, number of rows per page.</p></li></ul>
+<h2>
+<a name="id3"></a>Archive option</h2>
+<p>The item Import / Export of the branch main menu has been renamed &quot;Archives&quot; which is a more generic name compliant with future evolutions.</p><h2>
+<a name="id4"></a>Interactive import process</h2>
+<p>The import procedure has become more flexible so as to allow the user to choose at the finest level which changes to apply. It is very similar to the merge process.</p><h2>
+<a name="id5"></a>Cache activity monitoring</h2>
+<p>The log category named &quot;kernel&quot; has an additional trace that provides a regular mesure of the cache activity:</p><ul>
+<li><p>memory statistics</p></li><li><p>number of loaded / reloaded blocs</p></li><li><p>number of index computations / recomputations</p></li></ul>
+<p>These statistics are logged at most once per minute and if loadings or computations are more than one hundred.</p><h2>
+<a name="id6"></a>Bug fixes</h2>
+<ul>
+<li><p><strong>[01379]</strong> If an adaptation label is modified in a branch, when the branch is merged, the difference is not detected and the new label is not merged. </p></li><li><p><strong>[01443]</strong> Occurrences modifications are not persisted when done inside the &quot;handleBeforeModify&quot; TableTrigger method </p></li><li><p><strong>[01364]</strong> If an xs:int element is used as key, the ordering in the table display is wrong. </p></li><li><p><strong>[01421]</strong> Decimal value in table key are sorted as String. </p></li><li><p><strong>[01448]</strong> EBX does not handle backslash characters in node values. </p></li><li><p><strong>[01449]</strong> On Internet Explorer only: On a manager component displayed on top of Manager windows (example: table reference or osd:select), when clicking on a button (Submit, Submit and Close, Cancel) and then closing the component, the form elements (imput text, textarea..) is Manager main window are disabled. </p></li><li><p><strong>[01450]</strong> On Internet Explorer only: When displaying a table with long column names, header cells are resized but content doesn&#39;t fill the cell lenght, resulting in short lines. </p></li><li><p><strong>[01452]</strong> In xs:AnyUri types, whitespaces should be escaped as %20. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - </title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.3.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.3.0 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.3.0</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Warning on permissions</a></li><li class="toc2"><a href="#id2s2">Bug Fixes</a></li><li class="toc2"><a href="#id2s3">New EBX Functionalities</a></li><li class="toc2"><a href="#id2s4">Permissions on branch services</a></li><li class="toc2"><a href="#id2s5">Engine Improvements</a></li><li class="toc2"><a href="#id2s6">API changes</a></li><li class="toc2"><a href="#id2s7">New EBX.Platform Configuration Wizard</a></li><li class="toc2"><a href="#id2s8">Obsolete Properties</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.3.0 fix 001</h2>
+<p><strong>Release Date: January 23, 2008</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01651]</strong> Branch creation causes a NullPointerException if parent branch has been created prior to release 4.3.0:0575. </p><p><em>Workaround: manually edit and save all branches permissions in ebx-repository adaptation located in reference branch.</em></p></li></ul>
+<h2>
+<a name="id2"></a>4.3.0</h2>
+<p><strong>Release Date: January 18, 2008</strong></p><h3>
+<a name="id2s1"></a>Warning on permissions</h3>
+<p> More restrictive permissions have been implemented on this release for procedures&#39; execution. These new restrictions can prevent a user to execute a specific procedure that he could execute with a previous versions. So, make sure that each profile has the appropriate permissions that enable him to perform a target procedure. Moreover, you can still use the method <code>ProcedureContext.setAllPrivileges(true)</code> in order to disable specific access controls for a given service. </p><h3>
+<a name="id2s2"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01566]</strong> When a branch is closed, its versions are correctly hidden in the Manager, however these versions are not closed. They should be closed in order to cleanly release their associated content. </p></li><li><p><strong>[01583]</strong> For overwritten records, a « delete » button appears on the right of the table. When clicking on it, the record is simply switch to inherited. According to documentation, it should occult the record </p></li><li><p><strong>[01591]</strong> On Manager used in component mode, when a homes comparison is requested, versions displayed under each branch are not correctly sorted. </p></li><li><p><strong>[01612]</strong> Initial transition tries to reset user when an error occurs even if we are in a sub-session. </p></li><li><p><strong>[01613]</strong> If the method <code>SchemaNode.getEnumerationList(ValueContext)</code> is called in the context of a procedure, for an underlying <code>osd:tableRef</code> whose tablePath is relative, it throws <em>IllegalArgumentException, Relative path is not supported in this context...</em> .&nbsp;</p></li><li><p><strong>[01615]</strong> Cannot do an export from Reference, the following error message is displayed: &quot;The value &#39;&#39; is not valid (see enumeration facet).&quot;. </p></li><li><p><strong>[01616]</strong> Compare methods for filters and search functions do not work properly on records whose content has undefined (null) values. </p></li><li><p><strong>[01618]</strong> Calling the method <code>AfterCreateOccurrenceContext.getAdaptationOccurrence()</code> in a handlerAfterCreate trigger raises a null pointer exception. </p></li><li><p><strong>[01619]</strong> If sessions cookies are disabled, some EBX functionalities are not available and display a login page instead. </p></li><li><p><strong>[01620]</strong> The list of selected occurrences is not refreshed when one of them has been deleted. </p></li><li><p><strong>[01621]</strong> Permissions management: for closing a home, it is necessary that the user has the permission to close it, but also that he has the permission to create a version on the parent branch. This last requirement is not justified. </p></li><li><p><strong>[01624]</strong> If an adaptation is no more available after a validation because of severe errors, a Fatal error is thrown in the manager when trying to select it in the initial event. </p></li><li><p><strong>[01625]</strong> When a home (branch or version) is closed but transaction cannot commit successfully, server must be restarted for viewing the branch again. </p></li><li><p><strong>[01629]</strong> When a branch is merged, its versions are correctly hidden in the Manager, however they are not closed. They should be closed in order to cleanly release their associated content. </p></li><li><p><strong>[01630]</strong> On Manager, if the administrator has set the session timeout to zero, no user can be logged into EBX since the session expires as soon as the authentication is made. </p></li><li><p><strong>[01631]</strong> On Manager, it is not possible for the administrator to specify that HTTP session shall never time out. </p></li><li><p><strong>[01642]</strong> When a record is occulted, if user clicks on overwrite button, the record&#39;s edition page is open but the record stay in occulted mode (hence it is read-only). </p></li><li><p><strong>[01643]</strong> When importing an archive with a change set, if there is an instance deletion in it and the target instance does not exist in target branch, then it is impossible to import because no decision can be taken for this instance. </p></li><li><p><strong>[01644]</strong> Javascript error for adaptation duplication in adaptation tree page and French Locale </p></li><li><p><strong>[01645]</strong> In record edition page, when setting a value to null, the icon is not the good one. </p></li><li><p><strong>[01646]</strong> For some fields types, sort does not work properly. </p></li><li><p><strong>[01648]</strong> When an instance is copied ( <code>ProcedureContext.doCopy</code> or &quot;duplicate&quot; button in Manager), internal clone of objects is not enough deep. </p></li></ul>
+<h3>
+<a name="id2s3"></a>New EBX Functionalities</h3>
+<h4>
+Search in data model</h4>
+<p>The end user can henceforth perform a search through the data model. The new search tool can be used to find attributes, tables or columns for which label, path or description contain the given search criteria and to navigate quickly in the instance view.</p><h4>
+Mass update</h4>
+<p>The end user can now apply the same modifications on several records simultaneously.</p><p>The user must first select a single record and submit the desired modifications on it. He then selects the records on which he wants to apply these modifications and choose in the menu &quot;Actions&quot; the item &quot;Apply last modification(s)&quot;.</p><h4>
+Last update by</h4>
+<p>The last user who has modified an adaptation (instance or record) is now displayed.</p><p>Note: Information about last user is updated only for local modifications. That is, if the adaptation is a schema instance, not an occurrence, the user persisted is the one who has performed modifications on the instance not on contained table records.</p><p> The last user information is also available through class <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#getLastUser()">Adaptation</a> . </p><h3>
+<a name="id2s4"></a>Permissions on branch services</h3>
+<p>It is now possible to define permissions on branch services thanks to EBX interface. It is accessed on the &quot;Access Right&quot; page of the branch.</p><p>By default, all branch services are enabled for a given profile. As other branch permissions, an administrator or a &quot;super owner&quot; of the branch can view and modify these services permissions.</p><p> For more information, see <a target="_self" href="../references/permissions.html">Permissions</a> section. </p><h3>
+<a name="id2s5"></a>Engine Improvements</h3>
+<h4>
+Memory usage of comparisons</h4>
+<p> The implementation of <a target="_blank" href="../Java_API/com/orchestranetworks/service/comparison/package-frame.html">comparisons framework</a> has been reviewed so that use cases are less memory consuming. </p><h4>
+Audit trail</h4>
+<p>The updates detail is now activated by default (in previous versions, it was deactivated in the context of procedures if detail was not explicitly enabled). A consequence is that larger disk space can be involved, more particularly for mass-updates.</p><h3>
+<a name="id2s6"></a>API changes</h3>
+<h4>
+Triggers&#39; methods</h4>
+<p> The declaration of &quot; <code>throws OperationException</code> &quot; has been extended to the following methods: </p><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/TableTrigger.html">TableTrigger</a><code>.handleAfter...</code></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/InstanceTrigger.html">InstanceTrigger</a><code>.handleBefore...</code></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/InstanceTrigger.html">InstanceTrigger</a><code>.handleAfter...</code></p></li></ul>
+<p> This API change preserves ascendant compatibility, unless a trigger implementation calls <code>super.handle...</code> .&nbsp;</p><h4>
+Class SessionPermissions</h4>
+<p> The behaviour of methods <a target="_blank" href="../Java_API/com/orchestranetworks/service/SessionPermissions.html">SessionPermissions</a><code>.getOccurrenceActionPermissionTo...</code> has changed: if adaptation specified as argument is an instance instead of an occurrence, they throw <code>IllegalArgumentException</code> instead of returning <code>null</code> .&nbsp;</p><p>New methods have been added:</p><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/service/SessionPermissions.html">SessionPermissions</a><code>.getHomeActionPermissionForService...</code></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/service/SessionPermissions.html">SessionPermissions</a><code>.getInstanceActionPermissionForService...</code></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/service/SessionPermissions.html">SessionPermissions</a><code>.getHomeActionPermissionToCreateRootInstance...</code></p></li></ul>
+<h3>
+<a name="id2s7"></a>New EBX.Platform Configuration Wizard</h3>
+<p><a target="_self" href="../installation/configuration_wizard.html">EBX.Platform Wizard</a> helps to quickly configure new EBX.Platform installation. </p><p> For production environment, administrators should consider to configure manually <a target="_self" href="../installation/properties.html">ebx.properties</a> file. </p><h3>
+<a name="id2s8"></a>Obsolete Properties</h3>
+<p>The following properties have been removed from ebx.properties file:</p><pre class="ebx_example brush: plain">
+#################################################
+## Deprecated. 
+## EBX.Platform repository minimal internal index for inserting new records
+#################################################
+#ebx.repository.insertStartIndex=100
+################################################# 
+## Deprecated. 
+## Default root path for modules. 
+## It is used only when EBX.Platform is not running in a servlet container 
+## Usually, it is the 'webapps' directory. 
+## This property is required but it may have a void value.
+#################################################
+ebx.modules.directory=
+
+################################################# 
+## Deprecated. 
+## Path for persisted sessions
+#################################################
+ebx.sessions.directory=${ebx.home}/ebxSession
+
+#################################################
+## Deprecated. 
+## Path for reporting files
+#################################################
+ebx.reports.directory=${ebx.home}/ebxReporting
+
+#################################################
+## Deprecated. 
+## Automatic reporting batch parameters
+## By default automatic reporting batch is not activated 
+## If automatic reporting batch is activated, it is 
+## schedule by default at 03:00 AM
+##################################################
+#ebx.reports.activate= false 
+#ebx.reports.activate=true 
+#ebx.reports.timer.hour= 2
+#ebx.reports.timer.minute= 30
+
+################################################# 
+## Deprecated. See ebx.directory.factory 
+## Organization Database connection adapters class name
+## (optional, default uses internal EBX.Platform repository)
+#################################################
+#ebx.core.org.OrganizationDatabaseConnection=com.onwbp.core.org.DefaultOrgDatabaseConnection
+
+
+
+################################################################
+## Deprecated. 
+## EBX.Platform persistence system FileSystem is no more supported
+################################################################
+#ebx.persistence.factory=FileSystem
+
+################################################# 
+## Config VM logs (for reporting feature)
+## MUST start at index 0.
+#################################################
+#vm.0.logDir=${ebx.home}/ebxLog
+
+ebx.log4j.category.log.reporting= INFO, ebxFile:reporting
+ebx.log4j.category.log.reportingMail= INFO, ebxFile:reporting
+
+#--------------------------------------------------
+ebx.log4j.appender.reportingMail.Threshold= ERROR
+ebx.log4j.appender.reportingMail=com.onwbp.org.apache.log4j.net.SMTPAppender
+ebx.log4j.appender.reportingMail.To=recipient@domain.com
+ebx.log4j.appender.reportingMail.From=reporting@domain.com
+ebx.log4j.appender.reportingMail.SMTPHost=smtp.domain.com
+ebx.log4j.appender.reportingMail.Subject=EBX.Platform Reporting on Site ${ebx.site.name} (VM ${ebx.vm.id})
+ebx.log4j.appender.reportingMail.layout.ConversionPattern=**Site ${ebx.site.name} (VM${ebx.vm.id}) ** \
+%n${log.defaultConversionPattern}
+ebx.log4j.appender.reportingMail.layout=com.onwbp.org.apache.log4j.PatternLayout</pre>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

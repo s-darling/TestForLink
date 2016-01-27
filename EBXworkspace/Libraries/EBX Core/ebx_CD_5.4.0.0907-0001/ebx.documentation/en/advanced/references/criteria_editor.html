@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Criteria Editor</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="criteria_editor" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/criteria_editor.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</span></div>
+<h1>
+Criteria Editor</h1>
+<p>EBX5 integrates a specific criteria editor. It is used in order to define filters on table, validation and computation rules on data. This editor is based on XPath 1.0 Recommendation.</p><p>Two kinds of criteria exist: atomic criteria and conditional blocks.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../references/xpath_ref.html">Supported XPath syntax</a></p></div>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#conditional">Conditional Blocks</a></li><li class="toc1"><a href="#atomic">Atomic Criteria</a><ul class="toc2">
+<li class="toc2"><a href="#expression">Expression</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="conditional"></a>Conditional Blocks</h2>
+<p>Conditional blocks, or conditional criteria, are made up of atomic criteria and conditional blocs. They express a condition over the criteria. Four kinds of block are defined:</p><ul>
+<li><p><em>Don&#39;t match any criteria</em>: no criteria must be matched.</p></li><li><p><em>Don&#39;t match one of criteria</em>: one of the criteria must not be matched.</p></li><li><p><em>Match all criteria</em> all criteria must be matched.</p></li><li><p><em>Match one of criteria</em> one of the criteria must be matched.</p></li></ul>
+<h2>
+<a name="atomic"></a>Atomic Criteria</h2>
+<p>An atomic predicate. It is defined by a field, an operator and an expression (a value or a XPath formula).</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Field</p></td><td class="ebx_definitionListDefinition"><p>Specify the field of the table on which the criterion applies.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Operator</p></td><td class="ebx_definitionListDefinition"><p>Specify the operator used. Available operators depend on the field type.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Expression</p></td><td class="ebx_definitionListDefinition"><p>Specify the value or expression (see section below).</p></td></tr>
+</table>
+<h3>
+<a name="expression"></a>Expression</h3>
+<p>The expression can either be a fixed value or a formula. While creating a filter, only fixed value is authorized. A formula can be created using the assistant interface while creating validation or computation rules.</p><p><strong>Known limitation:</strong> field formula does not check input values, only syntax and path are checked.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

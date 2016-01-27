@@ -1,0 +1,27 @@
+2016-01-15 09:47:26,839 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 09:47:40,083 EST INFO   log.d3 0985:0003 [ebx-boot] D3 is not activated in 'ebx.properties'.
+2016-01-15 10:18:03,170 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 10:18:14,643 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 10:18:28,790 EST INFO   log.d3 0985:0003 [http-bio-8090-exec-1] D3 is not activated in 'ebx.properties'.
+2016-01-15 10:24:55,435 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 10:25:06,806 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 10:25:22,015 EST INFO   log.d3 0985:0003 [ebx-boot] D3 is not activated in 'ebx.properties'.
+2016-01-15 10:52:10,717 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 13:07:01,734 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 13:07:13,774 EST INFO   log.d3 0985:0003 [ebx-boot] D3 is not activated in 'ebx.properties'.
+2016-01-15 13:10:02,212 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 13:37:29,777 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 13:37:41,596 EST INFO   log.d3 0985:0003 [ebx-boot] D3 is not activated in 'ebx.properties'.
+2016-01-15 13:37:42,231 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 13:52:35,397 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 13:52:50,899 EST INFO   log.d3 0985:0003 [http-bio-8090-exec-1] D3 is not activated in 'ebx.properties'.
+2016-01-15 14:02:13,234 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 14:44:56,675 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 14:45:14,330 EST INFO   log.d3 0985:0003 [ebx-boot] D3 is not activated in 'ebx.properties'.
+2016-01-15 14:52:27,125 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 14:59:00,939 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 14:59:14,212 EST INFO   log.d3 0985:0003 [http-bio-8090-exec-1] D3 is not activated in 'ebx.properties'.
+2016-01-15 15:02:31,819 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-15 15:04:02,064 EST INFO   log.d3 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-15 15:04:13,724 EST INFO   log.d3 0985:0003 [ebx-boot] D3 is not activated in 'ebx.properties'.
+2016-01-15 15:06:02,352 EST INFO   log.d3 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

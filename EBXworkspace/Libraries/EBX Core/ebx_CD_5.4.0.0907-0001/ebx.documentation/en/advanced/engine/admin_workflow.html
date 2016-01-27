@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Data workflow administration</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="admin_workflow" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Administration Guide &gt; Technical administration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/admin_workflow.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Technical administration</span></div>
+<h1>
+Data workflow administration</h1>
+<p>To define general parameters for data workflow execution, manage workflow publications, and oversee data workflows in progress, navigate to the Administration area. Click the down arrow in the navigation pane and select the entry &#39;Workflow&#39;.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#execution">Execution of workflows and history</a><ul class="toc2">
+<li class="toc2"><a href="#executionWorkflow">Workflows table</a></li><li class="toc2"><a href="#executionToken">Tokens table </a></li><li class="toc2"><a href="#executionWorkItem">Work items table </a></li><li class="toc2"><a href="#executionHistory">History table </a></li></ul>
+</li><li class="toc1"><a href="#interactions">Interactions</a></li><li class="toc1"><a href="#publication">Workflow publications</a></li><li class="toc1"><a href="#configuration">Configuration</a><ul class="toc2">
+<li class="toc2"><a href="#configurationEmail">Email configuration</a></li><li class="toc2"><a href="#priorities">Priorities configuration</a></li><li class="toc2"><a href="#configurationTemporal">Temporal tasks</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="execution"></a>Execution of workflows and history</h2>
+<p>Several tables facilitate managing the data workflows currently in progress. They are accessible by navigating to <strong>root &gt; Execution of workflows and history</strong> in the navigation pane.</p><h3>
+<a name="executionWorkflow"></a>Workflows table</h3>
+<p>The &#39;Workflows&#39; table contains instances of all data workflows in the repository. A data workflow is a particular execution instance of a workflow model publication. This table provides access to the data context variables for all data workflows. It can be used to access the status of advancement of the data workflow in terms of current variable values, and in case of data workflow suspension, to modify the variable values.</p><h3>
+<a name="executionToken"></a>Tokens table </h3>
+<p>The &#39;Tokens&#39; table allows the management of data workflows advancement. Each token marks the current step of execution of a data workflow in progress, as well as the state of the data workflow.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../glossary/simple_glossary.html#token">token</a></p></div>
+<h3>
+<a name="executionWorkItem"></a>Work items table </h3>
+<p>The &#39;Work items&#39; table contains all the work items associated with user tasks that currently exist. If necessary, you can manually allocate a work item to a user from this table in the case of a blockage in a data workflow through this table. It is preferable, however, to use the buttons in the workspace of the &#39;Data Workflows&#39; area whenever possible to allocate, reallocate, and deallocate work items.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../glossary/simple_glossary.html#workitem">work item</a></p></div>
+<h3>
+<a name="executionHistory"></a>History table </h3>
+<p>The &#39;History&#39; table contains all actions that have been performed during the execution of workflows. The table is especially useful to view the states of various objects related to workflows at a given moment. This includes actions on work items, variables in the data context, as well as tokens. In case of error, a technical log is available in addition to the contents of the history table.</p><p>From the &#39;Services&#39; menu in the workspace, you can clear the history of completed data workflows or data workflows older than a certain date.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+<p>In cases where unexpected inconsistencies have arisen between the workflow execution technical tables, data workflows may encounter errors. It may then be necessary to run the operation &#39;Clean up inconsistencies in workflow execution tables&#39; from the <strong>Services</strong> menu in the navigation panel under Administration &gt; Workflows.</p></fieldset>
+<h2>
+<a name="interactions"></a>Interactions</h2>
+<p>An <em>interaction</em> is generated automatically for every work item that is created. It is a local data context of a work item and is accessible from an EBX5 session. When a work item is executed, the user performs the assigned actions based upon its interaction, independent of the workflow engine. User tasks define mappings for their input and output parameters to link interactions with the overall data contexts of data workflows.</p><p>Interactions can be useful for monitoring the current parameters of work items. For example, an interaction can be updated manually by a trigger or a UI service.</p><h2>
+<a name="publication"></a>Workflow publications</h2>
+<p>The &#39;Workflow publications&#39; table is a technical table that contains all the workflow model publications in the repository. This table associates published workflow models with their snapshots. It is not recommended to directly modify this table, but rather to use the actions available in the &#39;Workflow Modeling&#39; area to make changes to publications. </p><h2>
+<a name="configuration"></a>Configuration</h2>
+<p>The &#39;Workflow publications&#39; table is a technical table that contains all the workflow model publications in the repository. This table associates published workflow models with their snapshots. It is not recommended to directly modify this table, but rather to use the actions available in the &#39;Workflow Modeling&#39; area to make changes to publications. </p><h3>
+<a name="configurationEmail"></a>Email configuration</h3>
+<p>In order for email notifications to be sent during data workflow execution, the following settings must be configured under &#39;Email configuration&#39;:</p><ul>
+<li><p>&#39;Activate email notification&#39; must be set to &#39;Yes&#39;.</p></li><li><p>The &#39;From email&#39; field must be filled in with the email address from to mark as the sender of notification emails.</p></li></ul>
+<h3>
+<a name="priorities"></a>Priorities configuration</h3>
+<p>The property &#39;Default priority&#39; defines how data workflows and their work items across the repository appear if they have not set a priority level. For example, if this property is set to the value &#39;Normal&#39;, any workflow and work item with no priority will appear to have the priority &#39;Normal&#39;.</p><p>The table &#39;priorities&#39; defines all priority levels available to data workflows in the repository. You may add as many integer priority levels as required, along with their labels, which will appear when users hover over the priority icon in work item tables. You may also select the icons that correspond to each priority level, either from the set provided by EBX5, or by specifying a URL to an icon image file.</p><h3>
+<a name="configurationTemporal"></a>Temporal tasks</h3>
+<p>Under &#39;Temperal tasks&#39;, you can set the polling interval for time-dependent tasks in the workflow, such as deadlines and reminders. If no interval value is set, the steps in progress are checked every hour.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Technical administration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

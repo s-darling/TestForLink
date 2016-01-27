@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Appendix 1 - Automatic data mapping for transferring data</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="AppendixAutomaticDataMappingForTransferringData" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Data Exchange Documentation &gt; Data Exchange Documentation &gt; User-guide</div>
+</div>
+<h1>
+<a name="AppendixAutomaticDataMappingForTransferringData_topPage"></a>Appendix 1 - Automatic data mapping for transferring data</h1>
+<p>This appendix presents a use case about the automatic data mapping feature. The user wants to transfer data between two tables in two different applications relying on different data models (DEX-Source and DEX-Target).</p><p>Since the source and target applications are not based on the same data model, a configuration must be declared in Data exchange.</p><p align="center"><img alt="/10000000000003BB00000281D7AC2F08.png" src="./resources/pictures/10000000000003BB00000281D7AC2F08.png" width="584"></img></p><p>To facilitate the data mapping configuration, one of this application is used as the pivot (DEX-Source) to generate the semantic and data model.</p><p>The generated Tables and Fields are linked to Object Class and Properties respectively of the source application.</p><p>Execution of the service &#39;Generate models&#39; on the application &#39;DEX Source&#39;.</p><p align="center"><img alt="/10000201000003AE00000114A923E083.png" src="./resources/pictures/10000201000003AE00000114A923E083.png" width="584"></img></p><p>The Table &#39;Employee&#39; is then linked to the Object Class &#39;Employee&#39;.</p><p align="center"><img alt="/100000000000040F0000025A470568DD.png" src="./resources/pictures/100000000000040F0000025A470568DD.png" width="584"></img></p><p>Each field of the table &#39;Employee&#39; is linked to its related Property. Below the example of the field &#39;EmployeeName&#39;.</p><p align="center"><img alt="/100000000000045B000002690BB6DED4.png" src="./resources/pictures/100000000000045B000002690BB6DED4.png" width="584"></img></p><p>The table and fields of the target application are manually linked to the same Object Class and Properties of the source application.</p><p align="center"><img alt="/10000000000004730000024D3935F756.png" src="./resources/pictures/10000000000004730000024D3935F756.png" width="584"></img></p><p align="center"><img alt="/100000000000049400000275FA15E114.png" src="./resources/pictures/100000000000049400000275FA15E114.png" width="584"></img></p><p>Once the target application has been configured to share the same Object Class and Properties of the source application, the automatic generation of the data mapping is executed and the data transfer becomes available.</p><p align="center"><img alt="/1000000000000485000002BE7E82D32D.png" src="./resources/pictures/1000000000000485000002BE7E82D32D.png" width="584"></img></p><p>The result of the &#39;Auto data mapping&#39; is illustrated below. It is used to make possible the data transfer from the source application &#39;DEX-Source&#39; to the target &#39;DEX-Target&#39;. </p><p align="center"><img alt="/1000000000000392000001A07384CE6B.png" src="./resources/pictures/1000000000000392000001A07384CE6B.png" width="584"></img></p><p>On the data set of the source application, the &#39;Transfer data&#39; service allows you to transfer the data from the DEX-Source to the DEX-Target directly. </p><p align="center"><img alt="/100000000000033A00000282BA1B2BF3.png" src="./resources/pictures/100000000000033A00000282BA1B2BF3.png" width="536"></img></p><p>Then the target table &#39;Human&#39; is fed with the source table &#39;Employee&#39;.</p><p align="center"><img alt="/1000000000000339000000C9A69A5CCA.png" src="./resources/pictures/1000000000000339000000C9A69A5CCA.png" width="510"></img></p></div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

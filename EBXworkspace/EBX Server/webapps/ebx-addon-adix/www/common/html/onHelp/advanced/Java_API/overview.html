@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+
+  {ebx.copyright.text}
+
+-->
+</head>
+
+<body>
+
+<br /> Description of Data Exchange add-on API.
+<br/>
+<h3>Example of an Adix import</h3>
+<pre>
+	ImportDataAccessSpec dataAccessSpec=new ImportDataAccessSpec(dataset,currentTable,locale,session);
+
+	AdixImportSpec importSpec = new AdixImportSpec();
+	File importedFile = new File(importedFilePath);
+	importSpec.setDataAccessSpec(dataAccessSpec);
+	importSpec.setImportedFile(importedFile);
+	importSpec.setImportPreference(importPreferenceName);
+	importSpec.setImportType(ImportType.CSV);	
+
+	AdixImportResult importResult = AdixFactory.getAdixImport().execute(importSpec);
+</pre>
+<br/>
+<h3>Example of an Adix export</h3>
+<pre>
+	URLProvider urlProvider = new URLProvider(sContext);
+	ExportDataAccessSpec dataAccessSpec = new ExportDataAccessSpec(dataset,currentTable,locale,session);
+
+	AdixExportSpec exportSpec = new AdixExportSpec();
+	exportSpec.setDataAccessSpec(dataAccessSpec);
+	exportSpec.setExportPreference(exportPreferenceName);
+	exportSpec.setImportPreference(importPreferenceName);
+	exportSpec.setExportType(ExportType.EXCEL_FOR_SINGLE_TABLE);
+	exportSpec.setUrlProvider(urlProvider);
+
+	AdixExportResult exportResult = AdixFactory.getAdixExport().execute(exportSpec);
+</pre>
+<h3>Example of registering a transformer class</h3>
+<pre>
+	TransformerDefinition transformerDefinition=new TransformerDefinition(tranformerClass, messageOfTransformerLabel, messageOfTransformerDescription);
+	TransformerCatalog.add(transformerDefinition,repository);
+</pre>
+
+<h3>Example of an Data Exchange export</h3>
+<pre>
+	DataExchangeExportDataAccessSpec dataAccessSpec = new DataExchangeExportDataAccessSpec(dataset,currentTable,session);
+
+	DataExchangeExportSpec exportSpec = new DataExchangeExportSpec();
+	exportSpec.setDataAccessSpec(dataAccessSpec);
+	exportSpec.setTablePaths(tablePaths);
+	exportSpec.setExportType(DataExchangeExportType.EXPORT_DEFAULT_XML);
+	exportSpec.setTargetApplicationLogicalName(targetApplicationLogicalName);
+	exportSpec.setTargetVersion(version);
+
+	DataExchangeExportResult exportResult = DataExchangeFactory.getDataExchangeExport().execute(exportSpec);
+</pre>
+
+<h3>Example of an Data Exchange import</h3>
+<pre>
+	DataExchangeDataAccessSpec dataAccessSpec = new DataExchangeDataAccessSpec(datasetorRecord,session);
+	File importedFile = new File(importedFilePath);
+	
+	DataExchangeImportSpec importSpec = new DataExchangeImportSpec();
+	importSpec.setDataAccessSpec(dataAccessSpec);
+	importSpec.setTablePaths(tablePaths);
+	importSpec.setImportedFile(importedFile);
+	importSpec.setImportType(DataExchangeImportType.IMPORT_XML);
+	importSpec.setImportMode(DataExchangeImportMode.UPDATE_AND_INSERT);
+
+	DataExchangeImportResult importResult = DataExchangeFactory.getDataExchangeImport().execute(importSpec);
+</pre>
+
+<h3>Example of an Data Exchange data transfer</h3>
+<pre>
+	DataExchangeDataAccessSpec dataAccessSpec = new DataExchangeDataAccessSpec(dataset,currentTable,session);
+
+	DataExchangeTransferSpec transferSpec = new DataExchangeTransferSpec();
+	transferSpec.setDataAccessSpec(dataAccessSpec);
+	transferSpec.setTablePaths(tablePaths);
+	transferSpec.setTransferType(DataExchangeTransferType.TRANSFER_DATA);
+	transferSpec.setImportMode(DataExchangeImportMode.UPDATE_AND_INSERT);
+	transferSpec.setTargetDataspace(targetDataspaceKey);
+	transferSpec.setTargetDataset(targetDatasetName);
+	transferSpec.setTransferOption(DataExchangeTransferOption.IN_SAME_DATA_MODEL);
+	
+	DataExchangeImportResult transferResult = DataExchangeFactory.getDataExchangeTransferData().execute(transferSpec);
+</pre>
+</body>
+</html>

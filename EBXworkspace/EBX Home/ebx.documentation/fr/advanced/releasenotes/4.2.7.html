@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.7</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.7.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.7</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.2.7 fix 004</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.2.7 fix 003</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id3">4.2.7 fix 002</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Bug Fixes</a></li><li class="toc2"><a href="#id3s2">Invalid XML characters</a></li></ul>
+</li><li class="toc1"><a href="#id4">4.2.7 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Javadoc update</a></li><li class="toc2"><a href="#id4s2">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id5">4.2.7</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Bug Fixes</a></li><li class="toc2"><a href="#id5s2">Performance enhancements</a></li><li class="toc2"><a href="#id5s3">User interaction enhancements</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.2.7 fix 004</h2>
+<p><strong>Release Date: March 26, 2008</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>01597</strong> On Manager, branch or version description with &quot;carriage return&quot; may cause an exception when displaying this information. </p></li><li><p><strong>01682</strong> In EBX, constraint documentation link to target not (example: a table node for a table reference) is missing if target node label contains a &#39;&amp;&#39; character. </p></li><li><p><strong>01683</strong> Invalid XML characters in complex node cause data loading crash. </p></li><li><p><strong>01684</strong> Invalid XML characters in node with maxOccurs &gt; 1 cause data loading crash. </p></li></ul>
+<h2>
+<a name="id2"></a>4.2.7 fix 003</h2>
+<p><strong>Release Date: March 7, 2008</strong></p><h3>
+<a name="id2s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>01679</strong> Character ascii #14 causes data loading crash (see bug fix #01676). </p></li></ul>
+<h2>
+<a name="id3"></a>4.2.7 fix 002</h2>
+<p><strong>Release Date: March 5, 2008</strong></p><h3>
+<a name="id3s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>01676</strong> Invalid XML characters cause data loading crash (ex: ascii #17). </p></li></ul>
+<h3>
+<a name="id3s2"></a>Invalid XML characters</h3>
+<ul>
+<li><p>Invalid XML characters are removed from values on repository loading.</p></li><li><p>If an input via EBX contains invalid XML characters, an error is raised and a message is returned.</p></li><li><p>If a value with invalid XML characters is set via EBX.API, an exception is thrown.</p></li></ul>
+<h2>
+<a name="id4"></a>4.2.7 fix 001</h2>
+<p><strong>Release Date: October 16, 2007</strong></p><h3>
+<a name="id4s1"></a>Javadoc update</h3>
+<p> Any update procedure that is executed on <em>Reference Branch</em> can update content according to privileges on adaptations. </p><p>For more information, see:</p><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#isPrivilegeToModifyReferenceBranch()">ProcedureContext.html.isPrivilegeToModifyReferenceBranch()</a> .&nbsp;</p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#isAllPrivileges()">ProcedureContext.html.isAllPrivileges()</a> .&nbsp;</p></li></ul>
+<h3>
+<a name="id4s2"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>01555</strong> With manager component, when selecting a node and then going down in complex node, the user cannot return to parent node because the navigation link is not displayed. </p></li><li><p><strong>01556</strong> Import / Export archive buttons are not available according user permissions. </p></li><li><p><strong>01557</strong> The manager component&#39;s header have label and layout errors. </p></li><li><p><strong>01559</strong> Applying search on a complex node with <code>maxoccurs &gt; 1</code> causes an error &quot; <em>An error occurs while applying current filter. This filter has not been applied.</em> &quot;. </p></li><li><p><strong>01560</strong> Applying search on selection node auses an error &quot; <em>An error occurs while applying current filter. This filter has not been applied.</em> &quot;. </p></li><li><p><strong>01561</strong> Selection nodes ( <code>osd:select</code> ) can be used in view definition, either in field selection for criteria (but their values is always null, see documentation) and in field selection for display (but they are not displayed in table view). </p></li><li><p><strong>01562</strong> The owner of the repository and the administrator cannot change branches permissions when they are restricted to hidden or read-only on the reference branch. </p></li><li><p><strong>01563</strong> Branch and version creations&#39; performance is affected when repository defines numerous homes. </p></li><li><p><strong>01564</strong> Partial merge performs a full merge when calling it as a service. </p></li><li><p><strong>01567</strong> If a profile has the right to close a branch owned by another user, the close procedure throws an exception when closing its initial version. </p></li></ul>
+<h2>
+<a name="id5"></a>4.2.7</h2>
+<p><strong>Release Date: October 10, 2007</strong></p><h3>
+<a name="id5s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01541]</strong> If an access to EBX is done via UIHTTPManagerComponent without redirection URL, when the user log out, he is redirected to the login page which is focused. </p></li><li><p><strong>[01543]</strong> If an &quot;on error&quot; redirection URL is defined in EBX, the redirection is not done if timeout and user session is not sub session nor external. </p></li><li><p><strong>[01549]</strong> With manager component, the close button is not effective in some cases and line to calle should not appear. </p></li><li><p><strong>[01550]</strong> Administrator profile may remove its privilege to manage access rights. </p></li><li><p><strong>[01551]</strong> String with facet <code>maxLength &gt; 80</code> has a textarea HTML as UI. Under Microsoft Internet Explorer 6 or less, this textarea may add an undesired Carriage Return character at the end of the user input. </p></li><li><p><strong>[01552]</strong> When two access rights on services are given to a profile with <code>restrictive mode = no</code> , the most permissive is not used. </p></li><li><p><strong>[01553]</strong> The method <code>ServiceContext.getCurrentAdaptation</code> should not throw an exception if only one occurrence is selected in the manager. </p></li><li><p><strong>[01554]</strong> Key value with double quote is not handled as expected using xpath predicate. As a consequence, change set import may throw an exception <code>Internal Error: We shall have the occurrence we want to add</code> .&nbsp;</p></li></ul>
+<h3>
+<a name="id5s2"></a>Performance enhancements</h3>
+<h4>
+Concurrency</h4>
+<p>When an update is performed on a branch (and more particularly a massive update), other user sessions are no more blocked for viewing the content of the branch.</p><p>However two concurrent updates on the same branch are still exclusive, that is, if a second user asks to perform an update on a branch that is already being updated (for example a procedure is being executed), this second user will have to wait for the first update to terminate.</p><p>The validation is also no more exclusive of a concurrent update. This implies that a branch&#39;s validation report has no guarantee to be up-to-date and consistent, unless it is protected against concurrent updates. There are two means to protect a branch from concurrent updates:</p><ol>
+<li><p>By performing validation and subsequent operations inside a procedure execution. This solution can be used only if there are no user interactions between validation and the subsequent operations that require the same consistent and unchanged view. For example, an export procedure would perform the validation and if there are no validation errors, it performs in the same procedure the export to other systems.</p></li><li><p>Otherwise, by setting an explicit persistent lock.</p><p> For more information on persistent locks, see the method Repository.lock(...).&nbsp;</p></li></ol>
+<h4>
+Branch and version creation</h4>
+<p>SQL requests to the underlying database have been optimized for branch and version creation. On Oracle, a benchmark on a large repository shows that the creation time has been divided by 13 (from 6 seconds to 0.4 seconds).</p><p> However, the optimisation has <em>no particular effect</em> on repositories with an average low number of occurrences per table (more precisely a low number of blocs per tables with at least one bloc). For example on a repository with 250 occurrences per defined tables, benchmarks do not notice an enhancement. </p><p>Also benchmarks on standalone HSQLDB do not improve (this is probably because standalone HSQLDB runs in the same Java virtual machine as EBX.Platform engine).</p><h3>
+<a name="id5s3"></a>User interaction enhancements</h3>
+<p>The following enhancements have been made on EBX tool:</p><ol>
+<li><p>Various user interaction scenarios now include a wait page when some calculation is needed on server-side (table selection, validation, agreement publication, adaptation activation, table&#39;s filters reset, etc.).</p></li><li><p>A &quot;Home&quot; link has been added in the left upper corner of the page when EBX is called in focused Manager Component mode (for example, component focused on a branch). This link positions the session back to its initial page.</p></li><li><p>In Manager Component mode, if an &quot;Access denied&quot; is responded, user session was not always cleanly reset. This has been corrected.</p></li><li><p>In Manager Component mode, &quot;log out&quot; buttons aspect has been uniformized.</p></li></ol>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

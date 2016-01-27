@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.0.1 (Development Release)</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.0.1.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.0.1 (Development Release)</h1>
+<p><strong>Release Date: March 13, 2007</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Bug fixes:</a></li><li class="toc1"><a href="#id2">Optimizations:</a></li><li class="toc1"><a href="#id3">API:</a></li><li class="toc1"><a href="#id4">Known limitations:</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Bug fixes:</h2>
+<ul>
+<li><p>[01380] If the action &quot;manage agreements&quot; is permitted, but not the action &quot;create a child&quot;, the button &quot;create agreement&quot; is not disabled and an error is returned if the user clicks ont it.</p></li><li><p>[01381] When an instance is deleted in a branch, the merge process does not work well afterwards.</p></li><li><p>[01382] For renaming repository database tables, the property &quot;ebx.persistence.table.prefix&quot; does not rename correctly relational tables.</p></li><li><p>[01384] At repository startup, if repository is not installed, the exception is not properly caught so the installation on RDBMS instance is not done (only for DB2 and Oracle).</p></li></ul>
+<h2>
+<a name="id2"></a>Optimizations:</h2>
+<ul>
+<li><p>Load process has been optimized for instances with large number of tables.</p></li><li><p>Validation process has been optimized. On some repositories, it is 35 times faster.</p></li></ul>
+<h2>
+<a name="id3"></a>API:</h2>
+<ul>
+<li><p> Added a method for exporting a EBX.Platform archive. See <code>ProcedureContext.doExportHomeToArchive(Archive)</code> .&nbsp;</p></li><li><p> Added a method for importing a EBX.Platform archive. See <code>ProcedureContext.doMerge(Archive)</code> .&nbsp;</p></li><li><p>A pre-release of EBX Component API is provided.</p><p><strong>WARNING: The API to EBX Component is still under review. It will be fully stabilized for release 4.1.</strong></p><p> See classes <code>com.orchestranetworks.ui.UIHttpExternalComponentLink</code> and <code>com.orchestranetworks.ui.UIHttpInternalComponentLink</code> . </p></li></ul>
+<h2>
+<a name="id4"></a>Known limitations:</h2>
+<ul>
+<li><p><strong>Performance:</strong> for large number of tables (in the order of 10,000 tables) and for large number of occurrences (in the order of 10,000,000 occurrences), optimizations are not yet available. </p></li><li><p><strong>Merge process:</strong> in case of instances&#39; add-add conflict, tables in the source are ignored. </p><p>Workaround: first create instances and merge, then tables may be populated and merged.</p></li><li><p><strong>Comparison and Merge:</strong> Header information are not yet included in the comparison user interface nor in the merge process. </p><p>Workaround: for merging header information, a least one value must be updated on instance.</p></li><li><p><strong>Repository locking:</strong> it is not yet detected when two Java virtual machines share the same physical repository. </p><p>Workaround: Repositories&#39; administrator must take care that a repository is not refered by two environments.</p></li><li><p><strong>Permissions management:</strong> a user without the built-in <code>PROVIDER</code> role cannot access on adaptation instances above agreements. </p><p> Workaround: the user must have the built-in <code>PROVIDER</code> role. </p></li><li><p><strong>Access right management:</strong> a node can be set as <code>ReadWrite</code> even it is not adaptable according to schema definition. </p></li><li><p><strong>Manager Components:</strong> UI services can not be addressed through Manager components API. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

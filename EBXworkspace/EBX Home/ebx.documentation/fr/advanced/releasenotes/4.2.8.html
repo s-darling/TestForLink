@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.8</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.8.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.8</h1>
+<p><strong>Release Date: November 6, 2007</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Bug Fixes</a></li><li class="toc1"><a href="#id2">Performance enhancements</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Branch and version creation</a></li><li class="toc2"><a href="#id2s2">Archive import</a></li></ul>
+</li><li class="toc1"><a href="#id3">Temporary directory setting</a></li><li class="toc1"><a href="#id4">Enhancements</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Bug Fixes</h2>
+<ul>
+<li><p><strong>01568</strong> Documentation: &quot;Code only&quot; filter option is not explained. </p></li><li><p><strong>01569</strong> On Manager, User roles list is not displayed with localized labels. </p></li><li><p><strong>01572</strong> Documentation: JAXB libraries are no more required to run EBX.Platform. </p></li><li><p><strong>01573</strong> Documentation: JUnit libraries are no more required nor optional to run EBX.Platform. </p></li><li><p><strong>01575</strong> On Manager, the validation report of a home is not refreshed after an instance validation. </p></li><li><p><strong>01570</strong> On Manager, a home whose permission is set to hidden for a user is still available in homes selector. </p></li><li><p><strong>01571</strong> On Manager, when a user connects the first time, the default selected branch is <em>Reference Branch</em> even if this branch is hidden for his profile. </p></li><li><p><strong>01580</strong> In XML Schema, if the extension <code>osd:trigger</code> is specified inside a named complex type (instead of an anonymous complex type), then it is not enabled. </p></li><li><p><strong>01582</strong> On Manager, in merge process, a <code>NullPointerException</code> is thrown (could not find conflicting record). </p></li><li><p><strong>01584</strong> At server start, the increment value of an <code>osd:autoIncrement</code> is not initialized correctly to the last generated value. </p></li><li><p><strong>01586</strong> On Manager, if user clicks on &quot;validate now&quot; when tab &quot;Infos&quot; or &quot;Permissions&quot; is selected then the validation is not executed as expected. </p></li><li><p><strong>01587</strong> On Manager in development mode, if user clicks on &quot;smart refresh&quot; or &quot;full refresh&quot; and then he clicks on &quot;validate now&quot;, then the link &quot;validate now&quot; is still available as if the content has been modified after this validation. </p></li><li><p><strong>01589</strong> Empty mandatory nodes are no more checked on activated instances validation since new &quot;white space management&quot; from release 4.2.6. </p></li></ul>
+<h2>
+<a name="id2"></a>Performance enhancements</h2>
+<h3>
+<a name="id2s1"></a>Branch and version creation</h3>
+<p>An additional optimization has been implemented for branch and version creation. Regarding version 4.2.7, benchmarks on large repository show that the creation time is divided by ten to twenty.</p><p>The previous optimisation was performing a number of SQL updates that was a linear function of the number of not empty tables. Now, a home creation consists of two SQL updates.</p><h3>
+<a name="id2s2"></a>Archive import</h3>
+<p>A new archive format has been designed for enhancing performance of import. Regarding version 4.2.7, large archives imports benchmarks show that the time is divided by a factor seven to ten.</p><p>Warning: performance enhancement is available only for archives that have been exported from version 4.2.8 or later.</p><h2>
+<a name="id3"></a>Temporary directory setting</h2>
+<p> A new property, <code>ebx.temp.directory</code> ,&nbsp;has been added for setting the directory used for temporary files. </p><p> For more information, see <a href="../installation/properties.html#ebx.temp.directory">Main Configuration</a> .&nbsp;</p><h2>
+<a name="id4"></a>Enhancements</h2>
+<p>The following enhancements have been made:</p><ol>
+<li><p>Error messages for standard XML Schema facets have been reviewed so as to bring more contextual information.</p></li><li><p> Added documentation about <a href="../references/mapping_to_java.html#concurrency">Concurrency and isolation levels</a> .&nbsp;</p></li><li><p> Added documentation about <a target="_blank" href="../Java_API/com/orchestranetworks/instance/Repository.html#consistency">Consistency and validation</a> .&nbsp;</p></li><li><p> Enhanced documentation about <a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/TableTrigger.html#transaction">Transaction Management</a> in triggers. </p></li></ol>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

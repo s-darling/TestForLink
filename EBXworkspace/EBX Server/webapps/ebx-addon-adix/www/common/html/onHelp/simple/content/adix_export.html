@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Exporting data to a CSV or Excel file</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="adix_export" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<h1>
+Exporting data to a CSV or Excel file</h1>
+<p>To export data from a table in EBX5 to a CSV or Excel file, navigate to the table in its data set in the <strong>Data</strong> area. If you want to export the table data filtered by a view, ensure that the view is currently applied to the table. Next, select the export option for a file type from the <strong>Services</strong> menu in the workspace.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The add-on for Microsoft&reg; Excel supports exporting data from simple tabular views only. It is not possible to export data from multi-table views or hierarchical table views.</p></div>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#adix_exportConfigure">Configuring the export</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Options specific to CSV files</a></li><li class="toc2"><a href="#id1s2">Options specific to Excel files</a></li></ul>
+</li><li class="toc1"><a href="#adix_exportRun">Running the export</a></li><li class="toc1"><a href="#id3">Supported data for export</a></li><li class="toc1"><a href="#id4">Known limitations</a></li></ul>
+</div>
+<h2>
+<a name="adix_exportConfigure"></a>Configuring the export</h2>
+<p>In the export form, you must configure some options for the resulting spreadsheet file.</p><h3>
+<a name="id1s1"></a>Options specific to CSV files</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>First row contains header</p></td><td class="ebx_definitionListDefinition"><p>The exported file can contain a header row or no header row. By default, exporting file with a header row option is chosen</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>File encoding</p></td><td class="ebx_definitionListDefinition"><p>The character encoding of the file to be exported</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Separator</p></td><td class="ebx_definitionListDefinition"><p>The character that will be used to separate cells in the spreadsheet file. By default, CSV files use <strong>;</strong> semicolons.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delimiter</p></td><td class="ebx_definitionListDefinition"><p>The character that will be used to mark the beginning and the end of the content of a cell in the spreadsheet file. By default, CSV files use<strong>&quot; </strong> double-quotes.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Only string</p></td><td class="ebx_definitionListDefinition"><p>If selected, the delimiter is only used for string data types. Otherwise, it is applied to all data types.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Date format</p></td><td class="ebx_definitionListDefinition"><p>The date formatting will be used to parse the date values in the exported file. By default, CSV files use the format &quot;MM-dd-yyyy&quot;. Users can enter a custom date format by choosing the option &quot;Other&quot; from the list and inputting the date format in the textbox. Date format should be declared using the characters [yMwWDdE ._,:|/-].</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Date/time format</p></td><td class="ebx_definitionListDefinition"><p>The date/time formatting will be used to parse the date/time values in the exported file. By default, CSV files use the format &quot;MM-dd-yyyy&#39;T&#39;HH:mm:ss&quot;. Users can enter a custom date/time format by choosing the option &quot;Other&quot; from the list and inputting the desired date/time format in the textbox. Date time format should be declared using the characters [ymMwWdDEHhsa ._,:|/-].</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Language</p></td><td class="ebx_definitionListDefinition"><p>The language will be used in the exported file. By default, CSV files use the default language of EBX session.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Primary key</p></td><td class="ebx_definitionListDefinition"><p>The exported file will add more an information column of the primary key. The header of the column is the label of the table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Foreign key</p></td><td class="ebx_definitionListDefinition"><p>The exported file will add more an information column of the foreign key. The header of the column is its name.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Load export preference</p></td><td class="ebx_definitionListDefinition"><p>List of export preferences. All columns of the table will be exported based on configuration of the selected export preference.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Extensions</p></td><td class="ebx_definitionListDefinition"><p>List of transformer classes that will be used to transform data before exporting to file</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Save preference</p></td><td class="ebx_definitionListDefinition"><p>Save the export configuration to reuse later.</p></td></tr>
+</table>
+<h3>
+<a name="id1s2"></a>Options specific to Excel files</h3>
+<h4>
+Options specific to export a table to Excel file</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Save as type</p></td><td class="ebx_definitionListDefinition"><p>With &quot;Excel 97-2003&quot; option, the exported file will be saved as .xls file extension.</p><p>With &quot;Excel 2007&quot; option, the exported file will be saved as .xlsx file extension.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>First row contains header</p></td><td class="ebx_definitionListDefinition"><p>The exported file can contain a header row or no header row. By default, exporting file with a header row option is chosen</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Primary key</p></td><td class="ebx_definitionListDefinition"><p>With &quot;export label&quot; option, the exported file will add more an information column of the primary key. The header of the column is the label of the table.</p><p>With &quot;permalink&quot; option, the exported file will add more an information column of the primary key under hyperlink which redirects to a specific record.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Foreign key</p></td><td class="ebx_definitionListDefinition"><p>With &quot;export label&quot; option, the exported file will add more an information column of the foreign key. The header of the column is its name. With the &quot;permalink&quot; option, the exported file will add more an information column of the foreign key under hyperlink which redirect to a specific record.</p><p>With &quot;permalink&quot; option, the exported file will add more an information column of the foreign key under hyperlink which redirects to a specific record.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Choose the mapping</p></td><td class="ebx_definitionListDefinition"><p>The exported file will be exported based on the selected mapping</p><p>With &quot;Default export&quot; option, all columns of the table will be exported based on their orders. When &quot;Default export&quot; option is checked, &quot;Load import mapping&quot; option will be forbidden and conversely.</p><p>With &quot;Load import mapping&quot; option, all columns of the table will be exported based on mapping of the selected import preference. When &quot;Load import mapping&quot; option is checked, &quot;Default export&quot; option, all specify options for primary key and foreign key (export label, permalink) will be forbidden.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Load import mapping</p></td><td class="ebx_definitionListDefinition"><p>List of import preferences whose mapping will be use in exporting.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Load export preference</p></td><td class="ebx_definitionListDefinition"><p>List of export preferences. All columns of the table will be exported based on configuration of the selected export preference.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Extensions</p></td><td class="ebx_definitionListDefinition"><p>List of transformer classes that will be used to transform data before exporting to file</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Table template</p></td><td class="ebx_definitionListDefinition"><p>Define a template for title, subtitle, header and content of a exported table. You can customize formatting exported data including name, size, style, color of font, background color or adding borders to cells.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Table border</p></td><td class="ebx_definitionListDefinition"><p>Adding border to cells. By default, no border option is chosen.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Title template</p></td><td class="ebx_definitionListDefinition"><p>Define title, its starting position and customize its formatting including name, size, style, color of font and background color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Subitle template</p></td><td class="ebx_definitionListDefinition"><p>Define subtitle, its starting position and customize its formatting including name, size, style, color of font and background color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Header template</p></td><td class="ebx_definitionListDefinition"><p>Define starting position of table header and customize its formatting including name, size, style, color of font and background color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Content template</p></td><td class="ebx_definitionListDefinition"><p>Define starting position of table content and customize its formatting including name, size, style, color of font and background color.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Save preference</p></td><td class="ebx_definitionListDefinition"><p>Save the export configuration to reuse later.</p></td></tr>
+</table>
+<h4>
+Options specific to export the multipletables to Excel file</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Save as type</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>First row contains header</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Primary key</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Foreign key</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Choose the tables to export</p></td><td class="ebx_definitionListDefinition"><p>The selected tables will be exported into multiple sheets in the excel file. The label of a selected table is the name of a sheet in the excel file.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Choose the mapping</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option. However, when &quot;Load import mapping&quot; option is checked, &quot;Choose the tables to export&quot; option will be also forbidden.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Load import mapping</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Load export preference</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Extensions</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Save preference</p></td><td class="ebx_definitionListDefinition"><p>See the table export configuration option.</p></td></tr>
+</table>
+<h2>
+<a name="adix_exportRun"></a>Running the export</h2>
+<p>Click the <strong>Export</strong> button for the form to finalize the export. The export function will pop-up a browser download dialog for the spreadsheet file containing the exported data. You can save the file to your local file system.</p><h2>
+<a name="id3"></a>Supported data for export</h2>
+<table class="">
+<thead>
+<tr>
+<th>Supported data</th><th>Unsupported data</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><ul>
+<li><p>Group of fields</p></li><li><p>Simple foreign keys</p></li><li><p>Lists of simple foreign keys</p></li><li><p>Complex foreign keys</p></li><li><p>Lists of complex foreign keys</p></li></ul>
+</td><td><ul>
+<li><p>Lists of groups</p></li></ul>
+</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="id4"></a>Known limitations</h2>
+<ul>
+<li><p>The export of hyperlinks for a list of foreign keys is not supported.</p></li><li><p>The export for a list of complex foreign keys is not supported when using import mapping.</p></li></ul>
+<div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="./adix_import.html">Importing data from a CSV or Excel file</a></li><li><a href="./index.html">EBX5 Add-on for Microsoft&reg; Excel main page</a></li></ul>
+</div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

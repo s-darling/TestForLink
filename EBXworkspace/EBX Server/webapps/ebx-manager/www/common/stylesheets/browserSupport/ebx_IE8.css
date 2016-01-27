@@ -1,0 +1,237 @@
+
+a:focus,
+button:focus,
+:focus {
+	outline-width: 1px;
+}
+
+legend {
+    padding: 0;
+    margin-left: 2px;
+}
+
+input[type="radio"] {
+	padding: 0;
+}
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 1px 11px 0 11px; /* don't know why... */
+}
+
+#ebx_SwitchButtonMenu>.ebx_MenuButtonArrow {
+	margin: 0 3px 0 3px;
+}
+
+
+.ebx_Input .ebx_IconButton,
+.ebx_SmallFormButtons .ebx_IconButton {
+	vertical-align: -1px;
+}
+
+button.ebx_IconButton .ebx_Icon {
+	vertical-align: -3px; /* 2 (button.padding-bottom) + 1 (button.border-bottom) */
+}
+
+.ebx_TextAndIconLeftButton .ebx_Icon,
+.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-top: -1px;
+}
+
+.ebx_SelectButtonItemLabel .ebx_Icon {
+	margin-bottom: -1px;
+}
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	margin-bottom: -2px;
+}
+
+.ebx_Now .ebx_Icon {
+	text-indent: -1px;
+}
+
+h2 .nodeLabel button.ebx_LabelDocButton {
+    vertical-align: 3px;
+}
+
+/* FIXME bug on IE8: when depth is > 2, the width of DocButton,Icon,ExpandCollapse,Space,Indent is very large */
+/* center align of expandSollapse Button is less ugly, and is face to face with the indent line */
+.ebx_FieldExpandCollapse {
+	text-align: center;
+}
+
+.ebx_Form .ebx_OverwrittenValue .ebx_OverwrittenNull {
+	vertical-align: -2px;
+}
+
+.ebx_TextareaBaselineAligner {
+	display: inline;
+	vertical-align: 3px;
+}
+.ebx_TextareaBaselineAligner textarea {
+	margin-top: 0;
+}
+
+div.ebx_WorkspaceFormTabContent div.ebx_Field div.ebx_Input div.ebx_ComplexFields table.ebx_FieldListNoMargin td.ebx_Input {
+	width: auto;
+}
+
+.yui-skin-sam .ebx_InvisibleMask,
+.ebx_PageMask,
+#ebx_InputTextWizardMask,
+#ebx_Form_CalendarMask,
+#ebx_ColorPickerMask {
+	background-image: url(../../images/onCommon/ebx_spacer.gif);
+}
+
+.ebx_WorkflowBadge {
+	border-style: solid;
+	border-width: 1px;
+	line-height: 10px;
+}
+.ebx_workflow_deadline {
+	vertical-align: -1px;
+}
+
+#ebx_DisplayMessageBox .ebx_Icon {
+	vertical-align: -3px;
+}
+
+/* replace min-width: max-content; */
+.ebx_Button.ebx_fullWidthButtonCell {
+	overflow: hidden;
+}
+a.ebx_Button.ebx_fullWidthButtonCell {
+	vertical-align: -6px;
+}
+
+#ebx_HideHeader {
+	visibility: hidden;
+}
+#ebx_Header:hover #ebx_HideHeader {
+	visibility: visible;
+}
+
+.tvMessageContainer {
+	background-image: url(../../images/onCommon/ebx_alpha50_FFFFFF.png);
+}
+
+
+.tvFixed tr.ie8_last-child td,
+.tvMain tr.ie8_last-child td {
+	border-bottom: 1px solid #E0E0E0;
+}
+
+.tvHeaderFixed th,
+.tvHeaderMain th,
+.tvFixed td,
+.tvMain td {
+	min-height: 0px; /* reinit the not working min-height */
+	height: 23px; /* acts like a min-height */
+}
+
+.tvContainer.tvContainerVScroll .tvFixed tr.ie8_last-child td,
+.tvContainer.tvContainerVScroll .tvMain tr.ie8_last-child td {
+	border-bottom-width: 0;
+}
+
+.tvContainer .ebx_IconButton.ebx_OpenTableRefButtonInTable {
+    margin-left: -20px;/* otherwise, if the table cell is too narrow, the button goes above the label, causing the line too height */
+}
+
+.ebx_OpenTableRefLabelInTable {
+    margin-top: -0.9em; /* don't know why IE sets a huge margin above */
+}
+.tvContainer .ebx_IconButton.ebx_OpenTableRefButtonInTable {
+    margin-top: -1em; /* don't know why IE sets a huge margin above */
+}
+
+
+a.cke_button_disabled,
+a.cke_button_disabled:hover,
+a.cke_button_disabled:focus,
+a.cke_button_disabled:active {
+	filter:alpha(opacity = 30);
+}
+.cke_button_disabled .cke_button_icon {
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00ffffff,endColorstr=#00ffffff);
+}
+.cke_button_off:hover,
+.cke_button_off:focus,
+.cke_button_off:active {
+	filter:alpha(opacity = 100);
+}
+.cke_combo_disabled .cke_combo_inlinelabel,
+.cke_combo_disabled .cke_combo_open {
+	filter:alpha(opacity = 30);
+}
+.cke_toolbox_collapser {
+	border:1px solid #a6a6a6;
+}
+.cke_toolbox_collapser .cke_arrow {
+	margin-top:1px;
+}
+.cke_hc .cke_top,.cke_hc .cke_bottom,
+.cke_hc .cke_combo_button,
+.cke_hc a.cke_combo_button:hover,
+.cke_hc a.cke_combo_button:focus,
+.cke_hc .cke_toolgroup,
+.cke_hc .cke_button_on,
+.cke_hc a.cke_button_off:hover,
+.cke_hc a.cke_button_off:focus,
+.cke_hc a.cke_button_off:active,
+.cke_hc .cke_toolbox_collapser,
+.cke_hc .cke_toolbox_collapser:hover,
+.cke_hc .cke_panel_grouptitle {
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.cke_toolbox_collapser .cke_arrow {
+	border-width:4px;
+}
+.cke_toolbox_collapser.cke_toolbox_collapser_min .cke_arrow {
+	border-width:3px;
+}
+.cke_toolbox_collapser .cke_arrow {
+	margin-top:0;
+}
+
+.cke_rtl input.cke_dialog_ui_input_text,
+.cke_rtl input.cke_dialog_ui_input_password {
+	padding-right:2px;
+}
+.cke_rtl div.cke_dialog_ui_input_text,
+.cke_rtl div.cke_dialog_ui_input_password {
+	padding-left:2px;
+}
+.cke_rtl div.cke_dialog_ui_input_text {
+	padding-right:1px;
+}
+.cke_rtl .cke_dialog_ui_vbox_child,
+.cke_rtl .cke_dialog_ui_hbox_child,
+.cke_rtl .cke_dialog_ui_hbox_first,
+.cke_rtl .cke_dialog_ui_hbox_last {
+	padding-right:2px!important;
+}
+.cke_hc .cke_dialog_title,
+.cke_hc .cke_dialog_footer,
+.cke_hc a.cke_dialog_tab,
+.cke_hc a.cke_dialog_ui_button,
+.cke_hc a.cke_dialog_ui_button:hover,
+.cke_hc a.cke_dialog_ui_button_ok,
+.cke_hc a.cke_dialog_ui_button_ok:hover {
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.cke_hc div.cke_dialog_ui_input_text,
+.cke_hc div.cke_dialog_ui_input_password,
+.cke_hc div.cke_dialog_ui_input_textarea,
+.cke_hc div.cke_dialog_ui_input_select,
+.cke_hc div.cke_dialog_ui_input_file {
+	border:0;
+}
+a.cke_dialog_ui_button_ok:focus span,
+a.cke_dialog_ui_button_ok:active span,
+a.cke_dialog_ui_button_cancel:focus span,
+a.cke_dialog_ui_button_cancel:active span {
+	display:block;
+}
+

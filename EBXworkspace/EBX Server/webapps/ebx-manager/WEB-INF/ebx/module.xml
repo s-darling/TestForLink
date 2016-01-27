@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:ebx-schemas:module_2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ebx-schemas:module_2.1 http://schema.orchestranetworks.com/module_2.1.xsd">
+	<!-- DO NOT CHANGE 'name' ELEMENT, since it is reserved. -->
+	<name>ebx-manager</name>
+	<publicPath>ebx-manager</publicPath>
+	<dependencies>
+		<module alias="root" name="ebx-root-1.0" />
+	</dependencies>
+	<installerClassName>com.orchestranetworks.manager.core.Installer</installerClassName>
+</module>
+

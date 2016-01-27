@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Created-By: Orchestra Networks
+Implementation-Title: Geomatch Module
+Implementation-Version: 5.6.1
+Implementation-Vendor: Orchestra Networks
+Class-Path: lib/ebx.jar

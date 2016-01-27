@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.2</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.2.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.2</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.2.2 fix 004</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.2.2 fix 003</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Bug Fixes</a></li><li class="toc2"><a href="#id2s2">API:</a></li></ul>
+</li><li class="toc1"><a href="#id3">4.2.2 fix 002</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Bug Fixes</a></li><li class="toc2"><a href="#id3s2">Manager</a></li></ul>
+</li><li class="toc1"><a href="#id4">4.2.2 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id5">4.2.2</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Bug Fixes</a></li><li class="toc2"><a href="#id5s2">Manager</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.2.2 fix 004</h2>
+<p><strong>Release Date: June 29, 2007</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01476]</strong> Table print fails if a type boolean has null value. </p></li><li><p><strong>[01477]</strong><code>UIBeanEditor.validateInput(UIRequestContext)</code> when the <code>UIRenderingMode</code> is not edition. </p></li><li><p><strong>[01478]</strong> Adding a criteria in a view may request to press the &quot;Add&quot; button twice. </p></li><li><p><strong>[01479]</strong> Any profile allowed in the branch can modifiy branch documentation. </p></li><li><p><strong>[01480]</strong><code>ProcedureContext.doMergeToParent(AdaptationHome)</code> raises exception when merging a <code>Reference</code> child branch. </p></li><li><p><strong>[01481]</strong> Import archive button does not work with Microsoft Internet Explorer. </p></li><li><p><strong>[01483]</strong> Adaptation permissions viewed in EBX may not be the right permissions for the current branch, after navigating through branches. </p></li></ul>
+<h2>
+<a name="id2"></a>4.2.2 fix 003</h2>
+<p><strong>Release Date: June 25, 2007</strong></p><h3>
+<a name="id2s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01474]</strong> A table node, with a dynamic constraint with a reference to a node outside the table, causes a <code>PathAccessException</code> on filtering. </p></li><li><p><strong>[01475]</strong> EBX table display consumes much resources on Microsoft Internet Explorer. </p></li></ul>
+<h3>
+<a name="id2s2"></a>API:</h3>
+<ul>
+<li><p> Added a method for merging a source branch to current branch. See <code>ProcedureContext.doMergeToParent(AdaptationHome)</code> .&nbsp;</p></li></ul>
+<h2>
+<a name="id3"></a>4.2.2 fix 002</h2>
+<p><strong>Release Date: June 22, 2007</strong></p><h3>
+<a name="id3s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01471]</strong> web resources are not setup as required if <code>templates.checksIfUpdated</code> is set to false in ebx.properties. This causes a <code>NullPointerException</code> after switching language in EBX. </p></li><li><p><strong>[01472]</strong> Table key node is editable while creating a record in a pre-filtered view (ex: via navigation link) if this node is targeted by the filter specification. </p></li></ul>
+<h3>
+<a name="id3s2"></a>Manager</h3>
+<ul>
+<li><p>Add a user preferred language switcher in My Profile page of EBX</p></li></ul>
+<h2>
+<a name="id4"></a>4.2.2 fix 001</h2>
+<p><strong>Release Date: June 21, 2007</strong></p><h3>
+<a name="id4s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01469]</strong> User cannot change EBX session locale. </p></li><li><p><strong>[01470]</strong> Filters on table are too restrictive for <code>String</code> elements with nomenclature constraint (ex: <code>osd:tableRef</code> ). This causes <code>osd:select</code> to return an empty selection. </p></li></ul>
+<h2>
+<a name="id5"></a>4.2.2</h2>
+<p><strong>Release Date: June 19, 2007</strong></p><h3>
+<a name="id5s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01454]</strong> When importing a changeset, the import procedure tooks adaptations in the order regardless the presence of parent into archive but verifying only the presence in the target. Now the procedure adds parent if necessary. </p></li><li><p><strong>[01455]</strong> After an instance has been validated, if a parent instance that is does inherit from is updated, then the &quot;validate now&quot; action is not enabled, even if validation result has been potentially impacted. </p></li><li><p><strong>[01456]</strong> If a &quot;root&quot; occurrence is defined in an instance, the user is still able to create a &quot;root&quot; occurrence with same primary key in an ancestor. The general principle that is applied here is to avoid blocking situations during users&#39; interaction and to detect problems through validation. However, here the validation does not report this particular situation. </p></li><li><p><strong>[01457]</strong> Some actions performed in the Manager are not logged to history with full details on the update done (for example an occurrence deletion does not specify the occurrence deleted). </p></li><li><p><strong>[01463]</strong> A &#39;read-only&#39; user is able to merge or close a branch. </p></li><li><p><strong>[01464]</strong> Node selection does not show all node path name if path name is very long (MS I.E. only). </p></li><li><p><strong>[01465]</strong> Browser history back button causes &#39;Invalid Request&#39; error messages. </p></li><li><p><strong>[01466]</strong> Some <code>fr_FR</code> locale specific issues have been reported on EBX. </p></li></ul>
+<h3>
+<a name="id5s2"></a>Manager</h3>
+<ul>
+<li><p>Add an option to prevent the use of browser history back button. This option is set by default and can be unset via EBX configuration adaptation (&quot;Ergonomic &amp; behaviour policy&quot;).</p><p>EBX does not support back navigation in browser history; If this option is disabled, user may face many &#39;Invalid Request&#39; error messages while going back in browser navigation history.</p></li><li><p>Enlarge node list selection for defining permission.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

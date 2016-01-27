@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Vues personnalis&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_views" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Jeux de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/view.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Jeux de données</span></div>
+<h1>
+Vues personnalis&eacute;es</h1>
+<p>Il y a deux modes avanc&eacute;s de visualisation :</p><ul>
+<li><p>le premier est sp&eacute;cifique aux tables et vous permet de filtrer les informations selon des crit&egrave;res donn&eacute;s (<a target="_self" href="#simple">vue taublaire simple</a>),</p></li><li><p>le deuxi&egrave;me vous permet d&#39;&eacute;tablir des liens et d&#39;organiser des informations issues de diff&eacute;rentes tables (<a target="_self" href="#hierarchies">hi&eacute;rarchies</a>).</p></li></ul>
+<p>Une vue personnalis&eacute; peut &ecirc;tre cr&eacute;er via le bouton <em>Vue</em>.</p><div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#publication">Publication de vue</a></li><li class="toc1"><a href="#description">Description d'une vue</a></li><li class="toc1"><a href="#simple">Vue tabulaire simple</a><ul class="toc2">
+<li class="toc2"><a href="#filters">Critères de recherche</a></li><li class="toc2"><a href="#id3s2">Critères de tri</a></li><li class="toc2"><a href="#columns">Affichage des colonnes</a></li></ul>
+</li><li class="toc1"><a href="#hierarchies">Hiérarchies</a><ul class="toc2">
+<li class="toc2"><a href="#dimension">Dimension d'une hiérarchie</a></li><li class="toc2"><a href="#configuration">Configuration d'une hiérarchie</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="publication"></a>Publication de vue</h2>
+<p>Une vue peut &ecirc;tre publi&eacute;e afin de la rendre accessible &agrave; tous les autres utilisateurs gr&acirc;ce aux <em>composants web</em>, t&acirc;ches utilisateurs du workflow, ou data services. Il s&#39;agit d&#39;une publication technique, elle ne donnera pas acc&egrave;s &agrave; cette vue &agrave; tous les utilisateurs via l&#39;interface graphique (voir <em>Profils autoris&eacute;s</em> ci dessous).</p><h2>
+<a name="description"></a>Description d&#39;une vue</h2>
+<p>Ce formulaire permet de sp&eacute;cifier les informations li&eacute;es &agrave; la vue personnalis&eacute;e communes &agrave; tous les modes.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Propri&eacute;taire</p></td><td class="ebx_definitionListDefinition"><p>Nom du propri&eacute;taire de la vue personnalis&eacute;e, qui peut &agrave; ce titre la g&eacute;rer et la modifier.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation</p></td><td class="ebx_definitionListDefinition"><p>Libell&eacute; et description associ&eacute;s &agrave; la vue personnalis&eacute;e dans diff&eacute;rentes langues.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Profils autoris&eacute;s</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;tail des profils ayant le droit d&#39;utiliser la vue personnalis&eacute;e.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Mode de la vue</p></td><td class="ebx_definitionListDefinition"><p>Mode de la vue personnalis&eacute;e (voir ci dessus).</p></td></tr>
+</table>
+<h2>
+<a name="simple"></a>Vue tabulaire simple</h2>
+<p>Les vues tabulaires simples offrent la possibilit&eacute; de d&eacute;finir des crit&egrave;res pour filtrer les enregistrements et de s&eacute;lectionner les colonnes &agrave; afficher.</p><h3>
+<a name="filters"></a>Crit&egrave;res de recherche</h3>
+<p>Ce champs permet de d&eacute;finir des crit&egrave;res, qui vont &ecirc;tre utilis&eacute;s pour filtrer les enregistrements.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../references/criteria_editor.html">Documentation sur l&#39;&eacute;diteur de crit&egrave;res</a></p></div>
+<h3>
+<a name="id3s2"></a>Crit&egrave;res de tri</h3>
+<p>Ce champs permet de d&eacute;finir des crit&egrave;res, qui vont &ecirc;tre utilis&eacute;s pour trier les enregistrements.</p><h3>
+<a name="columns"></a>Affichage des colonnes</h3>
+<p>Ce champs permet de s&eacute;lectionner, &agrave; l&#39;aide des cases &agrave; cocher, les colonnes de la table &agrave; afficher dans la vue personnalis&eacute;e.</p><h2>
+<a name="hierarchies"></a>Hi&eacute;rarchies</h2>
+<p>Une hi&eacute;rarchie est une arborescence permettant de souligner les relations existant entre les donn&eacute;es. Elle peut &ecirc;tre structur&eacute;e sur plusieurs niveaux, appel&eacute;s niveaux de dimension. En outre, il est possible de d&eacute;finir des crit&egrave;res sur des niveaux permettant de filtrer les enregistrements.</p><h3>
+<a name="dimension"></a>Dimension d&#39;une hi&eacute;rarchie</h3>
+<p>Une dimension est ce qui d&eacute;finit les diff&eacute;rentes d&eacute;pendances dans la hi&eacute;rarchie (exemple&nbsp;:&nbsp;produits par cat&eacute;gories). En d&eacute;marrant d&#39;une table cible, s&eacute;lectionner les liens de d&eacute;pendances pas &agrave; pas jusqu&#39;au dernier.</p><p>Chaque lien de d&eacute;pendance &eacute;tablit devient un nouveau niveau de dimension.</p><h3>
+<a name="configuration"></a>Configuration d&#39;une hi&eacute;rarchie</h3>
+<p>Ce formulaire permet de configurer les niveaux de hi&eacute;rarchie. Pour chaque niveau, vous pouvez configurer les libell&eacute;s et sp&eacute;cifier les crit&egrave;res de filtrage des enregistrements.</p><h4>
+<a name="conf_label"></a>Libell&eacute;s</h4>
+<p>Dans l&#39;arbre, les enregistrements sont nomm&eacute;s par des libell&eacute;s, &eacute;crit dans diff&eacute;rentes langues. Les champs d&#39;enregistrement peuvent &ecirc;tre ais&eacute;ment ins&eacute;r&eacute;s dans un libell&eacute; en utilisant l&#39;assistant (utiliser le bouton &agrave; droite du champ pour y acc&eacute;der).</p><h4>
+<a name="conf_filter"></a>Filtre</h4>
+<p>Ce formulaire permet de d&eacute;finir des crit&egrave;res, qui pourront &ecirc;tre utilis&eacute;s pour filtrer les enregistrements.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../references/criteria_editor.html">Documentation sur l&#39;&eacute;diteur de crit&egrave;res</a></p></div>
+<h4>
+<a name="conf_ordering"></a>Ordonnancement</h4>
+<p>Il est possible de sp&eacute;cifier un champ d&#39;ordonnancement qui permettra &agrave; l&#39;utilisateur de d&eacute;finir l&#39;ordre des noeuds enfants. Un champ d&#39;ordonnancement doit &ecirc;tre un entier et &ecirc;tre en mode cach&eacute; dans le mod&egrave;le de donn&eacute;es.</p><p>Des actions de positionnement sur chaque noeud sont alors possibles, &agrave; moins que le champ d&#39;ordonnancement ne soit en &#39;lecture seulement&#39; ou qu&#39;un filtre ne soit d&eacute;fini sur la hi&eacute;rarchie.</p><p> A d&eacute;faut d&#39;un noeud d&#39;ordonnancement, les noeuds enfants sont tri&eacute;s selon l&#39;ordre alphab&eacute;tique des libell&eacute;s des noeuds.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Jeux de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

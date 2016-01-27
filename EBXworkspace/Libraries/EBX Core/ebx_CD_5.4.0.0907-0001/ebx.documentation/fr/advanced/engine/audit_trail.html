@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Audit Trail</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="admin_audit" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Administration Guide &gt; Technical administration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/audit_trail.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Technical administration</span></div>
+<h1>
+Audit Trail</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview</a></li><li class="toc1"><a href="#updatesDetail">Updates detail and disk management</a></li><li class="toc1"><a href="#id3">Files organization</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">"Closed" audit files</a></li><li class="toc2"><a href="#id3s2">Current audit files for writing</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview</h2>
+<p>XML audit trail is a feature that allows logging updates int XML files (an alternative history feature is available, see <a target="_self" href="../references/history.html">History</a> documentation for more details).</p><p>Any persistent update performed on the EBX5 repository is logged to an audit trail XML file. This is also the case for any procedure execution (even if it does not perform an update, a procedure is always considered as a transaction). The following information is logged:</p><ul>
+<li><p>the transaction type (data set creation, record modification, record deletion, specific procedure, etc.);</p></li><li><p>the data space or snapshot on which the transaction is executed;</p></li><li><p>the transaction source: if the action is initiated by EBX5, this source is described by the user identity, HTTP session identifier and client IP address; if it is initiated programmatically, only the user identity is shown;</p></li><li><p>also concerning the session, the optional value &quot;trackingInfo&quot;;</p></li><li><p>the transaction date and time (in milliseconds);</p></li><li><p>the transaction UUID (conforming to Leach-Salz variant, version 1);</p></li><li><p>if the transaction has failed, information about the error;</p></li><li><p>the detail of updates done (if there are any updates and if history detail is activated, see next section).</p></li></ul>
+<h2>
+<a name="updatesDetail"></a>Updates detail and disk management</h2>
+<p>The audit trail is able to describe all updates made into the EBX5 repository, at the finest level. Hence, the files can be quite large and the audit trail directory must be supervised with caution. The following facts should be taken into account:</p><ol>
+<li><p>If an archive import is executed in non-interactive mode (without a change set), the audit trail does not detail the updates: it only specifies the archive that has been imported. In this case, if it is important to keep a fine trace of the import-replace, the used archive must be preserved.</p></li><li><p> If an archive import is executed in interactive mode (with change set), or if a data space is merged to its parent, the resulting log size will be nearly equal to the unzipped size of the archive multiplicated by three. Furthermore, for consistency issues, each transaction is logged into a temporary file (in the audit trail directory) before being moved into the main file. So EBX5 requires <em>at least six times the unzipped size of the largest archive that can be imported</em> .&nbsp;</p></li><li><p> In the context of a specific procedure that performs many updates that need not be audited, it is still possible for the developer to disable the detailed history with the method <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setHistoryActivation(boolean)">ProcedureContext.setHistoryActivation(boolean)</a> .&nbsp;</p></li></ol>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../engine/repository_administration.html#monitoring_file_system">EBX5 monitoring</a></p></div>
+<h2>
+<a name="id3"></a>Files organization</h2>
+<p> All audit trail files are stored in the directory <code>${<a target="_self" href="../installation/properties.html#rootDirectory">ebx.repository.directory</a>}/History</code>. </p><h3>
+<a name="id3s1"></a>&quot;Closed&quot; audit files</h3>
+<p>Each file is named as:</p><p><em><code>aaaa-mm-dd</code></em><code>-part</code><em><code>nn</code></em><code>.xml</code></p><p> where <em><code>aaaa-mm-dd</code></em> is the file date and <em><code>nn</code></em> is the file index in this day. </p><h3>
+<a name="id3s2"></a>Current audit files for writing</h3>
+<p>When an audit file is being written, the XML structure implies to work in an &quot;open mode&quot;. XML elements of the modifications are added to a text file named:</p><p><em><code>aaaa-mm-dd</code></em><code>-part</code><em><code>nn</code></em><code>Content.txt</code></p><p>The standard XML format is still available in an XML file that references the text file. This file is named:</p><p><em><code>aaaa-mm-dd</code></em><code>-part</code><em><code>nn</code></em><code>Ref.xml</code></p><p>Those two files are then re-aggregated in a &quot;closed&quot; XML file when the repository is cleanly shut down or EBX5 is restarted.</p><p>Example of an audit directory:</p><table border="0" cellpadding="2" cellspacing="0" width="100%" class="">
+<tbody>
+<tr>
+<td><p>2004-04-05-part00.xml</p><p>2004-04-05-part01.xml</p><p>2004-04-06-part00.xml</p><p>2004-04-06-part01.xml</p><p>2004-04-06-part02.xml</p><p>2004-04-06-part03.xml</p><p>2004-04-07-part00.xml</p><p>2004-04-10-part00.xml</p><p>2004-04-11-part00Content.txt</p><p>2004-04-11-part00Ref.xml</p></td></tr>
+</tbody>
+</table>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Technical administration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

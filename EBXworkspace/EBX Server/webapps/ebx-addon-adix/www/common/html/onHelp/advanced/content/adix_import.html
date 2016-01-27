@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Importing data from a CSV or Excel file</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="adix_import" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Data Exchange Documentation &gt; Data Exchange Documentation &gt; Introduction</div>
+</div>
+<h1>
+Importing data from a CSV or Excel file</h1>
+<p>The process for importing data into EBX5 tables from a CSV or Excel file involves the following steps:</p><ul>
+<li><p>Uploading the file</p></li><li><p>Choosing the import configuration</p></li><li><p>Mapping the spreadsheet to fields</p></li><li><p>Simulating, then executing the import</p></li></ul>
+<p>To initiate the import of a file, navigate to the table into which the data will be imported in its data set in the <strong>Data</strong> area. Next, select the import option for the type of your file from the <strong>Services</strong> menu in the workspace.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#adix_importConfigure">Configuring the import</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Options specific to CSV files</a></li><li class="toc2"><a href="#id1s2">Options specific to Excel files</a></li></ul>
+</li><li class="toc1"><a href="#adix_importMappingTable">Mapping table form</a></li><li class="toc1"><a href="#adix_importMapping">Data structure mapping form</a></li><li class="toc1"><a href="#adix_importSimulate">Simulating and completing the import</a></li><li class="toc1"><a href="#id5">Supported data for import</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">CSV imports</a></li><li class="toc2"><a href="#id5s2">Excel imports</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="adix_importConfigure"></a>Configuring the import</h2>
+<p>Several settings describing the format of the file must be configured before the import is performed.</p><h3>
+<a name="id1s1"></a>Options specific to CSV files</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Import mode</p></td><td class="ebx_definitionListDefinition"><p>The options are as follows:</p><ul>
+<li><p><strong>Update and insert</strong>: If a record with the same primary key already exists in the target table, it is updated. Otherwise, a new record is inserted.</p></li><li><p><strong>Insert only</strong>: Only record creations are allowed. If a record exists in the target table with the same primary key as in the source, an error is returned.</p></li><li><p><strong>Update only</strong>: Only modifications of existing records are allowed. If a record with the same primary key does not exist in the target table, an error is returned.</p></li><li><p><strong>Replace all content</strong>: All existing data in the table will be deleted before importing the data from the file.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>First row contains header</p></td><td class="ebx_definitionListDefinition"><p>The imported file can contain a header row or no header row. By default, the option of importing the file with a header row is used.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>File encoding</p></td><td class="ebx_definitionListDefinition"><p>The character encoding of the file being imported</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Separator</p></td><td class="ebx_definitionListDefinition"><p>The character used to separate cells in the spreadsheet file. By default, CSV files use <strong>;</strong> semicolons.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delimiter</p></td><td class="ebx_definitionListDefinition"><p>The character used to mark the beginning and the end of the content of a cell in the spreadsheet file. By default, CSV files use <strong>&quot; </strong> double-quotes.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Only string</p></td><td class="ebx_definitionListDefinition"><p>If selected, the delimiter is only used for string data types. Otherwise, it is applied to all data types.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Decimal symbol</p></td><td class="ebx_definitionListDefinition"><p>The character to used to mark a decimal</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Force the import</p></td><td class="ebx_definitionListDefinition"><p>All triggers and constrains will be deactivated if this option is choosen. Otherwise, all triggers and constrains are activated.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Download file of invalid data</p></td><td class="ebx_definitionListDefinition"><p>The wrong records will be saved a file. When users click the download link, the temporary file will be popup to save.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Extensions</p></td><td class="ebx_definitionListDefinition"><p>List of transformer classes that will be used to transform data before importing into the repository.</p></td></tr>
+</table>
+<h3>
+<a name="id1s2"></a>Options specific to Excel files</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Import mode</p></td><td class="ebx_definitionListDefinition"><p>See the CSV import configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>First row contains header</p></td><td class="ebx_definitionListDefinition"><p>See the CSV import configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Force the import</p></td><td class="ebx_definitionListDefinition"><p>See the CSV import configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Download file of invalid data</p></td><td class="ebx_definitionListDefinition"><p>See the CSV import configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Extensions</p></td><td class="ebx_definitionListDefinition"><p>See the CSV import configuration option.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Starting position of table content</p></td><td class="ebx_definitionListDefinition"><p>Define row and column of starting cell of table content (in case of importing an Excel file into a table).</p></td></tr>
+</table>
+<h2>
+<a name="adix_importMappingTable"></a>Mapping table form</h2>
+<p>Mapping table will be executed in the importing from a Excel file with multiple sheets. For each sheet into uploaded Excel file, you must select a suitable table in the dataset to map and you can also define row and column index of starting cell data of each sheet in case &#39;Choose starting position&#39; option is activated for &#39;Each sheet&#39;.</p><p>You can apply the row and column index of the starting cell for all sheets if &#39;Choose starting position&#39; option is activated for &#39;All sheets&#39;.</p><p>From this page, you can also save a preference with the current configuration and mapping. In order to apply the same mapping during a future import, you can select this saved preference on the file upload page from the &#39;Load preferences&#39; pull-down menu.</p><h2>
+<a name="adix_importMapping"></a>Data structure mapping form</h2>
+<p>You must define how the data in the source spreadsheet maps to the data structure of the table into which you are importing the data.</p><p>For each field in the table into which you are importing, you must select a source column from the uploaded spreadsheet. If the spreadsheet being imported includes a header row, the add-on for Microsoft&reg; Excel import automatically makes default selections if it finds matches between the names of the fields in the table and the headers of the spreadsheet.</p><p>Importing a CSV file or Excel file with single sheet, from this page, you can also save a preference with the current configuration and mapping. In order to apply the same mapping during a future import, you can select this saved preference on the file upload page from the &#39;Load preferences&#39; pull-down menu.</p><h2>
+<a name="adix_importSimulate"></a>Simulating and completing the import</h2>
+<p>Before actually executing the import, you can run a simulation of the process to detect whether any problems would occur during the import. This verification detects inconsistencies between cell values in the spreadsheet and the data types defined in the data model for the destination table.</p><p>You may choose to proceed with the import even if validation errors exist, by selecting the checkbox &#39;Import only valid records&#39;. If validation errors exist and you proceed without selecting &#39;Import only valid records&#39;, the import will fail and no records will be imported.</p><h2>
+<a name="id5"></a>Supported data for import</h2>
+<h3>
+<a name="id5s1"></a>CSV imports</h3>
+<table class="">
+<thead>
+<tr>
+<th>Supported data</th><th>Unsupported data</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><ul>
+<li><p>Group of fields</p></li><li><p>Simple foreign keys</p></li><li><p>Complex foreign keys</p></li></ul>
+</td><td><ul>
+<li><p>Lists of fields</p></li><li><p>Lists of groups</p></li><li><p>Lists of simple foreign keys</p></li><li><p>Complex foreign keys</p></li></ul>
+</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id5s2"></a>Excel imports</h3>
+<table class="">
+<thead>
+<tr>
+<th>Supported data</th><th>Unsupported data</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><ul>
+<li><p>Group of fields</p></li><li><p>Simple foreign keys</p></li><li><p>Lists of simple foreign keys</p></li><li><p>Complex foreign keys</p></li></ul>
+</td><td><ul>
+<li><p>Lists of groups</p></li><li><p>Lists of complex foreign keys</p></li></ul>
+</td></tr>
+</tbody>
+</table>
+<div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="./adix_export.html">Exporting data to a CSV or Excel file</a></li><li><a href="./index.html">EBX5 Add-on for Microsoft&reg; Excel main page</a></li></ul>
+</div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

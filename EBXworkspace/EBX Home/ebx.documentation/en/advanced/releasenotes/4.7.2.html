@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.2</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.2.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.2</h1>
+<p><strong>Release Date: July 20, 2009</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Backward compatibility</a></li><li class="toc1"><a href="#id2">Workflow</a></li><li class="toc1"><a href="#id3">Inheritance</a></li><li class="toc1"><a href="#id4">API</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Computation of Differences</a></li><li class="toc2"><a href="#id4s2">Inheritance and definition modes</a></li><li class="toc2"><a href="#id4s3">Clarification of &quot;before creation&quot; trigger</a></li></ul>
+</li><li class="toc1"><a href="#id5">Bug Fixes</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Backward compatibility</h2>
+<p> The deployment descriptor (web.xml) for EBX.Platform web applications has been modified to comply with the <a target="_blank" href="http://java.sun.com/dtd/web-app_2_3.dtd">Servlet 2.3 specification</a>. This allows to use the datasource v5 facility in WebSphere Application Server out of the box. Customers using the legacy datasource v4 facility in WebSphere Application Server are required to <a href="../deployment_examples/websphere6.html#datasource_v4">repackage the &quot;ebx&quot; web application</a> .&nbsp;</p><h2>
+<a name="id2"></a>Workflow</h2>
+<p>The workflow designer is now able to insert a node between two other nodes.</p><h2>
+<a name="id3"></a>Inheritance</h2>
+<p>The behaviour of inheritance has been clarified for the various combinations of definition modes:</p><ul>
+<li><p> The specification of the various definition modes has been moved from the table page to the <a href="../references/inheritance.html#dataSetInheritanceRecords">inheritance reference page</a> ,&nbsp;it has been completed and the <em>inherited mode</em> is now explained. </p></li><li><p> The definition of the <em>root mode</em> and the <em>overwriting mode</em> has evolved: this information is no longer intrinsic to the record, but is evaluated dynamically, depending on the existence of a parent with the same primary key. Consequently, the distinction between both notions becomes pointless in the context of a record creation and for its validation. </p></li><li><p> The <em>deriving mode</em> has been removed from the documentation... Indeed, it was already no longer proposed in the Manager and its usage has been considered a bit difficult to understand for the end user. In the improbable case where a repository defined deriving records, these records would be considered as either <em>root</em> or <em>overwriting</em> (see previous item). Their parent key will also be ignored. </p></li></ul>
+<h2>
+<a name="id4"></a>API</h2>
+<h3>
+<a name="id4s1"></a>Computation of Differences</h3>
+<p> The method <a target="_blank" href="../Java_API/com/orchestranetworks/service/comparison/DifferenceHelper.html#compareOccurrences(com.onwbp.adaptation.Adaptation, com.onwbp.adaptation.Adaptation, boolean, boolean)">compareOccurrences</a> has slightly evolved. The parameter <code>showDetails</code> will be forced to false if not in resolved mode. </p><h3>
+<a name="id4s2"></a>Inheritance and definition modes</h3>
+<p>As mentioned above, the inheritance specification has evolved so as to clarify the behaviour and to make it tolerant to any combinations of definition modes between a table and its parent table. This has the following impacts on the API:</p><ul>
+<li><p> Since &#39;overwriting&#39; and &#39;root&#39; modes become dynamic, the record creation does not involve these notions: on interface <code>ProcedureContext</code> ,&nbsp;the methods <code>doCreateRoot</code> and <code>doCreateOverwriting</code> consequently have the same behaviour: they both invoke the new method <code>doCreateOccurrence</code> ,&nbsp;that is to be preferred. </p></li><li><p> The method <code>ProcedureContext.doCreateDeriving</code> becomes deprecated, it henceforth throws an exception. </p></li><li><p> The methods <code>SessionPermissions.getOccurrenceActionPermissionToDerive</code> , <code>DefinitionMode.isDeriving</code> and the constant <code>DefinitionMode.DEFINE_DERIVE</code> also become deprecated. </p></li><li><p> The evaluation of programmatic permission rules in the context of a record creation has also been clarified, so that a virtual record is always passed as argument and this record belongs to the current table (see <a target="_blank" href="../Java_API/com/orchestranetworks/service/AccessRule.html#getPermission(com.onwbp.adaptation.Adaptation, com.orchestranetworks.service.Session, com.orchestranetworks.schema.SchemaNode)">AccessRule.getPermission</a> ). </p></li></ul>
+<h3>
+<a name="id4s3"></a>Clarification of &quot;before creation&quot; trigger</h3>
+<p> Limitations on the &quot;before creation&quot; trigger context are henceforth explained. See <a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/TableTrigger.html#handleBeforeCreate(com.orchestranetworks.schema.trigger.BeforeCreateOccurrenceContext)">TableTrigger.html.handleBeforeCreate</a> .&nbsp;</p><h2>
+<a name="id5"></a>Bug Fixes</h2>
+<ul>
+<li><p><strong>01908</strong> Table grid header may not be sized as expected. </p></li><li><p><strong>01909</strong> In workflow email configuration, a NullPointerException is thrown if no <code>from</code> value defined. </p></li><li><p><strong>01910</strong> Overwriting a record which has been occulted in the parent adaptation causes a NullPointerException. </p></li><li><p><strong>01911</strong> Blank screen in EBX if permissions have be defined with a wrong syntax on the id of the user / role. </p></li><li><p><strong>01912</strong> Blank screen in EBX if permissions have be defined with a wrong syntax on the id of the branch. </p></li><li><p><strong>01913</strong> In case of an <code>osd:select</code> which specifies a predicate that targets a single record (i.e. fully defines the primary key value in the target table); if the target record does not exist, EBX reports an &#39;access denied&#39; (instead of an empty filtered view of the target table). </p></li><li><p><strong>01914</strong> DataServices &#39;getChanges&#39; operation should specifiy maxOccurs=unbounded on element &#39;updates/changes/change&#39;. </p></li><li><p><strong>01915</strong> DataServices &#39;getChanges&#39; operation should specifiy maxOccurs=unbounded on element &#39;updates/changes/change/path&#39;. </p></li><li><p><strong>01916</strong> DataServices &#39;getChanges&#39; operation should specifiy maxOccurs=unbounded on element &#39;deleted/predicate&#39;. </p></li><li><p><strong>01917</strong> Data Model Assistant generates an invalid schema if a <code>tableRef</code> defines custom labels. </p></li><li><p><strong>01918</strong> Workflow process tokens are not restarted as expected after failure. </p></li><li><p><strong>01921</strong> Editor of multi-occurrences nodes does not show ongoing updates (occurrence deletion) if the form is redisplayed due to a form validation error. </p></li><li><p><strong>01922</strong> Label pattern specified by a customized hierarchy definition is not taken into account anymore by the method <code>getLabelFromDefaultPattern</code> of <code>UILabelRendererContext</code> classes (regression since 4.7.0). </p></li><li><p><strong>01923</strong> The archive&#39;s import fails when an occurrence is to be altered or created, and when a record with the same primary key already exists, but is occulted, in the target table. </p></li><li><p><strong>01924</strong> Permission rules ( <code>AccessRule.getPermission</code> ) are not always call in table record creation mode. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

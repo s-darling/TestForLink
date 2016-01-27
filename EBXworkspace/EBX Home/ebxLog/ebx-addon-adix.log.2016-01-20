@@ -1,0 +1,21 @@
+------------------------------------------------------------------------
+Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+------------------------------------------------------------------------
+2016-01-20 13:55:25,298 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [http-bio-8090-exec-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 13:55:25,298 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [http-bio-8090-exec-1] **** Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+2016-01-20 14:11:21,891 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+------------------------------------------------------------------------
+Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+------------------------------------------------------------------------
+2016-01-20 14:47:12,928 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [http-bio-8090-exec-1] **** Server Started (logVersion=1.4) ****
+2016-01-20 14:47:12,929 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [http-bio-8090-exec-1] **** Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+2016-01-20 14:53:42,167 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+------------------------------------------------------------------------
+Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+------------------------------------------------------------------------
+2016-01-20 15:16:31,351 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-20 15:16:31,352 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-boot] **** Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+2016-01-20 15:20:44,629 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+------------------------------------------------------------------------
+Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+------------------------------------------------------------------------

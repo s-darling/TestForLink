@@ -1,0 +1,11 @@
+------------------------------------------------------------------------
+Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+------------------------------------------------------------------------
+2016-01-13 13:24:14,390 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:24:14,390 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-boot] **** Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+2016-01-13 13:46:27,815 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+------------------------------------------------------------------------
+Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0
+------------------------------------------------------------------------
+2016-01-13 13:46:47,148 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:47,148 EST INFO   log.wbp.ebx-addon-adix.main 0985:0003 [ebx-boot] **** Data Exchange - version 2.0.9 [0018:0010] - bundle-version 1.4.0

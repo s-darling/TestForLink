@@ -1,0 +1,5 @@
+package com.orchestranetworks.geomatch.layout;
+
+public class GeoLink {
+
+}

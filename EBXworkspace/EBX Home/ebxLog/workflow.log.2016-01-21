@@ -1,0 +1,109 @@
+2016-01-21 10:06:46,222 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:07:39,344 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] 
+[ERROR ebx.scriptTask.execution] An error has occurred in 'executeScript' method of the script task '[SpecificModuleName[Geomatch Module] : com.orchestranetworks.geomatch.match.CarmenSandiago]'. See stack trace in logs or user message for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|8|v1
+java.lang.NoClassDefFoundError: org/codehaus/jackson/map/ObjectMapper
+	at com.orchestranetworks.geomatch.match.AddressConverter.convertToLatLong(AddressConverter.java:56)
+	at com.orchestranetworks.geomatch.match.AddressConverter.ResLng(AddressConverter.java:101)
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.createCoordinate(CarmenSandiago.java:84)
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.executeScript(CarmenSandiago.java:122)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:363)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: org.codehaus.jackson.map.ObjectMapper
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 14 more
+
+2016-01-21 10:07:39,353 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|8|v1 passed in 'error' state.
+2016-01-21 10:10:21,712 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 10:10:32,612 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:12:10,481 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:12:32,205 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:16:28,795 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] 
+[ERROR ebx.scriptTask.execution] An error has occurred in 'executeScript' method of the script task '[SpecificModuleName[Geomatch Module] : com.orchestranetworks.geomatch.match.CarmenSandiago]'. See stack trace in logs or user message for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-21T10:09:45.191|Geomatch|0|v1
+java.lang.NoClassDefFoundError: org/codehaus/jackson/map/ObjectMapper
+	at com.orchestranetworks.geomatch.match.AddressConverter.convertToLatLong(AddressConverter.java:56)
+	at com.orchestranetworks.geomatch.match.AddressConverter.ResLng(AddressConverter.java:101)
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.createCoordinate(CarmenSandiago.java:84)
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.executeScript(CarmenSandiago.java:122)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:363)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: org.codehaus.jackson.map.ObjectMapper
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 14 more
+
+2016-01-21 10:18:27,122 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:18:49,931 EST WARN   log.workflow 0985:0003 [ebx-boot] [TOKEN WARNING] Token V2016-01-21T10:09:45.191|Geomatch|0|v1 passed in 'error' state.
+2016-01-21 10:23:23,125 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:23:45,931 EST WARN   log.workflow 0985:0003 [ebx-boot] [TOKEN WARNING] Token V2016-01-21T10:09:45.191|Geomatch|1|v1 passed in 'error' state.
+2016-01-21 10:24:59,033 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] 
+[ERROR ebx.scriptTask.execution] An error has occurred in 'executeScript' method of the script task '[SpecificModuleName[Geomatch Module] : com.orchestranetworks.geomatch.match.CarmenSandiago]'. See stack trace in logs or user message for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-21T10:09:45.191|Geomatch|2|v1
+java.lang.NullPointerException
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.updateDataValue(CarmenSandiago.java:99)
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.executeScript(CarmenSandiago.java:131)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:363)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-21 10:25:01,385 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] [TOKEN WARNING] Token V2016-01-21T10:09:45.191|Geomatch|2|v1 passed in 'error' state.
+2016-01-21 10:47:02,797 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 10:47:27,918 EST WARN   log.workflow 0985:0003 [ebx-boot] [TOKEN WARNING] Token V2016-01-21T10:09:45.191|Geomatch|3|v1 passed in 'error' state.
+2016-01-21 10:47:51,401 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] 
+[ERROR ebx.scriptTask.execution] An error has occurred in 'executeScript' method of the script task '[SpecificModuleName[Geomatch Module] : com.orchestranetworks.geomatch.match.CarmenSandiago]'. See stack trace in logs or user message for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-21T10:09:45.191|Geomatch|4|v1
+java.lang.NullPointerException
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.updateDataValue(CarmenSandiago.java:100)
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.executeScript(CarmenSandiago.java:132)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:363)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-21 10:47:51,414 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] [TOKEN WARNING] Token V2016-01-21T10:09:45.191|Geomatch|4|v1 passed in 'error' state.
+2016-01-21 10:49:15,402 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 10:49:34,478 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 11:03:34,582 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 11:03:59,056 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 11:38:14,721 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 15:34:19,043 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 15:35:31,385 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 15:43:56,517 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 15:47:55,309 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-21 15:48:14,177 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-21 15:50:01,435 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

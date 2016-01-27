@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.4.0 Fix 001</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.4.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.4.0 Fix 001</h1>
+<p><strong>Fix 001 Release Date: October 10, 2013</strong></p><p>EBX5 5.4.0 Fix 001 for <a href="#bugfix-5.4.0fix001">bug fixes</a> and new <a href="#workflow_permissions">workflow permissions</a>.</p><p><strong>Initial Release Date: September 30, 2013</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of 5.4.0</a></li><li class="toc1"><a href="#id2">Modernized user interface</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Flat design</a></li><li class="toc2"><a href="#id2s2">Improved customizability for better integration</a></li></ul>
+</li><li class="toc1"><a href="#id3">Additional user interface evolutions </a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Improved table search</a></li><li class="toc2"><a href="#id3s2">Removal of unnecessary root elements in the navigation pane</a></li><li class="toc2"><a href="#id3s3">Improved documentation</a></li><li class="toc2"><a href="#formalignment">Optimization of form element alignment</a></li><li class="toc2"><a href="#id3s5">Custom layout API: Nested tabbed panes</a></li><li class="toc2"><a href="#id3s6">Better user interface security</a></li></ul>
+</li><li class="toc1"><a href="#id4">Workflow modeling</a><ul class="toc2">
+<li class="toc2"><a href="#workflow_permissions">New permission for viewing completed workflows</a></li></ul>
+</li><li class="toc1"><a href="#id5">Table replication using &quot;SQL Connect&quot;</a></li><li class="toc1"><a href="#administrativeDelegation">Administrative delegation</a></li><li class="toc1"><a href="#id7">Distributed data delivery (D3)</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">New federation delivery mode</a></li><li class="toc2"><a href="#id7s2">Automatic shut down notification for slave node maintenance</a></li><li class="toc2"><a href="#id7s3">Improved broadcasting performance</a></li><li class="toc2"><a href="#id7s4">Slave monitoring</a></li><li class="toc2"><a href="#id7s5">D3 API</a></li></ul>
+</li><li class="toc1"><a href="#javaAPI">Java API</a><ul class="toc2">
+<li class="toc2"><a href="#id8s1">Retrieve the parent of a data set or a record</a></li><li class="toc2"><a href="#id8s2">Omit XML declaration from XML export</a></li><li class="toc2"><a href="#id8s3">Dynamic data model labels and descriptions</a></li></ul>
+</li><li class="toc1"><a href="#id9">Performance improvements</a><ul class="toc2">
+<li class="toc2"><a href="#id9s1">Data space and snapshot creation</a></li><li class="toc2"><a href="#id9s2">Comparison in resolved mode</a></li><li class="toc2"><a href="#id9s3">Memory and CPU management for data services</a></li></ul>
+</li><li class="toc1"><a href="#versionUpgrade">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id10s1">Backward compatibility</a></li><li class="toc2"><a href="#id10s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#bugfix-5.4.0fix001">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug5.4.0fix001-Coreengine">Core engine</a></li><li class="toc2"><a href="#bug5.4.0fix001-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug5.4.0fix001-Dataservices">Data services</a></li><li class="toc2"><a href="#bug5.4.0fix001-Dataviews">Data views</a></li><li class="toc2"><a href="#bug5.4.0fix001-Dataworkflows">Data workflows</a></li><li class="toc2"><a href="#bug5.4.0fix001-Documentation">Documentation</a></li><li class="toc2"><a href="#bug5.4.0fix001-Userinterface">User interface</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">5.4.0 Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-Coreengine">Core engine</a></li><li class="toc2"><a href="#bug-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug-Dataviews">Data views</a></li><li class="toc2"><a href="#bug-DistributedDataDelivery">Distributed Data Delivery (D3)</a></li><li class="toc2"><a href="#bug-Userinterface">User interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of 5.4.0</h2>
+<p><strong><em>This version includes all performance improvements, bug fixes and new features from version <a href="./5.3.2.html">5.3.2</a>.</em></strong></p><p><strong><em>Due to the automatic upgrade of the product, there may be a one-time performance hit when starting the server with this version for the first time.</em></strong></p><p>This version brings significant updates to EBX5. Notable new features include:</p><ul>
+<li><p>A complete refresh of the user interface look and feel to improve usability.</p></li><li><p>High customizability of color themes and form submission button labels for total integration into client environments.</p></li><li><p>&quot;SQL Connect&quot; - Enables automatic data replication to databases accessible to SQL queries.</p></li><li><p>D3 federated mode for asynchronous broadcasting and automatic retries upon failure.</p></li></ul>
+<p>Additionally, significant performance gains have been made, notably for data space and snapshot creation.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<strong>Before proceeding with the upgrade of an existing environment, ensure that you have carefully read the <a href="#versionUpgrade">Version upgrade</a> section</strong>. </fieldset>
+<h2>
+<a name="id2"></a>Modernized user interface</h2>
+<p>This version includes a major revision to the style of the graphical user interface. These changes bring significant improvements with regard to readability and ease of navigation, allowing users to better focus on meaningful data and their tasks.</p><h3>
+<a name="id2s1"></a>Flat design</h3>
+<p>The new user interface adopts the principles of &quot;flat design&quot;, by employing a clean and minimalist aesthetic with less intrusive visual elements, including:</p><ol>
+<li><p>A simpler, less intrusive header bar, which can be completely minimized when not in use.</p></li><li><p>Flat buttons that still look clickable, but are not highlighted until the user mouses over.</p></li><li><p>Removal of unnecessary icons next to labels.</p></li></ol>
+<p><img alt="/5.4.0-NewUI.png" src="../resources/images/releasenotes/5.4.0-NewUI.png"></img></p><p>While the visual elements of the interface have a refreshed look, the underlying navigation structure and features remain the same as in previous versions.</p><h3>
+<a name="id2s2"></a>Improved customizability for better integration</h3>
+<p>The new user interface also facilitates a more complete style integration according to corporate design guidelines by being highly customizable.</p><ul>
+<li><p>It is now possible to choose color themes for the interface, including primary and secondary colors, as well as colors for the navigation pane, and several key elements and buttons. See <a href="../engine/admin_frontend.html#graphical">Graphical interface configuration</a> for more information.</p><p><img alt="/5.4.0-GraphicalUIConfig.png" src="../resources/images/releasenotes/5.4.0-GraphicalUIConfig.png"></img></p></li><li><p>The labels of all form submission buttons are now configurable through the standard administration interface. The default labels of the form buttons have also been changed to &quot;Save&quot;, &quot;Save and close&quot; and &quot;Close&quot;.</p></li><li><p>Various components of tabular, hierarchical, and record views can now be hidden using the web component API. The new HTTP parameters <code>viewFeatures</code> and <code>recordFeatures</code> allow hiding elements, such as buttons, the title, record selections, etc. See <a href="../references/manager_component_ref.html#viewFeatures">Layout parameters</a> for more information.</p></li></ul>
+<h2>
+<a name="id3"></a>Additional user interface evolutions </h2>
+<h3>
+<a name="id3s1"></a>Improved table search</h3>
+<p>The search filter for tabular views has been redesigned to make entering basic search criteria more convenient.</p><p>For example, for foreign key fields or fields populated by an enumeration, the possible values are now proposed to the user. Also, date fields are enhanced with auto-completion.</p><p>By default, the search panel displays a simplified mode with basic search criteria. By switching to the advanced search mode, the user is able to use extended operators and can build nested logic.</p><p>It is now also possible to input text into the validation message filter to find all records with a validation message containing that text.</p><h3>
+<a name="id3s2"></a>Removal of unnecessary root elements in the navigation pane</h3>
+<p>In the navigation pane of the Data area, the <em>root</em> element and its associated documentation no longer appear if the node does not contain attributes or terminal groups. Previously, such cases unnecessarily occupied space in the interface. If, however, the <em>root</em> element contains attributes or terminal groups, it will appear in the navigation pane as before.</p><h3>
+<a name="id3s3"></a>Improved documentation</h3>
+<p>The presentation of the PDF version of the product documentation has been improved to better delineate sections and chapters. Also, high-level chapters are now numbered to facilitate navigation of the document in hard copy format.</p><h3>
+<a name="formalignment"></a>Optimization of form element alignment</h3>
+<p>The alignment of form elements has been improved in order to better guarantee uniform display of form layouts. The styling of forms now uses the CSS property &quot;<code>vertical-align: baseline</code>&quot;, where the <em>baseline</em> is the line upon which most characters &quot;sit&quot;.</p><ol>
+<li><p>For generic EBX5 inline elements:</p><ul>
+<li><p>Text is vertically aligned on the baseline.</p></li><li><p>Text fields of type string are vertically aligned such that the text they contain are aligned on the baseline.</p></li><li><p>Buttons are vertically aligned such that their label text is aligned on the baseline.</p></li></ul>
+</li><li><p>For generic EBX5 block elements (<code>div</code>, <code>fieldset</code>, <code>textarea</code>, <code>list</code>), the element is vertically aligned such that the first inline element it contains is aligned on the baseline.</p><p>For example, complex nodes and lists are aligned according to their first elements.</p></li></ol>
+<h3>
+<a name="id3s5"></a>Custom layout API: Nested tabbed panes</h3>
+<p>It is now possible to embed a pane with tabs within a parent pane, which can itself be a tabbed pane, using the custom layout API.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/form/UIFormPaneWriter.html#includePane(com.orchestranetworks.ui.form.UIFormPane)">UIFormPaneWriter.includePane</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/ui/form/UIFormPaneWithTabs.html#addTab(com.onwbp.base.text.UserMessage, com.orchestranetworks.ui.form.UIFormPane)">UIFormPaneWithTabs.addTab</a> in the Java API for more information.</p><h3>
+<a name="id3s6"></a>Better user interface security</h3>
+<p>An extensive review of the user interface has been performed with regard to cross-site scripting security vulnerabilities to address remaining issues.</p><p>Only users of the data, data spaces, and data workflows areas have been considered to be a potential threat. Users with permissions to access the data modeling and workflow modeling areas are trusted, allowing them to specify descriptions and messages containing HTML formatting (hyperlinks, CSS styles, etc.). However, where HTML formatting is permitted, it remains strongly advised not to use <code>&lt;script&gt;</code> tags.</p><h2>
+<a name="id4"></a>Workflow modeling</h2>
+<h3>
+<a name="workflow_permissions"></a>New permission for viewing completed workflows</h3>
+<p><em>Initially included in 5.4.0 Fix 001.</em></p><p>A new permission option is available to allow a profile to view completed workflows, even if the profile is not allowed to monitor running workflows. This new permission is available in the workflow modeling area, in the advanced configuration of the workflow monitoring permissions.</p><p>In particular, this feature is useful for providing access to the graphical history of completed workflows without having to give access to workflow monitoring, which contains technical information.</p><p>The equivalent permission has been added to the <code>ProcessExecutionContext</code> API. See <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessExecutionContext.WorkflowPermission.html#VIEW_COMPLETED_WORKFLOW">ProcessExecutionContext.VIEW_COMPLETED_WORKFLOW</a> for more information.</p><h2>
+<a name="id5"></a>Table replication using &quot;SQL Connect&quot;</h2>
+<p>A new persistence option has been added to allow replicating data from EBX5 tables to dedicated relational tables. These relational tables thus make master data available to external systems for direct access using SQL requests and views.</p><p>To specify the data to be replicated, data models can define replication units that indicate the tables, and their associated data sets and data spaces, to include.</p><p>There are several refresh modes for controlling the frequency of updates. The mode &#39;onCommit&#39; guarantees synchronization at the transactional level, whereas &#39;onDemand&#39; only replicates upon request. Replica refresh requests can be performed through the user interface, using data services, or through the Java API.</p><p>This new option conforms to the persistence principles already implemented for relational and history mode, namely for the creation of dedicated tables and schema updates in the relational database, performed in an automatic and transparent way during data model compilation.</p><p>See <a href="../references/replication.html#howto">Configuring replication</a> for more information.</p><h2>
+<a name="administrativeDelegation"></a>Administrative delegation</h2>
+<p>It is now possible to delegate administrative rights to a non-administrator user.</p><p>See <a href="../engine/admin_frontend.html#administrativeDelegation">Administrative delegation</a> for more information.</p><h2>
+<a name="id7"></a>Distributed data delivery (D3)</h2>
+<h3>
+<a name="id7s1"></a>New federation delivery mode</h3>
+<p>D3 broadcasts were previously based on the notion of using a single distributed transaction to guarantee that all D3 slave nodes remain synchronized. The drawback of this approach was that it did not take into account the scenario where slave nodes are physically located at remote sites and where there was a high probability that not all slaves would be constantly available.</p><p>In order to prevent broadcasts from failing completely in these cases, it is now possible to specify the mode &#39;Federation&#39; for a broadcast profile. In this case, the broadcast for each slave is performed asynchronously and independently of other nodes. In case of a failure to broadcast to a particular slave node, the same broadcast is reattempted for that node only.</p><h3>
+<a name="id7s2"></a>Automatic shut down notification for slave node maintenance</h3>
+<p>When a registered slave node shuts down, it now notifies the master in order to be removed from the broadcast scope. Upon subsequent start up, the slave node subscribes again.</p><h3>
+<a name="id7s3"></a>Improved broadcasting performance</h3>
+<p>Broadcast archives are now reused for multiple slaves at the same version. The broadcast is also performed simultaneously for all clustered slaves, then simultaneously for federated slaves. Furthermore, when the master node shuts down, any waiting broadcast requests are persisted so that broadcasting can be resumed when the node is restarted.</p><p>See <a href="../engine/d3_broadcast.html">D3 broadcasts and delivery data spaces</a> for more information.</p><h3>
+<a name="id7s4"></a>Slave monitoring</h3>
+<p>Load balancers, monitoring applications and other infrastructure tools can now be notified upon slave start ups and shut downs requested at the application server level.</p><p>See <a href="../engine/d3_admin.html#slaveMonitoring">Slave node monitoring through the Java API</a> for more information.</p><h3>
+<a name="id7s5"></a>D3 API</h3>
+<p>The D3 Java API has been extended to include the notion of <a target="_blank" href="../Java_API/com/orchestranetworks/d3/DeliveryMode.html">delivery modes</a>. A <a target="_blank" href="../Java_API/com/orchestranetworks/d3/NodeMonitoring.html">slave monitoring interface</a> has also been added, with methods that are triggered whenever a slave&#39;s status changes to &#39;Available&#39; or &#39;Unavailable&#39;.</p><h2>
+<a name="javaAPI"></a>Java API</h2>
+<h3>
+<a name="id8s1"></a>Retrieve the parent of a data set or a record</h3>
+<p>A new method has been added to retrieve the parent of a data set or record.</p><p>See <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#getParent()">Adaptation.getParent()</a> in the Java API for more information.</p><h3>
+<a name="id8s2"></a>Omit XML declaration from XML export</h3>
+<p>Two new methods have been added for disabling the XML declaration in XML exports.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/ExportSpec.html#isOmitXMLDeclaration()">ExportSpec.isOmitXMLDeclaration()</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/service/ExportSpec.html#setOmitXMLDeclaration(boolean)">ExportSpec.setOmitXMLDeclaration(boolean)</a> in the Java API for more information.</p><h3>
+<a name="id8s3"></a>Dynamic data model labels and descriptions</h3>
+<p>It is now possible to define dynamic labels and descriptions using a specific Java class. This Java class can programmatically specify labels and descriptions for the elements of the data model. The labels and descriptions defined in this Java class are displayed in associated data sets in preference to the ones defined locally on an element. </p><p>See <a href="../user_datamodel/userdatamodel_configuring.html#configuration">Data model properties</a>, <a href="../models/labels_error_messages.html#dynamicDoc">Dynamic labels and descriptions</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaDocumentation.html">SchemaDocumentation API</a> for more information.</p><h2>
+<a name="id9"></a>Performance improvements</h2>
+<p>Several performance improvements have been made, in addition to the ones included in version <a href="../releasenotes/5.3.2.html#DataModeling">5.3.2</a>, namely faster access to views.</p><h3>
+<a name="id9s1"></a>Data space and snapshot creation</h3>
+<p>Data space and snapshot creation time is up to 80% faster than in previous versions.</p><h3>
+<a name="id9s2"></a>Comparison in resolved mode</h3>
+<p>Comparisons performed in resolved mode have been improved, in some cases by several orders of magnitude.</p><h3>
+<a name="id9s3"></a>Memory and CPU management for data services</h3>
+<p>Several optimizations have been introduced for the data service operations &#39;getChangesOnTable&#39; and &#39;getChangesOnDataSet&#39;:</p><ul>
+<li><p>Execution has been optimized to consume less memory. The XML message is no longer stored in memory, but rather, is written directly to the response stream.</p></li><li><p>A cache is now used when building the report of changes.</p></li></ul>
+<p>See <a href="../references/dataservices_execution.html#getChanges">Get changes operations</a> for more information on these operations.</p><h2>
+<a name="versionUpgrade"></a>Version upgrade</h2>
+<h3>
+<a name="id10s1"></a>Backward compatibility</h3>
+<h4>
+Browsers no longer supported</h4>
+<p>As of version 5.4.0, Microsoft Internet Explorer 6 and 7 are no longer supported browsers.</p><p>See <a href="../installation/supported_env.html#browsers">Supported web browsers</a> for more information.</p><h4>
+Databases no longer supported</h4>
+<p>As of version 5.4.0, the following databases are no longer supported:</p><ul>
+<li><p>Oracle Database versions prior to 10g R2</p></li><li><p>Microsoft SQL Server 2005</p></li><li><p>PostgreSQL versions prior to 8.4</p></li></ul>
+<p>See <a href="../installation/supported_env.html#databases">Supported databases</a> for more information.</p><h4>
+<a name="formalignment_compatibility"></a>Changes in form element alignment</h4>
+<p>Due to the improvements related to the <a href="#formalignment">standardization of form element alignment</a>, the behavior of form elements is now different from in previous versions. The styling of forms now uses the CSS property &quot;<code>vertical-align: baseline</code>&quot;, where the <em>baseline</em> is the line upon which most characters &quot;sit&quot;.</p><p>Existing custom user interfaces, such as UI services, UI beans, and <code>formLayout</code>s, may be subject to regressions as a result of these alignment changes. The pages will still be functional, however, misalignment issues may occur. To resolve these issues, it is strongly recommended to use the Java API of the context associated with each interface whenever possible.</p><p>More specifically, the following recommendations apply when building forms using the Java API:</p><ul>
+<li><p>When adding form rows using <code>UIResponseContext.startFormRow</code>, surround the set of rows with the methods <code>startTableFormRow</code> and <code>endTableFormRow</code> in order maximize conformance with EBX5 user interface standards.</p><p>Since a pair of <code>startTableFormRow</code> and <code>endTableFormRow</code> calls can only contain rows added using <code>startFormRow</code>, it will not be possible to surround each row with <code>Div</code> elements. If <code>Div</code> elements were included, for example to show and hide entries in a form, the API now has the method <code>UIFormRow.setRowId</code> to assign an HTML identifier to the form row.</p><p>Also, the new method <code>UIResponseContext.newFormRow(Path)</code> can now be used to create a form row in a UI bean that is based on the path of a node.</p></li><li><p>For a block element, apply the CSS display style <code>display: inline-table;</code> to align its first element with the baseline. If that style does not result in the desired layout, <code>vertical-align: text-top;</code> can also be used.</p></li><li><p>In general, minimize the inclusion of specific HTML styles and tags to allow the default styles of EBX5 to apply to custom interfaces. The objective of these latest improvements is to automatically apply a standardized style to all elements on HTML pages, while simplifying the implementation process for the developer.</p></li></ul>
+<div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIResponseContext.html">UIResponseContext</a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIComponentWriter.html">UIComponentWriter</a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/ui/form/UIFormPaneWriter.html">UIFormPaneWriter</a></li><li><a target="_blank" href="../Java_API/com/orchestranetworks/ui/form/UIFormRow.html#setRowId(java.lang.String)">UIFormRow.setRowId</a></li></ul>
+</div>
+<h4>
+Null values displayed by UI beans</h4>
+<p>Due to the correction of the <a href="./5.3.2.html#bug_5639">bug 5639</a>, there is a now a backwards compatibility issue for cases where a UI bean displays a <code>null</code> value in a read-only context. Previously, in read-only mode, the method that was called was <code>UIBeanEditor.addForDisplay(UIResponseContext aResponse)</code> for both <code>null</code> and non-<code>null</code> values. As of version 5.3.2, the method <code>UIBeanEditor.addForNull(UIResponseContext aResponse)</code> is now called for <code>null</code> values for both write mode and read-only mode. This may change the way that forms are displayed.</p><h4>
+Colors and themes</h4>
+<p>In the user interface administration, some parameters have been removed and new ones have been added under the graphical user interface configuration.</p><p>For example, the application logo no longer requires an image position value, and the image provides must now have a height of 40 pixels. The width of the logo automatically determines the position of buttons in the header.</p><p>The color themes of the major functional areas (Data, Data space, Modeling, Data Workflow, Data services, Administration) have been removed. The <strong>main</strong> and <strong>secondary</strong> colors are derived from the colors of the <strong>Data</strong> area in previous versions.</p><h4>
+Cross-site scripting (XSS)</h4>
+<p>As of version 5.4.0, in order to prevent cross-site scripting vulnerabilities, HTML code that is included in master data is systematically escaped, and the tags appear as plain-text in all views. This change does not impact data model and workflow model labels and description.</p><h3>
+<a name="id10s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<p>If using EBX5 add-ons, ensure that the versions of the add-ons are compatible with EBX5 version 5.4.0 before upgrading. For the backward compatibility of the add-ons themselves, consult the release note of each add-on.</p><p>Once an EBX5 repository has been used with this version, using it with a previous version is not supported. Consequently, you must create a back up before upgrading, as described above, in order to maintain the possibility of downgrading later.</p><p>Upon installation of this new version, a DDL for product upgrade will be executed, which creates a new index on the table <code>{ebx.persistence.table.prefix}HTB</code>. On larger repositories, this may introduce a one-time performance hit when starting the server for the upgrade (about one minute for 20M records in the <code>{ebx.persistence.table.prefix}HTB</code> table). </p></fieldset>
+<h2>
+<a name="bugfix-5.4.0fix001"></a>Bug Fixes</h2>
+<h3>
+<a name="bug5.4.0fix001-Coreengine"></a>Core engine</h3>
+<ul>
+<li><p><a name="bug_8229"></a><strong>[8229]</strong> Table replication is not allowed if it contains inherited fields. </p><p>Inherited fields should be supported for replications when using the refresh policy &#39;onDemand&#39;. However, the compilation of a data model containing such fields does not take into account the declared refresh policy.</p></li><li><p><a name="bug_8268"></a><strong>[8268]</strong> Blocking error occurs when purging a data space in an inconsistent state. </p><p>If a data space is in a state of severe error, for example, if it contains a data set whose schema no longer exists, trying to purge it leads to a blocking error.</p></li><li><p><a name="bug_8275"></a><strong>[8275]</strong> Logging error occurs on wide mapped tables in debug mode. </p><p>If the property <code>persistence.log=debug</code> is set, an error occurs for wide mapped tables (over 48 fields).</p></li></ul>
+<h3>
+<a name="bug5.4.0fix001-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><p><a name="bug_6468"></a><strong>[6468]</strong> Default value for field validation rule uses that of an existing rule. </p><p>The default value for a validation rule on a field uses the value from an existing rule for another field.</p></li><li><p><a name="bug_8240"></a><strong>[8240]</strong> Locales defined in a module used by a data model are not used when creating fields. </p><p>If a data model specifies a module defining specific locales, those locales are not proposed in for the label and description fields when creating a field.</p></li><li><p><a name="bug_8262"></a><strong>[8262]</strong> In the DMA, bottom bar moves up when importing an XSD. </p><p>When performing an XML Schema Document import of a data model, after choosing the repository mode, the bottom bar moves up instead of being positioned on the bottom of the pane.</p></li></ul>
+<h3>
+<a name="bug5.4.0fix001-Dataservices"></a>Data services</h3>
+<ul>
+<li><p><a name="bug_8297"></a><strong>[8297]</strong> An error occurs when JMS is not implemented. </p><p>A <code>ClassNotFoundException</code> occurs if the application server does not embed a JMS implementation.</p></li></ul>
+<h3>
+<a name="bug5.4.0fix001-Dataviews"></a>Data views</h3>
+<ul>
+<li><p><a name="bug_7918"></a><strong>[7918]</strong> Error occurs when withdrawing a hierarchical view while in the process of moving a node. </p><p>While using the hierarchical view menu option &quot;Move this node&quot;, withdrawing the current view from the &#39;View&#39; menu results in an error.</p></li><li><p><a name="bug_8099"></a><strong>[8099]</strong> A fatal error occurs when creating a new record in a hierarchical view. </p><p>For some specific hierarchy dimension types, a fatal error may occur when creating a new record on in the hierarchy.</p></li></ul>
+<h3>
+<a name="bug5.4.0fix001-Dataworkflows"></a>Data workflows</h3>
+<ul>
+<li><p><a name="bug_6951"></a><strong>[6951]</strong> Fatal error occurs when taking an export/import user task that does not define an XPath. </p><p>If a workflow model does not specify and XPath for an export or import user task, a fatal error occurs when a user tries to take this task.</p></li><li><p><a name="bug_8228"></a><strong>[8228]</strong> Using the specific mode for a workflow script or condition, parameters are sometimes not hidden. </p><p>In a workflow script or condition, if the library mode is selected and parameters are displayed, old parameters are not hidden when the specific mode is then selected.</p></li></ul>
+<h3>
+<a name="bug5.4.0fix001-Documentation"></a>Documentation</h3>
+<ul>
+<li><p><a name="bug_8301"></a><strong>[8301]</strong> Key search no longer exists, documentation should remove references. </p><p>Since the key search was changed to the new text search, mentions in the documentation of the key search should be removed.</p></li></ul>
+<h3>
+<a name="bug5.4.0fix001-Userinterface"></a>User interface</h3>
+<ul>
+<li><p><a name="bug_8210"></a><strong>[8210]</strong> When a view publication is specified in a web component, the predicate is ignored. </p><p>When a view publication is specified in a web component, the predicate is ignored.</p></li><li><p><a name="bug_8223"></a><strong>[8223]</strong> Number in the image for the &quot;Today&quot; date button not centered. </p><p>The image of the &quot;Today&quot; button found on Date fields has a number that is not centered.</p></li><li><p><a name="bug_8231"></a><strong>[8231]</strong> On Firefox and Chrome, alignment problem occurs on the workflow model publication page. </p><p>On Firefox and Chrome, when republishing a workflow model, the labels and radio buttons are not horizontally aligned.</p></li><li><p><a name="bug_8246"></a><strong>[8246]</strong> Create button is displayed in a drop-down list even if the current user has read-only permissions on the target table. </p><p>The create record entry is displayed in a foreign key drop-down list even if the current user has read-only permissions on the target table. Moreover, if the read-only permission was set by a programmatic access rule on the table node, it is actually possible to create records using this entry in the drop-down menu.</p></li><li><p><a name="bug_8252"></a><strong>[8252]</strong> Preview button positioned incorrectly when using large text. </p><p>When the text size is very large, a scrolling paragraph is enabled, which does not respect the new vertical-alignment policy.</p></li><li><p><a name="bug_8254"></a><strong>[8254]</strong> Alignment problem for arrow button to move node in hierarchical views. </p><p>In a hierarchy view, the arrow button when moving or attaching a node is not aligned.</p></li><li><p><a name="bug_8256"></a><strong>[8256]</strong> Sub-session URLs are too long when specific parameters are inherited from parent session. </p><p>Due to recent changes to session parameter inheritance, an error can occur when accessing a web component in a sub-session due to a URL that is too long.</p></li><li><p><a name="bug_8258"></a><strong>[8258]</strong> An error message on a dimension is not displayed correctly during custom hierarchy view creation. </p><p>In a data set, when the user creates a hierarchy view without selecting a dimension then clicks next, the error message is displayed next to the &#39;Dimension&#39; pane instead of under it.</p></li><li><p><a name="bug_8281"></a><strong>[8281]</strong> Logout button is not aligned when the profile name in the header bar is not a link. </p><p>The logout button is not aligned properly when the profile name in the header bar is not a link, for example when using a custom directory.</p></li><li><p><a name="bug_8299"></a><strong>[8299]</strong> When applying a tabular view saved in previous versions of EBX5, the column order changes. </p><p>If a tabular view was saved in a previous version of EBX5 and is applied on the new version, the order of the displayed columns is different.</p></li></ul>
+<h2>
+<a name="bugfix"></a>5.4.0 Bug Fixes</h2>
+<h3>
+<a name="bug-Coreengine"></a>Core engine</h3>
+<ul>
+<li><p><a name="bug_7919"></a><strong>[7919]</strong> Difference algorithm in resolved mode is not efficient with tables in relational mode. </p><p>If a comparison in resolved mode is requested between two tables and at least one is in relational mode, then the difference algorithm is not efficient since it performs individual record lookups. The same issue applies also for history tables.</p></li><li><p><a name="bug_8069"></a><strong>[8069]</strong> Incorrect mapping for <code>xs:date</code> on SQL Server. </p><p>To be compatible with SQL Server 2005, the <code>xs:date</code> type was mapped to <code>DATETIME</code> on SQL Server. However, this type has some restrictions and does not allow dates prior to the year 1753.</p></li></ul>
+<h3>
+<a name="bug-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><p><a name="bug_7917"></a><strong>[7917]</strong> When creating a new rule under &#39;Business object and rules&#39;, &#39;Business rule or object type&#39; may have an incorrect value. </p><p>If the type of a rule is <code>ConstraintEnumeration</code>, the field &#39;Business rule or object type&#39; may return a <code>Constraint</code>, depending on the Java runtime environment.</p></li><li><p><a name="bug_8148"></a><strong>[8148]</strong> An error occurs when trying to create an element from the navigation pane while in a record creation form in the workspace. </p><p>In the DMA, if the user opens a record creation form in the workspace, then tries to create an element from the data structure in the navigation pane, a <code>NullPointerException</code> occurs and the user interface displays an &quot;Unexpected error&quot; message.</p></li></ul>
+<h3>
+<a name="bug-Dataviews"></a>Data views</h3>
+<ul>
+<li><p><a name="bug_7551"></a><strong>[7551]</strong> Default error message is displayed instead of custom error message for multi-valued fields. </p><p>When the user specifies a custom error message for a multi-valued field, the default error message is displayed instead of the custom error message if the field constraint is not satisfied.</p></li></ul>
+<h3>
+<a name="bug-DistributedDataDelivery"></a>Distributed Data Delivery (D3)</h3>
+<ul>
+<li><p><a name="bug_8198"></a><strong>[8198]</strong> Cannot re-broadcast a version. </p><p>When an error occurs during a snapshot broadcast, it is not possible to re-broadcast the same snapshot.</p></li></ul>
+<h3>
+<a name="bug-Userinterface"></a>User interface</h3>
+<ul>
+<li><p><a name="bug_2313"></a><strong>[2313]</strong> The EBX5 user interface has cross-site scripting vulnerabilities. </p><p>There are cross-site scripting vulnerabilities in the EBX5 user interface that need to be fixed.</p></li><li><p><a name="bug_4450"></a><strong>[4450]</strong> No error is raised if the D3 broadcast of a data space fails due to validation errors. </p><p>No error is raised if the broadcast of a data space failed due to validation errors. The user interface displays an information message stating that the data space was broadcast successfully, which is not true.</p></li><li><p><a name="bug_6614"></a><strong>[6614]</strong> User receives an &quot;access error&quot; pop-up after changing the current owner of a data space. </p><p>If the user changes the owner of a data space, the user interface displays an error pop-up, stating that access to the data space&#39;s record is not allowed.</p></li><li><p><a name="bug_7415"></a><strong>[7415]</strong> On IE8, when opening a work item, an error occurs. </p><p>On IE8, if XSS filters are activated, a <code>MalformedXPathException</code> occurs when opening a work item record.</p></li><li><p><a name="bug_7659"></a><strong>[7659]</strong> Cross-site scripting issue when opening a workflow&#39;s details page. </p><p>When the user opens the details page of a workflow, the browser indicates a cross-site scripting error. If the user then clicks on &quot;Take and start&quot;, the session disconnected with a fatal error message.</p></li><li><p><a name="bug_7980"></a><strong>[7980]</strong> Previously generated URLs are invalid for redirections from UI services. </p><p>Certain URLs that were generated in versions prior to 5.2.7 are no longer accepted for redirections from UI services.</p></li><li><p><a name="bug_8086"></a><strong>[8086]</strong> Refreshing the page within a UI service exits the service. </p><p>Performing a page refresh from within a UI service leaves the service, whereas previous versions of EBX5 redisplayed the same page.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><a name="bug_7620"></a><strong>[7620]</strong> Incorrect &#39;Owner&#39; profile in some fields in the Administration area. </p><p>Incorrect &#39;Owner&#39; profile values exist in several properties in the Administration area, such as under &#39;History and logs&#39;, &#39;Interactions&#39;, and &#39;Lineage&#39;</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.5.3</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.5.3.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.5.3</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.5.3 fix 005</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.5.3 fix 004</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id3">4.5.3 fix 003</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id4">4.5.3 fix 002</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id5">4.5.3 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id6">4.5.3</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Bug Fixes / Minor enhancement</a></li><li class="toc2"><a href="#id6s2">Hierarchies (Version 1)</a></li><li class="toc2"><a href="#id6s3">Performance enhancements</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.5.3 fix 005</h2>
+<p><strong>Release Date: October 13, 2008</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01783]</strong> On WebSphere Application Server, an exception is logged when closing connection after read-only statements. </p></li><li><p><strong>[01787]</strong> XML export width table node selection returns empty content if table node path size &gt; 3. </p></li><li><p><strong>[01788]</strong> Data Services select operation on a table returns empty content if table node path size &gt; 3. </p></li></ul>
+<h2>
+<a name="id2"></a>4.5.3 fix 004</h2>
+<p><strong>Release Date: September 17, 2008</strong></p><p><strong><code>(!) Upgrade of EBX.Platform from version 4.5.3 fix 003 to fix 004 must be considered.</code></strong></p><h3>
+<a name="id2s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01765]</strong> Sort on a recursive field inacurately generate a schema exeption. </p></li><li><p><strong>[01766]</strong> In EBX, adaptation nodes are reset to default on screen after clicking cancel button (since version 4.5.3 fix003). </p></li></ul>
+<h2>
+<a name="id3"></a>4.5.3 fix 003</h2>
+<p><strong>Release Date: September 5, 2008</strong></p><h3>
+<a name="id3s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01623]</strong> When an adaptation XML schema is amended (ex: add a new field, add an enumeration value for a node, ...), if we refresh the schema in EBX, all the updates appear in the root adaptation but not in its descendants (all the adaptations that inherit from the root adaptation). </p></li><li><p><strong>[01757]</strong> UIService is activated on a table record even if service specification <code>activatedForPaths=&quot;/root/myTable{n}&quot;</code> and n greater than 1. </p></li><li><p><strong>[01759]</strong><code>AdaptationTable.computePrimaryKey(ValueContextForValidation)</code> throws a <code>PathAccessException</code> .&nbsp;</p></li><li><p><strong>[01760]</strong> If XML export specifies a node selection, this selection includes all nodes that match the path prefix (as a string, not limited to the Xpath expression). </p></li><li><p><strong>[01761]</strong> Data Services select operation on a table may also returns all records from tables with path that match the target table path as prefix (as a string, not limited to the Xpath expression). </p></li></ul>
+<h2>
+<a name="id4"></a>4.5.3 fix 002</h2>
+<p><strong>Release Date: August 20, 2008</strong></p><h3>
+<a name="id4s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01753]</strong> In search in data model result page, paging buttons are inactive. </p></li><li><p><strong>[01754]</strong> HTTP Manager component method <code>selectNode</code> ignores given predicate if given adaptation is not occurrence. </p></li><li><p><strong>[01755]</strong> Cannot create table record if key is auto incremented and hidden ( <code>osd:category=&quot;Hidden&quot;</code> ). </p></li></ul>
+<h2>
+<a name="id5"></a>4.5.3 fix 001</h2>
+<p><strong>Release Date: July 18, 2008</strong></p><h3>
+<a name="id5s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01743]</strong> Perspective link does not work if previous data selection was not a table content. </p></li><li><p><strong>[01745]</strong> Child node with <code>osd:category=&quot;Hidden&quot;</code> of a complex terminal node is not hidden in EBX. </p></li><li><p><strong>[01748]</strong> EBX advanced graphical component displays &quot;&gt;&gt;&quot; before each item of a list selection. </p></li><li><p><strong>[01749]</strong> XML Schema setup reports a wrong error message if elements declare <code>xs:anyType</code> ( <em>No schema linked to namespace prefix &quot;xs&quot;</em> ). </p></li><li><p><strong>[01752]</strong> Table record overwriting and inheriting actions do nothing or raise errors. </p></li></ul>
+<h2>
+<a name="id6"></a>4.5.3</h2>
+<p><strong>Release Date: July 4, 2008</strong></p><h3>
+<a name="id6s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01722]</strong> Overwrite function is not available in table view. </p></li><li><p><strong>[01723]</strong> Overwritten columns are not colorized as expected in table view. </p></li><li><p><strong>[01724]</strong> Using automatic hierachies in technical adaptations (ebx-repository, ...) may cause a <code>NullPointerException</code> .&nbsp;</p></li><li><p><strong>[01725]</strong> A &quot;refresh adapter&quot; built-in service may be available on EBX;&nbsp;however, it does nothing except an infinite loop. </p></li><li><p><strong>[01726]</strong> CSS category node display throws a <code>PathAccessException</code> in EBX. </p></li><li><p><strong>[01727]</strong> While editing CSS category nodes, EBX does not display &quot;submit&quot; button. </p></li><li><p><strong>[01728]</strong> If a branch is locked for merge (and so its parent branch), if parent branch is unlocked (manually, for any reason), unlock child branch procedure in Manager reports a failure (&quot;cannot unlock branch X and branch Y&quot;);&nbsp;however, child branch is now unlocked. </p></li><li><p><strong>[01730]</strong> The element data is missing in DataServices Select Operation response. </p></li><li><p><strong>[01731]</strong> XML encoding (UTF-8) is not declared in DataServices XML flow. </p></li><li><p><strong>[01732]</strong> UIServices on table records selection are activated even if selection is empty. </p></li><li><p><strong>[01735]</strong> Views and hierarchies list (view folder) fails to display if a view description contains a &quot;carriage return&quot; character. </p></li><li><p><strong>[01736]</strong> Table records total quantity is not displayed even if this quantity is low; a specific request is needed to get table size. </p></li><li><p><strong>[01738]</strong> If two instances are created with same reference in two different branches and on two different schemas; additionally a user creates a new occurrence on a table in this instance on first branch and he repeats the same operation on the same table but on the second branch. Then at reload, the second table will have lost its new occurrence. </p></li><li><p><strong>[01739]</strong> EBX is XSS (Cross Site Scripting) vulnerable. </p></li><li><p><strong>[01741]</strong> Nodes of category &#39;Hidden&#39; are not hidden in table view. </p></li><li><p><strong>[01742]</strong><code>java.util.ConcurrentModificationException</code> on table view filter. </p></li></ul>
+<h3>
+<a name="id6s2"></a>Hierarchies (Version 1)</h3>
+<p><strong>Enhancements:</strong></p><ul>
+<li><p>Hierarchies are now in a stable version.</p></li><li><p>The following schema relationships are used to build hierarchies:</p><ul>
+<li><p>Foreign keys (osd:tableref).</p></li><li><p>Multi occurrenced foreignkeys.</p></li><li><p>Facet Enumeration.</p></li><li><p>Recursivity.</p></li><li><p>N,N relation by JoinTable.</p></li></ul>
+</li><li><p>Most of previous limitations have been removed.</p></li></ul>
+<p><strong>Known limitations:</strong></p><ul>
+<li><p>The following &quot;relationships&quot; are not yet exploited for configuring a hierarchy:</p><ul>
+<li><p><code>osd:select</code> elements, </p></li><li><p> inter-instance foreign keys ( <code>osd:tableRef</code> with <code>container</code> element defined). </p></li></ul>
+</li><li><p>Other filters than view&#39;s are not applied on hierarchies.</p></li><li><p> On specific <code>ConstraintEnumeration</code> or <code>ConstraintNomenclature</code> ,&nbsp;hiearchy may cause errror on display. </p></li><li><p>The default perspective can not be a combination of views and hierarchies.</p></li><li><p>Default perspectives should not be activated on complex data models.</p></li></ul>
+<h3>
+<a name="id6s3"></a>Performance enhancements</h3>
+<p>Optimize and Refactor - Mutualize common values procedure performance is enhanced.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

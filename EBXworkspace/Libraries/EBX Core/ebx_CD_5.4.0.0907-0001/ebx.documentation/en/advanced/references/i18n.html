@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Labeling and localization</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_i18n" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/i18n.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</span></div>
+<h1>
+Labeling and localization</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Localization of the user interaction</a></li><li class="toc2"><a href="#id1s2">Textual information</a></li><li class="toc2"><a href="#id1s3">Values formats</a></li></ul>
+</li><li class="toc1"><a href="#formattingPolicies">Formatting policies</a></li><li class="toc1"><a href="#localeSyntax">Syntax for locales</a></li><li class="toc1"><a href="#i18n_extended">Extending EBX5 internationalization</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview</h2>
+<p>EBX5 offers the ability to handle the labeling and the internationalization of a particular data model.</p><h3>
+<a name="id1s1"></a>Localization of the user interaction</h3>
+<p>In EBX5, language preferences can be set on two scopes:</p><ol>
+<li><p>Session: The user can select a default locale on his profile page.</p></li><li><p>Data model: If a data model has been localized to other languages than those natively supported by EBX5, the user can also select one of those languages for that data model. See <a target="_self" href="#i18n_extended">Extending EBX5 internationalization</a> for details.</p></li></ol>
+<p> The languages supported by a particular data model must be specified in its <a target="_self" href="../models/modules_packaging.html#declaration">module declaration</a> .&nbsp;</p><h3>
+<a name="id1s2"></a>Textual information</h3>
+<p>In EBX5, most master data entities can have a label, a description, or can correspond to a user message. For example:</p><ul>
+<li><p>data spaces, snapshots and data sets can have their own label and description (the label is distinct from the identifier, so that it remains localizable and modifiable);</p></li><li><p>any node in the model can have a static label and a description;</p></li><li><p>values can have a static label when they are enumerated;</p></li><li><p>validation messages can be customized and permission restrictions can provide a textual reason;</p></li><li><p>each record is dynamically displayed according to its content and the context where it is displayed (in hierarchies, as foreign keys, etc.);</p></li></ul>
+<p>Obviously, all this textual information can be localized according to the declared locales of the module (see previous section).</p><p> For more information, see the chapter <a target="_self" href="../models/labels_error_messages.html">Labels and messages</a> , <a target="_self" href="../models/tables_filters.html">Tables declaration</a> , <a target="_self" href="../models/constraints.html#foreignKey">Foreign keys declaration</a> ,&nbsp;and other entities&#39; documentation. </p><h3>
+<a name="id1s3"></a>Values formats</h3>
+<p>When a value is displayed to the user, it is formatted according to its type and the formatting policy of the current locale. For example, a date will be displayed in some languages as &quot;dd/MM/yyyy&quot;.</p><p> The <a target="_self" href="#formattingPolicies">next section</a> describes how to define and customize formatting policies. </p><h2>
+<a name="formattingPolicies"></a>Formatting policies</h2>
+<p> A formatting policy is used to define how to display values of the <a target="_self" href="../models/types.html#xsdsimple">simple types</a> .&nbsp;</p><p> For each locale declared on the module (see section above), its formatting policy is configured by means of a file whose path is: <code>/WEB-INF/ebx/{locale}/frontEndFormattingPolicy.xml</code> .&nbsp;For instance, to define the formatting policy for the greek (<code>el</code>), the engine will look for the following path in the module: </p><pre class="ebx_example brush: html">
+&lt;code>/WEB-INF/ebx/el/frontEndFormattingPolicy.xml&lt;/code></pre>
+<p> If the corresponding file does not exist, the formatting policy is looked up in the root module, <code>ebx-root-1.0</code> .&nbsp;If not declared in root module, the formatting policy of <code>en_US</code> is adopted. </p><p> The content of the file <code>frontEndFormattingPolicy.xml</code> is as follows: </p><pre class="ebx_example brush: html">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;formattingPolicy  xmlns="urn:ebx-schemas:formattingPolicy_1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:ebx-schemas:formattingPolicy_1.0 ../schema/ebx-reserved/formattingPolicy_1.0.xsd">
+	&lt;date pattern="dd/MM" />
+	&lt;time pattern="HH:mm:ss" />
+	&lt;dateTime pattern="dd/MM/yyyy HH:mm" />
+	&lt;decimal pattern="00,00,00.000" />
+	&lt;int pattern="000,000" />
+&lt;/formattingPolicy>
+</pre>
+<p>The elements date, dateTime and time are mandatory.</p><h2>
+<a name="localeSyntax"></a>Syntax for locales</h2>
+<p>There are two ways to write a locale:</p><ol>
+<li><p>The XML recommendation follows the <a target="_blank" href="http://tools.ietf.org/html/bcp47#page-1-4">IETF BCP 47</a> recommendation, which uses the hyphen &#39;-&#39; as a separator.</p></li><li><p>The Java Specification uses the underscore &#39;_&#39; instead of the hyphen.</p></li></ol>
+<p>In any XML file (XSD, formatting policy file, ...) read by EBX5, both syntaxes are allowed. For webpath (that is, path within the webapp), only the Java syntax is allowed. So, a formatting policy file must be located in a directory whose name is a locale respecting the Java syntax. </p><h2>
+<a name="i18n_extended"></a>Extending EBX5 internationalization</h2>
+<p>EBX5 internationalization can be extended according the <a target="_self" href="./i18n_extended.html">documentation provided here</a>. </p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Miscellaneous</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

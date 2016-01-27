@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Built-in UI services</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="builtin_services" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Reference Manual &gt; Integration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/builtin.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration</span></div>
+<h1>
+Built-in UI services</h1>
+<p>EBX5 includes a number of built-in UI services. Built-in UI services can be used:</p><ul>
+<li><p>when defining workflow model tasks</p></li></ul>
+<p>This reference page describes the built-in UI services and their parameters.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#selectDataSpace">Access a data space</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Input parameters</a></li></ul>
+</li><li class="toc1"><a href="#default">Access data (default service)</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Input parameters</a></li></ul>
+</li><li class="toc1"><a href="#compare">Compare contents</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Input parameters</a></li></ul>
+</li><li class="toc1"><a href="#creation">Create a new record</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Input parameters</a></li><li class="toc2"><a href="#id4s2">Output parameters</a></li></ul>
+</li><li class="toc1"><a href="#duplicate">Duplicate a record</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Input parameters</a></li><li class="toc2"><a href="#id5s2">Output parameters</a></li></ul>
+</li><li class="toc1"><a href="#exportToCSV">Export data from a table in CSV files</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Input parameters</a></li></ul>
+</li><li class="toc1"><a href="#exportToXML">Export data from a table in XML files</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Input parameters</a></li></ul>
+</li><li class="toc1"><a href="#importFromCSV">Import data into a table from an CSV file</a><ul class="toc2">
+<li class="toc2"><a href="#id8s1">Input parameters</a></li></ul>
+</li><li class="toc1"><a href="#importFromXML">Import data into a table from an XML file</a><ul class="toc2">
+<li class="toc2"><a href="#id9s1">Input parameters</a></li></ul>
+</li><li class="toc1"><a href="#merge">Merge a data space</a><ul class="toc2">
+<li class="toc2"><a href="#id10s1">Input parameters</a></li><li class="toc2"><a href="#id10s2">Output parameters</a></li></ul>
+</li><li class="toc1"><a href="#validation">Validate a data space, a snapshot or a data set</a><ul class="toc2">
+<li class="toc2"><a href="#id11s1">Input parameters</a></li><li class="toc2"><a href="#id11s2">Output parameters</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="selectDataSpace"></a>Access a data space</h2>
+<p>The data space selection service is automatically considered to be complete.</p><p> Service name parameter: <code>service=@selectDataSpace</code></p><h3>
+<a name="id1s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>version</code></td><td>Snapshot</td><td>The identifier of the specified snapshot - A data space is required for this service.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="default"></a>Access data (default service)</h2>
+<p>The default service. By default, this service is automatically considered as complete. That is, the &#39;Accept&#39; button is always available.</p><p>This is the default service used if no service is specified.</p><h3>
+<a name="id2s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space is required for this service.</td></tr>
+<tr>
+<td><code>disableAutoComplete</code></td><td>Disable Accept at start</td><td>By default, the interaction associated with this service is directly considered as complete. Therefore, the Accept button is automatically displayed at the opening of the work item. This parameter is useful to disable this behavior. If the value is &#39;true&#39;, the developer will be in charge of completing the interaction by using SessionInteraction in a UI service or a trigger, for example. The default value is &#39;false&#39;.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>version</code></td><td>Snapshot</td><td>The identifier of the specified snapshot - A data space is required for this service.</td></tr>
+<tr>
+<td><code>viewPublication</code></td><td>View</td><td>The publication name of the view to display. The view must be configured for the selected table.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Data set node (XPath)</td><td>The value must be a valid absolute location path in the selected data set. The notation must conform to a simplified XPath, in its abbreviated syntax.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="compare"></a>Compare contents</h2>
+<p>The compare service is automatically considered complete.</p><p> Service name parameter: <code>service=@compare</code></p><h3>
+<a name="id3s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space or snapshot and a data space or snapshot to compare to are required for this service.</td></tr>
+<tr>
+<td><code>compare.branch</code></td><td>Data space to compare</td><td>The identifier of the data space to compare - A data space or snapshot and a data space or snapshot to compare to are required for this service.</td></tr>
+<tr>
+<td><code>compare.instance</code></td><td>Data set to compare</td><td>The value must be the reference of a data set that exists in the selected data space to compare.</td></tr>
+<tr>
+<td><code>compare.version</code></td><td>Snapshot to compare</td><td>The identifier of the snapshot to compare - A data space or snapshot and a data space or snapshot to compare to are required for this service.</td></tr>
+<tr>
+<td><code>compare.xpath</code></td><td>Table or record to compare (XPath)</td><td>The value must be a valid absolute location path of a table or a record in the selected data set to compare. The notation must conform to a simplified XPath, in its abbreviated syntax.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>version</code></td><td>Snapshot</td><td>The identifier of the specified snapshot - A data space or snapshot and a data space or snapshot to compare to are required for this service.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Table or record (XPath)</td><td>The value must be a valid absolute location path of a table or a record in the selected data set. The notation must conform to a simplified XPath, in its abbreviated syntax.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="creation"></a>Create a new record</h2>
+<p>The creation service is considered complete when the first successful submit is performed (record has been created). If this service is called whereas it is already complete, the created record is displayed in update or read-only mode (depending on the user rights).</p><p> Service name parameter: <code>service=@creation</code></p><h3>
+<a name="id4s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Data set table (XPath)</td><td>The value must be a valid absolute location path of a table in the selected data set. The notation must conform to a simplified XPath, in its abbreviated syntax - This field is required for this service.</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id4s2"></a>Output parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created</code></td><td>Created record</td><td>Contains the XPath of the created record.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="duplicate"></a>Duplicate a record</h2>
+<p>The duplicate service is considered complete when the first successful submit is performed (record has been created). If this service is called whereas it is already complete, the created record is displayed in update or read-only mode (depending on the user rights).</p><p> Service name parameter: <code>service=@duplicate</code></p><h3>
+<a name="id5s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Record to duplicate (XPath)</td><td>The value must be a valid absolute location path of an existing record. The notation must conform to a simplified XPath, in its abbreviated syntax - This field is required for this service.</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id5s2"></a>Output parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created</code></td><td>Created record</td><td>Contains the XPath of the created record.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="exportToCSV"></a>Export data from a table in CSV files</h2>
+<p>The exportToCSV service is considered complete when export is done and file downloaded.</p><p> Service name parameter: <code>service=@exportToCSV</code></p><h3>
+<a name="id6s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space is required for this service.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>version</code></td><td>Snapshot</td><td>The identifier of the specified snapshot - A data space is required for this service.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Data set table to export (XPath)</td><td>The value must be a valid absolute location path of a table in the selected data set. The notation must conform to a simplified XPath, in its abbreviated syntax - This field is required for this service.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="exportToXML"></a>Export data from a table in XML files</h2>
+<p>The exportToXML service is considered complete when export is done and file downloaded.</p><p> Service name parameter: <code>service=@exportToXML</code></p><h3>
+<a name="id7s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space is required for this service.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>version</code></td><td>Snapshot</td><td>The identifier of the specified snapshot - A data space is required for this service.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Data set table to export (XPath)</td><td>The value must be a valid absolute location path of a table in the selected data set. The notation must conform to a simplified XPath, in its abbreviated syntax - This field is required for this service.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="importFromCSV"></a>Import data into a table from an CSV file</h2>
+<p>The importFromCSV service is considered complete when import is performed.</p><p> Service name parameter: <code>service=@importFromCSV</code></p><h3>
+<a name="id8s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space is required for this service.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Data set table to import (XPath)</td><td>The value must be a valid absolute location path of a table in the selected data set. The notation must conform to a simplified XPath, in its abbreviated syntax - This field is required for this service.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="importFromXML"></a>Import data into a table from an XML file</h2>
+<p>The importFromXML service is considered complete when import is performed.</p><p> Service name parameter: <code>service=@importFromXML</code></p><h3>
+<a name="id9s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space is required for this service.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space - This field is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>xpath</code></td><td>Data set table to import (XPath)</td><td>The value must be a valid absolute location path of a table in the selected data set. The notation must conform to a simplified XPath, in its abbreviated syntax - This field is required for this service.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="merge"></a>Merge a data space</h2>
+<p>The merge service is considered complete when merger is performed and data space is closed.</p><p> Service name parameter: <code>service=@merge</code></p><h3>
+<a name="id10s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space is required for this service.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id10s2"></a>Output parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mergeResult</code></td><td>Merge success</td><td>Contains &#39;true&#39; if merge succeeded, otherwise &#39;false&#39;.</td></tr>
+<tr>
+<td><code>mergeState</code></td><td>Merge state</td><td>Contains the return code of the merge. It is strongly recommended to parse this value by using the InteractionMergeState UIHttpManagerComponentReturnCode.</td></tr>
+</tbody>
+</table>
+<h2>
+<a name="validation"></a>Validate a data space, a snapshot or a data set</h2>
+<p>The validation service is automatically considered complete.</p><p> Service name parameter: <code>service=@validation</code></p><h3>
+<a name="id11s1"></a>Input parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch</code></td><td>Data space</td><td>The identifier of the specified data space - A data space or snapshot is required for this service.</td></tr>
+<tr>
+<td><code>instance</code></td><td>Data set</td><td>The value must be the reference of a data set that exists in the selected data space.</td></tr>
+<tr>
+<td><code>scope</code></td><td>Scope</td><td>Defines the scope of the user navigation for this service, namely, the entities that the user is able to select during their session.</td></tr>
+<tr>
+<td><code>trackingInfo</code></td><td>Tracking information</td><td>Tracking information is logged into &#39;history&#39; logs. It may also be used for any other purpose like access control or additional export information.</td></tr>
+<tr>
+<td><code>version</code></td><td>Snapshot</td><td>The identifier of the specified snapshot - A data space or snapshot is required for this service.</td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id11s2"></a>Output parameters</h3>
+<table border="1" cellpadding="5%" cellspacing="0" class="">
+<thead>
+<tr>
+<th><strong>Parameter</strong></th><th><strong>Label</strong></th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hasError</code></td><td>Found errors</td><td>Contains &#39;true&#39; if validation has produced errors.</td></tr>
+<tr>
+<td><code>hasFatal</code></td><td>Found fatal errors</td><td>Contains &#39;true&#39; if validation has produced fatal errors.</td></tr>
+<tr>
+<td><code>hasInfo</code></td><td>Found informations</td><td>Contains &#39;true&#39; if validation has produced informations.</td></tr>
+<tr>
+<td><code>hasWarning</code></td><td>Found warnings</td><td>Contains &#39;true&#39; if validation has produced warnings.</td></tr>
+</tbody>
+</table>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Reference Manual &gt; Integration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

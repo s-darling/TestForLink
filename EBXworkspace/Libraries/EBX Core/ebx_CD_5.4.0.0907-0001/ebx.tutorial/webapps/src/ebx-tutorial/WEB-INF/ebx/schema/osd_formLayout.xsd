@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML schema generated from EBX5 DMA instance [reference=uiFormLayout] on Fri Aug 31 12:19:48 CEST 2012 by user [admin].-->
+<xs:schema xmlns:osd="urn:ebx-schemas:common_1.0" xmlns:fmt="urn:ebx-schemas:format_1.0" xmlns:ebxbnd="urn:ebx-schemas:binding_1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebxs="urn:ebx-schemas:session_1.0">
+    <xs:import namespace="urn:ebx-schemas:common_1.0" schemaLocation="http://schema.orchestranetworks.com/common_1.0.xsd"/>
+    <xs:include schemaLocation="http://schema.orchestranetworks.com/coreModel_1.0.xsd"/>
+    <xs:import namespace="urn:ebx-schemas:session_1.0" schemaLocation="http://schema.orchestranetworks.com/session_1.0.xsd"/>
+    <xs:element name="root" osd:access="--">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="table" type="SimpleTypes" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <osd:table>
+                                <primaryKeys>/string </primaryKeys>
+                                <recordForm osd:class="com.orchestranetworks.tutorial.editor.DummyFormLayout"/>
+                            </osd:table>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="table2" type="SimpleTypes" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <osd:table>
+                                <primaryKeys>/string </primaryKeys>
+                                <recordForm osd:class="com.orchestranetworks.tutorial.editor.DummyFormLayout"/>
+                            </osd:table>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="SimpleTypes">
+        <xs:sequence>
+            <xs:element name="string" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="boolean" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="decimal" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="dateTime" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="time" type="xs:time" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="anyURI" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="name" type="xs:Name" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="nmtoken" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="nmtokens" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="integer" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="email" type="osd:email" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="html" type="osd:html" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

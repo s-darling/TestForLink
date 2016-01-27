@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.3.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.3.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.3.0</h1>
+<p><strong>Release Date: March 5, 2013</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of 5.3.0</a></li><li class="toc1"><a href="#id2">User interface</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Combo box</a></li><li class="toc2"><a href="#id2s2">Dynamic validation of user input</a></li><li class="toc2"><a href="#id2s3">Dynamic refresh of combo boxes</a></li><li class="toc2"><a href="#id2s4">New custom layout API</a></li><li class="toc2"><a href="#id2s5">Flat button style</a></li><li class="toc2"><a href="#id2s6">New API to select a service on record or data set</a></li></ul>
+</li><li class="toc1"><a href="#id3">Data workflows</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Improved user interface for data workflows</a></li><li class="toc2"><a href="#id3s2">Priorities for data workflows</a></li></ul>
+</li><li class="toc1"><a href="#id4">Data Modeling</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Improved user interface for the data model assistant</a></li><li class="toc2"><a href="#id4s2">Simple types definition</a></li><li class="toc2"><a href="#id4s3">Converting existing complex elements into reusable types using the data model assistant</a></li><li class="toc2"><a href="#id4s4">Defining primary keys under groups in the data model assistant</a></li><li class="toc2"><a href="#id4s5">Include existing data models</a></li><li class="toc2"><a href="#id4s6">Including data models in XML Schema Documents</a></li><li class="toc2"><a href="#id4s7">Including Java resources in different modules</a></li></ul>
+</li><li class="toc1"><a href="#id5">Documentation</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Sections of User Guide refreshed</a></li><li class="toc2"><a href="#id5s2">Documentation in PDF format</a></li></ul>
+</li><li class="toc1"><a href="#id6">New TestHelper API</a></li><li class="toc1"><a href="#versionUpgrade">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id7s1">Backward compatibility</a></li><li class="toc2"><a href="#id7s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug-Dataviews">Data views</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-Userinterface">User interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of 5.3.0</h2>
+<p>This version contains numerous major enhancements, such as improved user interfaces for data workflows and the data model assistant. Significant improvements have been made upon the usability of EBX5 forms, namely with the introduction of a combo box selection widget, dynamic form validation, and dynamic lists. Another notable addition is the new custom layout API, which allows the implementation of highly customized forms to accommodate diverse end user needs.</p><p>Other notable new features include priorities for data workflows and the definition of reusable simple types. The product documentation is now available in PDF format, and the Data models and Data workflows sections have been completely refreshed.</p><p><em>This version includes all bug fixes and new features from the version <a href="./5.2.6.html">5.2.6</a>.</em></p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<strong>Before proceeding with the upgrade of any existing environment, ensure that you have carefully read the <a href="#versionUpgrade">Version upgrade</a> section.</strong></fieldset>
+<h2>
+<a name="id2"></a>User interface</h2>
+<h3>
+<a name="id2s1"></a>Combo box</h3>
+<p>A new combo box widget has been added to EBX5 to replace the old <code>UIListSearch</code>. It is more user-friendly, as it includes a text search to narrow down entries for enumerated lists and table references.</p><p><img alt="/5.3.0-ISS.png" src="../resources/images/releasenotes/5.3.0-ISS.png" align="middle"></img></p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">For backward compatibility reasons, the old <code>UIListSearch</code> widget remains in use for certain cases of <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIResponseContext.html">UI beans</a>.</p></div>
+<h3>
+<a name="id2s2"></a>Dynamic validation of user input</h3>
+<p>Form fields are now validated using Ajax without requiring a form submission. After the user enters a value and changes focus away from the field, the input is validated and any resulting validation messages are displayed inline under the relevant field.</p><p>This automatic control also applies to contextual constraints. For example, if a field <code>fieldB</code> must be greater than <code>fieldA</code> in the same form, the constraint on <code>fieldB</code> is evaluated against the value currently entered for <code>fieldA</code> as soon as the user changes focus away from <code>fieldB</code>.</p><h3>
+<a name="id2s3"></a>Dynamic refresh of combo boxes</h3>
+<p>EBX5 data modeling allows the definition of dynamic and contextual enumerations, such as foreign key filters (<code>osd:tableRef/filter</code>) and programmatic enumeration constraints (<code>osd:constraintEnumeration</code>).</p><p>In such cases where the possible values depends on the value of another field in the same form, when the user interface widget is the new combo box (see section above), the values in the list are now refreshed as soon as the user changes focus away from the field on which the list depends. Previously, the user had to submit the entire form in order for the updated value of the field to be taken into account.</p><p>The old <code>UIListSearch</code> also benefits of this new feature.</p><p>A current limitation is that this does not work when the field on which the list depends is located under a complex terminal node. In this case, the user still needs to submit the form for the enumerated list to reflect the updated value of the field on which it depends.</p><h3>
+<a name="id2s4"></a>New custom layout API</h3>
+<p>A new presentation layer has been added on top of existing data model and permissions layers to allow the creation of highly-customizable forms. Key features of the layout layer include the ability to override the default automatically generated EBX5 forms and:</p><ul>
+<li><p>Create your own HTML layout with custom field placement and ordering</p></li><li><p>Integrate your custom layout elements seamlessly into the existing EBX5 user interface by leveraging provided API for styles and pre-built HTML/Ajax artifacts</p></li><li><p>Include auto-generated user interface widgets in your layout</p></li><li><p>Automatically trigger validation and other standard EBX5 transactions</p></li><li><p>Perform specific and dynamic updates in the client page, by specifying a JavaScript function to be triggered when a widget looses the focus</p></li><li><p>Support user permissions, as available in default forms</p></li><li><p>Configure rendering parameters for each form field, such as showing or hiding icons, showing or hiding labels, aligning fields vertically or horizontally</p></li><li><p>Rename buttons with custom labels</p></li></ul>
+<p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/form/UIForm.html">UIForm</a> in the Java API for information on these new features.</p><p><strong>Known limitations</strong></p><p>Some features have been planned for future releases but are not yet present in the current version.</p><ul>
+<li><p>It is not yet possible to include buttons that set complex terminal nodes to <code>null</code> (&#39;Set field to [not defined]&#39;) in a custom layout</p></li><li><p>Permissions on fields in terminal groups are not yet taken into account in the display of forms</p></li><li><p>Data set inheritance is not yet supported with custom layouts. It is therefore recommended to disable inheritance when using a custom layout</p></li><li><p>Inherited fields are not yet supported for custom layouts. Custom layouts should not be used to manipulate such fields</p></li><li><p>More widgets for custom layouts will be added to the API, such as text areas and date and time input fields</p></li></ul>
+<h3>
+<a name="id2s5"></a>Flat button style</h3>
+<p>To offer forms that are more visually lightweight, a new style of buttons called <strong>flat buttons</strong> have been included in this version. A flat button has no outline and is not embossed until the user hovers over it with the mouse cursor.</p><p><img alt="/5.3.0-Flat_buttons.png" src="../resources/images/releasenotes/5.3.0-Flat_buttons.png" align="middle"></img></p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIButtonSpec.html#setRelief(com.orchestranetworks.ui.UIButtonRelief)">UIButtonSpec.setRelief()</a> in the Java API for information on this new feature.</p><h3>
+<a name="id2s6"></a>New API to select a service on record or data set</h3>
+<p>A new method <code>getURLForServiceSelection</code> has been added to <code>ServiceContext</code> to launch a service on a record in the same session.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html#getURLForServiceSelection(com.onwbp.adaptation.Adaptation, com.orchestranetworks.service.ServiceKey)">getURLForServiceSelection</a> in the Java API for more information.</p><h2>
+<a name="id3"></a>Data workflows</h2>
+<h3>
+<a name="id3s1"></a>Improved user interface for data workflows</h3>
+<p>Major updates have been made to the user interface of the Data Workflows area. Some notable improvements include:</p><ol>
+<li><p>The introduction of the <em>Work items inbox</em>, which entirely replaces the previous &#39;Work list&#39; hierarchy. This &quot;inbox&quot; landing page provides access to a summary of all the work items that are relevant to the current user. From here, the user can perform actions pertaining to each work item, as well as view information and the comments of users on the work item. </p></li><li><p>A new <em>Workflow launchers</em> page, which gives supervisors a convenient means to launch data workflows from their publications.</p></li><li><p>A <em>Monitoring</em> section in the navigation pane providing access to information and available actions for users who have data workflow administration responsibilities.</p></li><li><p>The added ability for data workflow administrators to view historical information on data workflows that have already completed.</p></li></ol>
+<p><img alt="/5.3.0-dataworkflows_ui.png" src="../resources/images/releasenotes/5.3.0-dataworkflows_ui.png" align="middle"></img></p><p>See <a href="../user_dataworkflow/userdataworkflow_intro.html">Data workflows</a> for more information.</p><h3>
+<a name="id3s2"></a>Priorities for data workflows</h3>
+<p>It is now possible to assign a priority to a data workflow. This new property can be useful for sorting data workflows and work items. All the work items associated with a given data workflow will inherit its priority level, and thus be displayed with that priority.</p><p>By default, six priorities are provided: <em>Very low</em>, <em>Low</em>, <em>Normal</em>, <em>High</em>, <em>Very high</em>, and <em>Urgent</em>. A priority is associated with an integer value, a label, and an icon. The priorities available in the EBX5 repository are customizable in the Administration area. It is possible to add custom priorities and remove or modify the default priorities.</p><p>In the Administration area, it is also possible to specify a default priority for the repository. If this field is defined, all data workflows and their work items that have no priority defined will be displayed with the default priority in the Data Workflows area. </p><p>A priority can be set or modified in the following ways: </p><ul>
+<li><p>In the configuration of a workflow model, a default priority can be defined, which will be used to initialize data workflows launched from a publication of the model.</p></li><li><p>In the Data Workflows area, an administrator of the data workflow can perform a priority modification action from the &#39;Active workflows&#39; view.</p></li><li><p>The Java API includes the following methods that can be used on workflows:</p><ul>
+<li><p><a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessLauncher.html#setPriority(java.lang.Integer)"><code>setPriority</code></a> in <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessLauncher.html"><code>ProcessLauncher</code></a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessInstance.html#getPriority()"><code>getPriority</code></a> in <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessInstance.html"><code>ProcessInstance</code></a></p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessExecutionContext.html#modifyProcessPriority(java.lang.Integer)"><code>modifyProcessPriority</code></a> in <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessExecutionContext.html"><code>ProcessExecutionContext</code></a> and all context subinterfaces that inherit from it, such as <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ScriptTaskContext.html"><code>ScriptTaskContext</code></a>, <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ConditionContext.html"><code>ConditionContext</code></a>, <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/UserTaskCreationContext.html"><code>UserTaskCreationContext</code></a>, etc.</p></li></ul>
+</li></ul>
+<h2>
+<a name="id4"></a>Data Modeling</h2>
+<h3>
+<a name="id4s1"></a>Improved user interface for the data model assistant</h3>
+<p>Significant changes have been made to the user interface of the data model assistant. Notably, the following improvements have been made:</p><ol>
+<li><p>The data model technical properties and configuration pages have been relocated to the &#39;Configuration&#39; section directly in the navigation pane for easy access.</p></li><li><p>Editing of the data model&#39;s data structure is now entirely performed in the navigation panel of the interface. This allows the user to have consistent access to the structure of the data model and its elements.</p></li><li><p>Shortcut buttons have been added to allow easy repositioning of elements in the data structure at their current level.</p></li><li><p>A visual distinction is now made in the data structure when groups or tables are using reusable types. The structure of the reusable type is not directly modifiable under the group or table referencing the type, only through its definition under the section &#39;Complex types&#39;.</p></li><li><p>Both simple and complex reusable types can now be created from the navigation pane at any time. Previously, reusable types could only be created at element creation time, and it was only possible for tables and groups.</p></li><li><p>The ability to customize the root of a data model has been added. It is now possible to delete the default root that is automatically added to all data models and create a new one with a custom name and localized labels and descriptions.</p></li></ol>
+<p><img alt="/5.3.0-dma_ui.png" src="../resources/images/releasenotes/5.3.0-dma_ui.png" align="middle"></img></p><p>See <a href="../user_datamodel/userdatamodel_implementdatastructure.html">Implementing the data model structure</a> for more information.</p><h3>
+<a name="id4s2"></a>Simple types definition</h3>
+<p>EBX5 now supports the definition of reusable simple types. These reusable simple types can be defined both through the data model assistant or in a XML Schema Document data model.</p><p>See <a href="../user_datamodel/userdatamodel_implementdatastructure.html#reusableTypes">Reusable simple types</a> for more information on defining reusable types using the DMA, and <a href="../models/types.html#xsdNamedSimpleType">Simple type definition</a> for information on simple types.</p><h3>
+<a name="id4s3"></a>Converting existing complex elements into reusable types using the data model assistant</h3>
+<p>A service for transforming a group to a reusable complex type has been added. It is now possible from the data model structure to create a complex reusable type from a group. This can be useful for factorizing the structure of a data model using reusable types.</p><p>See <a href="../user_datamodel/userdatamodel_implementdatastructure.html#reusableTypes">Reusable types</a> for more information on defining reusable types using the DMA.</p><h3>
+<a name="id4s4"></a>Defining primary keys under groups in the data model assistant</h3>
+<p>It is now possible to directly create a primary key as a child of a group in the data structure of a data model using the data model assistant.</p><h3>
+<a name="id4s5"></a>Include existing data models</h3>
+<p>The data model assistant now supports the inclusion of existing data models in the current data model. Including an existing data model permits the use of reusable types defined in external data models. That is, it is now possible to share data types that are defined in existing XML Schema documents with a data model defined in the data model assistant. It is only possible to include existing embedded data models or data models packaged in modules.</p><p>See <a href="../user_datamodel/userdatamodel_implementdatastructure.html#includeDataModel">Including data types defined in other data models</a> for more information.</p><h3>
+<a name="id4s6"></a>Including data models in XML Schema Documents</h3>
+<p> It is now possible to include an embedded data model in an XML Schema Document using a specific URN targeting this embedded data model. A specific URN for including data models packaged in modules has also been added. That is, it is now possible to include a data model packaged in a module without specifying an absolute or relative path. Only the name of the module containing the data model and its path in this module are required. </p><p>See <a href="../models/types.html#includedDataModels">Including external data models</a> for more information.</p><h3>
+<a name="id4s7"></a>Including Java resources in different modules</h3>
+<p>In a data model packaged in a module, it is no longer necessary to define dependencies in the associated <code>module.xml</code> to other modules in order to include external data models using the element <code>xs:include</code>. That is, when a data model includes a type defining Java resources that are not defined in the current module, the class loading of the module containing the included data models will be used automatically. However, dependencies are still needed in the file <code>module.xml</code> when including a type containing a resource in a module using the facet <code>FacetOResource</code>. In this case these dependencies are used for resolving aliases that indicate which EBX5 module contains the resource.</p><h2>
+<a name="id5"></a>Documentation</h2>
+<h3>
+<a name="id5s1"></a>Sections of User Guide refreshed</h3>
+<p>In the product documentation, the sections &#39;<a href="../user_datamodel/userdatamodel_intro.html">Data models</a>&#39; and &#39;<a href="../user_dataworkflow/userdataworkflow_intro.html">Data workflows</a>&#39; of the User Guide have been completely refreshed in this version.</p><h3>
+<a name="id5s2"></a>Documentation in PDF format</h3>
+<p>The documentation is now also available in PDF format, accessible in the navigation pane of the HTML documentation.</p><h2>
+<a name="id6"></a>New TestHelper API</h2>
+<p>It is now possible to provide existing EBX5 repositories that use standalone H2 databases for tests based on the <code>TestHelper</code> API. The method <code>getRepositoryCopyOfExistingH2StandaloneDB</code> has been added to allow providing the location of a source H2 database to copy to a temporary directory for running tests.</p><p>Additionally, the method <code>getNewRepository</code> now uses H2 as its database. Previously, this method used an HSQL database.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/TestHelper.html#getRepositoryCopyOfExistingH2StandaloneDB(java.io.File, java.io.File, java.lang.String)">getRepositoryCopyOfExistingH2StandaloneDB</a>, <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/TestHelper.html#getNewRepository(java.io.File)">getNewRepository</a>, and <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/TestHelper.html">TestHelper</a> in the Java API for more information.</p><h2>
+<a name="versionUpgrade"></a>Version upgrade</h2>
+<h3>
+<a name="id7s1"></a>Backward compatibility</h3>
+<h4>
+SchemaLocation API</h4>
+<p>The compilation process of schemas that depend on a repository, such as embedded schemas or schemas located inside the &#39;repository&#39; directory on the application server, is now more strict. That is, this kind of schema now has to be resolved in the context of a repository. A compilation error is now raised if embedded schemas located inside the &#39;repository&#39; directory are accessed not in the context of a repository. As a consequence, the method <code>getInputStream()</code> is no longer supported on schemas depending on a repository, and has become deprecated. It is now advised to use the method <code>getInputStream(Repository)</code> instead.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaLocation.html#getInputStream()">getInputStream() </a> and <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaLocation.html#getInputStream()">getInputStream(Repository)</a> for more information. </p><h4>
+Confirmation on leaving modified forms</h4>
+<p>The method of detecting when a user is leaving a page on which there is modified form content has been improved. Now, when the user closes the browser or if JavaScript changes the page&#39;s location or runs <code>form.submit()</code>, the system that checks for form modifications is called. If modifications are found, the user is prompted to confirm the page change.</p><p>For UI services that use <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIServiceComponentWriter.html#startForm(com.orchestranetworks.ui.UIFormSpec)">standard forms</a>, this implies the use of the standard <code><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIButtonSpecSubmit.html">built-in submit buttons</a></code> in order to save input without unnecessarily asking for user confirmation.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">You can have this mechanism ignore a specific form element by using the CSS class <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UICSSClasses.html#IGNORE_FORM_CHECK">UICSSClasses.IGNORE_FORM_CHECK</a>.</p></div>
+<h4>
+Default directory role name</h4>
+<p>To avoid ambiguity, leading or trailing whitespaces are no longer permitted in role names in the default directory. If existing roles do not satisfy this constraint, they will continue to function normally in the user directory and for permissions. However, if a validation is requested, errors will be reported.</p><h4>
+Removal of local uniqueness controls in the user interface</h4>
+<p>In previous versions of EBX5, for aggregated lists composed of a simple foreign key field (that is, an <code>osd:tableRef</code>), the default model-driven form generated a component that prevented specifying the same value twice in the list.</p><p>However, as this default control was only enforced by the user interface, duplicates were possible through imports, Java implementations, and data services updates. Furthermore, certain client scenarios required allowing such duplicates. As such, the local user interface no longer enforces this constraint. If a uniqueness constraint is required on aggregated lists composed of a simple foreign key, the appropriate programmatic constraint must be specified in the data model.</p><h4>
+Module declaration</h4>
+<p>To enforce conformity with the XML Schema module declaration, when a <code>module.xml</code> contains a <code>locales</code> element without any nested <code>locale</code> elements, a <code><a target="_blank" href="../Java_API/com/onwbp/base/repository/ModuleDefinitionException.html">ModuleDefinitionException</a></code> exception is thrown when the module is loaded. </p><p>See <a href="../models/modules_packaging.html#declaration">Module packaging declaration</a> for more information. </p><h3>
+<a name="id7s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+<strong>If using EBX5 add-ons, ensure that the versions of the add-ons are compatible with EBX5 version 5.3.0 before upgrading. </strong> For the backward compatibility of the add-ons themselves, consult the release notes of the add-ons.</fieldset>
+<h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><p><a name="bug_4837"></a><strong>[4837]</strong> In the DMA, wizards are unavailable when accessing a field from a validation report. </p><p>If the user accesses a field using a link from a validation report message, the DMA wizards are not available.</p></li></ul>
+<h3>
+<a name="bug-Dataviews"></a>Data views</h3>
+<ul>
+<li><p><a name="bug_5937"></a><strong>[5937]</strong> Fields are proposed for sort criteria that should not be. </p><p>After creating a simple view for a table that filters some fields, when the user creates sort criteria, all fields of the table are proposed instead of only the visible fields.</p></li><li><p><a name="bug_6433"></a><strong>[6433]</strong> Role names in the default directory should not be allowed to have leading or trailing whitespaces. </p><p>To avoid ambiguity, leading and trailing whitespaces should not be allowed, enforced by a primary key default constraint.</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><a name="bug_5752"></a><strong>[5752]</strong> Inputting certain special characters in primary key fields causes fatal errors. </p><p>When the user creates new records in a table containing a group and input a value containing special characters in a primary key field a fatal error may occur.</p></li></ul>
+<h3>
+<a name="bug-Userinterface"></a>User interface</h3>
+<ul>
+<li><p><a name="bug_2522"></a><strong>[2522]</strong> Foreign key label displayed in a read write field does not reflect modifications made using the preview button. </p><p>When a foreign key label, displayed in a read write field, is modified by accessing the field using the preview button, the selected foreign key label is not refreshed after submitting the form.</p></li><li><p><a name="bug_4412"></a><strong>[4412]</strong> Roll-over labels remain displayed. </p><p>If the user hovers over a field label until the roll-over text is displayed and then uses the mouse scroll wheel, the roll-over text stays open instead of automatically dismissing after some time.</p></li><li><p><a name="bug_5280"></a><strong>[5280]</strong> In the advanced search pane, it is possible to add criteria based on hidden fields. </p><p>In the advanced table search pane, users can add criteria based on hidden fields, and thus can filter table records using the values of hidden fields.</p></li><li><p><a name="bug_5824"></a><strong>[5824]</strong> When using a permalink for a data space, user cannot return to the data space management screen. </p><p>When users access permalinks for data spaces, they can view the content of the data spaces, but have no way of returning to the data space management screen.</p></li><li><p><a name="bug_6051"></a><strong>[6051]</strong> Validation messages are not displayed on read-only fields. </p><p>If a field has associated validation messages, the messages are not displayed when the corresponding input field is in read-only mode.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><a name="bug_6444"></a><strong>[6444]</strong> When defining a specific value access policy on a data set, nodes may not be fully displayed. </p><p>On data models with very few elements, the size of the specific value access policy display may be insufficient to use properly.</p></li><li><p><a name="bug_6520"></a><strong>[6520]</strong> Some fields under data space information are not relevant to relational data spaces. </p><p>Some data space information fields such as &#39;Child merge policy&#39; do not apply to relational data spaces and thus should not appear.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

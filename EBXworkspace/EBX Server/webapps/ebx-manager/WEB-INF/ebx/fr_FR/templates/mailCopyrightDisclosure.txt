@@ -1,0 +1,9 @@
+-------------------------------------------------------------------
+MERCI DE NE PAS REPONDRE A CE MESSAGE
+Notification envoyée automatiquement par [[javaclass:com.orchestranetworks.manager.core.uicomponent.main.UIRepositoryTitle]].
+-------------------------------------------------------------------
+L'intégrité de ce message ne peut pas être garantie sur Internet.
+Orchestra Networks ne peut donc pas être tenue pour responsable du contenu.
+Si vous n'êtes pas le destinataire de ce message confidentiel, 
+veuillez le détruire et prévenir immédiatement l'émetteur.
+-------------------------------------------------------------------

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Introduction to data sets</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_introduction" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data sets</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/introdataset.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+<h1>
+Introduction to data sets</h1>
+<p>Once a model has been created and published for your reference data, you may want to store and manage your reference data. In order to, you can:</p><ul>
+<li><p>create a new data set in a data space (see <a target="_self" href="./actions_dataset.html#creation">creation</a>),</p></li><li><p>select a data space to work in, a data set to work with, then navigate through groups, tables and fields using the tree view (see <a target="_self" href="./actions_dataset.html">actions</a>),</p></li><li><p>read, add, update or delete records in a data set table (see <a target="_self" href="./actions_dataset.html#tables">tables</a>),</p></li><li><p>access and manage a table by defining custom views and/or hierarchies (see <a target="_self" href="./view.html">advanced viewing modes</a>),</p></li><li><p>start working from an existing set of data by copying them (see <a target="_self" href="../user_data/userdata_inheritance.html">inheritance</a>),</p></li><li><p>define who may or may not access some data (see <a target="_self" href="../user_data/userdata_permissions.html">permissions</a>).</p></li></ul>
+<p>A data set corresponds to data displayed as tables or hierarchies, and that can be filtered using multi-criteria views. Access to the content of a data set can be restricted using permissions rules for users and role (that is, a group of users).</p><p>For a better understanding of those concepts, feel free to visit our <a target="_self" href="../glossary/simple_glossary.html#data">glossary</a>.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Data set overview</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Access within the interface</a></li><li class="toc2"><a href="#id1s2">Associated notions and tools</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Data set overview</h2>
+<h3>
+<a name="id1s1"></a>Access within the interface</h3>
+<p>To interact with your data, please select <em>Data</em> in the menu bar. Then get started by opening the data space from the top section in the navigation pane.</p><p align="center"><img alt="/DataSet.png" src="../resources/images/user_dataset/DataSet.png" align="middle"></img></p><p>Users can select a data set using the navigation pane. Two buttons are displayed, the first one allows you to select a data space while the second one allows you to select a data set. Once a data set has been selected, its structure appears in the navigation pane and can be used to select a group or a table. Values held by those elements are displayed in the workspace.</p><h3>
+<a name="id1s2"></a>Associated notions and tools</h3>
+<p>Once in the <em>Data</em> section, you will come across the following notions and tools:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data space</p></td><td class="ebx_definitionListDefinition"><p>Data container, whose content can be updated in total isolation from other items close by.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Data set</p></td><td class="ebx_definitionListDefinition"><p>Group of data predefined in a data model as having a common use or purpose.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Tree view</p></td><td class="ebx_definitionListDefinition"><p>Way to visualize the content of a data set in the navigation pane.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Target table</p></td><td class="ebx_definitionListDefinition"><p>Studied table, whose dependencies to others tables we wish to visualize. It is the last and most specific level of the hierarchy, like the leaves of a tree.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Record</p></td><td class="ebx_definitionListDefinition"><p>Group of fields forming a unit of information entered by the user in a given data set, appearing as the content of a row in a table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Hierarchy</p></td><td class="ebx_definitionListDefinition"><p>Tree-based representation of a succession of dependencies between tables. It can be balanced, unbalanced, ragged or network.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Recursive relationship</p></td><td class="ebx_definitionListDefinition"><p>Occurrence of a dependency link between two entities of the same dimension level.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Dimension</p></td><td class="ebx_definitionListDefinition"><p>Possible axe of analysis of a target table, including various dimension levels (as an example: products, families, categories, etc.).</p></td></tr>
+</table>
+<div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../user_datamodel/userdatamodel_intro.html">Data model</a></li><li><a target="_self" href="../user_dataspace/introdataspace.html">Data space</a></li><li><a target="_self" href="../user_workflowmodel/introworkflowmodel.html">Workflow model</a></li><li><a target="_self" href="../user_dataworkflow/userdataworkflow_intro.html">Data workflows</a></li><li><a target="_self" href="../user_dataservice/introdataservice.html">Data services</a></li></ul>
+</div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

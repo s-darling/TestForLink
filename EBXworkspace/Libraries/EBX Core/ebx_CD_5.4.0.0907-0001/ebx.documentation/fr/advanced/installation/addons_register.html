@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Deploying and registering EBX5 add-ons</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="addons_config" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Administration Guide &gt; Installation &amp; configuration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=installation/addons_register.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Installation &amp; configuration</span></div>
+<h1>
+Deploying and registering EBX5 add-ons</h1>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Refer to the documentation of each add-on for additional installation and configuration information in conjunction with that which is found here.</fieldset>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#deploy">Deploying an add-on module</a></li><li class="toc1"><a href="#register">Registering an add-on module</a></li></ul>
+</div>
+<h2>
+<a name="deploy"></a>Deploying an add-on module</h2>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+<strong>Each EBX5 add-on build is intended to run with a specific version of EBX5. Ensure that you have the correct build of the add-on for the version of EBX5 on which it will run.</strong></fieldset>
+<p>The web application deployment descriptor for the add-on module must specify that class definitions and resources from the web application are to be loaded in preference to classes from the parent and server classloaders.</p><p>For example, on WebSphere Application Server, this can be done by setting <code>&lt;context-priority-classloader&gt;true&lt;/context-priority-classloader&gt;</code> in the <code>web-app</code> element of the deployment descriptor.</p><p>On WebLogic, include <code>&lt;prefer-web-inf-classes&gt;True&lt;/prefer-web-inf-classes&gt;</code> in <code>weblogic.xml</code>.</p><p>See the documentation on class loading of your application server for more information.</p><h2>
+<a name="register"></a>Registering an add-on module</h2>
+<p>To register a new EBX5 add-on in the repository:</p><ol>
+<li><p>Navigate to the &#39;Administration&#39; area.</p></li><li><p>Click the down-arrow in the navigation pane and select the &#39;Add-ons&#39; entry.</p></li><li><p>On the <strong>Add-ons &gt; Registered Add-ons</strong> page, click the <strong>+</strong> button to create a new entry.</p></li><li><p>Select the add-on you are registering, and enter its license key.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+If the EBX5 repository is under a trial license, no license key is required for the add-on. The add-on will be subject to the same trial period as the EBX5 repository itself.</fieldset>
+</li><li><p>Click <strong>Submit</strong>.</p></li></ol>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Installation &amp; configuration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Visualisation des donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_views" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Guide utilisateur &gt; Jeux de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/userdata_viewing.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation &gt; Guide utilisateur &gt; Jeux de données</span></div>
+<h1>
+Visualisation des donn&eacute;es</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Menu &#39;Vue&#39;</a></li><li class="toc1"><a href="#sort">Tri des donn&eacute;es</a></li><li class="toc1"><a href="#searchfilters">Recherche et filtrage des donn&eacute;es</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Recherche</a></li><li class="toc2"><a href="#textSearch">Recherche textuelle</a></li><li class="toc2"><a href="#severitySearch">Recherche sur validation</a></li><li class="toc2"><a href="#specificSearch">Recherches sp&eacute;cifiques sur tables</a></li></ul>
+</li><li class="toc1"><a href="#custom">Vues</a><ul class="toc2">
+<li class="toc2"><a href="#description">Description d&#39;une vue</a></li><li class="toc2"><a href="#simple">Vue tabulaire simple</a></li><li class="toc2"><a href="#hierarchies">Vues hi&eacute;rarchiques</a></li><li class="toc2"><a href="#publication">Publication de vue</a></li></ul>
+</li><li class="toc1"><a href="#views_management">Gestion des vues</a><ul class="toc2">
+<li class="toc2"><a href="#preferred_views">G&eacute;rer les vues recommand&eacute;es</a></li><li class="toc2"><a href="#manage_views">G&eacute;rer les vues</a></li></ul>
+</li><li class="toc1"><a href="#history">Historique</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Menu &#39;Vue&#39;</h2>
+<p>Le menu d&eacute;roulant &#39;Vue&#39; permet d&#39;acc&eacute;der facilement &agrave; toutes les fonctionnalit&eacute;s majeures de visualisation.</p><p>Les vues sont g&eacute;r&eacute;es dans le sous-menu d&eacute;di&eacute; <a href="#manage_views">&#39;Gestion de vues&#39;</a>.</p><p>Les vues peuvent &eacute;galement &ecirc;tre regroup&eacute;es. L&#39;administrateur doit avoir d&eacute;fini des groupes au pr&eacute;alable dans la table &#39;Groupes de vues&#39; de la section &#39;Configuration des vues&#39;. L&#39;utilisateur peut ainsi d&eacute;finir une vue comme appartenant &agrave; un groupe dans le champ &#39;Groupe de la vue&#39; lors de la cr&eacute;ation ou de la modification d&#39;une vue. Voir <a href="#description">Description d&#39;une vue</a> pour plus d&#39;informations.</p><h2>
+<a name="sort"></a>Tri des donn&eacute;es</h2>
+<p>Les crit&egrave;res de tri contr&ocirc;lent l&#39;ordre dans lequel les enregistrements sont pr&eacute;sent&eacute;s. </p><p>Par d&eacute;faut, les enregistrements sont ordonn&eacute;s par cl&eacute; primaire ascendante.</p><p>Afin de d&eacute;finir des crit&egrave;res de tri sp&eacute;cifiques, s&eacute;lectionnez <em>Vue &gt; Crit&egrave;res de tri</em> dans l&#39;espace de travail. </p><p>Chaque crit&egrave;re de tri est d&eacute;fini par un nom de colonne et un ordre de tri (ascendant ou descendant). Utiliser les fl&egrave;ches &#39;D&eacute;placer &agrave; gauche/droite&#39; pour ajouter ou enlever un crit&egrave;re dans la table &#39;Tri&eacute;&#39;. Une fois un crit&egrave;re s&eacute;lectionn&eacute;, il est possible de choisir son ordre de tri en cliquant sur le bouton &#39;ASC&#39; ou &#39;DESC&#39; &agrave; droite.</p><p>Pour changer la priorit&eacute; d&#39;un crit&egrave;re de tri, s&eacute;lectionnez-le dans la liste, puis cliquez sur les fl&egrave;ches vers le haut ou vers le bas pour le d&eacute;placer.</p><p>Pour r&eacute;tablir la vue sans crit&egrave;re de tri sp&eacute;cifique, s&eacute;lectionner <em>Vue &gt; R&eacute;tablir</em>.</p><h2>
+<a name="searchfilters"></a>Recherche et filtrage des donn&eacute;es</h2>
+<p>Des outils sp&eacute;cifiques permettent la recherche d&#39;enregistrements dans une table. On peut y acc&eacute;der par l&#39;ic&ocirc;ne <img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img>, qui affiche les panneaux des filtres.</p><p>Chaque panneau de filtre (ou de recherche) propose une case &agrave; cocher sur sa barre de titre&nbsp;:&nbsp;cocher cette case applique le filtre&nbsp;;&nbsp;la d&eacute;cocher le d&eacute;sapplique. </p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Appliquer une vue r&eacute;initialisera et retirera tous les filtres actuellement appliqu&eacute;s.</p></div>
+<h3>
+<a name="id3s1"></a>Recherche</h3>
+<p>En mode simple, la &#39;Recherche&#39; permet d&#39;ajouter des crit&egrave;res contextualis&eacute;s sur un ou plusieurs champs. Lors de l&#39;ajout d&#39;un crit&egrave;re, les op&eacute;rateurs propos&eacute;s seront en ad&eacute;quation avec le type du champ correspondant.</p><p>En activant le mode avanc&eacute;, il est possible de cr&eacute;er des sous-blocs contenant des crit&egrave;res, afin de cr&eacute;er des op&eacute;rations logiques plus complexes dans l&#39;&eacute;laboration du filtre.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">En mode avanc&eacute;, les crit&egrave;res dont l&#39;op&eacute;rateur est &quot;correspond &agrave;&quot; ou &quot;correspond &agrave; (respecter la casse)&quot; suivent la syntaxe standard des expressions r&eacute;guli&egrave;res de Java.</p></div>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Voir aussi</span><a href="https://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html">Regex pattern</a></p></div>
+<h3>
+<a name="textSearch"></a>Recherche textuelle</h3>
+<p>La recherche textuelle est utilis&eacute;e pour une recherche de texte brut sur un ou plusieurs champs. Cette recherche ne prend pas en compte le type du champ.</p><ul>
+<li><p>Si le texte entr&eacute; contient un ou plusieurs mots sans caract&egrave;re de remplacement (<code>*</code> ou <code>?</code>), les champs trouv&eacute;s seront ceux contenant tous ces mots. Les mots entre guillemets (&quot;aa bb&quot; par exemple) sont consid&eacute;r&eacute;s comme un seul mot.</p></li><li><p>Les caract&egrave;res usuels de remplacement sont propos&eacute;s&nbsp;:&nbsp;l&#39;&eacute;toile <code>*</code> (tout texte) ou le point d&#39;interrogation <code>?</code> (tout caract&egrave;re). Pour des raisons de performance, leur utilisation est restreinte &agrave; un seul par recherche. </p></li><li><p>Les caract&egrave;res de remplacement peuvent &ecirc;tre consid&eacute;r&eacute;s comme de simple caract&egrave;res en les &eacute;chappant &agrave; l&#39;aide du caract&egrave;re &#39;\&#39;, par exemple, &#39;\*&#39;.</p></li></ul>
+<p>Exemples :</p><ul>
+<li><p><code>aa bb</code>&nbsp;:&nbsp;le champ contient &quot;aa&quot; et &quot;bb&quot;. </p></li><li><p><code>aa &quot;bb cc&quot;</code>&nbsp;:&nbsp;le champ contient &quot;aa&quot; et &quot;bb cc&quot;. </p></li><li><p><code>aa*</code>&nbsp;:&nbsp;le champ commence par &quot;aa&quot;. </p></li><li><p><code>*bb</code>&nbsp;:&nbsp;le champ se termine par &quot;bb&quot;. </p></li><li><p><code>aa*bb</code>&nbsp;:&nbsp;le champ commence par &quot;aa&quot; et se termine par &quot;bb&quot;. </p></li><li><p><code>aa?</code>&nbsp;:&nbsp;le champ commence par &quot;aa&quot; et a une taille de 3 caract&egrave;res. </p></li><li><p><code>?bb</code>&nbsp;:&nbsp;le champ se termine par &quot;bb&quot; et a une taille de 3 caract&egrave;res. </p></li><li><p><code>aa?bb</code>&nbsp;:&nbsp;le champ commence par &quot;aa&quot; et se termine par &quot;bb&quot; et a une taille de 5 caract&egrave;res. </p></li><li><p><code>aa\*bb</code>&nbsp;:&nbsp;le champ contient &quot;aa*bb&quot; tel quel. </p></li></ul>
+<p> Sur les tables de grande taille, il est recommand&eacute; de ne s&eacute;lectionner qu&#39;un seul champ de la table&nbsp;;&nbsp;si le champ n&#39;est pas du type &quot;chaîne de caract&egrave;res&quot;, il est conseill&eacute; d&#39;entrer un texte au bon format, par exemple :</p><ul>
+<li><p>bool&eacute;en&nbsp;:&nbsp;Oui, Non </p></li><li><p>date&nbsp;:&nbsp;01/01/2000 </p></li><li><p>nombre&nbsp;:&nbsp;100000 ou 100 000 </p></li><li><p>champ &eacute;num&eacute;r&eacute;&nbsp;:&nbsp;Rouge, Bleu... </p></li></ul>
+<p>L&#39;option <em>Sensible &agrave; la casse</em> oblige la recherche &agrave; tenir compte de la casse, en distinguant les majuscules des minuscules.</p><h3>
+<a name="severitySearch"></a>Recherche sur validation</h3>
+<p>La recherche par validation permet de voir les enregistrements en fonction de leur statut dans la derni&egrave;re validation effectu&eacute;e. Il est possible de voir les enregistrements avec les niveaux &#39;Erreur&#39;, &#39;Avertissements&#39; et &#39;Informations&#39;.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Cette recherche s&#39;applique seulement aux enregistrements de tables qui ont d&eacute;j&agrave; &eacute;t&eacute; valid&eacute;s&nbsp;;&nbsp;pour ce faire, s&eacute;lectionner <em> Actions &gt; Valider</em> au niveau de la table dans l&#39;espace de travail, ou au niveau du jeu de donn&eacute;es dans le panneau de navigation.</p></div>
+<h3>
+<a name="specificSearch"></a>Recherches sp&eacute;cifiques sur tables</h3>
+<p>Pour chaque table, le mod&egrave;le peut sp&eacute;cifier des filtres additionnels pour la recherche.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Voir aussi</span><a href="../references/integration_introduction.html#filters">Specifying UI filters on a table</a></p></div>
+<h2>
+<a name="custom"></a>Vues</h2>
+<p>Une vue est cr&eacute;&eacute;e en s&eacute;lectionnant <em>Vue &gt; Cr&eacute;er une nouvelle vue</em> dans l&#39;espace de travail. Pour appliquer une vue, la s&eacute;lectionner dans <em>Vue &gt; nom de la vue </em>.</p><p>Deux modes avanc&eacute;s de visualisation sont disponibles &agrave; la cr&eacute;ation d&#39;une nouvelle vue :</p><ul>
+<li><p>&#39;Vue tabulaire simple&#39;&nbsp;:&nbsp;une vue tabulaire qui permet de trier et filtrer les enregistrements affich&eacute;s ;</p></li><li><p>&#39;Vue hi&eacute;rarchique&#39;&nbsp;:&nbsp;une arborescence qui lie les donn&eacute;es de diff&eacute;rentes tables en utilisant leurs relations. </p></li></ul>
+<h3>
+<a name="description"></a>Description d&#39;une vue</h3>
+<p>Lors de la cr&eacute;ation ou de la modification d&#39;une vue, la premi&egrave;re page permet de d&eacute;finir les informations g&eacute;n&eacute;rales concernant la vue.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation</p></td><td class="ebx_definitionListDefinition"><p>Libell&eacute; et description localis&eacute;s associ&eacute;s &agrave; la vue.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Propri&eacute;taire</p></td><td class="ebx_definitionListDefinition"><p>Nom du propri&eacute;taire de la vue, qui peut &agrave; ce titre la g&eacute;rer et la modifier.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Autres profils autoris&eacute;s</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;tail des profils ayant le droit d&#39;utiliser la vue.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Mode de vue</p></td><td class="ebx_definitionListDefinition"><p>Vue tabulaire simple ou vue hi&eacute;rarchique.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Groupe de la vue</p></td><td class="ebx_definitionListDefinition"><p>Groupe d&#39;appartenance de cette vue (le cas &eacute;ch&eacute;ant).</p></td></tr>
+</table>
+<h3>
+<a name="simple"></a>Vue tabulaire simple</h3>
+<p>Les vues tabulaires simples offrent la possibilit&eacute; de d&eacute;finir des crit&egrave;res pour filtrer les enregistrements et de s&eacute;lectionner les colonnes &agrave; afficher.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Colonnes affich&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Sp&eacute;cifie, &agrave; l&#39;aide de fl&egrave;ches, les colonnes de la table &agrave; afficher dans la vue.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Colonnes tri&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Sp&eacute;cifie l&#39;ordre d&#39;affichage des colonnes et indique si les enregistrements de chaque colonne sont tri&eacute;s par ordre croissant ou d&eacute;croissant. Voir <a href="#sort">Tri des donn&eacute;es</a>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Filtre</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit les crit&egrave;res utilis&eacute;s pour filtrer les enregistrements.</p><p> Voir <a href="../references/criteria_editor.html">Editeur de crit&egrave;res </a>.</p></td></tr>
+</table>
+<h3>
+<a name="hierarchies"></a>Vues hi&eacute;rarchiques</h3>
+<p>Une hi&eacute;rarchie est une arborescence permettant de pr&eacute;senter les relations existant entre les tables. Elle peut &ecirc;tre structur&eacute;e sur plusieurs niveaux, appel&eacute;s niveaux de dimension. En outre, il est possible de d&eacute;finir des filtres sur des niveaux afin de filtrer les enregistrements.</p><h4>
+<a name="dimension"></a>Dimension d&#39;une hi&eacute;rarchie</h4>
+<p>Une dimension d&eacute;finit une d&eacute;pendance dans la hi&eacute;rarchie. Par exemple, une dimension pourrait &ecirc;tre pr&eacute;cis&eacute;e pour afficher des produits par cat&eacute;gorie. Plusieurs dimensions peuvent &ecirc;tre d&eacute;finies pour une vue hi&eacute;rarchique.</p><h4>
+<a name="configuration"></a>Options de configuration d&#39;une vue hi&eacute;rarchique</h4>
+<p>Ce formulaire permet de configurer les options d&#39;une vue hi&eacute;rarchique.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Afficher les enregistrements dans une nouvelle fen&ecirc;tre</p></td><td class="ebx_definitionListDefinition"><p>Si &quot;oui&quot;, une nouvelle fen&ecirc;tre sera ouverte pour afficher l&#39;enregistrement. Sinon, il sera affich&eacute; dans une nouvelle page de la fen&ecirc;tre courante.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Hi&eacute;rarchie &eacute;lagu&eacute;e</p></td><td class="ebx_definitionListDefinition"><p>Si &quot;oui&quot;, les noeuds de la hi&eacute;rarchie qui n&#39;ont pas d&#39;enfants et qui n&#39;appartiennent pas &agrave; la table cible ne seront pas affich&eacute;s.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Afficher les orphelins</p></td><td class="ebx_definitionListDefinition"><p>Si &quot;oui&quot;, les noeuds de la hi&eacute;rarchie qui n&#39;ont pas de parent seront affich&eacute;s.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Afficher le noeud racine</p></td><td class="ebx_definitionListDefinition"><p>Si &#39;Non&#39;, le noeud racine de la hi&eacute;rarchie sera cach&eacute; de la vue.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Libell&eacute; du noeud racine</p></td><td class="ebx_definitionListDefinition"><p>Libell&eacute; localis&eacute; du noeud racine de la hi&eacute;rarchie.</p></td></tr>
+</table>
+<p><strong>Libell&eacute;s</strong></p><p>Pour chaque niveau de dimension faisant r&eacute;f&eacute;rence &agrave; une autre table, il est possible de d&eacute;finir les libell&eacute;s localis&eacute;s pour les noeuds correspondants dans la hi&eacute;rarchie. Utiliser l&#39;assistant pour s&eacute;lectionner les champs utilis&eacute;s dans les d&eacute;finitions des libell&eacute;s.</p><p><strong>Filtre</strong></p><p>L&#39;&eacute;diteur de crit&egrave;res permet de d&eacute;finir un filtre d&#39;enregistrement pour la vue.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Voir aussi</span><a href="../references/criteria_editor.html">Editeur de crit&egrave;res</a></p></div>
+<p><strong>Champ d&#39;ordonnancement</strong></p><p>Afin de pouvoir d&eacute;placer les noeuds dans la vue hi&eacute;rarchique, il faut d&eacute;signer un champ d&#39;ordonnancement &eacute;ligible. Celui-ci est d&eacute;fini dans la table sur laquelle est appliqu&eacute;e la vue hi&eacute;rarchique. Un champ d&#39;ordonnancement doit avoir le type de donn&eacute;es &#39;Entier&#39; et doit avoir la vue par d&eacute;faut &#39;Cach&eacute;&#39; dans les propri&eacute;t&eacute;s avanc&eacute;es du mod&egrave;le de donn&eacute;es.</p><p>Des actions de positionnement sur chaque noeud sont alors possibles, &agrave; moins que le champ d&#39;ordonnancement ne soit en lecture seule ou qu&#39;un filtre ne soit d&eacute;fini sur la hi&eacute;rarchie.</p><p>En l&#39;absence d&#39;un noeud d&#39;ordonnancement, les noeuds enfants sont tri&eacute;s selon l&#39;ordre alphab&eacute;tique des libell&eacute;s des noeuds.</p><fieldset class="ebx_attention">
+<legend>
+<b>Attention</b></legend>
+Le champ d&#39;ordonnancement doit &ecirc;tre un champ technique d&eacute;di&eacute;, et non un champ contenant des donn&eacute;es m&eacute;tier. En effet, ces donn&eacute;es seront modifi&eacute;es automatiquement par les actions de r&eacute;ordonnancement.</fieldset>
+<h4>
+Actions sur un noeud de hi&eacute;rarchie</h4>
+<p>Chaque noeud d&#39;une vue hi&eacute;rarchique poss&egrave;de un menu correspondant<img alt="/ebx_menu.png" src="../resources/images/symbols/ebx_menu.png" class="ebx_appButton"></img> qui offre des actions contextuelles. </p><p>Les noeuds terminaux peuvent &ecirc;tre d&eacute;tach&eacute;s de leur parent en s&eacute;lectionnant l&#39;option &#39;D&eacute;tacher du parent&#39;. L&#39;enregistrement devient ainsi un noeud orphelin dans l&#39;arborescence, rang&eacute; sous un conteneur portant le nom &#39;non d&eacute;fini&#39;.</p><p>Les noeuds terminaux peuvent aussi changer de noeud parent, gr&acirc;ce &agrave; l&#39;option &#39;Attacher &agrave; un autre parent&#39;. Si, selon le mod&egrave;le de donn&eacute;es, un noeud peut avoir plusieurs parents, le noeud sera &agrave; la fois sous le parent d&#39;origine et rajout&eacute; &eacute;galement sous le nouveau parent. Sinon, le noeud terminal sera d&eacute;plac&eacute; sous le nouveau noeud parent.</p><h3>
+<a name="publication"></a>Publication de vue</h3>
+<p>Une vue peut &ecirc;tre publi&eacute;e afin de la rendre accessible &agrave; tous les autres utilisateurs via les composants web, les t&acirc;ches utilisateurs du workflow, et les services de donn&eacute;es. Pour publier une vue, s&eacute;lectionner &#39;Publier&#39; dans le menu <em>Vue &gt; G&eacute;rer les vues &gt; <em>nom de la vue</em></em>. D&egrave;s que la vue sera publi&eacute;e, les autres utilisateurs pourront appliquer cette vue &agrave; leur interface en la s&eacute;lectionnant dans <em>Vue &gt; <em>nom de la vue</em></em> dans leur espace de travail.</p><p>Cette publication de vue sera accessible aux utilisateurs qui appartiennent aux profils autoris&eacute;s dans la d&eacute;finition de la vue.</p><h2>
+<a name="views_management"></a>Gestion des vues</h2>
+<h3>
+<a name="preferred_views"></a>G&eacute;rer les vues recommand&eacute;es</h3>
+<p>Quand un utilisateur se connecte sans sp&eacute;cifier de vue, la vue recommand&eacute;e, si elle existe, s&#39;applique. Sinon, la vue par d&eacute;faut s&#39;affiche. L&#39;action &#39;G&eacute;rer les vues recommand&eacute;es&#39; permet de d&eacute;finir les r&egrave;gles d&#39;attribution des vues recommand&eacute;es par utilisateur et par r&ocirc;le. </p><p>Les actions disponibles sur les vues recommand&eacute;es sont les suivantes : changer l&#39;ordre d&#39;attribution des r&egrave;gles, ajouter une r&egrave;gle, &eacute;diter une r&egrave;gle, supprimer une r&egrave;gle existante.</p><p>Pour un utilisateur donn&eacute;, la r&egrave;gle appliqu&eacute;e sera la premi&egrave;re de la liste qui correspond au profil de l&#39;utilisateur. </p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">La fonctionnalit&eacute; &#39;G&eacute;rer les vues recommand&eacute;es&#39; est uniquement accessible au propri&eacute;taire du jeu de donn&eacute;es.</p></div>
+<h3>
+<a name="manage_views"></a>G&eacute;rer les vues</h3>
+<p>Le sous-menu &#39;G&eacute;rer les vues&#39; permet d&#39;acc&eacute;der aux actions suivantes&nbsp;:&nbsp;</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>D&eacute;finir cette vue comme ma favorite</p></td><td class="ebx_definitionListDefinition"><p>Uniquement disponible lorsque la vue en cours d&#39;affichage n&#39;est PAS la vue recommand&eacute;e. La vue favorite sera automatiquement appliqu&eacute;e lors de l&#39;acc&egrave;s &agrave; la table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>D&eacute;finir la vue recommand&eacute;e comme ma favorite</p></td><td class="ebx_definitionListDefinition"><p>Uniquement disponible lorsqu&#39;une vue favorite est d&eacute;finie. En cliquant sur cette action, la vue courante ne sera plus la vue favorite de l&#39;utilisateur. Une vue recommand&eacute;e, &agrave; l&#39;instar de la vue favorite, est appliqu&eacute;e automatiquement lors de l&#39;acc&egrave;s &agrave; la table. <strong>Cette action n&#39;est pas affich&eacute;e si aucune vue favorite n&#39;a &eacute;t&eacute; d&eacute;finie.</strong></p></td></tr>
+</table>
+<h2>
+<a name="history"></a>Historique</h2>
+<p>La fonctionnalit&eacute; d&#39;historique permet le suivi des modifications de donn&eacute;es. </p><p>La visualisation de l&#39;historique de donn&eacute;es n&eacute;cessite que la fonctionnalit&eacute; ait &eacute;t&eacute; pr&eacute;alablement activ&eacute;e au niveau des tables dans le mod&egrave;le de donn&eacute;es. Voir <a href="../user_datamodel/userdatamodel_elementproperties.html#table">Propri&eacute;t&eacute;s avanc&eacute;es des tables</a>pour plus d&#39;informations.</p><p>Pour visualiser l&#39;historique d&#39;un jeu de donn&eacute;es, s&eacute;lectionner <em>Actions &gt; Historique</em> dans le panneau de navigation.</p><p>Pour visualiser l&#39;historique d&#39;une table ou d&#39;une s&eacute;lection d&#39;enregistrements, s&eacute;lectionner <em>Actions &gt; Voir l&#39;historique</em> dans l&#39;espace de travail.</p><p>Il existe diff&eacute;rents modes d&#39;historique qui permettent de visualiser l&#39;historique des donn&eacute;es selon diff&eacute;rentes perspectives:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><strong>Historique dans l&#39;espace de donn&eacute;es en cours</strong></p></td><td class="ebx_definitionListDefinition"><p>La vue d&#39;historique de table affiche les op&eacute;rations sur la branche en cours. C&#39;est le mode par d&eacute;faut.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><strong>Historique dans l&#39;espace de donn&eacute;es courant et ses anc&ecirc;tres</strong></p></td><td class="ebx_definitionListDefinition"><p>La vue d&#39;historique de table affiche les op&eacute;rations sur la branche en cours ainsi que tous ses anc&ecirc;tres.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><strong>Historique dans l&#39;espace de donn&eacute;es courant et ses enfants fusionn&eacute;s</strong></p></td><td class="ebx_definitionListDefinition"><p>La vue d&#39;historique de table affiche les op&eacute;rations sur la branche en cours ainsi que toutes ses branches filles fusionn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><strong>Historique dans tous les espaces de donn&eacute;es</strong></p></td><td class="ebx_definitionListDefinition"><p>La vue d&#39;historique de table affiche les op&eacute;rations sur toute la hi&eacute;rarchie de la branche en cours.</p></td></tr>
+</table>
+<p>Dans la vue d&#39;historique, utiliser le menu <em> View</em> pour passer &agrave; un autre mode de l&#39;historique.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Voir aussi</span><a href="../references/history.html">Historique</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a href="../table_contents_user.html">Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Guide utilisateur &gt; Jeux de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

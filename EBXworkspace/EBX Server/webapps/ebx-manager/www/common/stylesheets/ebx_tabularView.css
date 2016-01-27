@@ -1,0 +1,607 @@
+
+#ebx_workspaceTable_container {
+	margin-left: 15px;
+}
+.ebx_FilterPresent #ebx_workspaceTable_container {
+	margin-left: 5px;
+}
+
+.tvContainer {
+	/* min size */
+	width: 200px;
+	height: 100px;
+	
+	cursor: default;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	border-collapse: separate;/* overwrites form table.ebx_FieldList, that disturbed IE */
+	
+	overflow: hidden;
+	
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+#ebx_workspaceTable_container.tvContainer {
+    border-radius: 0;
+    -moz-border-radius: 0;
+	
+    border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+}
+
+.tvContainer.tvContainerFixedHScroll,
+.tvContainer.tvContainerHScroll,
+.tvContainer.tvContainerVScroll {
+	border: 1px solid #E0E0E0;
+}
+
+.tv_thFixed_firstVisible,
+.tvContainerNoFixedColumn .tvHeaderMain th:first-child {
+    border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+}
+.tvHeaderMain,
+.tvHeaderMain .tv_thMain_lastVisible {
+    border-top-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+}
+.tvFixed tr:last-child td:first-child,
+.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child {
+    border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+}
+.tvMain tr:last-child td.tv_td_lastVisible {
+    border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+}
+.tvContainer.tvContainerFixedHScroll,
+.tvContainer.tvContainerHScroll,
+.tvContainer.tvContainerVScroll {
+	border: 1px solid #E0E0E0;
+}
+
+.tvContainerFixedHScroll .tv_thFixed_firstVisible,
+.tvContainerFixedHScroll.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerFixedHScroll .tvHeaderMain,
+.tvContainerFixedHScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainerFixedHScroll .tvFixed tr:last-child td:first-child,
+.tvContainerFixedHScroll.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child,
+.tvContainerFixedHScroll .tvMain tr:last-child td.tv_td_lastVisible,
+.tvContainerHScroll .tv_thFixed_firstVisible,
+.tvContainerHScroll.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerHScroll .tvHeaderMain,
+.tvContainerHScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainerHScroll .tvFixed tr:last-child td:first-child,
+.tvContainerHScroll.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child,
+.tvContainerHScroll .tvMain tr:last-child td.tv_td_lastVisible,
+.tvContainerVScroll .tv_thFixed_firstVisible,
+.tvContainerVScroll.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerVScroll .tvHeaderMain,
+.tvContainerVScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainerVScroll .tvFixed tr:last-child td:first-child,
+.tvContainerVScroll.tvContainerNoFixedColumn .tvMain tr:last-child td:first-child,
+.tvContainerVScroll .tvMain tr:last-child td.tv_td_lastVisible {
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+/* START table containers */
+.tvHeaderFixedContainer,
+.tvHeaderMainContainerWrapper,
+.tvHeaderMainContainer,
+.tvFixedScrollerWrapper,
+.tvFixedScroller,
+.tvMainScroller {
+	display: inline-block;
+}
+
+.tvHeaderFixedContainer th,
+.tvHeaderMainContainer th {
+	background-color: #F8F8F8;
+}
+
+.tvHeaderFixedContainer,
+.tvHeaderMainContainerWrapper,
+.tvHeaderMainContainer {
+	overflow: hidden;
+}
+
+.tvFixedScrollerWrapper {
+	overflow: hidden;
+}
+.tvFixedScroller,
+.tvMainScroller {
+	overflow: auto;
+	position: relative; /* for the focusFlag */
+}
+
+.tvHeaderFixedContainer,
+.tvFixedScrollerWrapper {
+	width: 30%;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.tvContainerFixedHScrollLastBorderNotVisible .tvHeaderFixedContainer,
+.tvContainerFixedHScrollLastBorderNotVisible .tvFixedScrollerWrapper {
+	border-right: 1px dashed #C0C0C0;
+}
+.tvHeaderMainContainerWrapper,
+.tvMainScroller {
+	width: 70%;
+}
+
+.tvHeaderMainContainer {
+	width: 100%;
+}
+.tvContainer.tvContainerVScroll.tvContainerHScroll .tvHeaderMainContainer {
+	border-right: 1px solid #E0E0E0;
+}
+.tvFixedScroller {
+	width: 100%;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+.tvScrollMaker {
+	height: 1px;
+	display: none;
+}
+.tvContainer.tvEmptyTable .tvScrollMaker {
+	display: block;
+}
+
+.tvMessageContainer,
+.tvMessageEmpty {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+.tvMessageContainer {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.tvMessageEmpty,
+.tvMessageError,
+.tvMessageLoading,
+.tvMessageLogout {
+	display: none;
+	
+	background-color: #FFFFFF;
+	padding: 10px;
+	white-space: nowrap;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.tvSmallHeight .tvMessageEmpty {
+	padding-bottom: 5px;
+}
+
+/* Empty is outside message container */
+.tvStateNormal .tvMessageContainer,
+.tvStateEmpty .tvMessageContainer {
+	display: none;
+}
+.tvStateEmpty .tvMessageEmpty,
+.tvStateError .tvMessageError,
+.tvStateLoading .tvMessageLoading,
+.tvStateLogout .tvMessageLogout {
+	display: inline-block;
+}
+
+/* Error and Logout have an icon on the left */
+.tvMessageError,
+.tvMessageLogout {
+	padding: 10px 10px 10px 30px;
+	background-position: 10px center;
+}
+
+/* Loading have a big icon on the top */
+.tvMessageLoading {
+	padding: 50px 10px 10px 10px;
+	background-position: center 10px;
+}
+.tvSmallHeight .tvMessageLoading {
+	padding: 15px 15px 15px 50px;
+	background-position: 10px center;
+}
+
+.tvMessageError,
+.tvMessageLoading,
+.tvMessageLogout {
+	margin-top: 10px;
+	border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.tvSmallHeight .tvMessageError,
+.tvSmallHeight .tvMessageLoading,
+.tvSmallHeight .tvMessageLogout {
+	margin-top: 5px;
+}
+
+/* END table containers */
+
+.tvHeaderFixed,
+.tvHeaderMain,
+.tvFixed,
+.tvMain {
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 0;
+}
+
+.tvEven {
+	background-color: #FFFFFF;
+}
+
+.tvOdd {
+	background-color: #F8F8F8;
+}
+
+.tvContainer th {
+	text-align: left;
+	font-weight: normal;
+	color: #606060;/*{clickableText-fontColor}*/
+	border-color: #E0E0E0;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+}
+.tvContainer.tvContainerVScroll th,
+.tvContainer.tvContainerHScroll th,
+.tvContainer.tvContainerFixedHScroll th {
+	border-top-width: 0;
+}
+
+th.tvSortableColumn {
+	cursor: pointer;
+}
+
+.tvContainer td {
+	border-right: 1px solid #F0F0F0;
+}
+
+th.tv_thFixed_firstVisible,
+.tvFixed td:first-child,
+.tvContainerNoFixedColumn .tvHeaderMain th:first-child,
+.tvContainerNoFixedColumn .tvMain td:first-child {
+	border-left: 1px solid #E0E0E0;
+}
+.tvContainer.tvContainerVScroll .tvHeaderFixedContainer,
+.tvContainer.tvContainerVScroll .tvFixedScroller,
+.tvContainerNoFixedColumn.tvContainerVScroll .tvMainScroller,
+.tvContainer.tvContainerHScroll .tvHeaderFixedContainer,
+.tvContainer.tvContainerHScroll .tvFixedScroller,
+.tvContainerNoFixedColumn.tvContainerHScroll .tvMainScroller,
+.tvContainer.tvContainerFixedHScroll .tvHeaderFixedContainer,
+.tvContainer.tvContainerFixedHScroll .tvFixedScroller,
+.tvContainerNoFixedColumn.tvContainerFixedHScroll .tvMainScroller {
+	margin-left: -1px;
+}
+
+.tvFixed tr:last-child td,
+.tvMain tr:last-child td {
+	border-bottom: 1px solid #E0E0E0;
+}
+.tvMain td.tv_td_lastVisible {
+	border-right: 1px solid #E0E0E0;
+}
+
+.tvContainer.tvContainerHScroll .tvHeaderMain .tv_thMain_lastVisible,
+.tvContainer.tvContainerHScroll .tvMain td.tv_td_lastVisible {
+	border-right-width: 0;
+}
+.tvContainer.tvContainerVScroll .tvFixed tr:last-child td,
+.tvContainer.tvContainerVScroll .tvMain tr:last-child td {
+	border-bottom-width: 0;
+}
+
+.tvHeaderFixed.tvTableLayoutAutoForWebkit th,
+.tvHeaderMain.tvTableLayoutAutoForWebkit th,
+.tvFixed.tvTableLayoutAutoForWebkit td,
+.tvMain.tvTableLayoutAutoForWebkit td {
+	overflow: visible;
+}
+
+.tvHeaderFixed th,
+.tvHeaderMain th,
+.tvFixed td,
+.tvMain td {
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: baseline;
+	min-height: 23px;
+	padding: 4px 10px;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.tvHeaderFixed th.ebx_SelectCurrentPageCellHeader,
+.tvFixed td.tvSelectCell {
+	text-align: center;
+}
+.tvHeaderFixed th.ebx_SelectCurrentPageCellHeader {
+	padding: 0;
+	vertical-align: middle; /* avoid increasing the fixed header height by 1px that hide bottom-border */
+}
+.tvFixed td.tvSelectCell {
+	padding: 5px 0 0 0;
+}
+
+.tvHeaderFixed th.ebx_SelectCurrentPageCellHeader input[type="checkbox"],
+.tvFixed td.tvSelectCell input[type="checkbox"] {
+	margin: 0;
+	padding: 0; /* for IE */
+	vertical-align: -2px; /* better align with text baseline */
+}
+
+.tvFixed td.tvInheritanceCell {
+	padding: 0;
+	text-align: center;
+}
+
+th.ebx_SeverityCellHeader {
+	 /* I don't know why if I don't define this, the cell is higher and makes the bottom border disappear */
+	vertical-align: middle;
+}
+.tvSeverityCell {
+	/* background-position is computed by the JS depending to the offsetTop */
+	line-height: inherit;
+}
+
+.tvHeaderFixed th.ebx_BaselineAlignerCellHeader,
+.tvHeaderMain th.ebx_BaselineAlignerCellHeader {
+	visibility: hidden;
+	padding: 5px 0 0 0;
+}
+
+/*START MonochromaticTable */
+.ebx_MonochromaticTable .tvOdd {
+	background-color: #FFFFFF;
+}
+
+.ebx_MonochromaticTable td {
+	border-top: 1px solid #F0F0F0;
+}
+.ebx_MonochromaticTable tr:first-child td {
+	border-top: none;
+}
+/*END MonochromaticTable */
+
+/*START widgets */
+.tvContainer th .nodeLabel {
+	margin-right: 0;
+}
+
+.ebx_SortFlag {
+	float: right;
+	text-align: center;
+	margin-right: -3px;
+}
+.ebx_SortFlag .ebx_SmallIcon{
+	margin-top: 4px;
+	margin-bottom: -4px;
+}
+.ebx_SortNumber {
+	font-size: 10px;
+	color: #808080;
+	display: block;
+	
+	/* 4 (cell padding bottom) + 3 (approx letter descent height unused in digits) */
+	margin-bottom: -7px;
+	
+	visibility: hidden;
+}
+.tvHeaderContainer:hover .ebx_SortNumber {
+	visibility: visible;
+}
+
+.tvContainer .ebx_FieldDecorator,
+.ebx_OpenTableRefContainerInTable {
+	display: inline;
+}
+
+.tvContainer .ebx_IconButton.ebx_OpenTableRefButtonInTable {
+	float: right;
+	margin: -2px -5px -2px 2px;
+}
+
+.ebx_OpenTableRefLabelInTable {
+	display: block;
+	overflow: hidden;
+	/* reserved additional width for button while auto-resizing */
+	margin-right: 15px;
+	text-overflow: ellipsis;
+}
+
+.tvAlmostReady .ebx_Button,
+.tvAlmostReady .ebx_FlatButtonNoBorder,
+.tvAlmostReady .ebx_FlatButton,
+.tvAlmostReady .ebx_IconButtonSmall,
+.tvAlmostReady .ebx_IconFlatButtonSmall {
+	/* opacity: exactly like .ebx_Disabled */
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	
+	background-color: transparent;
+	cursor: wait;
+}
+/*END widgets */
+
+/*START resize column */
+
+.tvHeaderFixedContainer,
+.tvHeaderMainContainer {
+	position: relative;
+}
+.tvHeaderContainer {
+	position: relative;
+	overflow: hidden;
+}
+
+.ebx_ColumnResizeKnob {
+	height: 30px;
+	width: 5px;
+	top: 0;
+	position: absolute;
+	cursor: col-resize;
+    
+	margin-left: -3px;
+}
+.tvHeaderFixedContainer .ebx_ColumnResizeKnob {
+    margin-left: -2px; /* because of the margin-left: -1 */
+}
+
+.tvContainerFixedHScrollLastBorderNotVisible .tvHeaderContainer>.ebx_ColumnResizeKnob {
+	display: none;
+}
+
+.tvContainer {
+	position: relative;
+}
+
+.ebx_ResizeColumnBar {
+	display: none;
+	
+	height: 100%;
+	top: 0;
+	position: absolute;
+	cursor: col-resize;
+	
+	width: 1px;
+	background-color: #000000;
+	border-left: 2px solid #C0C0C0;
+	border-right: 2px solid #C0C0C0;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	
+	margin-left: -2px; /* remove 1px when tvContainer have not HScroll (first column have 1px border-left width) */
+}
+
+.tvContainer.tvContainerFixedHScroll .ebx_ResizeColumnBar,
+.tvContainer.tvContainerHScroll .ebx_ResizeColumnBar,
+.tvContainer.tvContainerVScroll .ebx_ResizeColumnBar {
+	margin-left: -3px;
+}
+
+/*END resize column */
+
+/*START selection */
+
+.ebx_TableSelectionNumber {
+	font-weight: bold;
+}
+
+.ebx_WaitingForSelection {
+	cursor: wait;
+	
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+	/* background-position is computed by the JS depending to the offsetTop */
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+.ebx_WaitingForSelection.ebx_SelectCurrentPageCellHeader {
+	background-position: center center;
+}
+
+.ebx_WaitingForSelection input {
+	visibility: hidden;
+}
+
+/*END selection */
+
+/*START resize */
+
+.yui-skin-sam .yui-resize-proxy.tvContainerResizeProxy {
+	border: 1px solid #E0E0E0;
+	
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+.yui-skin-sam .yui-resize.tvContainer .yui-resize-handle-br {
+    background-color: transparent;
+	background-position: 0 -68px;
+    bottom: 0;
+    height: 12px;
+    right: 0;
+    width: 12px;
+}
+
+.yui-skin-sam .yui-resize.tvContainer .yui-resize-handle-b .yui-resize-handle-inner-b {
+	background-position: 0 -215px;
+}
+
+/*END resize */
+
+.tvLineRoot {
+	font-weight: bold;
+}
+.tvLineOcculting td {
+	text-decoration: line-through;
+	color: #505050;
+}
+
+.ebx_HiddenCellValue {
+	display: inline-block;
+	width: 100%;
+	background-image: url(../images/onCommon/ebx_hatching.png);
+}
+
+.tvFocusFlag {
+	width: 2px;
+	position: absolute;
+	left: 1px;
+	
+	top: 0;
+	height: 0;
+	
+	transition: height 0.5s ease, top 0.5s ease;
+	-moz-transition: height 0.5s ease, top 0.5s ease;
+	-webkit-transition: height 0.5s ease, top 0.5s ease;
+}
+
+.ebx_OpenRecordContainer {
+	display: inline-block;
+	margin-left: 5px;
+	overflow: hidden;
+	/* overflow hidden brakes the vertical align baseline, top will align the top to other buttons */
+	vertical-align: top;
+}
+.ebx_OpenRecordContainer .ebx_OpenRecord {
+	margin-left: -100%;
+	
+	transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+}
+.ebx_OpenRecordContainer .ebx_OpenRecord.ebx_OpenRecordEnabled {
+	margin-left: 0;
+	
+	transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+}
+
+.ebx_AssociationNodeTable {
+	display: inline-block;
+	vertical-align: text-top;
+}
+.ebx_AssociationNodeTableToolbar {
+	padding-bottom: 5px;
+}
+/* Maybe it's risky to remove the overflow:hidden of tvContainer? */
+/* I don't know how to do otherwise to avoid the bottom knob to be on the bottom scrollBar */
+/* for now, this feature is limited to AssociationNodeTable */
+.ebx_AssociationNodeTable .yui-resize.tvContainer {
+	overflow: visible;
+}
+.ebx_AssociationNodeTable .yui-resize.tvContainer .yui-resize-handle-b {
+	margin-bottom: -6px;
+}

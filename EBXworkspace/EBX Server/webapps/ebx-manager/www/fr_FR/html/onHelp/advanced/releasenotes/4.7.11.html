@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.11</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.11.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.11</h1>
+<p><em>Release Date: April 16, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Data Model</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Services</a></li></ul>
+</li><li class="toc1"><a href="#id2">Validation API</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Class ValueContextForValidationOnTable</a></li></ul>
+</li><li class="toc1"><a href="#id3">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">New mail variables</a></li><li class="toc2"><a href="#id3s2">New administration services</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model &amp; DMA</a></li><li class="toc2"><a href="#bug-Documentation">Documentation</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Data Model</h2>
+<h3>
+<a name="id1s1"></a>Services</h3>
+<p> Element <code>osd:confirmation</code> on service declaration has been added to offer the ability to deactivate the confirmation dialog box of a service available on a table. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html">ServiceContext</a> .&nbsp;</p><p> Attribute <code>displayInInstance</code> on service element has been added to offer the ability to hide or display the service in the &quot;services&quot; tab inside an instance. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html">ServiceContext</a> .&nbsp;</p><h2>
+<a name="id2"></a>Validation API</h2>
+<h3>
+<a name="id2s1"></a>Class ValueContextForValidationOnTable</h3>
+<p> Method <code>addMessage(UserMessage)</code> has been added. It allows to add a message whose subject is the table that holds the constraint. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/instance/ValueContextForValidationOnTable.html#addMessage(com.onwbp.base.text.UserMessage)">ValueContextForValidationOnTable.addMessage(UserMessage)</a></p><h2>
+<a name="id3"></a>Workflow</h2>
+<h3>
+<a name="id3s1"></a>New mail variables</h3>
+<p>New mail variables have been added:</p><ul>
+<li><p><code>workflow.process.label</code> :&nbsp;to indicate the label of the current process instance. </p></li><li><p><code>workflow.process.description</code> :&nbsp;to indicate the description of the current process instance. </p></li></ul>
+<h3>
+<a name="id3s2"></a>New administration services</h3>
+<p>New administration services have been added to the work items table:</p><ul>
+<li><p>Reallocate a work item: thanks to the service, the current work item is reallocated to the selected user (allocated state).</p></li><li><p>Deallocate a work item: thanks to the service, the current work item is deallocated (offered state).</p></li></ul>
+<h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[2431]</em> A branch or version is present in the repository but is not registered in the table &quot;Branch/Version&quot;. </p><p>In this case, the branch or version cannot be marked to purge.</p></li><li><p><em>[2521]</em> After a refresh schema, if a table disappeared, the versions are not notified. </p><p>After a refresh schema or after the Unregister/Register of a module, if a table is removed, a PathAccessException is thrown during merge or compare processes.</p></li><li><p><em>[2537]</em> Deletion of a table record including children does not work if this record is inherited in a child instance. </p><p>The delete procedure will fail with message: Cannot delete an inheriting occurrence (it is not persistent).</p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2457]</em> SchemaNode&#39;s information is not handled as expected if an element use a complex defined type. </p><p>If an element defines a node information (osd:information) and uses a complex defined type, its information is the one of the type used, not the element&#39;s one.</p></li><li><p><em>[2458]</em> Complex type in DMA may define &quot;table&quot; specification but it is hidden and cannot be modified. </p><p>A complex type may define primary key specification, constraint on table, node information, etc. but all these properties are hidden in the DMA, and therefore cannot be modified.</p></li><li><p><em>[2492]</em> The result of the &quot;create attribute&quot; service, with option set to mandatory, is an optional attribute. </p><p>The result of the creation of a mandatory attribute is an element with minOccurs set to 0 (instead of 1).</p></li><li><p><em>[2512]</em> When a service definition has errors, the instance contents are still available. </p><p>A wrong service definition in a schema does not make unavailable the content of the associated instances.</p></li><li><p><em>[2524]</em> When a user task is re-allocated in the &quot;workflow-executions&quot; branch, inputs are not accessible anymore. </p><p>If a task is re-allocated to a different user in the &quot;Work items&quot; table, the method &quot;InteractionHelper.getInputParameters().getVariableString()&quot; throws an exception.</p></li><li><p><em>[2534]</em> Nomenclature items are not seen as readable if using IBM JDK 1.6. </p><p>If a property of a JavaBean is a List, IBM JDK 1.6 Introspector does not report the List getter (List getProperty()) if there is also an indexed getter (Object getProperty(int)).</p></li></ul>
+<h3>
+<a name="bug-Documentation"></a>Documentation</h3>
+<ul>
+<li><p><em>[2527]</em> WorkFlowEngine.getWfiWorkItemForToken() method cannot be used. </p><p>The method WorkFlowEngine.getWfiWorkItemForToken() cannot be used as it requires a non public class instance as parameter;&nbsp;It has be removed from public API.</p></li><li><p><em>[2528]</em> WorkFlowEngine.isProcessInstanceInError() method cannot be used. </p><p>The method WorkFlowEngine.isProcessInstanceInError() cannot be used as it requires a non public class instance as parameter;&nbsp;It has be removed from public API.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2466]</em> Displaying a large list of &#39;domains&#39; nodes is too slow in EBX with Internet Explorer 6. </p><p>A large list (more than several hundreds) of complex node&#39;s links takes more than 5 seconds with I.E. 6.</p></li><li><p><em>[2467]</em> HTML viewer component cannot be used in table grid view. </p><p>HTML viewer component cannot be used in table grid view as far as it always shows first line of grid value.</p></li><li><p><em>[2468]</em> HTML viewer component throws a NullPointerException in UIBeanEditor. </p><p>UIResponseContext.addUIDisplayValue() on a HTML type throws a NullPointerException.</p></li><li><p><em>[2520]</em> UIHttpManagerComponent called on a default perspective is erroneous. </p><p>UIHttpManagerComponent with ServiceKey &quot;CREATE&quot; or &quot;DUPLICATE&quot; is erroneous when it is called on a table node with a default perspective.</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><em>[2487]</em> Instance nodes on child instances are not revalidated when they are modified. </p><p>When an instance node is overwritten and modified in a child adaptation, it is not revalidated.</p></li><li><p><em>[2510]</em> EBX reports schema validation message in place of content validation report. </p><p>In the validation report of an instance, the schema validation messages having the same severity as instance validation message are displayed.</p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><em>[2507]</em> In a Condition, the method &quot;setVariableString(String,String)&quot; is erroneous. </p><p>An exception is thrown when the method is launched:&nbsp;&quot;This object is not in update mode&quot;.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.6.1</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.6.1.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.6.1</h1>
+<p><strong>Release Date: April 17, 2009</strong></p><h2>
+Bug Fixes / Minor enhancement</h2>
+<ul>
+<li><p><strong>[01839]</strong> Exception might occurs when attaching hierarchy nodes from a dimension level using a joint table to a recursive different dimension parent level node. </p></li><li><p><strong>[01840]</strong> If a hierarchy ordered column is not initially correctly ordered, ordering might not work. </p></li><li><p><strong>[01841]</strong> Advanced Input Component does not work properly when using tabular input mode. </p></li><li><p><strong>[01844]</strong><code>ServiceContext.getURLForSelection()</code> does not return the right URL if the Adaptation is not in the current <code>AdaptationHome</code> . </p></li><li><p><strong>[01846]</strong> When a Hierarchy Dimension contains an osd:select which is not in the schema of the target table of the hierarchy, a Null Pointer Exception might occur on its display. </p></li><li><p><strong>[01847]</strong> In DataModel Assistant, an attribute created as optional should have a minOccurs set to 0. </p></li><li><p><strong>[01848]</strong> In DataModel Assistant, a constraint &quot;min value&quot; generates a constraint &quot;max value&quot; in XSD schema. </p></li><li><p><strong>[01849]</strong> In DataModel Assistant, default value, boundaries (min &amp; max values) &amp; enumeration values should be seized using an XML format. </p></li><li><p><strong>[01850]</strong> In DataModel Assistant, node selection cannot be set to &#39;maxOccurs=unbounded&#39;. </p></li><li><p><strong>[01851]</strong> In DataModel Assistant, <code>osd:excludeValue</code> facet is now supported. </p></li><li><p><strong>[01852]</strong> If a <code>TableTrigger</code> (handleAfterCreate, handleAfterModify) modifies a value within the current record, the new value is not seen in the record form (the form must be closed and reopened in order to see it). </p></li><li><p><strong>[01853]</strong> In EBX, validation messages with node values (ex: on facet <code>xs:enumaration</code> ,&nbsp;the value displayed in the validation error message is not formatted as expected (ex: a date is not displayed as &#39;YYYY-MM-dd&#39;). </p></li><li><p><strong>[01854]</strong> When deleting an instance, only the tables currently referenced by its schema are deleted. If a schema is modified before instance deletion and restored afterwards, and if the instance is re-created with the same name, this will cause some table records to &quot;reappear&quot;. </p></li><li><p><strong>[01855]</strong> Because of bug #01854, if a schema is modified before instance deletion and restored afterwards, this will cause an import archive to fail. </p></li><li><p><strong>[01856]</strong> If a user change the owner of a home (by means of &#39;&#39;Modify information&#39;&#39; action), and if he is no more allowed to view this home, a NullPointer is thrown. </p></li><li><p><strong>[01857]</strong> In DataModel Assistant, a pattern &quot; <code>XXXX</code> &quot; in XSD schema is reversed as &quot; <code>^XXXX$</code> &quot;. </p></li><li><p><strong>[01858]</strong> DataModel Assistant generates schema without <code>UDACatalogPath</code> namespace prefix ( <code>osd:</code> ). </p></li></ul>
+<p> For more information about EBX.Platform 4.6, please refer to <a href="./4.6.0.html">4.6.0 release note</a> .&nbsp;</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Snapshot</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dataspace_snapshot" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data spaces</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/snapshot.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+<h1>
+Snapshot</h1>
+<p>A snapshot is a complete, read-only copy of a data space at a given point in time.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#creation">Snapshot creation</a></li><li class="toc1"><a href="#information">Information</a></li><li class="toc1"><a href="#id3">View content</a></li><li class="toc1"><a href="#services">Services</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Validation</a></li><li class="toc2"><a href="#id4s2">Compare</a></li><li class="toc2"><a href="#id4s3">Export</a></li></ul>
+</li><li class="toc1"><a href="#id5">Closing a snapshot</a></li></ul>
+</div>
+<h2>
+<a name="creation"></a>Snapshot creation</h2>
+<p>A snapshot can be created using the <em>Create a Snapshot</em> button located in the workspace area.</p><p>The following information is required:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Identifier</p></td><td class="ebx_definitionListDefinition"><p>Unique identifier for the snapshot.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Label</p></td><td class="ebx_definitionListDefinition"><p>Label and description associated with the snapshot, for which localized versions may be provided.</p></td></tr>
+</table>
+<h2>
+<a name="information"></a>Information</h2>
+<p>You can modify the information associated with a snapshot by clicking the <em>Actions</em> button and selecting <em>Information</em>.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Current Owner</p></td><td class="ebx_definitionListDefinition"><p>Owner of the snapshot, allowed to modify its information and permissions. The owner is not necessarily the creator of the data space.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation</p></td><td class="ebx_definitionListDefinition"><p>Label and description associated with the snapshot, for which localized versions may be provided.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Change owner</p></td><td class="ebx_definitionListDefinition"><p>Whether the current owner of the data space is allowed to modify the <em>Current owner</em> value of the snapshot.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Loading strategy</p></td><td class="ebx_definitionListDefinition"><p>Only the administrator can modify this setting.</p><ul>
+<li><p><em>On demand loading and unloading:</em> The main advantage of this strategy is the ability to free memory when needed. The disadvantage is that it implies a load cost when an accessed resource has not yet been loaded since server startup, or if it has been unloaded. This is the default mode.</p></li><li><p><em>Forced loading:</em> This mode is recommended for data spaces with long life cycles where snapshots are used heavily.</p></li><li><p><em>Forced loading and prevalidation:</em> This mode is recommended for data spaces with long life cycles where snapshots are used heavily and the validation process can take a long time.</p></li></ul>
+</td></tr>
+</table>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Any modification of the loading strategy requires restarting the server.</fieldset>
+<h2>
+<a name="id3"></a>View content</h2>
+<p>You can view the content of a snapshot using the <em>Actions</em> button.</p><h2>
+<a name="services"></a>Services</h2>
+<p>Several other services are accessible using <em>View or edit content</em> under <em>Actions</em>.</p><h3>
+<a name="id4s1"></a>Validation</h3>
+<p>The content of a snapshot can be validated globally using the validation service at snapshot level.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+In order to use this service, a user must have permission to validate every data set contained in the snapshot.</fieldset>
+<h3>
+<a name="id4s2"></a>Compare</h3>
+<p>This service allows the comparison of the contents of the current snapshot with another data space or snapshot. A side-by-side comparison view summarizes the differences found.</p><h3>
+<a name="id4s3"></a>Export</h3>
+<p>This service allows the export a snapshot&#39;s content to an archive.</p><p>When exporting an archive, the following information is required:</p><ul>
+<li><p><strong>Name of the archive to create:</strong> The name of the exported archive.</p></li><li><p><strong>Data sets to export:</strong> The data sets that should be exported, in table format. For each data set, you can choose whether to export data values, permissions, and information.</p></li></ul>
+<h2>
+<a name="id5"></a>Closing a snapshot</h2>
+<p>When a snapshot is no longer needed, it can be closed. The owner of the snapshot, or an authorized user, can close the snapshot using the <em>Actions</em> menu. Once a snapshot is closed it can no longer be accessed. It may be deleted by an administrator if it has not yet been purged.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

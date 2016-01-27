@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Main actions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="data_dataset" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data sets</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_data/actions_dataset.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+<h1>
+Main actions</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#creation">Creating a data set</a><ul class="toc2">
+<li class="toc2"><a href="#information">Information</a></li></ul>
+</li><li class="toc1"><a href="#id2">Editing a data set</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Navigating within a data set</a></li><li class="toc2"><a href="#id2s2">Permissions settings</a></li></ul>
+</li><li class="toc1"><a href="#validation">Validating a data set</a></li><li class="toc1"><a href="#tables">Data set tables</a><ul class="toc2">
+<li class="toc2"><a href="#editRecord">Editing a record</a></li><li class="toc2"><a href="#sort">Sorting data</a></li><li class="toc2"><a href="#search">Searching and filtering data</a></li><li class="toc2"><a href="#views">Custom views</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="creation"></a>Creating a data set</h2>
+<p>A data set can be created using the <em>Create a data set</em> button, accessible through the data set selector. If no data sets exist in the selected data space, the button is directly displayed in the navigation pane. You can then use the wizard to create a data set.</p><h3>
+<a name="information"></a>Information</h3>
+<p>The data set&#39;s information can be edited using the <em>Actions</em> button from the navigation pane. The following information can be edited:</p><ul>
+<li><p><strong>Owner:</strong> User allowed to edit the data set&#39;s information and permission rules. The owner is not necessarily the creator of the data set.</p></li><li><p><strong>Documentation:</strong> Label and description associated with the data set according to languages, for which localized versions may be provided.</p></li><li><p><strong>Activated:</strong> Data set activation allowing validation rules to be checked.</p></li></ul>
+<h2>
+<a name="id2"></a>Editing a data set</h2>
+<h3>
+<a name="id2s1"></a>Navigating within a data set</h3>
+<p>A data set may contain tables, fields and/or groups. To access them, use the tree view in the navigation pane. Their content is displayed in the workspace.</p><h3>
+<a name="id2s2"></a>Permissions settings</h3>
+<p>To find out how to set customized permissions for each potential user, see the <a target="_self" href="../user_data/userdata_permissions.html">permissions</a> section.</p><h2>
+<a name="validation"></a>Validating a data set</h2>
+<p>To validate a data set at any time, select <strong>Actions &gt; Validate</strong> from the navigation pane. The generated report provides the results of the validation. From the validation report, you have the option to update the reported validation status by clicking the <strong>Revalidate</strong> button, or to click the <strong>Reinitialize validation report</strong> button to clear the current validation report associated with the data set in order to be able to rerun a full validation from scratch.</p><p>Validations of data can also be run at the table level by navigating to the desired table from the navigation pane, then selecting <strong>Actions &gt; Validate</strong> from the workspace.</p><h2>
+<a name="tables"></a>Data set tables</h2>
+<p>The content of a table is displayed in the workspace area, which is also where the user can interact with it.</p><h3>
+<a name="editRecord"></a>Editing a record</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Create</p></td><td class="ebx_definitionListDefinition"><p>A new record can be created using the &quot;+&quot; button located on the top left of the table. A form is displayed to input the values. Mandatory data are indicated by a red asterisk.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Edit</p></td><td class="ebx_definitionListDefinition"><p>A record can be edited by double-clicking on it. The displayed form allows you to edit the record and the <em>Revert</em> button allows you to reload the form without submitting any of the changes made.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Duplicate</p></td><td class="ebx_definitionListDefinition"><p>A record, that has been selected using the check box, can be duplicated using the <em>Actions</em> button.</p><p>A form appears with its value already filled in. The primary key must then be changed in order to create this new record, unless this primary key is generated (auto-incremented value).</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delete</p></td><td class="ebx_definitionListDefinition"><p>One or several records, that have been selected using the check boxes, can be deleted using the <em>Actions</em> button.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Compare</p></td><td class="ebx_definitionListDefinition"><p>Two records, that have been selected using the check boxes, can be compared using the <em>Actions</em> button.</p><p><strong>Note:</strong> The content of complex terminal nodes, such as aggregated lists and user defined attributes, are not subject to comparison during this process. The compare service ignores any differences between the values of the complex terminal nodes in the records.</p></td></tr>
+</table>
+<h4>
+Record import/export</h4>
+<p>In a table, records can be exported to or imported from CSV or XML format.</p><p>You can either manually select certain records of the table to export, or you can export the whole table.</p><div id="seealso">
+<h5>
+See also:</h5>
+<ul>
+<li><a target="_self" href="../references/csv_services.html">CSV Services</a></li><li><a target="_self" href="../references/xml_services.html">XML Services</a></li></ul>
+</div>
+<h3>
+<a name="sort"></a>Sorting data</h3>
+<p>Sorting criteria control the order in which records are presented. They can be defined through the <em>View</em> button. The default order is by ascending primary key. The <em>Reset</em> option allows you to cancel any modifications.</p><p>It is defined by a column name and an order (ascending, lowest to highest value, or descending, highest to lowest value). A sort criteria can be added and removed using the <em>Add</em> and <em>Remove</em> links. The sort order of a criteria can be changed by clicking either on the <em>ascending</em> or on the <em>descending</em> links.</p><p>The order between criteria can be set by using the button located on the right of the criteria list.</p><h3>
+<a name="search"></a>Searching and filtering data</h3>
+<p>Specific tools are offered to search for records inside the current view. They can be accessed using the icon <img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img>, which displays the filters panes.</p><p>When criteria are defined for a search or filter, a checkbox appears in its title bar to apply the filter. Unchecking this box removes the filter.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Applying a custom view will reset and remove all applied filters.</fieldset>
+<h4>
+Typed search</h4>
+<p>In simple mode, the typed search tool allows adding type-contextual search criteria on one or more fields. Operators relevant to the type of a given field are proposed when adding a criterion.</p><p>By enabling the advanced mode, it is possible to build sub-blocks containing criteria for more complex logical operations to be involved in the computation of the search results.</p><h4>
+<a name="textSearch"></a>Text search</h4>
+<p>The text search is intended for plain-text searches on one or more fields. The text search does not take into account the types of the fields being searched.</p><ul>
+<li><p>If the entered text entered contains one or several words without wildcard characters (<code>*</code> or <code>?</code>), matching fields must contain all the specified words. The words being quoted (for example &quot;aa bb&quot;) are considered as one word.</p></li><li><p>Usual wildcard characters are available: <code>*</code> (any text) or <code>?</code> (any character). For performance reason, only one of these character can be entered. </p></li><li><p>Wildcard characters can be considered as usual characters by escaping them with &#39;\&#39;, for example &#39;\*&#39;.</p></li></ul>
+<p>Examples:</p><ul>
+<li><p><code>aa bb</code>: field contains &#39;aa&#39; and &#39;bb&#39;. </p></li><li><p><code>aa &quot;bb cc&quot;</code>: field contains &#39;aa&#39; and &#39;bb cc&#39;. </p></li><li><p><code>aa*</code>: field label starts with &#39;aa&#39;. </p></li><li><p><code>*bb</code>: field label ends with &#39;bb&#39;. </p></li><li><p><code>aa*bb</code>: field label starts with &#39;aa&#39; and ends with &#39;bb&#39;. </p></li><li><p><code>aa?</code>: field label starts with &#39;aa&#39; and is 3 chars length.</p></li><li><p><code>?bb</code>: field label ends with &#39;bb&#39; and is 3 chars length. </p></li><li><p><code>aa?bb</code>: field label starts with &#39;aa&#39; and ends with &#39;bb&#39; and is 5 chars length. </p></li><li><p><code>aa\*bb</code>: field contains &#39;aa*bb&#39; as is. </p></li></ul>
+<p> On big tables, it is recommended to select only one table field and in the case the field type is not of the string type, to try to match the format type:</p><ul>
+<li><p>boolean: Yes,No </p></li><li><p>date: 01/01/2000 </p></li><li><p>numeric: 100000 or 100,000 </p></li><li><p>enumerated value: Red, Blue, ... </p></li></ul>
+<p><em>Case sensitive</em> options: search is sensitive to the case (that is, low-case and upper-case are distinguished). </p><h4>
+<a name="severitySearch"></a>Validation messages filter</h4>
+<p>The validation messages filter allows you to view records according to their status as of the last validation performed. You may select to view records of the levels &#39;Error&#39;, &#39;Warning&#39;, or &#39;Information&#39;.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+This filter is only applied to the records of the table that have been validated at least once by selecting <strong>Actions &gt; Validate</strong> at the table level from the workspace, or at the data set level from the navigation pane.</fieldset>
+<h4>
+<a name="specificSearch"></a>Custom table searches</h4>
+<p>Additional custom filters can be specified for each table in the data model.</p><h3>
+<a name="views"></a>Custom views</h3>
+<p>You can customize the presentation of a table by creating custom views and applying them. By using the <em>View</em> button, it is possible to select an existing custom view or to create a new one. Once you applied an existing view, it can be set as the <em>default view</em> for the table. By clicking on <em>withdraw all views</em>, anyone can deactivate all custom views and/or hierarchy previously applied.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="./view.html">Custom views</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data sets</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

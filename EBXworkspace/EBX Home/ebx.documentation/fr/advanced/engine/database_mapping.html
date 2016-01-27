@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Database mapping administration</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="admin_database_mapping" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Administration Guide &gt; Technical administration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/database_mapping.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+<h1>
+Database mapping administration</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#overview">Database mapping overview</a></li><li class="toc1"><a href="#features">Database mapping features</a><ul class="toc2">
+<li class="toc2"><a href="#renaming">Renaming columns in the database</a></li><li class="toc2"><a href="#purging">Purging columns in the database</a></li><li class="toc2"><a href="#renamingAuxTablesRP">Renaming auxiliary tables for replicated mode in the database</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="overview"></a>Database mapping overview</h2>
+<p>Information relative to the database mapping can be found in the <em>Administration</em> section.</p><p>&#39;Database mapping&#39; contains the following tables:</p><ul>
+<li><p> Data models </p></li><li><p> Tables </p></li><li><p> Columns </p></li><li><p> Lists </p></li><li><p> Table replications </p></li><li><p> Replication units </p></li><li><p> Types </p></li></ul>
+<p>These tables allow retrieving information related to data models, their tables and columns which have activated at least one mapped mode.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../references/persistence_overview.html#mapped">Mapped modes</a></p></div>
+<h2>
+<a name="features"></a>Database mapping features</h2>
+<p>Besides displaying mapping-related information, this section allows modifying the mapping of columns and purging obsolete ones under certain conditions.</p><h3>
+<a name="renaming"></a>Renaming columns in the database</h3>
+<p>This feature is available on &#39;Columns&#39; table records, under the &#39;Actions&#39; menu. It allows renaming a column in the database.</p><p>The administrator can specify the name of each column of the data model in the database for mapped modes.</p><p>Once the service is selected on a record, a summary screen displays information regarding the selected column and the administrator is prompted to enter a new name for the column in the database.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><p>It is required that the new identifier begins with a letter.</p><p>Besides, the new name must be a valid column identifier, which depends on the naming rules of the underlying RDBMS.</p></p></div>
+<h3>
+<a name="purging"></a>Purging columns in the database</h3>
+<p>This feature is available on &#39;Columns&#39; table records, under the &#39;Actions&#39; menu. It allows purging columns in mapped structures.</p><p>A column can be purged if it has been disabled for mapped modes.</p><p>A column is disabled for mapped modes when:</p><ul>
+<li><p>the corresponding field has been removed from the data model, or</p></li><li><p>the corresponding field has been changed in the data model, in a way that is not compatible (for example, its data type has been modified), or</p></li><li><p>the defined mapped modes have been disabled locally on the corresponding fields, using the elements <code>osd:history</code> and <code>osd:replication</code>.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../references/history.html#disableHistory">Disabling history on a specific field or group</a></li><li><a href="../references/replication.html#disable">Disabling replication on a specific field or group</a></li></ul>
+</div>
+</li></ul>
+<p>Note that this behavior will change for aggregated lists:</p><ul>
+<li><p>when deactivating a complex aggregated list, its inner fields will still be in <code>LIVING</code> state, whereas the list node is disabled. As lists are considered as auxiliary tables in the mapping system, this information can be checked on the &#39;Tables&#39; table,</p></li><li><p>on the other hand, when the deactivation is just for inner nodes of the list, then the list will still be <code>LIVING</code>, while its children will be <code>DISABLED IN MODEL</code>.</p></li></ul>
+<p>A column can be purged only if its own state is <code>DISABLED IN MODEL</code>, or if it is an inner field of a <code>DISABLED IN MODEL</code> list.</p><h3>
+<a name="renamingAuxTablesRP"></a>Renaming auxiliary tables for replicated mode in the database</h3>
+<p>This feature is available on &#39;Table Replications&#39; table records, under the &#39;Actions&#39; menu. It allows renaming auxiliary tables for the replicated mode in the database.</p><p>Auxiliary tables are database tables used for persisting aggregated lists.</p><p>The administrator can specify the name in the database of each replicated auxiliary table corresponding to an aggregated list of the data model.</p><p>Once the service is selected on a record, a summary screen displays information regarding the selected auxiliary table and the administrator is prompted to enter a new name for the replicated auxiliary table in the database.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><p>It is required that the new identifier begins with a letter.</p><p>It is required that the new identifier begins with the repository prefix.</p><p>Besides, the new name must be a valid table identifier, which depends on the naming rules of the underlying RDBMS.</p></p></div>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Administration Guide &gt; Technical administration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

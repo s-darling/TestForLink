@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.9</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.9.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.9</h1>
+<p><em>Release Date: February 11, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">User Interface</a><ul class="toc2">
+<li class="toc2"><a href="#InstancePermissions">Instance permissions</a></li></ul>
+</li><li class="toc1"><a href="#id2">API</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Instance properties</a></li><li class="toc2"><a href="#id2s2">DataModel API</a></li><li class="toc2"><a href="#WorkflowAPI">Workflow API</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-DataModelDMA">Data Model & DMA</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users & Permissions</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>User Interface</h2>
+<h3>
+<a name="InstancePermissions"></a>Instance permissions</h3>
+<p>Access to permissions table is now direct from &quot;permissions&quot; tab.</p><h2>
+<a name="id2"></a>API</h2>
+<h3>
+<a name="id2s1"></a>Instance properties</h3>
+<p> The class <code>ProcedureContext</code> has a new methods for setting instance properties: </p><ul>
+<li><p> The method <code>setInstanceLabel</code> has been added for setting the label of an instance. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setInstanceLabel(com.onwbp.adaptation.Adaptation, com.onwbp.base.text.UserMessage)">ProcedureContext.setInstanceLabel(Adaptation, UserMessage)</a></p></li><li><p> The method <code>setInstanceDescription</code> has been added for setting the description of an instance. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setInstanceDescription(com.onwbp.adaptation.Adaptation, com.onwbp.base.text.UserMessage)">ProcedureContext.setInstanceDescription(Adaptation, UserMessage)</a></p></li><li><p> The method <code>setInstanceOwner</code> has been added for defining the owner of an instance. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setInstanceOwner(com.onwbp.adaptation.Adaptation, com.orchestranetworks.service.Profile)">ProcedureContext.setInstanceOwner(Adaptation, Profile)</a></p></li><li><p> The method <code>setInstanceActivation</code> has been added for defining the activation state of an instance. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#setInstanceActivation(com.onwbp.adaptation.Adaptation, boolean)">ProcedureContext.setInstanceActivation(Adaptation, boolean)</a></p></li></ul>
+<h3>
+<a name="id2s2"></a>DataModel API</h3>
+<p> The method <code>SchemaNode.getAccessMode()</code> has been added. It returns the access mode that is defined in schema to see and modify a node. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaNode.html#getAccessMode()">SchemaNode.getAccessMode()</a></p><h3>
+<a name="WorkflowAPI"></a>Workflow API</h3>
+<p>InteractionHelper has a new method:</p><p> The method <code>InteractionHelper.isComplete</code> has been added. It returns <code>true</code> if the current interaction has been set as complete. </p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2392]</em> Option to disable auto-increment value check upon max value of table content does not work as expected. </p><p>It updates last increment value when importing new records with preset incremented values.</p></li><li><p><em>[2406]</em> Table properties on reusable types are overwritten when new tables referencing them are created. </p><p>When an existing reusable type is referenced during the creation of a new table, its table properties are overwritten by the new table.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><em>[2385]</em> Occulted records are erroneously exported to CSV file. </p><p>An occulted record in the child instance part of an inheritance tree is erroneously exported to CSV file.</p></li><li><p><em>[2405]</em> When an archive is exported with a &quot;change set&quot;, if the &quot;permissions&quot; check box is not ticked, the export is erroneous. </p><p>The export is erroneous: the differences in the access rights table are exported even if the &quot;permissions&quot; check box is not ticked, whereas the permission table is not exported. Consequently, the archive cannot be imported.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2350]</em> Workflow execution screen: in IE 8, the warning icon does not appear for instances of deactivated publications </p><p>In the Workflow execution main screen: in IE 8, the warning icon does not appear for instances of deactivated publications.</p></li><li><p><em>[2375]</em> Setting node access permission takes too long in IE. </p><p>Using Internet Explorer to define a specific permission on a node:</p><p>when we click on a specific permission for a node (Read-Write, Hidden ,...), Javascript execution takes too long, especially for complex data models.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><em>[2397]</em> Distributor (only) profile is restricted even out of the context of agreements. </p><p>This fix is an addition to previous bug fix #02373 (cf. release note 4.7.8).</p><p>As many implementation of EBX.Platform declare users without at least built-in &quot;Provider&quot; role, bug fix #02373 has many inconvenients and side-effects in adaptations without agreement management (provider delegation to distributor through agreement in adaptation tree).</p><p>This new fix handle this case.</p></li><li><p><em>[2398]</em> A distributor cannot create child adaptation of its agreement. </p><p>After bug fix #02373 (cf. release note 4.7.8), &quot;Distributor&quot; profile cannot create agreement child, even agreement is a delegation for its profile.</p></li><li><p><em>[2404]</em> A user, with a default permission &quot;hidden&quot; on nodes, cannot update instance values. </p><p>It should be allowed if the user has specific permissions on the required nodes.</p><p>However, update fails with error message: the record may not be updated (no write permission on the following record: &quot;/&quot;).</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><em>[2394]</em> When a &quot;constraintPredicate&quot; is defined in an &quot;osd:select&quot; node, validation is erroneous. </p><p>In case of a validation error due to a constraint predicate on &quot;osd:select&quot;, an update that fixes the validation error does not trigger the incremental validation. Furthermore, the validation process cannot be re-run explicitly.</p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><em>[2314]</em> Only output variables must be displayed for output parameters. </p><p>In task and condition definition, it is possible to select a dataContext variable as output parameter by using a drop-down list.</p><p>Variables that are not marked as &#39;output variable&#39; must not be displayed in the drop-down list. The dataContext variables must be filtered.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

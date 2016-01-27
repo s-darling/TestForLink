@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.8.3</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.8.3.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.8.3</h1>
+<p><em>Release Date: August 2, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Merge</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Locks</a></li></ul>
+</li><li class="toc1"><a href="#id2">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">New notifications</a></li><li class="toc2"><a href="#id2s2">New mail variables</a></li><li class="toc2"><a href="#id2s3">New mail API</a></li><li class="toc2"><a href="#id2s4">New field in process instance</a></li></ul>
+</li><li class="toc1"><a href="#id3">Mail configuration</a></li><li class="toc1"><a href="#id4">API</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Logging</a></li><li class="toc2"><a href="#id4s2">Trigger</a></li><li class="toc2"><a href="#id4s3">Workflow</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model &amp; DMA</a></li><li class="toc2"><a href="#bug-DataServices">Data Services</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Merge</h2>
+<h3>
+<a name="id1s1"></a>Locks</h3>
+<p>The merge feature now allows users to create child branches on the parent branch while another child branch is currently being merged on it.</p><h2>
+<a name="id2"></a>Workflow</h2>
+<h3>
+<a name="id2s1"></a>New notifications</h3>
+<p>New notifications are available in a workflow definition. It is now possible to notify users when:</p><ul>
+<li><p>a process instance is started (in the configuration);</p></li><li><p>a process instance is complete (in the configuration);</p></li><li><p>a work item is deallocated (in a user task definition);</p></li><li><p>a user task is complete (in a user task definition).</p></li></ul>
+<h3>
+<a name="id2s2"></a>New mail variables</h3>
+<p>Mail variables have been added: </p><ul>
+<li><p><code>workflow.currentStep.label</code>: to indicate the label of the current step (script, condition or user task).</p></li><li><p><code>workflow.currentStep.description</code>: to indicate the description of the current step (script, condition or user task).</p></li></ul>
+<h3>
+<a name="id2s3"></a>New mail API</h3>
+<p> The new class <code>MailSpec</code> is available from the workflow contexts in order to send mails.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a target="_blank" href="../Java_API/com/orchestranetworks/workflow/MailSpec.html">MailSpec</a></p></div>
+<h3>
+<a name="id2s4"></a>New field in process instance</h3>
+<p>A new field has been added in the process instances table of the &quot;Workflows - Executions&quot; branch: the creator of the process instance. </p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessLauncher.html">ProcessLauncher</a></p></div>
+<h2>
+<a name="id3"></a>Mail configuration</h2>
+<p> New properties have been added in <code>ebx.properties</code> to complete the configuration for the mail server. It is now possible to specify a port and configure an SSL connection. </p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/properties.html#smtp">Mail configuration</a></p></div>
+<h2>
+<a name="id4"></a>API</h2>
+<h3>
+<a name="id4s1"></a>Logging</h3>
+<p> Specific developments can access the kernel and workflow categories by means of the new Java interface <a target="_blank" href="../Java_API/com/orchestranetworks/service/LoggingCategory.html">LoggingCategory</a> .&nbsp;</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/properties.html#ebxLog">Logs configuration</a></p></div>
+<h3>
+<a name="id4s2"></a>Trigger</h3>
+<ul>
+<li><p>The classes <a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/BeforeCreateOccurrenceContext.html">BeforeCreateOccurrenceContext</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/BeforeModifyOccurrenceContext.html">BeforeModifyOccurrenceContext</a> have a new method to by-pass permissions during trigger execution.</p></li></ul>
+<h3>
+<a name="id4s3"></a>Workflow</h3>
+<ul>
+<li><p>The new class <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/MailSpec.html"> MailSpec</a> allows to send mail from the workflow contexts.</p></li><li><p>The new class <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessExecutionContext.WorkflowPermission.html"> WorkflowPermission</a> represents the workflow permissions (defined in the configuration of the workflow permission).</p></li><li><p> The new method <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessExecutionContext.html#createMailSpec()"> createMailSpec</a> allows to create a mail specification object in order to send mail from the workflow contexts.</p></li><li><p>The new method <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessExecutionInfoContext.html#getProfileForPermission(com.orchestranetworks.workflow.ProcessExecutionContext.WorkflowPermission)"> getProfileForPermission</a> allows to return the profile associated to the specified workflow permission.</p></li><li><p>The new method <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessLauncher.html#setCreator(com.orchestranetworks.service.UserReference)"> setCreator</a> allows to set the creator of the launched process.</p></li></ul>
+<h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[2771]</em> Incremental validation fails for an aggregated list containing null foreign keys </p><p>If an aggregated list is defined for a complex element, and one complex element has an <code>osd:tableRef</code> field that is set to <code>null</code>, then the validation report displays an inexact fatal error (<code>... NullPointerException</code>).</p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2744]</em> Error on update when a selection node definition has <code>minOccurs</code> or <code>maxOccurs</code> different from zero </p><p>If a selection node has been defined with <code>minOccurs</code> or <code>maxOccurs </code>different from zero, an exception is thrown when trying to update the record.</p></li></ul>
+<h3>
+<a name="bug-DataServices"></a>Data Services</h3>
+<ul>
+<li><p><em>[2755]</em> Nodes under a complex terminal node are not generated in the WSDL </p><p>In the WSDL for operations on Data, if there is a complex node with under terminal nodes, those nodes are not generated in the table type.</p></li><li><p><em>[2759]</em> The namespace <code>ebxd</code> is not imported in the WSDL </p><p>The WSDL for operations on data lacks the import declaration for the namespace <code>ebxd</code>.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><em>[2670]</em> ProcedureContext.isAllPrivileges() is not taken into account in CSV &amp; XML Exports </p><p>The value of ProcedureContext.isAllPrivileges() is not checked when exporting data through the XML or CVS export procedure.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2736]</em> When using filters, hidden columns are not hidden in the selection list </p><p>When a user is using filters on a table, the columns which should be hidden from him are visible in the filter selection list.</p></li><li><p><em>[2741]</em> Bad look &amp; feel in the worklist with a long workflow instance name. </p><p>When the worklist contains a workflow instance with a long name, the label overflows the main space on the right.</p></li><li><p><em>[2746]</em> In EBX, fields with carriage return render the display of forms erroneous when validating </p><p>In EBX, the fields of a record in a form are not displayed if there is a validation error with a carriage return &quot;\n\r&quot; in the error description.</p></li><li><p><em>[2766]</em> Redirection URI is not invoked </p><p>Button &quot;Close&quot; for UIHttpManagerComponent in main session does not invoke redirection URI.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><em>[2743]</em> When creating a record, an hidden or read-only field with a default value in the schema forbids to create the record. </p><p>Since the user cannot update the field, EBX.Platform refuses to take the default value defined in the schema.</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><em>[2765]</em> ClassCastException using a constraint targeting a complex primary key. </p><p>ClassCastException occurs while displaying a list using a constraint based on a</p><p>complex primary key (for example <code>&lt;filter&gt;&lt;predicate&gt;matches(table/name,${../name})&lt;/predicate&gt;&lt;/filter&gt;</code>).</p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><em>[2750]</em> Default values are ignored in Data Context </p><p>When creating a Workflow instance using Java code or SOAP request, the default values are not taken into account.</p></li><li><p><em>[2762]</em> The identifier of a profile is displayed instead of its label. </p><p>In EBX, when we access a task, the internal identifier of a profile is displayed instead of its label in the task allocation information.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

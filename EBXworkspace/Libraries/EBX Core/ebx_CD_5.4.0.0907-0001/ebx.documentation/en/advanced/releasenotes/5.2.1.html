@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.2.1</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.2.1.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.2.1</h1>
+<p><strong>Release Date: April 4, 2012</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#new">New features</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Include user login in a workflow notification e-mail</a></li><li class="toc2"><a href="#id1s2">Data model API</a></li><li class="toc2"><a href="#id1s3">Data validation API</a></li><li class="toc2"><a href="#id1s4">UI service API</a></li><li class="toc2"><a href="#id1s5">Temporary directories</a></li></ul>
+</li><li class="toc1"><a href="#id2">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Backward compatibility</a></li><li class="toc2"><a href="#id2s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#knownbugs">Known bugs</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Ajax components</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModeling">Data Modeling</a></li><li class="toc2"><a href="#bug-DataServices">Data Services</a></li><li class="toc2"><a href="#bug-DataSpacesHistory">Data Spaces & History</a></li><li class="toc2"><a href="#bug-DataValidation">Data Validation</a></li><li class="toc2"><a href="#bug-DataViews">Data Views</a></li><li class="toc2"><a href="#bug-DataWorkflow">Data Workflow</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="new"></a>New features</h2>
+<h3>
+<a name="id1s1"></a>Include user login in a workflow notification e-mail</h3>
+<p>A new workflow variable, <code>user.login</code>, has been added. It can be used to insert the login of the user in the notification e-mail.</p><p> For more information, see the <a target="_self" href="../user_workflowmodel/actions_workflowmodel.html#notification">notification messages</a> documentation.</p><h3>
+<a name="id1s2"></a>Data model API</h3>
+<p>The introspection API has been enhanced:</p><p>The method <code>SchemaNode.isAutoIncrement()</code> has been added. It returns whether a node is auto-incremented.</p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaNode.html#isAutoIncrement()"> SchemaNode.isAutoIncrement()</a>.</p><h3>
+<a name="id1s3"></a>Data validation API</h3>
+<p>Constraints on tables have been enhanced to enable additional checks on individual records upon user input. This can be useful for programmatic constraints that need to raise validation messages upon user input submission.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintOnTableWithRecordLevelCheck.html">ConstraintOnTableWithRecordLevelCheck</a> for more information.</p><h3>
+<a name="id1s4"></a>UI service API</h3>
+<p>A new method in the class <code>ServiceContext</code> gives the option to disable automatic reporting of error messages when a procedure execution has failed.</p><p>See method <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceContext.html#execute(boolean, com.orchestranetworks.service.Procedure)">ServiceContext.execute(addErrorMessageIfException, aProcedure)</a> for more information.</p><h3>
+<a name="id1s5"></a>Temporary directories</h3>
+<p>Two new properties have been added to manage temporary directories for cache and imports.</p><p>See <a target="_self" href="../installation/properties.html#ebx.temp.directory">Handling temporary files</a> for more information.</p><h2>
+<a name="id2"></a>Version upgrade</h2>
+<h3>
+<a name="id2s1"></a>Backward compatibility</h3>
+<h4>
+Data Services: Create branch operation</h4>
+<p>The parameter <code>homeToCopyPermissionFrom</code> has been renamed to <code>branchToCopyPermissionFrom</code>.</p><h3>
+<a name="id2s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<h2>
+<a name="knownbugs"></a>Known bugs</h2>
+<h3>
+<a name="id3s1"></a>Ajax components</h3>
+<p>Method <code>UIAjaxContext.getCurrentAdaptation()</code> always returns a data set. This method fails to return a record if the Ajax component is called from a record node.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxContext.html#getCurrentAdaptation()">UIAjaxContext </a> documentation for more information.</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><strong>[4673]</strong> Nodes that are part of a complex under a complex terminal are ignored during comparison. </p><p>A node under a complex which is itself under a complex terminal node is ignored during comparison. As a result, the node is ignored when getting changes via a data service.</p></li><li><p><strong>[4786]</strong> Record to be copied at record creation does not work when source and target models are different. </p><p>If the method <code>ProcedureContext.getContextForNewOccurrence</code> is invoked with a record to be copied having a complex terminal node whose structure is different from the target table, then an error occurs.</p></li></ul>
+<h3>
+<a name="bug-DataModeling"></a>Data Modeling</h3>
+<ul>
+<li><p><strong>[4700]</strong> Importing a default value on a list element is not supported. </p><p>When importing a schema with a default value for a list, EBX5 adds brackets around the value, leading to validation errors.</p></li><li><p><strong>[4727]</strong> In the validation rule editor, a numeric field is displayed twice. </p><p>If a numeric field has no label and is used in the right side of a criterion, the field name is displayed twice when modifying the criterion.</p></li><li><p><strong>[4732]</strong> On IE, the service for importing a data model from a module is not correctly displayed. </p><p>The service page for importing a data model from a module is not correctly displayed. Only the list of the modules is displayed and it is not possible to select a data model.</p></li><li><p><strong>[4756]</strong> Inconsistent modification screen for rules. </p><p>When modifying a rule in the data model assistant, the &#39;code only&#39; option is always checked.</p></li><li><p><strong>[4780]</strong> Uniqueness wizard is broken when validation errors occur. </p><p>When the user enters invalid values, or if a field previously marked as unique is deleted, the uniqueness wizard is broken.</p></li></ul>
+<h3>
+<a name="bug-DataServices"></a>Data Services</h3>
+<ul>
+<li><p><strong>[4701]</strong> The Directory WSDL contains no operations. </p><p>The generated WSDL file is not complete (no operation available).</p></li><li><p><strong>[4705]</strong> Parameter <code>Copy home permissions</code> does nothing. </p><p>When creating a new data space or snapshot, it should be possible to copy the permissions from a given home, but the input parameter is not used.</p></li></ul>
+<h3>
+<a name="bug-DataSpacesHistory"></a>Data Spaces &amp; History</h3>
+<ul>
+<li><p><strong>[4703]</strong> An exception occurs when accessing the history transaction table. </p><p>An exception occurs when accessing a record in the transactions table if the root node of the historized table&#39;s schema is not named &#39;root&#39;.</p></li></ul>
+<h3>
+<a name="bug-DataValidation"></a>Data Validation</h3>
+<ul>
+<li><p><strong>[4682]</strong> Inherited field not taken into account by validation rule in the context of a record creation. </p><p>If a validation rule depends on an inherited field which is an integer, when the user submits a record creation with a valid value with respect to the expected inherited value, an error is reported.</p></li><li><p><strong>[4749]</strong> Multiple validation messages on a field are not correctly taken into account on user input. </p><p>On validation of user input, if several validation messages are specified, only the last one is displayed to the user.</p></li><li><p><strong>[4757]</strong> Some validation rules on multi-valued String fields may trigger a <code>ClassCastException</code>. </p><p>When defining a validation rule on multi-valued String fields, a <code>ClassCastException</code> may occur.</p></li></ul>
+<h3>
+<a name="bug-DataViews"></a>Data Views</h3>
+<ul>
+<li><p><strong>[4712]</strong> A <code>StackOverflowError</code> exception occurs when working with multi-table views. </p><p>A <code>StackOverflowError</code> exception can occur when working with multi-table views on tables with large volumes of data.</p></li><li><p><strong>[4713]</strong> An infinite loop may occur when creating a view on a table with a recursive dependency. </p><p>An infinite loop may occur when creating a simple custom view on a table with a recursive dependency.</p></li></ul>
+<h3>
+<a name="bug-DataWorkflow"></a>Data Workflow</h3>
+<ul>
+<li><p><strong>[4460]</strong> Creating a workflow causes user to lose current page in the hierarchy. </p><p>When creating a workflow on any page other than the first, the user is sent back to the first page.</p></li><li><p><strong>[4709]</strong> It is possible to allocate or reallocate work items to user [not defined]. </p><p>When allocating or reallocating work items, it is possible to select the value [not defined], which leads to an error.</p></li><li><p><strong>[4710]</strong> An exception occurs when launching a user task. </p><p>An exception occurs when the workflow publication tree is paginated and a user takes and starts a task in the last page of the pagination.</p></li><li><p><strong>[4771]</strong> An error occurs when a script is opened from a validation report. </p><p>When validation errors are found in a workflow model, using the link to open the script does not work. An exception is thrown when the script is opened.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><strong>[4593]</strong> On export, the message &quot;This archive already exists&quot; displays, even when it is not the case. </p><p>Under some conditions, an error message is displayed, even when there is no archive that already exists.</p></li><li><p><strong>[4722]</strong> A <code>NullPointerException</code> occurs for both CSV and XML exports when exporting a table with a view applied to it. </p><p>When a view is applied to a table, a <code>NullPointerException</code> occurs when launching the export service.</p></li><li><p><strong>[4781]</strong> After an archive import, the temporary folder is not cleaned. </p><p>If the import of an archive is successful, the archive should be deleted from the temporary folder.</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><strong>[4755]</strong> An error is thrown when selecting a record with both a quote and a double quote in its primary key. </p><p>A <code>MalformedXPathPredicateException</code> is thrown when selecting a record with both a quote and a double quote in its primary key.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><strong>[4535]</strong> Quotes in text search are removed. </p><p>When quotes are entered in the text search, the quotes are removed after the search is performed.</p></li><li><p><strong>[4694]</strong> A <code>NullPointerException</code> when using the UI service API in a HTTP Manager Component. </p><p>Calling <code>UIServiceComponentWriter.startFormRow(...)</code> in a UI HTTP Manager Component produces a <code>NullPointerException</code>.</p></li><li><p><strong>[4728]</strong> On IE, the list of data sets associated with a publication of a data model is not refreshed correctly. </p><p>When publishing a data model which has several publications and choosing the publication to publish, the list of data sets associated with the publication is not refreshed correctly.</p></li><li><p><strong>[4739]</strong> It is not possible to search accented values in EBX UIListSearch component. </p><p>When an accented value is set in the search field, the result of the search is always null.</p></li><li><p><strong>[4743]</strong> Error with user-defined attribute catalog type. </p><p>When the user tries to define a user-defined attribute type and a validation error is displayed, the type is not really saved.</p><p>For example, if an invalid name, such as an integer, is entered, the field &#39;type&#39; becomes read-only. If a valid name is then entered and submitted, the field &#39;type&#39; is not saved and its value is left as [not defined].</p></li><li><p><strong>[4748]</strong> Page position is lost when changing the number of records to be displayed. </p><p>When a user is on a paginated table view, the position of the page in the whole view is no longer displayed after having changed the number of records to be displayed (menu &#39;Views&#39; &gt; &#39;Show records&#39; &gt; &#39;NN by page&#39;).</p></li><li><p><strong>[4765]</strong> On IE8, the selection list for script task library is not correctly refreshed. </p><p>The script task library selection list is not refreshed when switching between library and specific scripts on IE8.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

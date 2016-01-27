@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.13</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.13.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.13</h1>
+<p><em>Release Date: September 3, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[2636]</em> The character &#39;[&#39; cannot be escaped in an XPath predicate. </p><p>It is impossible to create an XPath predicate with the character &#39;[&#39;.</p></li><li><p><em>[2843]</em> Deadlock can occur for some programmatic extensions </p><p>It is possible to get a deadlock if a programmatic permission rule is set to a table and performs a request on another table. The same applies for a programmatic filter and a trigger. In particular, such deadlocks can occur in the context of the workflow console.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><em>[2815]</em> CSV export with specific line separator always uses <code>\r\n</code>. </p><p>The line separator defined in <code>ExportImportCSVSpec.setLineSeparator()</code> is never used; Default line separator (<code>\r\n</code>) is always used.</p></li><li><p><em>[2816]</em> CSV import only handles <code>\r\n</code> or <code>\n</code> as line.separator. </p><p><code>ExportImportCSVSpec</code> API allows to specify a line separator, but this one is not handled if it is neither <code>\r\n</code> nor <code>\n</code>.</p></li><li><p><em>[2818]</em><code>ExportImportCSVSpec.setContentIndented()</code> method is published but is not applicable. </p><p>The method has been set deprecated.</p></li><li><p><em>[2819]</em> CSV export &quot;trims&quot; the values. </p><p>CVS export should not &#39;trim&#39; the exported formatted values.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2587]</em> Button &quot;Close&quot; does not invoke the redirection URI </p><p>That happens on a <code>UIHttpManagerComponent</code> for creation.</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><em>[2637]</em> Technical adaptations validation messages appear in a branch validation report. </p><p>If the reference branch has errors or warnings, after the creation of a child, the error and validation messages still appears in the child validation report.</p></li><li><p><em>[2797]</em> The unicity constraint raises error when changing a string value case. </p><p>During a modification, if a typed string node with a unicity constraint is modified, if the new value is the same of the previousvalue with a different case (equal ignore case), the unicity constraint throws an error.</p></li><li><p><em>[2797]</em> The unicity constraint raises error when changing a string value case. </p><p>During a modification, if a typed string node with a unicity constraint is modified, if the new value is the same of the previousvalue with a different case (equal ignore case), the unicity constraint throws an error.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

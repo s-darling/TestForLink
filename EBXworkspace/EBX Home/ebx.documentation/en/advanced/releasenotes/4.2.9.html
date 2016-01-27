@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.2.9</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.2.9.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.2.9</h1>
+<div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">4.2.9 fix 004</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id2">4.2.9 fix 003</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Bug Fixes / Minor enhancement</a></li></ul>
+</li><li class="toc1"><a href="#id3">4.2.9 fix 002</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Bug Fixes / Minor enhancement</a></li><li class="toc2"><a href="#id3s2">Invalid XML characters</a></li></ul>
+</li><li class="toc1"><a href="#id4">4.2.9 fix 001</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Bug Fixes</a></li></ul>
+</li><li class="toc1"><a href="#id5">4.2.9</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Bug Fixes</a></li><li class="toc2"><a href="#id5s2">Performance enhancements</a></li><li class="toc2"><a href="#id5s3">Persistent lock improvements</a></li><li class="toc2"><a href="#id5s4">Other changes</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>4.2.9 fix 004</h2>
+<p><strong>Release Date: October 9, 2008</strong></p><h3>
+<a name="id1s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01785]</strong> The branch or version validation report errors on technical adaptations even if <code>AdaptationHome</code> is not the Reference branch. </p></li></ul>
+<h2>
+<a name="id2"></a>4.2.9 fix 003</h2>
+<p><strong>Release Date: July 4, 2008</strong></p><h3>
+<a name="id2s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01682]</strong> In EBX, constraint documentation link to target not (example: a table node for a table reference) is missing if target node label contains a &#39;&amp;&#39; character. </p></li><li><p><strong>[01683]</strong> Invalid XML characters in complex node cause data loading crash. </p></li><li><p><strong>[01684]</strong> Invalid XML characters in node with maxOccurs &gt; 1 cause data loading crash. </p></li><li><p><strong>[01710]</strong> Cleaning invalid XML characters on loading data corrupts accuented characters (see bugs #01676 &amp; #01679). </p></li><li><p><strong>[01718]</strong> Sub-sessions are not cleaned when main session is closed. </p></li><li><p><strong>[01738]</strong> If two instances are created with same reference in two different branches and on two different schemas; additionally a user creates a new occurrence on a table in this instance on first branch and he repeats the same operation on the same table but on the second branch. Then at reload, the second table will have lost its new occurrence. </p></li></ul>
+<h2>
+<a name="id3"></a>4.2.9 fix 002</h2>
+<p><strong>Release Date: May 30, 2008</strong></p><h3>
+<a name="id3s1"></a>Bug Fixes / Minor enhancement</h3>
+<ul>
+<li><p><strong>[01620]</strong> The list of selected records is not refreshed when one of them has been deleted. </p></li><li><p><strong>[01676]</strong> Invalid XML characters cause data loading crash (ex: ascii #17). </p></li><li><p><strong>[01679]</strong> Character ascii #14 causes data loading crash (see bug fix #01676). </p></li><li><p><strong>[01719]</strong> In Manager component, &quot;home&quot; button may be displayed only when needed. </p></li></ul>
+<h3>
+<a name="id3s2"></a>Invalid XML characters</h3>
+<ul>
+<li><p>Invalid XML characters are removed from values on repository loading.</p></li><li><p>If an input via EBX contains invalid XML characters, an error is raised and a message is returned.</p></li><li><p>If a value with invalid XML characters is set via EBX.API, an exception is thrown.</p></li></ul>
+<h2>
+<a name="id4"></a>4.2.9 fix 001</h2>
+<p><strong>Release Date: December 17, 2007</strong></p><h3>
+<a name="id4s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>[01608]</strong> Table view criterias cannot be reset: view criteria update is not handled if view has no more filter criteria defined. </p></li><li><p><strong>[01610]</strong> Applying view criteria on table fields causes a <code>PathAccessException</code> .&nbsp;</p></li></ul>
+<h2>
+<a name="id5"></a>4.2.9</h2>
+<p><strong>Release Date: December 3, 2007</strong></p><h3>
+<a name="id5s1"></a>Bug Fixes</h3>
+<ul>
+<li><p><strong>01533</strong> When a new branch or a new version is created, if database commit fails, the home is not cleanly removed from cache. </p></li><li><p><strong>01579</strong> When marking a decision at level n, the gui must detect if there are other modifications at levels 0 to n-1. If not, the decisions must be automatically and recursivly impacted on upper levels. </p></li><li><p><strong>01588</strong> When modifying records, the display is, by default, inherited. For quick tabular input, input field should be available. </p></li><li><p><strong>01590</strong> On Manager, when a homes comparison is requested, versions displayed under each branch are not correctly sorted. </p></li><li><p><strong>01593</strong><code>ConstraintOnNull</code> is checked on field validation within EBX even if <code>osd:checkNullInput=&quot;false&quot;</code> .&nbsp;</p></li><li><p><strong>01594</strong><code>ConstraintOnNull</code> is not checked on adaptation validation (validation report) when <code>osd:checkNullInput=&quot;false&quot;</code> . </p></li><li><p><strong>01565</strong> Occulting definition mode is not taken into account by <code>osd:tableRef</code> during validation process. </p></li><li><p><strong>01596</strong> If the definition of a table primary key is changed, for example a new field is added to the key, then existing occurrences become invalid since they have an incomplete primary key. Such a situation is not handled: occurrences are loaded and this lead to errors when the table is accessed. </p></li><li><p><strong>01597</strong> On Manager, branch or version description with &quot;carriage return&quot; may cause an exception when displaying this information. </p></li><li><p><strong>01598</strong> On Manager, contrary to branch creation, version creation needs to have a defined version identifier (ie no possibilities of automatic timestamp). </p></li><li><p><strong>01599</strong> No size limit is set to branch/version description. </p></li><li><p><strong>01600</strong> On Manager, if a user has no right to export a branch, the message displayed is wrong (&quot;You haven&#39;t sufficient rights to do import&quot;). </p></li><li><p><strong>01601</strong> On Manager comparison interface, if the user has decided to apply all differences, the confirmation message must be adapted accordingly. </p></li><li><p><strong>01602</strong> On Manager, archive page has not the correct labels for versions. </p></li><li><p><strong>01603</strong> On WebSphere 6.x, the preload process fails because JNDI reference of the datasource cannot be resolved. </p></li><li><p><strong>01604</strong> On Manager comparison interface, a <code>NullPointerException</code> is thrown when importing archive with change set that contains a deleted record which doesn&#39;t exist in the target branch. </p></li><li><p><strong>01605</strong> When importing an archive, if an extra instance on left tries to modify an existing instance on right, the modifications are not applied. </p></li><li><p><strong>01606</strong> On Manager comparison interface, a non user-friendly error message is displayed when merging branches with inconsistent decisions (error message is &quot;NullPointerException&quot;). </p></li><li><p><strong>01607</strong> The order of updates that are applied when a branch is merged is sometimes incorrect, regarding instances&#39; parent-child relationship (reproduced only on JDK 1.5). </p></li><li><p><strong>01609</strong> The import with archive including « Only branch modifications » may failed when a parent adaptation has not been modified but one of his child has been modified. </p></li></ul>
+<h3>
+<a name="id5s2"></a>Performance enhancements</h3>
+<h4>
+Table operations</h4>
+<p>In order to improve the speed of operations in tables, indexes are henceforth managed in EBX.Platform engine.</p><p>EBX.Platform features such as instances inheritance, advanced life-cycle (versions and branches) and flexible XML Schema modeling, have led to a particular design on index, that can be summarized as follows:</p><ul>
+<li><p>Level 1 indexes maintain a data structure on raw table blocs. Raw table blocs form basic persistence units that can be shared by multiple versions and branches.</p></li><li><p>Level 2 indexes maintain a data structure on a full table as it is defined in a branch or in a version, however it does not take into account instances inheritance. Level 2 aggregates level 1 indexes.</p></li><li><p> Resolved access to tables (taking into account instances inheritance), that is available through <a target="_blank" href="../Java_API/com/onwbp/adaptation/Request.html">Request API</a> or through EBX user interface, works on level 2 indexes and uses more efficient algorithms than before. </p></li></ul>
+<p>The impacts on performance are the following:</p><ol>
+<li><p>Once indexes have been built, the access to a table without specific filter and sort is almost immediate.</p></li><li><p>Once indexes have been built, if the user has applied a specific filter or if the table access depends on a programmatic rule, the access to a table should be quick. More precisely, it depends on the cost of the specific filtering algorithm that is executed on a fetch of at least 2,000 occurrences.</p></li><li><p> Both use cases above guarantee an access time that is independent of the size of the table and provide a view sorted on primary key ascendant order. If the table is specifically sorted, then the first access time depends on the table size according to a <code>N log(N)</code> function (where <code>N</code> is the number of records in the resolved view). </p></li><li><p>If indexes are not yet built, additional time will be needed:</p><ul>
+<li><p> If level 1 is ready but level 2 index is not yet loaded or has been unloaded, the built time is <code>BL2 = o(N log(N))</code> . </p></li><li><p> If level 1 indexes are already available in persistent cache but are not yet loaded, the time to load them is <code>LL1 = o(N)</code> . </p></li><li><p> If level 1 indexes have not yet been written in persistent cache, the time to load them is <code>BL1 = o(N)</code> .&nbsp;This is the worst case because it implies to load all blocs. </p></li></ul>
+</li></ol>
+<p>Furthermore, creation of new occurrences (&quot;records insert&quot;) now depends on level 1 index. Hence, a creation becomes almost immediate if level 1 index is loaded.</p><h4>
+Archive export</h4>
+<p> In archive export, a new setting, <code>setDifferencesWithMinimalContentsOnRight</code> ,&nbsp;has been added for reducing the export time and archive size. </p><p>For exports whose change set is small regarding the repository size, the expected performance gain is several orders of magnitude.</p><p> The option is available on Manager archive export page and also through API (see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ArchiveExportSpec.html#setDifferencesWithMinimalContentsOnRight(boolean)">setDifferencesWithMinimalContentsOnRight</a> ). </p><h4>
+Resolved comparison</h4>
+<p>The resolved comparison has been strongly optimized in the following case: the comparison is made between the same tables belonging to two different homes and those tables have no difference neither in their own instance nor in their ancestor instances.</p><p>If the resolved comparison is made between two large instances with same reference and belonging to two different homes that have a relatively limited number of differences, then the expected performance gain is several orders of magnitude.</p><h4>
+Better memory management</h4>
+<p>When a branch or a version was closed or merged, its associated content and validation state were not released from Java object cache. In cycles involving many branches and versions creation and merge, this led to poorer performance since objects actually used tended to be reloaded more frequently.</p><h3>
+<a name="id5s3"></a>Persistent lock improvements</h3>
+<p>If a procedure involves only read-only operations like XML export or archive export, then this procedure is no more blocked by a persistent lock.</p><p>Furthermore, a persistent lock on Reference branch does not, henceforth, prevent branches and versions management.</p><h3>
+<a name="id5s4"></a>Other changes</h3>
+<h4>
+Request API</h4>
+<p> A new traversal protocol on <code>RequestResult</code> is now provided. This protocol, based on method <a target="_blank" href="../Java_API/com/onwbp/adaptation/RequestResult.html#nextAdaptation()">nextAdaptation</a> is more adequate than <a target="_blank" href="../Java_API/com/onwbp/adaptation/RequestResult.html#getAdaptation(int)">getAdaptation</a> ,&nbsp;because in the default <a href="../references/mapping_to_java.html#concurrency">&quot;READ UNCOMMITTED&quot; isolation level</a> ,&nbsp;it supports transparently a concurrent deletion on the tables viewed. </p><h4>
+Behavior concerning schema changes</h4>
+<p>As explained in bug #01596, if the definition of a table primary key is changed, for example a new field is added to the key, then existing occurrences become invalid since they have an incomplete primary key. Such a situation was not handled: occurrences were loaded and this led to errors when the table was accessed.</p><p> For preventing such situations, the records whose primary key is incomplete are now ignored at load-time and errors are logged into <code>persistence.log</code> and <code>kernel.log</code> .&nbsp;For retrieving those records before any modification, it is necessary to change XML Schema document to the previous definition. </p><h4>
+Constraint on null value</h4>
+<p> Additional checks are performed concerning the XML Schema declaration of a <code>ConstraintOnNull</code> .&nbsp;</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.8.5</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.8.5.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.8.5</h1>
+<p><em>Release Date: September 22, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">User Interface</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Better management of the "[not defined]" state</a></li><li class="toc2"><a href="#id1s2">Input string with multiple lines</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model & DMA</a></li><li class="toc2"><a href="#bug-Hierarchies">Hierarchies</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-Workflow">Workflow</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>User Interface</h2>
+<h3>
+<a name="id1s1"></a>Better management of the &quot;[not defined]&quot; state</h3>
+<p>In previous versions, when the user wanted to define a value for a field in the &quot;[not defined / null]&quot; state, he first had to click on the red/green button so that the input field could appear and only then he could provide the value. From now on, in the general case, the input component is displayed, even if its associated value is not defined. Moreover, in order to lighten the form, the red/green button for setting/unsetting null is displayed only when required (that is, when the input component itself does not hold the semantic to set null; these are the following cases: the <code>xs:string</code> type without an enumeration facet, the terminal complex type - JavaBean - and aggregated lists).</p><p>For more information, see <a target="_self" href="../models/constraints.html#userInputControl">User Input Control</a> .</p><p>Note: components based on an enumeration were modified to add an explicit first choice &quot;[not defined]&quot;.</p><h3>
+<a name="id1s2"></a>Input string with multiple lines</h3>
+<p>From now on, if an <code>xs:string</code> value contains one or more line separator, the displayed input component handles the case (the &quot;text field&quot; is replaced by a &quot;text area&quot;). This case can only arise when the value has been set programmatically, by data import or by data services or in a workflow data context.</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[2641]</em> XML Export of UDA do not conform to the XSD. </p><p>Some <code>null</code> elements of a UDA are included as empty tags in XML export, whereas they should not appear in the export at all.</p></li><li><p><em>[2863]</em> Error with empty foreign key. </p><p>On form submit, if the input field of a foreign key (<code>osd:tableRef</code>) is left empty, a &quot;fatal error&quot; can be returned as the response. This occurs if the foreign key targets a table whose primary key is either composite or defining a single non-<code>xs:string</code> field.</p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2860]</em> When a Data Model declares a module that is not found, it is impossible to delete the reference to this module. </p><p>An exception is thrown: <code>ModuleNotFoundException</code> Module not accessible in this application server.</p></li><li><p><em>[2892]</em> A Javabean property without any accessor is not considered as an error during schema compilation. </p><p>When a Java Bean does not define any accessors on properties, getters or setters, only a warning is raised at schema compilation time. In this case, the corresponding schema should be in error if no specific restrictions are defined using the <code>osd:access</code> property.</p></li><li><p><em>[2905]</em> Erroneous access mode for terminal descendant nodes. </p><p>If a node is under a terminal node, of a complex type and without the <code>osd:access</code> explicitly set, then the access mode, as returned by the method <code>SchemaNode.getAccessMode()</code>, is &quot;hidden&quot;. It should be &quot;read-write&quot;.</p></li></ul>
+<h3>
+<a name="bug-Hierarchies"></a>Hierarchies</h3>
+<ul>
+<li><p><em>[2761]</em> The display choice for a recursive dimension level, in a multi-level hierarchy, is not appropriate. </p><p>When displaying a hierarchy where the recursive level is not the root dimension level, only the roots of the recursive sub-trees should be attached (and filtered) by the root dimension level.</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><em>[2856]</em> The Optimize &amp; Refactor service does not work with inherited attributes. </p><p>When a table declares an inherited attribute, the Optimize &amp; Refactor service does not work. An error message is displayed instead: <code>ShouldNotBeCalledException</code> specific inheritance not supported on adaptation instances.</p></li><li><p><em>[2862]</em> Log category &quot;frontEnd&quot; shows the user password if its level is set to DEBUG. </p><p>If log category &quot;frontEnd&quot; is set to DEBUG level, all request parameters are logged, including the value for &quot;password&quot;.</p></li><li><p><em>[2866]</em> A permission error can arise during the execution of a branch-level service. </p><p>If a branch level service is executed by a user, and this service closes the branch from which it has been launched, then the permissions on the service execution are re-evaluated right away. Consequently, an error can occur if the user does not have permissions on this service in the parent branch.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2873]</em> No limitation for nested popups. </p><p>In the documentation of a foreign key node, it is possible to click on a link in order to view the content of the referenced table. This actions opens a smaller pop-up.</p><p>There is no limitation to open these pop-ups. But nested pop-ups become smaller and smaller. When too many pop-up are nested, they become unreadable.</p></li><li><p><em>[2876]</em> The specific case of a void primary key value is not correctly handled by the selection component. </p><p>In the somewhat specific case when a table has a primary key with a single <code>xs:string</code> field, and this field allows to specify the empty string value (by means of a specific <code>xs:pattern</code>), AND this table is referred to by a <code>osd:tableRef</code> property with <code>minOccurs=&quot;0&quot;</code>, then the selection component proposes two empty entries, both being converted to the empty string.</p></li><li><p><em>[2879]</em><code>IllegalArgumentException</code> in UIListSearch component. </p><p>In specific cases, the UIListSearch component throws an <code>IllegalArgumentException</code>when getting the list of possible values for a node.</p></li><li><p><em>[2897]</em> In EBX, error on selection nodes. </p><p>When a user accesses a selection node, the nodes involved in the selection filter should be read-only.</p></li><li><p><em>[2898]</em> Carriage return issue. </p><p>Carriage return in input fields of type String and its subtypes make the UI inconsistent.</p></li><li><p><em>[2900]</em> In EBX, an <code>InvalidPrimaryKeyException</code> occurs while creating a record in a selection node. </p><p>An <code>InvalidPrimaryKeyException</code> occurs while creating a record in a selection node.</p></li><li><p><em>[2901]</em> In EBX, while creating a record inside a selection node, some fields are preset. </p><p>In EBX, when creating a record inside a selection node, some fields are preset while they shouldn&#39;t.</p></li><li><p><em>[2906]</em> In EBX, the link to the parent node is absent from the form view. </p><p>If there is a filter set on a table node and it is accessed in an <code>UIHttpManagerComponent</code>, the link to the parent node is absent when accessing a record of the filtered table.</p></li><li><p><em>[2907]</em> In EBX, foreign key fields are never preset inside a selection node. </p><p>In EBX, foreign key fields are never preset inside a selection node.</p></li></ul>
+<h3>
+<a name="bug-Workflow"></a>Workflow</h3>
+<ul>
+<li><p><em>[2804]</em> A Data Context variable cannot contain a carriage return or line feed. </p><p>If a Data Context variable contains a carriage return or a line feed (<code>\r|\n|\r\n</code>), the Process Instance in the &quot;Workflow - Execution&quot; history table cannot be displayed. This can only occur if the value was set programmatically.</p></li><li><p><em>[2811]</em> A process instance can be terminated while a script is executing. </p><p>It should not be possible because when the script ends, all its environment will have disappeared (token, process instance, ...)</p></li><li><p><em>[2838]</em><code>ProcessLauncher.launchProcess()</code> fails if two different threads execute it at the same time on the same Process Publication.</p><p>When two threads execute <code>ProcessLauncher.launchProcess()</code> for the same Process Publication at the same time, <code>UowErrorCannotCreateSincePrimaryKeyUsed</code> error is thrown.</p></li><li><p><em>[2872]</em> Confusion in work item interaction object when a user clicks on a foreign key field documentation link. </p><p>In a user task aiming to create a new record, whenever the underlying record structure contains a Foreign Key: when a user clicks on the documentation link that points to the linked table data, the focus of the task is switched from the original table to the linked table. The result is that the process will keep using the wrong record all along the workflow sequence, which is incorrect.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

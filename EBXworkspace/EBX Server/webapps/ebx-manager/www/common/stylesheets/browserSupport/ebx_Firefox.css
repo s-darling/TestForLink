@@ -1,0 +1,102 @@
+
+button::-moz-focus-inner {
+	border-color: transparent;
+}
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 1px 8px 0px 8px; /* don't know why... */
+}
+
+.tvFixedScroller .ebx_Button.ebx_IconButton,
+.tvMainScroller .ebx_Button.ebx_IconButton,
+.tvFixedScroller .ebx_IconButtonSmall,
+.tvMainScroller .ebx_IconButtonSmall,
+.tvFixedScroller .ebx_FlatButtonNoBorder.ebx_IconButton,
+.tvMainScroller .ebx_FlatButtonNoBorder.ebx_IconButton,
+.tvFixedScroller .ebx_FlatButton.ebx_IconButton,
+.tvMainScroller .ebx_FlatButton.ebx_IconButton,
+.tvFixedScroller .ebx_IconFlatButtonSmall,
+.tvMainScroller .ebx_IconFlatButtonSmall {
+    padding-top: 2px;
+}
+
+button.ebx_IconButton .ebx_Icon {
+	vertical-align: -3px; /* 2 (button.padding-bottom) + 1 (button.border-bottom) */
+}
+
+.tvFixedScroller .ebx_IconButton .ebx_Icon,
+.tvMainScroller .ebx_IconButton .ebx_Icon {
+	margin-top: -3px; /* don't know why... */
+	margin-left: -3px; /* don't know why... */
+}
+.wpihWorkItem .ebx_IconButton .ebx_Icon {
+	margin-top: -2px; /* don't know why... */
+	margin-left: -3px; /* don't know why... */
+}
+
+.ebx_NodeActions button.ebx_IconButton .ebx_Icon {
+	margin-left: -1px; /* don't know why... */
+	margin-top: -1px; /* don't know why... */
+}
+
+.ebx_Input button.ebx_IconButton .ebx_Icon,
+.ebx_SmallFormButtons button.ebx_IconButton .ebx_Icon {
+	margin-top: -2px; /* don't know why... */
+	margin-left: -3px; /* don't know why... */
+}
+
+button.ebx_IconButtonSmall .ebx_SmallIcon,
+button.ebx_IconFlatButtonSmall .ebx_SmallIcon {
+	margin-top: -1px; /* don't know why... */
+	margin-left: -1px; /* don't know why... */
+}
+
+
+.ebx_ISS_Container button.ebx_IconButton {
+	vertical-align: 0.5px;
+}
+.ebx_ISS_Container button.ebx_IconButton .ebx_Icon {
+	margin-left: -2px; /* don't know why... */
+}
+
+.ebx_TextAndIconLeftButton .ebx_Icon,
+.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-top: -1px;
+}
+
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	margin-bottom: -1px;
+}
+
+.ygtvcell a.ygtvspacer {
+	font-size: 8px;
+	line-height: 8px;
+}
+
+/* Mantis #9672 / prevent workspace scroll when click on doc button in tab label */
+.yui-navset .yui-content .yui-hidden {
+	left: -100%;
+	top: -100%;
+}
+
+.ebx_WorkflowBadge {
+	line-height: 10px;
+}
+.ebx_workflow_deadline {
+	vertical-align: -1px;
+}
+
+.cke_bottom {
+	padding-bottom: 3px;
+}
+.cke_combo_text {
+	margin-bottom: -1px;
+	margin-top: 1px;
+}
+
+/* Mantis #14528 / [Firefox 35] 'Delete' button in added logical block displays incorrectly */
+.ebx_SimpleSearchFilterlogicalBlock .ebx_SimpleSearchFilterCriterionRemoveButtonIcon {
+	margin-top: -14px;
+}

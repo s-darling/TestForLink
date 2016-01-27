@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Propri&eacute;t&eacute;s des &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_properties" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_datamodel/userdatamodel_elementproperties.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</span></div>
+<h1>
+Propri&eacute;t&eacute;s des &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es</h1>
+<p>Apr&egrave;s la cr&eacute;ation d&#39;un &eacute;l&eacute;ment, vous pouvez d&eacute;finir des propri&eacute;t&eacute;s suppl&eacute;mentaires pour compl&eacute;ter sa d&eacute;finition.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../user_datamodel/userdatamodel_elementcontrols.html">Contr&ocirc;les sur les &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es</a></p></div>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#common">Propriétés basiques des éléments</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Propriétés basiques communes</a></li><li class="toc2"><a href="#id1s2">Propriétés basiques des champs</a></li></ul>
+</li><li class="toc1"><a href="#advanced_props">Propriétés avancées des éléments</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Propriétés avancées communes</a></li><li class="toc2"><a href="#id2s2">Propriétés avancées des champs</a></li><li class="toc2"><a href="#table">Propriétés avancées des tables</a></li><li class="toc2"><a href="#id2s4">Propriétés avancées des groupes</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="common"></a>Propri&eacute;t&eacute;s basiques des &eacute;l&eacute;ments</h2>
+<h3>
+<a name="id1s1"></a>Propri&eacute;t&eacute;s basiques communes</h3>
+<p>Les propri&eacute;t&eacute;s basiques suivantes sont disponibles pour plusieurs types d&#39;&eacute;l&eacute;ments :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Information</p></td><td class="ebx_definitionListDefinition"><p>Informations suppl&eacute;mentaires non internationalis&eacute;es associ&eacute;es &agrave; l&#39;&eacute;l&eacute;ment.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Nombre minimum de valeurs</p></td><td class="ebx_definitionListDefinition"><p>Nombre minimum de valeurs pour cet &eacute;l&eacute;ment.</p><p>Les cl&eacute;s primaires ne pouvant &ecirc;tre multi-valu&eacute;es, cette propri&eacute;t&eacute; doit &ecirc;tre &eacute;gale &agrave; &quot;1&quot; ou &ecirc;tre &quot;non d&eacute;finie&quot;. Pour les &eacute;l&eacute;ments de type &quot;Noeud de s&eacute;lection&quot; le nombre minimum de valeurs est automatiquement d&eacute;fini &agrave; &quot;0&quot;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Nombre maximum de valeurs</p></td><td class="ebx_definitionListDefinition"><p>Nombre maximum de valeurs pour cet &eacute;l&eacute;ment. Si cette propri&eacute;t&eacute; est sup&eacute;rieure &agrave; &quot;1&quot;, l&#39;&eacute;l&eacute;ment est consid&eacute;r&eacute; comme multi-valu&eacute;.</p><p>Les cl&eacute;s primaires ne pouvant &ecirc;tre multi-valu&eacute;es, cette propri&eacute;t&eacute; doit &ecirc;tre &eacute;gale &agrave; &quot;1&quot; ou &ecirc;tre &quot;non d&eacute;finie&quot;.</p><p>Pour une table, le nombre maximum d&#39;&eacute;l&eacute;ments est d&eacute;fini &agrave; &quot;unbounded&quot; par d&eacute;faut lors de sa cr&eacute;ation.</p><p> Pour les &eacute;l&eacute;ments de type &quot;Noeud de s&eacute;lection&quot;,&nbsp;le nombre maximum d&#39;&eacute;l&eacute;ments est d&eacute;fini &agrave; &quot;0&quot; par d&eacute;faut lors de la d&eacute;finition des propri&eacute;t&eacute;s du noeud de s&eacute;lection.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="validationRules"></a>R&egrave;gles de validation</p></td><td class="ebx_definitionListDefinition"><p>Cette propri&eacute;t&eacute; est disponible pour les champs situ&eacute;s dans une table, sauf pour les champs de type <code>Mot de passe</code>, les types r&eacute;utilisables, les champs dans les types complexes r&eacute;utilisables, et les noeuds de s&eacute;lection. Cette propri&eacute;t&eacute; est utilis&eacute;e pour d&eacute;finir des r&egrave;gles de validation riches et complexes avec l&#39;aide d&#39;un <a target="_self" href="../references/criteria_editor.html">&eacute;diteur de pr&eacute;dicats</a> XPath 1.0.</p><p> Une r&egrave;gle de validation peut &ecirc;tre utile lorsque la validation de la valeur d&eacute;pend de crit&egrave;res complexes ou des valeurs des autres champs.</p><p>En utilisant l&#39;assistant associ&eacute;, vous pouvez d&eacute;finir des libell&eacute;s localis&eacute;s pour la r&egrave;gle de validation, ainsi qu&#39;un message localis&eacute; avec s&eacute;v&eacute;rit&eacute; qui sera affich&eacute; si le crit&egrave;re n&#39;est pas satisfait.</p><p>Si une r&egrave;gle de validation est d&eacute;finie sur un champ de type table alors cette r&egrave;gle sera consid&eacute;r&eacute;e comme une &quot;contrainte sur table&quot; et sera ex&eacute;cut&eacute;e sur chaque enregistrement de la table. Voir <a target="_self" href="../models/constraints.html#constraintsOnTable">Contraintes sur table</a> pour plus d&#39;informations.</p></td></tr>
+</table>
+<h3>
+<a name="id1s2"></a>Propri&eacute;t&eacute;s basiques des champs</h3>
+<p>Les propri&eacute;t&eacute;s basiques suivantes sont sp&eacute;cifiques aux champs simples :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Valeur par d&eacute;faut</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit une valeur par d&eacute;faut pour ce champ. Cette valeur sera ins&eacute;r&eacute;e automatiquement dans le champ de saisie dans les formulaires de cr&eacute;ation de nouveaux enregistrements. Le type de la valeur par d&eacute;faut doit &ecirc;tre en accord avec le type du champ courant.</p><p>Voir <a target="_self" href="../models/access_properties_categories.html#defaultValue">Valeur par d&eacute;faut</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Message d&#39;erreur de conversion</p></td><td class="ebx_definitionListDefinition"><p>Messages d&#39;erreur internationalis&eacute;s affich&eacute;s aux utilisateurs lors de la saisie d&#39;une valeur qui n&#39;est pas en accord avec le type du champ courant.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="computationrules"></a>R&egrave;gle de calcul</p></td><td class="ebx_definitionListDefinition"><p>Cette propri&eacute;t&eacute; est disponible pour les champs dans les tables sauf pour les types r&eacute;utilisables. D&eacute;finit une r&egrave;gle de calcul pour la valeur du champ avec l&#39;aide d&#39;un <a target="_self" href="../references/criteria_editor.html">&eacute;diteur de pr&eacute;dicats</a> XPath 1.0. </p><p> Une r&egrave;gle de calcul peut &ecirc;tre utile lorsqu&#39;une valeur d&eacute;pend d&#39;autres valeurs dans le m&ecirc;me enregistrement, mais qu&#39;un calcul programmatique n&#39;est pas n&eacute;cessaire.</p><p>Les limitations suivantes existent pour les r&egrave;gles de calcul :</p><ul>
+<li><p>Les r&egrave;gles de calcul peuvent &ecirc;tre utilis&eacute;es seulement avec les champs simples dans une table.</p></li><li><p>Les r&egrave;gles de calcul ne peuvent pas &ecirc;tre d&eacute;finies sur les champs du type <code>OResource</code> ou <code>Password</code>.</p></li><li><p>Les r&egrave;gles de calcul ne peuvent pas &ecirc;tre d&eacute;finies sur les noeuds de s&eacute;lection et les champs cl&eacute;s primaires.</p></li><li><p>Les r&egrave;gles de calcul ne peuvent pas &ecirc;tre d&eacute;finies en acc&eacute;dant &agrave; l&#39;&eacute;l&eacute;ment depuis le rapport de validation.</p></li></ul>
+</td></tr>
+</table>
+<h2>
+<a name="advanced_props"></a>Propri&eacute;t&eacute;s avanc&eacute;es des &eacute;l&eacute;ments</h2>
+<h3>
+<a name="id2s1"></a>Propri&eacute;t&eacute;s avanc&eacute;es communes</h3>
+<p>Les propri&eacute;t&eacute;s avanc&eacute;es suivantes sont disponibles pour plusieurs types d&#39;&eacute;l&eacute;ments :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="ui_bean"></a>UI bean</p></td><td class="ebx_definitionListDefinition"><p>Cette propri&eacute;t&eacute; est disponible pour tous les types d&#39;&eacute;l&eacute;ments sauf les tables. Sp&eacute;cifie une classe Java permettant de personnaliser l&#39;interface utilisateur associ&eacute;e &agrave; cet &eacute;l&eacute;ment dans un jeu de donn&eacute;es. Un UI bean peut afficher l&#39;&eacute;l&eacute;ment diff&eacute;remment et/ou modifier sa valeur en &eacute;tendant la classe <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditor.html">UIBeanEditor</a> dans l&#39;API Java.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="transform_export"></a>Transformation &agrave; l&#39;export</p></td><td class="ebx_definitionListDefinition"><p>Cette propri&eacute;t&eacute; est disponible pour les champs et pour les groupes qui sont des noeuds terminaux. Elle sp&eacute;cifie une classe Java d&eacute;finissant des op&eacute;rations de transformation &agrave; effectuer lors de la cr&eacute;ation d&#39;une archive &agrave; partir d&#39;un jeu de donn&eacute;es associ&eacute;. La transformation &agrave; effectuer porte sur la valeur de l&#39;&eacute;l&eacute;ment courant.</p><p>Voir <a target="_blank" href="../Java_API/com/orchestranetworks/service/NodeDataTransformer.html">NodeDataTransformer</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="access_props"></a>Propri&eacute;t&eacute;s d&#39;acc&egrave;s</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit le mode d&#39;acc&egrave;s pour l&#39;&eacute;l&eacute;ment courant, &agrave; savoir&nbsp;:&nbsp;s&#39;il peut &ecirc;tre &eacute;crit et/ou lu.</p><ul>
+<li><p>&#39;Lecture &amp; Ecriture&#39; correspond au mode <code>RW</code> dans le XSD du mod&egrave;le de donn&eacute;es.</p></li><li><p>&#39;Lecture seule&#39; correspond au mode <code>R-</code> dans le XSD du mod&egrave;le de donn&eacute;es.</p></li><li><p>&#39;Element hors d&#39;un jeu de donn&eacute;es&#39; correspond au mode <code>CC</code> dans le XSD du mod&egrave;le de donn&eacute;es.</p></li><li><p>&#39;Noeud non terminal&#39; correspond au mode <code>--</code> dans le XSD du mod&egrave;le de donn&eacute;es.</p></li></ul>
+<p>Voir <a target="_self" href="../models/access_properties_categories.html#accessproperties">Access properties</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="default_view"></a>Affichage par d&eacute;faut</p></td><td class="ebx_definitionListDefinition"><p>Cette propri&eacute;t&eacute; permet d&#39;indiquer&nbsp;:&nbsp;</p><ul>
+<li><p>Si cet &eacute;l&eacute;ment doit &ecirc;tre affich&eacute; dans la vue par d&eacute;faut d&#39;un jeu de donn&eacute;es. Lorsque la propri&eacute;t&eacute; &quot;Cach&eacute;&quot; est s&eacute;lectionnn&eacute;e cet &eacute;l&eacute;ment ne sera pas affich&eacute; dans la vue par d&eacute;faut d&#39;un jeu de donn&eacute;es. Si cette propri&eacute;t&eacute; n&#39;est pas renseign&eacute;e, alors cet &eacute;l&eacute;ment sera affich&eacute; par d&eacute;faut.</p></li><li><p>Si cet &eacute;l&eacute;ment doit &ecirc;tre affich&eacute; dans l&#39;outil de recherche textuelle d&#39;un jeu de donn&eacute;es. Lorsque la propri&eacute;t&eacute; &quot;Cach&eacute; dans une recherche textuelle&quot; est s&eacute;lectionnn&eacute;e cet &eacute;l&eacute;ment ne sera pas affich&eacute; dans l&#39;outil de recherche textuelle d&#39;un jeu de donn&eacute;es. Si cette propri&eacute;t&eacute; n&#39;est pas renseign&eacute;e, alors cet &eacute;l&eacute;ment sera affich&eacute; par d&eacute;faut dans l&#39;outil de recherche textuelle d&#39;un jeu de donn&eacute;es.</p></li></ul>
+<p>Voir <a target="_self" href="../models/access_properties_categories.html#defaultView">Default view</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="node_cat"></a>Cat&eacute;gorie du noeud</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit les cat&eacute;gories permettant de restreindre la visualisation des donn&eacute;es. Un noeud de cat&eacute;gorie &quot;Hidden&quot; est cach&eacute; par d&eacute;faut dans un jeu de donn&eacute;es. </p><p>Restriction&nbsp;:&nbsp;la d&eacute;finition de cat&eacute;gorie ne s&#39;applique pas aux noeuds d&#39;enregistrements de tables, &agrave; l&#39;exception de la cat&eacute;gorie &quot;Hidden&quot;.</p><p>Voir <a target="_self" href="../models/access_properties_categories.html#categories">Categories</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Mode de comparaison</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit un mode de comparaison pour l&#39;&eacute;l&eacute;ment. Ce mode permet de restreindre la comparaison des donn&eacute;es associ&eacute;es &agrave; cet &eacute;l&eacute;ment.</p><ul>
+<li><p>&quot;D&eacute;faut&quot; implique que l&#39;&eacute;l&eacute;ment est pris en compte lors de la comparaison de donn&eacute;es.</p></li><li><p>&quot;Ignor&eacute;&quot; implique qu&#39;aucune modification ne sera d&eacute;tect&eacute;e lors de la comparaison de deux entit&eacute;s modifi&eacute;es (jeux de donn&eacute;es ou enregistrements).</p><p>Lors de la fusion de donn&eacute;es les valeurs des &eacute;l&eacute;ments ignor&eacute;s dans des jeux de donn&eacute;es ou enregistrements modifi&eacute;s ne sont pas fusionn&eacute;es. Les valeurs contenues dans de nouveaux jeux de donn&eacute;es ou enregistrements sont fusionn&eacute;es.</p><p>Lors de l&#39;importation d&#39;une archive les valeurs des &eacute;l&eacute;ments ignor&eacute;s dans des jeux de donn&eacute;es ou enregistrements modifi&eacute;s ne sont pas import&eacute;es. Les valeurs contenues dans de nouveaux jeux de donn&eacute;es ou enregistrements sont import&eacute;es.</p></li></ul>
+<p>Voir <a target="_self" href="../models/access_properties_categories.html#comparison_mode">Comparison mode</a>.</p></td></tr>
+</table>
+<h3>
+<a name="id2s2"></a>Propri&eacute;t&eacute;s avanc&eacute;es des champs</h3>
+<p>Les propri&eacute;t&eacute;s avanc&eacute;es suivantes sont sp&eacute;cifiques aux champs.</p><h4>
+Contr&ocirc;le de saisie sur valeur nulle</h4>
+<p>Impl&eacute;mente la propri&eacute;t&eacute; <code>osd:checkNullInput</code>. Cette propri&eacute;t&eacute; est utilis&eacute;e pour activer et v&eacute;rifier une contrainte sur valeur <code>null</code> lors de la saisie utilisateur.</p><p>Par d&eacute;faut, pour permettre une saisie temporairement incompl&egrave;te, la validation des &eacute;l&eacute;ments obligatoire n&#39;est pas effectu&eacute;e lors de la saisie utilisateur, mais pendant la validation du jeu de donn&eacute;es. Si un &eacute;l&eacute;ment obligatoire doit &ecirc;tre v&eacute;rifi&eacute; imm&eacute;diatement lors de la saisie utilisateur, cette propri&eacute;t&eacute; doit avoir la valeur &quot;oui&quot;.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Une valeur est consid&eacute;r&eacute;e comme obligatoire si le &quot;Nombre minimum de valeurs&quot; est &eacute;gale ou sup&eacute;rieure &agrave; &quot;1&quot;. Pour les &eacute;l&eacute;ments terminaux, les valeurs obligatoires sont seulement v&eacute;rifi&eacute;es dans les jeux de donn&eacute;es activ&eacute;s. Pour les &eacute;l&eacute;ments non terminaux, les valeurs sont v&eacute;rifi&eacute;es ind&eacute;pendamment de l&#39;&eacute;tat d&#39;activation du jeu de donn&eacute;es.</fieldset>
+<p>See <a target="_self" href="../models/constraints.html#checkNullInput">Constraints, triggers and functions</a> for more information.</p><h4>
+UI bean</h4>
+<p>Voir <a target="_self" href="#ui_bean">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Fonction (valeur calcul&eacute;e)</h4>
+<p>Cette propri&eacute;t&eacute; est disponible pour les champs qui ne sont pas des cl&eacute;s primaires. Elle sp&eacute;cifie une classe Java permettant de calculer la valeur de ce champ programmatiquement. Peut &ecirc;tre utile si la valeur de ce champ d&eacute;pend d&#39;autres valeurs dans le r&eacute;f&eacute;rentiel, ou si le calcul de la valeur doit r&eacute;cup&eacute;rer des donn&eacute;es depuis un syst&egrave;me externe.</p><p>Une fonction peut &ecirc;tre cr&eacute;&eacute;e en impl&eacute;mentant l&#39;interface <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ValueFunction.html">ValueFunction</a>.</p><h4>
+Transformation &agrave; l&#39;export</h4>
+<p>Voir <a target="_self" href="#transform_export">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Propri&eacute;t&eacute;s d&#39;acc&egrave;s</h4>
+<p>Voir <a target="_self" href="#access_props">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Noeud de s&eacute;lection</h4>
+<p>Cette propri&eacute;t&eacute; est disponible uniquement pour les champs de type &quot;chaîne de caract&egrave;res&quot;. Elle d&eacute;finit une s&eacute;lection d&#39;enregistrements en utilisant une expression XPath sur une table dans un jeu de donn&eacute;es. Peut &ecirc;tre utile pour associer des enregistrements qui sont li&eacute;s au champ courant. Les enregistrements qui r&eacute;pondent au crit&egrave;re seront affich&eacute;s quand l&#39;utilisateur clique sur le lien g&eacute;n&eacute;r&eacute;. Lorsque cette propri&eacute;t&eacute; est renseign&eacute;e les propri&eacute;t&eacute;s &quot;Nombre minimum de valeurs&quot; et &quot;Nombre maximum de valeurs&quot; sont automatiquement d&eacute;finies &agrave; &quot;0&quot;. </p><p>Voir <a target="_self" href="../models/tables_filters.html#select">Noeuds de s&eacute;lection</a> pour plus d&#39;informations.</p><h4>
+Auto-incr&eacute;ment</h4>
+<p>Cette propri&eacute;t&eacute; est disponible uniquement pour les champs de type &quot;entier&quot; ou &quot;d&eacute;cimal&quot; contenus dans une table. Si elle est activ&eacute;e, la valeur du champ est calcul&eacute;e automatiquement lors de la cr&eacute;ation d&#39;un nouvel enregistrement. Peut &ecirc;tre utile pour les cl&eacute;s primaires, car l&#39;auto-incr&eacute;ment g&eacute;n&egrave;re un identifiant unique pour chaque enregistrement. Deux attributs peuvent &ecirc;tre sp&eacute;cifi&eacute;s :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Valeur de d&eacute;marrage</p></td><td class="ebx_definitionListDefinition"><p>Valeur initiale de l&#39;auto-incr&eacute;ment. Si aucune valeur n&#39;est d&eacute;finie, la valeur par d&eacute;faut est &quot;1&quot;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Pas de l&#39;incr&eacute;ment</p></td><td class="ebx_definitionListDefinition"><p>La valeur ajout&eacute;e &agrave; la valeur pr&eacute;c&eacute;dente de l&#39;auto-incr&eacute;ment. Si aucune valeur n&#39;est d&eacute;finie, la valeur par d&eacute;faut est &quot;1&quot;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>D&eacute;sactiver les contr&ocirc;les de l&#39;auto incr&eacute;ment</p></td><td class="ebx_definitionListDefinition"><p>Indique si le contr&ocirc;le de la valeur d&#39;un champ auto incr&eacute;ment&eacute; par rapport &agrave; la valeur maximale trouv&eacute;e dans la table en cours de mise &agrave; jour doit &ecirc;tre d&eacute;sactiv&eacute;. </p></td></tr>
+</table>
+<p>Les valeurs auto-incr&eacute;ment&eacute;es ont le comportement suivant :</p><ul>
+<li><p>Le calcul et l&#39;allocation de la valeur de ce champ sont effectu&eacute;s d&egrave;s lors qu&#39;un nouvel enregistrement est ins&eacute;r&eacute; et que la valeur du champ est ind&eacute;finie.</p></li><li><p>Aucune allocation ne peut &ecirc;tre r&eacute;alis&eacute;e si l&#39;insertion programmatique sp&eacute;cifie d&eacute;j&agrave; une valeur non <code>null</code>. Par cons&eacute;quent, cette allocation n&#39;est pas effectu&eacute;e &agrave; l&#39;insertion d&#39;un enregistrement en mode occultation ou r&eacute;&eacute;criture.</p></li><li><p>Si une archive import&eacute;e sp&eacute;cifie cette valeur, alors elle est pr&eacute;serv&eacute;e.</p></li><li><p>Une valeur nouvellement allou&eacute;e est, autant que possible, unique au sein du r&eacute;f&eacute;rentiel.</p><p>Plus pr&eacute;cis&eacute;ment, le caract&egrave;re unique de l&#39;allocation s&#39;&eacute;tend sur tous les jeux de donn&eacute;es bas&eacute;s sur le mod&egrave;le de donn&eacute;es, et &eacute;galement sur tous les espaces de donn&eacute;es. Ce dernier cas de figure permet de fusionner un espace de donn&eacute;es &agrave; son parent avec une garantie raisonnable qu&#39;il n&#39;y aura pas de conflits lorsque la valeur auto-incr&eacute;ment&eacute;e fait partie des enregistrements d&#39;une cl&eacute; primaire. </p><p>Ce principe a une limitation tr&egrave;s sp&eacute;cifique&nbsp;:&nbsp;quand une op&eacute;ration majeure de mise &agrave; jour sp&eacute;cifiant des valeurs est r&eacute;alis&eacute;e en simultan&eacute; d&#39;une op&eacute;ration allouant une valeur au m&ecirc;me champ, il est possible que cette derni&egrave;re op&eacute;ration alloue une valeur qui sera fix&eacute;e par la premi&egrave;re op&eacute;ration (il n&#39;y a pas de verrouillage entre plusieurs espaces de donn&eacute;es).</p></li></ul>
+<p>Voir <a target="_self" href="../models/constraints.html#autoIncrementedValues">Valeurs auto-incr&eacute;ment&eacute;es</a> pour plus d&#39;informations.</p><h4>
+Affichage par d&eacute;faut</h4>
+<p>Voir <a target="_self" href="#default_view">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Cat&eacute;gorie du noeud</h4>
+<p>Voir <a target="_self" href="#node_cat">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Champ h&eacute;rit&eacute;</h4>
+<p>D&eacute;finit une relation entre le champ courant et un champ dans une autre table afin de chercher sa valeur automatiquement.</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Enregistrement source</p></td><td class="ebx_definitionListDefinition"><p>Une cl&eacute; &eacute;trang&egrave;re ou une s&eacute;quence de cl&eacute;s &eacute;trang&egrave;res, s&eacute;par&eacute;es par des espaces, permettant de trouver l&#39;enregistrement dont h&eacute;rite le champ courant. Si cette propri&eacute;t&eacute; n&#39;est pas renseign&eacute;e, alors l&#39;&eacute;l&eacute;ment courant sera utilis&eacute; comme source d&#39;h&eacute;ritage de champ.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>El&eacute;ment source</p></td><td class="ebx_definitionListDefinition"><p>Chemin XPath d&eacute;finissant l&#39;&eacute;l&eacute;ment &agrave; h&eacute;riter. L&#39;&eacute;l&eacute;ment source doit &ecirc;tre terminal, se trouver dans &quot;Enregistrement source&quot;, et son type doit &ecirc;tre le m&ecirc;me que le type de ce champ. Cette propri&eacute;t&eacute; est obligatoire pour l&#39;h&eacute;ritage de champ.</p></td></tr>
+</table>
+<p>Voir <a target="_self" href="../glossary/simple_glossary.html#inheritance">h&eacute;ritage</a> dans le glossaire et la section <a target="_self" href="../references/inheritance.html#ina">Inherited fields</a> pour plus d&#39;informations.</p><h3>
+<a name="table"></a>Propri&eacute;t&eacute;s avanc&eacute;es des tables</h3>
+<p>Les propri&eacute;t&eacute;s avanc&eacute;es suivantes sont sp&eacute;cifiques aux tables.</p><h4>
+Table</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Cl&eacute; primaire</p></td><td class="ebx_definitionListDefinition"><p>Une liste des champs composant la cl&eacute; primaire de la table. Vous pouvez ajouter ou supprimer des champs de la cl&eacute; primaire.</p><p>Chaque champ de la cl&eacute; est d&eacute;not&eacute; par un chemin XPath absolu qui d&eacute;bute sous la table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Index</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit la liste des champs &agrave; indexer dans la table. L&#39;indexation acc&eacute;l&egrave;re les acc&egrave;s &agrave; la table pour les requ&ecirc;tes impliquant les champs index&eacute;s. Il n&#39;est pas possible de d&eacute;finir deux index portant exactement sur la m&ecirc;me liste de champs.</p><p><strong>Nom de l&#39;index</strong>: Nom unique pour cet index.</p><p><strong>Champs &agrave; indexer</strong>: Les champs &agrave; indexer, o&ugrave; chaque champ d&#39;index est d&eacute;not&eacute; par un chemin XPath absolu qui d&eacute;bute sous la table.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Profil d&#39;historisation</p></td><td class="ebx_definitionListDefinition"><p>Sp&eacute;cifie si l&#39;historisation est activ&eacute;e, et le niveau de garantie demand&eacute;. Les profils d&#39;historisation peuvent &ecirc;tre modifi&eacute;s dans la section <strong>Administration &gt; Historique et journaux</strong>.</p><p>Voir <a target="_self" href="../references/history.html#configuration">Configuration de l&#39;historique dans le r&eacute;f&eacute;rentiel</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Libell&eacute;</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit les champs composant le libell&eacute; par d&eacute;faut et les libell&eacute;s localis&eacute;s pour les enregistrements de la table.</p><p>Peut aussi d&eacute;finir une classe Java pour assigner le libell&eacute; programmatiquement, ou d&eacute;finir le libell&eacute; dans une hi&eacute;rarchie. Cette classe Java doit impl&eacute;menter l&#39;interface <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRenderer.html">UILabelRenderer</a> ou <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRendererForHierarchy.html">UILabelRendererForHierarchy</a> de l&#39;API Java. </p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Filtres sp&eacute;cifiques</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit des filtres pour afficher uniquement les enregistrements correspondant &agrave; certains crit&egrave;res.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p><a name="rendering"></a>Pr&eacute;sentation</p></td><td class="ebx_definitionListDefinition"><p>Sp&eacute;cifie la politique d&#39;affichage par d&eacute;faut des groupes contenus dans cette table. Si cette propri&eacute;t&eacute; n&#39;est pas d&eacute;finie, alors la politique par d&eacute;faut sera utilis&eacute;e pour afficher les groupes.</p><p>Voir <a target="_self" href="../engine/admin_frontend.html#rendering">Ergonomie &amp; comportement</a> pour plus d&#39;informations.</p><p><strong>Pr&eacute;sentation activ&eacute;e des groupes</strong> : sp&eacute;cifie un mode de pr&eacute;sentation autoris&eacute; en plus de &quot;D&eacute;velopp&eacute;&quot; et &quot;R&eacute;duit&quot;, qui sont toujours disponibles. Les liens doivent &ecirc;tre activ&eacute;s sur la table afin de d&eacute;finir sp&eacute;cifiquement le mode de pr&eacute;sentation des groupes en tant que liens.</p><p><strong>Pr&eacute;sentation par d&eacute;faut des groupes</strong>&nbsp;:&nbsp;sp&eacute;cifie la pr&eacute;sentation par d&eacute;faut des groupes contenus dans cette table. Si un groupe ne sp&eacute;cifie aucune vue par d&eacute;faut, alors le mode de pr&eacute;sentation par d&eacute;faut d&eacute;fini par cette table sera utilis&eacute;. En fonction des performances du r&eacute;seau et du navigateur, ajustez la mani&egrave;re d&#39;afficher chaque groupe du formulaire. En ce qui concerne le poids de la page t&eacute;l&eacute;charg&eacute;e, le mode lien est l&eacute;ger, les modes &quot;D&eacute;velopp&eacute;&quot; et &quot;R&eacute;duit&quot; sont plus lourds.</p><p><strong>Note :</strong> Quand les onglets sont activ&eacute;s dans une table, tous les groupes qui utiliseraient les liens dans les autres cas sont convertis automatiquement en mode &quot;R&eacute;duit&quot;. Ceci est fait afin d&#39;&eacute;viter les complexit&eacute;s d&#39;affichage qui se posent quand les liens et les onglets sont dans la m&ecirc;me interface utilisateur.</p></td></tr>
+</table>
+<h4>
+ Contraintes d&#39;unicit&eacute; </h4>
+<p>Indique les champs dont les valeurs doivent &ecirc;tre uniques dans la table.</p><h4>
+Trigger &agrave; la mise &agrave; jour</h4>
+<p>Sp&eacute;cifie une classe Java d&eacute;finissant des m&eacute;thodes qui sont automatiquement ex&eacute;cut&eacute;es lorsque des op&eacute;rations sont effectu&eacute;es : cr&eacute;ation, mise &agrave; jour, suppression, etc.</p><p>Un trigger natif est inclus par d&eacute;faut pour lancer les workflows de donn&eacute;es.</p><p>Voir <a target="_self" href="../models/constraints.html#triggers">Triggers</a> pour plus d&#39;informations.</p><h4>
+Propri&eacute;t&eacute;s d&#39;acc&egrave;s</h4>
+<p>Voir <a target="_self" href="#access_props">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Affichage par d&eacute;faut</h4>
+<p>Voir <a target="_self" href="#default_view">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Cat&eacute;gorie du noeud</h4>
+<p>Voir <a target="_self" href="#node_cat">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h3>
+<a name="id2s4"></a>Propri&eacute;t&eacute;s avanc&eacute;es des groupes</h3>
+<p>Les propri&eacute;t&eacute;s avanc&eacute;es suivantes sont sp&eacute;cifiques aux groupes.</p><h4>
+Classe du conteneur de valeurs (JavaBean)</h4>
+<p>D&eacute;finit une classe Java pour contenir les valeurs des &eacute;l&eacute;ments situ&eacute;s sous le groupe. La classe Java sp&eacute;cifi&eacute;e doit &ecirc;tre conforme &agrave; la sp&eacute;cification JavaBean. Cela signifie que chaque &eacute;l&eacute;ment enfant de ce groupe doit correspondre &agrave; une propri&eacute;t&eacute; de la classe Java. Toutes les propri&eacute;t&eacute;s de la classe Java doivent avoir des m&eacute;thodes d&#39;acc&egrave;s (getters et setters).</p><h4>
+UI bean</h4>
+<p>Voir <a target="_self" href="#ui_bean">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Transformation &agrave; l&#39;export</h4>
+<p>Voir <a target="_self" href="#transform_export">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Propri&eacute;t&eacute;s d&#39;acc&egrave;s</h4>
+<p>Voir <a target="_self" href="#access_props">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><h4>
+Affichage par d&eacute;faut</h4>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Visibilit&eacute;</p></td><td class="ebx_definitionListDefinition"><p>Voir <a target="_self" href="#default_view">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Pr&eacute;sentation</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit la mani&egrave;re dont ce groupe sera pr&eacute;sent&eacute; dans un jeu de donn&eacute;es. Si cette propri&eacute;t&eacute; n&#39;est pas d&eacute;finie, alors la vue par d&eacute;faut d&eacute;finie par la table parente sera utilis&eacute;e. Les options &quot;Onglet&quot; et &quot;Lien&quot; sont disponibles uniquement si la table parente a activ&eacute; ces options de pr&eacute;sentation. </p><p><strong><em>Propri&eacute;t&eacute;s de l&#39;onglet</em></strong></p><p><strong>Position:</strong> Cet attribut sp&eacute;cifie la position de l&#39;onglet par rapport &agrave; tous les onglets d&eacute;finis dans le mod&egrave;le. Cette position est utilis&eacute;e pour ordonnancer la liste des onglets au moment de l&#39;affichage d&#39;un formulaire. Si cette propri&eacute;t&eacute; n&#39;est pas d&eacute;finie, alors l&#39;onglet sera positionn&eacute; selon la position du groupe dans le mod&egrave;le de donn&eacute;es. </p></td></tr>
+</table>
+<h4>
+Cat&eacute;gorie du noeud</h4>
+<p>Voir <a target="_self" href="#node_cat">Propri&eacute;t&eacute;s avanc&eacute;es communes</a>.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Concepts apparentés :</span><a target="_self" href="../user_datamodel/userdatamodel_elementcontrols.html">Contr&ocirc;les sur les &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html">Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

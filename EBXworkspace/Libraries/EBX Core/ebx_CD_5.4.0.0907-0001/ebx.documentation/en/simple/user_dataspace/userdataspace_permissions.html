@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Permissions</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dataspace_permissions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data spaces</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/userdataspace_permissions.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+<h1>
+Permissions</h1>
+<p>Data space permissions can be accessed using the <em>Actions</em> button in the workspace area.</p><p>A permission is always attached to a profile.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Data space permissions</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">General permissions</a></li><li class="toc2"><a href="#id1s2">Choice of allowable actions</a></li></ul>
+</li><li class="toc1"><a href="#id2">Snapshot permissions</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Initial snapshot permissions</a></li><li class="toc2"><a href="#id2s2">Data space snapshot permissions</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Data space permissions</h2>
+<h3>
+<a name="id1s1"></a>General permissions</h3>
+<ul>
+<li><p><strong>Data space id:</strong> indicates the data space on which the permissions will apply.</p></li><li><p><strong>Profile selection:</strong> indicates the profile affected by the rule.</p></li><li><p><strong>Restriction policy:</strong> indicates if the permissions defined here restricts the ones defined for other profiles. See also <a target="_self" href="../references/permissions.html#restrictionpolicy">restriction policy.</a></p></li><li><p><strong>Data space access:</strong> indicates the global access permission on the data space (read-only, write or hidden). See below:</p></li></ul>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Read-only</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p> Visualize the data space and its snapshot. See the children data space, according to the rights applying on each child.</p></li><li><p> Visualize the contents of the data space without being able to modify the content, provided that the content rights give you access to it.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Write</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p> See the data space.</p></li><li><p>Access data sets depending on the rights you have on them.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Hidden</p></td><td class="ebx_definitionListDefinition"><ul>
+<li><p> Neither the data space nor its snapshots can be seen.</p></li><li><p>From a child data space, the current data space can be seen but not selected.</p></li><li><p>No access to the data space content.</p></li><li><p>Not one action can be performed on the data space.</p></li></ul>
+</td></tr>
+</table>
+<h3>
+<a name="id1s2"></a>Choice of allowable actions</h3>
+<ul>
+<li><p><strong>Create a child data space:</strong> indicates if the profile can create a child data space.</p></li><li><p><strong>Create a Snapshot:</strong> indicates if the profile can create snapshot from the data space.</p></li><li><p><strong>Initiate merge:</strong> indicates if the profile can merge the data space with its parent.</p></li><li><p><strong>Export archive:</strong> indicates if the profile can access the export service.</p></li><li><p><strong>Import archive:</strong> indicates if the profile can access the import service.</p></li><li><p><strong>Close data space:</strong> indicates if the profile can close the data space.</p></li><li><p><strong>Close snapshot:</strong> indicates if the profile can close the data space&#39;s snapshot.</p></li><li><p><strong>Rights on services:</strong> specifies the access permissions for services. A service is not accessible to a profile if it is crossed-out.</p></li><li><p><strong>Permissions of child data space when created:</strong> specifies the access permissions that will be present for a newly created child data space.</p></li></ul>
+<h2>
+<a name="id2"></a>Snapshot permissions</h2>
+<h3>
+<a name="id2s1"></a>Initial snapshot permissions</h3>
+<p>The data space permissions apply on its initial snapshot.</p><h3>
+<a name="id2s2"></a>Data space snapshot permissions</h3>
+<p>The data space permissions apply on its snapshots.</p><p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

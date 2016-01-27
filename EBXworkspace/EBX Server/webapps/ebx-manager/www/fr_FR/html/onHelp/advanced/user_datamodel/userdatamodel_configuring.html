@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Configuration du mod&egrave;le de donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_configuring" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_datamodel/userdatamodel_configuring.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</span></div>
+<h1>
+Configuration du mod&egrave;le de donn&eacute;es</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#information">Informations associ&eacute;es au mod&egrave;le de donn&eacute;es</a></li><li class="toc1"><a href="#permissions">Permissions</a></li><li class="toc1"><a href="#configuration">Propri&eacute;t&eacute;s du mod&egrave;le de donn&eacute;es</a></li><li class="toc1"><a href="#includemodel">Mod&egrave;les de donn&eacute;es inclus</a></li><li class="toc1"><a href="#replication">R&eacute;plication des donn&eacute;es vers tables relationnelles</a></li></ul>
+</div>
+<h2>
+<a name="information"></a>Informations associ&eacute;es au mod&egrave;le de donn&eacute;es</h2>
+<p>Pour visualiser et &eacute;diter les informations concernant le propri&eacute;taire et la documentation du mod&egrave;le de donn&eacute;es, s&eacute;lectionnez &quot;Informations&quot; dans le menu <a href="../user_datamodel/userdatamodel_intro.html#ui"><strong>&quot;Actions&quot; du mod&egrave;le de donn&eacute;es</strong></a> dans le panneau de navigation.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Seuls les utilisateurs autoris&eacute;s peuvent acc&eacute;der &agrave; cet &eacute;cran via la &#39;Perspective avanc&eacute;e&#39;.</p></div>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Nom unique</p></td><td class="ebx_definitionListDefinition"><p>Le nom unique du mod&egrave;le de donn&eacute;es. Ce nom ne peut pas &ecirc;tre modifi&eacute; apr&egrave;s la cr&eacute;ation du mod&egrave;le.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Propri&eacute;taire</p></td><td class="ebx_definitionListDefinition"><p>Sp&eacute;cifie le propri&eacute;taire du mod&egrave;le de donn&eacute;es, qui a le droit de modifier les informations du mod&egrave;le et ses permissions.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation localis&eacute;e</p></td><td class="ebx_definitionListDefinition"><p>Libell&eacute;s et descriptions localis&eacute;s pour le mod&egrave;le de donn&eacute;es.</p></td></tr>
+</table>
+<h2>
+<a name="permissions"></a>Permissions</h2>
+<p>Pour d&eacute;finir les permissions d&#39;acc&egrave;s au mod&egrave;le de donn&eacute;es, s&eacute;lectionnez &quot;Permissions&quot; dans le menu <a href="../user_datamodel/userdatamodel_intro.html#ui"><strong>&quot;Actions&quot; du mod&egrave;le de donn&eacute;es</strong></a> dans le panneau de navigation.</p><p>La d&eacute;finition des permissions d&#39;un mod&egrave;le de donn&eacute;es s&#39;effectue de la m&ecirc;me mani&egrave;re que pour les jeux de donn&eacute;es. Les d&eacute;tails se trouvent dans la section <a href="../user_data/userdata_actions.html#permissions">Permissions</a>.</p><h2>
+<a name="configuration"></a>Propri&eacute;t&eacute;s du mod&egrave;le de donn&eacute;es</h2>
+<p>Dans le panneau de navigation, sous Configuration &gt; Propri&eacute;t&eacute;s du mod&egrave;le, vous pouvez acc&eacute;der aux propri&eacute;t&eacute;s techniques suivantes :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Nom du module</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit le module contenant les ressources qui seront utilis&eacute;es par ce mod&egrave;le de donn&eacute;es. Ce nom de module d&eacute;signe &eacute;galement le module cible lors de la publication du mod&egrave;le de donn&eacute;es s&#39;il est publi&eacute; dans un module.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Chemin du module</p></td><td class="ebx_definitionListDefinition"><p>Localisation physique du module sur le syst&egrave;me de fichiers du serveur.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Chemin des sources</p></td><td class="ebx_definitionListDefinition"><p>Emplacement des codes sources utilis&eacute;s pour configurer les composants Java dans la &quot;Librairie de composants&quot;. Si le chemin est relatif, il sera r&eacute;solu &agrave; partir du &quot;Chemin du module&quot;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Mode de publication</p></td><td class="ebx_definitionListDefinition"><p>Les deux modes possibles sont&nbsp;:&nbsp;la publication du mod&egrave;le dans un document XML Schema au sein d&#39;un module ou en tant que mod&egrave;le de donn&eacute;es embarqu&eacute; dans le r&eacute;f&eacute;rentiel EBX5. Les mod&egrave;les de donn&eacute;es embarqu&eacute;s permettent d&#39;avoir des fonctionnalit&eacute;s additionnelles, comme la gestion des versions et la restauration des versions pr&eacute;c&eacute;dentes du mod&egrave;le.</p><p>Voir <a href="../user_datamodel/userdatamodel_publish.html#pub_modes">Modes de publication</a> pour plus d&#39;informations.</p><p><strong>Chemin du mod&egrave;le dans le module</strong>: D&eacute;finit l&#39;emplacement du document XML Schema pour la publication du mod&egrave;le de donn&eacute;es dans un module. Le chemin doit commencer par &quot;/&quot;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>H&eacute;ritage des donn&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Sp&eacute;cifie si l&#39;h&eacute;ritage des donn&eacute;es, entre jeux de donn&eacute;es, est activ&eacute; pour ce mod&egrave;le de donn&eacute;es. L&#39;h&eacute;ritage des donn&eacute;es est d&eacute;sactiv&eacute; par d&eacute;faut.</p><p>Voir <a href="../user_data/userdata_inheritance.html">h&eacute;ritage</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Documentation</p></td><td class="ebx_definitionListDefinition"><p>Documentation du mod&egrave;le de donn&eacute;es d&eacute;finie &agrave; l&#39;aide d&#39;une classe Java. Cette classe Java d&eacute;finit les libell&eacute;s et descriptions des &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es. Les libell&eacute;s et descriptions d&eacute;finis par cette classe Java sont affich&eacute;s, dans les jeux de donn&eacute;es associ&eacute;s, en priorit&eacute; par rapport aux libell&eacute;s et descriptions d&eacute;finis localement par les &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es.</p><p>Voir <a href="../models/labels_error_messages.html#dynamicDoc">Dynamic labels and descriptions</a> pour plus d&#39;informations.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Extensions sp&eacute;ciales</p></td><td class="ebx_definitionListDefinition"><p>Permissions d&eacute;finies &agrave; l&#39;aide de r&egrave;gles programmatiques.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>D&eacute;sactiver les contr&ocirc;les de l&#39;auto-incr&eacute;ment</p></td><td class="ebx_definitionListDefinition"><p>Indique si le contr&ocirc;le de la valeur d&#39;un champ auto-incr&eacute;ment&eacute; par rapport &agrave; la valeur maximale trouv&eacute;e dans la table en cours de mise &agrave; jour doit &ecirc;tre d&eacute;sactiv&eacute;. </p><p>Voir <a href="../models/constraints.html#autoIncrementedValues">Valeurs auto-incr&eacute;ment&eacute;es</a> pour plus d&#39;informations.</p></td></tr>
+</table>
+<h2>
+<a name="includemodel"></a>Mod&egrave;les de donn&eacute;es inclus</h2>
+<p>Les types de donn&eacute;es d&eacute;finis dans un autre mod&egrave;le de donn&eacute;es peuvent &ecirc;tre utilis&eacute;s dans le mod&egrave;le de donn&eacute;es courant en ajoutant une entr&eacute;e pour l&#39;autre mod&egrave;le de donn&eacute;es dans la table Configuration &gt; Mod&egrave;les de donn&eacute;es inclus.</p><p>En acc&eacute;dant &agrave; l&#39;enregistrement du mod&egrave;le inclus depuis cette table, des informations techniques li&eacute;es &agrave; ce mod&egrave;le sont consultables sous l&#39;onglet <strong>Information</strong>. Cet onglet contient aussi le rapport de validation du mod&egrave;le de donn&eacute;es inclus.</p><p>Seuls les mod&egrave;les de donn&eacute;es sans erreur de validation, qui ont &eacute;t&eacute; d&eacute;finis et publi&eacute;s comme mod&egrave;le &quot;embarqu&eacute;&quot; ou dans un module, peuvent &ecirc;tre inclus.</p><p>Les types de donn&eacute;es doivent &ecirc;tre uniques &agrave; la fois dans le mod&egrave;le courant et dans tous les mod&egrave;les inclus. Il est impossible d&#39;inclure un mod&egrave;le contenant des types de donn&eacute;es d&eacute;j&agrave; existant dans le mod&egrave;le courant ou dans les autres mod&egrave;les de donn&eacute;es inclus.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Voir aussi</span><a href="../models/types.html#includedDataModels">Including external data models</a></p></div>
+<h2>
+<a name="replication"></a>R&eacute;plication des donn&eacute;es vers tables relationnelles</h2>
+<p>Dans n&#39;importe quel type de mod&egrave;le de donn&eacute;es, il est possible de d&eacute;finir des <em>unit&eacute;s de r&eacute;plication</em> afin que les donn&eacute;es du r&eacute;f&eacute;rentiel soient copi&eacute;es dans des tables relationnelles d&eacute;di&eacute;es. Ainsi, ces tables relationnelles permettent d&#39;acc&eacute;der directement aux donn&eacute;es en utilisant des requ&ecirc;tes et des vues SQL.</p><p>Pour d&eacute;finir une unit&eacute; de r&eacute;plication en utilisant l&#39;interface utilisateur, cr&eacute;ez un nouvel enregistrement dans la table &quot;R&eacute;plications&quot; situ&eacute;e dans la section Configuration du mod&egrave;le de donn&eacute;es dans le panneau de navigation. Chaque unit&eacute; de r&eacute;plication concerne un jeu de donn&eacute;es sp&eacute;cifique dans un espace de donn&eacute;es particulier. Une unit&eacute; de r&eacute;plication peut inclure plusieurs tables, tant qu&#39;elles sont dans le m&ecirc;me jeu de donn&eacute;es. Une unit&eacute; de r&eacute;plication d&eacute;finit les informations suivantes :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Nom</p></td><td class="ebx_definitionListDefinition"><p>Nom de l&#39;unit&eacute; de r&eacute;plication. Ce nom identifie l&#39;unit&eacute; de r&eacute;plication dans le mod&egrave;le de donn&eacute;es. Ce nom doit &ecirc;tre unique.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Espace de donn&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Indique l&#39;espace de donn&eacute;es concern&eacute; par la r&eacute;plication. Cet espace de donn&eacute;es ne peut ni &ecirc;tre une version ni &ecirc;tre relationnel.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Jeu de donn&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Indique le jeu de donn&eacute;es concern&eacute; par la r&eacute;plication.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Mode de rafraichissement</p></td><td class="ebx_definitionListDefinition"><p>D&eacute;finit le mode de synchronisation. Les diff&eacute;rents modes de synchronisation sont les suivants&nbsp;:&nbsp;</p><ul>
+<li><p><strong>Sur &quot;commit&quot;</strong>&nbsp;:&nbsp;les donn&eacute;es r&eacute;pliqu&eacute;es contenues dans la base de donn&eacute;es sont toujours &agrave; jour par rapport &agrave; la table source. Chaque transaction de mise &agrave; jour de la table source produit les mises &agrave; jour correspondantes dans la table contenant les donn&eacute;es r&eacute;pliqu&eacute;es dans la base de donn&eacute;es.</p></li><li><p><strong>Sur demande</strong>&nbsp;:&nbsp;les donn&eacute;es r&eacute;pliqu&eacute;es contenues dans la base de donn&eacute;es sont mises &agrave; jour uniquement lorsqu&#39;une op&eacute;ration manuelle de rafraichissement est effectu&eacute;e.</p></li></ul>
+</td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Tables</p></td><td class="ebx_definitionListDefinition"><p>Indique les tables du mod&egrave;le de donn&eacute;es qui doivent &ecirc;tre r&eacute;pliqu&eacute;es dans la base de donn&eacute;es.</p><p><strong>Chemin de la table</strong>: Indique le chemin de la table dans le mod&egrave;le de donn&eacute;es qui doit &ecirc;tre r&eacute;pliqu&eacute;e dans la base de donn&eacute;es.</p><p><strong>Nom dans la base de donn&eacute;es</strong>: Indique le nom de la table dans la base de donn&eacute;es qui contiendra les donn&eacute;es r&eacute;pliqu&eacute;es. Ce nom doit &ecirc;tre unique par rapport &agrave; toutes les unit&eacute;s de r&eacute;plication.</p></td></tr>
+</table>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">Voir aussi</span><a href="../references/replication.html">Replication</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a href="../table_contents_user.html">Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Guide utilisateur &gt; Modèles de données &gt; Implémentation des modèles de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

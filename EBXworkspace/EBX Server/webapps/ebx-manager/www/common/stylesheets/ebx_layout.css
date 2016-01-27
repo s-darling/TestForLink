@@ -1,0 +1,1052 @@
+
+html {
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+}
+
+#ebx_HiddenBody {
+	display: none;
+}
+
+/***START layout ***/
+html.yui-skin-sam .yui-layout {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+html.yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd {
+	border: none;
+	background-color: transparent;
+}
+/***END layout ***/
+
+/***START workspace ***/
+#ebx_WorkspaceHeaderUnit .yui-layout-bd {
+}
+#ebx_WorkspaceHeader {
+	position: relative;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+
+#ebx_WorkspaceHeader h2 {
+	white-space: nowrap;
+	overflow: hidden;
+}
+#ebx_WorkspaceHeader h2 .ebx_TitleWithIcon {
+}
+
+#ebx_TitleBreadcrumbScroll {
+	position: absolute;
+	
+	height: 100%;
+	width: 40px;
+	z-index: 1000;
+	
+	/* 20px for the width of scroll buttons */
+	background-image: -webkit-linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+	background-image: -moz-linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+	background-image: -ms-linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+	background-image: linear-gradient(left, #FFFFFF 20px, rgba(256, 256, 256, 0) 100%);
+}
+
+#ebx_TitleBreadcrumbScroll.ebx_TitleBreadcrumbScrollStopLeft {
+	background-image: none;
+	width: 20px;
+}
+#ebx_TitleBreadcrumbScroll.ebx_TitleBreadcrumbScrollStopLeft #ebx_TitleBreadcrumbScrollLeft {
+	display: none;
+}
+#ebx_TitleBreadcrumbScroll.ebx_TitleBreadcrumbScrollStopRight #ebx_TitleBreadcrumbScrollRight {
+	display: none;
+}
+
+#ebx_TitleBreadcrumbScrollLeft,
+#ebx_TitleBreadcrumbScrollRight {
+	visibility: hidden;
+	
+	cursor: pointer;
+	height: 100%;
+	width: 10px;
+	position: absolute;
+	padding-top: 19px;/* 48(height)/2 - 10(icon.height)/2 */
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+#ebx_WorkspaceHeader:hover #ebx_TitleBreadcrumbScrollLeft,
+#ebx_WorkspaceHeader:hover #ebx_TitleBreadcrumbScrollRight {
+	visibility: visible;
+}
+#ebx_TitleBreadcrumbScrollLeft {
+	left: 0;
+}
+#ebx_TitleBreadcrumbScrollRight {
+	left: 10px;
+}
+
+#ebx_TitleBreadcrumb {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#ebx_TitleBreadcrumb h2 {
+	display: inline;
+	padding: 10px 0;
+	margin-right: 20px;
+}
+
+.ebx_TitleBreadcrumbItem {
+	color: #808080;
+	display: inline-block;
+	padding: 10px 20px;
+	margin-left: -20px;
+	margin-right: 10px;
+	position: relative;
+	cursor: default;
+	
+	background-position: right -100px;
+	background-repeat: no-repeat;
+}
+.ebx_TitleBreadcrumbItemWithLink {
+	cursor: pointer;
+}
+.ebx_TitleBreadcrumbItem:first-child {
+	margin-left: 0;
+}
+#ebx_TitleBreadcrumb.ebx_TitleBreadcrumbNoScroll .ebx_TitleBreadcrumbItem:first-child {
+	padding-left: 15px;
+}
+.ebx_TitleBreadcrumbItem:hover {
+	background-position: right -150px;
+}
+.ebx_TitleBreadcrumbItem:hover .nodeLabel .ebx_LabelDocButton {
+    vertical-align: 2px;
+}
+
+.ebx_TitleWithIcon .ebx_TableFilteredFlag,
+.ebx_MultiTableFilteredFlag,
+.ebx_TabularViewFilteredFlag {
+	font-style: italic;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.ebx_TitleWithIcon .ebx_TableFilteredFlag {
+	background-position: 4px center;
+	background-repeat: no-repeat;
+	
+	padding: 0 10px;
+	margin-right: 10px;
+}
+.ebx_MultiTableFilteredFlag,
+.ebx_TabularViewFilteredFlag {
+	margin: -4px 0 -1px -3px;
+	padding: 2px 3px;
+}
+
+#ebx_WorkspaceCornerTools {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+#ebx_WorkspaceContentUnit .yui-layout-bd {
+}
+
+#ebx_WorkspaceContent {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+}
+.ebx_WorkspaceContent {
+	overflow: auto;
+}
+.ebx_WorkspaceContentAsLayout {
+}
+
+.ebx_WorkspaceContentRelative {
+	position: relative;
+}
+
+.ebx_WorkspaceContentAsLayout > .yui-layout-doc {
+	overflow: visible;
+}
+
+#ebx_WorkspaceContentForm {
+}
+
+/**START workspace with main iFrame **/
+
+#ebx_SubSessioniFrameContainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#ebx_SubSessioniFrameContainer.ebx_SubSessioniFrameReplacingWorkspace {
+}
+
+#ebx_SubSessioniFrame {
+	width: 100%;
+	height: 100%;
+}
+
+/**END workspace with main iFrame **/
+
+/**START fullscreen toggle **/
+.yui-layout-clip {
+	visibility: hidden;
+}
+/**END fullscreen toggle **/
+
+/**START content **/
+#ebx_WorkspaceToolbarUnit .yui-layout-bd {
+	border-width: 0;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+#ebx_WorkspaceToolbar {
+	padding: 0 10px 15px 15px;
+}
+
+.ebx_MDMComponentWaitingToolbar {
+	cursor: wait;
+}
+.ebx_MDMComponentWaitingToolbar .ebx_Button,
+.ebx_MDMComponentWaitingToolbar .ebx_FlatButtonNoBorder,
+.ebx_MDMComponentWaitingToolbar .ebx_FlatButton,
+.ebx_MDMComponentWaitingToolbar .ebx_IconButtonSmall,
+.ebx_MDMComponentWaitingToolbar .ebx_IconFlatButtonSmall {
+	/* opacity: exactly like .ebx_Disabled */
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	
+	cursor: wait;
+}
+
+#ebx_WorkspaceContentAreaUnit {
+}
+
+.ebx_WorkspaceContentInfoBar {
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 5px 10px 5px 15px;
+}
+
+#ebx_TextInWorkspace,
+.ebx_TextInWorkspace,
+.ebx_ContainerWithText {
+	margin: 10px 15px;
+}
+#ebx_TextInWorkspace > p,
+.ebx_TextInWorkspace > p {
+	margin: 5px 0;
+}
+
+#ebx_WorkspaceContentArea .ebx_TextInShortWorkspace {
+	text-align: center;
+	margin: 2em;
+}
+#ebx_WorkspaceContentArea .ebx_TextInShortWorkspace > p {
+	margin: 1em 0;
+}
+
+/**END content **/
+
+/**START filters **/
+
+.ebx_WorkspaceContentAsLayout .yui-layout-clip {
+	visibility: hidden;
+}
+
+#ebx_WorkspaceFilterUnit .yui-layout-bd {
+	border-width: 0;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+/** resize bar **/
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit.yui-layout-unit .yui-resize-handle-r,
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit .yui-resize-proxy .yui-layout-handle-r {/*
+	border-right: 1px solid #C0C0C0;/*{table-borderColor}*/
+}
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit.yui-layout-unit .yui-resize-handle-r {
+	right: 0;
+	z-index: 0;
+}
+/* knob */
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit.yui-layout-unit .yui-resize-handle-r .yui-layout-resize-knob {
+}
+/* dynamic resize bar */
+.yui-skin-sam #layout-doc #ebx_WorkspaceFilterUnit .yui-resize-proxy .yui-layout-handle-r {
+	right: 0;
+}
+/**END filters **/
+
+/**START hierarchies **/
+.ygtvlabel .ebx_Position {
+	font-size: 0.8em;
+}
+
+/**END hierarchies **/
+
+/**START validation report **/
+.ebx_DataSetValidationReport {
+	
+}
+.ebx_DataSetValidationReport h4 {
+	padding-left: 20px; /* 16(icon.width) + 4(padding) */
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.ebx_DataSetValidationReport .ebx_DataSetValidationInfo {
+	display: inline;
+}
+.ebx_DataSetValidationReport ol li {
+	margin: 0.5em 0;
+}
+.ebx_DataSetValidationReport ol li .ebx_DataSetValidationLineOrigin {
+	padding-left: 12px;
+	background-image: url("../images/onIcons/ebx_actionForward.png");
+	background-repeat: no-repeat;
+	background-position: -4px 0;
+}
+.ebx_DataSetValidationReport ol li .ebx_DataSetValidationLineMessage {
+	margin: 0;
+	display: block;
+}
+/**END validation report **/
+
+/***END workspace ***/
+
+/***START navigation ***/
+#ebx_Navigation {
+}
+#ebx_NavigationHeader,
+#ebx_NavigationSubHeader {
+	position: relative;
+}
+
+#ebx_NavigationHeader h2,
+#ebx_NavigationSubHeader h2,
+#ebx_FloatingNavigationHeaderTitle,
+#ebx_FloatingNavigationSubHeaderTitle {
+	overflow: hidden;
+	white-space: nowrap;
+}
+#ebx_NavigationHeader h2.ebx_ActiveTitle,
+#ebx_NavigationSubHeader h2.ebx_ActiveTitle,
+#ebx_FloatingNavigationHeaderTitle h2.ebx_ActiveTitle,
+#ebx_FloatingNavigationSubHeaderTitle h2.ebx_ActiveTitle {
+	cursor: pointer;
+}
+
+#ebx_NavigationHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_Button,
+#ebx_FloatingNavigationHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_Button {
+	margin-left: 15px;
+	vertical-align: 3px;
+}
+#ebx_NavigationHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_FlatButton,
+#ebx_NavigationSubHeader h2 > .ebx_Button {
+	margin-right: 0;
+}
+#ebx_FloatingNavigationHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_FlatButton,
+#ebx_FloatingNavigationSubHeaderTitle h2 > .ebx_Button {
+	margin-right: 15px;
+}
+
+#ebx_FloatingNavigationHeaderTitle,
+#ebx_FloatingNavigationSubHeaderTitle {
+	/* apply the color (transparent) at the end of the transition */
+	transition: width 0.1s ease, background-color 0.1s step-end;
+	-moz-transition: width 0.1s ease, background-color 0.1s step-end;
+	-webkit-transition: width 0.1s ease, background-color 0.1s step-end;
+}
+#ebx_FloatingNavigationHeaderTitle:hover,
+#ebx_FloatingNavigationSubHeaderTitle:hover {
+	/* apply the color at the start of the transition */
+	transition: width 0.1s ease, background-color 0s step-start;
+	-moz-transition: width 0.1s ease, background-color 0s step-start;
+	-webkit-transition: width 0.1s ease, background-color 0s step-start;
+}
+#ebx_FloatingNavigationHeaderTitle.ebx_WidthNotAnimated,
+#ebx_FloatingNavigationSubHeaderTitle.ebx_WidthNotAnimated {
+	transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+
+#ebx_NavigationHeader h3,
+#ebx_NavigationSubHeader h3 {
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0 15px 10px 15px;
+}
+
+#ebx_NavigationHeader {
+	border-bottom: 1px solid #E0E0E0;/*{table-borderColor}*/
+}
+
+#ebx_NavigationHeaderToolbar,
+#ebx_NavigationSubHeaderToolbar {
+	padding: 0 15px 10px 15px;
+	white-space: nowrap;
+}
+
+#ebx_NavigationSubHeaderToolbar {
+}
+
+#ebx_NavigationSubHeaderToolbar h3.ebx_InstanceMetaData {
+	margin-top: 0.2em;
+	margin-left: 0.3em;
+	margin-bottom: 0;
+	padding-left: 20px;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+}
+
+#ebx_NavigationSubHeaderToolbar .ebx_DataSetValidationInfo {
+	font-size: 0.9em;
+	margin: 0.5em 0.5em 0 0.5em;
+	display: inline-block;
+}
+
+#ebx_NavigationContent {
+}
+
+#ebx_NavigationTree {
+	display: table;
+	width: 100%;
+}
+
+#ebx_NavigationTree .ygtvtable {
+	width: auto;
+	
+	border-radius: 0 2px 2px 0;
+	-moz-border-radius: 0 2px 2px 0;
+}
+#ebx_NavigationTree.ebx_NavigationTreeForDMA .ygtvtable,
+#ebx_NavigationTree.ebx_NavigationTreeForComparison .ygtvtable {
+	width: 100%;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+#ebx_NavigationTree td:first-child {
+	border-left: 12px solid transparent;
+}
+
+#ebx_NavigationTree td.ygtvcontent {
+	padding-right: 16px;/* 16(labelDocButton.width) */
+	color: #606060;/*{clickableText-fontColor}*/
+}
+#ebx_NavigationTree.ebx_NavigationTreeForDMA td.ygtvcontent,
+ebx_NavigationTree.ebx_NavigationTreeForComparison td.ygtvcontent {
+	padding-right: 0;
+}
+
+/** resize bar **/
+/* knob */
+.yui-skin-sam #layout-doc .yui-layout-unit .yui-resize-handle-r .yui-layout-resize-knob,
+.yui-skin-sam #layout-doc .yui-layout-unit .yui-resize-handle-l .yui-layout-resize-knob {
+	background-position: 0 -44px;
+	width: 5px;
+	height: 16px;
+}
+/* dynamic resize bar */
+.yui-skin-sam #layout-doc .yui-resize-proxy .yui-layout-handle-r {
+	border: none;
+}
+.yui-skin-sam .yui-resize .yui-resize-handle {
+	background-color: transparent;
+}
+
+#ebx_NavigationExpandKnob {
+	display: none;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 10px;
+	
+	cursor: pointer;
+}
+#ebx_NavigationExpandKnob.ebx_NavigationExpandKnobDisplayed {
+	display: block;
+}
+
+#ebx_NavigationExpandKnobBG {
+	width: 0;
+	height: 100%;
+	
+	overflow: hidden;
+    
+	transition: width 0.2s ease-out;
+	-moz-transition: width 0.2s ease-out;
+	-webkit-transition: width 0.2s ease-out;
+    
+}
+#ebx_NavigationExpandKnob:hover #ebx_NavigationExpandKnobBG {
+	width: 100%;
+}
+
+#ebx_NavigationExpandKnobBG .ebx_SmallIcon {
+    background-position: 0 -100px;
+    
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+.ebx_NavigationProxyCollapsed {	
+	/* 10px is the width of the knob */
+	background-image: -webkit-linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	background-image: -moz-linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	background-image: -ms-linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	background-image: linear-gradient(left, #FFFFFF 10px, rgba(256, 256, 256, 0) 100%);
+	
+}
+.ebx_NavigationProxyCollapsed .yui-layout-handle-r {
+	right: auto;
+	left: 0;
+}
+.yui-skin-sam .yui-layout .yui-resize-proxy.ebx_NavigationProxyCollapsed .yui-layout-handle-r {
+	width: 10px;
+}
+
+.yui-layout-handle-r .ebx_SmallIcon {
+	display: none;
+}
+.yui-skin-sam .yui-layout .yui-resize-proxy .ebx_SmallIcon {
+	border: 0;
+	position: relative;
+}
+.ebx_NavigationProxyCollapsed .yui-layout-handle-r .ebx_SmallIcon {
+    background-position: 0 -90px;
+    
+	display: inline-block;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+/***END navigation ***/
+
+/***START header ***/
+
+#ebx_Header {
+	height: 40px;
+	overflow: hidden;
+}
+
+#ebx_AppLogo {
+	vertical-align: top;
+}
+
+#ebx_UserBloc {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#ebx_HiddenBody #ebx_UserBloc {
+	display: none;
+}
+
+#ebx_Logout {
+	margin-right: 1px;
+}
+
+#ebx_HideHeader {
+	position: absolute;
+	top: 25px; /* 40(header.height) - 15(height) */
+	left: 50%;
+	margin: 0 0 0 -12px;
+	
+	height: 15px;
+	width: 25px;
+	
+	cursor: pointer;
+	
+	overflow: hidden;
+	
+	opacity: 0;
+    
+	transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-webkit-transition: opacity 0.3s ease;
+}
+#ebx_Header:hover #ebx_HideHeader {
+	opacity: 1;
+}
+
+#ebx_HideHeader .ebx_SmallIcon {
+    background-position: 0 -70px;
+    
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+#ebx_HeaderExpandKnob {
+	display: none;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 10px;
+	
+	cursor: pointer;
+}
+#ebx_HeaderExpandKnob.ebx_HeaderExpandKnobDisplayed {
+	display: block;
+}
+
+#ebx_HeaderExpandKnobBG {
+	width: 100%;
+	height: 0;
+	
+	overflow: hidden;
+    
+	transition: height 0.2s ease-out;
+	-moz-transition: height 0.2s ease-out;
+	-webkit-transition: height 0.2s ease-out;
+}
+#ebx_HeaderExpandKnob:hover #ebx_HeaderExpandKnobBG {
+	height: 100%;
+}
+
+#ebx_HeaderExpandKnobBG .ebx_SmallIcon {
+    background-position: 0 -80px;
+    
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+/***END header ***/
+
+/***START loading layer ***/
+#ebx_LoadingLayer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	text-align: center;
+}
+
+#ebx_LoadingLayerContent {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.ebx_LoadingLayerWithHeader #ebx_LoadingLayerContent {
+	top: 40px;
+}
+
+/*
+#ebx_LoadingLayerContent h1 {
+	display: block;
+	margin: 1em 1em 10px 1em;
+	font-style: italic;
+	
+	padding-bottom: 40px;
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+
+#ebx_LoadingProgressBar {
+	text-align: center;
+}
+#ebx_LoadingProgressBar .yui-pb {
+	display: inline-block;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList {
+	font-size: 1.2em;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList,
+#ebx_LoadingLayer ul.ebx_TaskList ul {
+	list-style: none;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_CurrentTaskCursor,
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_State,
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.Message {
+	float: left;
+	height: 20px;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_CurrentTaskCursor,
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine div.ebx_State {
+	width: 20px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_CurrentTask div.ebx_CurrentTaskCursor {
+	background-image: url(../images/onCommon/ebx_current_loading_task.gif);
+}
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_State_OnStarting div.ebx_State {
+	
+}
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_State_Processing div.ebx_State {
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+}
+#ebx_LoadingLayer ul.ebx_TaskList div.ebx_TaskLine.ebx_State_Done div.ebx_State {
+	background-image: url(../images/onCommon/ebx_loading_task_done.gif);
+}
+*/
+
+/***END loading layer ***/
+
+/***START selector panel ***/
+#ebx_SelectorPanel_c {
+	top: 10px;
+	right: 50%;
+	bottom: 10px;
+	left: 10px;
+}
+
+#ebx_SelectorPanel,
+#ebx_SelectorPanel .bd {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#ebx_SelectorPanel {
+	border: none;
+}
+
+#ebx_SelectorPanel .bd {
+	border: 1px solid #808080;
+	overflow: auto;
+	background-color: #FFFFFF;/*{body-BgColor}*/
+	padding: 0;
+}
+
+#ebx_SelectorPanel .ebx_Knob {
+	top: -10px;
+	left: 5px;
+}
+#ebx_SelectorPanelWaiting {
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	height: 32px;
+	margin-top: 50px;
+}
+
+#ebx_SelectorPanelToolbar {
+	padding: 6px 4px;
+	background-color: #F0F0F0;
+}
+
+#ebx_SelectorPanelTree {
+	padding: 5px;
+	overflow: auto;
+}
+
+#ebx_SelectorPanelTree .ygtvtable {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+#ebx_SelectorPanel .container-close {
+	top: 7px
+}
+/***END selector panel ***/
+
+/***START internal popup ***/
+
+#ebx_InternalPopup_mask {
+	cursor: pointer;
+}
+
+.ebx_InteractivMask:hover {
+	background-color: #404040;
+}
+
+#ebx_InternalPopup_c {
+	padding: 0;
+}
+
+#ebx_InternalPopup {
+	border: 0;
+}
+
+#ebx_InternalPopup .bd {
+	padding: 0;
+	margin: 0;
+	
+	border: none;
+	border-top: 1px solid #E0E0E0;
+}
+
+/***END internal popup ***/
+
+/***START toolbar ***/
+.ebx_Toolbar .ebx_ToolsAlignLeft {
+	float: left;
+}
+.ebx_Toolbar .ebx_ToolsAlignRight {
+	float: right;
+}
+.ebx_Toolbar .ebx_ToolbarSeparator {
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+}
+/***END toolbar ***/
+
+/***START print ***/
+@media print {
+}
+/***END print ***/
+
+/***START browser override ***/
+a:focus,
+button:focus,
+:focus {
+	outline-style: solid;
+	outline-width: 0px;
+}
+span:focus,
+div:focus,
+td:focus,
+fieldset:focus,
+table:focus,
+iframe:focus,
+.yuimenuitem a:focus {
+	outline: none;
+	box-shadow: none;/* defined in MssCssSettings */
+}
+/**START to respect shadow style ***/
+.container-close,
+.link-close,
+.calnavleft,
+.calnavright {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+/**END to respect shadow style ***/
+
+/***END browser override ***/
+
+/***START workflow ***/
+
+/**START Workflow Badge **/
+.ebx_WorkflowBadge {
+	display: inline-block;
+	
+	line-height: 11px;
+	min-width: 5px;
+	min-height: 12px;
+	padding: 0 3px;
+	
+	font-size: 10px;
+	font-weight: bold;
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+#ebx_NavigationTree .ebx_WorkflowBadge {
+	margin-right: 4px;
+	margin-left: 1px;
+	vertical-align: 1px;
+}
+
+.ebx_workflow_deadline {
+	position: relative;
+	display: inline-block;
+	
+	margin-left: -3px;/* ebx_WorkflowBadge.paddingLeft */
+	
+	border-style: solid;
+	border-width: 1px;
+	
+	width: 10px;
+	line-height: 10px;
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+.ebx_Input .ebx_workflow_deadline,
+.tvContainer .ebx_workflow_deadline {
+	margin-left: 0;
+	vertical-align: 1px;
+}
+
+.ebx_workflow_deadline_exclamation,
+.ebx_workflow_deadline_point {
+	position: absolute;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.ebx_workflow_deadline_exclamation {
+	top: 1px;
+	left: 4px;
+	height: 5px;
+	width: 2px;
+}
+.ebx_workflow_deadline_point {
+	top: 7px;
+	left: 4px;
+	height: 2px;
+	width: 2px;
+}
+
+/**END Workflow Badge **/
+
+/***END workflow ***/
+
+/***START noscript ***/
+
+#ebx_Noscript {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10; /* loading layer elevation */
+	
+	background-color: #E0E0E0;
+}
+
+#ebx_NoscriptBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	height: 64px; /* 5(image bottom gap) + 64(image) + 5(image top gap) - 5(padding top) - 5(padding bottom) */
+	margin-top: -37px;
+	width: 300px;
+	margin-left: -150px;
+	
+	background-color: #FFFFFF;
+	background-image: url(../images/onStatus/ebx_fatalError.png);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	
+	padding: 5px 5px 5px 74px;
+	
+	border: 1px solid #000000;
+	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	
+	box-shadow: 0 0 10px #000000;
+	-moz-box-shadow: 0 0 10px #000000;/*
+	filter:progid:DXImageTransform.Microsoft.Glow(color='#808080', Strength='10');*/
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#808080,direction=135);
+}
+
+#ebx_NoscriptMessage {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+#ebx_NoscriptLink {
+	position: absolute;
+	bottom: 5px;
+}
+
+/***END noscript ***/
+
+
+/***START Login page ***/
+.ebx_LoginPage h2 {
+	font-size: 2em;
+}
+.ebx_LoginPage .ebx_Form input[type="text"],
+.ebx_LoginPage .ebx_Form input[type="password"] {
+	width: 200px;
+}
+
+.ebx_LoginPage table td p {
+	margin: 20px 5px;
+}
+
+.ebx_LoginPage .ebx_CompactBlock fieldset {
+	display: inline-block;
+	margin-top: 30px;
+	padding: 0 5px;
+	font-weight: bold;
+}
+
+.ebx_LoginPage .ebx_CompactBlock fieldset fieldset {
+	padding: 0 5px;
+	margin-bottom: 5px;
+}
+
+/***END Login page ***/
+
+/***START others ***/
+.ebx_Hidden {
+	visibility: hidden;
+}
+
+.ebx_LineFloatElementsMaintainer {
+	clear: both;
+	display: block;
+}
+.ebx_ScrollingPane {
+	overflow: auto;
+}
+/***END others ***/
+
+.ebx_Knob {
+	background-position: 0 -29px;
+	background-repeat: no-repeat;
+	height: 11px;
+	width: 20px;
+	position: absolute;
+}
+
+#ebx_contextualMenu {
+	border-color: #C0C0C0;
+}
+
+#ebx_contextualMenu .bd {
+	padding: 2px;
+	background-color: #FFFFFF;
+	border-color: #C0C0C0;
+}

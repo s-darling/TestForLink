@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	
+	Copyright © Orchestra Networks 2000-2009. All rights reserved. 
+	
+	******************************************************************************
+	EBX5 schema for Simple Workflow.
+	This schema is not meant for modifications.
+	******************************************************************************
+	
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebxbnd="urn:ebx-schemas:binding_1.0" xmlns:fmt="urn:ebx-schemas:format_1.0" xmlns:osd="urn:ebx-schemas:common_1.0">
+	<xs:import namespace="urn:ebx-schemas:common_1.0" schemaLocation="../common_1.0.xsd" />
+	<xs:include schemaLocation="./workflow_types_1.1.xsd" />
+	<xs:annotation>
+		<xs:appinfo>
+			<!-- schema - java binding  -->
+			<ebxbnd:binding targetDirectory="../_ebx/src/">
+				<javaPathConstants typeName="com.orchestranetworks.workflow.impl.execution.WfiPaths">
+					<nodes prefix="" root="/root/" />
+				</javaPathConstants>
+			</ebxbnd:binding>
+			<!-- schema extension -->
+			<osd:extensions class="com.orchestranetworks.workflow.impl.execution.WfiExecutionModelExtension" />
+			<osd:resourceBundle source="com.orchestranetworks.i18n.xsdSchema.workflow_execution" />
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="root" osd:access="--">
+		<xs:annotation>
+			<xs:documentation osd:id="element.root" />
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="execution">
+					<xs:annotation>
+						<xs:documentation osd:id="element.root.execution" />
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="process" type="ProcessExecution" />
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="token" type="Token" />
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="workItem" type="WorkItem" />
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="waitingProcessInstance" type="WaitingProcessInstance" />
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="history" type="History" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="processPublished" type="ProcessDefinitionPublished">
+					<xs:annotation>
+						<xs:documentation osd:id="element.root.processPublished" />
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="technicalConfiguration" type="TechnicalConfiguration">
+					<xs:annotation>
+						<xs:documentation osd:id="element.root.technicalConfiguration" />
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TerminateAndCleanProcessInstance">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/process{+}" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionTechnicalOperation" resourcePath="/wfserviceDispatcher?command=terminateAndCleanProcessInstance">
+					<serviceName>terminateAndCleanProcessInstance</serviceName>
+					<authorizedOnTable>true</authorizedOnTable>
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.TerminateAndCleanProcessInstance" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="TerminateProcessInstance">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/process{1}" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionTechnicalOperation" resourcePath="/wfserviceDispatcher?command=terminateProcessInstance">
+					<serviceName>terminateProcessInstance</serviceName>
+					<authorizedOnTable>true</authorizedOnTable>
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.TerminateProcessInstance" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="RestartToken">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/token{1}" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionTechnicalOperation" resourcePath="/wfserviceDispatcher?command=restartToken">
+					<serviceName>restartToken</serviceName>
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.RestartToken" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="Unpublish">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/processPublished{1}" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionTechnicalOperation" resourcePath="/wfserviceDispatcher?command=unpublish">
+					<serviceName>unpublish</serviceName>
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.Unpublish" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="CleanHistoryFromDate">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/history" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionCleanAWorkflowTable" resourcePath="/wfserviceDispatcher?command=cleanHistoryFromDate">
+					<osd:confirmation disable="true" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CleanHistoryFromDate" />
+		</xs:annotation>
+	</xs:complexType>
+	<!-- xs:complexType name="CleanHistoryFromProcessInstance">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/history" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionCleanAWorkflowTable" resourcePath="/wfserviceDispatcher?command=cleanHistoryFromProcessInstance">
+					<osd:confirmation disable="true" />
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CleanHistoryFromProcessInstance" />
+		</xs:annotation>
+	</xs:complexType-->
+	<xs:complexType name="CleanWaitingProcessInstances">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/waitingProcessInstance" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionCleanAWorkflowTable"  resourcePath="/wfserviceDispatcher?command=cleanWaitingProcessInstances"/>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.CleanWaitingProcessInstances" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="reallocateWorkItem">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/workItem{1}" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionTechnicalOperation" resourcePath="/wfserviceDispatcher?command=reallocateWorkItem">
+					<serviceName>reallocateWorkItem</serviceName>
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.reallocateWorkItem" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="deallocateWorkItem">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service activatedForPaths="/root/execution/workItem{1}" class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionTechnicalOperation" resourcePath="/wfserviceDispatcher?command=deallocateWorkItem">
+					<serviceName>deallocateWorkItem</serviceName>
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.deallocateWorkItem" />
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="CleanWFexecutionsTables">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:service class="com.orchestranetworks.workflow.impl.execution.permissions.WfPermissionCleanWFTables"  resourcePath="/wfserviceDispatcher?command=cleanWFExecutionTables">
+				</osd:service>
+			</xs:appinfo>
+			<xs:documentation osd:id="complexType.cleanWFexecutionsTables" />
+		</xs:annotation>
+	</xs:complexType>
+	
+		<!--
+		******************************************************************************
+		UI Ajax components
+		******************************************************************************
+	-->
+	
+	<xs:complexType name="WfAjaxComponentCleanHistory">
+		<xs:annotation>
+			<xs:appinfo>
+				<osd:ajaxComponent class="com.orchestranetworks.workflow.impl.execution.ui.WfAjaxComponentCleanHistory" />
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	
+</xs:schema>
+

@@ -1,0 +1,327 @@
+
+legend {
+    padding: 0;
+    margin-left: -5px;
+}
+
+button.ebx_Button,
+button.ebx_FlatButtonNoBorder,
+button.ebx_FlatButton {
+	padding: 0 11px 1px 11px; /* don't know why... */
+	line-height: 22px;
+	width: auto;
+	overflow: visible;
+}
+a.ebx_Button,
+a.ebx_FlatButtonNoBorder,
+a.ebx_FlatButton {
+	height: 20px;
+}
+
+.ebx_ButtonGroup {
+	display: inline;
+}
+
+button.ebx_IconButton {
+	width: 26px;
+}
+.ebx_Field .ebx_Input .ebx_IconButton,
+.yui-dt .ebx_IconButton {
+	height: 20px;
+	width: 20px;
+}
+button.ebx_IconButtonSmall {
+	width: 16px;
+}
+
+
+/* Mantis #4387 */
+.ebx_Field .ebx_Input .ebx_IconButton {
+	vertical-align: 1px;
+}
+
+a.ebx_IconButton {
+	width: 20px;
+}
+.ebx_Field .ebx_Input a.ebx_IconButton,
+.yui-dt a.ebx_IconButton {
+	height: 14px;
+	width: 14px;
+}
+a.ebx_IconButtonSmall {
+	height: 10px;
+	width: 10px;
+}
+
+.ebx_IconButtonSmall .ebx_SmallIcon,
+.ebx_IconButtonSmall .ebx_MenuButtonArrow {
+	vertical-align: 10px; /* don't know why... */
+}
+
+button.ebx_IconButtonSmall .ebx_SmallIcon {
+	margin-top: -1px;
+	margin-left: -1px;
+}
+
+a.ebx_TextAndIconLeftButton .ebx_Icon,
+a.ebx_TextAndIconRightButton .ebx_Icon {
+	margin-top: -1px;
+}
+
+
+.ebx_SelectButtonItemLabel .ebx_SmallIcon {
+	margin-bottom: -2px;
+}
+
+#ebx_SwitchButtonMenu>.ebx_MenuButtonArrow {
+	margin: 0 2px 4px 2px;
+}
+
+#ebx_NavigationTree td.ygtvcontent {
+	padding-right: 0;
+}
+
+.ebx_HiddenDefaultSubmitButton {
+	width: 10px;
+}
+
+.ebx_Field div.ebx_FieldIcon,
+.ebx_Field div.ebx_Label,
+.ebx_Field div.ebx_Input,
+.ebx_OverwrittenValue,
+.ebx_InputFieldWrapper,
+.ebx_ComplexFields,
+.ebx_CollapsibleBlock,
+.ebx_Inherited .ebx_InheritedValue,
+.ebx_Nil .ebx_OverwrittenNull,
+.ebx_CheckboxGroup,
+.ebx_RadioButtonGroup,
+.ebx_FieldDecorator {
+	display: inline;
+}
+.ebx_Field td.ebx_Label,
+.ebx_Field td.ebx_Input,
+.ebx_OccurrenceList li {
+	white-space: nowrap;
+}
+
+/* scroll widget is not supported */
+#ebx_WorkspaceFormTree #ebx_WorkspaceFormTabviewTabs {
+	white-space: normal;
+}
+
+#ebx_RootTab .ebx_Icon {
+	display: block;
+}
+
+.ebx_Now .ebx_Icon {
+	padding-top: 0px;
+	text-indent: 0px;
+	vertical-align: 1px;
+}
+
+#ebx_WorkspaceContent form .ebx_Field .ebx_Input .ebx_OccurrenceList .ebx_OccurrenceEditorContent {
+	display: inline;
+}
+.ebx_Field .ebx_Input .ebx_OccurrenceList {
+	list-style-position: inside;
+}
+
+.ebx_CheckboxGroup table,
+.ebx_RadioButtonGroup table {
+    width: 0;
+}
+
+.ebx_ProductInfo {
+	width: 100%;
+	padding-top: 1em;
+}
+#ebx_WorkspaceFormFooter .ebx_ProductInfo {
+	clear: both;
+	padding-top: 0.5em;
+	margin-bottom: -0.5em;
+}
+
+.ebx_CompactBlock {
+	display: inline;
+}
+
+.ebx_ComplexFields tr.ebx_Field td.ebx_Input {
+	width: auto;
+}
+
+.yui-skin-sam .ebx_InvisibleMask,
+.ebx_PageMask,
+#ebx_InputTextWizardMask,
+#ebx_Form_CalendarMask,
+#ebx_ColorPickerMask {
+	background-image: url(../../images/onCommon/ebx_spacer.gif);
+}
+
+.ebx_inputTextWizards {
+	width: 350px; /* originally min-width */
+}
+
+.ebx_SearchField {
+	display: inline;
+}
+.ebx_SearchField .ebx_SearchFieldInput {
+	height: 14px;
+}
+.ebx_SearchField .ebx_SearchFieldButton {
+	vertical-align: 0px;
+}
+.ebx_ComplexFieldsCollapsed > table > tbody > tr.ebx_ComplexFirstField {
+	display: block;
+}
+
+#ebx_SubSessioniFrameContainer {
+	position: static;
+	height: 100%;
+}
+#ebx_SubSessioniFrameContainer.ebx_SubSessioniFrameReplacingWorkspace {
+	height: 98%;
+	margin-bottom: 0;
+}
+
+#EBX_NodeDocumentation_Panel {
+	overflow: visible;
+}
+
+.ebx_SeverityFilter input {
+	float: none;
+}
+.ebx_SeverityFilter label {
+	display: inline;
+	padding-left: 20px;
+	background-position: 0 50%;
+}
+
+.ebx_ComparatorTable .ebx_DataType {
+	display: inline;
+}
+
+.ebx_HistoryFlag {
+	display: inline;
+}
+
+.ebx_CheckboxReadOnly {
+	display: inline;
+}
+
+
+/***START table ***/
+.yui-dt-hd .yui-dt-col-ebx_cellSelect .yui-dt-liner {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+
+/**START table filters **/
+
+.ebx_FilterBlock form {
+	margin: 0;
+}
+
+.ebx_FilterBlockTitle {
+	height: 25px;
+}
+
+.ebx_FilterBlockFooterContainer {
+	height: 30px;
+}
+.ebx_FilterBlockFooterContainer .ebx_LineFloatElementsMaintainer {
+	display: none;
+}
+
+.ebx_SearchFilter .ebx_Criteria input {
+	width: 200px;
+}
+
+/**END table filters **/
+
+/***END table ***/
+
+/***START Permalink ***/
+
+#ebx_PermalinkInputLink {
+	vertical-align: 3px;
+}
+
+#ebx_PermalinkParametersBlock {
+	width: 500px;
+}
+
+#ebx_PermalinkParametersBody .ebx_Knob {
+	top: 83px;
+}
+/***END Permalink ***/
+
+/***START Incremental Search Selector ***/
+
+.ebx_ISS_Container {
+    display: inline;
+}
+
+.ebx_ISS_Container button.ebx_IconButton {
+    vertical-align: 0;
+}
+
+.ebx_ISS_Item_WithPreview {
+    display: inline;
+}
+#ebx_ISS_OriginalLabel.ebx_Selected .ebx_Open,
+#ebx_ISS_Results .ebx_Selected .ebx_Open {
+    overflow: hidden;
+}
+#ebx_ISS_OriginalLabel.ebx_Selected .ebx_Open .ebx_Icon,
+#ebx_ISS_Results .ebx_Selected .ebx_Open .ebx_Icon {
+    vertical-align: 4px; /* don't know why... */
+}
+
+/***END Incremental Search Selector ***/
+
+
+#ebx_Menu,
+#ebx_Menu li {
+	display: inline;
+}
+
+.ebx_MenuLabel .ebx_WorkflowBadge {
+	padding-bottom: 3px;
+}
+
+#ebx_UserBloc .ebx_FlatButtonNoBorder {
+	border: 0;
+	padding-top: 8px;
+}
+#ebx_UserBloc .ebx_FlatButtonNoBorder.ebx_IconButton {
+	padding: 0;
+}
+#ebx_UserBloc #ebx_Logout .ebx_Icon {
+	margin: 12px;
+}
+
+#ebx_HideHeader {
+	visibility: hidden;
+}
+#ebx_Header:hover #ebx_HideHeader {
+	visibility: visible;
+}
+
+#ebx_NavigationExpandKnob {
+	height: 100%;
+}
+
+#ebx_NavigationExpandKnobBG .ebx_SmallIcon {
+	display: none;
+}
+#ebx_NavigationExpandKnob:hover #ebx_NavigationExpandKnobBG .ebx_SmallIcon {
+	display: block;
+}
+
+.ebx_WorkflowBadge {
+	border-style: solid;
+	border-width: 1px;
+}
+

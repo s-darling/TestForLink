@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - D3 administration</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="d3_admin" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/d3_admin.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</span></div>
+<h1>
+D3 administration</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#configuration">Configuring D3 nodes</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Runtime configuration of master or hub nodes through the user interface</a></li><li class="toc2"><a href="#technicalD3Config">Configuring master, hub and slave nodes</a></li><li class="toc2"><a href="#networksD3Config">Configuring the network protocol of a node</a></li><li class="toc2"><a href="#D3ServicesOnMaster">Services on master nodes</a></li><li class="toc2"><a href="#D3ServicesOnSlave">Services on slave nodes</a></li></ul>
+</li><li class="toc1"><a href="#d3supervision">Supervision</a><ul class="toc2">
+<li class="toc2"><a href="#console">Master node management console</a></li><li class="toc2"><a href="#id2s2">Master node supervision services</a></li><li class="toc2"><a href="#slaveMonitoring">Slave monitoring through the Java API</a></li><li class="toc2"><a href="#id2s4">Log supervision</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="configuration"></a>Configuring D3 nodes</h2>
+<h3>
+<a name="id1s1"></a>Runtime configuration of master or hub nodes through the user interface</h3>
+<p>The declaration of delivery data spaces and delivery profiles is done by selecting the &#39;[D3] Master configuration&#39; feature from the Administration area, where you will find the following tables:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delivery data spaces</p></td><td class="ebx_definitionListDefinition"><p>Declarations of the data spaces that can be broadcast.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delivery profiles</p></td><td class="ebx_definitionListDefinition"><p>Profiles to which slaves nodes can subscribe. The delivery mode must be defined for each delivery profile.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delivery mapping</p></td><td class="ebx_definitionListDefinition"><p>The association between delivery data spaces and delivery profiles.</p></td></tr>
+</table>
+<h3>
+<a name="technicalD3Config"></a>Configuring master, hub and slave nodes</h3>
+<p>This section details how to configure a node in its EBX5 main configuration file.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/properties.html#overview">Overview of the EBX5 main configuration file</a></p></div>
+<h4>
+Master</h4>
+<p>In order to act as a <em>master</em> node, an instance of EBX5 must declare the following property in its main configuration file.</p><p>Sample configuration for <code>ebx.d3.mode=master</code> node:</p><pre class="ebx_example brush: xml">
+##################################################################
+## D3 configuration
+##################################################################
+##################################################################
+# Configuration for both master and slave
+##################################################################
+# Optional property.
+# Possibles values are single, master, hub, slave
+# Default is single meaning the server will be a standalone instance.
+ebx.d3.mode=master</pre>
+<h4>
+Hub</h4>
+<p>In order to act as a <em>hub</em> node (combination of master and slave configurations), an instance of EBX5 must declare the following property in its main configuration file.</p><p>Sample configuration for <code>ebx.d3.mode=hub</code> node:</p><pre class="ebx_example brush: xml">
+##################################################################
+## D3 configuration
+##################################################################
+##################################################################
+# Configuration for both master and slave
+##################################################################
+# Optional property.
+# Possibles values are single, master, hub, slave
+# Default is single meaning the server will be a standalone instance.
+ebx.d3.mode=hub
+
+##################################################################
+# Configuration dedicated to hub or slave
+##################################################################
+# Profiles to subscribe to
+# Mandatory property if ebx.d3.mode=hub or ebx.d3.mode=slave
+ebx.d3.delivery.profiles=
+
+# User and password to be used to communicate with the master. 
+# Mandatory properties if ebx.d3.mode=hub or ebx.d3.mode=slave
+ebx.d3.master.username=
+ebx.d3.master.password=
+
+# User and password to be used by the master to communicate with the hub or slave. 
+# Mandatory property if ebx.d3.mode=hub or ebx.d3.mode=slave
+ebx.d3.slave.username=
+ebx.d3.slave.password=</pre>
+<h4>
+Slave</h4>
+<p>In order to act as a <em>slave</em> node, an instance of EBX5 must declare the following property in its main configuration file.</p><p>Sample configuration for <code>ebx.d3.mode=slave</code> node:</p><pre class="ebx_example brush: xml">
+##################################################################
+## D3 configuration
+##################################################################
+##################################################################
+# Configuration for both master and slave
+##################################################################
+# Optional property.
+# Possibles values are single, master, hub, slave
+# Default is single meaning the server will be a standalone instance.
+ebx.d3.mode=slave
+
+##################################################################
+# Configuration dedicated to hub or slave
+##################################################################
+# Profiles to subscribe to
+# Mandatory property if ebx.d3.mode=hub or ebx.d3.mode=slave
+ebx.d3.delivery.profiles=
+
+# User and password to be used to communicate with the master. 
+# Mandatory properties if ebx.d3.mode=hub or ebx.d3.mode=slave
+ebx.d3.master.username=
+ebx.d3.master.password=
+
+# User and password to be used by the master to communicate with the hub or slave. 
+# Mandatory property if ebx.d3.mode=hub or ebx.d3.mode=slave
+ebx.d3.slave.username=
+ebx.d3.slave.password=</pre>
+<h3>
+<a name="networksD3Config"></a>Configuring the network protocol of a node</h3>
+<p>This section details how to configure the network protocol of a node in its EBX5 main configuration file.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/properties.html#overview">Overview of the EBX5 main configuration file</a></p></div>
+<h4>
+HTTP and socket TCP protocols</h4>
+<p>Sample configuration for <code>ebx.d3.mode=hub</code> or <code>ebx.d3.mode=slave</code> node with HTTP network protocol:</p><pre class="ebx_example brush: xml">
+##################################################################
+# HTTP and TCP socket configuration for D3 slaves
+##################################################################
+# URL to access the data services connector of the master 
+# Mandatory property if ebx.d3.mode=hub or ebx.d3.mode=slave and JMS for D3 is not activated.
+# This property will be ignored if JMS for D3 is activated.
+# The URL must follow this pattern: http://[master_host]:[master_port]/ebx-dataservices/connector
+ebx.d3.master.url=
+
+# URL to access the data services connector of the slave 
+# Mandatory property if ebx.d3.mode=hub or ebx.d3.mode=slave and JMS for D3 is not activated.
+# This property will be ignored if JMS for D3 is activated.
+# The URL must follow this pattern: http://[slave_host]:[slave_port]/ebx-dataservices/connector
+ebx.d3.slave.url=
+
+# Minimum port to use to transfer archives on TCP mode.
+# Must be a positive integer above zero and below 65535.
+# If not set, a random port will be used.
+#ebx.d3.slave.socket.range.min=
+
+# Max port to use on TCP mode to transfer archives.
+# Must be a positive integer above ebx.d3.slave.socket.range.min and below 65535.
+# Mandatory if ebx.d3.slave.socket.range.min is set.
+#ebx.d3.slave.socket.range.max=</pre>
+<h4>
+JMS protocol</h4>
+<p>If JMS is activated, the following properties can be defined in order to enable JMS functionalities for a D3 node.</p><p>Sample configuration for all D3 nodes with JMS network protocol:</p><pre class="ebx_example brush: xml">
+##################################################################
+## JMS configuration for D3
+##################################################################
+# Taken into account only if Data Services JMS is configured properly
+##################################################################
+# Configuration for master, hub and slave
+##################################################################
+# Default is false, activate JMS for D3
+## If activated, the deployer must ensure that the entry 'jms/EBX_D3ReplyQueue'
+## are bound in the operational environment of the application server.
+ebx.jms.d3.activate=false
+
+# Change default timeout when use reply queue, default is 10000 milliseconds
+#ebx.jms.d3.reply.timeout=10000</pre>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/deploy_on_j2ee.html#jms_d3">JMS for distributed data delivery (D3)</a></p></div>
+<h3>
+<a name="D3ServicesOnMaster"></a>Services on master nodes</h3>
+<p>Services to manage a master node are available in the Administration area of the slave node under &#39;[D3] Master configuration&#39; and also on the tables &#39;Delivery data spaces&#39; and &#39;Registered slaves&#39;. The services are as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Relaunch replays</p></td><td class="ebx_definitionListDefinition"><p>Immediately relaunch all replays for waiting federation deliveries.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Delete data space</p></td><td class="ebx_definitionListDefinition"><p>Delete the delivery branch on registered slaves and remove it from the configuration of the D3 master.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Launch slave subscription</p></td><td class="ebx_definitionListDefinition"><p>Send a request to the selected slaves to subscribe them.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Deactivate slaves</p></td><td class="ebx_definitionListDefinition"><p>Remove the selected slaves from the broadcast scope and switch their states to &#39;Unavailable&#39;.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Unregister slaves</p></td><td class="ebx_definitionListDefinition"><p>Completely remove the selected slaves from the master.</p></td></tr>
+</table>
+<h3>
+<a name="D3ServicesOnSlave"></a>Services on slave nodes</h3>
+<p>Services to manage a slave node&#39;s subscription to the master node are available in the Administration area of the slave node under &#39;[D3] Slave configuration&#39;, in the navigation pane. The services are as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Register slave</p></td><td class="ebx_definitionListDefinition"><p>Re-subscribes the slave to the master if it has been unregistered.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Unregister slave</p></td><td class="ebx_definitionListDefinition"><p>Disconnects the slave from the master.</p></td></tr>
+</table>
+<h2>
+<a name="d3supervision"></a>Supervision</h2>
+<h3>
+<a name="console"></a>Master node management console</h3>
+<p>Several tables compose the management console for the master node, located in the Administration area of the master node, under &#39;[D3] Master configuration&#39;. They are as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Registered slaves</p></td><td class="ebx_definitionListDefinition"><p>Slaves registered with the master node. From this table, several services are available on each record.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Broadcast history</p></td><td class="ebx_definitionListDefinition"><p>History of broadcast operations that have taken place.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Slave registration log</p></td><td class="ebx_definitionListDefinition"><p>History of initialization operations that have taken place.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Detailed history</p></td><td class="ebx_definitionListDefinition"><p>History of archive deliveries that have taken place. The list of associated delivery archives can be accessed from the tables &#39;Broadcast history&#39; and &#39;Initialization history&#39; using selection nodes.</p></td></tr>
+</table>
+<h3>
+<a name="id2s2"></a>Master node supervision services</h3>
+<p>Available in the administration area of the master node under &#39;[D3] Master configuration&#39;. The services are as follows:</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Display and refresh state of slaves</p></td><td class="ebx_definitionListDefinition"><p>Lists the slaves and related information, such as the slave&#39;s state, associated delivery profiles, and delivered snapshots.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Clear history content</p></td><td class="ebx_definitionListDefinition"><p>Deletes all records in all history tables, such as &#39;Broadcast history&#39;, &#39;Slave registration log&#39; and &#39;Detailed history&#39;.</p></td></tr>
+</table>
+<h3>
+<a name="slaveMonitoring"></a>Slave monitoring through the Java API</h3>
+<p>A slave monitoring class can be created to implement actions that are triggered when the slave&#39;s status switches to either &#39;Available&#39; or &#39;Unavailable&#39;. To do so, it must implement the interface <code>NodeMonitoring</code>. This class must be outside of any EBX5 module and accessible from the class-loader of &#39;ebx.jar&#39; and its full class name must be specified under &#39;[D3] Slave configuration&#39;.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_blank" href="../Java_API/com/orchestranetworks/d3/NodeMonitoring.html">NodeMonitoring</a></p></div>
+<h3>
+<a name="id2s4"></a>Log supervision</h3>
+<p> The technical supervision can be done through the log category &#39;ebx.d3&#39;, declared in the EBX5 main configuration file. For example:</p><p><code>ebx.log4j.category.log.d3= INFO, Console, ebxFile:d3</code></p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../installation/properties.html#ebxLog">Configuring the EBX5 logs</a></p></div>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

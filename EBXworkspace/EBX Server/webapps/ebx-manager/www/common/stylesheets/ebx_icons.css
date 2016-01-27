@@ -1,0 +1,938 @@
+
+/***START public button icons ***/
+.ebx_Add .ebx_Icon {
+	background-position: 0 -80px;
+}
+.ebx_Calendar .ebx_Icon {
+	background-position: 0 -160px;
+}
+.ebx_Delete .ebx_Icon {
+	background-position: 0 -592px;
+}
+.ebx_Empty .ebx_Icon {
+	background-position: 0 -144px;
+}
+.ebx_Trashcan .ebx_Icon {
+	background-position: 0 -208px;
+}
+
+.ebx_IconError,
+.ebx_IconWarning,
+.ebx_IconInfo,
+.ebx_IconAttribute,
+.ebx_IconPrimaryKey,
+.ebx_IconForeignKey,
+.ebx_IconPrimaryForeignKey,
+.ebx_IconGroup,
+.ebx_IconAnimWait {
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 21px; /* 16 + 5(a little margin for text) */
+	min-height: 16px;
+	line-height: 16px;
+}
+.ebx_IconAnimWaitBig {
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+.ebx_IconAnimWait {
+	background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+}
+.ebx_IconAnimWaitBig {
+	background-image: url(../images/onCommon/ebx_anim_wait_transparent.gif);
+}
+/***END public button icons ***/
+
+.ebx_Icon,
+.ebx_SmallIcon,
+.ebx_BigIcon {
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+.ebx_Icon {
+	height: 16px;
+	width: 16px;
+	vertical-align: -4px; /* 12(line-height) - 16(icon height) */
+}
+.ebx_SmallIcon {
+	height: 10px;
+	width: 10px;
+}
+.ebx_BigIcon {
+	height: 32px;
+	width: 32px;
+}
+
+.ebx_MenuButtonIcon .ebx_Icon {
+	background-position: 0 -16px;
+}
+
+.ebx_SearchButton .ebx_Icon {
+	background-position: 0 -96px;
+}
+.ebx_FilterButtonShowMatches .ebx_SmallIcon {
+	background-position: 0 -190px;
+}
+
+.ebx_SeeMore .ebx_Icon {
+	background-position: 0 -608px;
+}
+#ebx_ISS_HasNext {
+    background-position: center -609px;
+}
+
+.ebx_LabelDocButton .ebx_SmallIcon,
+.ebx_LabelDocButtonTooltip .ebx_SmallIcon {
+	background-position: 0 -10px;
+}
+#ebx_FlyingHelp .ebx_Icon {
+	background-position: 0 -624px;
+}
+.ebx_dcpPermalink .ebx_SmallIcon {
+	background-position: 0 -20px;
+}
+
+
+#ebx_TitleBreadcrumbScrollLeft .ebx_SmallIcon {
+	background-position: 0 -170px;
+}
+#ebx_TitleBreadcrumbScrollRight .ebx_SmallIcon {
+	background-position: 0 -180px;
+}
+
+#ebx_DisplayMessageBox .ebx_Icon,
+#ebx_MessageBoxTitle .ebx_Icon {
+	background-position: 0 -640px;
+}
+
+/***START User actions ***/
+.ebx_Logout .ebx_Icon {
+	background-position: 0 -48px;
+}
+
+.ebx_Close .ebx_Icon {
+	background-position: 0 -64px;
+}
+
+#ebx_Help .ebx_Icon,
+#ebx_ContextualDoc .ebx_Icon,
+.ebx_Help .ebx_Icon {
+	background-position: 0 -32px;
+}
+
+/***END User actions ***/
+
+/***START Permalink ***/
+#ebx_PermalinkCopyToClipboard .ebx_Icon {
+	background-image: url(../images/onIcons/ebx_copyToClipboard.png);
+}
+
+#ebx_PermalinkSendFromEmailClient .ebx_Icon {
+	background-position: 0 -256px;
+}
+
+#ebx_PermalinkParameters .ebx_Icon {
+	background-position: 0 -272px;
+}
+/***END Permalink ***/
+
+/***START Instance metadata ***/
+h3.ebx_InstanceMetaDataInfo {
+	background-image: url(../images/onIcons/ebx_information.png);
+}
+
+h3.ebx_InstanceMetaDataPerms {
+	background-image: url(../images/onIcons/ebx_permission.png);
+}
+/***END Instance metadata ***/
+
+/***START Paging ***/
+.ebx_PagingFirst .ebx_Icon {
+	background-position: 0 -688px;
+}
+.ebx_PagingPrevious .ebx_Icon {
+	background-position: 0 -112px;
+}
+.ebx_PagingNext .ebx_Icon {
+	background-position: 0 -128px;
+}
+.ebx_PagingLast .ebx_Icon {
+	background-position: 0 -704px;
+}
+.ebx_PagingFirstSmall .ebx_SmallIcon {
+	background-position: 0 -130px;
+}
+.ebx_PagingPreviousSmall .ebx_SmallIcon {
+	background-position: 0 -140px;
+}
+.ebx_PagingNextSmall .ebx_SmallIcon {
+	background-position: 0 -150px;
+}
+.ebx_PagingLastSmall .ebx_SmallIcon {
+	background-position: 0 -160px;
+}
+
+/***END Paging ***/
+
+/***START Table Actions ***/
+.ebx_AddTableRow .ebx_Icon {
+	background-position: 0 -80px;
+}
+
+.ebx_SortFlagAsc .ebx_SmallIcon {
+	background-position: 0 -110px;
+}
+.ebx_SortFlagDesc .ebx_SmallIcon {
+	background-position: 0 -120px;
+}
+
+.ebx_MoveUp .ebx_Icon {
+	background-position: 0 -800px;
+}
+.ebx_MoveDown .ebx_Icon {
+	background-position: 0 -816px;
+}
+
+.ebx_MoveLeft .ebx_Icon,
+.ebx_MoveAbove .ebx_Icon {
+	background-position: 0 -832px;
+}
+.ebx_MoveRight .ebx_Icon {
+	background-position: 0 -848px;
+}
+
+.ebx_MoveAllLeft .ebx_Icon {
+	background-position: 0 -864px;
+}
+.ebx_MoveAllRight .ebx_Icon {
+	background-position: 0 -880px;
+}
+
+.ebx_RemoveItem .ebx_Icon {
+	background-position: 0 -896px;
+}
+.ebx_RemoveAllItems .ebx_Icon {
+	background-position: 0 -912px;
+}
+
+.ebx_MoveTop .ebx_Icon {
+	background-position: 0 -928px;
+}
+.ebx_MoveBottom .ebx_Icon {
+	background-position: 0 -944px;
+}
+
+/***END Table Actions ***/
+
+/***START label flags severity ***/
+.ebx_FlagError/*,
+.ebx_ComplexField_error > .ebx_Label*/  {
+	background-image: url(../images/onIcons/ebx_error_icon_layer.png);
+}
+.ebx_FlagWarning/*,
+.ebx_ComplexField_warn > .ebx_Label*/ {
+	background-image: url(../images/onIcons/ebx_warning_icon_layer.png);
+}
+.ebx_FlagInfo/*,
+.ebx_ComplexField_info > .ebx_Label*/ {
+	background-image: url(../images/onIcons/ebx_info_icon_layer.png);
+}
+/***END label flags severity ***/
+
+/***START expand collapse ***/
+
+
+.ygtvtp a.ygtvspacer,
+.ygtvlp a.ygtvspacer,
+.ebx_Expand .ebx_SmallIcon {
+	background-position: 0 -30px;
+}
+.ygtvtph a.ygtvspacer,
+.ygtvtphh a.ygtvspacer,
+.ygtvlph a.ygtvspacer,
+.ygtvlphh a.ygtvspacer,
+.ebx_Expand:hover .ebx_SmallIcon {
+	background-position: 0 -40px;
+}
+.ygtvtm a.ygtvspacer,
+.ygtvlm a.ygtvspacer,
+.ebx_Collapse .ebx_SmallIcon {
+	background-position: 0 -50px;
+}
+.ygtvtmh a.ygtvspacer,
+.ygtvtmhh a.ygtvspacer,
+.ygtvlmh a.ygtvspacer,
+.ygtvlmhh a.ygtvspacer,
+.ebx_Collapse:hover .ebx_SmallIcon {
+	background-position: 0 -60px;
+}
+
+/***END expand collapse ***/
+
+/***START data types ***/
+table.ebx_TreeNodeWithIcon.ebx_Domain tr td.ygtvcontent,
+table.ebx_TreeNodeWithIcon.ebx_Group tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_Group,
+.ebx_NamedTypesPreview .ebx_Domain {
+	background-image: url(../images/onIcons/ebx_group.png);
+}
+.ebx_ComparatorTable .ebx_Domain_error {
+	background-image: url(../images/onIcons/ebx_group_error.png);
+}
+.ebx_ComparatorTable .ebx_Domain_warn {
+	background-image: url(../images/onIcons/ebx_group_warn.png);
+}
+.ebx_ComparatorTable .ebx_Domain_info {
+	background-image: url(../images/onIcons/ebx_group_info.png);
+}
+.ebx_ComparatorTable .ebx_Domain {
+	background-image: url(../images/onIcons/ebx_groupGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_Table tr td.ygtvcontent,
+.ebx_ComparatorTable .ebx_Table,
+.ebx_NamedTypesPreview .ebx_Table {
+	background-image: url(../images/onIcons/ebx_table.png);
+}
+.ebx_ComparatorTable .ebx_Table_error {
+	background-image: url(../images/onIcons/ebx_table_error.png);
+}
+.ebx_ComparatorTable .ebx_Table_warn {
+	background-image: url(../images/onIcons/ebx_table_warn.png);
+}
+.ebx_ComparatorTable .ebx_Table_info {
+	background-image: url(../images/onIcons/ebx_table_info.png);
+}
+
+.ebx_ComparatorTable .ebx_attribute_error {
+	background-image: url(../images/onIcons/ebx_attribute_error.png);
+}
+.ebx_ComparatorTable .ebx_attribute_warn {
+	background-image: url(../images/onIcons/ebx_attribute_warn.png);
+}
+.ebx_ComparatorTable .ebx_attribute_info {
+	background-image: url(../images/onIcons/ebx_attribute_info.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_attribute tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_attribute {
+	background-image: url(../images/onIcons/ebx_attribute.png);
+}
+.ebx_ComparatorTable .ebx_attribute {
+	background-image: url(../images/onIcons/ebx_attributeGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_primary_key tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_primary_key {
+	background-image: url(../images/onIcons/ebx_pkey.png);
+}
+.ebx_ComparatorTable .ebx_primary_key_error {
+	background-image: url(../images/onIcons/ebx_pkey_error.png);
+}
+.ebx_ComparatorTable .ebx_primary_key_warn {
+	background-image: url(../images/onIcons/ebx_pkey_warn.png);
+}
+.ebx_ComparatorTable .ebx_primary_key_info {
+	background-image: url(../images/onIcons/ebx_pkey_info.png);
+}
+.ebx_ComparatorTable .ebx_primary_key {
+	background-image: url(../images/onIcons/ebx_pkeyGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_foreign_key tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_foreign_key {
+	background-image: url(../images/onIcons/ebx_fkey.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key_error {
+	background-image: url(../images/onIcons/ebx_fkey_error.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key_warn {
+	background-image: url(../images/onIcons/ebx_fkey_warn.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key_info {
+	background-image: url(../images/onIcons/ebx_fkey_info.png);
+}
+.ebx_ComparatorTable .ebx_foreign_key {
+	background-image: url(../images/onIcons/ebx_fkeyGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_primary_foreign_key tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_primary_foreign_key {
+	background-image: url(../images/onIcons/ebx_pfkey.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key_error {
+	background-image: url(../images/onIcons/ebx_pfkey_error.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key_warn {
+	background-image: url(../images/onIcons/ebx_pfkey_warn.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key_info {
+	background-image: url(../images/onIcons/ebx_pfkey_info.png);
+}
+.ebx_ComparatorTable .ebx_primary_foreign_key {
+	background-image: url(../images/onIcons/ebx_pfkeyGrey.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_AssociationNode tr td.ygtvcontent,
+.ebx_NamedTypesPreview .ebx_AssociationNode,
+.ebx_ComparatorTable .ebx_AssociationNode {
+	background-image: url(../images/onIcons/ebx_AssociationNode.png);
+}
+
+.ebx_Field.ebx_Group .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -720px;
+}
+.ebx_Field.ebx_attribute .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -736px;
+}
+.ebx_Field.ebx_primary_key .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -752px;
+}
+.ebx_Field.ebx_foreign_key .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -768px;
+}
+.ebx_Field.ebx_primary_foreign_key .ebx_FieldIcon .ebx_Icon {
+	background-position: 0 -784px;
+}
+
+/***END data types ***/
+
+/***START Workflow Model ***/
+table.ebx_workflow_definition_userTask tr td.ygtvcontent,
+table.ebx_workflow_definition_scriptTask tr td.ygtvcontent,
+table.ebx_workflow_definition_conditional tr td.ygtvcontent,
+table.ebx_workflow_definition_virtualFirstTask tr td.ygtvcontent,
+table.ebx_workflow_definition_subWorkflowsInvocation tr td.ygtvcontent,
+table.ebx_workflow_definition_waitStep tr td.ygtvcontent {
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	background-position: 1px 3px;
+}
+
+table.ebx_workflow_definition_userTask tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowWorkItem.png);
+}
+table.ebx_workflow_definition_scriptTask tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowScript.png);
+}
+table.ebx_workflow_definition_conditional tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowCondition.png);
+}
+table.ebx_workflow_definition_virtualFirstTask tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowEntryPoint.png);
+}
+table.ebx_workflow_definition_subWorkflowsInvocation tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowSubWorkflowsInvocation.png);
+}
+table.ebx_workflow_definition_waitStep tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_workflowWaitStep.png);
+}
+/***END Workflow Model ***/
+
+/***START Workflow Priority ***/
+
+.ebx_workflow_priority {
+    background-repeat: no-repeat;
+    
+    display: inline-block;
+    height: 16px;
+    width: 32px;
+}
+.ebx_workflow_priority_withTooltip {
+    cursor: help;
+}
+
+
+.ebx_workflow_priority_lower {
+    background-position: 0 -16px;
+}
+.ebx_workflow_priority_low {
+    background-position: 0 -32px;
+}
+.ebx_workflow_priority_normal {
+    background-position: 0 -48px;
+}
+.ebx_workflow_priority_high {
+    background-position: 0 -64px;
+}
+.ebx_workflow_priority_higher {
+    background-position: 0 -80px;
+}
+.ebx_workflow_priority_urgent {
+    background-position: 0 -96px;
+}
+.ebx_workflow_priority_meter_0 {
+    background-position: 0 -112px;
+}
+.ebx_workflow_priority_meter_1 {
+    background-position: 0 -128px;
+}
+.ebx_workflow_priority_meter_2 {
+    background-position: 0 -144px;
+}
+.ebx_workflow_priority_meter_3 {
+    background-position: 0 -160px;
+}
+.ebx_workflow_priority_meter_4 {
+    background-position: 0 -176px;
+}
+.ebx_workflow_priority_meter_5 {
+    background-position: 0 -192px;
+}
+.ebx_workflow_priority_meter_6 {
+    background-position: 0 -208px;
+}
+.ebx_workflow_priority_meter_7 {
+    background-position: 0 -224px;
+}
+.ebx_workflow_priority_meter_8 {
+    background-position: 0 -240px;
+}
+.ebx_workflow_priority_meter_9 {
+    background-position: 0 -256px;
+}
+.ebx_workflow_priority_meter_10 {
+    background-position: 0 -272px;
+}
+
+/***END Workflow Priority ***/
+
+/***START Workflow Process Instance History ***/
+
+.wpihConditionTask .ebx_BigIcon {
+    background-position: 0 -96px;
+}
+.wpihScriptTask .ebx_BigIcon {
+    background-position: 0 -64px;
+}
+.wpihWorkItemAllocated .ebx_BigIcon,
+.wpihUserTask .ebx_BigIcon {
+    background-position: 0 -32px;
+}
+.wpihSubWorkflowTask .ebx_BigIcon {
+    background-position: 0 -128px;
+}
+.wpihWaitTask .ebx_BigIcon {
+    background-position: 0 -416px;
+}
+
+.ebx_BigIcon.wpihIconStart {
+    background-position: 0 -192px;
+}
+.ebx_BigIcon.wpihIconSeparator {
+    background-position: 0 -256px;
+}
+.ebx_BigIcon.wpihIconEnd {
+    background-position: 0 -224px;
+}
+.ebx_BigIcon.wpihIconUnknown {
+    background-position: 0 -160px;
+}
+
+.wpihWorkItemOffered .ebx_BigIcon {
+    background-position: 0 -288px;
+}
+.wpihWorkItemStarted .ebx_BigIcon {
+    background-position: 0 -320px;
+}
+.wpihWorkItemCompleted .ebx_BigIcon {
+    background-position: 0 -384px;
+}
+.wpihWorkItemError .ebx_BigIcon {
+    background-position: 0 -352px;
+}
+
+.ebx_Icon.wpihTaskCommentFlag {
+	background-position: 0 -640px;
+}
+
+.wpihWorkItemInfoButton .ebx_Icon {
+	background-position: 0 -960px;
+}
+
+.ebx_ScrollLeft .ebx_SmallIcon {
+	background-position: 0 -170px;
+}
+.ebx_ScrollRight .ebx_SmallIcon {
+	background-position: 0 -180px;
+}
+
+/***END Workflow Process Instance History ***/
+
+/***START DataSpace ***/
+
+table.ebx_TreeNodeWithIcon.ebx_DataSelector_Instance tr td.ygtvcontent,
+#ebx_WorkspaceContent form .ebx_Field.ebx_DataSelector_Instance .ebx_FieldIcon{
+	background-image: url(../images/onIcons/ebx_instance.png);
+}
+.ebx_ComparatorTable .ebx_DataSelector_Instance {
+	background-image: url(../images/onIcons/ebx_instance_grey.png);
+}
+
+.ebx_Snapshot {
+	background-position: 0 -577px; /* 576 -1 */
+	height: 14px;
+	vertical-align: -2px;
+}
+
+h2 .ebx_Snapshot {
+	vertical-align: -1px;
+}
+
+/***END DataSpace ***/
+
+/***START Form ***/
+
+#ebx_RootTab .ebx_Icon {
+	background-position: 0 -656px;
+}
+
+#ebx_TabScrollLeft .ebx_Icon {
+	background-position: -1px -318px;
+}
+#ebx_TabScrollLeft:hover .ebx_Icon {
+	background-position: -2px -318px;
+}
+#ebx_TabScrollLeft.mousedown .ebx_Icon {
+	background-position: -3px -318px;
+}
+
+#ebx_TabScrollRight .ebx_Icon {
+	background-position: -4px -334px;
+}
+#ebx_TabScrollRight:hover .ebx_Icon {
+	background-position: -3px -334px;
+}
+#ebx_TabScrollRight.mousedown .ebx_Icon {
+	background-position: -2px -334px;
+}
+
+.ebx_ValueInherited .ebx_Icon {
+	background-position: 0 -352px;
+}
+.ebx_ValueINA .ebx_Icon {
+	background-position: 0 -368px;
+}
+.ebx_ValueNull .ebx_Icon {
+	background-position: 0 -240px;
+}
+.ebx_ValueEditable .ebx_Icon {
+	background-position: 0 -224px;
+}
+.ebx_DropDown .ebx_Icon {
+	background-position: 0 -16px;
+}
+
+.ebx_Infinite .ebx_Icon {
+	background-position: 0 -384px;
+}
+.ebx_Now .ebx_Icon {
+	background-position: 0 -176px;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	line-height: 18px;
+	text-indent: -2px;
+}
+button.ebx_IconButton.ebx_Now .ebx_Icon {
+	vertical-align: 0;
+}
+.ebx_Open .ebx_Icon {
+	background-position: 0 -192px;
+}
+.ebx_PreviewLink {
+	background-position: right -193px;
+}
+.ebx_Wizard .ebx_Icon {
+	background-position: 0 -400px;
+}
+
+.ebx_DeleteOccurrence .ebx_Icon {
+	background-position: 0 -208px;
+}
+.ebx_AddOccurrence .ebx_Icon {
+	background-position: 0 -80px;
+}
+
+.ebx_ServiceOnNode .ebx_Icon {
+	background-position: 0 -416px;
+}
+
+.ebx_CheckboxReadOnly {
+	background-image: url(../images/onIcons/ebx_checkboxReadOnly.png);
+}
+
+#ebx_FormStatusFlag .ebx_Icon {
+    background-image: url(../images/onCommon/ebx_wait_anim_small.gif);
+}
+
+/***END Form ***/
+
+
+/***START Hierarchies ***/
+
+table.ebx_TreeNodeWithoutIcon tr td.ygtvcontent .ygtvlabel .ebx_ComputedIcon.ebx_TreeNodeRoot {
+	background-image: url(../images/onIcons/ebx_treeNodeRoot.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeTarget {
+	background-image: url(../images/onIcons/ebx_treeNodeTarget.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeOrphan {
+	background-image: url(../images/onIcons/ebx_treeNodeOrphan.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeCycle {
+	background-image: url(../images/onIcons/ebx_treeNodeCycle.png);
+}
+.ebx_ComputedIcon.ebx_TreeNodeLinkedTable {
+	background-image: url(../images/onIcons/ebx_treeNodeLinkedTable.png);
+}
+
+/***END Hierarchies ***/
+
+
+/***START Back/Forward button ***/
+
+.ebx_ArrowBackButton .ebx_Icon {
+	background-position: 0 -288px;
+}
+.ebx_ArrowBackButton:hover .ebx_Icon,
+.ebx_ArrowBackButton:focus .ebx_Icon {
+	background-position: -1px -288px;
+}
+.ebx_ArrowBackButton:active .ebx_Icon {
+	background-position: -3px -288px;
+}
+
+.ebx_ArrowForwardButton .ebx_Icon {
+	background-position: 0 -304px;
+}
+.ebx_ArrowForwardButton:hover .ebx_Icon,
+.ebx_ArrowForwardButton:focus .ebx_Icon {
+	background-position: 1px -304px;
+}
+.ebx_ArrowForwardButton:active .ebx_Icon {
+	background-position: 3px -304px;
+}
+
+/***END Back/Forward button ***/
+
+/***START validation report ***/
+.ebx_DataSetValidationReport h4.ebx_FatalError {
+	background-image: url(../images/onIcons/ebx_fatalError.png);
+}
+.ebx_DataSetValidationReport h4.ebx_Error {
+	background-image: url(../images/onIcons/ebx_error.png);
+}
+.ebx_DataSetValidationReport h4.ebx_Warning {
+	background-image: url(../images/onIcons/ebx_warning.png);
+}
+.ebx_DataSetValidationReport h4.ebx_Info {
+	background-image: url(../images/onIcons/ebx_info.png);
+}
+/***END validation report ***/
+
+/***START Comparator states ***/
+.ebx_Comparator_decided {
+	background-image: url(../images/onIcons/ebx_comparator_decided.png);
+}
+.ebx_Comparator_OverwriteDecided {
+	background-image: url(../images/onIcons/ebx_comparatorOverwriteDecided.png);
+}
+.ebx_Comparator_NochangeDecided {
+	background-image: url(../images/onIcons/ebx_comparatorNoChangeDecided.png);
+}
+.ebx_Comparator_PartialOverwriteDecided {
+	background-image: url(../images/onIcons/ebx_comparatorPartialOverwriteDecided.png);
+}
+.ebx_Comparator_NotDecided {
+	background-image: url(../images/onIcons/ebx_comparatorNotDecided.png);
+}
+
+.ebx_Comparator_basic_difference {
+	background-image: url(../images/onIcons/ebx_comparator_diff.png);
+}
+.ebx_Comparator_add_void {
+	background-image: url(../images/onIcons/ebx_comparator_add_void.png);
+}
+.ebx_Comparator_add_add {
+	background-image: url(../images/onIcons/ebx_comparator_add_add.png);
+}
+.ebx_Comparator_modify_void {
+	background-image: url(../images/onIcons/ebx_comparator_modif_void.png);
+}
+.ebx_Comparator_modify_modify {
+	background-image: url(../images/onIcons/ebx_comparator_modif_modif.png);
+}
+.ebx_Comparator_modify_delete {
+	background-image: url(../images/onIcons/ebx_comparator_modif_del.png);
+}
+.ebx_Comparator_delete_void {
+	background-image: url(../images/onIcons/ebx_comparator_del_void.png);
+}
+.ebx_Comparator_delete_modify {
+	background-image: url(../images/onIcons/ebx_comparator_del_modif.png);
+}
+.ebx_Comparator_delete_delete {
+	background-image: url(../images/onIcons/ebx_comparator_del_del.png);
+}
+.ebx_Comparator_void_add {
+	background-image: url(../images/onIcons/ebx_comparator_void_add.png);
+}
+.ebx_Comparator_void_modify {
+	background-image: url(../images/onIcons/ebx_comparator_void_modif.png);
+}
+.ebx_Comparator_void_delete {
+	background-image: url(../images/onIcons/ebx_comparator_void_del.png);
+}
+
+/*START value states */
+.ebx_ComparatorValueStateNull {
+	background-image: url(../images/onIcons/ebx_null.png);
+}
+.ebx_ComparatorValueStateInherited {
+	background-image: url(../images/onIcons/ebx_setInherited.png);
+}
+/*END value states */
+/***END Comparator states ***/
+
+/***START Admin ***/
+
+table.ebx_TreeNodeWithIcon.ebx_DataspaceClosed tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataSpaceClosed.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_DataspaceSnapshotClosed tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataSpaceSnapshotClosed.png);
+}
+
+table.ebx_TreeNodeWithIcon.ebx_History tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_history.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_DataspaceWithHistory tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataspaceWithHistory.png);
+}
+table.ebx_TreeNodeWithIcon.ebx_DataspaceClosedWithHistory tr td.ygtvcontent {
+	background-image: url(../images/onIcons/ebx_dataspaceClosedWithHistory.png);
+}
+
+.ebx_SecuredSessionFlag {
+	background-image: url(../images/onIcons/ebx_securedSession.png);
+}
+
+.ebx_ColorPicker .ebx_Icon {
+	background-position: 0 -672px;
+}
+
+/**START D3 **/
+.ebx_Icon.ebx_d3Available {
+	background-image: url(../images/onIcons/ebx_d3Available.png);
+}
+.ebx_Icon.ebx_d3Out {
+	background-image: url(../images/onIcons/ebx_d3Out.png);
+}
+.ebx_Icon.ebx_d3Init {
+	background-image: url(../images/onIcons/ebx_d3Init.png);
+}
+.ebx_Icon.ebx_d3Unavailable {
+	background-image: url(../images/onIcons/ebx_d3Unavailable.png);
+}
+.ebx_Icon.ebx_d3Stopped {
+	background-image: url(../images/onIcons/ebx_d3Stopped.png);
+}
+/**END D3 **/
+
+/**Start Perspective Administration **/
+
+.ebx_ppv_icon
+{
+	width:1.4em;
+}
+
+.ebx_ppv_icon_url
+{
+	width: 1.4em;
+	display: inline-block;
+	background-size:1em 1em;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+
+.ebx_ppv_icon_url:before
+{
+	content:"\00a0"; 
+}
+
+/**End Perspective Administration **/
+
+/***END Admin ***/
+
+.ebx_workflow_execution_comment .ebx_Icon {
+	background-position: 0 -640px;
+}
+
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemOffered,
+button.ebx_workItemOffered .ebx_Icon {
+	background-position: 0 -448px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemAllocated,
+button.ebx_workItemAllocated .ebx_Icon {
+	background-position: 0 -464px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemError,
+button.ebx_workItemError .ebx_Icon {
+	background-position: 0 -512px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemStarted,
+button.ebx_workItemStarted .ebx_Icon {
+	background-position: 0 -480px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workItemCompleted,
+button.ebx_workItemCompleted .ebx_Icon {
+	background-position: 0 -496px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowError,
+button.ebx_workflowError .ebx_Icon {
+	background-position: 0 -560px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowIncoming,
+button.ebx_workflowIncoming .ebx_Icon {
+	background-position: 0 -432px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowPublication,
+button.ebx_workflowPublication .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_publications.png);
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowProcess,
+button.ebx_workflowProcess .ebx_Icon {
+	background-position: 0 -544px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowMonitoring,
+button.ebx_workflowMonitoring .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_monitoring.png);
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowHistory,
+button.ebx_workflowHistory .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_completedWF.png);
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowWorkitem,
+button.ebx_workflowWorkitem .ebx_Icon {
+	background-position: 0 -528px;
+}
+#ebx_MenuForMenuButtons .yuimenuitem .ebx_workflowLauncher,
+button.ebx_workflowLauncher .ebx_Icon {
+	background-image: url(../images/onWorkflow/ebx_launchWF.png);
+}
+
+.ebx_WFLabelDescriptionEmpty,
+.ebx_WFLabelDescription {
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin-left: -4px;
+	margin-right: 4px;
+}
+.ebx_WFLabelDescription {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(../images/onIcons/ebx_information.png);
+	cursor: help;
+}

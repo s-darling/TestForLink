@@ -1,0 +1,55 @@
+<project name="EBX Server" default="reset-project" basedir=".">
+	<property file="${basedir}/build.properties" />
+	
+<target name="reset-project" description="Reset the project"
+		depends="clean-project, deploy-ebx-core, deploy-sun-libraries">
+	</target>
+	<target name="clean-project" description="Clean the project"
+		depends="">
+		<delete includeemptydirs="true">
+			<fileset dir="${server.lib}" includes="**/*" />
+			<fileset dir="${server.logs}" includes="**/*" />
+			<fileset dir="${server.webapps}" includes="**/*" />
+			<fileset dir="${server.work}" includes="**/*" />
+		</delete>
+	</target>
+	<target name="deploy-ebx-core" description="Deploy the EBX Core to the EBX Server">
+		<copy todir="${server.lib}" flatten="true">
+			<fileset id="ebx-core.jars" dir="${libraries.ebx-core.lib}"
+				includes="**/*.jar" />
+		</copy>
+		<copy todir="${server.webapps}" flatten="true">
+			<fileset id="ebx-core.wars" dir="${libraries.ebx-core.webapps}"
+				includes="**/*.war" />
+		</copy>
+	</target>
+	<target name="deploy-sun-libraries" description="Deploy the Sun libraries to the EBX Server">
+		<copy todir="${server.lib}" flatten="true">
+			<fileset id="sun-mail.jar" file="${libraries.sun-mail.jar}" />
+		</copy>
+		<copy todir="${server.lib}" flatten="true">
+			<fileset id="sun-activation.jar" file="${libraries.sun-activation.jar}" />
+		</copy>
+	</target>
+	<target name="start-default-server" description="Start the EBX Server in default mode">
+		<java classname="org.apache.catalina.startup.Bootstrap" fork="true">
+			<sysproperty key="ebx.home" value="${ebx.home}" />
+			<sysproperty key="ebx.properties" value="${ebx-default.properties}" />
+			<sysproperty key="catalina.home" value="${catalina.home}" />
+			<sysproperty key="catalina.base" value="${catalina.base}" />
+			<jvmarg line="${run.jvm.arguments}" />
+			<classpath path="${catalina.classpath}" />
+			<arg value="start" />
+		</java>
+	</target>
+	<target name="stop-server" description="Stop the EBX Server"
+		depends="">
+		<java classname="org.apache.catalina.startup.Bootstrap" fork="true">
+			<sysproperty key="catalina.home" value="${catalina.home}" />
+			<sysproperty key="catalina.base" value="${catalina.base}" />
+			<jvmarg line="${run.jvm.arguments}" />
+			<classpath path="${catalina.classpath}" />
+			<arg value="stop" />
+		</java>
+	</target>
+</project>

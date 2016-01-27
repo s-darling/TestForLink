@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - EBX5 Add-on for Data Exchange</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="adix_index" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Data Exchange Documentation &gt; Data Exchange Documentation &gt; Introduction</div>
+</div>
+<h1>
+EBX5 Add-on for Data Exchange</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Data Exchange at a glance</a></li><li class="toc1"><a href="#id2">Functional scope</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Semantic model</a></li><li class="toc2"><a href="#id2s2">Key definitions</a></li></ul>
+</li><li class="toc1"><a href="#id3">User operations</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">XML with the default data mapping</a></li><li class="toc2"><a href="#id3s2">XML with a user-defined data mapping</a></li><li class="toc2"><a href="#id3s3">Data transfer</a></li><li class="toc2"><a href="#id3s4">Excel and CSV data flows</a></li></ul>
+</li><li class="toc1"><a href="#id4">Advanced operations</a></li><li class="toc1"><a href="#id5">Configuring Data Exchange</a></li><li class="toc1"><a href="#id6">Known limitations</a></li><li class="toc1"><a href="#id7">See also</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Data Exchange at a glance</h2>
+<p>EBX5&#39;s Data Exchange add-on allows you to export and import data. You can initiate import and export in the following ways:</p><ul>
+<li><p>A <em>&#39;by default&#39;</em> mode allows the end-users–with limited IT knowledge–to easily export and import data when source and target data structures are similar. Because this mode uses a direct mapping between the source and the target, a specific data mapping configuration isn&#39;t needed.</p></li><li><p>When the source and target data structures are different, the extended mode allows IT staff to manage user-defined data mapping configurations. This mode is used to change the name of the field from the source to the target, to transform the data during the data flow processes, to aggregate or split data values, etc.</p></li></ul>
+<p>Data mapping configuration is based on basic concepts of Tables and Fields. When a company wants to strengthen business representation of data mapping configurations, Tables and Fields can be connected to business concepts also known as Object Classes and Properties, respectively. The addition of this business level improves the data lineage audit and encourages actual information governance.</p><p>For further information beyond the online help, refer to the <a href="../resources/pdf/EBX5-Add-on-DataExchange.pdf">User guide (PDF)</a> and the <a href="../release_note/release_notes.html">release notes</a>.</p><h2>
+<a name="id2"></a>Functional scope</h2>
+<p>EBX5&#39;s Data Exchange Add-On relies on a repository that collects all data mapping configurations. This repository automatically updates when a user executes a mapping operation that invokes the default data mapping.</p><h3>
+<a name="id2s1"></a>Semantic model</h3>
+<p>Data mapping configurations can be enriched by creating links from Tables and Fields to corresponding business concepts also known as Object Class and Property items. This vocabulary comes from the ISO11179 standard also used in the EBX5&#39;s Information Governance add-on.</p><p>The use of the semantic model is not mandatory to create data mapping configurations or to enable import, export and data transfer. Once the semantic model is configured, it facilitates the management of the data mapping configurations as follows:</p><ul>
+<li><p>Business data lineage.</p></li><li><p>Automatic data mapping.</p></li><li><p>Integration with the governance process.</p></li></ul>
+<h3>
+<a name="id2s2"></a>Key definitions</h3>
+<p align="center"><img alt="/keyDefinitions.png" src="../resources/images/keyDefinitions.png" width="400"></img></p><h2>
+<a name="id3"></a>User operations</h2>
+<p>At the table level, Data Exchange services allow you to export and import data in the CSV, Excel and XML formats.</p><p>At the data set level–in addition to being able to import and export in Excel and XML–Data Exchange services allow you to transfer data. The transfer copies data directly between EBX tables.</p><h3>
+<a name="id3s1"></a>XML with the default data mapping</h3>
+<p>If the table is not defined in the data mapping configuration when you attempt to export to XML, <em>&#39;Default XML format&#39;</em> displays as the only available target application. This default format, provided by the add-on, allows you to easily get an XML file and doesn&#39;t require a specific data mapping configuration.</p><p>The add-on automatically identifies which data mapping to apply in order to import the data into the table. When the <em>&#39;Default XML&#39;</em> is declared in the header of the imported XML file, then the default data mapping is applied. A UI result message provides an overview of the import process, as illustrated below.</p><h3>
+<a name="id3s2"></a>XML with a user-defined data mapping</h3>
+<p>To export or import an XML file with a data structure that is not compliant with the <em>&#39;Default XML&#39;</em> type, you can manually configure a user-defined data mapping. In most cases the XML file you want to get already exists, and you can reuse it as a template to automatically feed the configuration. The add-on can automatically analyze your XML file to generate the XML configuration.</p><h3>
+<a name="id3s3"></a>Data transfer</h3>
+<p>Data transfer is used to copy data from one EBX table to another. If the tables share the same data model, the add-on automatically manages the transfer.However, transferring data between tables that don&#39;t share the same data model requires a bespoke data mapping configuration.</p><h3>
+<a name="id3s4"></a>Excel and CSV data flows</h3>
+<p>The Excel and CSV export and import processes are based on the previous version of Data Exchange, called <em>&#39;Add-on for Microsoft&reg; Excel&#39;</em>. You can refer directly to the online help for this part of the add-on.</p><p>In the current version of Data Exchange Add-on, the user-defined configuration is not used for the Excel and CSV data flows.</p><h2>
+<a name="id4"></a>Advanced operations</h2>
+<p>In order to manage user-defined data mapping configurations, a portfolio of services is available depending on the application type. These services are located on the <em>&#39;Application by type&#39;</em> table in the <em>&#39;Data exchange&#39;</em> data space under the EXB5 <em>&#39;Administration&#39;</em> tab.</p><p>The creation of user-defined data mapping configurations requires IT skills. Based on these configurations, end-users can export, import and transfer the data easily, all the technical aspects of data mapping configuration are hidden from them.</p><h2>
+<a name="id5"></a>Configuring Data Exchange</h2>
+<p>The Data Exchange repository for data mapping configurations is located in the <em>&#39;Data exchange&#39;</em> data set under the EBX5 <em>&#39;Administration&#39;</em> tab.The <em>&#39;Application&#39;</em> domain contains the portfolio of applications with the interface configuration.An interface is used to configure the source and the target applications involved in a data flow.</p><p>The <em>&#39;Semantic model&#39;</em> domain contains the Object Class and Property items used to link the Tables and Fields to the semantic layer. The Semantic model is not mandatory to configure data mapping. However, it allows you to improve data lineage and integration with Information governance.The <em>&#39;Data model domain&#39;</em> contains the configuration for Tables and Fields.The <em>&#39;Data mapping&#39;</em> domain contains the actual data mapping configuration applied at the table level, and then the field level.</p><h2>
+<a name="id6"></a>Known limitations</h2>
+<ul>
+<li><p>Multi-occurs complex data type, association object, selection node, user defined attribute (UDA).</p></li><li><p>Split and aggregation of fields.</p></li><li><p>Transformation of fields.</p></li><li><p>Data lineage.</p></li><li><p>Graphical view of the data mapping configurations.</p></li></ul>
+<h2>
+<a name="id7"></a>See also</h2>
+<ul>
+<li><p><a href="./adix_import.html">Importing data from a CSV or Excel file</a></p></li><li><p><a href="./adix_export.html">Exporting data to a CSV or Excel file</a></p></li><li><p><a target="_blank" href="../Java_API/index.html">Java API</a></p></li><li><p><a href="../release_note/release_notes.html">Release notes</a></p></li><li><p><a href="../resources/pdf/EBX5-Add-on-DataExchange.pdf">Data Exchange - User guide (PDF)</a></p></li></ul>
+<p><strong>Disclaimer</strong></p><p>Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners. Product names, logos, brands, and other trademarks featured or referred to are the property of their respective trademark holders. These trademark holders are not affiliated with Orchestra Networks, our products, or our website. They do not sponsor or endorse our product or any of our solutions.</p></div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

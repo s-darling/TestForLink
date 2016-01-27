@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 5.2.5 Fix 001</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/5.2.5.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+5.2.5 Fix 001</h1>
+<p><strong>Fix 001 Release Date: February 4, 2013</strong></p><p>EBX5 5.2.5 Fix 001 for <a href="#bugfix-5.2.5fix001">bug fixes</a> and new features concerning <a href="#custom_tasks">task scheduler</a>, <a href="#hierarchy_export">CSV export from hierarchy views</a>, <a href="#lastUpdate">programmatic branch merges</a>, and <a href="#adaptation_match">Java API</a> for matching records using XPath predicates.</p><p><strong>Initial Release Date: January 14, 2013</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview of 5.2.5</a></li><li class="toc1"><a href="#versionUpgrade">Version upgrade</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Backward compatibility</a></li><li class="toc2"><a href="#id2s2">How to upgrade an installed environment</a></li></ul>
+</li><li class="toc1"><a href="#id3">User interface</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Child data space sort policy</a></li><li class="toc2"><a href="#id3s2">Default values for import/export user interface options</a></li><li class="toc2"><a href="#id3s3">Web components and permalinks API</a></li></ul>
+</li><li class="toc1"><a href="#id4">Data workflows</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Retrieval of disabled publication keys</a></li><li class="toc2"><a href="#workflows_variables">Accessing data context variables</a></li></ul>
+</li><li class="toc1"><a href="#id5">Custom views</a><ul class="toc2">
+<li class="toc2"><a href="#hierarchy_export">CSV export from hierarchy views</a></li></ul>
+</li><li class="toc1"><a href="#id6">History</a><ul class="toc2">
+<li class="toc2"><a href="#disableHistory"> Disabling history at the field level</a></li></ul>
+</li><li class="toc1"><a href="#deletePurge">Deletion and purge</a><ul class="toc2">
+<li class="toc2"><a href="#purgeUI">Delete and purge user interface improvements</a></li><li class="toc2"><a href="#id7s2">Data space administration</a></li><li class="toc2"><a href="#id7s3">Data services for data spaces, snapshots, and history deletion</a></li><li class="toc2"><a href="#id7s4">HomeKey released on delete</a></li></ul>
+</li><li class="toc1"><a href="#tasksched">Task scheduler</a><ul class="toc2">
+<li class="toc2"><a href="#custom_tasks">Custom scheduled tasks</a></li><li class="toc2"><a href="#id8s2">Users and permissions</a></li></ul>
+</li><li class="toc1"><a href="#id9">Core engine</a><ul class="toc2">
+<li class="toc2"><a href="#lastUpdate">Last update information on programmatic merge</a></li><li class="toc2"><a href="#large-tables">Additional optimizations for large tables</a></li><li class="toc2"><a href="#pkey">Modification of primary key structure</a></li></ul>
+</li><li class="toc1"><a href="#javaApi">Core Java API</a><ul class="toc2">
+<li class="toc2"><a href="#adaptation_match">New method to match records using XPath predicates</a></li><li class="toc2"><a href="#id10s2">Get value changes in a table trigger</a></li><li class="toc2"><a href="#id10s3">Copy data sets</a></li><li class="toc2"><a href="#id10s4">Facets documentation</a></li><li class="toc2"><a href="#id10s5">Declare data spaces as relational</a></li></ul>
+</li><li class="toc1"><a href="#bugfix-5.2.5fix001">5.2.5 Fix 001 Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-Coreengine">Core engine</a></li><li class="toc2"><a href="#bug-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bug-DataspacesHistory">Data spaces &amp; History</a></li><li class="toc2"><a href="#bug-Dataviews">Data views</a></li><li class="toc2"><a href="#bug-Dataworkflows">Data workflows</a></li><li class="toc2"><a href="#bug-DistributedDataDelivery">Distributed Data Delivery (D3)</a></li><li class="toc2"><a href="#bug-ImportExport">Import / Export</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-Userinterface">User interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li></ul>
+</li><li class="toc1"><a href="#bugfix-5.2.5">5.2.5 Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bugfix-5.2.5-Coreengine">Core engine</a></li><li class="toc2"><a href="#bugfix-5.2.5-Datamodeling">Data modeling</a></li><li class="toc2"><a href="#bugfix-5.2.5-DataspacesHistory">Data spaces &amp; History</a></li><li class="toc2"><a href="#bugfix-5.2.5-Datavalidation">Data validation</a></li><li class="toc2"><a href="#bugfix-5.2.5-Dataviews">Data views</a></li><li class="toc2"><a href="#bugfix-5.2.5-Dataworkflows">Data workflows</a></li><li class="toc2"><a href="#bugfix-5.2.5-DistributedDataDelivery">Distributed Data Delivery (D3)</a></li><li class="toc2"><a href="#bugfix-5.2.5-Documentation">Documentation</a></li><li class="toc2"><a href="#bugfix-5.2.5-Userinterface">User interface</a></li><li class="toc2"><a href="#bugfix-5.2.5-UsersPermissions">Users &amp; Permissions</a></li></ul>
+</li><li class="toc1"><a href="#bugfix-5.2.4fix002">5.2.4 Fix 002 Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-5.2.4fix002-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-5.2.4fix002-DataModeling">Data Modeling</a></li><li class="toc2"><a href="#bug-5.2.4fix002-DataServices">Data Services</a></li><li class="toc2"><a href="#bug-5.2.4fix002-DataValidation">Data Validation</a></li><li class="toc2"><a href="#bug-5.2.4fix002-DataViews">Data Views</a></li><li class="toc2"><a href="#bug-5.2.4fix002-DataWorkflow">Data Workflow</a></li><li class="toc2"><a href="#bug-5.2.4fix002-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-5.2.4fix002-UserInterface">User Interface</a></li></ul>
+</li><li class="toc1"><a href="#bugfix-5.2.4fix001">5.2.4 Fix 001 Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-5.2.4fix001-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-5.2.4fix001-DataModeling">Data Modeling</a></li><li class="toc2"><a href="#bug-5.2.4fix001-DataValidation">Data Validation</a></li><li class="toc2"><a href="#bug-5.2.4fix001-DataViews">Data Views</a></li><li class="toc2"><a href="#bug-5.2.4fix001-DataWorkflow">Data Workflow</a></li><li class="toc2"><a href="#bug-5.2.4fix001-Miscellaneous">Miscellaneous</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview of 5.2.5</h2>
+<p>Notable changes in this version include:</p><ul>
+<li><p>the completion of services for <a href="#deletePurge">deleting and purging data spaces, snapshots, and history</a>,</p></li><li><p>additional optimizations for <a href="#large-tables">accessing large paginated tables and repositories with many data spaces</a>, and</p></li><li><p>the ability to historize any data model, now that it is possible to <a href="#disableHistory">disable historization of specific non-supported elements</a>.</p></li></ul>
+<p>This version also includes some content previously released in the minor versions 5.2.4 Fix 001 and 5.2.4 Fix 002:</p><ul>
+<li><p>Data workflows API: <a href="#workflows_variables">Accessing data context variables</a></p></li><li><p>Administration: <a href="#purgeUI">Improvements to the purge user interface</a></p></li><li><p>Core engine:</p><ul>
+<li><p><a href="#large-tables">Additional optimizations for large tables</a></p></li><li><p><a href="#pkey">Modification of primary key structure</a></p></li></ul>
+</li><li><p>Bug fixes from <a href="#bugfix-5.2.4fix001">5.2.4 Fix 001</a> and <a href="#bugfix-5.2.4fix002">5.2.4 Fix 002</a></p></li></ul>
+<h2>
+<a name="versionUpgrade"></a>Version upgrade</h2>
+<h3>
+<a name="id2s1"></a>Backward compatibility</h3>
+<p>As a consequence of fixing bug <a href="#bug_6182">6182</a>, regarding access rights on data model instances, you must manually remove any table-specific and node-specific access rights <em>before upgrading</em>, as they cannot be used in this new release. These must all be set to read-write mode.</p><p>As a consequence of fixing bugs <a href="#bug_4506">4506</a> and <a href="#bug_5542">5542</a>, <code>osd:defaultView/hidden=&quot;true&quot;</code> may have replaced instances of <code>osd:category=&quot;Hidden&quot;</code> in schemas, or vice versa. Please verify and correct your schemas after upgrading to this version.</p><h3>
+<a name="id2s2"></a>How to upgrade an installed environment</h3>
+<p>In order to upgrade your version of EBX5, perform the following steps:</p><ol>
+<li><p>Backup your repository, including the RDBMS and the directory <code>ebx.repository.directory</code>.</p></li><li><p>Replace the <code>*.war</code> and <code>ebx.jar</code> files on your application server.</p></li></ol>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><strong>If using EBX5 add-ons, ensure that the versions of the add-ons are compatible with EBX5 version 5.2.5 before upgrading. </strong> For the backward compatibility of the add-ons themselves, consult the release notes of the add-ons.</p></div>
+<h2>
+<a name="id3"></a>User interface</h2>
+<h3>
+<a name="id3s1"></a>Child data space sort policy</h3>
+<p>It is now possible to define the display order of child data spaces in data space trees. See <a href="../user_dataspace/userdataspace_actions.html#childSortPolicy">Child data space sort policy</a> for more information.</p><h3>
+<a name="id3s2"></a>Default values for import/export user interface options</h3>
+<p>Some default values for export and import user actions can now be set under &#39;User interface&#39; in the Administration area.</p><p>The available options under &#39;Default option values &gt; Import / Export&#39; are:</p><ul>
+<li><p>CSV file encoding</p></li><li><p>Import mode</p></li><li><p>Missing XML values as &#39;null&#39;</p></li></ul>
+<p>See <a href="../engine/admin_frontend.html#optionsDefault">Default option values</a> for more information.</p><h3>
+<a name="id3s3"></a>Web components and permalinks API</h3>
+<p>A new method has been added to the Java API to allow the creation of a web component in a separate root user session. The URL generated may also be usable as a permalink, depending on the configuration of EBX5. See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIResourceLocator.html#createWebComponentForRootSession()">createWebComponentForRootSession</a></p><p> Additionally, the existing factory methods creating a web component in a sub-session have been deprecated, they are replaced by the new method <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIResourceLocator.html#createWebComponentForSubSession()">createWebComponentForSubSession</a> .</p><h2>
+<a name="id4"></a>Data workflows</h2>
+<h3>
+<a name="id4s1"></a>Retrieval of disabled publication keys</h3>
+<p>The workflow engine API has been enhanced to provide the ability to retrieve disabled publication keys.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/WorkflowEngine.html#getPublishedKeys(boolean)">WorkflowEngine</a> for more information.</p><h3>
+<a name="workflows_variables"></a>Accessing data context variables</h3>
+<p><em>Initially included in the release 5.2.4 Fix 001.</em></p><p>The data workflows API has been enhanced to allow accessing the data context variables in a process instance.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/ProcessInstance.html#getDataContext()">ProcessInstance.getDataContext()</a> in the Java API for more information.</p><h2>
+<a name="id5"></a>Custom views</h2>
+<h3>
+<a name="hierarchy_export"></a>CSV export from hierarchy views</h3>
+<p>It is now possible to perform a CSV export from a hierarchical view starting from the root node or an <code>unset</code> node.</p><h2>
+<a name="id6"></a>History</h2>
+<h3>
+<a name="disableHistory"></a> Disabling history at the field level</h3>
+<p>It is now possible to prevent individual fields from being historized, either through the data model assistant, or by editing the underlying XML schema.</p><p>See <a href="../references/history.html#disableHistory">Disabling history on a specific field or group</a> for more information.</p><h2>
+<a name="deletePurge"></a>Deletion and purge</h2>
+<h3>
+<a name="purgeUI"></a>Delete and purge user interface improvements</h3>
+<p><em>Initially included in the release 5.2.4 Fix 002.</em></p><p>The user interface for deletions and purges in the Administration area has been updated to improve ease of use. Namely, the categories in the navigation pane for selecting items to delete have been refactored into data space states: open, closed, and deleted. From these pages, the user can selected items for data purge, history purge, or both, depending on the actions available the items.</p><p>A summary page of selections has also been added to the process to allow the user to verify their selection before confirming the purge, which is irreversible.</p><p>See <a href="../engine/repository_administration.html#cleanDataSpacesHistory">Cleaning up data spaces, snapshots, and history</a> for more information.</p><h3>
+<a name="id7s2"></a>Data space administration</h3>
+<p>New actions are now available on the table <strong>Data spaces &gt; Data spaces / Snapshots</strong>, in the Administration area to improve data space management. These actions include reopening closed data spaces and snapshots, recursively closing or deleting data spaces and snapshots, and deleting history. This allows administrators to apply custom views and use search features to select the data spaces on which to perform the actions.</p><p><a href="../engine/repository_administration.html#cleanDataSpacesHistory">Cleaning up data spaces, snapshots, and history</a></p><h3>
+<a name="id7s3"></a>Data services for data spaces, snapshots, and history deletion</h3>
+<p>It is now possible to delete data spaces, their associated history, and snapshots at the end of several data services operations.</p><p>The new parameter <code>deleteDataOnClose</code> has been added for the close data space and close snapshot operations, and <code>deleteHistoryOnClose</code> has been added for the close data space operation. For the merge operation, the parameters <code>deleteDataOnMerge</code> and <code>deleteHistoryOnMerge</code> have been added.</p><p>When these parameters are not specified in requests, their default value is &#39;false&#39;. It is possible to redefine the default values if necessary.</p><p>See <a href="../references/dataservices_execution.html#closeDataSpaceSnapshot">Closing a data space or snapshot</a> and <a href="../references/dataservices_execution.html#mergeDataSpace">Merging a data space</a> for more information.</p><h3>
+<a name="id7s4"></a>HomeKey released on delete</h3>
+<p><em>Initially included in 5.2.4 Fix 002.</em></p><p>As soon as a data space or snapshot has been deleted, its <code>HomeKey</code> is now released, and thus can be reused. It is not necessary to wait for the purge to be performed.</p><h2>
+<a name="tasksched"></a>Task scheduler</h2>
+<p>A task scheduler has been added to allow the automated periodic clean-up of the repository.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note"><strong>In 5.2.5 only:</strong> EBX5 scheduler is a new feature that is <strong>limited</strong> to the predefined task &#39;Repository clean-up&#39;. The ability to define custom scheduled tasks will be offered in an upcoming release.</p></div>
+<p>See <a href="../engine/scheduler.html">Task scheduler</a> for more information.</p><h3>
+<a name="custom_tasks"></a>Custom scheduled tasks</h3>
+<p>As of 5.2.5 Fix 001, it is possible to define custom scheduled tasks. See <a href="../engine/scheduler.html">Task scheduler</a> for more information and the <a target="_blank" href="../Java_API/com/orchestranetworks/scheduler/package-summary.html">scheduler package</a> in the Java API for more information.</p><h3>
+<a name="id8s2"></a>Users and permissions</h3>
+<p>It is now possible to define users without passwords in the EBX5 default directory that are used only for running tasks in the <a href="../engine/scheduler.html">Task scheduler</a>.</p><h2>
+<a name="id9"></a>Core engine</h2>
+<h3>
+<a name="lastUpdate"></a>Last update information on programmatic merge</h3>
+<p>All data sets and records have information on who performed the last update (<code>lastUser</code>) and when (<code>lastTime</code>). Previously, for programmatic merges, this was updated with the time and user of the merge operation itself; as a result, information about the last update performed in the child data space was lost. Now the time and user of the last operation performed in the child data space are preserved. </p><h3>
+<a name="large-tables"></a>Additional optimizations for large tables</h3>
+<p>The following optimizations have been made, resulting in improved performance, especially for large tables and repositories:</p><ul>
+<li><p>Improved indexing of internal database tables (bug <a href="#bug_6008">6008</a>),</p></li><li><p>Optimizations for the computation of the current position in a paged view and total numbers of records,</p></li><li><p>Enhanced paginated access for tables where primary keys are composed of multiple fields (bug <a href="#bug_5932">5932</a>). <em>Initially included in the release 5.2.4 Fix 002.</em></p></li></ul>
+<h3>
+<a name="pkey"></a>Modification of primary key structure</h3>
+<p><em>Initially included in the release 5.2.4 Fix 002.</em></p><p>It is now possible to modify the structure of the primary key of a table in history and/or relational mode.</p><p>See <a href="../references/datamodel_evolutions.html"> Data model evolutions</a> for remaining limitations.</p><h2>
+<a name="javaApi"></a>Core Java API</h2>
+<h3>
+<a name="adaptation_match"></a>New method to match records using XPath predicates</h3>
+<p>It is now possible to determine whether a record matches a given XPath predicate. This can be done by performing a query of the form <code>record.matches(&quot;./boolean=&#39;true&#39; and date-equal(./date,&#39;2001-01-01&#39;)&quot;);</code> using the method <code>matches</code> in the class <code>Adaptation</code>. See <a target="_blank" href="../Java_API/com/onwbp/adaptation/Adaptation.html#matches(java.lang.String)">matches</a> in the Java API for more information.</p><h3>
+<a name="id10s2"></a>Get value changes in a table trigger</h3>
+<p>It is now possible to get value changes in a <code>TableTrigger.handleBeforeModify</code> and <code>TableTrigger.handleAfterModify</code>. This allows adapting the behavior of the trigger more easily depending on what has changed in an updated record.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/BeforeModifyOccurrenceContext.html#getChanges()">BeforeModifyOccurrenceContext.getChanges</a> and <a target="_blank" href="../Java_API/com/orchestranetworks/schema/trigger/AfterModifyOccurrenceContext.html#getChanges()">AfterModifyOccurrenceContext.getChanges</a> in the Java API for more information.</p><h3>
+<a name="id10s3"></a>Copy data sets</h3>
+<p>A new method has been added to the <code>ProcedureContext</code> interface to allow copying a data set and giving the new data set a specified reference. A similar method already existed previously, but the data set reference was randomly allocated.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#doCopy(com.onwbp.adaptation.AdaptationReference, com.onwbp.adaptation.Adaptation)">doCopy</a> in the Java API for more information.</p><h3>
+<a name="id10s4"></a>Facets documentation</h3>
+<p>A new method has been added to the <code>SchemaFacet</code> interface to allow retrieving the documentation associated with a <code>facet</code>.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/schema/info/SchemaFacet.html#getDocumentation(java.util.Locale, com.orchestranetworks.instance.ValueContext)">getDocumentation</a> in the Java API for more information.</p><h3>
+<a name="id10s5"></a>Declare data spaces as relational</h3>
+<p>The method <code>setRelationalModeDataSpace</code> has been included in the public <code>HomeCreationSpec</code> API to allow declaring a data space, and hence all of the data sets it contains, as being in relational mode.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/instance/HomeCreationSpec.html#setRelationalModeDataSpace(boolean)">setRelationalModeDataSpace</a> in the Java API for more information.</p><h2>
+<a name="bugfix-5.2.5fix001"></a>5.2.5 Fix 001 Bug Fixes</h2>
+<h3>
+<a name="bug-Coreengine"></a>Core engine</h3>
+<ul>
+<li><a name="bug_6299"></a><p><strong>[6299]</strong> The order of blocks loaded by the database is incorrect for PostgreSQL. </p><p>The order of blocks loaded by the database may be incorrect, when using PostgreSQL as a DBRMS. This causes a blocking <code>ArrayOutOfBoundsException</code> upon repository start.</p></li></ul>
+<h3>
+<a name="bug-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><a name="bug_6263"></a><p><strong>[6263]</strong> Publishing a data model overrides the session&#39;s &#39;trackingInfo&#39;. </p><p>The publication of a data model from the data modeling tool modifies the current user session property <code>trackingInfo</code>.</p></li><li><a name="bug_6270"></a><p><strong>[6270]</strong> After duplicating a field or a group, the data structure in the navigation pane and the form are not displayed correctly. </p><p>When a field or a group is edited after being duplicated then the data structure in the navigation pane and its form are not displayed correctly.</p></li></ul>
+<h3>
+<a name="bug-DataspacesHistory"></a>Data spaces &amp; History</h3>
+<ul>
+<li><a name="bug_6240"></a><p><strong>[6240]</strong> An exception occurs when history is activated on a schema with constraints on &#39;null&#39; values. </p><p>When history is activated on a schema with both constraints on &#39;null&#39; values and the <code>osd:checkNullInput</code> attribute, an exception occurs.</p></li></ul>
+<h3>
+<a name="bug-Dataviews"></a>Data views</h3>
+<ul>
+<li><a name="bug_6196"></a><p><strong>[6196]</strong> It is not possible to apply a multi-table view when accessing a table from a workflow in the user interface. </p><p>When the user accesses a table through the user interface from a workflow, it is not possible to apply a multi-table view.</p></li><li><a name="bug_6237"></a><p><strong>[6237]</strong> Some fields are hidden when accessing a record form from a custom view. </p><p>It is possible to choose the columns to display in a custom table view, however, when accessing a record form through the custom table view, every column should be visible.</p></li></ul>
+<h3>
+<a name="bug-Dataworkflows"></a>Data workflows</h3>
+<ul>
+<li><a name="bug_6037"></a><p><strong>[6037]</strong> The user session&#39;s default locale is never taken into account when sending a notification by email. </p><p>When email notifications are sent to users, the locale used is the one defined in the user&#39;s preferences. If no locale is defined in the user preferences, the first locale defined in <code>ebx.properties</code> is used. The default user session locale should be used instead.</p></li><li><a name="bug_6236"></a><p><strong>[6236]</strong> An exception occurs when publishing a workflow with a publication name containing a quote. </p><p>An exception occurs when the user publishes a workflow model with a quote in the publication name. Furthermore, if there are already publications quotes in their names, an exception occurs when accessing the technical workflow publications table.</p></li></ul>
+<h3>
+<a name="bug-DistributedDataDelivery"></a>Distributed Data Delivery (D3)</h3>
+<ul>
+<li><a name="bug_6211"></a><p><strong>[6211]</strong> Synchronization aborts when a slave throws an exception. </p><p>When the user initiates a broadcast or when a D3 slave node is initialized, synchronization aborts if one slave throws an exception.</p></li><li><a name="bug_6226"></a><p><strong>[6226]</strong> Deactivation of a slave on a master node deletes it from configuration. </p><p>When an administrator deactivates a slave in the Administration area of the user interface, the slave&#39;s entry is deleted from master configuration.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import / Export</h3>
+<ul>
+<li><a name="bug_6247"></a><p><strong>[6247]</strong> CSV exports ignore the selected encoding. </p><p>Regardless of the encoding selected, CSV exports always use UTF-8.</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><a name="bug_6035"></a><p><strong>[6035]</strong> Some records with errors are omitted from text search filters on tables. </p><p>When a text search filter on a foreign key field value is applied on a table, if the value does not exist in the target table of the foreign key, the record is omitted in the result.</p></li><li><a name="bug_6265"></a><p><strong>[6265]</strong> The HTTP session is locked while executing a long procedure. </p><p>During the execution of a long procedure such as an archive import, if an applicative session based on the same HTTP session times out, the HTTP session gets locked and the user can no longer connect to EBX with the same HTTP session until the procedure has finished.</p></li></ul>
+<h3>
+<a name="bug-Userinterface"></a>User interface</h3>
+<ul>
+<li><a name="bug_6206"></a><p><strong>[6206]</strong> Validation rules are not correctly displayed in the predicate editor. </p><p>The predicate editor does not display validation rules correctly during rule creation and modification of criteria.</p></li><li><a name="bug_6223"></a><p><strong>[6223]</strong> The rendering for complex nodes should be the same whether creating or modifying a record. </p><p>When the user accesses a record creation form, all complex nodes are expanded even if the user interface configuration specifies the rendering as links.</p></li><li><a name="bug_6321"></a><p><strong>[6321]</strong> Impossible to cancel action when moving criteria in several interfaces. </p><p>If the user tries to move a criteria when editing an advanced filter, it is impossible to cancel the action. If there are no potential parents for the criteria, the user cannot leave the move action and cannot perform any other actions on the filter. The same issue occurs in the view configuration interface and the validation rule criteria creation interface.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><a name="bug_6235"></a><p><strong>[6235]</strong> Cannot set permissions if record creation has been disabled in an administration instance. </p><p>If record creation has been structurally disabled in an administration data set, permission records cannot be created for this data set. For example, the data modeling publications data set.</p></li></ul>
+<h2>
+<a name="bugfix-5.2.5"></a>5.2.5 Bug Fixes</h2>
+<h3>
+<a name="bugfix-5.2.5-Coreengine"></a>Core engine</h3>
+<ul>
+<li><a name="bug_5233"></a><p><strong>[5233]</strong> Some patterns for naming columns cause errors on historized tables. </p><p>If a historized table contains both a field named &#39;xxx&#39; and a field named &#39;oxxx&#39;, an error occurs when generating the mapped history table, citing duplicated field names.</p></li><li><a name="bug_5973"></a><p><strong>[5973]</strong> Cannot access history on some tables containing aggregated lists. </p><p>If the schema contains a historized table and the primary key of the table is referenced after an aggregated list, a <code>NullPointerException</code> will occur when trying to access table history. A workaround is to declare the primary key fields before all aggregated lists.</p></li><li><a name="bug_6008"></a><p><strong>[6008]</strong> Improve the indexing of the tables &#39;BRV&#39; and &#39;HTB&#39;. </p><p>On very large repositories, querying the database tables &#39;HTB&#39; and &#39;BRV&#39; takes a long time, due to table accesses by index id.</p></li><li><a name="bug_6141"></a><p><strong>[6141]</strong> Purge of orphan blocks may be incomplete. </p><p>In some cases, the purge of orphan blocks may terminate even though some orphan blocks still exist.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-Datamodeling"></a>Data modeling</h3>
+<ul>
+<li><a name="bug_5965"></a><p><strong>[5965]</strong> Cannot define a boolean formula in computation rule conditions for a boolean type field,. </p><p>When defining a computation rule for a field of type &#39;Boolean&#39;, it is not possible to add formulas in the &quot;if true&quot; and &quot;if false&quot; cases of the condition using the boolean functions true() or false().</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-DataspacesHistory"></a>Data spaces &amp; History</h3>
+<ul>
+<li><a name="bug_6042"></a><p><strong>[6042]</strong> Error when history is activated on a table with an <code>osd:password</code> field. </p><p>An error occurs when history is activated on a table that contains an <code>osd:password</code> field. According to the documentation, such fields should be ignored in the history.</p></li><li><a name="bug_6082"></a><p><strong>[6082]</strong> It should not be possible to close a technical data space. </p><p>Administration data spaces, as well as the data modeling and workflow modeling data spaces must never be closed or deleted.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-Datavalidation"></a>Data validation</h3>
+<ul>
+<li><a name="bug_5605"></a><p><strong>[5605]</strong> An error occurs when evaluating a validation rule. </p><p>A <code>ClassCastException</code> occurs when evaluating a validation rule on a table reference that targets a non-String primary key.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-Dataviews"></a>Data views</h3>
+<ul>
+<li><a name="bug_4797"></a><p><strong>[4797]</strong> In relational mode, the text search does not work properly for the character &#39;\&#39;. </p><p>On Postgres, a search term with the character &#39;\&#39; does not work.</p></li><li><a name="bug_6001"></a><p><strong>[6001]</strong> A fatal error occurs after deleting the root member of a hierarchy. </p><p>If a hierarchy&#39;s dependency link is based on a join table, deleting its root member generates a fatal error.</p></li><li><a name="bug_6041"></a><p><strong>[6041]</strong> XPath predicates sometimes fail in case insensitive mode. </p><p>The use of the XPath predicates <code>osd:is-equal-case-insensitive</code>, <code>osd:starts-with-case-insensitive</code>, or <code>osd:ends-with-case-insensitive</code> sometimes fails to return all records in the result.</p></li><li><a name="bug_6048"></a><p><strong>[6048]</strong> Deleting a non-leaf node on a hierarchy might fail. </p><p>Sometimes, when deleting a member in a data hierachy based on a ternary join table</p><p>, either a relationship is not deleted, or an error message occurs.</p></li><li><a name="bug_6084"></a><p><strong>[6084]</strong> Inconsistent comparison behavior between XML file import and export. </p><p>When the user exports a record containing empty fields in a created non-mandatory group, the XML export does not include the group. After an import, the group is not created, which causes a difference to be detected during comparisons.</p></li><li><a name="bug_6089"></a><p><strong>[6089]</strong> An error occurs when displaying a record on a table that has a recursive foreign key. </p><p>An error occurs when a table defines a foreign key with a recursive customized label. In this case, an error occurs when displaying the value for this foreign key.</p></li><li><a name="bug_6164"></a><p><strong>[6164]</strong> Custom views should not be able to be applied on data set access rights. </p><p>This feature is not fully supported and should be disabled. Moreover, custom views defined on data set data may cause fatal errors when trying to access the access rights table of a data set.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-Dataworkflows"></a>Data workflows</h3>
+<ul>
+<li><a name="bug_4803"></a><p><strong>[4803]</strong> When executing data workflows, cancelling a merge user task displays an incorrect message. </p><p>When a user takes and starts a data space merge user task, then cancels the operation, a message confirming a data space merge is displayed instead of a message indicating user cancellation.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-DistributedDataDelivery"></a>Distributed Data Delivery (D3)</h3>
+<ul>
+<li><a name="bug_6162"></a><p><strong>[6162]</strong> It should not be possible to set data set permissions on a slave. </p><p>Data set permissions are synchronized from the master, thus it should not be possible to modify them on the slave side.</p></li><li><a name="bug_6180"></a><p><strong>[6180]</strong> It is not possible to set rights on services when editing data space permissions. </p><p>In a data space permission, it should be possible to set acess rights on services.</p></li><li><a name="bug_6181"></a><p><strong>[6181]</strong> It should not be possible to update data set information on a slave. </p><p>Data set information is synchronized from the master, thus it should not be possible to modify it on the slave side.</p></li><li><a name="bug_6189"></a><p><strong>[6189]</strong> It should not be possible to update a D3 slave child data set using inheritance. </p><p>In a child data set, a record can be updated by letting the record inherit from the parent data set.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-Documentation"></a>Documentation</h3>
+<ul>
+<li><a name="bug_6052"></a><p><strong>[6052]</strong> Documentation update for built-in services output properties. </p><p>The documentation for UI services needs to be updated, as it is now possible to add output properties for built-in services.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-Userinterface"></a>User interface</h3>
+<ul>
+<li><a name="bug_4506"></a><p><strong>[4506]</strong> It is not possible to display a field with a <code>defaultView</code> property in a custom view. </p><p>If a field is configured as being hidden in the default view, it is not possible to make this node visible in a custom view.</p></li><li><a name="bug_5180"></a><p><strong>[5180]</strong> Mandatory fields are missing mandatory flags. </p><p>There are no mandatory &#39;*&#39; flags displayed next to some mandatory fields.</p></li><li><a name="bug_5337"></a><p><strong>[5337]</strong> Cannot navigate away from the record comparison screen if the scope is &#39;node&#39;. </p><p>In <code>UiHttpManagerComponent</code> mode, the record comparison screen from the tabular view does provide the option of going back to the tabular view when the scope is &#39;node&#39;. The View menu is also not available.</p></li><li><a name="bug_5542"></a><p><strong>[5542]</strong> Nodes with <code>osd:category=&quot;Hidden&quot;</code> can be seen through custom views. </p><p>A node with <code>osd:category=&quot;Hidden&quot;</code> can be used in a custom view as hierarchy dimension, sort criteria, or in a label renderer. As a consequence, its values are visible. This should include nodes that are hidden with <code>osd:category</code> but not the ones that are hidden by <code>osd:defaultview/hidden</code>.</p></li><li><a name="bug_5770"></a><p><strong>[5770]</strong> The order of owner profiles varies throughout the user interface. </p><p>When creating a data space, the list of owners has a different order from the order in the data space&#39;s &#39;Information&#39; view.</p></li><li><a name="bug_5860"></a><p><strong>[5860]</strong> The action &quot;Manage closed data spaces and versions&quot; should not be available outside the Administration area. </p><p>When accessing the permissions on a data space, the action &quot;Manage closed data spaces and versions&quot; is available in the &#39;Actions&#39; menu. This action should only be available in the Administration area.</p></li><li><a name="bug_5875"></a><p><strong>[5875]</strong> Field paths are not displayed on validation errors. </p><p>In form validation reports, only messages are displayed. The path of the field is not included when a form is submitted with invalid input.</p></li><li><a name="bug_5995"></a><p><strong>[5995]</strong> The user interface is incorrectly redirected after a user task. </p><p>After merging a data space in a user task, the user interface is redirected to the exit URI.</p></li><li><a name="bug_6033"></a><p><strong>[6033]</strong> Line feeds are incorrectly interpreted in UI service confirmation messages. </p><p>The confirmation message in a UI service declaration (at the schema level) is not properly interpreted when it contains line feeds. As a consequence, the call from the service in the user interface causes a JavaScript error.</p></li><li><a name="bug_6040"></a><p><strong>[6040]</strong> &#39;Select All&#39; automatically selects new records. </p><p>When the users uses the &#39;Select All&#39; service on a table, then performs a &#39;Delete&#39; action, new records created after the delete operation is processed are automatically selected.</p></li><li><a name="bug_6049"></a><p><strong>[6049]</strong> Existing error messages are not displayed on fields. </p><p>If a field has an existing error, the message is not displayed on the corresponding form input field. If the error is detected at user input, the message is displayed on the input field as expected.</p></li><li><a name="bug_6133"></a><p><strong>[6133]</strong> Method <code>createWithBaseURI</code> does not return the expected URI. </p><p>The method <code>UIHttpManagerComponent createWithBaseURI(String, AdaptationName)</code> does not take into account the target identifier (<code>AdaptationName</code>) of the EBX5 adaptation, as the URI returned is of the form &quot;/ebx/&amp;configuration=AdaptationName?branch=xxx&amp;...&quot;.</p></li><li><a name="bug_6142"></a><p><strong>[6142]</strong> Switching locales resets the current UI service. </p><p>It should not be possible to switch user locales while a UI service is running, as the service will not complete successfully.</p></li></ul>
+<h3>
+<a name="bugfix-5.2.5-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><a name="bug_5392"></a><p><strong>[5392]</strong> Access rules that rely on session attributes should be refreshed when refreshing a table view. </p><p>If an access permission is changed due to a session attribute value change, it is currently necessary to browse to another table, then return in order for the change to take effect. This needs to be refreshed when refreshing the view.</p></li><li><a name="bug_5765"></a><p><strong>[5765]</strong> Permissions defined on the users table in the default directory do not take effect. </p><p>After changing permissions to hide a field of the users table in the default directory, the field is still writable when accessing a record.</p></li><li><a name="bug_6175"></a><p><strong>[6175]</strong> Data set permissions form should not be editable in certain cases. </p><p>For users with read-only access or for snapshot, the data set permissions form should not be in edit mode.</p></li><li><a name="bug_6182"></a><p><strong>[6182]</strong> Data model permissions are not accurate. </p><p>Data set permissions of a data model exposes the internal meta-model and therefore cannot be used.</p></li></ul>
+<h2>
+<a name="bugfix-5.2.4fix002"></a>5.2.4 Fix 002 Bug Fixes</h2>
+<h3>
+<a name="bug-5.2.4fix002-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><a name="bug_5932"></a><p><strong>[5932]</strong> Pagination for table views is not optimized for primary keys composed of multiple fields. </p><p>The pagination of table views is not optimized when the primary key of the table is composed of multiple fields.</p></li><li><p><strong>[5959]</strong> Purge of mapped tables does not work for relational tables. </p><p>When purging a relational table, an error citing a missing sequence occurs.</p></li><li><p><strong>[5979]</strong> A previously non-existent field cannot be added to the primary key of a relational or historized table. </p><p>For relational and history tables, it is not possible to add a field to the primary key if it did not previously exist in the table. A possible workaround is to first add the field to the table, recompile schema, then add the field to the primary key.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix002-DataModeling"></a>Data Modeling</h3>
+<ul>
+<li><p><strong>[5950]</strong> A boolean type field can not be computed using date fields and date functions. </p><p>It is not possible use a computation rule on a field of type &#39;Boolean&#39; using date fields and date functions.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix002-DataServices"></a>Data Services</h3>
+<ul>
+<li><p><strong>[5759]</strong> The error message for failed authentications is incorrect. </p><p>If the method <code>Directory.authenticateFromSOAPHeader</code> returns &#39;null&#39;, the error message is &quot;Authentication failed:&nbsp;WSSE header missing...&quot; even though the WSSE header may not be missing.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix002-DataValidation"></a>Data Validation</h3>
+<ul>
+<li><p><strong>[5762]</strong> In the information of a data set, it should not be possible to set the &quot;Activated&quot; field to &#39;null&#39;. </p><p>A data set must be either active or inactive, thus it should not be possible to set its &quot;Activated&quot; field to &#39;null&#39;.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix002-DataViews"></a>Data Views</h3>
+<ul>
+<li><p><strong>[5935]</strong> For a specific dimension hierarchy does not display properly. </p><p>If the first dimension level is recursive, based on a join table and is not the last dimension level, only the root member will be displayed.</p></li><li><p><strong>[5941]</strong> When a foreign key has the cardinality 0..*, text searches do not work on the hierarchical view. </p><p>The text search does not work on the hierarchical view when a foreign key has a cardinality of 0..*. The same search works on tabular views and when the cardinality is 0..1.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix002-DataWorkflow"></a>Data Workflow</h3>
+<ul>
+<li><p><strong>[5908]</strong> An error occurs when launching a data set-level UI service in a user task. </p><p>When a service link is called during data workflow execution, an error occurs, as EBX5 does not find the service.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix002-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><strong>[5696]</strong> Some characters are not interpreted properly in file names when exporting tables to XML. </p><p>When exporting a table to an XML file with a file name containing special characters, the name of the downloaded file is altered.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix002-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><strong>[5294]</strong> XPath expressions are modified when submitted. </p><p>XPath expressions are refactored when submitting a form, even if the rule was correct.</p></li><li><p><strong>[5828]</strong> When deleting a node recursively, the confirmation message appears twice. </p><p>In the DMA, when the user deletes a node recursively, the confirmation message is shown once using a JavaScript confirmation, once with a full page message.</p></li><li><p><strong>[5834]</strong> Allow overriding the &quot;Default view&quot; property for a reusable group. </p><p>If a reusable group is referenced by a table attribute, it should be possible for the user to override the group&#39;s &quot;Default view&quot;, but the new value is ignored.</p></li><li><p><strong>[5967]</strong> Work item content is displayed over the &#39;Accept&#39; and &#39;Reject&#39; buttons when using a service. </p><p>When <code>@workflow</code> is called from a service launched in the &#39;Data&#39; area, the user interface displays the content of work items over the &#39;Accept&#39; and &#39;Reject&#39; buttons.</p></li></ul>
+<h2>
+<a name="bugfix-5.2.4fix001"></a>5.2.4 Fix 001 Bug Fixes</h2>
+<h3>
+<a name="bug-5.2.4fix001-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><strong>[5864]</strong> The default prefix for database objects is ignored in some cases. </p><p>The default prefix that is shared by all database objects of a given repository is ignored for tables generated by the history or used for relational mode. This occurs when the property <code>ebx.persistence.table.prefix</code> is not set (the default prefix is then &quot;EBX_&quot;).</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix001-DataModeling"></a>Data Modeling</h3>
+<ul>
+<li><p><strong>[5906]</strong> A fatal error occurs after the &quot;Foreign key constraint&quot; selection is cleared. </p><p>In the DMA, when the user uses the &#39;Clear field&#39; button on the &quot;Foreign key constraint&quot; field, and then submits the form, the user interface displays a fatal error.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix001-DataValidation"></a>Data Validation</h3>
+<ul>
+<li><p><strong>[5855]</strong> Cannot view data set after migrating data from 5.1 to 5.2.4. </p><p>After a data set with permissions defined is migrated from version 5.1 to version 5.2.4, an error occurs when users try to access it.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix001-DataViews"></a>Data Views</h3>
+<ul>
+<li><p><strong>[4801]</strong> In a hierarchy linked by a three-field join table, orphan members are not displayed correctly. </p><p>On a hierarchy linked by a three-field join table, orphan members are not displayed correctly. As a result, when a member is created or deleted, the join record may not be created or deleted accordingly.</p></li><li><p><strong>[5622]</strong> A fatal error sometimes occurs when reducing the number of table records displayed per page. </p><p>An <code>IllegalArgumentException</code> can occur when the user reduces the number of records displayed per page for a table.</p></li><li><p><strong>[5863]</strong> In a filtered hierarchy linked by a join table, the creation of a record sometimes fails. </p><p>This occurs when the user creates a record on a hierarchy view with a join table. If a text search filter is applied on the view and the created record is filtered, it is not attached to its parent.</p></li><li><p><strong>[5896]</strong> In a hierarchy, errors sometimes occur when performing a &#39;Remove all filters&#39; action. </p><p>A <code>ClassCastException</code> might occur when the user selects the &#39;Remove all filters&#39; action.</p></li><li><p><strong>[5898]</strong> &#39;Move&#39; and &#39;Detach&#39; services are always available in the hierarchy, regardless of permissions. </p><p>If a hierarchy is defined on a enumeration node, the services &#39;Move&#39; and &#39;Detach&#39; are always available, regardless of the permissions on this node.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix001-DataWorkflow"></a>Data Workflow</h3>
+<ul>
+<li><p><strong>[5867]</strong> An error occurs when a script defined using &#39;Specific&#39; mode is edited. </p><p>In a workflow model, when a script is defined using the &#39;Specific&#39; input mode, an error occurs when it is edited.</p></li></ul>
+<h3>
+<a name="bug-5.2.4fix001-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><strong>[5899]</strong> Deactivating an add-on does not work. </p><p>Even if an add-on is deactivated, its services are still available in the user interface.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

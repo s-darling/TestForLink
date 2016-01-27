@@ -1,0 +1,243 @@
+/***START text ***/
+
+@font-face{
+ font-family:'Source Sans Pro';
+ font-style:normal;
+ font-weight:400;
+ src:local('Source Sans Pro'), local('SourceSansPro-Regular'), url(../fonts/SourceSansPro-Regular.woff) format('woff');
+}
+/* note: google mail for ipad = 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif */
+
+body{
+ font-family:Helvetica, Arial, sans-serif;
+ font-size:12px;
+ color:#202020;
+}
+
+h1,
+#ebx_WorkspaceTitleContent,
+h2,
+h3,
+h4,
+h5,
+h6{
+ padding:0;
+ margin:0;
+ font-weight:bold;
+ cursor:default;
+ font-family:'Source Sans Pro', Helvetica, Arial, sans-serif;
+ color:#000000;
+}
+
+h1,
+#ebx_WorkspaceTitleContent{
+ font-size:2.5em;
+ padding:10px 0;
+}
+#ebx_WorkspaceTitleContent{
+ padding:10px;
+}
+
+h2{
+ font-size:1.8em;
+ margin-top:15px;
+ margin-bottom:5px;
+ border-bottom:1px solid #C0C0C0;
+}
+
+h3{
+ font-size:1.5em;
+ margin-top:0.8em;
+ margin-bottom:0.4em;
+}
+
+h4{
+ font-size:1.2em;
+ margin-top:0.8em;
+ margin-bottom:0.4em;
+}
+
+h5{
+ font-size:1.1em;
+ font-weight:bold;
+ margin-top:0.8em;
+ margin-bottom:0.4em;
+}
+
+a,
+a:visited,
+a:hover,
+a:active,
+a.ygtvlabel:hover{
+ text-decoration:none;
+}
+
+a,
+a:visited,
+.ygtvlabel,
+.ygtvcontent{
+ color:#606060;
+}
+a:hover,
+a:active,
+a.ygtvlabel:hover,
+.ygtvcontent:hover{
+ color:#303030;
+}
+
+.ebx_Selected .ygtvlabel{
+ color:#303030;
+}
+.ebx_Selected .ygtvlabel:hover{
+ color:#000000;
+}
+
+#seealso h5{
+ font-size:1.1em;
+ color:#888888;
+ padding:5px 0 0 0;
+ margin:10px 0 -5px 0;
+ padding-left:39px;
+}
+
+#seealso ul{
+ padding-left:6.5em;
+}
+
+#seealso li{
+ margin:0.5em 0;
+ font-style:italic;
+}
+
+.ebx_attention{
+ background-color:#DEDEDE;
+ margin:0 3.5em 0 3.5em;
+}
+
+.ebx_noteTitle{
+ font-size:1.1em;
+ padding:0;
+ color:#888888; 
+ margin:0 0 -5px -18px;
+}
+
+.ebx_noteDiv{
+ margin:0 3.5em 0 30px;
+ padding:0 0 0 25px;
+ border-left:solid;
+ border-width:1px;
+ border-color:#DEDEDE;
+}
+
+#seealsoShort p{
+ padding-left:38px;
+}
+
+ol,
+ul{
+ padding-left:20px;
+
+}
+
+ul{
+ list-style:square;
+}
+
+/* definition lists */
+table.ebx_definitionList{
+ width:100%;
+ margin:10px 0;
+
+ border-collapse:collapse;
+
+ border-style:solid;
+ border-color:#000000;
+ border-width:2px 0;
+
+ background:none;
+}
+
+th.ebx_definitionListHeader{
+ background-color:#F0F0F0;
+
+ border-style:solid;
+ border-color:#000000;
+ border-width:2px 0;
+
+ padding:0 5px;
+ text-align:left;
+}
+
+th.ebx_definitionListHeader p{
+ background-color:#F0F0F0;
+ padding:0;
+ margin:5px 0;
+}
+
+td.ebx_definitionListTerm,
+td.ebx_definitionListDefinition{
+ border-style:solid;
+ border-color:#000000;
+ border-width:1px 0;
+ vertical-align:top;
+ padding:0 5px;
+}
+
+td.ebx_definitionListTerm{
+ font-weight:bold;
+
+ width:35%;
+ padding-right:5px;
+}
+
+/***END text ***/
+
+/***START browser override ***/
+a:focus,
+button:focus,
+:focus{
+ outline:1px solid #C0C0C0;
+ -moz-outline-radius:4px;
+}
+div:focus,
+td:focus,
+fieldset:focus,
+table:focus,
+iframe:focus,
+.yuimenuitem a:focus{
+ outline:none;
+}
+
+/***END browser override ***/
+
+/***START colors ***/
+.ebx_ColoredBackgroundBorder{
+ background-color:#BFBFBF;
+}
+
+.ebx_ColoredBackgroundBorder{
+ border-color:#BFBFBF;
+}
+
+/***END colors ***/
+
+/*** START welcome.html ***/
+#welcomeImage{
+ text-align:center;
+}
+
+#welcomeToc{
+}
+
+#welcomeToc h2{
+ margin:0
+}
+
+#welcomeToc > ul > li{
+ margin:0.7em 0;
+}
+
+#welcomeToc li{
+ margin:0.2em 0;
+}
+/*** END welcome.html ***/

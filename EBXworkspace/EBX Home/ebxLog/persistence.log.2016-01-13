@@ -1,0 +1,464 @@
+2016-01-13 11:21:01,191 EST INFO   log.persistence 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:21:01,678 EST INFO   log.persistence 0985:0021 [localhost-startStop-1] Tried request on table EBX_REP: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 11:21:01,679 EST INFO   log.persistence 0985:0021 [localhost-startStop-1] Tried request on table CF40_REPOSITORY: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 11:22:50,132 EST INFO   log.persistence 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:23:00,771 EST INFO   log.persistence 0985:0021 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:23:01,614 EST INFO   log.persistence 0985:0021 [localhost-startStop-1] Tried request on table EBX_REP: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 11:23:01,616 EST INFO   log.persistence 0985:0021 [localhost-startStop-1] Tried request on table CF40_REPOSITORY: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 11:23:06,447 EST INFO   log.persistence 0985:0021 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 11:43:54,720 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 11:43:55,322 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] Tried request on table EBX_REP: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 11:43:55,323 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] Tried request on table CF40_REPOSITORY: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 11:44:35,789 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:19:44,620 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:19:45,181 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] Tried request on table EBX_REP: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 13:19:45,182 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] Tried request on table CF40_REPOSITORY: table not found. Database tables for EBX5 are apparently missing.
+2016-01-13 13:22:46,175 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] EBX5 configuration file: property [ebx.persistence.driver] is not defined.
+2016-01-13 13:22:46,176 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] EBX5 configuration file: property [ebx.persistence.url] is not defined.
+2016-01-13 13:24:06,130 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] EBX5 configuration file: property [ebx.persistence.driver] is not defined.
+2016-01-13 13:24:06,132 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] EBX5 configuration file: property [ebx.persistence.url] is not defined.
+2016-01-13 13:24:12,557 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] ============================================================================
+2016-01-13 13:24:12,558 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] BEGIN REPOSITORY INSTALLATION: RepositoryDeclaration[repositoryId=00BCB1E7F93B, repositoryLabel=Repository, format=null]@550779e1
+2016-01-13 13:24:12,558 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Database: jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository
+2016-01-13 13:24:12,558 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] ============================================================================
+2016-01-13 13:24:12,572 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level SSE.1 not found. Upgrading...
+2016-01-13 13:24:12,610 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script: 
+CREATE TABLE EBX_DDS (
+	script_id INT NOT NULL ,
+	repository_patch NVARCHAR2(50) NOT NULL ,
+	product_info NVARCHAR2(50) NOT NULL ,
+	start_time TIMESTAMP NOT NULL ,
+	end_time TIMESTAMP,
+	CONSTRAINT EBX_DDS_PK PRIMARY KEY  (script_id));
+CREATE INDEX EBX_DDSIX ON EBX_DDS (repository_patch);
+CREATE TABLE EBX_DDO (
+	script_id INT NOT NULL ,
+	operation_id INT NOT NULL ,
+	statement VARCHAR NOT NULL ,
+	start_time TIMESTAMP NOT NULL ,
+	end_time TIMESTAMP,
+	CONSTRAINT EBX_DDO_PK PRIMARY KEY  (script_id, operation_id),
+	 FOREIGN KEY (script_id) REFERENCES EBX_DDS(script_id));
+CREATE TABLE EBX_DDX (
+	script_id INT NOT NULL ,
+	operation_id INT NOT NULL ,
+	execution_id INT NOT NULL ,
+	start_time TIMESTAMP NOT NULL ,
+	end_time TIMESTAMP,
+	error VARCHAR,
+	CONSTRAINT EBX_DDX_PK PRIMARY KEY  (execution_id, operation_id, script_id),
+	 FOREIGN KEY (script_id, operation_id) REFERENCES EBX_DDO(script_id, operation_id));
+
+2016-01-13 13:24:12,629 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Table EBX_REL not found. Installing table.
+2016-01-13 13:24:12,629 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level DBU.1 not found. Upgrading...
+2016-01-13 13:24:12,638 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_REL (
+	update_id NVARCHAR2(50) NOT NULL ,
+	t_stamp NUMBER(24),
+	product_info NVARCHAR2(50),
+	CONSTRAINT EBX_REL_PK PRIMARY KEY  (update_id));
+
+2016-01-13 13:24:12,643 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level GRS.1 not found. Upgrading...
+2016-01-13 13:24:12,664 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_REP (
+	repository_id NVARCHAR2(12) NOT NULL ,
+	format_id NVARCHAR2(32) NOT NULL ,
+	repository_label NVARCHAR2(64),
+	 last_read NUMBER(24),
+	last_write NUMBER(24),
+	CONSTRAINT EBX_REP_PK PRIMARY KEY  (repository_id, format_id));
+CREATE TABLE EBX_HOM (
+	home_id INT NOT NULL ,
+	parent_home_id INT NOT NULL ,
+	home_name NVARCHAR2(32) NOT NULL ,
+	home_type NVARCHAR2(1) NOT NULL ,
+	creation_date NUMBER(24),
+	termination_date NUMBER(24),
+	last_read NUMBER(24),
+	last_write NUMBER(24),
+	CONSTRAINT EBX_HOM_PK PRIMARY KEY  (home_id));
+CREATE TABLE EBX_ILR (
+	instance_id INT NOT NULL ,
+	reference NVARCHAR2(64) NOT NULL ,
+	uuid NVARCHAR2(36) NOT NULL ,
+	CONSTRAINT EBX_ILR_PK PRIMARY KEY  (instance_id));
+CREATE TABLE EBX_IRV (
+	instance_id INT NOT NULL ,
+	revision_id INT NOT NULL ,
+	parent_reference NVARCHAR2(64),
+	content_type NVARCHAR2(1) NOT NULL ,
+	record_id INT NOT NULL ,
+	shared_revision NVARCHAR2(1),
+	revision_date NUMBER(24),
+	content VARBINARY (2048),
+	CONSTRAINT EBX_IRV_PK PRIMARY KEY  (instance_id, revision_id, content_type, record_id));
+CREATE TABLE EBX_HTI (
+	home_id INT NOT NULL ,
+	instance_id INT NOT NULL ,
+	revision_id INT NOT NULL ,
+	CONSTRAINT EBX_HTI_PK PRIMARY KEY  (home_id, instance_id));
+CREATE TABLE EBX_TLR (
+	table_rid INT NOT NULL ,
+	instance_id INT NOT NULL ,
+	content_type NVARCHAR2(1) NOT NULL ,
+	xs_path NVARCHAR2(255),
+	xs_id NVARCHAR2(32),
+	CONSTRAINT EBX_TLR_PK PRIMARY KEY  (table_rid));
+CREATE INDEX EBX_TIX ON EBX_TLR (instance_id, content_type);
+CREATE TABLE EBX_BRV (
+	table_rid INT NOT NULL ,
+	bloc_id INT NOT NULL ,
+	revision_id INT NOT NULL ,
+	record_id INT NOT NULL ,
+	shared_revision NVARCHAR2(1),
+	revision_date NUMBER(24),
+	content VARBINARY (2048),
+	CONSTRAINT EBX_BRV_PK PRIMARY KEY  (table_rid, bloc_id, revision_id, record_id));
+CREATE TABLE EBX_HTB (
+	home_id INT NOT NULL ,
+	table_rid INT NOT NULL ,
+	bloc_id INT NOT NULL ,
+	revision_id INT NOT NULL ,
+	CONSTRAINT EBX_HTB_PK PRIMARY KEY  (home_id, table_rid, bloc_id));
+CREATE INDEX EBX_BIX ON EBX_HTB (table_rid, bloc_id, revision_id);
+
+2016-01-13 13:24:12,701 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level GRS.2 not found. Upgrading...
+2016-01-13 13:24:12,723 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE INDEX EBX_BRVIX ON EBX_BRV (table_rid, bloc_id, revision_id, shared_revision);
+DROP INDEX EBX_BIX;
+CREATE INDEX EBX_BIX ON EBX_HTB (home_id, table_rid, bloc_id, revision_id);
+
+2016-01-13 13:24:12,732 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level GRS.3 not found. Upgrading...
+2016-01-13 13:24:12,747 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE INDEX EBX_HTB_TABIX ON EBX_HTB (table_rid, bloc_id, revision_id, home_id);
+DROP INDEX EBX_BRVIX;
+
+2016-01-13 13:24:12,757 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level GRS.4 not found. Upgrading...
+2016-01-13 13:24:12,766 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+UPDATE EBX_HOM SET parent_home_id=home_id WHERE parent_home_id=-1;
+ALTER TABLE EBX_HOM ADD CONSTRAINT EBX_HOM_PARENT_FK FOREIGN KEY (parent_home_id) REFERENCES EBX_HOM(home_id)
+
+2016-01-13 13:24:12,775 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level RRO.1 not found. Upgrading...
+2016-01-13 13:24:12,779 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_RRO (
+	id INT NOT NULL ,
+	mode_key NVARCHAR2(50) NOT NULL ,
+	heart_beat_interval INT NOT NULL ,
+	host_name NVARCHAR2(300),
+	host_address NVARCHAR2(300),
+	product_version NVARCHAR2(50) NOT NULL ,
+	insert_time TIMESTAMP NOT NULL ,
+	state NVARCHAR2(1) NOT NULL ,
+	rro_flag INT NOT NULL ,
+	rro_request_time TIMESTAMP,
+	rro_hold_time TIMESTAMP,
+	heart_beat_time TIMESTAMP,
+	heart_beat_count INT,
+	heart_beat_max_interval INT,
+	pre_commit_count INT,
+	post_commit_count INT,
+	marked_dead_time TIMESTAMP,
+	marked_dead_origin INT,
+	system_info VARCHAR,
+	CONSTRAINT EBX_RRO_PK PRIMARY KEY  (id),
+	CONSTRAINT EBX_RRO_UNQ UNIQUE  (rro_flag));
+
+2016-01-13 13:24:12,784 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level TSA.1 not found. Upgrading...
+2016-01-13 13:24:12,810 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_XS (
+	xs_id INT NOT NULL ,
+	xs_path NVARCHAR2(512) NOT NULL ,
+	state NUMBER(2) NOT NULL ,
+	last_write NUMBER(24),
+	CONSTRAINT EBX_XS_PK PRIMARY KEY  (xs_id),
+	CONSTRAINT EBX_XS_UNQ UNIQUE  (xs_path));
+CREATE SEQUENCE EBX_XS_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_TXS (
+	txs_id INT NOT NULL ,
+	table_path NVARCHAR2(512) NOT NULL ,
+	table_name_in_db NVARCHAR2(512),
+	table_name_in_db_for_HV NVARCHAR2(512),
+	state NUMBER(2) NOT NULL ,
+	state_hv NUMBER(2) NOT NULL ,
+	last_write NUMBER(24),
+	xs_id INT NOT NULL ,
+	CONSTRAINT EBX_TXS_PK PRIMARY KEY  (txs_id),
+	CONSTRAINT EBX_TXS_UNQ UNIQUE  (xs_id, table_path));
+CREATE SEQUENCE EBX_TXS_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_CXS (
+	txs_id INT NOT NULL ,
+	cxs_id INT NOT NULL ,
+	column_path NVARCHAR2(512) NOT NULL ,
+	ctp_id INT NOT NULL ,
+	column_name_in_db NVARCHAR2(512) NOT NULL ,
+	state NUMBER(2) NOT NULL ,
+	last_write NUMBER(24),
+	CONSTRAINT EBX_CXS_PK PRIMARY KEY  (txs_id, cxs_id));
+CREATE TABLE EBX_IDX (
+	txs_id INT NOT NULL ,
+	idx_id INT NOT NULL ,
+	index_name NVARCHAR2(512),
+	index_name_in_db NVARCHAR2(512),
+	flag_pk NVARCHAR2(1) CHECK (flag_pk IN ( '0', '1' )),
+	state NUMBER(2) NOT NULL ,
+	last_write NUMBER(24),
+	CONSTRAINT EBX_IDX_PK PRIMARY KEY  (txs_id, idx_id));
+CREATE SEQUENCE EBX_IDX_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_ICX (
+	idx_id INT NOT NULL ,
+	txs_id INT NOT NULL ,
+	cxs_id INT NOT NULL ,
+	column_order INT NOT NULL ,
+	CONSTRAINT EBX_ICX_PK PRIMARY KEY  (idx_id, txs_id, cxs_id));
+CREATE TABLE EBX_CTP (
+	ctp_id INT NOT NULL ,
+	column_type_name NVARCHAR2(512) NOT NULL ,
+	namespace NVARCHAR2(512),
+	CONSTRAINT EBX_CTP_PK PRIMARY KEY  (ctp_id),
+	CONSTRAINT EBX_CTP_UNQ UNIQUE  (ctp_id, column_type_name));
+CREATE SEQUENCE EBX_CTP_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_FCT (
+	fct_id INT NOT NULL ,
+	txs_id INT NOT NULL ,
+	cxs_id INT NOT NULL ,
+	facet_name NVARCHAR2(512),
+	value_string VARCHAR,
+	value_int INT,
+	state NUMBER(2) NOT NULL ,
+	last_write NUMBER(24),
+	CONSTRAINT EBX_FCT_PK PRIMARY KEY  (fct_id),
+	CONSTRAINT EBX_FCT_UNQ UNIQUE  (fct_id, txs_id, cxs_id));
+CREATE SEQUENCE EBX_FCT_SEQ START WITH 1 INCREMENT BY 1;
+
+2016-01-13 13:24:12,858 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level TSA.2 not found. Upgrading...
+2016-01-13 13:24:12,861 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_LXS (
+	master_txs_id INT NOT NULL ,
+	list_path NVARCHAR2(512) NOT NULL ,
+	aux_txs_id INT NOT NULL ,
+	CONSTRAINT EBX_LXS_PK PRIMARY KEY  (master_txs_id, aux_txs_id));
+
+2016-01-13 13:24:12,865 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level TSA.3 not found. Upgrading...
+2016-01-13 13:24:12,876 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+ALTER TABLE EBX_LXS ADD hv_column_name NVARCHAR2(512) NOT NULL ;
+
+2016-01-13 13:24:12,887 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level TSA.4 not found. Upgrading...
+2016-01-13 13:24:12,891 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_RPU (
+	xs_id INT NOT NULL ,
+	name NVARCHAR2(64) NOT NULL ,
+	dataspace NVARCHAR2(512) NOT NULL ,
+	dataset NVARCHAR2(512) NOT NULL ,
+	refresh NVARCHAR2(32) NOT NULL ,
+	CONSTRAINT EBX_RPU_PK PRIMARY KEY  (xs_id, name));
+CREATE TABLE EBX_TXR (
+	xs_id INT NOT NULL ,
+	rpu_name NVARCHAR2(64) NOT NULL ,
+	txs_id INT NOT NULL ,
+	table_name_in_db NVARCHAR2(512) NOT NULL ,
+	state NUMBER(2) NOT NULL ,
+	created_time TIMESTAMP NOT NULL ,
+	last_refreshed_time TIMESTAMP,
+	CONSTRAINT EBX_TXR_PK PRIMARY KEY  (xs_id, rpu_name, txs_id),
+	 FOREIGN KEY (xs_id, rpu_name) REFERENCES EBX_RPU(xs_id, name));
+
+2016-01-13 13:24:12,900 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level TSA.5 not found. Upgrading...
+2016-01-13 13:24:12,909 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+ALTER TABLE EBX_TXR ADD CONSTRAINT EBX_TXR_UNQ UNIQUE  (table_name_in_db);
+ALTER TABLE EBX_TXS ADD CONSTRAINT EBX_TXS_XS_FK FOREIGN KEY (xs_id) REFERENCES EBX_XS(xs_id)
+ALTER TABLE EBX_TXR ADD CONSTRAINT EBX_TXR_XS_FK FOREIGN KEY (xs_id) REFERENCES EBX_XS(xs_id)
+ALTER TABLE EBX_TXR ADD CONSTRAINT EBX_TXR_TXS_FK FOREIGN KEY (txs_id) REFERENCES EBX_TXS(txs_id)
+
+2016-01-13 13:24:12,919 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level SSE.2 not found. Upgrading...
+2016-01-13 13:24:12,923 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_DDT (
+	script_id INT NOT NULL ,
+	txs_id INT NOT NULL ,
+	CONSTRAINT EBX_DDT_PK PRIMARY KEY  (script_id, txs_id),
+	 FOREIGN KEY (script_id) REFERENCES EBX_DDS(script_id),
+	 FOREIGN KEY (txs_id) REFERENCES EBX_TXS(txs_id));
+
+2016-01-13 13:24:12,936 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level HVM.1 not found. Upgrading...
+2016-01-13 13:24:12,946 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_HV_TX (
+	tx_id INT NOT NULL ,
+	user_id INT,
+	action_id INT,
+	home_id INT,
+	session_id INT,
+	timestamp NUMBER,
+	uuid NVARCHAR2(36),
+	execution_info VARCHAR,
+	CONSTRAINT EBX_HV_TX_PK PRIMARY KEY  (tx_id));
+CREATE SEQUENCE EBX_HV_TX_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_HV_TX_STAT (
+	tx_id INT NOT NULL ,
+	instance_id INT,
+	txs INT,
+	nb_creates INT,
+	nb_updates INT,
+	nb_deletes INT);
+CREATE SEQUENCE EBX_HV_TX_STAT_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_HV_USER (
+	user_id INT NOT NULL ,
+	name VARCHAR,
+	CONSTRAINT EBX_HV_USER_PK PRIMARY KEY  (user_id));
+CREATE SEQUENCE EBX_HV_USER_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_HV_ACTION (
+	action_id INT NOT NULL ,
+	built_in_action_name NVARCHAR2(50),
+	procedure_name VARCHAR,
+	CONSTRAINT EBX_HV_ACTION_PK PRIMARY KEY  (action_id));
+CREATE SEQUENCE EBX_HV_ACTION_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_HV_INSTANCE (
+	instance_id INT NOT NULL ,
+	reference NVARCHAR2(64),
+	content_type NVARCHAR2(1),
+	CONSTRAINT EBX_HV_INSTANCE_PK PRIMARY KEY  (instance_id));
+CREATE SEQUENCE EBX_HV_INSTANCE_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_HV_HOM (
+	home_id INT NOT NULL ,
+	home_name NVARCHAR2(32),
+	home_type NVARCHAR2(1),
+	CONSTRAINT EBX_HV_HOM_PK PRIMARY KEY  (home_id));
+CREATE SEQUENCE EBX_HV_HOM_SEQ START WITH 1 INCREMENT BY 1;
+CREATE TABLE EBX_HV_SESSION (
+	session_id INT NOT NULL ,
+	session_type NVARCHAR2(512),
+	ip_address NVARCHAR2(39),
+	http_id VARCHAR,
+	tracking_info VARCHAR,
+	CONSTRAINT EBX_HV_SESSION_PK PRIMARY KEY  (session_id));
+CREATE SEQUENCE EBX_HV_SESSION_SEQ START WITH 1 INCREMENT BY 1;
+
+2016-01-13 13:24:12,974 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level HVM.2 not found. Upgrading...
+2016-01-13 13:24:12,984 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE INDEX EBX_TXIX ON EBX_HV_TX (home_id, timestamp);
+
+2016-01-13 13:24:12,989 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level HVM.3 not found. Upgrading...
+2016-01-13 13:24:12,991 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+ALTER TABLE EBX_HV_HOM ALTER COLUMN home_name NVARCHAR2(33);
+
+2016-01-13 13:24:12,994 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level HVM.4 not found. Upgrading...
+2016-01-13 13:24:12,996 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+CREATE TABLE EBX_HV_MERGE (
+	tx_id INT NOT NULL ,
+	merged_home_id INT NOT NULL ,
+	begin_time NUMBER NOT NULL ,
+	end_time NUMBER NOT NULL ,
+	CONSTRAINT EBX_HV_MERGE_PK PRIMARY KEY  (tx_id, merged_home_id));
+
+2016-01-13 13:24:13,000 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level HVM.5 not found. Upgrading...
+2016-01-13 13:24:13,061 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+ALTER TABLE EBX_HV_TX ALTER COLUMN user_id  SET  NOT NULL;
+ALTER TABLE EBX_HV_TX ALTER COLUMN session_id  SET  NOT NULL;
+ALTER TABLE EBX_HV_TX ALTER COLUMN action_id  SET  NOT NULL;
+DROP INDEX EBX_TXIX;
+ALTER TABLE EBX_HV_TX ALTER COLUMN home_id  SET  NOT NULL;
+CREATE INDEX EBX_TXIX ON EBX_HV_TX (home_id, timestamp, tx_id);
+ALTER TABLE EBX_HV_TX_STAT ALTER COLUMN instance_id  SET  NOT NULL;
+ALTER TABLE EBX_HV_TX_STAT ALTER COLUMN txs  SET  NOT NULL;
+ALTER TABLE EBX_HV_TX_STAT ALTER COLUMN nb_creates  SET  NOT NULL;
+ALTER TABLE EBX_HV_TX_STAT ALTER COLUMN nb_updates  SET  NOT NULL;
+ALTER TABLE EBX_HV_TX_STAT ALTER COLUMN nb_deletes  SET  NOT NULL;
+
+2016-01-13 13:24:13,080 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level HVM.6.PRE not found. Upgrading...
+2016-01-13 13:24:13,082 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+UPDATE EBX_HV_TX SET user_id=(SELECT  MIN ( u2.user_id) FROM EBX_HV_USER u1 INNER JOIN EBX_HV_USER u2 ON  u1.name= u2.name WHERE  u1.user_id=EBX_HV_TX.user_id) WHERE EBX_HV_TX.user_id IN (SELECT  u1.user_id FROM EBX_HV_USER u1 INNER JOIN EBX_HV_USER u2 ON  u1.name= u2.name AND  u2.user_id <  u1.user_id);
+DELETE  FROM EBX_HV_USER WHERE user_id > (SELECT  MIN ( u2.user_id) FROM EBX_HV_USER u2  WHERE  u2.name=EBX_HV_USER.name);
+
+2016-01-13 13:24:13,089 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Patch level HVM.6 not found. Upgrading...
+2016-01-13 13:24:13,095 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] [4eef3ebb] Executing DDL script in secure mode: 
+ALTER TABLE EBX_HV_USER ADD CONSTRAINT EBX_HV_USER_UNQ UNIQUE  (name);
+
+2016-01-13 13:24:13,104 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] ============================================================================
+2016-01-13 13:24:13,104 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] FINISHED REPOSITORY INSTALLATION: RepositoryDeclaration[repositoryId=00BCB1E7F93B, repositoryLabel=Repository, format=null]@550779e1
+2016-01-13 13:24:13,104 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Database: jdbc:h2:/Users/susannahdarling/Documents/workspace/EBXworkspace/EBX Home/ebxRepository/h2/repository
+2016-01-13 13:24:13,104 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] ============================================================================
+2016-01-13 13:24:13,147 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Starting repository ownership heart beat thread on entry: id=1, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-13 13:24:13,406 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 77 ms.
+2016-01-13 13:24:13,454 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 8 ms.
+2016-01-13 13:24:13,488 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 14 ms.
+2016-01-13 13:24:13,524 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 8 ms.
+2016-01-13 13:24:13,531 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-13 13:24:13,553 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 11 ms.
+2016-01-13 13:24:13,726 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 4 ms.
+2016-01-13 13:24:13,744 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 9 ms.
+2016-01-13 13:24:13,753 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-13 13:24:13,762 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:13,831 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-13 13:24:13,843 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 7 ms.
+2016-01-13 13:24:13,873 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:13,880 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 4 ms.
+2016-01-13 13:24:13,907 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:13,918 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 8 ms.
+2016-01-13 13:24:13,935 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-13 13:24:13,945 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 5 ms.
+2016-01-13 13:24:13,973 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:13,982 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 5 ms.
+2016-01-13 13:24:14,006 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-13 13:24:14,022 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:14,053 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-13 13:24:14,080 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 8 ms.
+2016-01-13 13:24:14,182 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 2 changes in Java Cache; in 5 ms.
+2016-01-13 13:24:14,210 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:14,222 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:14,253 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 4 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:14,290 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:14,302 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:14,314 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-13 13:24:14,321 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:14,326 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-13 13:24:14,346 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-13 13:24:14,474 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 4 changes in Java Cache; in 14 ms.
+2016-01-13 13:24:14,544 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 11 ms.
+2016-01-13 13:24:14,569 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-13 13:24:14,611 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 4 changes in Java Cache; in 15 ms.
+2016-01-13 13:24:14,756 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 4 ms.
+2016-01-13 13:24:14,810 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 7 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:14,873 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 2 changes in Java Cache; in 8 ms.
+2016-01-13 13:24:14,882 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 4 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:14,895 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 4 changes in Java Cache; in 5 ms.
+2016-01-13 13:24:14,913 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:14,927 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 4 changes in Java Cache; in 5 ms.
+2016-01-13 13:24:14,943 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:14,976 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 4 changes in Java Cache; in 8 ms.
+2016-01-13 13:24:15,119 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:15,129 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 4 changes in Java Cache; in 6 ms.
+2016-01-13 13:24:15,139 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:15,145 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:15,220 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-13 13:24:15,225 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-13 13:24:15,312 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-13 13:24:15,322 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 1 ms.
+2016-01-13 13:24:21,339 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-7] Committed 1 changes in Java Cache; in 2 ms.
+2016-01-13 13:24:22,194 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Heart beat #10: avgInterval=905: maxInterval=1007 ms.
+2016-01-13 13:24:32,245 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Heart beat #20: avgInterval=955: maxInterval=1008 ms.
+2016-01-13 13:27:32,896 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Heart beat #200: avgInterval=998: maxInterval=1008 ms.
+2016-01-13 13:30:53,517 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Heart beat #400: avgInterval=1000: maxInterval=1009 ms.
+2016-01-13 13:34:14,164 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Heart beat #600: avgInterval=1001: maxInterval=1009 ms.
+2016-01-13 13:37:34,855 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Heart beat #800: avgInterval=1002: maxInterval=1009 ms.
+2016-01-13 13:40:55,631 EST INFO   log.persistence 0985:0003 [ebx-rro-1-unique] Heart beat #1000: avgInterval=1002: maxInterval=1009 ms.
+2016-01-13 13:46:27,821 EST INFO   log.persistence 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-13 13:46:35,474 EST INFO   log.persistence 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-13 13:46:44,391 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Starting repository ownership heart beat thread on entry: id=2, hostName=Susannahs-MBP, hostAddress=10.1.10.225, mode=unique, state=Not owner.
+2016-01-13 13:46:47,718 EST INFO   log.persistence 0985:0003 [ebx-boot] Committed 1 changes in Java Cache; in 76 ms.
+2016-01-13 13:46:53,453 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #10: avgInterval=906: maxInterval=1016 ms.
+2016-01-13 13:47:03,496 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #20: avgInterval=955: maxInterval=1016 ms.
+2016-01-13 13:47:12,448 EST INFO   log.persistence 0985:0003 [http-bio-8090-exec-5] Committed 1 changes in Java Cache; in 3 ms.
+2016-01-13 13:50:04,263 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #200: avgInterval=999: maxInterval=1016 ms.
+2016-01-13 13:53:25,074 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #400: avgInterval=1001: maxInterval=1016 ms.
+2016-01-13 13:56:45,850 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #600: avgInterval=1002: maxInterval=1016 ms.
+2016-01-13 14:00:06,653 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #800: avgInterval=1002: maxInterval=1058 ms.
+2016-01-13 14:03:27,421 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #1000: avgInterval=1003: maxInterval=1058 ms.
+2016-01-13 14:20:12,133 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #2000: avgInterval=1003: maxInterval=1993 ms.
+2016-01-13 14:36:55,514 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #3000: avgInterval=1003: maxInterval=1993 ms.
+2016-01-13 14:53:39,085 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #4000: avgInterval=1003: maxInterval=1993 ms.
+2016-01-13 15:10:23,116 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #5000: avgInterval=1003: maxInterval=1993 ms.
+2016-01-13 15:27:07,058 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #6000: avgInterval=1003: maxInterval=1993 ms.
+2016-01-13 15:49:27,010 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #7000: avgInterval=1051: maxInterval=336750 ms.
+2016-01-13 16:06:10,401 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #8000: avgInterval=1045: maxInterval=336750 ms.
+2016-01-13 16:22:54,646 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #9000: avgInterval=1041: maxInterval=336750 ms.
+2016-01-13 17:12:38,278 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #10000: avgInterval=1235: maxInterval=1200320 ms.
+2016-01-13 17:29:21,223 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #11000: avgInterval=1214: maxInterval=1200320 ms.
+2016-01-13 17:46:04,295 EST INFO   log.persistence 0985:0003 [ebx-rro-2-unique] Heart beat #12000: avgInterval=1196: maxInterval=1200320 ms.

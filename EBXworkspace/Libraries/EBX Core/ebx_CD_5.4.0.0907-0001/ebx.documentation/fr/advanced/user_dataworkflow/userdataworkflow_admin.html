@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Administration de workflows de donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="workflow_administration" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation de EBX5 &gt; Guide utilisateur &gt; Workflows de données &gt; Gestion de workflows de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataworkflow/userdataworkflow_admin.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Workflows de données &gt; Gestion de workflows de données</span></div>
+<h1>
+Administration de workflows de donn&eacute;es</h1>
+<p>Si vous disposez de permissions pour administrer des workflows de donn&eacute;es, toutes les publications, workflows actifs, et bons de travail associ&eacute;s seront affich&eacute;s dans les diff&eacute;rentes vues de la section &quot;Monitoring&quot; dans le panneau de navigation. Dans ces vues de monitoring, vous pouvez acc&eacute;der directement aux menus <strong>Actions</strong> sur les lignes des tables pour effectuer les actions d&#39;administration.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Quand un mod&egrave;le de donn&eacute;es vous donne des droits d&#39;administration, vous aurez automatiquement les permissions de monitoring sur tous les objets associ&eacute;s &agrave; l&#39;ex&eacute;cution de workflow, comme les publications, les workflows actifs, et les bons de travail.</fieldset>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Présentation de l'exécution de workflow de données</a></li><li class="toc1"><a href="#id2">Actions d'administration de workflow de données</a><ul class="toc2">
+<li class="toc2"><a href="#actions_publications">Actions sur les publications</a></li><li class="toc2"><a href="#actions_workflows">Actions sur workflows de données</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Pr&eacute;sentation de l&#39;ex&eacute;cution de workflow de donn&eacute;es</h2>
+<p>Quand un workflow de donn&eacute;es est lanc&eacute;, un <em>jeton</em> qui repr&eacute;sente l&#39;&eacute;tape en cours d&#39;ex&eacute;cution est cr&eacute;&eacute; et positionn&eacute; au d&eacute;but du workflow. A chaque fois qu&#39;une &eacute;tape est termin&eacute;e, ce jeton se d&eacute;place sur la prochaine &eacute;tape d&eacute;finie par le mod&egrave;le de workflow associ&eacute; &agrave; la publication du workflow de donn&eacute;es.</p><p>Pendant l&#39;ex&eacute;cution d&#39;un workflow de donn&eacute;es, le jeton est positionn&eacute; sur un des types d&#39;&eacute;tape suivants:</p><ul>
+<li><p>une t&acirc;che automatique, qui est lanc&eacute;e automatiquement et n&#39;a pas besoin d&#39;interaction utilisateur. La t&acirc;che automatique est termin&eacute;e quand les actions d&eacute;finies finissent leur ex&eacute;cution.</p></li><li><p>une t&acirc;che utilisateur, qui g&eacute;n&egrave;re un ou plusieurs bons de travail effectu&eacute;s manuellement par les utilisateurs. Chaque bon de travail est termin&eacute; pas une action &quot;Accepter&quot; ou &quot;Rejeter&quot;, r&eacute;alis&eacute;e explicitement par l&#39;utilisateur. La fin de la t&acirc;che utilisateur chapeau est d&eacute;termin&eacute;e en fonction du crit&egrave;re de fin de t&acirc;che d&eacute;fini pour la t&acirc;che utilisateur dans le mod&egrave;le de workflow.</p></li><li><p>une condition, qui est &eacute;valu&eacute;e automatiquement afin de d&eacute;terminer l&#39;&eacute;tape suivante de l&#39;ex&eacute;cution du workflow de donn&eacute;es.</p></li></ul>
+<p>Le jeton peut &ecirc;tre dans les &eacute;tats suivants :</p><ul>
+<li><p><strong>A executer :</strong> Le jeton est en train de passer &agrave; la prochaine &eacute;tape, en se basant sur le mod&egrave;le de workflow.</p></li><li><p><strong>En cours d&#39;ex&eacute;cution :</strong> Le jeton est positionn&eacute; sur une t&acirc;che automatique ou une condition en train de s&#39;ex&eacute;cuter.</p></li><li><p><strong>Utilisateur :</strong> Le jeton est positionn&eacute; sur une t&acirc;che utilisateur et attend une action utilisateur.</p></li><li><p><strong>Termin&eacute; :</strong> Le jeton a atteint la fin du workflow de donn&eacute;es.</p></li><li><p><strong>Erreur :</strong> Une erreur est survenue.</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../engine/admin_workflow.html">Data workflow administration</a></p></div>
+<h2>
+<a name="id2"></a>Actions d&#39;administration de workflow de donn&eacute;es</h2>
+<h3>
+<a name="actions_publications"></a>Actions sur les publications</h3>
+<h4>
+<a name="disable"></a>D&eacute;sactivation d&#39;une publication de workflow</h4>
+<p>Afin d&#39;&eacute;viter que de nouveaux workflows de donn&eacute;es soient lanc&eacute;s depuis une publication de workflow, vous pouvez d&eacute;sactiver la publication. S&eacute;lectionnez la vue &quot;Publications&quot; dans la panneau de navigation, puis s&eacute;lectionnez <strong>Actions &gt; D&eacute;sactiver</strong> sur la ligne de la publication cible.</p><p>Une fois d&eacute;sactiv&eacute;e, la publication n&#39;apparaîtra plus dans la vue &quot;Lanceurs de workflow&quot; des utilisateurs. Toutefois, les workflows de donn&eacute;es d&eacute;j&agrave; lanc&eacute;s vont continuer &agrave; s&#39;ex&eacute;cuter.</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Suite &agrave; la d&eacute;sactivation d&#39;une publication, il n&#39;est pas possible de la r&eacute;activer &agrave; partir de la section &quot;Workflows de donn&eacute;es&quot;. Seul un utilisateur avec le r&ocirc;le built-in &quot;Administrateur&quot; peut r&eacute;activer une publication inactive dans la section &quot;Administration&quot;. Cependant, il n&#39;est pas conseiller de modifier les tables techniques manuellement, car il est important de pr&eacute;server l&#39;int&eacute;grit&eacute; des donn&eacute;es techniques des workflows.</fieldset>
+<h4>
+D&eacute;publication d&#39;une publication de workflow</h4>
+<p>Si une publication de workflow n&#39;est plus utilis&eacute;e, vous pouvez la supprimer de toutes les vues de la section &quot;Workflows de donn&eacute;es&quot; en la d&eacute;publiant. Pour faire cela,</p><ol>
+<li><p>D&eacute;sactivez la publication de workflow afin d&#39;&eacute;viter que des utilisateurs continuent de lancer des nouveaux workflows de donn&eacute;es sur cette publication, en suivant le processus d&eacute;crit dans la section <a target="_self" href="#disable">D&eacute;sactivation d&#39;une publication de workflow</a>.</p></li><li><p>D&eacute;publier la publication de workflow en s&eacute;lectionnant <strong>Actions &gt; D&eacute;publier</strong> de la ligne de la publication cible.</p></li></ol>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Quand vous d&eacute;cidez de d&eacute;publier une publication de workflow, une confirmation vous sera demand&eacute;e pour terminer et purger tous les workflows de donn&eacute;es en cours qui ont &eacute;t&eacute; lanc&eacute;s depuis cette publication de workflow, ainsi que tous bons de travail associ&eacute;s. Toute perte de donn&eacute;es r&eacute;sultante d&#39;une fin pr&eacute;matur&eacute;e est alors d&eacute;finitive.</fieldset>
+<h3>
+<a name="actions_workflows"></a>Actions sur workflows de donn&eacute;es</h3>
+<h4>
+R&eacute;-ex&eacute;cution d&#39;une &eacute;tape</h4>
+<p>Dans le cas d&#39;une erreur inattendue pendant l&#39;ex&eacute;cution d&#39;une &eacute;tape, par exemple, &agrave; cause d&#39;un probl&egrave;me de permissions ou de ressources non disponibles, vous pouvez &quot;rejouer&quot; une &eacute;tape en tant qu&#39;administrateur de workflow. En rejouant une &eacute;tape, l&#39;environnement d&#39;ex&eacute;cution associ&eacute; est nettoy&eacute;, notamment les bons de travail li&eacute;s, et le jeton est repositonn&eacute; au debut de l&#39;&eacute;tape courante.</p><p>Pour rejouer l&#39;&eacute;tape courant dans un workflow de donn&eacute;es, s&eacute;lectionnez <strong>Actions &gt; Rejouer l&#39;&eacute;tape</strong> dans la ligne du workflow cible dans la table &#39;Workflows actifs&#39;.</p><h4>
+Forcer un workflow de donn&eacute;es actif &agrave; se finir</h4>
+<p>Pour terminer un workflow de donn&eacute;es en cours d&#39;ex&eacute;cution, s&eacute;lectionnez <strong>Actions &gt; Terminer et purger</strong> dans la ligne du workflow cible dans la table &#39;Workflows actifs&#39;. L&#39;action stoppe l&#39;ex&eacute;cution du workflow de donn&eacute;es et supprime le workflow de donn&eacute;es et tous les bons de travail associ&eacute;s.</p><h4>
+Purge d&#39;un workflow de donn&eacute;es termin&eacute;</h4>
+<p>Quand un workflow de donn&eacute;es a termin&eacute; son ex&eacute;cution, son historique est visible pour ses superviseurs et administrateurs dans la vue &#39;Workflows termin&eacute;s&#39;. Pour purger le workflow termin&eacute; et son historique, vous pouvez effectuez un nettoyage en s&eacute;lectionnant <strong>Actions &gt; Purger</strong> dans la ligne du workflow cible de la table &#39;Workflows termin&eacute;s&#39;.</p><h4>
+Modification de la priorit&eacute; d&#39;un workflow de donn&eacute;es</h4>
+<p>Suite au lancement d&#39;un workflow de donn&eacute;es, un administrateur du workflow peut modifier son niveau de priorit&eacute;. En modifiant la priorit&eacute; du workflow de donn&eacute;es, la priorit&eacute; de tous les bons de travail existants et &agrave; venir de ce workflow sera modifi&eacute;e. Pour modifier la priorit&eacute; d&#39;un workflow de donn&eacute;es, s&eacute;lectionnez <strong>Actions &gt; Modifier la priorit&eacute;</strong> dans la ligne du workflow cible dans la table &#39;Workflows actifs&#39;.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">Voir aussi :</span><a target="_self" href="../user_workflowmodel/workflowModel.html#permissions">Permission sur une publication de workflow</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a target="_self" href="../table_contents_user.html"> Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation de EBX5 &gt; Guide utilisateur &gt; Workflows de données &gt; Gestion de workflows de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<title>
+EBX5 documentation - Introduction aux mod&egrave;les de donn&eacute;es</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dm_introduction" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Guide utilisateur &gt; Modèles de données</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_datamodel/userdatamodel_intro.html" title="Afficher cette page avec l'en-tête et les panneaux de navigation">Mode navigation</a><span class="ebx_breadcrumbLabel">Documentation &gt; Guide utilisateur &gt; Modèles de données</span></div>
+<h1>
+Introduction aux mod&egrave;les de donn&eacute;es</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Contenu de la section</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Pr&eacute;sentation</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">La fonction d&#39;un mod&egrave;le de donn&eacute;es</a></li><li class="toc2"><a href="#notions">Concepts de base utilis&eacute;s dans la mod&eacute;lisation des donn&eacute;es</a></li></ul>
+</li><li class="toc1"><a href="#ui">Utilisation de l&#39;interface utilisateur de la section Mod&egrave;les de donn&eacute;es</a><ul class="toc2">
+<li class="toc2"><a href="#navigating">Navigation dans le Data Model Assistant</a></li><li class="toc2"><a href="#icons">Ic&ocirc;nes des &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Pr&eacute;sentation</h2>
+<h3>
+<a name="id1s1"></a>La fonction d&#39;un mod&egrave;le de donn&eacute;es</h3>
+<p>La premi&egrave;re &eacute;tape de toute gouvernance de donn&eacute;es dans EBX5 est le d&eacute;veloppement d&#39;un mod&egrave;le de donn&eacute;es. Le but d&#39;un mod&egrave;le de donn&eacute;es est de d&eacute;finir la structure des donn&eacute;es g&eacute;r&eacute;es dans le r&eacute;f&eacute;rentiel en termes d&#39;organisation, de types de donn&eacute;es, et de relations s&eacute;mantiques. Une fois que le mod&egrave;le de donn&eacute;es a &eacute;t&eacute; d&eacute;fini et publi&eacute;, il devient possible de cr&eacute;er des jeux de donn&eacute;es &agrave; partir de celui-ci.</p><p>Afin de d&eacute;finir un mod&egrave;le de donn&eacute;es dans le r&eacute;f&eacute;rentiel, cr&eacute;ez d&#39;abord un nouveau mod&egrave;le de donn&eacute;es, puis d&eacute;finissez sa structure et les propri&eacute;t&eacute;s de ses &eacute;l&eacute;ments (tables, champs et groupes). Le mod&egrave;le de donn&eacute;es ainsi d&eacute;fini doit &ecirc;tre publi&eacute; pour devenir disponible. Les utilisateurs pourront cr&eacute;er des jeux de donn&eacute;es &agrave; partir de cette publication qui contiendront les donn&eacute;es g&eacute;r&eacute;es par le r&eacute;f&eacute;rentiel EBX5.</p><h3>
+<a name="notions"></a>Concepts de base utilis&eacute;s dans la mod&eacute;lisation des donn&eacute;es</h3>
+<p>Une compr&eacute;hension des termes suivants est n&eacute;cessaire pour commencer la cr&eacute;ation de mod&egrave;les de donn&eacute;es :</p><ul>
+<li><p><a href="../glossary/simple_glossary.html#field">champ</a></p></li><li><p><a href="../glossary/simple_glossary.html#pkey">cl&eacute; primaire</a></p></li><li><p><a href="../glossary/simple_glossary.html#fkey">cl&eacute; &eacute;trang&egrave;re</a></p></li><li><p><a href="../glossary/simple_glossary.html#tableindatamodel">table</a></p></li><li><p><a href="../glossary/simple_glossary.html#group">groupe</a></p></li><li><p><a href="../glossary/simple_glossary.html#reusabletype">type r&eacute;utilisable</a></p></li><li><p><a href="../glossary/simple_glossary.html#validation">r&egrave;gle de validation</a></p></li></ul>
+<h2>
+<a name="ui"></a>Utilisation de l&#39;interface utilisateur de la section Mod&egrave;les de donn&eacute;es</h2>
+<h3>
+<a name="navigating"></a>Navigation dans le Data Model Assistant</h3>
+<p>Les mod&egrave;les de donn&eacute;es peuvent &ecirc;tre import&eacute;s, &eacute;dit&eacute;s, et publi&eacute;s dans la section <strong>Mod&egrave;les de donn&eacute;es</strong>. Le Data Model Assistant de EBX5 facilite le d&eacute;veloppement des mod&egrave;les de donn&eacute;es.</p><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">Seuls les utilisateurs autoris&eacute;s peuvent acc&eacute;der &agrave; cet &eacute;cran via la &#39;Perspective avanc&eacute;e&#39;.</p></div>
+<p><img alt="/userdatamodel_area.png" src="../resources/images/user_datamodel/userdatamodel_area.png"></img></p><p>Le panneau de navigation est organis&eacute; selon les sections suivantes :</p><table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Configuration</p></td><td class="ebx_definitionListDefinition"><p>La configuration technique du mod&egrave;le de donn&eacute;es.</p></td></tr>
+<tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>        Mod&egrave;le de donn&eacute;es inclus</p></td><td class="ebx_definitionListDefinition"><p>Les mod&egrave;les de donn&eacute;es inclus dans le mod&egrave;le courant. Les types de donn&eacute;es d&eacute;finis dans les mod&egrave;les inclus peuvent &ecirc;tre r&eacute;utilis&eacute;s dans le mod&egrave;le de donn&eacute;es courant.</p></td></tr>
+<tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+</tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Structure de donn&eacute;es</p></td><td class="ebx_definitionListDefinition"><p>Structure du mod&egrave;le de donn&eacute;es. D&eacute;finit les relations entre les &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es et permet d&#39;acc&eacute;der &agrave; la d&eacute;finition de chaque &eacute;l&eacute;ment.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Types de donn&eacute;es simples</p></td><td class="ebx_definitionListDefinition"><p>Types simples r&eacute;utilisables d&eacute;finis dans le mod&egrave;le de donn&eacute;es courant.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Types de donn&eacute;es complexes</p></td><td class="ebx_definitionListDefinition"><p>Types complexes r&eacute;utilisables d&eacute;finis dans le mod&egrave;le de donn&eacute;es courant.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Types de donn&eacute;es simples inclus</p></td><td class="ebx_definitionListDefinition"><p>Types simples r&eacute;utilisables d&eacute;finis dans un mod&egrave;le de donn&eacute;es inclus dans le mod&egrave;le courant.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Types de donn&eacute;es complexes inclus</p></td><td class="ebx_definitionListDefinition"><p>Types complexes r&eacute;utilisables d&eacute;finis dans un mod&egrave;le de donn&eacute;es inclus dans le mod&egrave;le courant.</p></td></tr>
+</table>
+<div id="seealso">
+<h5>
+Voir aussi</h5>
+<ul>
+<li><a href="../user_datamodel/userdatamodel_implementdatastructure.html">Mod&eacute;lisation de la structure des donn&eacute;es</a></li><li><a href="../user_datamodel/userdatamodel_configuring.html">Configuration du mod&egrave;le de donn&eacute;es</a></li><li><a href="../user_datamodel/userdatamodel_implementdatastructure.html#reusableTypes">Types r&eacute;utilisables</a></li></ul>
+</div>
+<h3>
+<a name="icons"></a>Ic&ocirc;nes des &eacute;l&eacute;ments du mod&egrave;le de donn&eacute;es</h3>
+<p><img alt="/ebx_attribute.png" src="../resources/images/symbols/ebx_attribute.png" align="middle"></img>  <a href="../glossary/simple_glossary.html#field">champ</a></p><p><img alt="/ebx_pkey.png" src="../resources/images/symbols/ebx_pkey.png" align="middle"></img> <a href="../glossary/simple_glossary.html#pkey">cl&eacute; primaire</a></p><p><img alt="/ebx_fkey.png" src="../resources/images/symbols/ebx_fkey.png" align="middle"></img> <a href="../glossary/simple_glossary.html#fkey">cl&eacute; &eacute;trang&egrave;re</a></p><p><img alt="/ebx_table.png" src="../resources/images/symbols/ebx_table.png" align="middle"></img>  <a href="../glossary/simple_glossary.html#tableindatamodel">table</a></p><p><img alt="/ebx_group.png" src="../resources/images/symbols/ebx_group.png" align="middle"></img> <a href="../glossary/simple_glossary.html#group">groupe</a></p><div id="seealso">
+<h5>
+Concepts apparentés</h5>
+<ul>
+<li><a href="../user_dataspace/userdataspace_intro.html">Espaces de donn&eacute;es</a></li><li><a href="../user_data/userdata_intro.html">Jeux de donn&eacute;es</a></li></ul>
+</div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img><a href="../table_contents_user.html">Sommaire</a></em> du guide utilisateur</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Guide utilisateur &gt; Modèles de données</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

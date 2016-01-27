@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.7.6</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.7.6.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.7.6</h1>
+<p><strong>Release Date: November 26, 2009</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Backward compatibility</a></li><li class="toc1"><a href="#id2">Obsolete API</a></li><li class="toc1"><a href="#id3">Archives</a></li><li class="toc1"><a href="#id4">Permissions</a></li><li class="toc1"><a href="#id5">Validation</a></li><li class="toc1"><a href="#id6">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">New category for log</a></li><li class="toc2"><a href="#id6s2">New mail variables</a></li><li class="toc2"><a href="#id6s3">Publication service has changed</a></li></ul>
+</li><li class="toc1"><a href="#id7">Data Model API</a></li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-Documentation">Documentation</a></li><li class="toc2"><a href="#bug-ImportExport">Import Export</a></li><li class="toc2"><a href="#bug-UI">UI</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Backward compatibility</h2>
+<p> Warning messages are now raised on nodes defining the <em>osd:class</em> property without <em>osd:access</em> property. </p><p><strong>Important</strong> :&nbsp;on the next release, nodes defining only the <em>osd:class</em> property will be considered as <em>terminal nodes</em> .&nbsp;</p><p> For more information, see <a href="../references/mapping_to_java.html">JavaBeans</a> . </p><h2>
+<a name="id2"></a>Obsolete API</h2>
+<p> The following classes have been removed from the API, but are still available for backward compatibility: </p><ul>
+<li><p><strong>com.onwbp.core.service.AbstractConfigurationFacade</strong></p></li><li><p><strong>com.onwbp.core.service.ModuleServices</strong></p></li><li><p><strong>com.onwbp.core.service.ServiceInstaller</strong></p></li><li><p><strong>com.onwbp.core.service.SpecificSetupFacade</strong></p></li></ul>
+<h2>
+<a name="id3"></a>Archives</h2>
+<p> It is now possible to define a <a target="_blank" href="../Java_API/com/orchestranetworks/service/ArchiveImportSpec.html#setMode(com.orchestranetworks.service.ArchiveImportSpecMode)">mode</a> when importing an archive. </p><h2>
+<a name="id4"></a>Permissions</h2>
+<p>Hidden rows in a table can no longer be selected in the tableRef drop-down box in another table.</p><h2>
+<a name="id5"></a>Validation</h2>
+<p><a href="../models/constraints.html#xsdUnique">Uniqueness constraint</a> has been improved for optimizing the global validation process on adaptations. On some cases, it has been observed that validation process duration is reduced by several orders of magnitude. See bug #2202. </p><p>The internal incremental validation framework has been enhanced to reduce the duration of successive validation processes. On some cases, it has been observed that revalidation duration is divided by four.</p><h2>
+<a name="id6"></a>Workflow</h2>
+<h3>
+<a name="id6s1"></a>New category for log</h3>
+<p> A log category named <code>workflow</code> has been added. Thanks to this new category, workflow logs are now isolated. </p><p> Before this evolution, workflow logs were done in the <code>kernel</code> category. They have been moved to this new category <code>workflow</code> (they have not been duplicated). </p><p>This is why it is necessary to update the ebx.properties file to ensure compatibility (or else workflow logs will be lost): a line must be added for the new category.</p><p> For extra information, see <a href="../installation/properties.html#ebxLog">ebx.properties documentation</a> .&nbsp;</p><h3>
+<a name="id6s2"></a>New mail variables</h3>
+<p>New mail variables are available:</p><ul>
+<li><p><code>workflow.workItem.label</code> :&nbsp;to indicate the label of the current work item. </p></li><li><p><code>workflow.workItem.description</code> :&nbsp;to indicate the description of the current work item. </p></li></ul>
+<h3>
+<a name="id6s3"></a>Publication service has changed</h3>
+<p>The publication service has been improved in order to publish many processes at once.</p><p> For extra information, see <a href="../user_workflowmodel/userworkflowmodel_publish.html">Publishing workflow models</a>.</p><h2>
+<a name="id7"></a>Data Model API</h2>
+<p>AdaptationTable.getSchemaNode() is ambiguous.</p><ul>
+<li><p><code>AdaptationTable.getSchemaNode()</code> has been deprecated and replaced by <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#getTableOccurrenceRootNode()">AdaptationTable.getTableOccurrenceRootNode()</a> .&nbsp;</p></li><li><p> A new method <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html#getTableNode()">AdaptationTable.getTableNode()</a> is available. </p></li></ul>
+<p> For extra information see <a target="_blank" href="../Java_API/com/onwbp/adaptation/AdaptationTable.html">AdaptationTable</a></p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><strong>[2119]</strong> Failure when recording into history. </p><p>Some records&#39; updates and inserts are not logged into history, if the server is serving many concurrent requests.</p></li><li><p><strong>[2124]</strong> XPath notation &#39;//&#39; not supported by SchemaNode class </p><p>A ClassCastException occurs when the method SchemaNode.getNode(aPath) is called with a path beginning with &#39;//&#39;.</p></li><li><p><strong>[2127]</strong> Temporary files remain in History directory. </p><p>On an attempt to create an invalid table record, EBX.Platform does not successfully write the error into history. Then, some text files remain in the repository history folder (they are named like &#39;5D62B910-BD83-11DE-821B-00D48FF565D1.txt&#39;).</p></li></ul>
+<h3>
+<a name="bug-Documentation"></a>Documentation</h3>
+<ul>
+<li><p><strong>[2131]</strong> Properties and logs are not formatted as expected in EBX.Platform documentation. </p><p>As an example, in the &#39;Performance Guidelines&#39; section, performance memory cache for insufficient memory is not formatted as expected: carriage returns are missing.</p></li></ul>
+<h3>
+<a name="bug-ImportExport"></a>Import Export</h3>
+<ul>
+<li><p><strong>[253]</strong> Behaviour of ProcedureContext.doImportArchive </p><p>If the method ProcedureContext.doImportArchive is invoked, and the archive to be imported defines a change set but this change set is empty (no changes), then the import is done in &#39;replace&#39; mode instead of &#39;change set&#39; mode (see javadoc).</p></li><li><p><strong>[2111]</strong> Import error if schema has changed. </p><p>The import throws an exception when the change-set declares a modification on a field that does not exist in the schema of the target. For example, it happens if a column has been renamed.</p></li><li><p><strong>[2149]</strong> In a newly installed environment, the XML or CSV export fails. </p><p>In a newly installed environment (the application server has not been restarted since the first installation), if the end user requests an XML or CSV export from the Manager, the operation fails (FileNotFoundException for generating the temporary file on the server).</p></li><li><p><strong>[2154]</strong> A call to import or to export CSV or XML service via HttpManagerComponent raises an error. </p><p> It reports a <code>PreconditionFailure</code> :&nbsp;&quot;Schema node [xxxx] must be a table node&quot;. </p></li><li><p><strong>[2160]</strong> Node values containing &quot;linefeed&quot; and CSV Import/Export not properly handled. </p><p>It is possible to feed a String value with linefeed characters (osd:text, xs:string with maxLength &gt; 999, UIBeanEditor with textarea, ...).</p><p>Those characters are not properly handled in CSV Import/Export.</p></li></ul>
+<h3>
+<a name="bug-UI"></a>UI</h3>
+<ul>
+<li><p><strong>[1577]</strong> The &#39;super-owner&#39; user can create an adaptation in a read-only branch. </p><p>If a user has &quot;super-owner&quot; privileges, he can create an adaptation instance even in a home with read-only permissions. This is inconsistent with the documentation.</p></li><li><p><strong>[1803]</strong> EBX &#39;expand node details&#39; policy has no effect on table record display. </p><p>It is possible to configure EBX node display policy in its adaptation configuration (&#39;Ergonomic &amp; behaviour policy&#39; section). However, the &#39;expand node details&#39; parameter is not taken into account in the table record form.</p></li><li><p><strong>[2118]</strong> Table record selection link from a <code>UIServices</code> generates an &#39;access denied&#39; since release 4.7.4. </p><p> The table record selection generated by <code>ServiceContext.getURLForSelection()</code> is no longer recognized by EBX as a valid process event; as a consequence, it logs a &#39;User event rejected&#39; and reports an &#39;access denied&#39; to the user. </p></li><li><p><strong>[2120]</strong> &quot;Detail&quot; links not available in some comparison screens </p><p>If a &quot;home&quot; comparison service is launched in a sub-session of EBX, &quot;detail&quot; links to data are not generated.</p></li><li><p><strong>[2123]</strong> Cancel button is useless in table record creation mode </p><p>The buttons &#39;close&#39; and &#39;cancel&#39; are redundant, and &#39;cancel&#39; button has an unexpected behaviour.</p></li><li><p><strong>[2141]</strong> The severity &quot;Fatal&quot; is not correctly reported in table record form. </p><p>Validation items with severity &quot;Fatal&quot; are reported as warnings in table record form.</p></li><li><p><strong>[2161]</strong> Sizing problem with small window in workflow execution section. </p><p>In workflow execution section, the work list selector (to the left) and work space (to the right) are not sized properly in small window: work list is displayed above the work space.</p></li><li><p><strong>[2162]</strong> Archive import not in &quot;replace mode&quot; as requested </p><p>Importing an archive with change set in the Manager is not in &quot;replace mode&quot; even if the checkbox &quot;include change set&quot; is unchecked.</p></li><li><p><strong>[2172]</strong> The calendar component does not set the date when &quot;today&quot; is clicked. </p><p>The &quot;Today&quot; button positions the calendar onto the current month; it should also select the current date and close the calendar.</p></li><li><p><strong>[2186]</strong> The display in table view is erroneous after an OperationException is thrown in a TableTrigger </p><p> When the method <code>TableTrigger.handleAfterModify()</code> throws an <code>OperationException</code> ,&nbsp;the values displayed in the table view are erroneous: the displayed values are the modified ones, even though the modification has been rejected because of the <code>OperationException</code> thrown. </p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><strong>[1831]</strong> Mass delete service is available on table even if the table node is set as read-only in permissions. </p><p>Mass delete service is available on table even if the table node is set as read-only in permissions.</p></li><li><p><strong>[2140]</strong> Handling of record &#39;hidden&#39; permission by foreign keys. </p><p> EBX proposes a link to a record referred by a foreign key ( <code>osd:tableRef</code> ), even if the user has no permission to see the referred record. If the user clicks on the navigation link to the record, EBX.manager properly returns an &quot;access denied&quot; page. </p></li><li><p><strong>[2143]</strong> Branch visibility for owner or super owner. </p><p>When a super-owner puts a &quot;hidden&quot; permission on his branch, then this branch disappears from the home view.</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><strong>[2098]</strong> A node that is inside an aggregated list is not correctly handled by the direct validation. </p><p>If a node is the descendant of an aggregated list node, its direct validation will throw an undocumented exception.</p></li><li><p><strong>[2173]</strong> Explicit dependency declaration has too large an impact for incremental validation. </p><p> The developer can declare an explicit dependency for a constraint by means of the method <code>ConstraintContext.addDependencyToInsertDeleteAndModify(aTableOccurrenceNode)</code> .&nbsp;However, in the context of incremental validation, the constraint is indeed re-checked even if the value of another node in the same table is modified (the source of the dependency being unchanged). </p></li><li><p><strong>[2175]</strong> The &#39;xs:unique&#39; constraint is re-checked if any node has been updated in the table. </p><p>This is a consequence of bug #02173.</p></li><li><p><strong>[2190]</strong> A node that is inside an aggregated list is not correctly handled by the incremental (re)validation </p><p>If a node is the descendant of an aggregated list node, its (re)validation will create fatal validation errors. The erroneous validation message is: &quot;The value defined is a list but cardinality constraint &#39;maxOccurs&#39; is 1&quot;.</p></li><li><p><strong>[2191]</strong> Validation status is not displayed as expected for &#39;fatal&#39; validation errors. </p><p>Fatal validation errors are not counted in Adaptation header (validation status).</p><p>Those fatal validation errors on node are not displayed in &#39;red&#39; color on top of the table record form. Fatal validation errors are not mentioned as &#39;fatal&#39; in Adaptation validation report page of EBX.</p></li><li><p><strong>[2202]</strong> Identity-constraint &#39;xs:unique&#39; has too large a validation cost. </p><p>The explicit validation of the identity-constraint &#39;xs:unique&#39; is done on a per record basis, which implies too high a CPU cost for large tables. It should be done via a set-level algorithm instead.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

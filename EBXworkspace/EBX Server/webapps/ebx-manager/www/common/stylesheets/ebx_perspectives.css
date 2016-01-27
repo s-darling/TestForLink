@@ -1,0 +1,356 @@
+
+.ebx_Perspective .yui-layout-unit-left div.yui-layout-bd {
+	overflow: visible;
+}
+
+.ebx_Perspective #ebx_Navigation {
+	overflow: hidden;
+}
+
+#ebx_NavigationPaneToggleReduced {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 15px;
+	height: 25px;
+	padding: 5px 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	/* exactly like hide header button (#ebx_HideHeader) */
+	transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-webkit-transition: opacity 0.3s ease;
+}
+.yui-layout-unit-left:hover #ebx_NavigationPaneToggleReduced {
+	opacity: 1;
+}
+
+#ebx_NavigationPaneScrollTop,
+#ebx_NavigationPaneScrollBottom {
+	position: absolute;
+	height: 25px;
+	width: 100%;
+	left: 0;
+	
+	visibility: hidden;
+	
+	z-index: 1; /* to avoid position:relative icons to be above */
+}
+#ebx_NavigationPaneScrollTop {
+	top: 0;
+}
+#ebx_NavigationPaneScrollBottom {
+	bottom: 0;
+}
+
+.ebx_ScrollTopButtonEnabled #ebx_NavigationPaneScrollTop,
+.ebx_ScrollBottomButtonEnabled #ebx_NavigationPaneScrollBottom {
+	visibility: visible;
+}
+
+#ebx_NavigationPaneToggleReduced .ebx_SmallIcon,
+#ebx_NavigationPaneScrollTop .ebx_SmallIcon,
+#ebx_NavigationPaneScrollBottom .ebx_SmallIcon {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -5px;
+	margin-top: -5px;
+}
+
+#ebx_NavigationPaneToggleReduced .ebx_SmallIcon {
+	background-position: 0 -90px;
+}
+.ebx_NavigationPanePerspectiveReduced #ebx_NavigationPaneToggleReduced .ebx_SmallIcon {
+	background-position: 0 -100px;
+}
+#ebx_NavigationPaneScrollTop .ebx_SmallIcon {
+	background-position: 0 -70px;
+}
+#ebx_NavigationPaneScrollBottom .ebx_SmallIcon {
+	background-position: 0 -80px;
+}
+
+.ebx_Perspective #ebx_NavigationContent {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.ebx_perspectiveSections {
+	margin: 25px 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ebx_perspectiveSectionWithSeparator {
+	border-width: 2px 0 0 0;
+	border-style: solid;
+}
+
+.ebx_perspectiveSections ul,
+.ebx_perspectiveSections li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ebx_perspectiveSections h2,
+.ebx_perspectiveSections h3,
+.ebx_perspectiveSections h4 {
+	font-family: 'Source Sans Pro';
+	white-space: nowrap;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveSection>.ebx_perspectiveGroups>.ebx_perspectiveGroup>.ebx_CollapsibleBlock {
+	position: absolute;
+	left: 40px;
+	
+	margin-top: 0;
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: margin 0.5s ease;
+	-moz-transition: margin 0.5s ease;
+	-webkit-transition: margin 0.5s ease;
+}
+
+.ebx_perspectiveSections h2 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+	font-size: 12px;
+	padding: 12px 15px;
+	
+	height: 40px;
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: height 0.5s ease, padding  0.5s ease;
+	-moz-transition: height 0.5s ease, padding  0.5s ease;
+	-webkit-transition: height 0.5s ease, padding  0.5s ease;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveSections h2 {
+	height: 0;
+	padding: 0;
+}
+.ebx_PerspectiveAvoidAnimationsOnLoading .ebx_perspectiveSections h2 {
+	transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+
+.ebx_perspectiveSections h3,
+.ebx_perspectiveSections h4 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	height: 40px;
+	font-size: 14px;
+	margin: 0;
+	cursor: pointer;
+	padding: 10px 10px 10px 0;
+}
+
+.ebx_perspectiveSections h3 {
+	/* pading-right: 30px is 10px(normal) + 20px to put the button in the padding-right of the title
+	and avoid having the text under the button in case of floating pane (auto-width) */
+	padding-right: 30px;
+}
+
+.ebx_perspectiveSections .ebx_Icon {
+	float: left;
+	vertical-align: -5px;
+	margin: 2px 12px;/* (40 - 16 = 24)/2 (and top/bottom padding is already 10px) */
+	text-align: center;
+	
+	position: relative;
+}
+.ebx_perspectiveSections .ebx_Icon.fa {
+	/* font awesome is text, so it correctly aligns on the text */
+	vertical-align: baseline;
+}
+.ebx_perspectiveSections .ebx_WorkflowBadge {
+	position: absolute;
+	top: -9px;
+	right: -10px;
+}
+
+.ebx_perspectiveGroup .ebx_CollapsibleBlock {
+	display: block;
+	padding-left: 20px;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveSection>.ebx_perspectiveGroups>.ebx_perspectiveGroup>.ebx_CollapsibleBlock {
+	padding-left: 0;
+}
+
+
+.ebx_PerspectiveLabel {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveLabel {
+	display: inline-block;
+	text-overflow: clip;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_CollapsibleBlock .ebx_PerspectiveLabel {
+	padding-right: 40px;/* to have a good computation of the icon (which is float:left, and so not taken in account in offset width) */
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveActionLabelFirstLevel,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	margin-top: -10px; /* to compensate this padding-top */
+	padding: 10px 0;
+	height: 40px; /* it's safer */
+	
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: width 0.5s ease-out;
+	-moz-transition: width 0.5s ease-out;
+	-webkit-transition: width 0.5s ease-out;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupExpanded .ebx_PerspectiveLabelFirstLevelFloating,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupCollapseTransition .ebx_PerspectiveLabelFirstLevelFloating {
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: width 0.5s ease-out, margin 0.5s ease;
+	-moz-transition: width 0.5s ease-out, margin 0.5s ease;
+	-webkit-transition: width 0.5s ease-out, margin 0.5s ease;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel {
+	overflow: visible;
+	padding-right: 30px;/* the location of the expand/collapse button */
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveLabelFirstLevelFloating {
+	position: absolute;
+	width: 0;
+	padding-right: 0;
+	z-index: 1;
+}
+.ebx_NavigationPanePerspectiveReduced a:hover .ebx_PerspectiveLabelFirstLevelFloating {
+	z-index: 2;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveLabelFirstLevelFloating .ebx_PerspectiveGroupLabelFirstLevel {
+	width: 100%;
+}
+
+.ebx_NavigationPanePerspectiveReduced ul.ebx_perspectiveGroups .ebx_perspectiveGroups {
+	padding-left: 0;/* no indent for sub group 1st level in case of Pane Reduced */
+}
+
+.ebx_perspectiveGroup>a {
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	float: right;
+	/* margin-right: -20px to put the button in the padding-right of the title
+	and avoid having the text under the button in case of floating pane (auto-width) */
+	margin: 1px -20px 1px 0;
+	
+	/* duration must be synchronized with JS constant EBX_Perspective.sectionsReductionCSSTransitionDuration */
+	transition: margin-right 0.5s ease-out;
+	-moz-transition: margin-right 0.5s ease-out;
+	-webkit-transition: margin-right 0.5s ease-out;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelWithButtonFirstLevel .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	/* there is 15px extra width and no padding in the label */
+	margin-right: 10px;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelFirstLevelFloatingCloseTransition .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelFirstLevelFloatingCloseTransition .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	margin-right: 0;
+}
+
+.ebx_NavigationPanePerspectiveReduced .ebx_PerspectiveGroupLabelFirstLevelFloatingClosedTransitionEnd {
+	display: inline-block;
+	position: static;
+	padding-top: 0;
+}
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveGroup .ebx_PerspectiveGroupLabelFirstLevelFloatingClosedTransitionEnd .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse,
+.ebx_NavigationPanePerspectiveReduced .ebx_perspectiveGroup .ebx_PerspectiveGroupLabelFirstLevelFloatingClosedTransitionEnd .ebx_IconFlatButtonNoBorderSmall.ebx_Expand {
+	float: left;
+	margin-left: -15px;
+	margin-top: 11px;
+	margin-right: 0;
+}
+
+.ebx_perspectiveGroup a:focus,
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse:focus,
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Expand:focus {
+	outline: none;
+	box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Collapse .ebx_SmallIcon {
+	background-position: 0 -79px;
+}
+.ebx_perspectiveGroup .ebx_IconFlatButtonNoBorderSmall.ebx_Expand .ebx_SmallIcon {
+	background-position: 0 -100px;
+}
+
+/* show always only parents and children of the current level, never uncles nor siblings */
+
+.ebx_perspectiveGroup>.ebx_CollapsibleBlock.ebx_CollapsibleBlockCollapsed .ebx_CollapsibleBlockContent {
+	display: block;
+}
+
+.ebx_perspectiveAction,
+.ebx_perspectiveGroup>a {
+	display: block;
+	overflow: hidden;
+	
+	/* duration must be synchronized with JS constant EBX_Perspective.groupExpandCollapseCSSTransitionDuration */
+	transition: height 0.5s ease;
+	-moz-transition: height 0.5s ease;
+	-webkit-transition: height 0.5s ease;
+}
+
+/* default height */
+.ebx_perspectiveAction,
+.ebx_perspectiveGroup>a {
+	height: 40px;
+}
+
+.ebx_perspectiveAction.ebx_perspectiveItemHidden,
+.ebx_perspectiveGroup.ebx_perspectiveItemHidden>a {
+	height: 0;
+}
+/* hide if one of my parents is collapsed */
+.ebx_CollapsibleBlockCollapsed .ebx_perspectiveAction,
+.ebx_CollapsibleBlockCollapsed .ebx_perspectiveGroup>a {
+	height: 0;
+}
+
+.ebx_perspectiveActions {
+	
+}
+
+.ebx_perspectiveAction {
+	
+}
+
+.ebx_perspectiveAction a {
+	display: block;
+}
+
+.ebx_perspectiveTitleSelected {
+	border-width: 0 0 0 3px;
+	border-style: solid;
+}
+.ebx_perspectiveTitleSelected .ebx_Icon {
+	margin-left: 9px; /* 12(original margin) - 3(border-left) */
+}

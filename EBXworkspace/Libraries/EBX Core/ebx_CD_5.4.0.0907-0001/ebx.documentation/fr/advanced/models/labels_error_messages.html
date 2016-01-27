@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Labels and messages</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_model_labels" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Developer Guide &gt; Model design</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=models/labels_error_messages.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Model design</span></div>
+<h1>
+Labels and messages</h1>
+<p>EBX5 allows you to enrich your data models with labels and error messages displayed in the interface.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#labelAndDescription">Label and description</a><ul class="toc2">
+<li class="toc2"><a href="#dynamicDoc">Dynamic labels and descriptions</a></li></ul>
+</li><li class="toc1"><a href="#id2">Enumeration labels</a></li><li class="toc1"><a href="#id3">Mandatory error message (osd:mandatoryErrorMessage)</a></li><li class="toc1"><a href="#id4">Conversion error message</a></li><li class="toc1"><a href="#validationMessage">Validation message with severity associated with a facet</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">XML Schema facet (osd:validationMessage)</a></li><li class="toc2"><a href="#id5s2">XML Schema enumeration facet (osd:enumerationValidationMessage)</a></li><li class="toc2"><a href="#id5s3">EBX5 facet (osd:validationMessage)</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="labelAndDescription"></a>Label and description</h2>
+<p>A label and a description can be added to each node in an adaptation model.</p><p>In EBX5, each adaptation node is displayed with its label .&nbsp;If no label is defined, the name of the element is used instead.</p><p>Two notations are available:</p><ul>
+<li><p> full notation: label and description are defined respectively by the elements <code>&lt;osd:label&gt;</code> and <code>&lt;osd:description&gt;</code>. </p></li><li><p> simple notation: the label is extracted from the text content up to the first dot (&#39; <code>.</code> &#39;) and/or this extraction is not longer than 60 characters;&nbsp;the description is the rest of the text. </p></li></ul>
+<p> The description may also have an hyperlink, either a standard HTML <code>href</code> to an external document, or a link to another node of the adaptation within EBX5. </p><ul>
+<li><p><code>href</code> notation, and more generally any html notation must be escaped. </p></li><li><p>EBX5 link notation is not escaped and it must specify the path of the target, for example:</p><p><code>&lt;osd:link path=&quot;../misc1&quot;&gt;link to another node in the adaptation&lt;/osd:link&gt;</code></p></li></ul>
+<p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="misc1" type="xs:string">
+	&lt;xs:annotation>
+		&lt;xs:documentation>
+			Miscellaneous 1. This is the description of miscellaneous element #1.
+			Click &lt;a href="http://www.orchestranetworks.com" target="_blank"&gt;here&lt;/a&gt;
+			to learn more.
+		&lt;/xs:documentation>
+	&lt;/xs:annotation>
+&lt;/xs:element>
+&lt;xs:element name="misc2" type="xs:string">
+	&lt;xs:annotation>
+		&lt;xs:documentation>
+			&lt;osd:label>
+				Miscellaneous 2
+			&lt;/osd:label>
+			&lt;osd:description>
+				This is the miscellaneous element #2 and here is a 
+				&lt;osd:link path="../misc1"> link to another node in the 
+					adaptation&lt;/osd:link>.
+			&lt;/osd:description>
+		&lt;/xs:documentation>
+	&lt;/xs:annotation>
+&lt;/xs:element></pre>
+<p>If a node points to a named type, then the label of the node replaces the label of the named type. The same mechanism applies for the description of the node (<code>osd:description</code>).</p><fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Regarding whitespace management, the label of a node is always <em>collapsed</em> at display (that is, contiguous sequences of blanks are collapsed to a single blank, and leading and trailing blanks are removed). In contrast, for descriptions, the whitespaces are always <em>preserved</em>.</fieldset>
+<h3>
+<a name="dynamicDoc"></a>Dynamic labels and descriptions</h3>
+<p>As an alternative to statically defining the localized labels and descriptions for each node, it is possible to specify a Java class that programmatically determines the labels and descriptions for the nodes of the data model. To define the class, include the element <code>osd:documentation</code>, with the attribute <code>class</code> in the data model. It is possible to pass JavaBean properties using nested parameter elements.</p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:schema ...>
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;osd:documentation class="com.foo.MySchemaDocumentation">
+				&lt;param1>...&lt;/param1>
+				&lt;param2>...&lt;/param2>
+			&lt;/osd:documentation>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+	...
+&lt;/xs:schema ...></pre>
+<p>The labels and descriptions provided programmatically take precedence over any labels and descriptions defined locally on individual nodes.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_blank" href="../Java_API/com/orchestranetworks/schema/SchemaDocumentation.html">SchemaDocumentation</a></p></div>
+<h2>
+<a name="id2"></a>Enumeration labels</h2>
+<p> A simple, non-localized label can be added to each enumeration element, by means of the attribute <code>osd:label</code> .&nbsp;</p><p><strong>Important:</strong> Labels defined by an enumeration element are always <code>collapsed</code> at display. </p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="Service" maxOccurs="unbounded">
+	&lt;xs:simpleType>
+		&lt;xs:restriction base="xs:string">
+			&lt;xs:enumeration value="1" osd:label="Blue" />
+			&lt;xs:enumeration value="2" osd:label="Red" />
+			&lt;xs:enumeration value="3" osd:label="White" />
+		&lt;/xs:restriction>
+	&lt;/xs:simpleType>
+&lt;/xs:element></pre>
+<p> It is also possible to fully localize the labels by means of the standard <code>xs:documentation</code> element. </p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="access" minOccurs="0">
+	&lt;xs:simpleType>
+		&lt;xs:restriction base="xs:string">
+			&lt;xs:enumeration value="readOnly">
+				&lt;xs:annotation>
+					&lt;xs:documentation xml:lang="en-US">
+						read only
+					&lt;/xs:documentation>
+					&lt;xs:documentation xml:lang="fr-FR">
+						lecture seule
+					&lt;/xs:documentation>
+				&lt;/xs:annotation>
+			&lt;/xs:enumeration>
+			&lt;xs:enumeration value="readWrite">
+				&lt;xs:annotation>
+					&lt;xs:documentation xml:lang="en-US">
+						read/write
+					&lt;/xs:documentation>
+					&lt;xs:documentation xml:lang="fr-FR">
+						lecture écriture
+					&lt;/xs:documentation>
+				&lt;/xs:annotation>
+			&lt;/xs:enumeration>
+			&lt;xs:enumeration value="hidden">
+				&lt;xs:annotation>
+					&lt;xs:documentation xml:lang="en-US">
+						hidden
+					&lt;/xs:documentation>
+					&lt;xs:documentation xml:lang="fr-FR">
+						masqué
+					&lt;/xs:documentation>
+				&lt;/xs:annotation>
+			&lt;/xs:enumeration>
+		&lt;/xs:restriction>
+	&lt;/xs:simpleType>
+&lt;/xs:element></pre>
+<h2>
+<a name="id3"></a>Mandatory error message (osd:mandatoryErrorMessage)</h2>
+<p> If the node specifies the attribute <code>minOccurs=&quot;1&quot;</code> (default behavior), then a required error message is displayed if the user does not fill the field. This error message can be specific to each node by using the element <code>osd:mandatoryErrorMessage</code> .&nbsp;</p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="birthDate" type="xs:date">
+	&lt;xs:annotation>
+		&lt;xs:documentation>
+			&lt;osd:mandatoryErrorMessage>
+				Please give your birth date.
+			&lt;/osd:mandatoryErrorMessage>
+		&lt;/xs:documentation>
+	&lt;/xs:annotation>
+&lt;/xs:element>
+</pre>
+<p>The mandatory error message can be localized:</p><pre class="ebx_example brush: html">
+&lt;xs:documentation>
+	&lt;osd:mandatoryErrorMessage xml:lang="en-US">
+		Name is mandatory
+	&lt;/osd:mandatoryErrorMessage>
+	&lt;osd:mandatoryErrorMessage xml:lang="fr-FR">
+		Nom est obligatoire
+	&lt;/osd:mandatoryErrorMessage>
+&lt;/xs:documentation></pre>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+Regarding whitespaces management, the enumeration labels are always <em>collapsed</em> at display. </fieldset>
+<h2>
+<a name="id4"></a>Conversion error message</h2>
+<p>For each predefined XML Schema element, it is possible to define a specific error message if the user entry has an incorrect format.</p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="email" type="xs:string">
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;fmt:string>
+				&lt;fmt:ConversionErrorMessage xml:lang="en-US">
+					Please enter a valid e-mail address.
+			  	&lt;/fmt:ConversionErrorMessage>
+				&lt;fmt:ConversionErrorMessage xml:lang="fr-FR">
+					Saisissez un e-mail valide.
+			  &lt;/fmt:ConversionErrorMessage>
+			&lt;/fmt:string>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+&lt;/xs:element></pre>
+<h2>
+<a name="validationMessage"></a>Validation message with severity associated with a facet</h2>
+<p>The validation message that is displayed when the value of a field does not comply with a constraint can define a custom severity, a default non-localized message, and localized message variants. If no severity is specified, the default level is <code>error</code>. Blocking constraints <em>must</em> have the severity <code>error</code>. </p><h3>
+<a name="id5s1"></a>XML Schema facet (osd:validationMessage)</h3>
+<p> The validation message is described by the element <code>osd:validationMessage</code> in <code>annotation/appinfo</code> under the definition of the facet.</p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="zipCode">
+	&lt;xs:simpleType>
+		&lt;xs:restriction base="xs:string">
+			&lt;!--facet is not localized, but validation message is localized-->
+			&lt;xs:minInclusive value="01000">
+				&lt;xs:annotation>
+					&lt;xs:appinfo>
+						&lt;osd:validationMessage>
+							&lt;severity>error&lt;/severity>
+							&lt;message>Non-localized message.&lt;/message>
+							&lt;message xml:lang="en-US">English error message.&lt;/message>
+							&lt;message xml:lang="fr-FR">Message d'erreur en français.&lt;/message>
+						&lt;/osd:validationMessage>
+					&lt;/xs:appinfo>
+				&lt;/xs:annotation>
+			&lt;/xs:minInclusive>
+		&lt;/xs:restriction>
+	&lt;/xs:simpleType>
+&lt;/xs:element></pre>
+<h3>
+<a name="id5s2"></a>XML Schema enumeration facet (osd:enumerationValidationMessage)</h3>
+<p> The validation message is described by the element <code>osd:enumerationValidationMessage</code> in <code>annotation/appinfo</code> under the definition of the field. </p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="Gender">
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;osd:enumerationValidationMessage>
+				&lt;severity>error&lt;/severity>
+				&lt;message>Non-localized message.&lt;/message>
+				&lt;message xml:lang="en-US">English error message.&lt;/message>
+				&lt;message xml:lang="fr-FR">Message d'erreur en français.&lt;/message>
+			&lt;/osd:enumerationValidationMessage>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+	&lt;xs:simpleType>
+		&lt;xs:restriction base="xs:string">
+			&lt;xs:enumeration value="0" osd:label="male" />
+			&lt;xs:enumeration value="1" osd:label="female" />
+		&lt;/xs:restriction>
+	&lt;/xs:simpleType>
+&lt;/xs:element></pre>
+<h3>
+<a name="id5s3"></a>EBX5 facet (osd:validationMessage)</h3>
+<p> The validation message is described by the element <code>osd:validationMessage</code> under the definition of the facet (which is defined in <code>annotation/appinfo/otherFacets</code>). </p><p>Example:</p><pre class="ebx_example brush: html">
+&lt;xs:element name="price" type="xs:decimal">
+	&lt;xs:annotation>
+		&lt;xs:appinfo>
+			&lt;osd:otherFacets>
+				&lt;osd:minInclusive path="../priceMin">
+					&lt;osd:validationMessage>
+						&lt;severity>error&lt;/severity>
+						&lt;message>Non-localized message.&lt;/message>
+						&lt;message xml:lang="en-US">English error message.&lt;/message>
+						&lt;message xml:lang="fr-FR">Message d'erreur en français.&lt;/message>
+					&lt;/osd:validationMessage>
+				&lt;/osd:minInclusive>
+			&lt;/osd:otherFacets>
+		&lt;/xs:appinfo>
+	&lt;/xs:annotation>
+&lt;/xs:element></pre>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Model design</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

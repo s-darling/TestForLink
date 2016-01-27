@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Introduction to data spaces</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="introdataspace" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; User Guide &gt; Data spaces</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataspace/introdataspace.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+<h1>
+Introduction to data spaces</h1>
+<p>A data space contains data sets, and is used to isolate different versions of data sets from one another.</p><p>In EBX5, you may:</p><ul>
+<li><p>create data spaces (see <a target="_self" href="./actions_dataspace.html#creation">creation</a>),</p></li><li><p>label them and describe their purpose and content (see <a target="_self" href="./actions_dataspace.html#information">information</a>),</p></li><li><p>export data as an archive, or import data into a data space and validate it (see <a target="_self" href="./actions_dataspace.html#import">import archive</a> and <a target="_self" href="./actions_dataspace.html#export">export archive</a>),</p></li><li><p>compare the content of two data spaces (see <a target="_self" href="./actions_dataspace.html">actions</a>),</p></li><li><p>save a copy of the current contents of this data space (see <a target="_self" href="./snapshot.html">snapshot</a>),</p></li><li><p>apply the changes performed in a child data space to its parent data space (see <a target="_self" href="./merge.html#merge">merge</a>),</p></li><li><p>manage access rights for a given data space (see <a target="_self" href="../user_dataspace/userdataspace_permissions.html">permissions</a>),</p></li><li><p>close a data space that is no longer required (see <a target="_self" href="./actions_dataspace.html#closing">closing</a>).</p></li></ul>
+<p>A data space is always created as a child of another data space, except the reference data space, which is the root of all data spaces in the repository.</p><p>For detailed definitions of terms, refer to the <a target="_self" href="../glossary/simple_glossary.html#dataspaces">glossary</a>.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#concepts">Concepts</a></li><li class="toc1"><a href="#navigation">Data space overview</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Access within the interface</a></li><li class="toc2"><a href="#id2s2">Associated notions and tools</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="concepts"></a>Concepts</h2>
+<p>Data lifecycle is frequently complex. For example, a company needs to manage a current version of its data while working on several updates that will occur in the future. In addition, this company needs to keep track of its projects milestones as well.</p><p>EBX5 allows the creation and management multiple data spaces and snapshots. With the use of data space, it is possible to make concurrent updates on a data repository, to compare and merge them.</p><p>A snapshot allows you to keep the static state of a data space in case you need to revert to a stable version or detect subsequent updates.</p><p align="center"><img alt="/lifecycle.png" src="../resources/images/user_dataspace/lifecycle.png"></img></p><h2>
+<a name="navigation"></a>Data space overview</h2>
+<h3>
+<a name="id2s1"></a>Access within the interface</h3>
+<p>The navigation pane displays all existing data space in tree view, while the workspace is used to interact with a selected data spaces and lists its snapshots. To manage your data spaces, select <em>Data Spaces</em> in the menu bar.</p><p align="center"><img alt="/DataSpace.png" src="../resources/images/user_dataspace/DataSpace.png" align="middle"></img></p><h3>
+<a name="id2s2"></a>Associated notions and tools</h3>
+<table class="ebx_definitionList">
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Snapshot</p></td><td class="ebx_definitionListDefinition"><p>Frozen picture of a data space content at a point in time.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Reference data space</p></td><td class="ebx_definitionListDefinition"><p>Ancestor of every other data spaces, which has no parent and cannot be merged.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Merge</p></td><td class="ebx_definitionListDefinition"><p>Copy of the changes made to a child data space to its parent, which requires user arbitration in case of conflicts.</p></td></tr>
+<tr class="ebx_definitionListItem">
+<td class="ebx_definitionListTerm"><p>Relational data space</p></td><td class="ebx_definitionListDefinition"><p> A relational data space is reserved for data models in relational mode. In this mode, data are managed more directly by the database and some features are not available: for example, it is not possible to create a snapshot or a child data space. </p></td></tr>
+</table>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a target="_self" href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; User Guide &gt; Data spaces</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

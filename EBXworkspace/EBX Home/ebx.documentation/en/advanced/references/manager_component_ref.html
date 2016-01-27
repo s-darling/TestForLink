@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Using EBX5 as a web component</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_manager_component" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Reference Manual &gt; Integration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/manager_component_ref.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Integration</span></div>
+<h1>
+Using EBX5 as a web component</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Overview</a></li><li class="toc1"><a href="#id2">Integrating EBX5 web components into applications</a></li><li class="toc1"><a href="#id3">Repository element and scope selection</a></li><li class="toc1"><a href="#specification">Request specifications</a><ul class="toc2">
+<li class="toc2"><a href="#id4s1">Base URL</a></li><li class="toc2"><a href="#id4s2">User authentication and session information parameters</a></li><li class="toc2"><a href="#id4s3">Entity and service selection parameters</a></li><li class="toc2"><a href="#layoutSpec">Layout parameters</a></li></ul>
+</li><li class="toc1"><a href="#id5">Example calls to an EBX5 web component</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Overview</h2>
+<p>EBX5 can be used as a user interface web component, called through the HTTP protocol. An EBX5 web component can be integrated into any application that is accessible through a supported web browser. This method of access offers the major benefits of EBX5, such as user authentication, data validation, and automatic user interface generation, while additionally providing the ability to focus user navigation on specific elements of the repository.</p><p>Typical uses of EBX5 web components include integrating them into the intranet frameworks of organizations or into applications that manage the assignment of specific tasks to users.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../installation/supported_env.html">Supported web browsers</a></p></div>
+<h2>
+<a name="id2"></a>Integrating EBX5 web components into applications</h2>
+<p>A web application that calls an EBX5 web component can be:</p><ol>
+<li><p>A non-Java application, the most basic being a static HTML page.</p><p>In this case, the application must send an HTTP request that follows the EBX5 web component <a href="#specification">request specifications</a>.</p></li><li><p>A Java application, for example:</p><ul>
+<li><p>A Java web application running on the same application server instance as the EBX5 repository it targets or on a different application server instance.</p></li><li><p>An EBX5 <a href="integration_introduction.html#ui_services">UI service</a> or <a href="integration_introduction.html#ui_beans">UI bean</a>, in which case, the new session will automatically inherit from the parent EBX5 session.</p></li></ul>
+</li></ol>
+<div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">In Java, the recommended method for building HTTP requests that call EBX5 web components is to use the class <code><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.html"><code>UIHttpManagerComponent</code></a></code> in the API.</p></div>
+<h2>
+<a name="id3"></a>Repository element and scope selection</h2>
+<p>When an EBX5 web component is called, the user must first be authenticated in the newly instantiated HTTP session. The web component then selects a repository element and displays it according to the <code>scope</code> layout parameter defined in the request.</p><p>The parameter <code>firstCallDisplay</code> may change this automatic display according to its value.</p><p>The repository elements that can be selected are as follows:</p><ul>
+<li><p>Data space or snapshot</p></li><li><p>Data set</p></li><li><p>Node</p></li><li><p>Table or a published view</p></li><li><p>Table record</p></li></ul>
+<p>The scope determines how much of the user interface is displayed to the user, thus defining where the user is able to navigate in the session. The default scope that the web component uses depends on the entity or service being selected or invoked by the request.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="#scope">Scope</a></p></div>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="#firstCallDisplay">firstCallDisplay</a></p></div>
+<h2>
+<a name="specification"></a>Request specifications</h2>
+<h3>
+<a name="id4s1"></a>Base URL</h3>
+<p>In a default deployment, the base URL must be of the following form:</p><blockquote><p><code>http://&lt;host&gt;[:&lt;port&gt;]/ebx/</code></p></blockquote><div class="ebx_noteDiv">
+<h5 class="ebx_noteTitle">
+<b>Note</b></h5>
+<p class="ebx_note">The base URL must refer to the servlet <code>FrontServlet</code>, defined in the deployment descriptor <code>/WEB-INF/web.xml</code> of the web application <code>ebx.war</code>.</p></div>
+<h3>
+<a name="id4s2"></a>User authentication and session information parameters</h3>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Parameter</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>login</code> and <code>password</code>, or a <em>user directory-specific token</em></p></td><td valign="top"><p>Specifies user authentication properties. If neither a login and password pair nor a user directory-specific token is provided, user will be required to authenticate using through the repository login page.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/directory/Directory.html"><code>Directory</code></a> for more information.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>trackingInfo</code></p></td><td valign="top"><p>Specifies the tracking information of the new session. Tracking information is logged in history tables. Additionally, it can be used to programmatically restrict access permissions.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/AccessRule.html"><code>AccessRule</code></a> for more information.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><a name="redirect"></a><code>redirect</code></p></td><td valign="top"><p>The URL to which the user will be redirected at the end of the component session, when they click on the button &#39;Close&#39;. The close button is always displayed for record selections, but whether or not it is displayed for all other cases must be specified using the parameter <code>closeButton</code>.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>locale</code></p></td><td valign="top"><p>Specifies the locale to use. Value is either <code>en-US</code> or <code>fr-FR</code>.</p></td><td valign="top"><p>No, default is the locale registered for the user.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="id4s3"></a>Entity and service selection parameters</h3>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Parameter</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><code>branch</code></p></td><td valign="top"><p>Selects the specified data space.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>version</code></p></td><td valign="top"><p>Selects the specified snapshot.</p></td><td><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>instance</code></p></td><td valign="top"><p>Selects the specified data set. The value must be the reference of a data set that exists in the selected data space or snapshot.</p></td><td valign="top"><p>Only if <code>xpath</code> or <code>viewPublication</code> is specified. </p></td></tr>
+<tr>
+<td valign="top"><p><a name="viewPublication"></a><code>viewPublication</code></p></td><td valign="top"><p>Specifies the publication name of the tabular view to apply to the selected content.</p><p>This publication name is the one declared during the publication of the view. It can be found in the &#39;Administration&#39; area under <strong>Views configuration &gt; Views</strong>.</p><p>All settings of the view, that is, its filters, sort order, and displayed columns, are applied to the result. A data space and a data set must be selected in order for this view to be applied. The target table selection is not necessary, as it can be automatically determined based on the definition of the view. This parameter can be combined with the predicate specified in the <code>xpath</code> parameter as a logical &#39;AND&#39; operation.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>xpath</code></p></td><td valign="top"><p>Specifies a node selection in the data set.</p><p>Value may be a valid absolute path located in the selected data set. The notation must conform to a simplified XPath, with abbreviated syntax.</p><p>It can also be a predicate surrounded by &quot;[&quot; and &quot;]&quot; if a table can be automatically selected using other web component parameters (for example, <code>viewPublication</code> or <code>workflowView</code>).</p><p>For XPath syntax, see <a href="../references/xpath_ref.html">XPath supported syntax</a></p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.html#setPredicate(java.lang.String)"><code>UIHttpManagerComponent.setPredicate</code></a> for more information.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>service</code></p></td><td valign="top"><p>Specifies the service to access.</p><p>For more information on built-in UI services, see <a href="builtin.html">Built-in services</a>.</p><p>In the Java API, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceKey.html"><code>ServiceKey</code></a> for more information.</p></td><td valign="top"><p>No</p></td></tr>
+<tr>
+<td valign="top"><p><code>workflowView</code></p></td><td valign="top"><p>Specifies the workflow section to be selected.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/WorkflowView.html"><code>WorkflowView</code></a> for more information.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>perspectiveName</code></p></td><td valign="top"><p>Specifies the name of the perspective to be selected.</p><p>Known limitation: the parameter <code>scope</code> is not supported by the perspectives.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>perspectiveActionId</code></p></td><td valign="top"><p>Specifies the identifier of the perspective action to be selected.</p><p>Known limitation: the parameter <code>scope</code> is not supported by the perspectives.</p></td><td valign="top"><p>No.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="layoutSpec"></a>Layout parameters</h3>
+<table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p><strong>Parameter</strong></p></th><th valign="top"><p><strong>Description</strong></p></th><th valign="top"><p><strong>Required</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><a name="scope"></a><code>scope</code></p></td><td valign="top"><p>Specifies the scope to be used by the web component. Value can be <code>full</code>, <code>data</code>, <code>dataspace</code>, <code>dataset</code> or <code>node</code>.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.Scope.html"><code>UIHttpManagerComponent.Scope</code></a> for more information.</p></td><td valign="top"><p>No, default will be computed according to target selection.</p></td></tr>
+<tr>
+<td valign="top"><p><a name="firstCallDisplay"></a><code>firstCallDisplay</code></p></td><td valign="top"><p>Specifies which display must be used instead of the one determined by the combination of selection and <code>scope</code> parameter.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/FirstCallDisplay.html"><code>FirstCallDisplay</code></a> for more information.</p></td><td valign="top"><p>No, default will be computed according to the target selection.</p></td></tr>
+<tr>
+<td valign="top"><p><code>closeButton</code></p></td><td valign="top"><p>Specifies how to display the session close button. Value can be <code>logout</code> or <code>cross</code>.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.CloseButtonSpec.html"><code>UIHttpManagerComponent.CloseButtonSpec</code></a> for more information.</p></td><td valign="top"><p>No. If scope is not <code>full</code>, no close button will be displayed by default.</p></td></tr>
+<tr>
+<td valign="top"><p><a name="dataSetFeatures"></a><code>dataSetFeatures</code></p></td><td valign="top"><p>Specifies which features to display in a UI service at the data set level or a form outside of a table.</p><p>These options pertain only to features in the workspace. It is recommended to use this property with the smallest <code>scope</code> possible, namely <code>dataset</code> or <code>node</code>.</p><p>Syntax:</p><p><code><em>&lt;prefix&gt;</em> &quot;:&quot; <em>&lt;feature&gt;</em> [ &quot;,&quot; <em>&lt;feature&gt;</em>]*</code></p><p>where</p><ul>
+<li><p><em><code>&lt;prefix&gt;</code></em> is <code>hide</code> or <code>show</code>,</p></li><li><p><em><code>&lt;feature&gt;</code></em> is <code>services</code>, <code>title</code>, <code>breadcrumb</code>, <code>save</code>, or <code>revert</code>.</p></li></ul>
+<p>For example,</p><blockquote><p><code>hide:title,breadcrumb</code></p><p><code>show:save,revert</code></p></blockquote><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.DataSetFeatures.html"><code>UIHttpManagerComponent.DataSetFeatures</code></a> for more information.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><a name="viewFeatures"></a><code>viewFeatures</code></p></td><td valign="top"><p>Specifies which features to display in a tabular or a hierarchy view (at the table level).</p><p>These options pertain only to features in the workspace. It is recommended to use this property with the smallest <code>scope</code> possible, namely <code>dataset</code> or <code>node</code>.</p><p>Syntax:</p><p><code><em>&lt;prefix&gt;</em> &quot;:&quot; <em>&lt;feature&gt;</em> [ &quot;,&quot; <em>&lt;feature&gt;</em>]*</code></p><p>where</p><ul>
+<li><p><em><code>&lt;prefix&gt;</code></em> is <code>hide</code> or <code>show</code>,</p></li><li><p><em><code>&lt;feature&gt;</code></em> is <code>create</code>, <code>views</code>, <code>selection</code>, <code>filters</code>, <code>services</code>, <code>refresh</code>, <code>title</code>, or <code>breadcrumb</code>.</p></li></ul>
+<p>For example,</p><blockquote><p><code>hide:title,selection</code></p><p><code>show:service,title,breadcrumb</code></p></blockquote><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.ViewFeatures.html"><code>UIHttpManagerComponent.ViewFeatures</code></a> for more information.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>recordFeatures</code></p></td><td valign="top"><p>Specifies which features must be displayed in a form at the record level.</p><p>These options pertain only to features in the workspace. It is recommended to use this property with the smallest <code>scope</code> possible, namely <code>dataset</code> or <code>node</code>.</p><p>Syntax:</p><p><code><em>&lt;prefix&gt;</em> &quot;:&quot; <em>&lt;feature&gt;</em> [ &quot;,&quot; <em>&lt;feature&gt;</em>]*</code></p><p>where</p><ul>
+<li><p><em><code>&lt;prefix&gt;</code></em> is <code>hide</code> or <code>show</code>,</p></li><li><p><em><code>&lt;feature&gt;</code></em> is <code>services</code>, <code>title</code>, <code>breadcrumb</code>, <code>save</code>, <code>saveAndClose</code>, <code>close</code>, or <code>revert</code>.</p></li></ul>
+<p>For example,</p><blockquote><p><code>hide:title</code></p><p><code>show:save,saveAndClose,revert</code></p></blockquote><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIHttpManagerComponent.RecordFeatures.html"><code>UIHttpManagerComponent.RecordFeatures</code></a> for more information.</p></td><td valign="top"><p>No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>recordsByPage</code></p></td><td valign="top"><p>Specifies the number of records that will be displayed per page in a table view (either tabular or hierarchical).</p></td><td valign="top"><p> No.</p></td></tr>
+<tr>
+<td valign="top"><p><code>startWorkItem</code></p></td><td valign="top"><p>Specifies a work item must be automatically taken and started. Value can be <code>true</code> or <code>false</code>.</p><p>See <a target="_blank" href="../Java_API/com/orchestranetworks/service/ServiceKey.html#WORKFLOW"><code>ServiceKey</code></a> for more information.</p></td><td valign="top"><p>No. Default value is <code>false</code>, where the target work item state remains unchanged.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="id5"></a>Example calls to an EBX5 web component</h2>
+<p>Minimal URI:</p><blockquote><p><code>http://localhost:8080/ebx/</code></p></blockquote><p>Logs in as the user &#39;admin&#39; and selects the &#39;Reference&#39; data space:</p><blockquote><p><code>http://localhost:8080/ebx/?login=admin&amp;password=admin&amp;branch=Reference</code></p></blockquote><p>Selects the &#39;Reference&#39; data space and accesses the built-in validation service:</p><blockquote><p><code>http://localhost:8080/ebx/?login=admin&amp;password=admin&amp;branch=Reference&amp;service=@validation</code></p></blockquote><p>Selects the roles table in the default directory:</p><blockquote><p><code>http://localhost:8080/ebx/?login=admin&amp;password=admin&amp;branch=ebx-directory&amp;instance=ebx-directory&amp;xpath=/directory/roles</code></p></blockquote><p>Selects the record &#39;admin&#39; in the default directory:</p><blockquote><p><code>http://localhost:8080/ebx/?login=admin&amp;password=admin&amp;branch=ebx-directory&amp;instance=ebx-directory&amp;xpath=/directory/user[./login=&quot;admin&quot;]</code></p></blockquote><p>Accesses the interface for creating a new user in the default directory:</p><blockquote><p><code>http://localhost:8080/ebx/?login=admin&amp;password=admin&amp;branch=ebx-directory&amp;instance=ebx-directory&amp;xpath=/directory/user&amp;service=@creation</code></p></blockquote><p>Compares the record &#39;admin&#39; in the default directory with the record &#39;jSmith&#39;:</p><p>Compares the record &#39;R1&#39; in the data set &#39;instanceId&#39; in the data space &#39;Reference&#39; with the record &#39;R0&#39;:</p><blockquote><p><code>http://localhost:8080/ebx/?login=admin&amp;password=admin&amp;branch=ebx-directory&amp;instance=ebx-directory&amp;xpath=/directory/user[./login=&quot;admin&quot;]&amp;service=@compare&amp;compare.branch=ebx-directory&amp;compare.instance=ebx-directory&amp;compare.xpath=/directory/user[./login=&quot;jSmith&quot;]</code></p></blockquote><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Integration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

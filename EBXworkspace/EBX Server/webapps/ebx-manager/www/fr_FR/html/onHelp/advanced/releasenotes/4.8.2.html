@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.8.2</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.8.2.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.8.2</h1>
+<p><em>Release Date: July 12, 2010</em></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Adaptation model compilation report</a></li><li class="toc1"><a href="#id2">Data Services</a></li><li class="toc1"><a href="#id3">Instance creation</a></li><li class="toc1"><a href="#id4">Merge procedure</a></li><li class="toc1"><a href="#id5">Workflow</a><ul class="toc2">
+<li class="toc2"><a href="#id5s1">Workflow administration</a></li><li class="toc2"><a href="#id5s2">Workflow definition</a></li></ul>
+</li><li class="toc1"><a href="#id6">API</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Backward compatibility</a></li><li class="toc2"><a href="#id6s2">Workflow</a></li><li class="toc2"><a href="#id6s3">XPath predicates on foreign key fields</a></li></ul>
+</li><li class="toc1"><a href="#bugfix">Bug Fixes</a><ul class="toc2">
+<li class="toc2"><a href="#bug-CoreCache">Core Cache</a></li><li class="toc2"><a href="#bug-DataModelDMA">Data Model &amp; DMA</a></li><li class="toc2"><a href="#bug-Hierarchies">Hierarchies</a></li><li class="toc2"><a href="#bug-Miscellaneous">Miscellaneous</a></li><li class="toc2"><a href="#bug-UserInterface">User Interface</a></li><li class="toc2"><a href="#bug-UsersPermissions">Users &amp; Permissions</a></li><li class="toc2"><a href="#bug-Validation">Validation</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Adaptation model compilation report</h2>
+<p> The possibility to display the compilation report of an adaptation model has been added in EBX.Mananger. The compilation report can be directly accessed in a instance through the new <code>Validation</code> tab section. This new tab displays both the instance validation report and the schema compilation report. The compilation report may be used to see information, warning and error messages of the adaptation model associated with an instance. </p><p> Note: this feature is only available in Development mode or or for an administrator profile. See the <a href="../installation/properties.html#runningMode"> EBX.Platform running mode section</a> for more information.</p><h2>
+<a name="id2"></a>Data Services</h2>
+<p>New features of optimistic locking are available. See the <a href="../references/dataservices_execution.html#locking">related section</a> for more information.</p><h2>
+<a name="id3"></a>Instance creation</h2>
+<p>A new mode is available when creating a data instance in a branch: the <strong>repository schema</strong> mode. </p><p>This mode allows creating an instance from a schema generated in the root directory. Indeed, when a module is not specified, the Data Model Assistant publishes the model in this directory.</p><h2>
+<a name="id4"></a>Merge procedure</h2>
+<p>In <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html">ProcedureContext</a> ,&nbsp;a new method has been added in order to provide the possibility to choose which instances and which contents have to be merged when merging a branch to its parent. For further information, see <a target="_blank" href="../Java_API/com/orchestranetworks/service/ProcedureContext.html#doMergeToParent(com.orchestranetworks.service.MergeSpecForHome)">ProcedureContext.doMergeToParent</a> .&nbsp;</p><h2>
+<a name="id5"></a>Workflow</h2>
+<p>Some functionalities have been added to improve workflow administration and definition.</p><h3>
+<a name="id5s1"></a>Workflow administration</h3>
+<ul>
+<li><p>A table service has been added on the process instances table of the <code>Workflows - Executions</code> branch: it is now possible to delete several process instances in one step.</p></li><li><p>On the process instances table, when a process instance record is edited, a link is now available in order to see all its associated work items.</p></li><li><p>Some administration buttons have been added in the workflow user view. If the user has the associated permissions, the user can supervise process instances directly in this view (administration services are still available on the technical tables of the <code>Workflows - Executions</code> branch). The available actions are: deallocate or reallocate a work item, replay the current step of a process instance and terminate a process instance.</p></li></ul>
+<h3>
+<a name="id5s2"></a>Workflow definition</h3>
+<ul>
+<li><p> A new strategy has been added to define the workflow termination: <strong>Terminates if all of the work items are accepted, or any rejected</strong>. The user task is considered complete as soon as all of the work items are accepted or as soon as a work item is rejected. </p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../user_workflowmodel/userworkflowmodel_createimplement.html#termination">Completion Strategy</a></p></div>
+</li><li><p>The permissions of a process definition are now more specific. The administration permissions and allocation permissions have been enhanced:</p><ul>
+<li><p>For administration, it is now possible to define specific permissions for: restart a token, terminate a process instance and unpublish a published process definition. </p></li><li><p>For allocation, it is now possible to define specific permissions for: allocate, deallocate and reallocate a work item.</p></li></ul>
+</li><li><p>The built-in script <strong>Create a branch</strong> has been updated. The input parameter <code>copyPermissionsFromParent</code> has been added. By default, when the script creates a branch, all permissions are copied from the initial branch. If this parameter is set to <code>false</code>, the permissions are not copied.</p></li></ul>
+<h2>
+<a name="id6"></a>API</h2>
+<h3>
+<a name="id6s1"></a>Backward compatibility</h3>
+<p> In order to check if a value is mandatory at user input submit, the <code>osd:checkNullInput</code> property must be set to <code>true</code>. However in previous versions of EBX.Platform, the empty string was not interpreted as <code>null</code>. Hence, for nodes of type <code>xs:string</code>, the property was not effective.</p><p> Henceforth, thanks to the correction of bug #2481, an empty value submitted for a field of type <code>xs:string</code> is considered as invalid at user input submit (if the other conditions of a mandatory value are verified).</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../models/constraints.html#checkNullInput">checkNullInput</a></li><li><a href="../models/constraints.html#constraintOnNull">constraint on null</a></li><li><a href="../models/constraints.html#ebxwhitespaces">Whitespaces management</a></li></ul>
+</div>
+<h3>
+<a name="id6s2"></a>Workflow</h3>
+<p>New methods have been added to the WorkflowEngine class.</p><ul>
+<li><p>The new method <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/WorkflowEngine.html#getProcessInstanceKeysForDataContextVariable(com.orchestranetworks.workflow.PublishedProcessKey, java.lang.String, java.lang.String)"> getProcessInstanceKeysForDataContextVariable</a> allows to get all process instance keys which are associated to the specified published process key and which have the specified data context variable equal to the specified value. </p></li><li><p> The new method <a target="_blank" href="../Java_API/com/orchestranetworks/workflow/WorkflowEngine.html#isProcessInstanceRunning(com.orchestranetworks.workflow.ProcessInstanceKey)"> isProcessInstanceRunning</a> says if the specified process instance is running. </p></li></ul>
+<h3>
+<a name="id6s3"></a>XPath predicates on foreign key fields</h3>
+<p> Up to now, it was not possible to specify a predicate about a particular field inside a <code>osd:tableRef</code>. This limitation is removed. For further information see <a href="../references/xpath_ref.html#tableRef">Extraction of foreign keys</a> .&nbsp;</p><p>For example, it is possible to define a selection link with an XPath predicate targeting a complex primary key: <code>xpath=/root/C[./fkb/string=&#39;b&#39; and ./fkb/fka/string=&#39;a&#39; and ./fkb/fka/int=1]</code>.</p><h2>
+<a name="bugfix"></a>Bug Fixes</h2>
+<h3>
+<a name="bug-CoreCache"></a>Core Cache</h3>
+<ul>
+<li><p><em>[2714]</em> Cycles in inter-home links are not properly handled by schema compilation. </p><p>If the graph defined by the <code>osd:tableRef</code> declarations enabling inter-home links has cycles (an instance of a home H1 has a link to an instance of home H2, and the home H2 contains a link to H1), an unexpected error occurs when the home is loaded.</p></li><li><p><em>[2722]</em> A &quot;ClassCastException&quot; is thrown when accessing a selection node in the manager. </p><p>When we try to access a selection node in the manager, a ClassCastException is thrown.</p></li><li><p><em>[2727]</em> The redirection URI is uneffective with &quot;UIHttpManagerComponents&quot; after a Merge. </p><p>When the redirection URI of an &quot;UIHttpManagerComponent&quot; has been set using the method &quot;UIHttpManagerComponent.setRedirectionURI(...)&quot;, the method is uneffective after a Merge.</p></li></ul>
+<h3>
+<a name="bug-DataModelDMA"></a>Data Model &amp; DMA</h3>
+<ul>
+<li><p><em>[2481]</em> Incorrect behaviour for Check Null Input on type String. </p><p>Whenever it is set to &quot;true&quot; and the adaptation is activated, attribute osd:checkNullInput=&quot;true&quot; has no effect at submit time on String elements. Indeed, empty strings are not considered as null values, due to whitespace management. In this case, the attribute osd:checkNullInput=&quot;true&quot; is not checked.</p></li><li><p><em>[2674]</em> Symbol &quot;Primary key&quot; is not displayed in the manager. </p><p>If a table element uses a named type and when &quot;osd:table&quot; element is defined on the element instead of the type, the symbol &quot;Primary Key&quot; is missing in the data structure.</p></li><li><p><em>[2686]</em> No schema validation error when a table definition is declared under an aggregated list. </p><p>If a table definition <code>osd:table</code> is defined under an element defining <code>maxOccurs &gt; 1</code>, no error is added at schema validation time. However, this case is not supported and unexpected errors occur at runtime.</p></li></ul>
+<h3>
+<a name="bug-Hierarchies"></a>Hierarchies</h3>
+<ul>
+<li><p><em>[2627]</em> Duplicated dimensions displayed. </p><p>For some models, some dimensions are duplicated in the dimensions selection panel.</p></li></ul>
+<h3>
+<a name="bug-Miscellaneous"></a>Miscellaneous</h3>
+<ul>
+<li><p><em>[96]</em> Mass-update: overwriting mode should be handled more smoothly </p><p>When a record is in &#39;inherited&#39; state, the mass-update should overwrite the record.</p></li></ul>
+<h3>
+<a name="bug-UserInterface"></a>User Interface</h3>
+<ul>
+<li><p><em>[2682]</em> The record selection does not work if its primary key has an empty value. </p><p>The record selection does not work if its primary key has an empty value.</p></li><li><p><em>[2684]</em> Information about a foreign key attribute is erroneous. </p><p>In the manager, when a field is a foreign key, if there is an element &quot;&lt;predicate&gt;&quot; defined on this field, the content of the information is erroneous.</p><p>We can read: &#39;Foreign key constraint filtered by predicate &quot;null&quot;&#39;.</p><p>The predicate is always &quot;null&quot;.</p></li><li><p><em>[2718]</em> In EBX, the &#39;archive export&#39; procedure with a change set does not work. </p><p>In EBX, the archive export procedure fails with NullPointerException if &quot;Include change set&quot; is enabled and if an adaptation has been deleted.</p></li></ul>
+<h3>
+<a name="bug-UsersPermissions"></a>Users &amp; Permissions</h3>
+<ul>
+<li><p><em>[2683]</em> An exception is thrown when trying to create a record in a table with access rules checking the primary key. </p><p>Typically this happens when the branch owner tries to add access rights to any user at branch-level.</p></li><li><p><em>[2709]</em> NullPointerException occurs with custom directory when checking if user needs to change his password. </p><p>With a custom directory extending the Java class &quot;DirectoryDefault&quot;, a NullPointerException is thrown while checking whether the user is in the default directory and whether he needs to change his password.</p></li><li><p><em>[2716]</em> In EBX, the archive import procedure with a change set does not work. </p><p>In EBX, the archive import procedure fails if &quot;Include change set&quot; is enabled (an error &quot;NullPointerException&quot; is displayed and it is triggered when checking for access rights).</p></li></ul>
+<h3>
+<a name="bug-Validation"></a>Validation</h3>
+<ul>
+<li><p><em>[2725]</em> Facet maxLength accepts negative values. </p><p>The Schema Compilation does not handle this case which does not conform to the XML Specification.</p><p>Side effects :</p><p>- the field is not modifiable in the Manager;</p><p>- the validation report show errors like &quot;Value must not exceed -10 character(s) long.&quot;.</p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

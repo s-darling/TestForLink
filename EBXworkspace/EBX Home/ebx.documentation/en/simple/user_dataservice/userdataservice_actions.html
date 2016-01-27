@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Generating data service WSDLs</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="ds_actions" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; User Guide &gt; Data services</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=user_dataservice/userdataservice_actions.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data services</span></div>
+<h1>
+Generating data service WSDLs</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#data">Generating a WSDL for operations on data</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Operations on data sets</a></li><li class="toc2"><a href="#id1s2">Operations on tables</a></li></ul>
+</li><li class="toc1"><a href="#dataspace">Generating a WSDL for data space operations</a><ul class="toc2">
+<li class="toc2"><a href="#id2s1">Operations on data spaces</a></li></ul>
+</li><li class="toc1"><a href="#workflow">Generating a WSDL for data workflow operations</a><ul class="toc2">
+<li class="toc2"><a href="#id3s1">Operations on data workflows</a></li></ul>
+</li><li class="toc1"><a href="#lineage">Generating a WSDL for lineage</a></li></ul>
+</div>
+<h2>
+<a name="data"></a>Generating a WSDL for operations on data</h2>
+<p>To generate a WSDL for accessing data, select &#39;Data&#39; in the navigation panel in the <strong>Data Services</strong> area, then follow through the steps of the wizard:</p><ol>
+<li><p>Choose whether the WSDL will be for operations at the data set level or at the table level.</p></li><li><p>Identify the data space and data set on which the operations will be run</p></li><li><p>Select the tables on which the operations are authorized, as well as the operations permitted.</p></li><li><p>Download the generated WSDL file by clicking the button <strong>Download WSDL</strong>.</p></li></ol>
+<h3>
+<a name="id1s1"></a>Operations on data sets</h3>
+<p>The following operations can be performed using the WSDL generated for operations at the data set level:</p><ul>
+<li><p>Get data set table(s) changes between data spaces or snapshots</p></li><li><p>Replication unit refresh</p></li></ul>
+<h3>
+<a name="id1s2"></a>Operations on tables</h3>
+<p>The following operations, if selected, can be performed using the WSDL generated for operations at the table level:</p><ul>
+<li><p>Insert record(s)</p></li><li><p>Select record(s)</p></li><li><p>Update record(s)</p></li><li><p>Delete record(s)</p></li><li><p>Count record(s)</p></li><li><p>Get changes between data space or snapshot</p></li><li><p>Get credentials</p></li><li><p>Run multiple operations on tables in the data set</p></li></ul>
+<h2>
+<a name="dataspace"></a>Generating a WSDL for data space operations</h2>
+<p>To generate a WSDL for data space-level operations, selecting &#39;Data space&#39; in the navigation panel of the <strong>Data Services</strong> area. The generated WSDL is generic to all data spaces, thus no additional information is required.</p><p>Download the generated WSDL file by clicking the button <strong>Download WSDL</strong>.</p><h3>
+<a name="id2s1"></a>Operations on data spaces</h3>
+<p>The following operations can be performed using the WSDL generated for operations at the data space level:</p><ul>
+<li><p>Create a data space</p></li><li><p>Close a data space</p></li><li><p>Create a snapshot</p></li><li><p>Close a snapshot</p></li><li><p>Merge a data space</p></li><li><p>Lock a data space</p></li><li><p>Unlock a data space</p></li><li><p>Validate a data space or a snapshot</p></li><li><p>Validate a data set</p></li></ul>
+<h2>
+<a name="workflow"></a>Generating a WSDL for data workflow operations</h2>
+<p>To generate a WSDL to control data workflows, select &#39;Data workflow&#39; from the <strong>Data Services</strong> area. The generated WSDL is not specific to any particular workflow publication, thus no additional information is required.</p><p>Download the generated WSDL file by clicking the button <strong>Download WSDL</strong>.</p><h3>
+<a name="id3s1"></a>Operations on data workflows</h3>
+<ul>
+<li><p>Start a data workflow</p></li><li><p>Resume a data workflow</p></li><li><p>End a data workflow</p></li></ul>
+<h2>
+<a name="lineage"></a>Generating a WSDL for lineage</h2>
+<p>To generate a WSDL for lineage, select &#39;Lineage&#39; from the <strong>Data Services</strong> area. It will be based on authorized profiles that have been defined by an administrator in the &#39;Lineage&#39; section of the <strong>Administration</strong> area.</p><p>The operations available for accessing tables are the same as for <a href="#data">WSDL for operations on data</a>.</p><p>Steps for generating the WSDL for lineage are as follows:</p><ol>
+<li><p>Select the profile whose permissions will be used. The selected user or role must be authorized for use with lineage by an administrator.</p></li><li><p>Identify the data space and data set on which the operations will be run</p></li><li><p>Select the tables on which the operations are authorized, as well as the operations permitted.</p></li><li><p>Download the generated WSDL file by clicking the button <strong>Download WSDL</strong>.</p></li></ol>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="../user_dataservice/userdataservice_intro.html#lineage">Lineage</a></p></div>
+<p class="noPrint" align="right"><em><img alt="/ebx_search.png" src="../resources/images/symbols/ebx_search.png"></img> User guide <a href="../table_contents_user.html"> table of contents</a></em></p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; User Guide &gt; Data services</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

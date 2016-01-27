@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - D3 broadcasts and delivery data spaces</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="d3_broadcast" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=engine/d3_broadcast.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</span></div>
+<h1>
+D3 broadcasts and delivery data spaces</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Broadcast procedure</a><ul class="toc2">
+<li class="toc2"><a href="#id1s1">Scope and contents of a broadcast</a></li><li class="toc2"><a href="#id1s2">Performing a broadcast</a></li><li class="toc2"><a href="#id1s3">Conditions</a></li></ul>
+</li><li class="toc1"><a href="#id2">Delivery data spaces</a><ul class="toc2">
+<li class="toc2"><a href="#dataServices">Data Services</a></li><li class="toc2"><a href="#id2s2">Access restrictions</a></li><li class="toc2"><a href="#id2s3">Transactional view</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Broadcast procedure</h2>
+<h3>
+<a name="id1s1"></a>Scope and contents of a broadcast</h3>
+<p>A D3 broadcast occurs at the data space or snapshot level. For data space broadcasts, D3 first creates a snapshot to capture the current state, then broadcasts this newly created snapshot.</p><p>A broadcast performs one of the following procedures depending on the situation:</p><ul>
+<li><p>An update of the differences computed between the new snapshot broadcast and the current &#39;commit&#39; version on the slave.</p></li><li><p>A full synchronization containing all data sets, tables, records, and permissions. This is done on the first broadcast to a given slave node, or if the previous slave commit is not known to the master node.</p></li></ul>
+<h3>
+<a name="id1s2"></a>Performing a broadcast</h3>
+<p>The broadcast can be done:</p><ul>
+<li><p>By the end user, using the action <strong>Broadcast</strong> available in the delivery data space or a snapshot of the delivery data space,</p></li><li><p>Using a custom code that uses <a target="_blank" href="../Java_API/com/orchestranetworks/d3/D3Engine.html">D3Engine</a> in the Java API.</p></li></ul>
+<h3>
+<a name="id1s3"></a>Conditions</h3>
+<p>To be able to broadcast, the following conditions must be fulfilled:</p><ul>
+<li><p>The authenticated user profile is granted permission to broadcast.</p></li><li><p>The data space or snapshot to be broadcast has no validation errors.</p></li><li><p>The D3 master configuration has no validation errors.</p></li><li><p>The data space or snapshot must not contain any tables in relational mode.</p></li><li><p>There must be an associated delivery profile.</p></li><li><p>If broadcasting a data space, the data space must not be locked.</p></li><li><p>If broadcasting a snapshot, the snapshot must belong to a data space declared as delivery data space and must not already be the current broadcast snapshot (but a rollback to a previously broadcast snapshot is possible).</p></li></ul>
+<fieldset class="ebx_note">
+<legend>
+<b>Note</b></legend>
+<p>Broadcasts are performed asynchronously. Therefore, no information is displayed in the user interface about the success or failure of a broadcast. Nevertheless, it is possible to monitor the slaves and the deliveries. See <a target="_self" href="./d3_admin.html#d3supervision">D3 supervision</a> for more information. </p></fieldset>
+<h2>
+<a name="id2"></a>Delivery data spaces</h2>
+<h3>
+<a name="dataServices"></a>Data Services</h3>
+<p>By default, when a data service accesses a delivery data space, it is redirected to the current snapshot, which is the last one broadcast. However, this default behavior can be modified either at the request level or the global configuration level.</p><div id="seealsoShort">
+<p><span style="color:#888888; font-size:13px; font-weight: bold;  margin:0 4px 0 0;">See also:</span><a target="_self" href="../references/dataservices.html#disableRedirectionToLastBroadcast">Common parameter &#39;disableRedirectionToLastBroadcast&#39;</a></p></div>
+<h3>
+<a name="id2s2"></a>Access restrictions</h3>
+<p>On the master node, a delivery data space can neither be merged nor closed. Other operations are available, for example, according to permissions, it can be modified directly, snapshot can be created independently of a broadcast, or a child data space can be created and merged.</p><p>On the slave node, no modification can be made on a delivery/replicated data space, by any means (end user, data services, Java program) except broadcast process. Furthermore, any data space-related operation (such as merge, close, etc) is forbidden on the slaves.</p><h3>
+<a name="id2s3"></a>Transactional view</h3>
+<p>The current snapshot may change between two calls if a broadcast has been made meanwhile. If a fully stable view is required for several successive calls, these calls will need to directly specify the same expected Snapshot.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Administration Guide &gt; Distributed Data Delivery (D3)</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

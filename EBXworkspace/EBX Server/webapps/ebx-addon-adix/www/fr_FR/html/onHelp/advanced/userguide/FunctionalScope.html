@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 1. Functional scope</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="FunctionalScope" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Data Exchange Documentation &gt; Data Exchange Documentation &gt; User-guide</div>
+</div>
+<h1>
+<a name="FunctionalScope_topPage"></a>1. Functional scope</h1>
+<div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#BasicUseCase154d_7">1.1. Basic use case</a></li><li class="toc1"><a href="#SemanticModelf89_8">1.2. Semantic model</a><ul class="toc2">
+<li class="toc2"><a href="#BusinessDataLineage19a5_9">1.2.1. Business data lineage</a></li><li class="toc2"><a href="#AutomaticDataMapping2010_10">1.2.2. Automatic data mapping</a></li><li class="toc2"><a href="#IntegrationWithTheGovernanceProcess20f3_11">1.2.3. Integration with the governance process</a></li></ul>
+</li><li class="toc1"><a href="#KeyDefinitions189d_12">1.3. Key definitions</a></li></ul>
+</div>
+<h2>
+<a name="BasicUseCase154d_7"></a>1.1. Basic use case</h2>
+<p>EBX5&#39;s Data Exchange Add-On relies on a repository that collects all data mapping configurations. This repository automatically updates when a user executes a mapping operation that invokes the default data mapping. For instance, during export execution for the &#39;Client&#39; table in the &#39;Sales&#39; data set, the Data Exchange repository is enriched with new source and target &#39;Sales&#39; applications of EBX5 and &#39;Default XML&#39; types, respectively. The data mapping configuration between the source fields (EBX5 paths) and the target fields (XML nodes) are created automatically. The next time this export process is executed, the repository updates automatically if needed (changes in the data structure).</p><p>This data can be reused to create user-defined data mapping configurations. Indeed, the repository can be enriched manually if default mappings do not meet business requirements. For example, when the names of the metadata from the source are different from the target, a user-defined data mapping configuration must be declared.</p><h2>
+<a name="SemanticModelf89_8"></a>1.2. Semantic model</h2>
+<p>Data mapping configurations can be enriched by creating links from Tables and Fields to corresponding business concepts also known as Object Class and Property items. A single Object Class can be linked to many tables, and a Property can be linked to many fields. An Object Class is a container of data, predominantly a Table, but can include a group of fields or a complex data type. A property is a business abstraction of a table&#39;s field. This vocabulary comes from the ISO11179 standard also used in the EBX5&#39;s Information Governance add-on. </p><p>The use of the semantic model is not mandatory to create data mapping configurations or to enable import, export and data transfer. Once the semantic model is configured, it facilitates the management of the data mapping configurations as follows:</p><ul>
+<li><p>Business data lineage.</p></li><li><p>Automatic data mapping.</p></li><li><p>Integration with the governance process.</p></li></ul>
+<h3>
+<a name="BusinessDataLineage19a5_9"></a>1.2.1. Business data lineage</h3>
+<p>Data lineage shows a global view of how a data is transformed and conveyed between applications playing the roles of producers and consumers. When data lineage applies solely to the logical data model level, it is not easy to enforce a full understanding of the transformation. The following shows how two tables can have indirect data flow processes that cannot be figured out using just the logical level:</p><ul>
+<li><p>There are four tables: A, B, C and D. There is a data mapping from A to B and another mapping from C to D. Data lineage only recognizes two possible ways for data to flow A-&gt;B and C-&gt;D. But from a business point of view, table &#39;D&#39; and table &#39;A&#39; have similar significance. Even though a logical data mapping between A and D doesn&#39;t exist, the business data lineage must represent the global linking meaning between the four tables. It could be considered that there is a missing data mapping configuration between A and D.</p></li></ul>
+<p>In the following example, the &#39;CLIENT&#39; Object Class is linked to the &#39;Corporate Client&#39;, &#39;Customer&#39;, &#39;Party&#39; and &#39;Overseas Client&#39; tables. From this Object Class, it is easy to get a full data lineage applied to the business concept of &#39;Client&#39;, including the information that the table &#39;Overseas Client&#39; is not involved to feed the &#39;Customer&#39; table.</p><p align="center"><img alt="/10000000000003B10000028C7B3883BD.png" src="./resources/pictures/10000000000003B10000028C7B3883BD.png" width="526"></img></p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th colspan="2" valign="top"><p>Special notation:</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p align="center"><img alt="/100002010000000E0000000E86672C34.png" src="./resources/pictures/100002010000000E0000000E86672C34.png" width="18"></img></p></td><td valign="top"><p>In the current version of the add-on, it is possible to link the Tables and Fields with the Object Class and Properties items, but the UI to display the data lineage is not yet available.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="AutomaticDataMapping2010_10"></a>1.2.2. Automatic data mapping</h3>
+<p>The semantic model is also used to create automatic data mappings between tables and fields sharing the same Object Class and Property items or a part of them. As illustrated below, the two tables &#39;Corporate Client&#39; and &#39;Customer&#39; share the same &#39;CLIENT&#39; Object Class, meaning that they can be mapped with each other. The &#39;Id&#39; and &#39;Code&#39; fields are linked to the same &#39;Name&#39; Property, meaning that they can also be mapped with each other.</p><p>Based on this link between the data model (Tables and Fields) and the semantic model (Object Classes and Properties), the add-on can automatically generate the data mapping configuration between source and target tables, such as, in the example below, the &#39;Corporate Client&#39; table and the target &#39;Customer&#39; table.</p><p align="center"><img alt="/1000000000000329000002C210A4669B.png" src="./resources/pictures/1000000000000329000002C210A4669B.png" width="521"></img></p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th colspan="2" valign="top"><p>Special notation:</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p align="center"><img alt="/100002010000000E0000000E3C009B93.png" src="./resources/pictures/100002010000000E0000000E3C009B93.png" width="18"></img></p></td><td valign="top"><p>You can refer to the appendix &#39;Automatic data mapping for transferring data&#39; to get a use case relying on a semantic data model.</p></td></tr>
+</tbody>
+</table>
+<h3>
+<a name="IntegrationWithTheGovernanceProcess20f3_11"></a>1.2.3. Integration with the governance process</h3>
+<p>In the Information governance field, EBX5&#39;s Information Governance add-on allows you to manage all metadata of any data asset, such as: data models, workflow, rules, data spaces, applications, etc. This add-on uses Object Class and Property items as concepts to arrange the metadata and govern their definitions.</p><p>It is also possible to declare the parties and their roles involved in each Object Class and Property. For instance, if the &#39;Sales&#39; application is referenced as the &#39;Consumer&#39; of the &#39;Client&#39; Object Class, it should be forbidden to declare this application as a source for a export process in Data Exchange.</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th colspan="2" valign="top"><p>Special notation:</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p align="center"><img alt="/100002010000000E0000000E86672C34.png" src="./resources/pictures/100002010000000E0000000E86672C34.png" width="18"></img></p></td><td valign="top"><p>The integration between the add-ons Information Governance and Data Exchange will be available in the further version.</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="KeyDefinitions189d_12"></a>1.3. Key definitions</h2>
+<p align="center"><img alt="/10000000000000DE0000013ED9F24C48.png" src="./resources/pictures/10000000000000DE0000013ED9F24C48.png" width="217"></img></p><p>The table on the next page defines Data Exchange repository key concepts.</p><p>This repository is located under the EBX5 &#39;Administration&#39; tab in the &#39;Data exchange&#39; data space. It contains the following domains: Application, Semantic model, Data model and Data mapping.</p><p align="center"><img alt="/100000000000036C0000024F0C46C2B7.png" src="./resources/pictures/100000000000036C0000024F0C46C2B7.png" width="534"></img></p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th valign="top"><p>Concept </p></th><th valign="top"><p>Definition</p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><p><strong>Semantic model</strong></p></td><td valign="top"><p>Using the semantic model is not mandatory to create data mapping configurations. However, it provides an improved data lineage view. Also, automatic data mapping between tables and fields-sharing the same Object Classes and properties-uses the semantic model.</p></td></tr>
+<tr>
+<td valign="top"><p>Object Class</p></td><td valign="top"><p>An Object Class is a container that holds metadata such as a table, a group of fields or a complex data type. An Object Class can be linked to one to many Tables.</p></td></tr>
+<tr>
+<td valign="top"><p>Property</p></td><td valign="top"><p>A Property is a business abstraction of a table&#39;s field, group of fields or complex data type. A Property can be linked to one to many Object Classes and Fields.</p></td></tr>
+<tr>
+<td valign="top"><p><strong>Data model</strong></p></td><td valign="top"><p>A data model contains the Tables and Fields that comprise an application. If it is an EBX5 type application (referenced as a data set), it corresponds to the logical data model. When it is an XML type application, it corresponds to the XML paths.</p></td></tr>
+<tr>
+<td valign="top"><p>Table</p></td><td valign="top"><p>When referring to an EBX5 type application, this is the table in the related logical data model. When referring to an XML type application, this is an XML path.</p></td></tr>
+<tr>
+<td valign="top"><p>Field</p></td><td valign="top"><p>When referring to an EBX5 type application, this is the field in the related logical data model. When referring to an XML type application, this is an XML path.</p></td></tr>
+<tr>
+<td valign="top"><p><strong>Application</strong></p></td><td valign="top"><p>The application level declares the portfolio of source and target applications involved in the import, export and transfer of data.</p></td></tr>
+<tr>
+<td valign="top"><p>Application by type</p></td><td valign="top"><p>An application is declared for one to many format types:</p><ul>
+<li><p>EBX5: the application corresponds to a data model in EBX5—referenced through a data set.</p></li><li><p>Default XML: the application corresponds to a XML data structure fully managed by the add-on with default XML paths.</p></li><li><p>XML: the application corresponds to a XML data structure issued in the user-defined data mapping configurations.</p></li></ul>
+</td></tr>
+<tr>
+<td valign="top"><p>Interface</p></td><td valign="top"><p>An interface is comprised of a source and target application and enables data flow between the two. Import, export and transfer of data is not possible between applications without an interface definition. The add-on creates an interface when the end-user executes a default XML import or export.</p></td></tr>
+<tr>
+<td valign="top"><p><strong>Data mapping</strong></p></td><td valign="top"><p>This level contains the actual mapping configuration between tables and fields.</p></td></tr>
+<tr>
+<td valign="top"><p>Table mapping</p></td><td valign="top"><p>Defines the source and target tables.</p></td></tr>
+<tr>
+<td valign="top"><p>Field mapping</p></td><td valign="top"><p>Defines the sources and target fields.</p></td></tr>
+</tbody>
+</table>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

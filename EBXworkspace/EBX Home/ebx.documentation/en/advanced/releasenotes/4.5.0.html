@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.5.0</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.5.0.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.5.0</h1>
+<p><strong>Release Date: May 2, 2008</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Bug Fixes / Minor enhancement</a></li><li class="toc1"><a href="#id2">Additional relational database support</a></li><li class="toc1"><a href="#id3">Hierarchies (beta version)</a></li><li class="toc1"><a href="#id4">Performance enhancements</a></li><li class="toc1"><a href="#id5">Data Services</a></li><li class="toc1"><a href="#id6">Permissions management</a><ul class="toc2">
+<li class="toc2"><a href="#id6s1">Disabled reason on actions permissions</a></li><li class="toc2"><a href="#id6s2">Action permission resolution on tables</a></li></ul>
+</li></ul>
+</div>
+<h2>
+<a name="id1"></a>Bug Fixes / Minor enhancement</h2>
+<ul>
+<li><p><strong>[01632]</strong> On Manager, when searching a decimal &quot;1,000.00&quot;:&nbsp;it does not find it if user enters in &quot;Search&quot; field the input &quot;1000&quot; (whatever the current locale). </p></li><li><p><strong>[01633]</strong> On Manager, when searching a decimal &quot;1,000.00&quot;:&nbsp;if current locale is French, it does not find the number if user enters in &quot;Search&quot; field the input &quot;1 000&quot; (the default display for french). </p></li><li><p><strong>[01634]</strong> On Manager, when searching a decimal &quot;1,000.00&quot;:&nbsp;if current locale is English, it does not find it if user enters in &quot;Search&quot; field the following inputs: &quot;1,000&quot; or &quot;000.00&quot;. It finds it is user enters &quot;000,00&quot; (the underlying locale is wrongly module&#39;s default locale, not session&#39;s one). </p></li><li><p><strong>[01635]</strong> On Manager, when searching a date &quot;1997-10-07&quot;: if current locale is English, it does not find it if user enters in &quot;Search&quot; field the input: &quot;1997-10&quot;. It finds it is user enters &quot;10/1997&quot; (the underlying locale is wrongly module&#39;s default locale, not session&#39;s one). </p></li><li><p><strong>[01636]</strong> The default format used for english dates is yyyy-MM-dd. </p></li><li><p><strong>[01637]</strong> On Manager, when it is used in Component mode, the first page has not the Locale expected. </p></li><li><p><strong>[01639]</strong> When <code>ValueContext</code> is obtained from a Procedure context, the following methods throw <code>ShouldNotBeCalledException</code> : <code>ValueContext.formatOccurrence</code> and <code>ValueContext.displayOccurrence</code> .&nbsp;At least these method&#39;s javadoc should specify this limitation. </p></li><li><p><strong>[01640]</strong> The method <code>ValueContext.formatOccurrence</code> has not the Locale as argument. This is correct when context is session-dependent (for example, in a <code>UIBean</code> ). But in other contexts (for example, in validation report) the locale used is module&#39;s default locale. This is a bit complicated for the developer, it would be more simple to format with XML Schema policy in the later case. Morevover, the method&#39;s javadoc should specify the behaviour. </p></li><li><p><strong>[01699]</strong> The creation of records through Data Services should return the Xpath predicate matching the primary key. </p></li><li><p><strong>[01705]</strong> Lock are not handled properly within <code>UIServices</code> .&nbsp;</p></li></ul>
+<h2>
+<a name="id2"></a>Additional relational database support</h2>
+<p>Support for Microsoft SQL Server 2005 (and further) as the database backend has been added.</p><h2>
+<a name="id3"></a>Hierarchies (beta version)</h2>
+<p>Data can now be seen as a hierarchy. Hierarchies exploit directly existing relationships that are specified by underlying XML Schema document. They can be used either directly (prebuilt dimensions) or configured as views. A hierarchy is also able to mix recursive relationships and non-recursive relationships.</p><p>User interface rendering of each node in the hierarchy is based either on a small expression syntax (with XPath substitition) or on a Java implementation of a rendering interface. Default rendering for hierarchies can be specified at schema-level or it is specified by user at configuration level in EBX.</p><p>For more information, see:</p><ul>
+<li><p><a href="../models/tables.html">Schema documentation</a> (element <code>defaultLabel</code> ) </p></li><li><p><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UILabelRendererForHierarchy.html">UILabelRendererForHierarchy</a> javadoc. </p></li></ul>
+<p><strong>Activation of hierarchies:</strong> In order to use this component, it must be enabled by means of the option &quot;Enable hierarchy perspective&quot; in the <em>Manager adaptation</em>.</p><p><strong>Known limitations:</strong></p><ul>
+<li><p>The following &quot;relationships&quot; are not yet exploited for configuring a hierarchy:</p><ul>
+<li><p>standard and extended enumerations,</p></li><li><p><code>osd:select</code> elements, </p></li><li><p> inter-instance foreign keys ( <code>osd:tableRef</code> with <code>container</code> element defined). </p></li></ul>
+</li><li><p> If a node is the result of a multi-occurrenced foreign key ( <code>osd:tableRef</code> inside an element with <code>maxOccurs &gt; 1</code> ), Move and Create actions are not allowed. </p></li><li><p>If join tables have been used to build a hierarchy Level:</p><ul>
+<li><p>If a Move or Create action has been done, the tree does not expand properly to the concerned node.</p></li><li><p>If a Create is asked on a non-terminal recursive level, only a node creation of the same level is proposed.</p></li></ul>
+</li><li><p>Search &amp; view filters do not apply on hierarchies.</p></li><li><p>Default perspectives should not be activated on complex data models.</p></li></ul>
+<h2>
+<a name="id4"></a>Performance enhancements</h2>
+<p>It is henceforth possible to declare programmatic constraints&#39; dependencies, so as to optimize incremental validation time.</p><p> The specification of local or explicit dependencies is useful when a large volume of data must be validated and/or the validation algorithm is particularly expensive. In other cases, the default <em>unknown dependencies</em> mode remains sufficient. </p><p> For more information, see <a target="_blank" href="../Java_API/com/orchestranetworks/schema/ConstraintContext.html">ConstraintContext</a> interface. </p><h2>
+<a name="id5"></a>Data Services</h2>
+<p>Evolutions:</p><ul>
+<li><p><strong>[01699]</strong> The insert operation has been enhanced. Now it returns the XPath predicate of the primary keys of the inserted elements. It is useful when the primary key is an auto-increment. </p></li><li><p>The select operation is now subjected to permissions. A user can only read records he has access to within the manager.</p></li></ul>
+<h2>
+<a name="id6"></a>Permissions management</h2>
+<h3>
+<a name="id6s1"></a>Disabled reason on actions permissions</h3>
+<p>A message has been added to explain why actions are disabled on homes, instances or tables. It generally gives clues to identify where updates, on permissions table, has to be performed in order to enabled the target action. This message appears when the mouse is over the target link or button.</p><h3>
+<a name="id6s2"></a>Action permission resolution on tables</h3>
+<p>Resolution procedure for action permission on tables has been reviewed.</p><p>A table resolved action permission is then computed as follows:</p><ul>
+<li><p><em>action permission defined</em> on a table is its specific action permission if defined, or the default action permission defined for any instance&#39;s table; </p></li><li><p><em>action permission resolved</em> for the target table is: </p><ul>
+<li><p>the minimum of actions permissions defined for this table on all restricted profiles of the target user;</p></li><li><p>or the maximum of actions permissions defined for this table on all profiles of the target user, if no restriction is defined.</p></li></ul>
+</li></ul>
+<p> For more information, see also <a href="../references/permissions.html#resolution">Resolution of permissions</a> .&nbsp;</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

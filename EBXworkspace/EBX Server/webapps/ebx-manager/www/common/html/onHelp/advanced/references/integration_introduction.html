@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Overview of integration and extension</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_integration" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+Documentation &gt; Reference Manual &gt; Integration</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=references/integration_introduction.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Integration</span></div>
+<h1>
+Overview of integration and extension</h1>
+<p>Several service and component APIs allow you to develop custom extensions for EBX5 and integrate it with other systems.</p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#components">Using EBX5 as a web component</a></li><li class="toc1"><a href="#id2">User interface customization</a><ul class="toc2">
+<li class="toc2"><a href="#ui_services">User interface services (UI services)</a></li><li class="toc2"><a href="#ui_customlayout">Custom layout</a></li><li class="toc2"><a href="#ui_beans">UI beans</a></li><li class="toc2"><a href="#id2s4">Ajax components</a></li><li class="toc2"><a href="#filters">Specifying UI filters on a table</a></li></ul>
+</li><li class="toc1"><a href="#dataservices">Data services</a></li><li class="toc1"><a href="#id4">XML and CSV import/export services</a></li><li class="toc1"><a href="#programmatic">Programmatic services</a></li></ul>
+</div>
+<h2>
+<a name="components"></a>Using EBX5 as a web component</h2>
+<p>It is possible to use EBX5 as a user interface web component, by calling it using the HTTP protocol. Such EBX5 web components can be integrated into any application that is accessible through a <a href="../installation/supported_env.html">supported web browser</a>.</p><p>A typical use is to integrate EBX5 views into an organization&#39;s intranet framework. Web components can also be invoked from the EBX5 user interface using <a href="#ui_services">UI services</a>.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="manager_component_ref.html">Using EBX5 as a web component</a></p></div>
+<h2>
+<a name="id2"></a>User interface customization</h2>
+<h3>
+<a name="ui_services"></a>User interface services (UI services)</h3>
+<p>User interface services (UI services) are HTTP resources (HTML pages, Java Servlets, or JavaServer Pages) that are integrated into the EBX5 interface. They allow users to access custom or advanced functionalities. Examples of UI services include:</p><ul>
+<li><p>Importing data from an external system</p></li><li><p>Performing mass updates on a table</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="ui_services.html">UI service reference page</a></p></div>
+<h3>
+<a name="ui_customlayout"></a>Custom layout</h3>
+<p>A presentation layer provides the ability to override the default layout of forms in the user interface with highly customized form layouts. For example, it is possible to: </p><ul>
+<li><p>Define field placement and ordering in an HTML layout</p></li><li><p>Seamlessly integrate custom layout elements into the existing EBX5 user interface using the provided Java API for styles and pre-built HTML/Ajax artifacts</p></li><li><p>Include auto-generated UI components in forms</p></li><li><p>Automatically trigger validation and other standard EBX5 transactions</p></li><li><p>Leverage user permissions, as in default forms</p></li><li><p>Configure rendering parameters for each form field, such as showing or hiding icons, showing or hiding labels, aligning fields vertically or horizontally</p></li><li><p>Rename buttons with custom labels</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a target="_blank" href="../Java_API/com/orchestranetworks/ui/form/UIForm.html"><code>UIForm</code></a></p></div>
+<h3>
+<a name="ui_beans"></a>UI beans</h3>
+<p>UI beans are included in the Java API to allow the development of user interface components for fields or groups of fields. When a field or group declares an associated UI bean in its data model, EBX5 automatically generates the corresponding user interface by which users interact with this element.</p><p>UI beans can be used for various purposes, such as:</p><ul>
+<li><p>Masking characters in password fields</p></li><li><p>Incorporating JavaScript UI components</p></li></ul>
+<p>To use a UI bean on a field or group, first extend the <a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditor.html"><code>UIBeanEditor</code></a> Java class. Next, declare the UI bean on the element in its data model.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIBeanEditor.html"><code>UIBeanEditor</code></a></li><li><a href="../user_datamodel/userdatamodel_elementproperties.html#ui_bean">Properties of data model elements</a></li></ul>
+</div>
+<h3>
+<a name="id2s4"></a>Ajax components</h3>
+<p>Ajax components allow the asynchronous exchange of data with a server without refreshing the currently displayed page.</p><p>By using a class on the server side that inherits <code>UIAjaxComponent</code>, it is possible for a UI service, UI bean, or custom layout to communicate with the repository or a server without impacting the display of the existing page. On the client side, a JavaScript implementation sends the parameters to the Ajax component, which then returns the data to be displayed.</p><p>Ajax components can be used for a wide range of purposes, including:</p><ul>
+<li><p>Retrieving related data from the EBX5 repository based on a user selection in a form</p></li><li><p>Sending requests an external server</p></li></ul>
+<div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UIAjaxComponent.html"><code>UIAjaxComponent</code></a></p></div>
+<h3>
+<a name="filters"></a>Specifying UI filters on a table</h3>
+<p>In addition to the default filters and search panes in the user interface, it is possible to specify additional filters dependent on the structure of the table. For that a specific class must be defined in the definition of the table and must extend UITableFilter.</p><p>See <code><a target="_blank" href="../Java_API/com/orchestranetworks/ui/UITableFilter.html"><code>UITableFilter</code></a></code> for more information.</p><h2>
+<a name="dataservices"></a>Data services</h2>
+<p>The data services module provides a means for external systems to interact with EBX5 using the Web Services Description Language (WSDL) standard.</p><div id="seealsoShort">
+<p><span style="color:#808080; font-size:1.1em; font-family:'Source Sans Pro', Helvetica, Arial, sans-serif; font-weight: bold;  margin:0 4px 0 0;">See also</span><a href="dataservices_introduction.html">Data Services reference page</a></p></div>
+<h2>
+<a name="id4"></a>XML and CSV import/export services</h2>
+<p>EBX5 includes built-in services for importing data from and export data to XML and CSV formats. Imports and exports for XML and CSV can be performed using the user interface, data services, or the Java API.</p><div id="seealso">
+<h5>
+See also</h5>
+<ul>
+<li><a href="../references/xml_services.html">XML import and export</a></li><li><a href="../references/csv_services.html">CSV import and export</a></li></ul>
+</div>
+<h2>
+<a name="programmatic"></a>Programmatic services</h2>
+<p>Programmatic services allow the development of Java or JSP applications that interact with EBX5 contexts.</p><p>Some examples of programmatic services include:</p><ul>
+<li><p>Importing data from an external source,</p></li><li><p>Exporting data to multiple systems,</p></li><li><p>Data historization, launched by a supervisory system</p></li><li><p>Optimizing and refactoring data if EBX5 <a target="_blank" href="../Java_API/com/orchestranetworks/service/extensions/AdaptationTreeOptimizerSpec.html">built-in optimization services</a> are not sufficient.</p></li></ul>
+<p>An easy way to use it is through a JSP. This implies that the process integrates login features so that EBX5 can determine whether the user is allowed to access the data space, data set, etc., or not.</p><p>Check out the <code><a target="_blank" href="../Java_API/com/orchestranetworks/service/ProgrammaticService.html"><code>ProgrammaticService</code></a></code> Java class for more information.</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">Documentation &gt; Reference Manual &gt; Integration</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix A [0985:0003]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

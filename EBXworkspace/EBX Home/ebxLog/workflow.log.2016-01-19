@@ -1,0 +1,168 @@
+2016-01-19 10:29:23,682 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 10:50:37,325 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-19 11:00:24,160 EST INFO   log.workflow 0985:0003 [localhost-startStop-1] **** Server Started (logVersion=1.4) ****
+2016-01-19 11:01:25,506 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] 
+[ERROR ebx.scriptTask.instanciation] Failed to instantiate the script task 'Geomatch Module@com.orchestranetworks.geomatch.match.CarmenSandiago'. Check class name and see stack trace in logs for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|0|v1
+java.lang.ExceptionInInitializerError
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:27)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:352)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:613)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at com.orchestranetworks.geomatch.match.CarmenSandiago.<clinit>(CarmenSandiago.java:39)
+	... 17 more
+
+2016-01-19 11:01:25,517 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|0|v1 passed in 'error' state.
+2016-01-19 11:01:43,634 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-1] 
+[ERROR ebx.scriptTask.instanciation] Failed to instantiate the script task 'Geomatch Module@com.orchestranetworks.geomatch.match.CarmenSandiago'. Check class name and see stack trace in logs for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|1|v1
+java.lang.NoClassDefFoundError: Could not initialize class com.orchestranetworks.geomatch.match.CarmenSandiago
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:27)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:352)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:613)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-19 11:01:43,644 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-1] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|1|v1 passed in 'error' state.
+2016-01-19 11:03:27,026 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-2] 
+[ERROR ebx.scriptTask.instanciation] Failed to instantiate the script task 'Geomatch Module@com.orchestranetworks.geomatch.match.CarmenSandiago'. Check class name and see stack trace in logs for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|2|v1
+java.lang.NoClassDefFoundError: Could not initialize class com.orchestranetworks.geomatch.match.CarmenSandiago
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:27)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:352)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:613)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-19 11:03:27,031 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-2] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|2|v1 passed in 'error' state.
+2016-01-19 11:03:43,473 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-3] 
+[ERROR ebx.scriptTask.instanciation] Failed to instantiate the script task 'Geomatch Module@com.orchestranetworks.geomatch.match.CarmenSandiago'. Check class name and see stack trace in logs for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|3|v1
+java.lang.NoClassDefFoundError: Could not initialize class com.orchestranetworks.geomatch.match.CarmenSandiago
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:27)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:352)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:613)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-19 11:03:43,477 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-3] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|3|v1 passed in 'error' state.
+2016-01-19 11:04:06,628 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] 
+[ERROR ebx.scriptTask.instanciation] Failed to instantiate the script task 'Geomatch Module@com.orchestranetworks.geomatch.match.CarmenSandiago'. Check class name and see stack trace in logs for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|4|v1
+java.lang.NoClassDefFoundError: Could not initialize class com.orchestranetworks.geomatch.match.CarmenSandiago
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:27)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:352)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:613)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-19 11:04:06,632 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-0] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|4|v1 passed in 'error' state.
+2016-01-19 11:04:19,316 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-1] 
+[ERROR ebx.scriptTask.instanciation] Failed to instantiate the script task 'Geomatch Module@com.orchestranetworks.geomatch.match.CarmenSandiago'. Check class name and see stack trace in logs for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|5|v1
+java.lang.NoClassDefFoundError: Could not initialize class com.orchestranetworks.geomatch.match.CarmenSandiago
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:27)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:352)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:613)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-19 11:04:19,323 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-1] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|5|v1 passed in 'error' state.
+2016-01-19 11:05:16,646 EST ERROR  log.workflow 0985:0003 [ebx-workflow-tokenDefault-2] 
+[ERROR ebx.scriptTask.instanciation] Failed to instantiate the script task 'Geomatch Module@com.orchestranetworks.geomatch.match.CarmenSandiago'. Check class name and see stack trace in logs for more information.
+[TOKEN INFOS]  state = executing, primary key = V2016-01-19T10:38:52.826|Geomatch|6|v1
+java.lang.NoClassDefFoundError: Could not initialize class com.orchestranetworks.geomatch.match.CarmenSandiago
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:27)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:352)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:613)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:544)
+	at com.orchestranetworks.workflow.impl.execution.l.b(l.java:226)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:288)
+	at com.orchestranetworks.workflow.impl.execution.l.a(l.java:322)
+	at com.orchestranetworks.workflow.impl.execution.j.handleQueueEntry(j.java:4)
+	at com.orchestranetworks.workflow.impl.execution.o$a.run(o$a.java:7)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-01-19 11:05:16,649 EST WARN   log.workflow 0985:0003 [ebx-workflow-tokenDefault-2] [TOKEN WARNING] Token V2016-01-19T10:38:52.826|Geomatch|6|v1 passed in 'error' state.
+2016-01-19 11:10:54,243 EST INFO   log.workflow 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

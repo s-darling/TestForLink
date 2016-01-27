@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - Introduction</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="dev_model_concepts" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation &gt; Developer Guide &gt; Model design</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=models/intro_xml_schema.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Model design</span></div>
+<h1>
+Introduction</h1>
+<p>A data model is a structural definition of the data to be managed in the EBX5 repository. Globally, the goal is to guarantee the highest level of data consistency and to facilitate their management.</p><p>In concrete terms, the data model is a document that conforms to the XML Schema standard (W3C recommendation). The main standard features that are supported are the following:</p><ul>
+<li><p> A rich library of well-defined basic <a target="_self" href="../models/types.html">data types</a> (<em>simple types</em>: integer, boolean, decimal, date, time, ...); </p></li><li><p> The ability to build more <a target="_self" href="../models/types.html#xsdcomplex">simple types</a> (<em>simple types</em>); and <a target="_self" href="../models/types.html#xsdcomplex">complex structures</a> (<em>complex types</em>); </p></li><li><p> The ability to define simple lists of items (<em><a target="_self" href="../models/types.html#aggregatedList">aggregated lists</a></em>); </p></li><li><p><a target="_self" href="../models/constraints.html">Validation constraints</a> (<em>facets</em>): enumerations, uniqueness, minimum/maximum boundaries, ... </p></li></ul>
+<p>EBX5 also uses the extensibility features of XML Schema for other useful information, such as:</p><ul>
+<li><p> Useful <a target="_self" href="../models/types.html#ebxsimple">predefined types</a> (locale, resource, html, ...); </p></li><li><p> Definition of <a target="_self" href="../models/tables_filters.html">tables</a> and <a target="_self" href="../models/constraints.html#foreignKey">foreign key constraints</a> ;&nbsp;</p></li><li><p>Mapping of data in EBX5 to Java beans;</p></li><li><p><a target="_self" href="../models/constraints.html">Advanced validation constraints</a> (extended <em>facets</em>), like dynamic enumerations; </p></li><li><p> Extensive <a target="_self" href="../models/labels_error_messages.html">presentation information</a>: label, description, error messages, ... </p></li></ul>
+<p><span class="highlight">Note: EBX5 supports a subset of the W3C recommendation, some features actually being useless for Master Data.</span></p><div id="toc">
+<h4 id="tocTitle">
+Section contents</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Model Editor</a></li><li class="toc1"><a href="#id2">References</a></li><li class="toc1"><a href="#id3">Links between data sets and data models</a></li><li class="toc1"><a href="#id4">Pre-requisite for XML Schemas</a></li><li class="toc1"><a href="#id5">Conventions</a></li><li class="toc1"><a href="#reservedSchema">Schemas with reserved names</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Model Editor</h2>
+<p> The data model can be defined by using an XML Schema editor or the <em>Data Model Assistant</em> .&nbsp;The latter has the advantage of being integrated into EBX5 user interface and hiding the XML verbose language. </p><h2>
+<a name="id2"></a>References</h2>
+<p> For an introduction to XML Schema, we recommend the <a target="_blank" href="http://www.w3schools.com/schema/default.asp">W3School</a> web site. </p><p> W3C specification documents: XML Schema <a target="_blank" href="http://www.w3.org/TR/xmlschema-0/">Part 0: Primer</a> , <a target="_blank" href="http://www.w3.org/TR/xmlschema-1/">Part 1: Structures</a> , <a target="_blank" href="http://www.w3.org/TR/xmlschema-2/">Part 2: Datatypes</a> .&nbsp;</p><h2>
+<a name="id3"></a>Links between data sets and data models</h2>
+<p>Any root data set is associated with a single data model.</p><p>In order to create a root data set, you must have the rights granted. Being logged in EBX5, you have to position to a data space conten (click on the link &quot;View or edit content&quot;). On the left side of the screen, click on the &quot;create...&quot; link. Several creation modes are then available.</p><h2>
+<a name="id4"></a>Pre-requisite for XML Schemas</h2>
+<p> In order to be accepted by EBX5, an XML Schema must include a global element declaration which has an attribute <code>osd:access=&quot;--&quot;</code> .&nbsp;</p><pre class="ebx_example brush: html">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!---->
+&lt;!--   Copyright Orchestra Networks 2000-2013. All rights reserved. -->
+&lt;!---->
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:osd="urn:ebx-schemas:common_1.0" xmlns:fmt="urn:ebx-schemas:format_1.0">
+   &lt;xs:import namespace="urn:ebx-schemas:common_1.0"
+   		schemaLocation="http://schema.orchestranetworks.com/common_1.0.xsd"/>
+   &lt;xs:element name="root" osd:access="--">
+		...
+  &lt;/xs:element>
+&lt;/xs:schema>
+</pre>
+<h2>
+<a name="id5"></a>Conventions</h2>
+<p>By convention, namespaces are always defined as below:</p><table border="0" cellpadding="5" cellspacing="0" width="100%" class="">
+<thead>
+<tr>
+<th align="left"><p><strong>Prefix</strong></p></th><th align="left"><p><strong>Namespace</strong></p></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><p><code>xs:</code></p></td><td><p>http://www.w3.org/2001/XMLSchema</p></td></tr>
+<tr>
+<td><p><code>osd:</code></p></td><td><p>urn:ebx-schemas:common_1.0</p></td></tr>
+<tr>
+<td><p><code>fmt:</code></p></td><td><p>urn:ebx-schemas:format_1.0</p></td></tr>
+</tbody>
+</table>
+<h2>
+<a name="reservedSchema"></a>Schemas with reserved names</h2>
+<p>Several data model have reserved names in EBX5.</p><p>All references to other data models (attribute <code>schemaLocation</code> an import, includes or redefines) that end with one of the following strings are reserved:</p><ul>
+<li><p>common_1.0.xsd</p></li><li><p>org_1.0.xsd</p></li><li><p>coreModel_1.0.xsd</p></li><li><p>session_1.0.xsd</p></li></ul>
+<p> Those files correspond to the schemas provided for the module <code>ebx-root-1.0</code> ,&nbsp;path <code>/WEB-INF/ebx/schemas</code> .&nbsp;The attribute schemaLocation can reference those files at this location or reference a copy, if the file name is the same. This is useful if you want to avoid the module dependency to <code>ebx-root-1.0</code> .&nbsp;</p><p>For security reasons, EBX5 uses an internal definition of those schemas (to avoid any modification).</p><div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel">EBX5 documentation &gt; Developer Guide &gt; Model design</span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.4.0 Fix 002 [0907:0001]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2013. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>

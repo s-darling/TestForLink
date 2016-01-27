@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+EBX5 documentation - 4.1.2</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta><meta content="Copyright Orchestra Networks 2000-2013. All rights reserved." name="copyright"></meta><meta content="index_releasenotes" name="doc_id"></meta><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_common.css"></link><link rel="stylesheet" type="text/css" href="../resources/stylesheets/ebx_docPage.css"></link><link rel="icon" type="image/x-icon" href="../resources/icons/brand.ico"></link></head>
+<body class="ebx_simplePage">
+<div id="ebx_centerer">
+<div id="ebx_main">
+<div id="printHeader">
+<div class="productName">
+EBX5</div>
+<div class="chapterName">
+EBX5 documentation</div>
+</div>
+<div id="ebx_breadcrumbTop">
+<a id="ebx_navigationModeButton" href="../index.html?page=releasenotes/4.1.2.html" title="Display this page with header and navigation panes">Navigation mode</a><span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+<h1>
+4.1.2</h1>
+<p><strong>Release Date: April 30, 2007</strong></p><div id="toc">
+<h4 id="tocTitle">
+In this version</h4>
+<ul class="toc1">
+<li class="toc1"><a href="#id1">Navigation through selection nodes (preview version)</a></li><li class="toc1"><a href="#id2">Internal relational tables have been renamed</a></li><li class="toc1"><a href="#id3">Bug fixes:</a></li><li class="toc1"><a href="#id4">Known limitations:</a></li></ul>
+</div>
+<h2>
+<a name="id1"></a>Navigation through selection nodes (preview version)</h2>
+<p>An element declaration may define a XPath selection. In this case Manager User Interface provides a link so that the user can navigate to another table that may be filtered.</p><p>Common usage includes navigation through association links.</p><p>If the selection depends on the local occurrence state, the XPath expression must include a local path expresssion that put in &quot;${...}&quot;. Please be cautious in this version on the spaces: one space before &quot;=&quot;, no space after.</p><p>Example (this example is integrated in Tutorial):</p><pre class="ebx_example brush: xml">
+&lt;xs:element name="linkToAuthorTitles" minOccurs="0 maxOccurs="0" > 
+	&lt;xs:annotation> 
+	  &lt;xs:appinfo> 
+		&lt;osd:select> 
+		  &lt;xpath>/root/Titles[au_id =${../au_id}]&lt;/xpath> 
+		&lt;/osd:select> 
+	  &lt;/xs:appinfo> 
+	&lt;/xs:annotation> 
+&lt;/xs:element></pre>
+<h2>
+<a name="id2"></a>Internal relational tables have been renamed</h2>
+<p>Bug 01432 has required to rename relational tables to shorter names and to change the prefixing policy. Please see ddl.sql files for more information.</p><p>However repositories created from version 4.0 up to version 4.1.1 remain supported.</p><h2>
+<a name="id3"></a>Bug fixes:</h2>
+<ul>
+<li><p>[01424] Adaptation.checkActivable() does not check upon uptodate compiler.</p></li><li><p>[01425] Field selection in view mention path but not label. It is not consistant with node labeling in tables or nodes trees</p></li><li><p>[01426] View field selection: &quot;equals&quot; (or &quot;=&quot;) criteria has a bug in resetting current value when changing field target (i.e. field type).</p></li><li><p>[01430] An inherited occurrence can be deleted in a child adaptation, it is then also deleted in the parent adaptation. Note: The manager does not allow to delete an inherited occurrence but only to occult it.</p></li><li><p>[01431] View documentation update is not effective.</p></li><li><p>[01432] Some relational databases do not support table names that have more than 18 characters. Some repository tables are longer than this limit.</p></li></ul>
+<h2>
+<a name="id4"></a>Known limitations:</h2>
+<ul>
+<li><p><strong>Performance:</strong> for large number of tables (in the order of 10,000 tables) and for large number of occurrences (in the order of 10,000,000 occurrences), optimizations are not yet available. </p></li><li><p><strong>Merge process:</strong> in case of instances&#39; add-add conflict, tables in the source are ignored. </p><p>Workaround: first create instances and merge, then tables may be populated and merged.</p></li><li><p><strong>Comparison and Merge:</strong> Header information are not yet included in the comparison user interface nor in the merge process. </p><p>Workaround: for merging header information, a least one value must be updated on instance.</p></li><li><p><strong>Repository locking:</strong> it is not yet detected when two Java virtual machines share the same physical repository. </p><p>Workaround: Repositories&#39; administrator must take care that a repository is not refered by two environments.</p></li><li><p><strong>Access right management:</strong> a node can be set as <code>ReadWrite</code> even if it is not adaptable according to schema definition. </p></li></ul>
+<div id="ebx_breadcrumbBottom">
+<span class="ebx_breadcrumbLabel"><a href="./index.html">Release Notes</a></span></div>
+</div>
+<p id="ebx_footer"><b>EBX5 Version 5.6.1 Fix M [0985:0021]. </b>Copyright &copy; <a href="http://www.orchestranetworks.com" target="_blank" style="text-decoration: none;">Orchestra Networks</a> 2000-2015. All rights reserved.<br></br>Trademarks and brand names referred to in this web site relating to organizations other than Orchestra Networks are the property of those organizations and Orchestra Networks makes no claims to such property.</p></div>
+<script type="text/javaScript" src="../resources/yui/yahoo/yahoo-min.js">
+</script>
+<script type="text/javaScript" src="../resources/yui/event/event-min.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_doc_utils.js">
+</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_simplePage.js">
+</script>
+<script type="text/javaScript">
+var ie6CompatibilityCSSURL = "../resources/stylesheets/ebx_ie6_compatibility.css";</script>
+<script type="text/javaScript" src="../resources/jscripts/ebx_ie6_compatibility.js">
+</script>
+</body>
+</html>
