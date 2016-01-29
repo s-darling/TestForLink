@@ -1,16 +1,17 @@
 package com.orchestranetworks.geomatch.match;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Geomatch {
 	static Geomatch Match = null;
-	private ArrayList<Coordinate> coords = new ArrayList<>();
+	private HashMap<Object, Coordinate> coords = new HashMap<>();
 	private Coordinate origin = null;
 	private Double dis = Double.MAX_VALUE;
 
 	public static void main(String[] args) {
-		Match = new Geomatch();
+		/*Match = new Geomatch();
 		Match.forceAdd(new Coordinate(151, 10001));
 		Match.forceAdd(new Coordinate(51, 50));
 		Match.forceAdd(new Coordinate(50, 50));
@@ -21,7 +22,7 @@ public class Geomatch {
 				.println(Match.getOrigin() + ":" + Match.getAverageDistance());
 		System.out.println("MATCH? " + Match.isMatch(Match.getOrigin(), 0d));
 		System.out.println("MATCH? "
-				+ Match.isMatch(new Coordinate(100, 100), 2d));
+				+ Match.isMatch(new Coordinate(100, 100), 2d));*/
 	}
 
 	public boolean isMatch(Coordinate c, Double minDis) {
@@ -34,9 +35,9 @@ public class Geomatch {
 	}
 	
 	// only add if it's a match, returns if it was added.
-	public boolean addIfMatch(Coordinate c, Double minDis) {
+	public boolean addIfMatch(Object id, Coordinate c, Double minDis) {
 		if (c.isValid() || isMatch(c, minDis)) {
-			forceAdd(c);
+			forceAdd(id, c);
 			return true;
 		}
 		return false;
@@ -57,8 +58,8 @@ public class Geomatch {
 	}
 
 	// add without checking.
-	public void forceAdd(Coordinate Coordinate) {
-		coords.add(Coordinate);
+	public void forceAdd(Object id, Coordinate Coordinate) {
+		coords.put(id, Coordinate);
 		calculateOrigin();
 	}
 
@@ -75,7 +76,7 @@ public class Geomatch {
 
 	// used to trim outliers that were once not outliers
 	private void refineCordinates(Double minDistance) {
-		coords.removeAll(getOutliers(minDistance));
+		coords.remove(getOutliers(minDistance));
 		calculateOrigin();// grab new origin, if any, and recalcuate distance.
 	}
 

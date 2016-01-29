@@ -1,39 +1,5 @@
-2016-01-27 10:55:56,701 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 10:56:13,703 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	8030E431302FAED68807FA30E5A6F066:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 10:56:31,891 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-4] 	0:0:0:0:0:0:0:1	8030E431302FAED68807FA30E5A6F066:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
-2016-01-27 11:22:44,779 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 13:38:53,317 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 13:38:59,924 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 13:39:04,467 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
-2016-01-27 13:46:38,419 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 13:47:08,641 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 13:49:02,553 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-2] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:2	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 13:49:02,553 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:1	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 13:49:02,555 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 13:49:03,103 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 13:50:08,304 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] **** Server Started (logVersion=1.4) ****
-2016-01-27 13:50:14,071 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 13:50:33,015 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
-2016-01-27 13:52:16,694 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 13:52:39,936 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 13:53:43,578 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 14:02:39,121 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 14:03:53,423 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 14:03:57,198 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
-2016-01-27 14:04:05,084 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 14:04:24,422 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] **** Server Started (logVersion=1.4) ****
-2016-01-27 14:04:35,775 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 14:12:26,206 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 14:12:29,494 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 14:12:46,243 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
-2016-01-27 14:21:20,465 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 14:26:29,657 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 14:27:00,663 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 14:27:05,047 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
-2016-01-27 14:29:53,024 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
-2016-01-27 14:30:11,791 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
-2016-01-27 14:30:41,666 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
-2016-01-27 14:30:48,656 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
-2016-01-27 14:31:06,588 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-9] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0-0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Initializing sub-session [0-0].
-2016-01-27 14:31:09,380 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-9] 	0:0:0:0:0:0:0:1	543282142104C75B2A94901E52A83F92:0-0	ebx-manager	P	.sessionIn.data_root.data_main	wbp:_Manager.html	0	logOut	Uadmin	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Reset user has been called from state [.sessionIn.data_root.data_main] by event [logOut]
-2016-01-27 14:34:54,053 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****
+2016-01-29 09:47:50,682 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-boot] **** Server Started (logVersion=1.4) ****
+2016-01-29 09:48:16,854 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-1] 	0:0:0:0:0:0:0:1	005D353D06768473D813E85699914CF5:0	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
+2016-01-29 09:48:17,277 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-3] 	0:0:0:0:0:0:0:1	005D353D06768473D813E85699914CF5:1	ebx-manager	P	.INITIAL	root:undefined	U	onwbpInitialDefault	Uebx-unsetUser	Trying to authenticate from Http request.
+2016-01-29 09:48:22,570 EST INFO   log.wbp.ebx-manager.main 0985:0003 [http-bio-8090-exec-5] 	0:0:0:0:0:0:0:1	005D353D06768473D813E85699914CF5:1	ebx-manager	P	.sessionOut.sessionOutLogin	wbp:_Manager.html	0	submitLogin	Uebx-unsetUser	Login_Info:0:0:0:0:0:0:0:1	login:admin	message:Success
+2016-01-29 10:05:31,366 EST INFO   log.wbp.ebx-manager.main 0985:0003 [ebx-shutdown] **** Server Stopped (logVersion=1.4) ****

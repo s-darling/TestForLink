@@ -174,7 +174,17 @@ public class CarmenSandiago extends ScriptTaskBean {
 			// returns one record that matches those both
 			HashMap <Path, Object>pathValueMap = new HashMap<>();
 			pathValueMap.put(Path.parse("isMatched"), false);
+			//ModifyValuesProcedure is giving a null pointer exception, but nothing is null? 
+			System.out.println("DEBUG::::: "+ temp +" " + pathValueMap + " "+ s);
 			ModifyValuesProcedure.execute(temp, pathValueMap, s);
+
+			
+			/*
+			 * HEY DERE HERE IS DA PATHMAP:{AspectPath[./isMatched]=false}
+YES HERE IS DA TEMPgy[Geomatch:/root/Geomatch[./id=36]]@51b27efc
+AND HERE BE SESSIONRootSessionImpl[ebx-systemUser]@216cf4da
+			 */
+
 		}
 	}
 

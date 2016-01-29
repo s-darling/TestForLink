@@ -2,4 +2,18 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletConfig"/>
+<fullyQualifiedTypeName name="com.orchestranetworks.workflow.DataContextReadOnly"/>
+<fullyQualifiedTypeName name="com.onwbp.adaptation.XPathExpressionHelper"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.orchestranetworks.service.Session"/>
+<fullyQualifiedTypeName name="java.math.MathContext"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.orchestranetworks.cce.rdb.xsdeclaration.at"/>
+<fullyQualifiedTypeName name="com.onwbp.adaptation.AdaptationTable"/>
+<fullyQualifiedTypeName name="com.orchestranetworks.geomatch.procedure.ModifyValuesProcedure"/>
+<fullyQualifiedTypeName name="com.orchestranetworks.geomatch.match.Geomatch"/>
+<fullyQualifiedTypeName name="com.orchestranetworks.geomatch.Paths"/>
+<fullyQualifiedTypeName name="com.orchestranetworks.schema.Path"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

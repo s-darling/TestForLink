@@ -34,10 +34,10 @@ public class GeoLink extends UIBeanEditor {
 		if (value != null)
 			value = value.trim();
 		arg0.addUIBestMatchingEditor(Path.SELF, "");
-		UserMessage um = UserMessage.createInfo("Look up id");
+		UserMessage um = UserMessage.createInfo("Get The Link");
 		arg0.addButtonJavaScript(new UIButtonSpecJSAction(
 				um,
-				"window.open('https://sandboxui.eidr.org/view/content?id='+document.getElementById('_ID').value, '_blank');"));
+				"window.open('http://maps.google.com/?q='+document.getElementById('_ID').value, '_blank');"));		
 	}
 
 	@Override
